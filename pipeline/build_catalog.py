@@ -258,6 +258,8 @@ for c in inst_courses:
         if c.get("provider"):           # not YouTube (e.g. a university's Panopto): the site needs the host to embed and link
             inst_meta[vid]["p"] = c["provider"]
             inst_meta[vid]["host"] = c.get("host")
+            if it.get("file"):
+                inst_meta[vid]["f"] = it["file"]   # Internet Archive: the MP4 file name, so the site can use its own <video> player
         videos[vid]["vouches"].append({
             "s": "inst", "c": c["inst"], "a": c.get("owner"), "d": None, "k": "course", "w": INST_W,
             "q": f"Lecture {it['idx']} of {len(items)} in {name}", "u": c.get("url") or f"https://www.youtube.com/playlist?list={c['pid']}",
@@ -383,8 +385,10 @@ for vid, rec in videos.items():
         if m.get("approx"):
             entry["approx"] = True
         if m.get("p"):
-            entry["p"] = m["p"]            # video provider when not YouTube ("panopto"); id is then the provider's id
+            entry["p"] = m["p"]            # video provider when not YouTube ("panopto", "archive"); id is then the provider's id
             entry["host"] = m.get("host")
+            if m.get("f"):
+                entry["f"] = m["f"]
         if not comm_vouches:
             entry["kw"] = []
         stats["inst_lectures"] += 1

@@ -1,7 +1,7 @@
 {
  "stats": {
-  "kept": 3304,
-  "inst_lectures": 2721,
+  "kept": 3857,
+  "inst_lectures": 3274,
   "inst_also_vouched": 21,
   "dropped_not_psych_or_unlabeled": 694,
   "dropped_thin_vouch": 149,
@@ -11,58 +11,70 @@
  "topics": [
   [
    "how-the-brain-works",
-   572
+   641
+  ],
+  [
+   "consciousness",
+   359
   ],
   [
    "happiness-meaning",
    337
   ],
   [
+   "ai-and-mind",
+   290
+  ],
+  [
    "perception-illusions",
    280
   ],
   [
-   "personality",
-   223
-  ],
-  [
-   "psych-research",
-   223
+   "child-development",
+   277
   ],
   [
    "history-of-psychology",
-   206
+   275
+  ],
+  [
+   "psych-research",
+   255
+  ],
+  [
+   "personality",
+   248
+  ],
+  [
+   "decision-risk",
+   227
   ],
   [
    "therapy",
-   192
+   216
+  ],
+  [
+   "rationality-biases",
+   201
   ],
   [
    "emotion",
    187
   ],
   [
+   "depression-anxiety",
+   169
+  ],
+  [
    "psychiatry-medication",
    167
   ],
   [
-   "child-development",
-   164
-  ],
-  [
-   "decision-risk",
+   "memory",
    163
   ],
   [
-   "ai-and-mind",
-   160
-  ],
-  [
    "work-organizations",
-   155
-  ],
-  [
-   "consciousness",
    155
   ],
   [
@@ -74,6 +86,22 @@
    141
   ],
   [
+   "free-will",
+   140
+  ],
+  [
+   "groups-prejudice",
+   137
+  ],
+  [
+   "persuasion-manipulation",
+   136
+  ],
+  [
+   "attention-focus",
+   133
+  ],
+  [
    "language-thought",
    131
   ],
@@ -82,15 +110,7 @@
    116
   ],
   [
-   "persuasion-manipulation",
-   114
-  ],
-  [
    "motivation-habits",
-   112
-  ],
-  [
-   "rationality-biases",
    112
   ],
   [
@@ -106,16 +126,12 @@
    102
   ],
   [
-   "depression-anxiety",
-   97
+   "adhd-autism",
+   95
   ],
   [
-   "groups-prejudice",
-   90
-  ],
-  [
-   "memory",
-   89
+   "serious-mental-illness",
+   94
   ],
   [
    "trauma-stress",
@@ -138,10 +154,6 @@
    73
   ],
   [
-   "serious-mental-illness",
-   70
-  ],
-  [
    "addiction",
    64
   ],
@@ -150,16 +162,12 @@
    60
   ],
   [
-   "attention-focus",
-   59
-  ],
-  [
    "adolescence-aging",
    59
   ],
   [
-   "adhd-autism",
-   47
+   "conformity-obedience",
+   45
   ],
   [
    "intelligence-expertise",
@@ -186,10 +194,6 @@
    26
   ],
   [
-   "conformity-obedience",
-   23
-  ],
-  [
    "creativity-insight",
    23
   ],
@@ -208,10 +212,6 @@
   [
    "parenting",
    11
-  ],
-  [
-   "free-will",
-   10
   ],
   [
    "performance",
@@ -395,6 +395,10 @@
    40
   ],
   [
+   "UC Berkeley Philosophy 3: The Nature of Mind (Fall 2014)",
+   37
+  ],
+  [
    "MIT 9.14 Brain Structure and Its Origins",
    35
   ],
@@ -407,7 +411,19 @@
    34
   ],
   [
+   "UC Berkeley Philosophy 3: The Nature of Mind (Fall 2012)",
+   34
+  ],
+  [
+   "UC Berkeley Philosophy 3: The Nature of Mind (Fall 2011)",
+   33
+  ],
+  [
    "Psychology of Personality and Individual Differences",
+   32
+  ],
+  [
+   "UC Berkeley Psychology 101: Research and Data Analysis in Psychology (Fall 2011)",
    32
   ],
   [
@@ -419,6 +435,14 @@
    26
   ],
   [
+   "UC Berkeley Cognitive Science C102: Scientific Approaches to Consciousness (Fall 2014)",
+   26
+  ],
+  [
+   "UC Berkeley Philosophy 3: The Nature of Mind (Fall 2013)",
+   26
+  ],
+  [
    "MIT 9.20 Animal Behavior",
    25
   ],
@@ -427,7 +451,35 @@
    25
   ],
   [
+   "UC Berkeley Psychology 1: General Psychology (Fall 2007)",
+   25
+  ],
+  [
+   "UC Berkeley Psychology 164: Social Cognition (Spring 2014)",
+   25
+  ],
+  [
    "MIT 14.13 Psychology and Economics",
+   24
+  ],
+  [
+   "UC Berkeley Psychology 130: Clinical Psychology (Fall 2013)",
+   24
+  ],
+  [
+   "UC Berkeley Psychology 131: Developmental Psychopathology (Spring 2014)",
+   24
+  ],
+  [
+   "UC Berkeley Psychology 131: Developmental Psychopathology (Spring 2015)",
+   24
+  ],
+  [
+   "UC Berkeley Cognitive Science C102: Scientific Approaches to Consciousness (Spring 2011)",
+   24
+  ],
+  [
+   "UC Berkeley Cognitive Science C102: Scientific Approaches to Consciousness (Spring 2013)",
    24
   ],
   [
@@ -451,6 +503,10 @@
    23
   ],
   [
+   "UC Berkeley Psychology 140: Developmental Psychology (Spring 2015)",
+   23
+  ],
+  [
    "Engineering Psychology",
    22
   ],
@@ -459,7 +515,39 @@
    22
   ],
   [
+   "UC Berkeley Psychology 1: General Psychology (Fall 2013)",
+   22
+  ],
+  [
+   "UC Berkeley Psychology 1: General Psychology (Spring 2015)",
+   22
+  ],
+  [
+   "UC Berkeley Psychology 140: Developmental Psychology (Spring 2014)",
+   22
+  ],
+  [
+   "UC Berkeley Psychology 160: Social Psychology (Fall 2014)",
+   22
+  ],
+  [
+   "UC Berkeley Economics 119: Psychology and Economics (Fall 2014)",
+   22
+  ],
+  [
+   "UC Berkeley Economics 119: Psychology and Economics (Fall 2011)",
+   21
+  ],
+  [
+   "UC Berkeley Economics 119: Psychology and Economics (Fall 2013)",
+   21
+  ],
+  [
    "MIT 9.40 Introduction to Neural Computation",
+   20
+  ],
+  [
+   "UC Berkeley Psychology 140: Developmental Psychology (Spring 2013)",
    20
   ],
   [
