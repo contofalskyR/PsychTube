@@ -13,7 +13,7 @@ Built in the spirit of Andrej Karpathy's [HackerTube](https://hackertube.org).
 
 ## Run it
 
-**Live site:** https://contofalskyr.github.io/psychtube/ — videos play in the page there (YouTube's
+**Live site:** https://contofalskyr.github.io/PsychTube/ — videos play in the page there (YouTube's
 player refuses to run inside a page opened from disk, which is why the single-file copy links out).
 
 The site is plain HTML/CSS/JS with the catalog baked into `site/data.js`:
