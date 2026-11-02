@@ -31,6 +31,8 @@ for f in sorted(glob.glob(P("work", "triage", "out_*.jsonl"))):
             o = json.loads(line)
             triage[o["pid"]] = o
 
+ov = json.load(open(P("pipeline", "triage_overrides.json"), encoding="utf-8")) if os.path.exists(P("pipeline", "triage_overrides.json")) else {}
+drop_inst, drop_pid, rename = set(ov.get("drop_inst", [])), set(ov.get("drop_pid", [])), ov.get("rename_inst", {})
 pulled = json.load(open(src, encoding="utf-8"))
 cj = json.load(open(P("raw", "institutional", "courses.json"), encoding="utf-8"))
 have = {c["pid"] for c in cj["courses"]}
@@ -42,6 +44,9 @@ for pid, pl in pulled.items():
         skipped.append((pid, "already present")); continue
     if not t or not t.get("keep"):
         skipped.append((pid, "not kept by triage")); continue
+    if pid in drop_pid or (t.get("inst") in drop_inst):
+        skipped.append((pid, "dropped by triage_overrides")); continue
+    inst = rename.get(t.get("inst"), t.get("inst")) or "Independent lecturer"
     items = [it for it in (pl.get("items") or []) if it.get("id")]
     if len(items) < min_items:
         skipped.append((pid, f"only {len(items)} items")); continue
@@ -50,11 +55,11 @@ for pid, pl in pulled.items():
     cj["courses"].append({
         "pid": pid, "title": pl.get("title") or "", "desc": pl.get("desc") or "", "count": pl.get("count") or f"{len(items)} videos",
         "owner": pl.get("owner") or (items[0].get("ch") if items else ""), "ownerId": pl.get("ownerId") or (items[0].get("chid") if items else ""),
-        "n": len(items), "items": items, "inst": t.get("inst") or "Independent lecturer", "kind": t.get("kind") or "course",
+        "n": len(items), "items": items, "inst": inst, "kind": t.get("kind") or "course",
         "triage": {"confidence": t.get("confidence"), "why": t.get("why")},
     })
     have.add(pid)
-    added.append((pid, t.get("inst"), len(items), pl.get("title")))
+    added.append((pid, inst, len(items), pl.get("title")))
 
 cj["pulled"] = datetime.date.today().isoformat()
 json.dump(cj, open(P("raw", "institutional", "courses.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=None, separators=(",", ":"))
