@@ -98,3 +98,53 @@
 {"pid": "PLI-qOZFAyxSplVR9uTbERSVDwmSeefY3V", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.9, "why": "Bare subject word on unplaced personal channel"}
 {"pid": "PLTqASgObA--aQQz20VsSA8ct8nZghZJO1", "keep": true, "inst": "California Southern University", "kind": "series", "english": true, "confidence": 0.65, "why": "University psychology program lecture channel"}
 {"pid": "PLWAVxVnFTUz0P0uBfPYpieCFHdeqbocZP", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.9, "why": "Audiobook-style channel, not institutional"}
+{"pid": "PLkTQLduKwhnByK634lpTOZ48FBQoT3KGL", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.8, "why": "Generic title on unplaced personal channel"}
+{"pid": "PLqv3rePA6dYJ0omNhq1KbUV5o6WhFLSYR", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.95, "why": "Gnostic religious teaching, off-subject"}
+{"pid": "PLUGizyb_PWSMPjyyfB2F-6mCTHfYhfQEM", "keep": true, "inst": "Independent lecturer", "kind": "series", "english": true, "confidence": 0.5, "why": "Psychology instructor's own lecture series on critical thinking"}
+{"pid": "PLE7615019A4F25BA5", "keep": false, "inst": "Adams State University", "kind": "talks", "english": true, "confidence": 0.6, "why": "Cross-disciplinary faculty lectures, not psychology-specific"}
+{"pid": "PLi8YxbGH9R8u-jmaMVnEmJRp5FY56Y2yG", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.9, "why": "Unplaced personal channel, vague title"}
+{"pid": "PLwd4boTdcO2Z7sv92DOb9qm9PivBRwjAM", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.85, "why": "Unplaced personal channel, vague title"}
+{"pid": "PLeDcFqa7KE7krLwSZsmHpYHDc5NUz3_wD", "keep": false, "inst": "UNSW Sydney", "kind": "talks", "english": true, "confidence": 0.6, "why": "Arts and social sciences public lectures, subject not psychology"}
+{"pid": "PLJJxnVXcY0Apf_Pq7ZODdZUKcBGaIR148", "keep": false, "inst": "Naropa University", "kind": "talks", "english": true, "confidence": 0.85, "why": "Peace lecture series, off-subject"}
+{"pid": "PLlqFGJ_SMmOKZn1pIQhXrVTRV141rRD4d", "keep": true, "inst": "CILE (Hamad Bin Khalifa University)", "kind": "series", "english": true, "confidence": 0.4, "why": "Research centre playlist titled Psychology; language and content unverified"}
+{"pid": "PLPaN6QxHWxxA5_r7RTEhz866ErFdEw9Qe", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.9, "why": "Unplaced personal channel"}
+{"pid": "PLZepmXIuUYox0dIUb_zWs2MMh8AjPKrqJ", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.9, "why": "Bare subject title on unplaced personal channel"}
+{"pid": "PLWTPXX6DXGh1eQmPKALU4VqOWYqOGm7cz", "keep": true, "inst": "University of British Columbia", "kind": "talks", "english": true, "confidence": 0.9, "why": "UBC Psychology department colloquium series"}
+{"pid": "PLCVhB35FbWjnhcleZ4qlkE1P5ucEpd0yC", "keep": false, "inst": "", "kind": "talks", "english": true, "confidence": 0.9, "why": "College-prep channel, dissertation defense how-to"}
+{"pid": "PL_fYUPns2JriO0fmNjgveO2iFlrIrKHDL", "keep": false, "inst": "University of Winnipeg", "kind": "talks", "english": true, "confidence": 0.9, "why": "Education colloquium, off-subject"}
+{"pid": "PLfK2p8h1XFaSjFTQB4tpEnThaRTRn1vfR", "keep": false, "inst": "Baruch College", "kind": "talks", "english": true, "confidence": 0.85, "why": "Graduate studies promo, off-subject"}
+{"pid": "PL87E168BC33290EB1", "keep": true, "inst": "Fielding Graduate University", "kind": "talks", "english": true, "confidence": 0.45, "why": "Media psychology program videos; may mix promo and talks"}
+{"pid": "PLC11E57875EAD70DD", "keep": false, "inst": "Hebrew University of Jerusalem", "kind": "talks", "english": true, "confidence": 0.55, "why": "Rationality centre seminars, mostly economics and game theory"}
+{"pid": "PLHJw3JECg2wlGi0XzYYYQ0YbDh4mN3onF", "keep": false, "inst": "Pepperdine University", "kind": "series", "english": true, "confidence": 0.9, "why": "Great Books humanities, off-subject"}
+{"pid": "PL0N7khBUmnOTbEpmU_Vxnjb7HNKlu8Af_", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.85, "why": "Fan upload of Tarnas lectures, off-subject"}
+{"pid": "PLyBqDHVJ-LXnR0WACzCrzRtUFGddT4cnH", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.85, "why": "Education topic on personal channel"}
+{"pid": "PLBVUQ31kNaoi172QuG9i3jdArN2sC-Mvl", "keep": false, "inst": "", "kind": "talks", "english": true, "confidence": 0.9, "why": "Unplaced personal channel, vague title"}
+{"pid": "PL_DZ772jJog8b_vQ4f-DWgtj0k_6VeVhF", "keep": false, "inst": "Michigan State University", "kind": "talks", "english": true, "confidence": 0.65, "why": "General research lectures, not psychology-specific"}
+{"pid": "PLgCnPRg-87IT3Q2hHZgO1w4buY93sYEGa", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.85, "why": "Unplaced personal channel"}
+{"pid": "PLGXCKD5oUCrNu-nx73P4NKR8r-2x1QdV6", "keep": false, "inst": "Fielding Graduate University", "kind": "talks", "english": true, "confidence": 0.9, "why": "University news clips"}
+{"pid": "PLeaJZAZsbo1d24FyKgG3YJnGZS2W6aX00", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.9, "why": "Unplaced personal book playlist"}
+{"pid": "PL2mCUbxPS6mU5qkbSVXQfm4PSW9Tx8bi4", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.85, "why": "Unplaced personal channel"}
+{"pid": "PLlPxFwLgTtndUK_tBqr-nElSfqARzxbJu", "keep": true, "inst": "Caltech", "kind": "talks", "english": true, "confidence": 0.85, "why": "Caltech Chen Center social and decision neuroscience seminars"}
+{"pid": "PLDhHqCGWiMkvXsRw5YoLmvYilvPm3FzVM", "keep": true, "inst": "Neuro-ID Program (BP-ENDURE), Puerto Rico", "kind": "talks", "english": true, "confidence": 0.55, "why": "Neuroscience seminar series from NIH-funded university program"}
+{"pid": "PLk4OotxY-IyMocHTVIiMocgxhX-lsl_0k", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.9, "why": "Bare subject word on unplaced personal channel"}
+{"pid": "PLXlinOq24a9RxMYWr0P5yI5F0fwRYrbNU", "keep": true, "inst": "Chapman University", "kind": "talks", "english": true, "confidence": 0.75, "why": "Theoretical neuroscience conference talks at Chapman"}
+{"pid": "PLMsmd0tMP-eTokrpDGg2P1H_U9cyiLfSh", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.65, "why": "Personal compilation channel, source unplaced"}
+{"pid": "PLfuxUmt0fY5e90AQK0kF2-4esiTjx4YGd", "keep": false, "inst": "Northeastern University", "kind": "talks", "english": true, "confidence": 0.6, "why": "College of Science general seminars, not neuroscience"}
+{"pid": "PLIKv9GiyMTm8TkXJ0Y7Q_tFirKnN9HU7P", "keep": true, "inst": "Boston University (Center for Brain Recovery)", "kind": "talks", "english": true, "confidence": 0.8, "why": "Neuroscience conference talks from BU"}
+{"pid": "PLNplVslyAwAfa83ea-1oZq0AkoZqS9rd2", "keep": true, "inst": "University of Melbourne", "kind": "talks", "english": true, "confidence": 0.8, "why": "Cognitive neuroscience hub presentations"}
+{"pid": "PLNplVslyAwAcElvUK0wX-b8rENY6kfiSl", "keep": true, "inst": "University of Melbourne", "kind": "talks", "english": true, "confidence": 0.8, "why": "Cognitive neuroscience hub presentations"}
+{"pid": "PLxQZtCFIOhIb3tHBVJGUr1gER2DshjRa1", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.9, "why": "Bare subject word on unplaced personal channel"}
+{"pid": "PLIKv9GiyMTm-ZxREfJstibOq7gzK7NNt2", "keep": true, "inst": "Boston University (Center for Brain Recovery)", "kind": "talks", "english": true, "confidence": 0.8, "why": "Neuroscience conference talks from BU"}
+{"pid": "PLVV8RE-OsvxeINGjCQpkTVBDUv_6DygPB", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.9, "why": "Generic title on unplaced personal channel"}
+{"pid": "PLNplVslyAwAepA088v8OQql4D5jrw66cI", "keep": true, "inst": "University of Melbourne", "kind": "talks", "english": true, "confidence": 0.8, "why": "Cognitive neuroscience hub presentations"}
+{"pid": "PLQb15lhsTIyLKRdSxJH0AVSQdm0pGQ3eU", "keep": false, "inst": "", "kind": "talks", "english": true, "confidence": 0.65, "why": "JHU-IITD technology seminar, not psychology"}
+{"pid": "PLa6nngtYVzYHWVqBIJiiSYx4o633Vwg4Z", "keep": false, "inst": "", "kind": "talks", "english": true, "confidence": 0.7, "why": "Personal curated playlist of one speaker's talks"}
+{"pid": "PLj4TQJQsJI1aVEyfOy91WybhKYcRSDxng", "keep": true, "inst": "Center for Philosophy of Science (University of Pittsburgh)", "kind": "series", "english": true, "confidence": 0.65, "why": "Philosophy of cognitive science series from a university centre"}
+{"pid": "PLVHY3HvnI6yNK5dqT9FNkqxAbvzf9Ydu9", "keep": true, "inst": "Biola University", "kind": "talks", "english": true, "confidence": 0.55, "why": "University conference on neuroscience, mind and the soul"}
+{"pid": "PLS0Z3q_IH63IHT1J25rjOqcPbUvOB22bj", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.9, "why": "Bare subject word on unplaced personal channel"}
+{"pid": "PLzv9IER0k11nDau03-m4lhIZ1EUNcjZhi", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.9, "why": "Bare subject word on unplaced personal channel"}
+{"pid": "PLwztLq8L6GzEHjFPcbbj5JT2DmT1a9A-l", "keep": true, "inst": "Harvard University (Human Flourishing Program)", "kind": "series", "english": true, "confidence": 0.45, "why": "Harvard seminar series on character and flourishing; borderline subject"}
+{"pid": "PLiABNpSFzEHniEuI26SI1d04YUVfIpF8t", "keep": true, "inst": "Tianqiao and Chrissy Chen Institute", "kind": "talks", "english": true, "confidence": 0.7, "why": "Chen Institute-hosted BU neuroscience conference talks"}
+{"pid": "PLYq7WW565SZith6dEA7FvtLMzJY7HjpHn", "keep": true, "inst": "Hebrew University of Jerusalem (ELSC)", "kind": "talks", "english": true, "confidence": 0.85, "why": "ELSC brain sciences Heller lectures"}
+{"pid": "PL99GXYwmYD5U3pfaEhLAI7D1Mu1ndni74", "keep": true, "inst": "Rutgers University", "kind": "talks", "english": true, "confidence": 0.9, "why": "Rutgers Center for Cognitive Science colloquium series"}
+{"pid": "PLFriqNBPH1GBk3C_JLtMaNUWQtIps9GPS", "keep": false, "inst": "", "kind": "talks", "english": true, "confidence": 0.65, "why": "Research group video capsules, likely short clips, unplaced"}
