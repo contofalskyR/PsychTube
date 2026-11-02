@@ -453,7 +453,7 @@
     }
     if (v.p === "panopto") {
       box.innerHTML = `<div id="player"></div>`;
-      loadScript(`https://${v.host}/Panopto/Scripts/EmbedApi.js`, () => !!window.EmbedApi, 8000).then(() => {
+      loadScript("https://developers.panopto.com/scripts/embedapi.min.js", () => !!window.EmbedApi, 8000).then(() => {
         let api = null;
         const poll = () => { try { const t = api.getCurrentTime(); const d = api.getDuration(); if (t > 0) record(t, d); } catch (e) { /* not ready */ } };
         api = new window.EmbedApi("player", { width: "100%", height: "100%", serverName: v.host, sessionId: v.id,
