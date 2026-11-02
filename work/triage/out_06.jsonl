@@ -1,0 +1,150 @@
+{"pid": "PLdsMpUardfwryh7cWSBMrEH0GUSKYQcr1", "keep": false, "inst": "University of Groningen", "kind": "series", "english": true, "confidence": 0.9, "why": "Sustainability history, off-subject"}
+{"pid": "PLdsMpUardfwpeU4-456H6UkNeHl1IV3Xw", "keep": false, "inst": "University of Groningen", "kind": "talks", "english": true, "confidence": 0.7, "why": "Faculty-wide catch-all, mostly promo and campus content"}
+{"pid": "PLOXMF9cWDnyg9Wb4Mhyw2WXyROKd84pyg", "keep": false, "inst": "Radboudumc", "kind": "series", "english": false, "confidence": 0.95, "why": "Dutch physiotherapy exercises, not psychology"}
+{"pid": "PLOXMF9cWDnyjrElC3FH22lyAo2_hVD4Rp", "keep": false, "inst": "Radboudumc", "kind": "series", "english": false, "confidence": 0.95, "why": "Turkish patient-information animations"}
+{"pid": "PLOXMF9cWDnyiN-FskSPvFoQa1ioV6D738", "keep": false, "inst": "Radboudumc", "kind": "series", "english": false, "confidence": 0.95, "why": "Arabic patient-information animations"}
+{"pid": "PLOXMF9cWDnyhdTzX8zgSWSWFQcFiYsn7D", "keep": false, "inst": "Radboudumc", "kind": "series", "english": true, "confidence": 0.9, "why": "Children's hospital patient animations, not lectures"}
+{"pid": "PLOXMF9cWDnygAoUGVN7TqqaxVFQKhdOqE", "keep": false, "inst": "Radboudumc", "kind": "talks", "english": false, "confidence": 0.8, "why": "Dutch staff profile videos"}
+{"pid": "PLg9CTsQv-ZWYk9_Dy6P0vVa9bCqU8sDnT", "keep": false, "inst": "Radboud University", "kind": "talks", "english": true, "confidence": 0.9, "why": "Campus wellbeing week, not lectures"}
+{"pid": "PLlVzcjcfTvt6IX6n-t0ifoJ7RGUTI4ghY", "keep": false, "inst": "Tilburg University", "kind": "series", "english": true, "confidence": 0.6, "why": "Management decision-making explainer, three short clips"}
+{"pid": "PLlVzcjcfTvt5twtUigkxY8Scyxp4b6s1I", "keep": false, "inst": "Tilburg University", "kind": "series", "english": false, "confidence": 0.9, "why": "Dutch study-choice guidance for applicants"}
+{"pid": "PLlVzcjcfTvt72O1N_Fd6N2P4Rmzgs1UbQ", "keep": true, "inst": "Tilburg University", "kind": "course", "english": true, "confidence": 0.85, "why": "Social psychology course lectures by Dr. Tila Pronk"}
+{"pid": "PLlVzcjcfTvt7lGQziyjw8NzLdkw4fpYJE", "keep": false, "inst": "Tilburg University", "kind": "course", "english": false, "confidence": 0.9, "why": "Dutch-language version of the social psychology course"}
+{"pid": "PLlVzcjcfTvt4zkKM5GkutZ0nxvkUDg9xS", "keep": false, "inst": "Tilburg University", "kind": "talks", "english": true, "confidence": 0.9, "why": "Academic recognition policy opinions, not psychology"}
+{"pid": "PLB0B59B7A661E7BC3", "keep": false, "inst": "Tilburg University", "kind": "talks", "english": true, "confidence": 0.6, "why": "School-wide catch-all, mixed promo content"}
+{"pid": "PLdJOSyZA7wJ1khPxRfkdTw2i9QHtukheD", "keep": false, "inst": "The Chinese University of Hong Kong", "kind": "talks", "english": false, "confidence": 0.9, "why": "Alumni profile videos in Chinese"}
+{"pid": "PLdJOSyZA7wJ2oYUx0kflsY5-PifzK-yvO", "keep": false, "inst": "The Chinese University of Hong Kong", "kind": "talks", "english": true, "confidence": 0.55, "why": "General social science public lectures, not psychology-specific"}
+{"pid": "PLQClk1j6OpDRf9cbgzqfpKKWZpahobbCX", "keep": false, "inst": "The University of Hong Kong", "kind": "talks", "english": true, "confidence": 0.75, "why": "Faculty promo playlist, not lectures"}
+{"pid": "PLcDxx1De7CZ2PVzpbEZHHc1r7FxbuzLPg", "keep": false, "inst": "Weizmann Institute of Science", "kind": "series", "english": true, "confidence": 0.85, "why": "Children's general science Q&A, not psychology"}
+{"pid": "PLcDxx1De7CZ1XJoJYqd8-c83R53TunKFb", "keep": true, "inst": "Weizmann Institute of Science", "kind": "talks", "english": true, "confidence": 0.45, "why": "Brain sciences videos on institute channel, form unclear"}
+{"pid": "PLT-roSWIpp1HEMVS3OnVCKXRDnPSDm-uY", "keep": true, "inst": "Hebrew University of Jerusalem", "kind": "talks", "english": true, "confidence": 0.5, "why": "Psychiatry playlist on university channel, form unclear"}
+{"pid": "PLT-roSWIpp1Gs60ZULB6TwTaUk4X1-I76", "keep": false, "inst": "Hebrew University of Jerusalem", "kind": "talks", "english": true, "confidence": 0.9, "why": "Machine learning and AI, off-subject"}
+{"pid": "PLT-roSWIpp1F26zRxt83YpYgQ-s6yBUl2", "keep": true, "inst": "Hebrew University of Jerusalem", "kind": "talks", "english": true, "confidence": 0.5, "why": "ELSC molecular and cellular neuroscience talks"}
+{"pid": "PLT-roSWIpp1F0_FTfDxG1w5tWSrs4RyaH", "keep": true, "inst": "Hebrew University of Jerusalem", "kind": "talks", "english": true, "confidence": 0.65, "why": "Borderline personality disorder conference talks"}
+{"pid": "PLF6EA550F4ED1B2DD", "keep": true, "inst": "Hebrew University of Jerusalem", "kind": "talks", "english": true, "confidence": 0.55, "why": "Neurodegeneration research talks from the university"}
+{"pid": "PLDBB777ED9674B4B7", "keep": true, "inst": "Hebrew University of Jerusalem", "kind": "talks", "english": true, "confidence": 0.4, "why": "Brain sciences centre playlist, likely seminars mixed with promo"}
+{"pid": "PL5E98C85CCC397732", "keep": false, "inst": "Hebrew University of Jerusalem", "kind": "talks", "english": false, "confidence": 0.7, "why": "Hebrew faculty promo playlist"}
+{"pid": "PLwdnzlV3ogoV-3UZ_LTOJpsmraIkMtml0", "keep": false, "inst": "IIT Guwahati (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Immunology course, off-subject"}
+{"pid": "PLwdnzlV3ogoUMLcmv0Wnc1P7brzqZjSPd", "keep": false, "inst": "IIT Guwahati (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Applied AI course, off-subject"}
+{"pid": "PLwdnzlV3ogoXxAPrZzNzJataqIPzGaD-9", "keep": false, "inst": "IIT Guwahati (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Neural networks for vision and NLP, machine learning"}
+{"pid": "PLwdnzlV3ogoX4SD3zjQrtYKmvcmBiDvI0", "keep": false, "inst": "IIT Guwahati (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Bioprocess engineering, off-subject"}
+{"pid": "PLwdnzlV3ogoUM4sJRkRJQQhCLCzenlhlZ", "keep": false, "inst": "IIT Guwahati (NPTEL)", "kind": "course", "english": true, "confidence": 0.65, "why": "Organizational training and HR course, management not psychology"}
+{"pid": "PLwdnzlV3ogoVEQrQH0UcaGq_SF2CpTnq7", "keep": false, "inst": "IIT Guwahati (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Welded structure fatigue analysis, engineering"}
+{"pid": "PLwdnzlV3ogoXq8QCfGrzJhf8g7FdCeiEM", "keep": false, "inst": "IIT Guwahati (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Photonic crystals, physics"}
+{"pid": "PLwdnzlV3ogoVgNpU8-XFYv_U3Q16FhHuo", "keep": true, "inst": "IIT Guwahati (NPTEL)", "kind": "course", "english": true, "confidence": 0.9, "why": "Psychology of language course, psycholinguistics"}
+{"pid": "PLwdnzlV3ogoXHhhdNAx8WNnb9wUhfvn4N", "keep": true, "inst": "IIT Guwahati (NPTEL)", "kind": "course", "english": true, "confidence": 0.65, "why": "Consumer psychology course from NPTEL"}
+{"pid": "PLwdnzlV3ogoWuWRCktCOBSvKWVn3pKVRG", "keep": true, "inst": "IIT Guwahati (NPTEL)", "kind": "course", "english": true, "confidence": 0.9, "why": "Psychology of emotion course"}
+{"pid": "PLwdnzlV3ogoXB2TlTWYFI5d2aGf7PNSuK", "keep": true, "inst": "IIT Guwahati (NPTEL)", "kind": "course", "english": true, "confidence": 0.7, "why": "Human behaviour course in NPTEL humanities"}
+{"pid": "PLwdnzlV3ogoVhUuHDwFHzCj325BtEGZei", "keep": true, "inst": "IIT Guwahati (NPTEL)", "kind": "course", "english": true, "confidence": 0.9, "why": "Stress, health and well-being psychology course"}
+{"pid": "PLwdnzlV3ogoU3HbyjiezYgJ-42FL3FG-w", "keep": true, "inst": "IIT Guwahati (NPTEL)", "kind": "course", "english": true, "confidence": 0.75, "why": "Language, culture and cognition course"}
+{"pid": "PLwdnzlV3ogoVY4srFysUvT1UGiv6d-_1e", "keep": true, "inst": "IIT Guwahati (NPTEL)", "kind": "course", "english": true, "confidence": 0.9, "why": "Bilingualism cognitive and psycholinguistic course"}
+{"pid": "PLwdnzlV3ogoWepo76qrO7SNTnXK1heZNf", "keep": true, "inst": "IIT Guwahati (NPTEL)", "kind": "course", "english": true, "confidence": 0.45, "why": "Individual-level organizational behaviour, borderline psychology"}
+{"pid": "PLwdnzlV3ogoX8Guw6jEVdspn21ueKV0ib", "keep": false, "inst": "IIT Guwahati (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Materials engineering, off-subject"}
+{"pid": "PLbRMhDVUMngfe2sS0MZ_tFBiQrerbxqye", "keep": false, "inst": "IIT Kharagpur (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Statistical and machine learning methods"}
+{"pid": "PLbRMhDVUMngd7TO4neo4G1gMSQCHCQ9rE", "keep": false, "inst": "IIT Kharagpur (NPTEL)", "kind": "course", "english": true, "confidence": 0.6, "why": "Professional-development study skills, not psychology proper"}
+{"pid": "PLbRMhDVUMngfPcus64bq40OPyuzSKex2D", "keep": false, "inst": "IIT Kharagpur (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Carbon capture, engineering"}
+{"pid": "PLbRMhDVUMngeK3WdGkMUGwhNXSWlhS2ua", "keep": true, "inst": "IIT Kharagpur (NPTEL)", "kind": "course", "english": true, "confidence": 0.85, "why": "Child growth and development foundational course"}
+{"pid": "PLbRMhDVUMngc14Ahh4Q-OpaOtsdBaiXYb", "keep": false, "inst": "IIT Kharagpur (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Adsorption science, engineering"}
+{"pid": "PLbRMhDVUMngcfssPF7Lrk5wmvBwZ6jP1s", "keep": false, "inst": "IIT Kharagpur (NPTEL)", "kind": "course", "english": true, "confidence": 0.8, "why": "Language documentation tools, descriptive linguistics"}
+{"pid": "PLbRMhDVUMngfDxDq-EhY6sDtIPsi6kp0y", "keep": false, "inst": "IIT Kharagpur (NPTEL)", "kind": "course", "english": true, "confidence": 0.65, "why": "General linguistics introduction, not psycholinguistics"}
+{"pid": "PLbRMhDVUMngfGdEAjYe90y_MTBOjhuILG", "keep": true, "inst": "IIT Kharagpur (NPTEL)", "kind": "course", "english": true, "confidence": 0.45, "why": "Adolescent development and well-being course, partly health"}
+{"pid": "PLbRMhDVUMngeu3ftA8x_l6CKQir4qQIuF", "keep": true, "inst": "IIT Kharagpur (NPTEL)", "kind": "course", "english": true, "confidence": 0.5, "why": "Behavioral finance course with behavioral economics content"}
+{"pid": "PLbRMhDVUMngcx-ATexXZH_-u1wsIGIiyS", "keep": false, "inst": "IIT Kharagpur (NPTEL)", "kind": "course", "english": true, "confidence": 0.9, "why": "Pattern recognition, machine learning"}
+{"pid": "PLp6ek2hDcoNDDRINFiWGDlPKUwW-g1Hjk", "keep": false, "inst": "IIT Delhi (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Large language models, off-subject"}
+{"pid": "PLp6ek2hDcoNDiczxIkf_F500ChBxDNu5w", "keep": false, "inst": "IIT Delhi (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Corrosion and surface engineering"}
+{"pid": "PLp6ek2hDcoNBDFAjQQns7Gj0kYnKglwIr", "keep": false, "inst": "IIT Delhi (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Experimental modal analysis, engineering"}
+{"pid": "PLp6ek2hDcoND-Q0SsxidsO3T0Y4RSXtUU", "keep": false, "inst": "IIT Delhi (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Polymer mechanics, engineering"}
+{"pid": "PLp6ek2hDcoNALWidcTcFur34atzXNYHjD", "keep": false, "inst": "IIT Delhi (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Product design, engineering"}
+{"pid": "PLp6ek2hDcoNB_YJCruBFjhF79f5ZHyBuz", "keep": false, "inst": "IIT Delhi (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Introduction to artificial intelligence, computer science"}
+{"pid": "PLbMVogVj5nJQRQtVm1VMFvu3KDxqn4A2W", "keep": false, "inst": "NPTEL", "kind": "talks", "english": true, "confidence": 0.9, "why": "Regional language workshop, not psychology"}
+{"pid": "PLbMVogVj5nJRleQY-lYFPnFs1Ki9MDrWw", "keep": false, "inst": "NPTEL", "kind": "course", "english": true, "confidence": 0.95, "why": "Electronic materials, engineering"}
+{"pid": "PLbMVogVj5nJQ6Boh648vVQXl-bRQ3rlpJ", "keep": false, "inst": "NPTEL", "kind": "course", "english": true, "confidence": 0.95, "why": "X-ray diffraction and electron microscopy"}
+{"pid": "PLbMVogVj5nJTIQTtu0p16r71cxt77VKcG", "keep": false, "inst": "NPTEL", "kind": "course", "english": true, "confidence": 0.9, "why": "Nutrition and therapeutics, not psychology"}
+{"pid": "PLbMVogVj5nJTkg7CN-d_rwRoM7NzX3dTf", "keep": true, "inst": "NPTEL", "kind": "course", "english": true, "confidence": 0.9, "why": "Selected topics in psychology, humanities course"}
+{"pid": "PLbMVogVj5nJQNic4CtnJprkHsQE4jj3M8", "keep": true, "inst": "NPTEL", "kind": "course", "english": true, "confidence": 0.9, "why": "Philosophy of mind and cognition course"}
+{"pid": "PLbMVogVj5nJSrNC8yTkDpzu5uRzX5re9q", "keep": false, "inst": "NPTEL", "kind": "course", "english": true, "confidence": 0.9, "why": "English literature, off-subject"}
+{"pid": "PLbMVogVj5nJQYXoO3foSZ6CrU7aCCwTsb", "keep": false, "inst": "NPTEL", "kind": "course", "english": true, "confidence": 0.55, "why": "Management organizational behaviour course, not psychology proper"}
+{"pid": "PLbMVogVj5nJTo1na559Me_hdk_gvp9HT0", "keep": false, "inst": "NPTEL", "kind": "course", "english": true, "confidence": 0.65, "why": "Consumer behaviour, marketing"}
+{"pid": "PLyqSpQzTE6M9j0C1ZbnRbBzhoBot1t3e4", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Pharmacotherapeutics, medicine"}
+{"pid": "PLyqSpQzTE6M86vNbPNpIiq7HPn5RJAp6o", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Machine learning foundations"}
+{"pid": "PLyqSpQzTE6M9Of9nA7K0ltQudBpA7lV2n", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "AI governance, policy"}
+{"pid": "PLyqSpQzTE6M9eHB0QosKobGRIo29eq0mD", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Data mining, off-subject"}
+{"pid": "PLyqSpQzTE6M--6-9h0I76mUo39n_mtXmB", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "AI for management"}
+{"pid": "PLyqSpQzTE6M-GrmRMG-WQJpnPzpd0qcO3", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Predictive modelling, machine learning"}
+{"pid": "PLyqSpQzTE6M8MSx5ALxk1i8csalBSSEAn", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Electron microscopy, off-subject"}
+{"pid": "PLyqSpQzTE6M8gHdhW5T--Sm2R8OdneAqx", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.8, "why": "Social theory, sociology"}
+{"pid": "PLyqSpQzTE6M-5zcUWUnbVNwnOhdsKDVt3", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.85, "why": "Migration and development, social science"}
+{"pid": "PLyqSpQzTE6M_vZCMaDwX1tyyKnKWEZFeE", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.9, "why": "Memory device hardware for computing"}
+{"pid": "PLyqSpQzTE6M_U1D_xkcJI4xjH_0FgMBBN", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "AI in drug discovery"}
+{"pid": "PLyqSpQzTE6M_CHrvee16y96PuoO5vGbX-", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Pharmaceutical crystal engineering"}
+{"pid": "PLyqSpQzTE6M8fH6RIzxB5zfGMQ8LXMFnZ", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Prestressed concrete design"}
+{"pid": "PLyqSpQzTE6M-v5Caeh9IF34tYPQwACISd", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.9, "why": "AI and law"}
+{"pid": "PLyqSpQzTE6M90ugeRlfFFlmRVIcQ_t0Av", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.8, "why": "Virtual reality and AI, computing"}
+{"pid": "PLyqSpQzTE6M8Cj8xY_mNYaM4_qEX-Dvxu", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Cost accounting"}
+{"pid": "PLyqSpQzTE6M8BNX3ZIRLIM2Tqk6soiB7A", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.9, "why": "Marketing research"}
+{"pid": "PLyqSpQzTE6M938cjJPW81B9kVSmK3Hl6Z", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.65, "why": "Game-based teaching methods, education"}
+{"pid": "PLyqSpQzTE6M_VMmp268DcyAcBoxydjM9l", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "talks", "english": true, "confidence": 0.95, "why": "Technology forecasting live session"}
+{"pid": "PLyqSpQzTE6M-nTyC4_lI_U8zL59Xs2WR6", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.7, "why": "Sports training and recovery, exercise science"}
+{"pid": "PLyqSpQzTE6M_68YmFFmjAAvTMne3xq9jf", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Business intelligence and analytics"}
+{"pid": "PLyqSpQzTE6M-eJnO4QjgcoilSpOqNdGZG", "keep": true, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.85, "why": "Sports psychology course"}
+{"pid": "PLyqSpQzTE6M_o7BK7elYgzofH324WetjQ", "keep": true, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.85, "why": "Neuroscience of human movement course"}
+{"pid": "PLyqSpQzTE6M91QQRszLbb7QYKrD1EYJx8", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.9, "why": "General artificial intelligence, computer science"}
+{"pid": "PLyqSpQzTE6M8N9lDWllq6NqB5dmpy6gtc", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "AI search methods, computer science"}
+{"pid": "PLyqSpQzTE6M_O8VwHbQCv5p0W_BMZSbtk", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.55, "why": "General language science, psycholinguistic content unclear"}
+{"pid": "PLyqSpQzTE6M_e1fi74KcCZzVh458jzWWJ", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.8, "why": "Sociolinguistics, social rather than cognitive"}
+{"pid": "PLyqSpQzTE6M9QPU_tubmtQ97e7zRpaMlD", "keep": false, "inst": "IIT Madras (NPTEL)", "kind": "course", "english": true, "confidence": 0.95, "why": "Materials mechanics, engineering"}
+{"pid": "PLZgj2SWrOySQ", "keep": false, "inst": "SwaVIDYA", "kind": "course", "english": true, "confidence": 0.7, "why": "Unofficial NPTEL re-upload channel, soft skills"}
+{"pid": "PLMq6xgHhK3EQ", "keep": false, "inst": "SwaVIDYA", "kind": "course", "english": true, "confidence": 0.6, "why": "Third-party NPTEL channel with assignment-solution content, not institutional"}
+{"pid": "PLaJLTY8acLBc", "keep": false, "inst": "SwaVIDYA", "kind": "course", "english": true, "confidence": 0.6, "why": "Third-party NPTEL channel with assignment-solution content, not institutional"}
+{"pid": "PLRjxB93EPmgA", "keep": false, "inst": "SwaVIDYA", "kind": "course", "english": true, "confidence": 0.95, "why": "Environmental science, third-party channel"}
+{"pid": "PLFQcpH9pCK2o", "keep": false, "inst": "SwaVIDYA", "kind": "course", "english": true, "confidence": 0.95, "why": "AI techniques, off-subject"}
+{"pid": "PLLzjNnV_qlvU", "keep": false, "inst": "SwaVIDYA", "kind": "course", "english": true, "confidence": 0.95, "why": "Machine learning, off-subject"}
+{"pid": "PLILGmVUXD1VU", "keep": false, "inst": "SwaVIDYA", "kind": "course", "english": true, "confidence": 0.95, "why": "Social media privacy and security, computing"}
+{"pid": "PLKbJpLN03ctY", "keep": false, "inst": "SwaVIDYA", "kind": "course", "english": true, "confidence": 0.75, "why": "Soft skills, third-party channel"}
+{"pid": "PLVmqN7I_Di0hhCiZh4RBgcoeLDXV-TQLd", "keep": false, "inst": "SwaVIDYA", "kind": "course", "english": true, "confidence": 0.95, "why": "Business analytics, off-subject"}
+{"pid": "PLVmqN7I_Di0hyq2M3TWvco5bFixGqKqFO", "keep": false, "inst": "SwaVIDYA", "kind": "course", "english": true, "confidence": 0.95, "why": "Programming, off-subject"}
+{"pid": "PLVmqN7I_Di0hc84O-YXW6BEKL8u8JyraM", "keep": false, "inst": "SwaVIDYA", "kind": "course", "english": true, "confidence": 0.95, "why": "Machine learning, off-subject"}
+{"pid": "PLVmqN7I_Di0hu4WkA-R0-0_PE2ViMFbZj", "keep": false, "inst": "SwaVIDYA", "kind": "course", "english": true, "confidence": 0.95, "why": "Deep learning, off-subject"}
+{"pid": "PLVmqN7I_Di0joZfY4bx_hN71q3vFf_OG_", "keep": false, "inst": "SwaVIDYA", "kind": "course", "english": true, "confidence": 0.95, "why": "Sustainability education, off-subject"}
+{"pid": "PLVmqN7I_Di0iGWvsrv5Zdd0o8XDB7pRFG", "keep": false, "inst": "SwaVIDYA", "kind": "course", "english": true, "confidence": 0.95, "why": "Assignment-solution videos on LLMs, off-subject"}
+{"pid": "PLV9WJDAawyhbpcAfK5NcE8bW_weuvrXoY", "keep": false, "inst": "NIH / NIMH", "kind": "series", "english": true, "confidence": 0.7, "why": "Children's brain education series, not lectures"}
+{"pid": "PLV9WJDAawyhZbF1KBKU15hqz-KQ7J4Rx3", "keep": true, "inst": "NIH / NIMH", "kind": "talks", "english": true, "confidence": 0.6, "why": "BRAIN Initiative cell atlas workshop talks"}
+{"pid": "PLV9WJDAawyhbl3s8WTEbZdoobVvSj8CTD", "keep": true, "inst": "NIH / NIMH", "kind": "series", "english": true, "confidence": 0.7, "why": "Global mental health research webinar series"}
+{"pid": "PLV9WJDAawyhba2_8_D82ZQyjgfAvNO9d_", "keep": false, "inst": "NIH / NIMH", "kind": "talks", "english": true, "confidence": 0.65, "why": "Data archive how-to webinars, not psychology content"}
+{"pid": "PLV9WJDAawyha8vhnQLP3JHrJyWznTGSde", "keep": true, "inst": "NIH / NIMH", "kind": "talks", "english": true, "confidence": 0.45, "why": "Fellows' three-minute research talks"}
+{"pid": "PLV9WJDAawyhYkwzcv4lbkKNkv2Y9Y2OcP", "keep": false, "inst": "NIH / NIMH", "kind": "series", "english": true, "confidence": 0.65, "why": "Clinical trial information videos"}
+{"pid": "PLV9WJDAawyhaUp7JtXKdJe223tdoC28aw", "keep": false, "inst": "NIH / NIMH", "kind": "talks", "english": true, "confidence": 0.55, "why": "Social media outreach livestreams, mixed format"}
+{"pid": "PLV9WJDAawyhazoVQcFkX4WWBNuadrO9FW", "keep": false, "inst": "NIH / NIMH", "kind": "talks", "english": true, "confidence": 0.95, "why": "Recruitment videos, not lectures"}
+{"pid": "PLV9WJDAawyhYHL8q1nS8hNm-q7tY_M8hA", "keep": false, "inst": "NIH / NIMH", "kind": "talks", "english": true, "confidence": 0.8, "why": "Grant funding guidance, not psychology content"}
+{"pid": "PLV9WJDAawyhbsmNxaxyD9h5YyWI-pE_tr", "keep": false, "inst": "NIH / NIMH", "kind": "series", "english": true, "confidence": 0.55, "why": "Public-information videos on depression, not lectures"}
+{"pid": "PLV9WJDAawyhYRmN-5LPY_E3Alvh6OtnRb", "keep": false, "inst": "NIH / NIMH", "kind": "series", "english": true, "confidence": 0.55, "why": "Public-information videos on youth mental health, not lectures"}
+{"pid": "PLV9WJDAawyhbQb_DSKe3rjc9j_dOykynB", "keep": false, "inst": "NIH / NIMH", "kind": "series", "english": true, "confidence": 0.85, "why": "Short-form videos"}
+{"pid": "PLV9WJDAawyhZDKgzrExDJUjfJQX41Coky", "keep": false, "inst": "NIH / NIMH", "kind": "series", "english": true, "confidence": 0.9, "why": "Institute promo videos"}
+{"pid": "PLV9WJDAawyhaM2Pd91n8TdQq2TFbe6gYT", "keep": false, "inst": "NIH / NIMH", "kind": "series", "english": true, "confidence": 0.55, "why": "Research overview and lab profile videos, mostly promo"}
+{"pid": "PLV9WJDAawyhbk4a96FsaAS4zFg42L911e", "keep": false, "inst": "NIH / NIMH", "kind": "series", "english": true, "confidence": 0.9, "why": "Study recruitment videos"}
+{"pid": "PLV9WJDAawyhZ7LplKbvNfDmqzl2JjMIqx", "keep": true, "inst": "NIH / NIMH", "kind": "series", "english": true, "confidence": 0.8, "why": "Director's innovation speaker series talks"}
+{"pid": "PLV9WJDAawyhaYaUJBlOY9YqaRypkCJR9Z", "keep": false, "inst": "NIH / NIMH", "kind": "talks", "english": true, "confidence": 0.5, "why": "BRAIN Initiative overview videos, form unclear"}
+{"pid": "PLA6E2001441568A69", "keep": false, "inst": "NIH / NIMH", "kind": "series", "english": true, "confidence": 0.55, "why": "Suicide prevention public awareness videos"}
+{"pid": "PL96D12C9E37DFDA2C", "keep": false, "inst": "NIH / NIMH", "kind": "series", "english": true, "confidence": 0.8, "why": "Patient and family information videos"}
+{"pid": "PLaTCrA79FLSw0o_AS8Fx6orjhEW8CsjJg", "keep": false, "inst": "Ashoka University", "kind": "talks", "english": true, "confidence": 0.85, "why": "Parent testimonial videos"}
+{"pid": "PLaTCrA79FLSzMSgG0EmcR_iJ0ou-ZfSAX", "keep": false, "inst": "Ashoka University", "kind": "talks", "english": true, "confidence": 0.9, "why": "AI webinars, off-subject"}
+{"pid": "PLaTCrA79FLSxdVW_VCMuuy_SYF0fv2FbW", "keep": false, "inst": "Ashoka University", "kind": "talks", "english": true, "confidence": 0.85, "why": "Education technology during COVID, off-subject"}
+{"pid": "PLTlLR06vZNd-kPkNdKVS5YRs6qcW5AMqX", "keep": false, "inst": "National Institute of Mental Health, Sri Lanka", "kind": "talks", "english": true, "confidence": 0.85, "why": "Short film competition entries, not lectures"}
+{"pid": "PLTlLR06vZNd9lPfYvb2UBPDRbE0ndlR28", "keep": false, "inst": "National Institute of Mental Health, Sri Lanka", "kind": "series", "english": true, "confidence": 0.7, "why": "COVID public awareness videos, not lectures"}
+{"pid": "PLE4ZNGaomJBmp4e1GBcWVeNHVEQMDikSa", "keep": true, "inst": "NIH / NIDA", "kind": "series", "english": true, "confidence": 0.45, "why": "Addiction neuroscience video series, form partly unclear"}
+{"pid": "PLE4ZNGaomJBlBGLXqwtfjyfmYEZLDmpka", "keep": false, "inst": "NIH / NIDA", "kind": "series", "english": true, "confidence": 0.55, "why": "Teen classroom science explainers, not lectures"}
+{"pid": "PLE4ZNGaomJBk7EQDTcFQyWtKN92tqIUx1", "keep": false, "inst": "NIH / NIDA", "kind": "series", "english": true, "confidence": 0.5, "why": "Short explainer series, form unclear"}
+{"pid": "PLE4ZNGaomJBnkJ9WNXO14RL1ln_RfQEGa", "keep": false, "inst": "NIH / NIDA", "kind": "series", "english": false, "confidence": 0.95, "why": "Spanish-language videos"}
+{"pid": "PLPxPXWXQmUjjM9qsfQz140yQx_Qy2ktCN", "keep": false, "inst": "NIH / NIAAA", "kind": "series", "english": true, "confidence": 0.7, "why": "Virtual-reality educational clips, not lectures"}
+{"pid": "PLZlVBTf7N6Go0BHYp4XaNmhxWBGCYd8Kh", "keep": false, "inst": "Santa Fe Institute", "kind": "talks", "english": true, "confidence": 0.75, "why": "Stochastic thermodynamics workshop, physics"}
+{"pid": "PLZlVBTf7N6Gp5Pb02ra1qtsGDKTP4O5Jf", "keep": true, "inst": "Santa Fe Institute", "kind": "talks", "english": true, "confidence": 0.55, "why": "Embodied and grounded cognition workshop talks"}
+{"pid": "PLWAzLum_3a19nBPWMWjsvYMnLb7e_zio7", "keep": true, "inst": "Simons Foundation", "kind": "series", "english": true, "confidence": 0.8, "why": "Presidential lectures on neuroscience and autism"}
+{"pid": "PLWAzLum_3a1_oJyDMylOrs489bbInROTz", "keep": false, "inst": "Simons Foundation", "kind": "talks", "english": true, "confidence": 0.95, "why": "Deep learning theory meeting, off-subject"}
+{"pid": "PLWAzLum_3a192e7-mhoUwR2KMWnIbFtiY", "keep": false, "inst": "Simons Foundation", "kind": "talks", "english": true, "confidence": 0.95, "why": "Cosmology and machine learning meeting, off-subject"}
+{"pid": "PLWAzLum_3a18mI5sFg-DSUInbpvPonKeZ", "keep": true, "inst": "Simons Foundation", "kind": "talks", "english": true, "confidence": 0.7, "why": "Global Brain collaboration annual meeting talks"}
+{"pid": "PLWAzLum_3a189riT98skBVNtDHKbOJjTa", "keep": true, "inst": "Simons Foundation", "kind": "series", "english": true, "confidence": 0.8, "why": "Presidential lectures on neuroscience and autism"}
+{"pid": "PLWAzLum_3a184sPUMjEaEBUzqwvtaJF0e", "keep": true, "inst": "Simons Foundation", "kind": "series", "english": true, "confidence": 0.8, "why": "Presidential lectures on the neuroscience of sleep"}
+{"pid": "PLWAzLum_3a1_fmBb006XAo1rDw4wPHOyd", "keep": false, "inst": "Simons Foundation", "kind": "series", "english": true, "confidence": 0.95, "why": "Machine learning in natural sciences, off-subject"}
+{"pid": "PLWAzLum_3a1-xX65CauX_vuLXN8MUmVdL", "keep": true, "inst": "Simons Foundation", "kind": "series", "english": true, "confidence": 0.85, "why": "Presidential lectures on the social brain"}
+{"pid": "PLWAzLum_3a1_sXgDY-m4ILFl6eHFRZ6Og", "keep": true, "inst": "Simons Foundation", "kind": "series", "english": true, "confidence": 0.85, "why": "Autism science lecture series"}
+{"pid": "PLWAzLum_3a1_milt-9rk3GsdWrxUz7_nL", "keep": true, "inst": "Simons Foundation", "kind": "series", "english": true, "confidence": 0.75, "why": "Autism emerging concepts lecture series"}
