@@ -5,9 +5,14 @@ account-free video site built from community vouches (Hacker News via HackerTube
 psychology subreddits via the Arctic Shift archive, and Psychology & Neuroscience Stack Exchange),
 with the receipts on every card and "handle with care" notes on findings that didn't hold up —
 plus an **institutional tier**: complete psychology courses that universities, their lecturers and
-scientific institutions published on YouTube (MIT OpenCourseWare, Yale Courses, Stanford, the IITs
-via NPTEL, Gresham College, the Royal Institution, professors' own channels…), every lecture in
-order, marked "published by" instead of a vouch count.
+scientific institutions published publicly — on YouTube (MIT OpenCourseWare, Yale Courses, Stanford,
+the IITs via NPTEL, Gresham College, the Royal Institution, professors' own channels…), on a
+university's own Panopto (Steven Pinker's Harvard courses) and on the Internet Archive (UC Berkeley's
+webcast courses) — every lecture in order, marked "published by" instead of a vouch count.
+
+The live site also keeps a **lecture tracker** in the browser: where you stopped in each lecture,
+which lectures of a course you've finished, "continue watching" and "your courses" on the home page,
+and an up-next panel when a lecture ends. Nothing leaves the browser; Settings → Export moves it.
 
 Built in the spirit of Andrej Karpathy's [HackerTube](https://hackertube.org).
 
@@ -36,6 +41,7 @@ pipeline/              scripts that build data.js
   taxonomy.json        50 topics in 9 areas + contested-findings notes + content-note ids
   build_catalog.py     merges every source, scores, groups series, writes site/data.js
   make_inst_batches.py writes the labeling inputs for university playlists (course cards + per-lecture topics)
+  assemble_candidates.py turns the channel/topic sweep (raw/sweep/) into triage batches (work/triage/)
   build_artifact.py    writes site/hosted/ from site/ + raw/youtube/thumbs_*.json
   overrides.json       manual label corrections applied on top of the LLM labels
   NOTES.md             how each source was pulled, scoring details, how to redo it
@@ -43,8 +49,11 @@ pipeline/              scripts that build data.js
   fetch_youtube_meta.py  (optional) refresh YouTube metadata with a Data API key
   reddit_crawler.py    (optional) pull more Reddit vouches from Arctic Shift on an open network
 raw/                   compact source data: HackerTube rows for kept videos, Stack Exchange posts,
-                       Reddit records, YouTube metadata snapshots, university playlists (raw/institutional/)
-work/                  intermediate files (classification batches and outputs; work/inst/ for the courses)
+                       Reddit records, YouTube metadata snapshots, university playlists (raw/institutional/),
+                       the institutional channel/playlist sweep (raw/sweep/), Internet Archive course
+                       metadata (raw/archive/)
+work/                  intermediate files (classification batches and outputs; work/inst/ for the courses,
+                       work/triage/ for the sweep's keep/drop decisions)
 ```
 
 ## Rebuild the catalog
@@ -72,6 +81,19 @@ the Data API's `playlistItems`), then `python3 pipeline/make_inst_batches.py`, l
 with `pipeline/classify/INSTRUCTIONS_courses.md` and `INSTRUCTIONS_institutional.md`, and rebuild.
 Keep to official channels and lecturers' own channels; mirrors get taken down.
 
+A course that is not on YouTube gets `"provider": "panopto"` (with `"host"`) or `"provider": "archive"`
+(with each item's `file`); `pipeline/NOTES.md` has the calls that list a Panopto folder or an Internet
+Archive item.
+
+### Find more courses (the sweep)
+
+`raw/sweep/channels.json` is a registry of ~390 institutional YouTube channels with their playlists,
+and `raw/sweep/topic.json` the results of ~100 playlist searches. `python3 pipeline/assemble_candidates.py`
+turns everything not yet in `courses.json` into `work/triage/batch_NN.jsonl`; have Claude judge each
+card by `pipeline/classify/INSTRUCTIONS_triage.md` into `out_NN.jsonl`, pull the kept playlists, and
+continue as above. Re-running the sweep later (new channels, new playlists on known channels) only
+needs the registry refreshed; everything already in `courses.json` is skipped.
+
 ### Refresh YouTube metadata
 
 Titles, lengths and view counts are a snapshot. With a free YouTube Data API v3 key
@@ -81,9 +103,11 @@ used for the first build is described in `pipeline/NOTES.md`.
 
 ## What's deliberately missing
 
-No accounts, no server, no tracking. History, likes and watch-later live in `localStorage`.
-No autoplay-next and no infinite feed: rows end. Thumbnails default to a frame from the middle of
-the video rather than the uploader's designed one.
+No accounts, no server, no tracking. History, likes, watch-later and lecture progress live in
+`localStorage` (`pt:*` keys; Settings → Export/Import moves them between browsers). No infinite
+feed: rows end. Autoplay-next is off by default and only ever offers the next lecture of the same
+course. Thumbnails default to a frame from the middle of the video rather than the uploader's
+designed one.
 
 ## Credit
 

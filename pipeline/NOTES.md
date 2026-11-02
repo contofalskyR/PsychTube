@@ -16,7 +16,57 @@ results came back as gzip+base64 chunks. On an open network the same pulls are p
 | YouTube metadata | From a youtube.com tab: `POST /youtubei/v1/player` with the page's own `INNERTUBE_API_KEY` and a WEB client context, ~8 videos/second. Gives title, channel, length, views, publish date, category, keywords, description, and `playabilityStatus` (ERROR = gone). `pipeline/fetch_youtube_meta.py` does the same with the official Data API. | `raw/youtube/meta_*.json` |
 | University courses (institutional tier) | From the same youtube.com tab: `POST /youtubei/v1/browse` with `browseId: "VL<playlistId>"` (plus continuations) lists a playlist in order with each video's id, title, length, channel and approximate views/age; `browseId: <channelId>` with the Playlists tab's `params` enumerates a channel's playlists, and `params: "EgZzZWFyY2jyBgQKAloA", query` searches inside a channel (how the MIT OCW course playlists were found, since the channel has ~700 playlists). Candidate playlists came from ~100 YouTube playlist searches ("MIT 9.00SC", "Yale PSYC 110", "NPTEL psychology"…) and from enumerating the playlists of ~50 university / lecturer channels, then hand-curating to official channels (university, department, OpenCourseWare, NPTEL, Gresham, Royal Institution) and lecturers' own channels publishing their actual courses (Jordan B Peterson, Steve Joordens, Anderson Todd, George Atwood). Mirrors and re-uploads were skipped. The playlist list lives in `raw/institutional/courses.json` (`pid`, `inst`, `kind`, items). | 103 playlists, 3,058 lectures |
 | Panopto courses (Harvard) | Some universities host lectures on their own Panopto rather than YouTube (Steven Pinker's PSY 1 and GENED 1066 are public on harvard.hosted.panopto.com). A public folder lists its sessions at `Pages/Sessions/List.aspx#folderID=…` (ids and titles are in the DOM; the `Data.svc/GetSessions` call needs the page's exact parameters), and `POST /Panopto/Pages/Viewer/DeliveryInfo.aspx` with `deliveryId=<id>&responseType=json` returns name, duration and start time (seconds since 1601-01-01) without a login; `ErrorCode 15` means the session is archived or gone. Such a course goes into `courses.json` with `"provider": "panopto"` and `"host"`, item `pub` dates, and the folder or syllabus page as `url`. | 2 courses, 40 lectures |
+| Internet Archive (UC Berkeley webcasts) | Berkeley took its 2005–2015 lecture webcasts off YouTube in 2017; the Internet Archive kept them as one item per lecture (`ucberkeley_webcast_<original YouTube id>`, grouped by course title and term). Found with `advancedsearch.php?q=collection:ucberkeley-webcast AND (psychology OR cognitive OR neuro…)&fl[]=identifier,title,description,date&output=json`, then `/metadata/<id>` (description, date) and `/metadata/<id>/files` (the `*.mp4` with its `length`); lectures were ordered by the lecture number in the title, then date. Such a course goes into `courses.json` with `"provider": "archive"`, `"host": "archive.org"`, and each item's `file`; the site plays `https://archive.org/download/<id>/<file>` in its own `<video>` (thumbnail `https://archive.org/services/img/<id>`, fallback embed `https://archive.org/embed/<id>`). | 22 courses, 553 lectures |
 | Thumbnails (hosted copy only) | `https://i.ytimg.com/vi/<id>/mq2.jpg` (frame from the middle) drawn to a 224×126 canvas, JPEG q0.58, ~5 KB each, stored as data URIs in `raw/youtube/thumbs_*.json` because the hosted frame blocks external images. The local site just hotlinks `hq2.jpg`. | |
+
+## The institutional sweep (how "every public psychology course" was approached)
+
+The first institutional tier was hand-curated (103 playlists). The sweep that followed tries to be
+systematic, in three passes, all from the youtube.com tab:
+
+1. **Channel registry** (`raw/sweep/channels.json`, `{chid: {title, subs, verified, psychCh, playlists:[{id,title,n,src}]}}`).
+   Channels came from ~60 channel searches (`params: "EgIQAg%3D%3D"`: "university psychology department",
+   "school of medicine psychiatry grand rounds", "OpenCourseWare", "NPTEL", "institute of neuroscience",
+   "psychological society"…) plus the channels of every playlist already kept. For each channel the
+   Playlists tab was enumerated (`browseId: <chid>` with the tab's `params`, then continuations); the
+   new YouTube UI returns small pages, and channels with hundreds of playlists (MIT OCW, NPTEL, Yale)
+   were also searched inside the channel for `psychology`, `neuro`, `cognitive`, `brain`, `mind`,
+   `behavior`, `psychiatry`, `mental`, `linguistics` (`params: "EgZzZWFyY2jyBgQKAloA"`). 390 channels,
+   2,090 playlists.
+2. **Topic playlist searches** (`raw/sweep/topic.json`, `params: "EgIQAw%3D%3D"`): ~100 queries such as
+   `"PSYC 100 lectures"`, `"cognitive neuroscience course lecture 1"`, `"psychiatry grand rounds"`,
+   `"developmental psychology full course university"`, each paged twice. 1,477 playlists with
+   channel, verified flag and video count.
+3. **Triage**: `pipeline/assemble_candidates.py` merges both (skipping playlists already in
+   `courses.json`, playlists under 3 videos, non-ASCII titles, exam-prep/coaching channels, famous-course
+   mirrors on non-institutional channels, and generic personal channels) into `work/triage/batch_NN.jsonl`,
+   150 cards per file. Claude Sonnet judges each card by `classify/INSTRUCTIONS_triage.md` → `out_NN.jsonl`
+   (`keep`, `inst`, `kind`, `english`, `confidence`, `why`): institutional publisher, psychology
+   subject, lecture form, English. Kept playlists are then pulled in full (`browseId: "VL<pid>"`),
+   appended to `courses.json` with the triage's `inst`/`kind`, and go through the usual course-card
+   and per-lecture labeling, where the per-lecture `keep` and the course card's `keep` (a second look at
+   the actual lectures) drop the ones the card oversold. Non-YouTube hosts found on the way (Panopto,
+   Internet Archive) are added by hand as above; NIH VideoCast, university Kaltura/MediaSpace and
+   Vimeo instances are the known remaining gaps.
+
+Rate limits: the player endpoint started answering `LOGIN_REQUIRED` ("confirm you're not a bot") after
+~1,800 calls with a minimal client context; sending the page's full `INNERTUBE_CONTEXT` (with
+`visitorData`) and slowing to ~4 requests/second avoided it. `browse` never complained.
+
+## Lecture tracker (site/app.js)
+
+Positions are recorded from the real players: the YouTube IFrame API (`onStateChange` + a 4 s poll
+of `getCurrentTime()`), Panopto's Embed API (`https://developers.panopto.com/scripts/embedapi.min.js`,
+`EmbedApi(containerId, {serverName, sessionId, videoParams, events})`; `window.PlayerState` =
+`{Ended:0, Playing:1, Paused:2}`) and `timeupdate` on the Internet Archive `<video>`. Each record is
+`localStorage["pt:progress"][id] = {t, d, done, ts}`; a lecture counts as watched when
+`t ≥ d − 45 s` or `t/d ≥ 0.92`, or when the viewer marks it. Course progress is derived from the
+lectures (`seriesProgress`: watched count, percent including partial lectures, time left, last
+activity) rather than stored, so a lecture watched from a topic page still advances its course.
+Saving is debounced and flushed on `pagehide`; only dirty state is written, so a stale in-memory
+copy never overwrites what another tab saved. Settings → Export writes `{psychtube:1, history, liked,
+later, progress, settings}` as JSON and Import merges it (newest `ts` wins, unknown ids dropped).
+The claude.ai artifact copy cannot embed players, so it has no tracker; the GitHub Pages site does.
 
 ## Screening and labels
 
