@@ -48,3 +48,103 @@
 {"pid": "PLs-3IU3wOcXU0jOsuKPxalWc1J84kb1ca", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.8, "why": "Subject-only title on unplaced person channel"}
 {"pid": "PLaHrMLqBnQavA_zsAQ6Ww1Gny_o4LfqSV", "keep": true, "inst": "Independent lecturer", "kind": "course", "english": true, "confidence": 0.5, "why": "Numbered course on person-named channel; institution not evident"}
 {"pid": "PL087286BAF7B3D458", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.95, "why": "Anthropology lectures on personal channel; wrong subject"}
+{"pid": "PLLy_2iUCG87CkY7I5v8GEXkIbdCe3eqaW", "keep": true, "inst": "IIT Roorkee (NPTEL)", "kind": "course", "english": true, "confidence": 0.8, "why": "NPTEL behavioral economics course from IIT Roorkee"}
+{"pid": "PLxX6d5d7TTKZ8p106HLVM1J5ys27n80Bj", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.55, "why": "Class-brand channel; instructor and institution not identifiable"}
+{"pid": "PLwV63RFmSSXhoKkjj9Q7ZPu1QBxUZNZYu", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.8, "why": "Generic school-level channel, single chapter"}
+{"pid": "PLTzY6ZRRDxSbP5g8dguZqfwZqJ1AMuG0K", "keep": true, "inst": "Independent lecturer", "kind": "course", "english": true, "confidence": 0.6, "why": "Coded university health psychology unit on person-named channel"}
+{"pid": "PL2Z5F_4X2pTFe0imkZE3gy46pxFH73FEa", "keep": true, "inst": "University of New Mexico", "kind": "talks", "english": true, "confidence": 0.7, "why": "Law and mental health lectures from a university psychiatry department"}
+{"pid": "PLd2TEwM_70e9b-X1iu_rmqRXA7yy8PmUu", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.7, "why": "133-video unit playlist on unplaced personal channel"}
+{"pid": "PL60_PBQ-SteMz5oHHOpAv3N94uCL8KuRo", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.98, "why": "Government exam coaching class"}
+{"pid": "PLZSzpxPLtmyyY30SuZ2JFSiVehdbk8XVG", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.75, "why": "Student-style channel, generic behavioral psychology title"}
+{"pid": "PLu-eJl1cnvu83XMykoabHdW74Dj1pxOF1", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.8, "why": "Practitioner clinic channel selling courses"}
+{"pid": "PLvcnLZz9BxKxaoTDH-jzZYTbXd7Ha9-rb", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.8, "why": "Exam-oriented study channel with course code"}
+{"pid": "PLmPP9Aj7mxVh0a8fFVorAf60f40QcQYru", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.85, "why": "IGNOU exam-study channel, not the university"}
+{"pid": "PLSvvsPhiwGod0c8020VXtvDKnhYVqBMpY", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.75, "why": "Brand-style channel; no institution or academic named"}
+{"pid": "PL1S-0FJ4OOqBHC97FMe_vXBETaeAXAsOS", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.85, "why": "YouTuber-style positive psychology course; no institution"}
+{"pid": "PLKDRPovL3RGQ", "keep": false, "inst": "Virtual University of Pakistan", "kind": "course", "english": true, "confidence": 0.85, "why": "Third-party short summaries of VU lectures"}
+{"pid": "PLDGQSZPFZ3O73o8aNKdp4XrCfr56VDyA-", "keep": true, "inst": "GIFT University", "kind": "talks", "english": true, "confidence": 0.55, "why": "University psychology seminars; language unverified"}
+{"pid": "PLdQFxaCjkIf9jDkHy8cQg2idXmUO7pEAD", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.8, "why": "Unplaced personal channel; vague programme title"}
+{"pid": "PLYgMdZ0SBoe0paO1LVNwt9y-a1Xu8KY36", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.85, "why": "Business coaching channel"}
+{"pid": "PL3xB-H_PGPWXo057mZnmMy4pl97LJK4xu", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.55, "why": "Subject-only title; instructor first name only, unplaced"}
+{"pid": "PLcq_ncSIyKjONHRFuiUz9ZY-K6tLMeCCh", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.75, "why": "Subject-only title on unplaced person channel"}
+{"pid": "PLRtsRmS7Bo6qvb2lfnf3tjdpPr8KBDOAd", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.9, "why": "One-word title on unplaced personal channel"}
+{"pid": "PLKyB9RYzaFRikK8w8Ec7W_E15UbTKHFM1", "keep": true, "inst": "Virtual University of Pakistan", "kind": "course", "english": true, "confidence": 0.55, "why": "VU cross-cultural psychology course; lecture language unverified"}
+{"pid": "PLWHJHzhtiAuRicnwnrdZQSMQJKbwHaTuq", "keep": true, "inst": "Yale University", "kind": "course", "english": true, "confidence": 0.8, "why": "Santos well-being course on her own verified channel"}
+{"pid": "PLtZSLqXfNpp4-wRTFAYCClyJ6XX8LqglX", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.85, "why": "One-word title on unplaced personal channel"}
+{"pid": "PLyyOUfkMQO5hm10rPfMcjovIsoeYiR00k", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.9, "why": "One-word title, 121 videos, unplaced personal channel"}
+{"pid": "PL5C77790D1539265F", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.9, "why": "Mixed personal playlist on handle-style channel"}
+{"pid": "PLEmfaJujGo-ZPu84C9pHe2LaYlLKxVoFW", "keep": false, "inst": "Tsinghua University", "kind": "talks", "english": true, "confidence": 0.7, "why": "Mixed open-courses collection, not psychology-specific"}
+{"pid": "PLBMWnNj2JA0yau846RR1NqU05V1cY5D8z", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.6, "why": "Coded course on handle-style channel; likely student playlist"}
+{"pid": "PLP40c-AYgaWSw5oyZzJdfWK4vy62FGApr", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.6, "why": "Subject-only title on unplaced person channel"}
+{"pid": "PLKyB9RYzaFRjrMC98cZ9GQa_NwBQQd8TT", "keep": true, "inst": "Virtual University of Pakistan", "kind": "course", "english": true, "confidence": 0.5, "why": "VU psychology statistics course; language unverified"}
+{"pid": "PLuPvXK-6PxTZUcM_ioyNPsf4FLUR_kqYR", "keep": false, "inst": "", "kind": "talks", "english": true, "confidence": 0.9, "why": "Personal practitioner channel without academic course"}
+{"pid": "PLcwuTwDw7_QXNHJncy_9tESUO7iHfYD2p", "keep": true, "inst": "Independent lecturer", "kind": "course", "english": true, "confidence": 0.55, "why": "Psychological statistics course on instructor's own channel; unverified"}
+{"pid": "PLVE9bxUVYaFSmg_pAbkEfyoj24Br0ycyT", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.8, "why": "Textbook-style study channel, not institutional"}
+{"pid": "PLTygo0mNr4v2YjjZpLesO4ievYFCGLB2E", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.85, "why": "Textbook chapter readings, six videos"}
+{"pid": "PLQvjS5SdmPp1qOwNo1GmuigP2OxUJV0F0", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.7, "why": "Third-party study group channel; language unverified"}
+{"pid": "PL3t6jgZu2GQnLwhXc0P3p2b0NNKyeBaGK", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.8, "why": "Subject-only title on unplaced personal channel"}
+{"pid": "PLmCuVfBuAv52NnBLlnbFxS8q1PQ3uVpH1", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.8, "why": "Medical student channel; likely not English"}
+{"pid": "PLeZk8BXkxXt9Yr7ruQtOlnaNt6naDmz2T", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.9, "why": "Commercial mnemonic medical-education brand"}
+{"pid": "PLeZk8BXkxXt8mSX-tE2WFheDdpSFBW7lk", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.9, "why": "Commercial mnemonic medical-education brand"}
+{"pid": "PLMRNgT4fSOlI-IifYV3gEozr5PRcixD2A", "keep": true, "inst": "Independent lecturer", "kind": "course", "english": true, "confidence": 0.5, "why": "Advanced psychopharmacology modules on person-named channel; unverified"}
+{"pid": "PLFGO4KHSSiCQCf8xx9WDeFxHxXcLFCQMg", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.85, "why": "Subject-only title on unplaceable personal channel"}
+{"pid": "PLzy3BqJnc3NxbI7ZI1An4xJW0mYiJZ80P", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.7, "why": "Class playlist on unplaced personal channel, twelve videos"}
+{"pid": "PL0fu_eF2gyyYrH75FBYXbj5_uDNJeovrC", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.9, "why": "Residency exam-prep bootcamp"}
+{"pid": "PLl9FjJRDfZ_KYQSPK-dFnleVWevsUyIKJ", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.8, "why": "Subject-only title on unplaced person channel"}
+{"pid": "PLggQBKTDNBU2t9kA_s-cZFCAAZbm4u8Rh", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.85, "why": "Subject-only title on unplaceable personal channel"}
+{"pid": "PLE1CSiDnBGt6sgzjujxf-KCDhwGUcaJiH", "keep": true, "inst": "Independent lecturer", "kind": "course", "english": true, "confidence": 0.5, "why": "Psychopharmacology course videos by a Dr. on own channel; unverified"}
+{"pid": "PLldEapv0nG30x-ikhxOj55vZKerM9YbJ4", "keep": true, "inst": "NIMHANS", "kind": "course", "english": true, "confidence": 0.65, "why": "Basics of psychiatry lecture course on institute professor's channel"}
+{"pid": "PLcEoio1xVkDoQEVdOJuy4_C4f6z3MVd66", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.8, "why": "Subject-only title on unplaced person channel"}
+{"pid": "PL9hpUj-olHCSNya6cObFe7LJw0kKO2wEZ", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.9, "why": "Alias-style channel with subject-only title"}
+{"pid": "PLUP6ulAehG2gB313DYSRYptBe68-dqNnQ", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.8, "why": "Subject-only title on unplaced person channel"}
+{"pid": "PLYsWtkpwjQfPAN-qTG3MV23VuJSt3GgKq", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.85, "why": "Subject-only title on unplaceable personal channel"}
+{"pid": "PLqiYb7qYKVl-sQl0XfkvdJLCMwlcYRnww", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.85, "why": "Subject-only title on unplaceable personal channel"}
+{"pid": "PLcsT8HdiDqhqhwAWJGFcQWHdgNdxzrdZy", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.85, "why": "Subject-only title on unplaceable personal channel"}
+{"pid": "PLn7_KmzoZ7st2uSEkdnKdt50j9bsAcNCC", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.65, "why": "Numbered course playlist on unplaced personal channel; likely student"}
+{"pid": "PL05Vntf9v9WKFJ0MSlUHkUIoTr8bewosJ", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.9, "why": "Alias-style channel with subject-only title"}
+{"pid": "PLoybSWif51AKMN8up_766S566bpPVXO52", "keep": true, "inst": "Independent lecturer", "kind": "course", "english": true, "confidence": 0.65, "why": "CPSY 323 course lectures on instructor's own channel"}
+{"pid": "PLFbXpfpE-JpFmd8LHNx2MWwknE6lW2coi", "keep": true, "inst": "Independent lecturer", "kind": "course", "english": true, "confidence": 0.55, "why": "Term-dated psych pharmacology class lectures on person-named channel"}
+{"pid": "PLXa3JWoXGD0UzTvvLEng8zJLyIeNUqoVP", "keep": true, "inst": "City Vision University", "kind": "course", "english": true, "confidence": 0.8, "why": "University addiction psychopharmacology full course, coded ADC514"}
+{"pid": "PLEbBYe7oFMCE5KNBT8VFlUT5b57NDP8W5", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.85, "why": "Eight-video personal playlist, unplaceable channel"}
+{"pid": "PL2-kln7xNP6s5M29jXRkBWJPRyIOuxvvt", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.95, "why": "USMLE exam-prep channel"}
+{"pid": "PLGNSE_HvIV4tALytaHe2FgjQodua-bInI", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.9, "why": "Medical cram channel"}
+{"pid": "PL0fu_eF2gyybW5e6Ug-E4xS9JG-dHz-Rs", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.9, "why": "Clerkship exam-prep bootcamp"}
+{"pid": "PL8JA5L0bjx5Py21vVe6jb6SfO5PN7-Nbr", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.85, "why": "Medical exam-coaching channel"}
+{"pid": "PLpDSruPKk4S1oqmluX789ZWCF1VB2owJ3", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.85, "why": "Subject-only title on unplaceable personal channel"}
+{"pid": "PLhV8FJp5nsuNcYSap2k-_t1-sr0hdLN_g", "keep": false, "inst": "", "kind": "talks", "english": true, "confidence": 0.95, "why": "Mixed Ivy lecture curation on handle-style channel"}
+{"pid": "PL8JA5L0bjx5Ogo2hJ6i-jjYlhiuWLvMIl", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.97, "why": "Forensic medicine exam series; wrong subject"}
+{"pid": "PLXzCvicqUxiA", "keep": true, "inst": "University of Rochester", "kind": "talks", "english": true, "confidence": 0.85, "why": "Psychiatry grand rounds from university department channel"}
+{"pid": "PLLM0sUoQvpqCOSQydj3X_t6l2pGBighkI", "keep": true, "inst": "University of Rochester", "kind": "talks", "english": true, "confidence": 0.85, "why": "Psychiatry grand rounds from university department channel"}
+{"pid": "PLLM0sUoQvpqCt6akgBZqnR0Zc0iGcGUzV", "keep": true, "inst": "University of Rochester", "kind": "talks", "english": true, "confidence": 0.85, "why": "Psychiatry grand rounds from university department channel"}
+{"pid": "PLLM0sUoQvpqDJft2m994EQcK9ayxqRZlU", "keep": true, "inst": "University of Rochester", "kind": "talks", "english": true, "confidence": 0.85, "why": "Psychiatry grand rounds from university department channel"}
+{"pid": "PLroQLuaZniKVDa7dkOpVHnWbt4H-YQqxo", "keep": true, "inst": "University of Louisville", "kind": "talks", "english": true, "confidence": 0.8, "why": "Psychiatry department grand rounds series, university channel"}
+{"pid": "PL4y3SDDXzuZhnO3M9ReNN5LNzE7Uukw6D", "keep": false, "inst": "", "kind": "talks", "english": true, "confidence": 0.8, "why": "254-video unplaced aggregator, publisher unclear"}
+{"pid": "PLAUqNXNdIRx6G0Jjjew6r5rKtkbG2QOYH", "keep": true, "inst": "Northeast Georgia Health System", "kind": "talks", "english": true, "confidence": 0.7, "why": "Psychiatry grand rounds from a hospital CME channel"}
+{"pid": "PLS0ZOU2LMi3q8FTIhMNMlVza6-lWxcXJ8", "keep": true, "inst": "University of Washington (Boise psychiatry residency)", "kind": "talks", "english": true, "confidence": 0.8, "why": "Grand rounds from a university psychiatry residency program"}
+{"pid": "PLLM0sUoQvpqDfegyP-sUVc6ztxinyorow", "keep": true, "inst": "University of Rochester", "kind": "talks", "english": true, "confidence": 0.85, "why": "Psychiatry grand rounds from university department channel"}
+{"pid": "PLLM0sUoQvpqDESpSfLTSUxMvyyZTiFCpW", "keep": true, "inst": "University of Rochester", "kind": "talks", "english": true, "confidence": 0.85, "why": "Psychiatry grand rounds from university department channel"}
+{"pid": "PLLM0sUoQvpqDi37LaxKv_sYxcnXjy1O8-", "keep": true, "inst": "University of Rochester", "kind": "talks", "english": true, "confidence": 0.85, "why": "Psychiatry grand rounds from university department channel"}
+{"pid": "PLHK2rEBoXT0GNQcOQ2XRyS59UiqN2bvsi", "keep": true, "inst": "University of Minnesota", "kind": "talks", "english": true, "confidence": 0.8, "why": "Psychiatry department grand rounds series, university channel"}
+{"pid": "PLLM0sUoQvpqCWPPI4xwT9IHs6o-i4-hOf", "keep": true, "inst": "University of Rochester", "kind": "talks", "english": true, "confidence": 0.85, "why": "Psychiatry grand rounds from university department channel"}
+{"pid": "PL0qXJcbVjvrJQyNEGZPq-_W-XmzglBrMa", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.8, "why": "Teacher-training exam-prep lectures; education rather than psychology"}
+{"pid": "PLZwDRPCfsFLOoCfQawe1q3ezdyvjdpPZK", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.75, "why": "B.Ed paper on unplaced personal channel"}
+{"pid": "PLKyB9RYzaFRg8MbyKyMgP742ynDKXNz6U", "keep": false, "inst": "Virtual University of Pakistan", "kind": "course", "english": true, "confidence": 0.65, "why": "Early childhood education course; education rather than psychology"}
+{"pid": "PLX0ruE_vr5E5YVMI7nogipANz3BKf14gZ", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.9, "why": "B.Ed exam-coaching channel"}
+{"pid": "PL7I1gvrUERZZiu-bSWGFvlrwOfXymEbUC", "keep": true, "inst": "Raja Mahendra Pratap Singh University", "kind": "course", "english": true, "confidence": 0.5, "why": "University B.Ed childhood and growing up paper; language unverified"}
+{"pid": "PLqGsIBibwyhYKLrvYRWBXMf4fT802tORp", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.85, "why": "Vlog-style channel; no institution"}
+{"pid": "PLVnjTkEwv-uNBqGkNdbR2AdfB8PBKdCAE", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.95, "why": "Commercial pediatrics exam prep"}
+{"pid": "PL446hv5iBupEjcc05MqchBk1xL7yskNX2", "keep": false, "inst": "", "kind": "talks", "english": true, "confidence": 0.9, "why": "Generic school lectures; unplaced channel"}
+{"pid": "PLBXmZUYEeJVCWyNOex5F_CAin3QmgGIGk", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.95, "why": "Exam-coaching channel; subject-only title"}
+{"pid": "PLLy_2iUCG87A90Fhyadnxr1Yy6fcd0SKs", "keep": false, "inst": "IIT Roorkee (NPTEL)", "kind": "course", "english": true, "confidence": 0.65, "why": "Management leadership course; outside psychology scope"}
+{"pid": "PLPNlwVq_v-Q5-aMbwDsiAJBbdI4ZeOa6Y", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.97, "why": "Teacher eligibility exam coaching"}
+{"pid": "PL6_8kyoZy5Cl01AtLVHEfnDJXv0KZujet", "keep": false, "inst": "Virtual University of Pakistan", "kind": "course", "english": true, "confidence": 0.85, "why": "Third-party upload of VU PSY406 lectures"}
+{"pid": "PLEkEOfuBLt51rKNdSfsJD2EUHzsA50JZN", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.85, "why": "Brand-style study channel, no institution"}
+{"pid": "PL1rNBQjzkmLbG3XetVFNoeYx2IstwATnT", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.9, "why": "Agriculture extension exam coaching"}
+{"pid": "PLBgxUEaGGFCFHEXtNk8fHv_Dmgwh-XrkH", "keep": false, "inst": "Virtual University of Pakistan", "kind": "course", "english": true, "confidence": 0.85, "why": "Third-party VU exam-series playlist"}
+{"pid": "PLkcoDz8p8o3imjIBLtJ-XZawwfT4_95ne", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.6, "why": "Private sit-in channel; no institution or named academic"}
+{"pid": "PLDAxJ6wPVmO_pepU-HUbZ9xkVSqkAl6m2", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.9, "why": "Six-video generic playlist on unplaceable channel"}
+{"pid": "PL1Veqqo7Ddg4npkkQ7DG4sujmBwjt18qI", "keep": false, "inst": "", "kind": "series", "english": true, "confidence": 0.6, "why": "Pseudonymous channel; single-lecture organizational fragment"}
+{"pid": "PL_IMdxn9AyAe9D4l7jZ-IGNfmJg6DwXjj", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.9, "why": "One-word title on unplaced personal channel"}
+{"pid": "PLSrvDlcYAdpHcUgcJ9bUFL-sW38iGNVZP", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.8, "why": "Initial-style channel with subject-only title"}
+{"pid": "PLLy_2iUCG87Cr7_Yo_8ONaEC38tMB1ykM", "keep": false, "inst": "IIT Roorkee (NPTEL)", "kind": "course", "english": true, "confidence": 0.55, "why": "Business-school organizational behavior; management rather than psychology"}
+{"pid": "PLxEoXUC1JFlw7y5mH40P0m1U_mknJEBLe", "keep": false, "inst": "", "kind": "course", "english": true, "confidence": 0.85, "why": "Business textbook walkthrough; management subject"}
