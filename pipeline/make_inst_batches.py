@@ -5,7 +5,8 @@ Reads  raw/institutional/courses.json   (playlists pulled from university / lect
        raw/youtube/meta_*.json          (YouTube metadata; descriptions help the labeler)
 Writes work/inst/courses_in.jsonl       one row per playlist  -> label with INSTRUCTIONS_courses.md
        work/inst/batch_NN.jsonl         one row per video     -> label with INSTRUCTIONS_institutional.md
-       (videos that already have a line in work/inst/out_*.jsonl are skipped)
+       (courses that already have a line in work/inst/course_labels.jsonl and videos that already have a line in
+       work/inst/out_*.jsonl are skipped, so re-running after adding playlists only emits the new work)
 
 Usage: python3 pipeline/make_inst_batches.py [batch_size]
 """
@@ -31,10 +32,12 @@ for f in sorted(glob.glob(P("raw", "youtube", "meta_*.json"))):
 labeled = set()
 for f in glob.glob(P("work", "inst", "out_*.jsonl")):
     labeled |= {o["vid"] for o in jsonl(f)}
+labeled_courses = {o["pid"] for o in jsonl(P("work", "inst", "course_labels.jsonl"))}   # course cards already written
 
 os.makedirs(P("work", "inst"), exist_ok=True)
+new_courses = [c for c in courses if c["pid"] not in labeled_courses]
 with open(P("work", "inst", "courses_in.jsonl"), "w", encoding="utf-8") as f:
-    for c in courses:
+    for c in new_courses:
         f.write(json.dumps({
             "pid": c["pid"], "inst": c["inst"], "kind": c["kind"], "playlist_title": c["title"], "channel": c.get("owner"),
             "n_videos": c["n"], "description": (c.get("desc") or "")[:600],
@@ -58,9 +61,15 @@ for c in courses:
             "description": (m.get("desc") or "")[:300],
         })
 
+# number new batches after the highest out_NN already written, so outputs never collide with earlier rounds
+import re
+done_idx = [int(m.group(1)) for f in glob.glob(P("work", "inst", "out_*.jsonl")) for m in [re.search(r"out_(\d+)\.jsonl$", f)] if m]
+first = max(done_idx) + 1 if done_idx else 0
+for f in glob.glob(P("work", "inst", "batch_*.jsonl")):      # stale inputs from earlier rounds
+    os.remove(f)
 n = math.ceil(len(rows) / size) if rows else 0
 for i in range(n):
-    with open(P("work", "inst", f"batch_{i:02d}.jsonl"), "w", encoding="utf-8") as f:
+    with open(P("work", "inst", f"batch_{first + i:02d}.jsonl"), "w", encoding="utf-8") as f:
         for r in rows[i * size:(i + 1) * size]:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
-print(f"{len(courses)} courses -> work/inst/courses_in.jsonl; {len(rows)} unlabeled videos -> {n} batches (work/inst/batch_NN.jsonl)")
+print(f"{len(new_courses)} of {len(courses)} courses still need a course card -> work/inst/courses_in.jsonl; {len(rows)} unlabeled videos -> {n} batches (work/inst/batch_{first:02d}.jsonl…)")
