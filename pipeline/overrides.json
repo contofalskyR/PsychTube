@@ -1,0 +1,15 @@
+{
+ "_comment": "Manual curation applied after the LLM labels in build_catalog.py: vid -> label fields to override (topics, contested, contested_role, cw, keep).",
+ "VO6XEQIsCoM": {
+  "contested": "choice-overload",
+  "contested_role": "promotes"
+ },
+ "NHopJHSlVo4": {
+  "contested": "goal-announcing",
+  "contested_role": "promotes"
+ },
+ "RcGyVTAoXEU": {
+  "contested": "stress-mindset",
+  "contested_role": "promotes"
+ }
+}

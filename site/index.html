@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PsychTube</title>
+<meta name="description" content="The psychology videos that psychology people keep telling each other to watch — mined from Hacker News, psychology subreddits and Psychology Stack Exchange, with the receipts — plus complete psychology courses published by universities, every lecture in order.">
+<meta name="color-scheme" content="dark light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23E8B04B' d='M32 6c-5 0-7 6-6 10s-4 6-8 7-8 6-6 11 7 6 9 10-1 10 4 12 7-3 7-7 2-5 7-5 6 4 8 0-1-8 3-13 7-6 6-11-6-6-8-8-2-8-4-10-6 0-12 4z'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="#home" aria-label="PsychTube home">
+    <svg class="blot" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6c-5 0-7 6-6 10s-4 6-8 7-8 6-6 11 7 6 9 10-1 10 4 12 7-3 7-7 2-5 7-5 6 4 8 0-1-8 3-13 7-6 6-11-6-6-8-8-2-8-4-10-6 0-12 4z"/></svg>
+    <span class="wordmark">PsychTube</span>
+  </a>
+  <form class="search" role="search" id="searchForm" autocomplete="off">
+    <input id="q" type="search" placeholder="Search videos, topics, channels" aria-label="Search" spellcheck="false">
+    <kbd aria-hidden="true">/</kbd>
+  </form>
+  <div class="top-actions">
+    <button class="icon-btn" id="themeBtn" title="Switch theme (t)" aria-label="Switch theme">☾</button>
+    <button class="icon-btn" id="helpBtn" title="Keyboard shortcuts (?)" aria-label="Keyboard shortcuts">?</button>
+  </div>
+</header>
+
+<nav class="rail" aria-label="Sections">
+  <a href="#home" data-nav="home"><span class="ic">⌂</span>Home</a>
+  <a href="#topics" data-nav="topics"><span class="ic">◍</span>Topics</a>
+  <a href="#courses" data-nav="courses"><span class="ic">≡</span>Courses</a>
+  <a href="#clips" data-nav="clips"><span class="ic">⟐</span>Clips</a>
+  <a href="#longs" data-nav="longs"><span class="ic">◷</span>Longs</a>
+  <a href="#care" data-nav="care"><span class="ic">△</span>Handle with care</a>
+  <div class="rail-gap"></div>
+  <a href="#history" data-nav="history"><span class="ic">↺</span>History</a>
+  <a href="#liked" data-nav="liked"><span class="ic">♥</span>Liked</a>
+  <a href="#later" data-nav="later"><span class="ic">⌁</span>Watch later</a>
+  <div class="rail-gap"></div>
+  <a href="#data" data-nav="data"><span class="ic">⇩</span>Data</a>
+  <a href="#about" data-nav="about"><span class="ic">i</span>About</a>
+  <a href="#prefs" data-nav="settings"><span class="ic">⚙</span>Settings</a>
+</nav>
+
+<main id="main" class="main" tabindex="-1"></main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<dialog id="helpDialog" class="help">
+  <h2>Keyboard</h2>
+  <table>
+    <tr><td><kbd>/</kbd></td><td>Search</td></tr>
+    <tr><td><kbd>j</kbd> <kbd>k</kbd></td><td>Next / previous video on a page</td></tr>
+    <tr><td><kbd>Enter</kbd></td><td>Open the focused video</td></tr>
+    <tr><td><kbd>l</kbd></td><td>Like the focused or playing video</td></tr>
+    <tr><td><kbd>w</kbd></td><td>Add to watch later</td></tr>
+    <tr><td><kbd>t</kbd></td><td>Switch theme</td></tr>
+    <tr><td><kbd>Esc</kbd></td><td>Back / close</td></tr>
+    <tr><td><kbd>?</kbd></td><td>This list</td></tr>
+  </table>
+  <form method="dialog"><button class="btn">Close</button></form>
+</dialog>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

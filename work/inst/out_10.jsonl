@@ -1,0 +1,150 @@
+{"vid": "bSPMfJ1wX6A", "keep": true, "topics": ["sex-gender"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.6}
+{"vid": "fEkJERFJL60", "keep": true, "topics": ["sleep-dreams", "trauma-stress"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.8}
+{"vid": "9wfljoNHPZw", "keep": true, "topics": ["serious-mental-illness", "adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "_KTy3lKQo6U", "keep": true, "topics": ["psychedelics", "psychiatry-medication", "history-of-psychology"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "2LH_W-uynxw", "keep": true, "topics": ["therapy", "depression-anxiety"], "cw": ["suicide-self-harm"], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "CZjwaXZMbsU", "keep": true, "topics": ["psychiatry-medication", "decision-risk"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "8OGt5hsBtnw", "keep": true, "topics": ["serious-mental-illness", "groups-prejudice"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "YYaKNCpJxWs", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "D3nssnEww-E", "keep": true, "topics": ["psychiatry-medication", "depression-anxiety", "brain-tech"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "M2wIBDFMDc4", "keep": true, "topics": ["crime-forensic", "psychiatry-medication"], "cw": ["abuse-violence"], "contested": "", "contested_role": "", "course": false, "confidence": 0.7}
+{"vid": "J_JtUYqWpkA", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.85}
+{"vid": "-USkO-mauvI", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.75}
+{"vid": "Ti2EvN-qce4", "keep": true, "topics": ["psychiatry-medication", "child-development"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.8}
+{"vid": "81P7V9ZLlt0", "keep": true, "topics": ["sex-gender", "relationships-attachment"], "cw": ["sexual-content"], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "EZzuKM2MZlE", "keep": true, "topics": ["relationships-attachment", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "fRR-lWtmV4c", "keep": true, "topics": ["relationships-attachment", "emotion"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "HsX7YUbb50w", "keep": true, "topics": ["therapy", "emotion"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "7cRE9kHX5vA", "keep": true, "topics": ["happiness-meaning"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "sus0-3upvuA", "keep": true, "topics": ["personality", "groups-prejudice"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "XG7hkLojxgY", "keep": true, "topics": ["serious-mental-illness", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "JRDB4RX6_tI", "keep": true, "topics": ["sex-gender", "relationships-attachment"], "cw": ["sexual-content"], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "RDsLsAZHLQY", "keep": true, "topics": ["crime-forensic"], "cw": ["abuse-violence"], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "GNZHQEZCkH4", "keep": true, "topics": ["personality", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "Nje--J7fsfw", "keep": true, "topics": ["creativity-insight", "serious-mental-illness"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "eSJaw55AZBM", "keep": true, "topics": ["pseudoscience-skepticism", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "6Pmg9-7gsDg", "keep": true, "topics": ["sleep-dreams"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "_PGGzkl8TLs", "keep": true, "topics": ["crime-forensic"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "9QlXR0-zZRA", "keep": true, "topics": ["decision-risk", "happiness-meaning"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "d8BoC313tR4", "keep": true, "topics": ["depression-anxiety"], "cw": ["suicide-self-harm"], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "fX5w2_iKWVA", "keep": true, "topics": ["emotion", "personality"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "45M5TtdHdeY", "keep": true, "topics": ["psychiatry-medication", "motivation-habits"], "cw": ["eating-disorders"], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "YVNq-dcHXrQ", "keep": true, "topics": ["crime-forensic", "personality", "behavioral-genetics"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "cVqHFkE-Bnk", "keep": true, "topics": ["history-of-psychology", "therapy"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "utVaP7ZU8dk", "keep": true, "topics": ["pseudoscience-skepticism", "personality"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "xYyeHOB5ydI", "keep": true, "topics": ["crime-forensic", "morality-cooperation"], "cw": ["abuse-violence"], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "nlmchHs7EUg", "keep": true, "topics": ["crime-forensic", "sex-gender"], "cw": ["abuse-violence"], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "0jqeSRH9q0I", "keep": true, "topics": ["crime-forensic", "therapy"], "cw": ["abuse-violence"], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "kBkg85MhPWs", "keep": true, "topics": ["morality-cooperation", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "c-F8o8X6ch4", "keep": true, "topics": ["crime-forensic"], "cw": ["abuse-violence"], "contested": "", "contested_role": "", "course": false, "confidence": 0.6}
+{"vid": "IICGx1OOXUU", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.65}
+{"vid": "qCoemRRI3A8", "keep": true, "topics": ["consciousness"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.5}
+{"vid": "UfC81mNUQzQ", "keep": true, "topics": ["crime-forensic", "sex-gender"], "cw": ["abuse-violence", "sexual-content"], "contested": "", "contested_role": "", "course": false, "confidence": 0.55}
+{"vid": "p8RC78B7vac", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.65}
+{"vid": "9rE5A1DDAFM", "keep": true, "topics": ["serious-mental-illness", "perception-illusions", "ai-and-mind"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "Q6OQb-Ejrgg", "keep": true, "topics": ["brain-disorders", "adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "9Vcbc2r4aPo", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.65}
+{"vid": "auFEYiDrJts", "keep": true, "topics": ["brain-disorders", "sleep-dreams"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.5}
+{"vid": "ybYDTfzjq-8", "keep": true, "topics": ["adhd-autism", "work-organizations"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "N_T30585aYA", "keep": true, "topics": ["morality-cooperation", "animal-minds"], "cw": ["abuse-violence"], "contested": "", "contested_role": "", "course": false, "confidence": 0.4}
+{"vid": "Ja9OMFXuoWM", "keep": true, "topics": ["therapy", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "Q_QjSRtoQzQ", "keep": true, "topics": ["crime-forensic", "therapy"], "cw": ["abuse-violence"], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "ccr4QQ3LwcA", "keep": true, "topics": ["history-of-psychology", "therapy"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "9xZSsbpfrac", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.6}
+{"vid": "3In6W2Iaglc", "keep": true, "topics": ["crime-forensic"], "cw": ["abuse-violence", "sexual-content"], "contested": "", "contested_role": "", "course": false, "confidence": 0.5}
+{"vid": "Vp6W88t1ptI", "keep": true, "topics": ["morality-cooperation", "work-organizations"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.55}
+{"vid": "nHOK_sNZ8iY", "keep": true, "topics": ["morality-cooperation"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.5}
+{"vid": "T7G2yUD4kTE", "keep": true, "topics": ["morality-cooperation", "emotion"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.6}
+{"vid": "TGn6JWQgiDo", "keep": true, "topics": ["grief-loneliness"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.5}
+{"vid": "K1E_vYPpM3g", "keep": true, "topics": ["emotion", "persuasion-manipulation"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "5uQWglAwlps", "keep": true, "topics": ["relationships-attachment", "neurochemistry", "emotion"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "uYEfG2lNN5Y", "keep": true, "topics": ["emotion", "groups-prejudice"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "5Yrf8IBn9gk", "keep": true, "topics": ["grief-loneliness", "emotion"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "-aSSxqg2Cn4", "keep": true, "topics": ["emotion", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "JYPGip24LUs", "keep": true, "topics": ["emotion", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "XIbCCuz_2Ms", "keep": true, "topics": ["serious-mental-illness", "perception-illusions", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "L-AFJDcoeZA", "keep": true, "topics": ["sleep-dreams", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "47V_7kPgAWI", "keep": true, "topics": ["brain-disorders", "adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "hNtfzTetsJE", "keep": true, "topics": ["perception-illusions", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "REwvxDbjgGM", "keep": true, "topics": ["brain-disorders", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "OYHohBQR5E4", "keep": true, "topics": ["how-the-brain-works", "brain-tech"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "bAD7skT1dig", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "HviMLiK1hFw", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "7VlhYHHbrdM", "keep": true, "topics": ["intelligence-expertise", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "j_dSQQwpoR8", "keep": true, "topics": ["adhd-autism", "language-thought"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "YnU01HBN6zg", "keep": true, "topics": ["adhd-autism"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "hGlTEMyEmcw", "keep": true, "topics": ["adhd-autism"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "uBSpW2ekCPE", "keep": true, "topics": ["emotion", "memory"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.5}
+{"vid": "evPNmIm6Os4", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.7}
+{"vid": "LLe00U6-ZMw", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.7}
+{"vid": "DlNH92lzVU4", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.7}
+{"vid": "2q1M1H8a9FA", "keep": true, "topics": ["decision-risk", "rationality-biases"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "akRulcezvyg", "keep": true, "topics": ["decision-risk", "rationality-biases"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.55}
+{"vid": "bEs-B6bPygQ", "keep": true, "topics": ["rationality-biases", "decision-risk"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "F3jZcYtc_g0", "keep": true, "topics": ["rationality-biases", "work-organizations"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.85}
+{"vid": "qRKY8IuN-MU", "keep": true, "topics": ["persuasion-manipulation", "decision-risk"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "W7RD_nytfgA", "keep": true, "topics": ["decision-risk"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "3l43M1hqVoU", "keep": true, "topics": ["psychiatry-medication", "depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "Xz-yytL7Ix8", "keep": true, "topics": ["sleep-dreams", "depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "7TeIRxAKgyE", "keep": true, "topics": ["happiness-meaning", "trauma-stress"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.7}
+{"vid": "qZMR4l9lFYI", "keep": true, "topics": ["sleep-dreams", "memory"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.6}
+{"vid": "XUucBZq_jSw", "keep": true, "topics": ["therapy", "morality-cooperation"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.5}
+{"vid": "FcJuXeVi8ig", "keep": true, "topics": ["trauma-stress", "work-organizations"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.7}
+{"vid": "slkDHpyLu6I", "keep": true, "topics": ["decision-risk", "rationality-biases"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "j58aJdvglQw", "keep": true, "topics": ["rationality-biases", "decision-risk"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.95}
+{"vid": "NqC1R5Jklpg", "keep": true, "topics": ["morality-cooperation", "decision-risk"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.55}
+{"vid": "ptdQIMMyyWo", "keep": true, "topics": ["decision-risk"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.5}
+{"vid": "NG9tmJV8tgg", "keep": true, "topics": ["morality-cooperation", "decision-risk"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.5}
+{"vid": "wJfZvr__lY4", "keep": true, "topics": ["work-organizations", "decision-risk"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.4}
+{"vid": "xRel1JKOEbI", "keep": true, "topics": ["consciousness", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "qXcH26M7PQM", "keep": true, "topics": ["consciousness", "perception-illusions", "ai-and-mind"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "TTFoJQSd48c", "keep": true, "topics": ["ai-and-mind", "consciousness"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "gdzmNwTLakg", "keep": true, "topics": ["memory", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "aOSD9rTVuWc", "keep": true, "topics": ["addiction", "neurochemistry"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "CmuYrnOVmfk", "keep": true, "topics": ["consciousness", "emotion", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "95otBlepVHc", "keep": true, "topics": ["language-thought", "serious-mental-illness"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "9QWaZp_2I1k", "keep": true, "topics": ["consciousness", "animal-minds"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "LcAj1oxMT9U", "keep": true, "topics": ["psychedelics"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "VrMZlrtbXUM", "keep": true, "topics": ["sleep-dreams", "history-of-psychology"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "O0Uzy35uJzU", "keep": true, "topics": ["sleep-dreams"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "Jve3p0ws-nI", "keep": true, "topics": ["pseudoscience-skepticism", "rationality-biases"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "A1Ghrd7NBtk", "keep": true, "topics": ["ai-and-mind", "perception-illusions"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "_uOLii9sDiE", "keep": true, "topics": ["memory", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "WUGePhoaCGM", "keep": true, "topics": ["depression-anxiety", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "sIdjde38toI", "keep": true, "topics": ["depression-anxiety", "psychiatry-medication", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "Xv_JJ2ZuDJM", "keep": true, "topics": ["how-the-brain-works", "ai-and-mind"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.8}
+{"vid": "XKm4VoExc0Q", "keep": true, "topics": ["rationality-biases", "decision-risk"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "68mGRb-Mzjc", "keep": true, "topics": ["creativity-insight", "adhd-autism"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "FfxnS1PuJxM", "keep": true, "topics": ["psychedelics", "neurochemistry"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "154OttZtQ8w", "keep": true, "topics": ["motivation-habits"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.85}
+{"vid": "PqtXiABMj3A", "keep": true, "topics": ["rationality-biases", "perception-illusions"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.6}
+{"vid": "ZACJnu0XWZs", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "i8mjM3PB_Tk", "keep": true, "topics": ["pseudoscience-skepticism", "perception-illusions"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "lBIfp-VWsz8", "keep": true, "topics": ["history-of-psychology", "consciousness", "therapy"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "NifNfkliCos", "keep": true, "topics": ["how-the-brain-works", "history-of-psychology"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "ezJSw0BRrTA", "keep": true, "topics": ["consciousness"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "SkJqkGX0ThQ", "keep": true, "topics": ["behavioral-genetics", "how-the-brain-works", "personality"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "QXwRjb7WF7E", "keep": true, "topics": ["free-will", "consciousness"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "fM_R-PvwPbc", "keep": true, "topics": ["how-the-brain-works", "memory"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "xH5IM2fnCg8", "keep": true, "topics": ["depression-anxiety", "adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "4pxYVlgSzCg", "keep": true, "topics": ["attention-focus", "perception-illusions"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "8NF2CN_J9oM", "keep": true, "topics": ["sleep-dreams", "depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.85}
+{"vid": "uKZWF5amZMg", "keep": true, "topics": ["consciousness", "ai-and-mind"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "lkYwKjkCJgE", "keep": true, "topics": ["creativity-insight", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "rz7MhCDRZlU", "keep": true, "topics": ["attention-focus", "creativity-insight"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "ZOsi_ia810U", "keep": true, "topics": ["neurochemistry", "emotion"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "2pd6xtEAaJE", "keep": true, "topics": ["intelligence-expertise", "memory"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "bgJlMG1wLfI", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.65}
+{"vid": "uqR4cw9Amlg", "keep": true, "topics": ["sex-gender", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "HV1NuxDYPW8", "keep": true, "topics": ["psychedelics", "depression-anxiety", "psychiatry-medication"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "Vz9BDIwvmTg", "keep": true, "topics": ["ai-and-mind", "consciousness", "brain-tech"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "vTfWQwo2-RY", "keep": true, "topics": ["intelligence-expertise"], "cw": [], "contested": "multiple-intelligences", "contested_role": "promotes", "course": false, "confidence": 0.95}
+{"vid": "0lPjleuohMo", "keep": true, "topics": ["pseudoscience-skepticism", "replication-crisis"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.4}
+{"vid": "40Os_t0LG94", "keep": true, "topics": ["psychedelics", "consciousness"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "ddv91MZyLPQ", "keep": true, "topics": ["emotion", "ai-and-mind"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "TZMYvnL8dfI", "keep": true, "topics": ["memory", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "2-KPdE4XvHQ", "keep": true, "topics": ["consciousness"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "jXIeywVd4KM", "keep": true, "topics": ["work-organizations", "trauma-stress"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.4}
+{"vid": "4BWRoHGiwrw", "keep": true, "topics": ["emotion", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "zPInah-Wxms", "keep": true, "topics": ["sleep-dreams", "memory", "learning-studying"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}
+{"vid": "tXJVHU5vInQ", "keep": true, "topics": ["ai-and-mind", "rationality-biases"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.95}

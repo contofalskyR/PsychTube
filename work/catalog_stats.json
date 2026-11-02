@@ -1,0 +1,654 @@
+{
+ "stats": {
+  "kept": 3304,
+  "inst_lectures": 2721,
+  "inst_also_vouched": 21,
+  "dropped_not_psych_or_unlabeled": 694,
+  "dropped_thin_vouch": 149,
+  "dropped_inst_not_psych": 139,
+  "dropped_inst_promo": 97
+ },
+ "topics": [
+  [
+   "how-the-brain-works",
+   572
+  ],
+  [
+   "happiness-meaning",
+   337
+  ],
+  [
+   "perception-illusions",
+   280
+  ],
+  [
+   "personality",
+   223
+  ],
+  [
+   "psych-research",
+   223
+  ],
+  [
+   "history-of-psychology",
+   206
+  ],
+  [
+   "therapy",
+   192
+  ],
+  [
+   "emotion",
+   187
+  ],
+  [
+   "psychiatry-medication",
+   167
+  ],
+  [
+   "child-development",
+   164
+  ],
+  [
+   "decision-risk",
+   163
+  ],
+  [
+   "ai-and-mind",
+   160
+  ],
+  [
+   "work-organizations",
+   155
+  ],
+  [
+   "consciousness",
+   155
+  ],
+  [
+   "brain-disorders",
+   144
+  ],
+  [
+   "brain-tech",
+   141
+  ],
+  [
+   "language-thought",
+   131
+  ],
+  [
+   "morality-cooperation",
+   116
+  ],
+  [
+   "persuasion-manipulation",
+   114
+  ],
+  [
+   "motivation-habits",
+   112
+  ],
+  [
+   "rationality-biases",
+   112
+  ],
+  [
+   "sex-gender",
+   105
+  ],
+  [
+   "mindfulness-meditation",
+   102
+  ],
+  [
+   "animal-minds",
+   102
+  ],
+  [
+   "depression-anxiety",
+   97
+  ],
+  [
+   "groups-prejudice",
+   90
+  ],
+  [
+   "memory",
+   89
+  ],
+  [
+   "trauma-stress",
+   87
+  ],
+  [
+   "relationships-attachment",
+   83
+  ],
+  [
+   "replication-crisis",
+   81
+  ],
+  [
+   "sleep-dreams",
+   77
+  ],
+  [
+   "neurochemistry",
+   73
+  ],
+  [
+   "serious-mental-illness",
+   70
+  ],
+  [
+   "addiction",
+   64
+  ],
+  [
+   "behavioral-genetics",
+   60
+  ],
+  [
+   "attention-focus",
+   59
+  ],
+  [
+   "adolescence-aging",
+   59
+  ],
+  [
+   "adhd-autism",
+   47
+  ],
+  [
+   "intelligence-expertise",
+   45
+  ],
+  [
+   "crime-forensic",
+   45
+  ],
+  [
+   "design-behavior",
+   39
+  ],
+  [
+   "tech-and-mind",
+   33
+  ],
+  [
+   "learning-studying",
+   29
+  ],
+  [
+   "psychedelics",
+   26
+  ],
+  [
+   "conformity-obedience",
+   23
+  ],
+  [
+   "creativity-insight",
+   23
+  ],
+  [
+   "pseudoscience-skepticism",
+   21
+  ],
+  [
+   "education-teaching",
+   20
+  ],
+  [
+   "grief-loneliness",
+   13
+  ],
+  [
+   "parenting",
+   11
+  ],
+  [
+   "free-will",
+   10
+  ],
+  [
+   "performance",
+   7
+  ]
+ ],
+ "sources": {
+  "hn": 2130,
+  "reddit": 229,
+  "se": 160
+ },
+ "communities": [
+  [
+   "Hacker News",
+   320
+  ],
+  [
+   "Psychology & Neuroscience SE",
+   152
+  ],
+  [
+   "r/neurophilosophy",
+   58
+  ],
+  [
+   "r/askpsychology",
+   33
+  ],
+  [
+   "r/BehavioralEconomics",
+   32
+  ],
+  [
+   "r/cognitivescience",
+   23
+  ],
+  [
+   "r/psychologyresearch",
+   18
+  ],
+  [
+   "r/AcademicPsychology",
+   12
+  ],
+  [
+   "r/psychology",
+   12
+  ],
+  [
+   "r/cogsci",
+   6
+  ],
+  [
+   "r/socialpsychology",
+   5
+  ]
+ ],
+ "series": [
+  [
+   "Human Behavioral Biology",
+   25
+  ],
+  [
+   "Psychology, Brain and Mind Lectures",
+   71
+  ],
+  [
+   "Adhd Videos",
+   2
+  ],
+  [
+   "Maps of Meaning: The Architecture of Belief",
+   46
+  ],
+  [
+   "Personality and Its Transformations",
+   72
+  ],
+  [
+   "CrashCourse",
+   4
+  ],
+  [
+   "The Psychological Significance of the Biblical Stories: Genesis",
+   15
+  ],
+  [
+   "Yale PSYC 110: Introduction to Psychology",
+   20
+  ],
+  [
+   "MIT 9.00SC Introduction to Psychology",
+   24
+  ],
+  [
+   "Neurodiversity",
+   3
+  ],
+  [
+   "MIT 9.11 The Human Brain",
+   73
+  ],
+  [
+   "Classics in Neuroscience",
+   151
+  ],
+  [
+   "Yoga and Positive Psychology for Managing Career and Life",
+   94
+  ],
+  [
+   "PSYA01 Introductory Psychology",
+   64
+  ],
+  [
+   "Mental Health and Wellbeing",
+   62
+  ],
+  [
+   "Fundamentals of Language Acquisition",
+   61
+  ],
+  [
+   "Bayesian Data Analysis for the Behavioral Sciences",
+   60
+  ],
+  [
+   "MIT RES.9-003 Brains, Minds and Machines Summer Course",
+   56
+  ],
+  [
+   "Organizational Behaviour",
+   56
+  ],
+  [
+   "Introductory Neuroscience and Neuro-Instrumentation",
+   49
+  ],
+  [
+   "NEW302 Jungian Psychodynamics",
+   47
+  ],
+  [
+   "PSYC85 History of Psychology",
+   45
+  ],
+  [
+   "PSY409 Positive Psychology",
+   45
+  ],
+  [
+   "PSY512 Gender Issues in Psychology",
+   45
+  ],
+  [
+   "PSY514 Consumer Psychology",
+   45
+  ],
+  [
+   "PSY631 Psychological Testing and Measurement",
+   45
+  ],
+  [
+   "EDU303 Child Development",
+   45
+  ],
+  [
+   "MGT502 Organizational Behaviour",
+   45
+  ],
+  [
+   "Abnormal Psychology",
+   44
+  ],
+  [
+   "Basics of Experimental Design for Cognitive Psychology",
+   40
+  ],
+  [
+   "Social Behavior and the Brain: An Introduction to Social Neuroscience",
+   40
+  ],
+  [
+   "MIT 9.14 Brain Structure and Its Origins",
+   35
+  ],
+  [
+   "Applied Positive Psychology",
+   35
+  ],
+  [
+   "Foundations of Psychology: Concepts and Applications",
+   34
+  ],
+  [
+   "Psychology of Personality and Individual Differences",
+   32
+  ],
+  [
+   "PSYC 200: Introduction to Psychology",
+   29
+  ],
+  [
+   "Philosophy and the Science of Human Nature",
+   26
+  ],
+  [
+   "MIT 9.20 Animal Behavior",
+   25
+  ],
+  [
+   "GENED 1066: Rationality",
+   25
+  ],
+  [
+   "MIT 14.13 Psychology and Economics",
+   24
+  ],
+  [
+   "The Psychology, Biology and Politics of Food",
+   23
+  ],
+  [
+   "MIT 9.00 Introduction to Psychology",
+   23
+  ],
+  [
+   "MIT 9.04 Sensory Systems",
+   23
+  ],
+  [
+   "MIT 9.35 Perception",
+   23
+  ],
+  [
+   "BPM332 Buddhism and Psychotherapies",
+   23
+  ],
+  [
+   "Engineering Psychology",
+   22
+  ],
+  [
+   "Principles and Practice of Sleep Medicine",
+   22
+  ],
+  [
+   "MIT 9.40 Introduction to Neural Computation",
+   20
+  ],
+  [
+   "NEW303 Hypotheses of the Unconscious",
+   18
+  ],
+  [
+   "Positive Psychology",
+   18
+  ],
+  [
+   "MIT 9.13 The Human Brain",
+   17
+  ],
+  [
+   "Psychology M176: Families and Couples",
+   17
+  ],
+  [
+   "PSY 1: Introduction to Psychological Science",
+   15
+  ],
+  [
+   "MIT 6.868J The Society of Mind (2011)",
+   13
+  ],
+  [
+   "BPM232 Buddhist Psychology",
+   13
+  ],
+  [
+   "Behavioral Neuroscience Lab: Psychology 116",
+   9
+  ],
+  [
+   "Brains, Minds and Machines Summer Course",
+   8
+  ],
+  [
+   "Moralities of Everyday Life",
+   7
+  ],
+  [
+   "MIT 6.868J The Society of Mind (2007)",
+   5
+  ],
+  [
+   "MIT 24.08J Philosophical Issues in Brain Science",
+   5
+  ],
+  [
+   "Experts in Emotion Series",
+   63
+  ],
+  [
+   "Psychology Public Lectures",
+   21
+  ],
+  [
+   "The Science of Well-Being",
+   11
+  ],
+  [
+   "Why Do We Have Emotions?",
+   6
+  ],
+  [
+   "Mathematics and the Brain",
+   6
+  ],
+  [
+   "The Psychology of Finance",
+   6
+  ],
+  [
+   "Exploring Human Behavior in Finance",
+   6
+  ],
+  [
+   "Gifford Lectures",
+   6
+  ],
+  [
+   "A Romp through the Philosophy of Mind",
+   5
+  ],
+  [
+   "Neuroscience: The Brain and the Mind",
+   3
+  ],
+  [
+   "Brain Basics",
+   3
+  ],
+  [
+   "Psychiatry Grand Rounds",
+   136
+  ],
+  [
+   "Psychology",
+   53
+  ],
+  [
+   "Brain Channel",
+   51
+  ],
+  [
+   "Brains, Minds and Machines Seminar Series",
+   46
+  ],
+  [
+   "Neuroscience at Oxford",
+   39
+  ],
+  [
+   "Wu Tsai Neurosciences Institute Talks",
+   38
+  ],
+  [
+   "The Mind and Human Violence",
+   20
+  ],
+  [
+   "Talks by UCL Psychology and Language Sciences Academics",
+   20
+  ],
+  [
+   "Lunch Hour Lectures: Psychology and Language Sciences",
+   16
+  ],
+  [
+   "RCPsych Lectures",
+   13
+  ],
+  [
+   "Oxford Psychiatry",
+   12
+  ],
+  [
+   "Mental Health Information",
+   12
+  ],
+  [
+   "Psychology in Sheffield",
+   8
+  ],
+  [
+   "Brain and Mental Health at Oxford",
+   7
+  ],
+  [
+   "The Science of Mind, Matter and Curiosity",
+   7
+  ],
+  [
+   "Understanding Mental Health (#OxfordMentalHealth)",
+   6
+  ],
+  [
+   "Experimental Psychology",
+   5
+  ],
+  [
+   "This Emotional Life: Common Relationship Issues",
+   4
+  ],
+  [
+   "Mental Health Lectures",
+   4
+  ],
+  [
+   "Learn at FASS: Psychology",
+   4
+  ],
+  [
+   "Our Mental Wellness",
+   3
+  ],
+  [
+   "Living with Mental Health",
+   2
+  ],
+  [
+   "Outsmarting Human Minds",
+   1
+  ],
+  [
+   "Center for Addiction Research",
+   1
+  ]
+ ]
+}

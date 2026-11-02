@@ -1,0 +1,526 @@
+{
+  "version": "psychtube-1",
+  "areas": [
+    {
+      "id": "brain",
+      "name": "Brain & Neuroscience",
+      "topics": [
+        {
+          "id": "how-the-brain-works",
+          "name": "How the brain works",
+          "description": "Neurons, brain anatomy, neuroplasticity, brain development, basic neuroscience lectures, how memories or thoughts are physically implemented."
+        },
+        {
+          "id": "perception-illusions",
+          "name": "Perception & illusions",
+          "description": "Vision, hearing, touch, optical and auditory illusions, color perception, face recognition, synesthesia, how the brain constructs reality."
+        },
+        {
+          "id": "sleep-dreams",
+          "name": "Sleep & dreams",
+          "description": "Sleep science, circadian rhythms, insomnia, dreaming, lucid dreams, naps, Matthew Walker, sleep deprivation."
+        },
+        {
+          "id": "neurochemistry",
+          "name": "Dopamine, hormones & neurochemistry",
+          "description": "Dopamine, serotonin, oxytocin, cortisol, testosterone, caffeine, alcohol and drugs on the brain, Huberman-style protocols, reward systems."
+        },
+        {
+          "id": "brain-disorders",
+          "name": "Brain injury, dementia & neurological cases",
+          "description": "Stroke, split-brain patients, aphasia, amnesia, Alzheimer's, Parkinson's, Oliver Sacks-style case studies, blindness and the brain."
+        },
+        {
+          "id": "brain-tech",
+          "name": "Brain-computer interfaces & neuroimaging",
+          "description": "BCIs, Neuralink, fMRI, EEG, optogenetics, brain organoids, reading thoughts with machines, neurotechnology."
+        },
+        {
+          "id": "animal-minds",
+          "name": "Animal minds & behavior",
+          "description": "Animal cognition, crows and octopuses, primate studies, ethology, animal emotions, Pavlov and Skinner's animals, comparative psychology."
+        }
+      ]
+    },
+    {
+      "id": "cognition",
+      "name": "Cognition & Learning",
+      "topics": [
+        {
+          "id": "memory",
+          "name": "Memory",
+          "description": "How memory works, forgetting, false memories, Loftus, eyewitness memory, memory palaces, mnemonics, spaced repetition, superior memory."
+        },
+        {
+          "id": "attention-focus",
+          "name": "Attention, focus & distraction",
+          "description": "Attention, multitasking, flow, deep work, procrastination mechanics, boredom, inattentional blindness, the gorilla experiment."
+        },
+        {
+          "id": "learning-studying",
+          "name": "Learning how to learn",
+          "description": "Study techniques, retrieval practice, deliberate practice, learning styles myth, how to learn anything, Feynman technique, note-taking, education science."
+        },
+        {
+          "id": "intelligence-expertise",
+          "name": "Intelligence, expertise & talent",
+          "description": "IQ, g factor, Flynn effect, expertise research, 10,000 hours debate, prodigies, savants, chess masters, genius, the limits of talent."
+        },
+        {
+          "id": "creativity-insight",
+          "name": "Creativity & insight",
+          "description": "Creative thinking, insight problems, daydreaming, divergent thinking, where ideas come from, the creative process."
+        },
+        {
+          "id": "language-thought",
+          "name": "Language & thought",
+          "description": "Psycholinguistics, language acquisition, Chomsky vs Skinner, linguistic relativity, bilingual brains, reading, inner speech, how words shape thinking."
+        },
+        {
+          "id": "rationality-biases",
+          "name": "Biases, heuristics & rationality",
+          "description": "Cognitive biases, Kahneman and Tversky, Dunning-Kruger, confirmation bias, motivated reasoning, overconfidence, fallacies, how to think better."
+        },
+        {
+          "id": "decision-risk",
+          "name": "Decisions, risk & behavioral economics",
+          "description": "Decision making, prospect theory, loss aversion, nudges, Thaler, Ariely, incentives, gambling and risk perception, choice overload, game theory of people."
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "name": "Social Psychology & Influence",
+      "topics": [
+        {
+          "id": "conformity-obedience",
+          "name": "Conformity, obedience & classic experiments",
+          "description": "Milgram, Asch, Stanford Prison Experiment, bystander effect, Robbers Cave, the famous social experiments and what they really showed."
+        },
+        {
+          "id": "persuasion-manipulation",
+          "name": "Persuasion, propaganda & manipulation",
+          "description": "Cialdini, influence tactics, advertising psychology, propaganda, brainwashing, cults, gaslighting, con artists, Bernays."
+        },
+        {
+          "id": "morality-cooperation",
+          "name": "Morality, altruism & cooperation",
+          "description": "Moral psychology, Haidt, trolley problems, altruism, cooperation, trust, fairness, empathy, evolution of morality, honesty and cheating."
+        },
+        {
+          "id": "groups-prejudice",
+          "name": "Groups, identity & prejudice",
+          "description": "In-groups and out-groups, stereotypes, implicit bias, tribalism, polarization, crowd behavior, mobs, identity and belonging."
+        },
+        {
+          "id": "relationships-attachment",
+          "name": "Love, relationships & attachment",
+          "description": "Attachment theory, romantic love, dating, marriage research, Gottman, friendship, loneliness in relationships, breakups, jealousy, sex and intimacy."
+        },
+        {
+          "id": "tech-and-mind",
+          "name": "Social media, screens & the attention economy",
+          "description": "Smartphone and social media effects, persuasive design, dark patterns, dopamine loops, screen time, online outrage, porn and the brain, gaming psychology."
+        }
+      ]
+    },
+    {
+      "id": "mental-health",
+      "name": "Mental Health & Therapy",
+      "topics": [
+        {
+          "id": "depression-anxiety",
+          "name": "Depression & anxiety",
+          "description": "Depression, anxiety disorders, panic, OCD, phobias, rumination, the science of mood disorders, Sapolsky on depression."
+        },
+        {
+          "id": "adhd-autism",
+          "name": "ADHD, autism & neurodiversity",
+          "description": "ADHD, autism spectrum, dyslexia, executive function, Russell Barkley, neurodivergent experience, diagnosis debates."
+        },
+        {
+          "id": "trauma-stress",
+          "name": "Stress, trauma & burnout",
+          "description": "Stress physiology, cortisol, PTSD, trauma and the body, resilience, burnout, adverse childhood experiences, Zebras don't get ulcers."
+        },
+        {
+          "id": "addiction",
+          "name": "Addiction & compulsion",
+          "description": "Substance addiction, behavioral addictions, gambling, Rat Park, dopamine and craving, recovery, harm reduction, nicotine, alcohol dependence."
+        },
+        {
+          "id": "therapy",
+          "name": "Psychotherapy & how it works",
+          "description": "CBT, DBT, ACT, psychoanalysis, Freud and Jung, humanistic therapy, Rogers, what therapy does, how to find a therapist, therapist demonstrations, NVC."
+        },
+        {
+          "id": "psychiatry-medication",
+          "name": "Psychiatry & medication",
+          "description": "Antidepressants, SSRIs, antipsychotics, lithium, ketamine as treatment, electroconvulsive therapy, psychiatric diagnosis, DSM debates, history of asylums."
+        },
+        {
+          "id": "psychedelics",
+          "name": "Psychedelics & altered states",
+          "description": "Psilocybin, LSD, MDMA therapy, ketamine, hallucinations, near-death and out-of-body experiences, hypnosis, trance, altered states research."
+        },
+        {
+          "id": "mindfulness-meditation",
+          "name": "Mindfulness & meditation",
+          "description": "Meditation science, mindfulness-based stress reduction, Kabat-Zinn, contemplative neuroscience, breathing practices, Wim Hof, Buddhist psychology."
+        },
+        {
+          "id": "serious-mental-illness",
+          "name": "Schizophrenia, bipolar & psychosis",
+          "description": "Schizophrenia, bipolar disorder, psychosis, dissociation, personality disorders, first-person accounts, severe mental illness and its treatment."
+        }
+      ]
+    },
+    {
+      "id": "emotion",
+      "name": "Emotion, Motivation & Wellbeing",
+      "topics": [
+        {
+          "id": "emotion",
+          "name": "Emotions & feelings",
+          "description": "What emotions are, Lisa Feldman Barrett, Ekman, facial expressions, anger, fear, disgust, shame, emotional regulation, affective neuroscience."
+        },
+        {
+          "id": "motivation-habits",
+          "name": "Motivation, willpower & habits",
+          "description": "Intrinsic vs extrinsic motivation, Drive, self-determination theory, habit formation, willpower, ego depletion, procrastination, goal setting, discipline."
+        },
+        {
+          "id": "happiness-meaning",
+          "name": "Happiness, meaning & the good life",
+          "description": "Positive psychology, Seligman, hedonic adaptation, Harvard happiness study, gratitude, flow, Frankl and meaning, status anxiety, wellbeing science."
+        },
+        {
+          "id": "grief-loneliness",
+          "name": "Grief, loneliness & connection",
+          "description": "Grief and bereavement, loneliness epidemic, social connection and health, belonging, mortality awareness, death and the psyche."
+        }
+      ]
+    },
+    {
+      "id": "development",
+      "name": "Development & Personality",
+      "topics": [
+        {
+          "id": "child-development",
+          "name": "Child development",
+          "description": "Infant cognition, Piaget, attachment in infancy, still-face experiment, theory of mind development, language development, marshmallow test, childhood."
+        },
+        {
+          "id": "parenting",
+          "name": "Parenting",
+          "description": "Parenting research and advice grounded in psychology, ADHD parenting, discipline, play, screen rules for kids, raising resilient children."
+        },
+        {
+          "id": "adolescence-aging",
+          "name": "Adolescence & aging",
+          "description": "Teenage brain, adolescent risk-taking, puberty, cognitive aging, wisdom, dementia prevention, the psychology of old age, life stages."
+        },
+        {
+          "id": "personality",
+          "name": "Personality & individual differences",
+          "description": "Big Five, Myers-Briggs critique, introversion and extraversion, narcissism, psychopathy, dark triad, temperament, personality change, Jordan Peterson personality lectures."
+        },
+        {
+          "id": "sex-gender",
+          "name": "Sex, gender & evolutionary psychology",
+          "description": "Sex differences research, gender psychology, mating psychology, evolutionary psychology of behavior, sexual orientation research, the gender equality paradox debate."
+        },
+        {
+          "id": "behavioral-genetics",
+          "name": "Nature, nurture & behavioral genetics",
+          "description": "Heritability, twin studies, Plomin, epigenetics, genes and intelligence, genes and personality, the nature-nurture debate, Sapolsky on behavior's causes."
+        }
+      ]
+    },
+    {
+      "id": "mind",
+      "name": "Consciousness & Philosophy of Mind",
+      "topics": [
+        {
+          "id": "consciousness",
+          "name": "Consciousness & the self",
+          "description": "Theories of consciousness, the hard problem, Dennett, Chalmers, qualia, the self as illusion, global workspace, integrated information, anesthesia and awareness."
+        },
+        {
+          "id": "free-will",
+          "name": "Free will & agency",
+          "description": "Free will debates, Libet experiments, determinism and responsibility, Sapolsky's Determined, Sam Harris, compatibilism, moral responsibility."
+        },
+        {
+          "id": "ai-and-mind",
+          "name": "Artificial minds & cognitive science",
+          "description": "Cognitive science, Hofstadter and analogy, computational theories of mind, whether machines can think, Chinese room, embodied cognition, predictive processing, Joscha Bach."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "name": "Methods, History & Controversies",
+      "topics": [
+        {
+          "id": "replication-crisis",
+          "name": "Replication crisis & research methods",
+          "description": "The replication crisis in psychology, p-hacking, power posing collapse, priming failures, statistics for psychology, how to read a study, open science."
+        },
+        {
+          "id": "history-of-psychology",
+          "name": "History of psychology & psychiatry",
+          "description": "Freud, Jung, Skinner, Wundt, James, the history of psychiatry, lobotomy, asylums, MK-Ultra, the Century of the Self, how psychology became a science."
+        },
+        {
+          "id": "pseudoscience-skepticism",
+          "name": "Pseudoscience, cults & belief",
+          "description": "Why people believe weird things, conspiracy theories, cults, flat earth, pseudoscience in psychology, cognitive dissonance, critical thinking, skepticism."
+        },
+        {
+          "id": "psych-research",
+          "name": "Psychological research & careers",
+          "description": "What psychologists actually do, graduate school, research design, famous psychologists interviewed, how studies are run, academia in psychology."
+        }
+      ]
+    },
+    {
+      "id": "applied",
+      "name": "Applied Psychology",
+      "topics": [
+        {
+          "id": "work-organizations",
+          "name": "Work, leadership & organizations",
+          "description": "Industrial-organizational psychology, motivation at work, leadership, team dynamics, negotiation psychology, meetings and productivity science, remote work and wellbeing."
+        },
+        {
+          "id": "education-teaching",
+          "name": "Education & teaching",
+          "description": "Teaching methods grounded in psychology, classroom learning, educational psychology, growth mindset debate, school and child outcomes, tutoring."
+        },
+        {
+          "id": "crime-forensic",
+          "name": "Crime, deception & forensic psychology",
+          "description": "Criminal psychology, interrogation and false confessions, lie detection, serial killers, violence, forensic psychiatry, eyewitness testimony in court."
+        },
+        {
+          "id": "design-behavior",
+          "name": "Design, games & behavior",
+          "description": "Psychology of design and UX, game psychology and player motivation, gamification, choice architecture in products, Don Norman, human factors."
+        },
+        {
+          "id": "performance",
+          "name": "Performance, sport & peak states",
+          "description": "Sport psychology, choking under pressure, flow in performance, public speaking anxiety, visualization, mental training, breathing for performance."
+        }
+      ]
+    }
+  ],
+  "content_warnings": [
+    "suicide-self-harm",
+    "eating-disorders",
+    "sexual-content",
+    "abuse-violence",
+    "substance-use"
+  ],
+  "contested_findings": [
+    {
+      "id": "power-posing",
+      "name": "Power posing",
+      "note": "The 2010 power-posing hormone and risk-taking effects did not replicate; co-author Dana Carney disavowed them in 2016. A smaller 'felt power' self-report effect may survive.",
+      "source": "Simmons & Simonsohn (2017) p-curve; Ranehill et al. (2015) replication"
+    },
+    {
+      "id": "stanford-prison",
+      "name": "Stanford Prison Experiment",
+      "note": "Archival recordings show guards were coached to be cruel and a key 'breakdown' was reportedly acted; the study is now widely seen as a demonstration, not an experiment.",
+      "source": "Le Texier (2019) American Psychologist; Blum (2018)"
+    },
+    {
+      "id": "marshmallow-test",
+      "name": "Marshmallow test",
+      "note": "A 2018 conceptual replication with a larger, more diverse sample found the link between delay of gratification and later outcomes was much smaller and mostly explained by family background.",
+      "source": "Watts, Duncan & Quan (2018) Psychological Science"
+    },
+    {
+      "id": "ego-depletion",
+      "name": "Ego depletion / willpower as a muscle",
+      "note": "A 2016 multi-lab preregistered replication (23 labs) found an effect indistinguishable from zero.",
+      "source": "Hagger et al. (2016) Perspectives on Psychological Science"
+    },
+    {
+      "id": "social-priming",
+      "name": "Social priming (elderly-words walking, money priming)",
+      "note": "Classic behavioral priming studies have failed repeated high-powered replications; Kahneman himself urged the field to clean up its act in 2012.",
+      "source": "Doyen et al. (2012); Many Labs; Kahneman open letter (2012)"
+    },
+    {
+      "id": "facial-feedback",
+      "name": "Facial feedback (pen-in-teeth)",
+      "note": "A 17-lab registered replication found no effect of the pen-in-mouth smile manipulation on humor ratings, though later meta-analyses find small effects under some conditions.",
+      "source": "Wagenmakers et al. (2016) RRR; Coles et al. (2019)"
+    },
+    {
+      "id": "growth-mindset",
+      "name": "Growth mindset interventions",
+      "note": "Effects on achievement are real but small (d ≈ 0.1) and concentrated among lower-achieving students; early claims of large effects were overstated.",
+      "source": "Sisk et al. (2018) meta-analysis; Yeager et al. (2019) Nature"
+    },
+    {
+      "id": "learning-styles",
+      "name": "Learning styles",
+      "note": "No credible evidence that matching teaching to a student's 'learning style' improves learning; it is considered a neuromyth.",
+      "source": "Pashler et al. (2008) Psychological Science in the Public Interest"
+    },
+    {
+      "id": "10000-hours",
+      "name": "10,000-hour rule",
+      "note": "Deliberate practice explains a minority of the variance in expert performance (about 1–26% depending on domain); the round number is Gladwell's, not Ericsson's finding.",
+      "source": "Macnamara, Hambrick & Oswald (2014) Psychological Science"
+    },
+    {
+      "id": "grit",
+      "name": "Grit",
+      "note": "Grit overlaps heavily with conscientiousness and predicts outcomes only modestly beyond it; the original claims were larger than meta-analytic estimates.",
+      "source": "Credé, Tynan & Harms (2017) JPSP"
+    },
+    {
+      "id": "left-right-brain",
+      "name": "Left-brained / right-brained people",
+      "note": "Hemispheric specialization is real, but there is no evidence people are dominated by one hemisphere in personality or thinking style.",
+      "source": "Nielsen et al. (2013) PLOS ONE"
+    },
+    {
+      "id": "milgram-nuance",
+      "name": "Milgram obedience (nuance)",
+      "note": "The headline 65% figure comes from one of ~24 conditions; archival work shows many participants disbelieved the shocks were real, and compliance varied widely across variants. The core effect is not debunked.",
+      "source": "Perry (2013) Behind the Shock Machine; Haslam & Reicher"
+    },
+    {
+      "id": "bystander-genovese",
+      "name": "Kitty Genovese / 38 witnesses story",
+      "note": "The '38 witnesses who did nothing' account was largely a New York Times myth; some neighbors did call police or shout. The bystander effect itself is a real but context-dependent finding.",
+      "source": "Manning, Levine & Collins (2007) American Psychologist"
+    },
+    {
+      "id": "dunning-kruger-artifact",
+      "name": "Dunning-Kruger effect (debate)",
+      "note": "Part of the classic pattern can be reproduced from random noise plus regression to the mean; the size and interpretation of the effect are debated, though the pattern is not purely artifactual.",
+      "source": "Nuhfer et al. (2016, 2017); Gignac & Zajenkowski (2020)"
+    },
+    {
+      "id": "implicit-bias-iat",
+      "name": "Implicit Association Test as a predictor",
+      "note": "The IAT has low test-retest reliability and weakly predicts discriminatory behavior; its creators now describe it as unsuited for diagnosing individuals.",
+      "source": "Oswald et al. (2013); Forscher et al. (2019) meta-analysis"
+    },
+    {
+      "id": "mozart-effect",
+      "name": "Mozart effect",
+      "note": "Listening to Mozart does not make you smarter; the original brief spatial-reasoning effect is small, short-lived and reproducible with any arousing music.",
+      "source": "Pietschnig, Voracek & Formann (2010) meta-analysis"
+    },
+    {
+      "id": "little-albert",
+      "name": "Little Albert",
+      "note": "Watson's conditioning demonstration had one subject, no controls, and the baby's identity and health are disputed; it is a historical landmark rather than solid evidence.",
+      "source": "Harris (1979); Beck, Levinson & Irons (2009); Powell et al. (2014)"
+    },
+    {
+      "id": "serotonin-depression",
+      "name": "Chemical imbalance theory of depression",
+      "note": "A 2022 umbrella review found no consistent evidence that depression is caused by low serotonin; antidepressants can still work without that explanation being true.",
+      "source": "Moncrieff et al. (2022) Molecular Psychiatry"
+    },
+    {
+      "id": "stereotype-threat",
+      "name": "Stereotype threat (women and math)",
+      "note": "Large preregistered replications found little or no stereotype-threat effect on women's math performance; publication bias inflated the early literature.",
+      "source": "Flore & Wicherts (2015); Flore, Mulder & Wicherts (2018)"
+    },
+    {
+      "id": "mirror-neurons",
+      "name": "Mirror neurons explain empathy/autism",
+      "note": "Mirror neurons exist in monkeys, but the 'broken mirror' theory of autism and claims that they explain empathy or language are not supported.",
+      "source": "Hickok (2014) The Myth of Mirror Neurons; Hamilton (2013)"
+    },
+    {
+      "id": "huberman-protocols",
+      "name": "Huberman protocols (overreach)",
+      "note": "Popular mechanistic protocols (sunlight timing, cold exposure, supplements) often extrapolate from small or animal studies; the physiology is real, the certainty is not.",
+      "source": "Critiques in Slate, Scientific American and by sleep researchers (2023–2024)"
+    },
+    {
+      "id": "nofap-porn",
+      "name": "Porn 'addiction' as brain disease",
+      "note": "Claims that porn rewires the brain like a drug and causes erectile dysfunction come largely from advocacy, not controlled research; evidence for 'porn-induced ED' is weak and moral disapproval predicts self-reported 'addiction' better than use does.",
+      "source": "Grubbs et al. (2019); Prause & Pfaus (2015)"
+    },
+    {
+      "id": "amy-cuddy-ted",
+      "name": "TED-style single-study claims",
+      "note": "Many TED talks present a single study as settled science; several of the most-watched psychology talks rest on effects that later shrank or vanished.",
+      "source": "General caution; see the specific finding tagged on the video"
+    },
+    {
+      "id": "mbti",
+      "name": "Myers-Briggs (MBTI)",
+      "note": "The MBTI has poor test-retest reliability and its dichotomies do not match how traits are distributed; personality psychologists use the Big Five instead.",
+      "source": "Pittenger (1993, 2005); Stein & Swan (2019)"
+    },
+    {
+      "id": "rat-park",
+      "name": "Rat Park",
+      "note": "Rat Park's message (environment matters for addiction) is supported, but the original study was small, had confounds, and direct replications were mixed; it is not proof that addiction is 'just' about disconnection.",
+      "source": "Petrie (1996); Gage & Sumnall (2019) Addiction"
+    },
+    {
+      "id": "multiple-intelligences",
+      "name": "Multiple intelligences",
+      "note": "Gardner's intelligences lack empirical support as separate abilities; measured cognitive abilities correlate strongly (the g factor).",
+      "source": "Waterhouse (2006); Visser, Ashton & Vernon (2006)"
+    },
+    {
+      "id": "polyvagal",
+      "name": "Polyvagal theory",
+      "note": "Popular in trauma therapy, but its core physiological claims about the vagus nerve are contradicted by comparative neuroanatomy.",
+      "source": "Grossman & Taylor (2007); Grossman (2023)"
+    },
+    {
+      "id": "body-keeps-score",
+      "name": "'Body keeps the score' / repressed memory claims",
+      "note": "Trauma's effects are real, but repressed-then-recovered memory claims lack solid support and contributed to false accusations; memory researchers dispute 'body memory' framings.",
+      "source": "Loftus (1993); Otgaar et al. (2019) Perspectives on Psychological Science"
+    },
+    {
+      "id": "attachment-styles-pop",
+      "name": "Adult 'attachment styles' as fixed types",
+      "note": "Attachment is continuous and changes over time; pop versions treating anxious/avoidant as fixed personality types overstate the research.",
+      "source": "Fraley (2019) Annual Review of Psychology"
+    },
+    {
+      "id": "dopamine-detox",
+      "name": "Dopamine detox / 'dopamine fasting'",
+      "note": "You cannot deplete or reset dopamine by avoiding pleasures; the useful part (reducing compulsive habits) has nothing to do with dopamine levels.",
+      "source": "Critiques by addiction neuroscientists; Sepah's original proposal was behavioral, not neurochemical"
+    },
+    {
+      "id": "choice-overload",
+      "name": "Choice overload / paradox of choice",
+      "note": "The famous jam-study effect (more options, fewer purchases) averages close to zero across studies; choice overload appears only under specific conditions such as time pressure or unfamiliar options.",
+      "source": "Scheibehenne, Greifeneder & Todd (2010) meta-analysis; Chernev, Böckenholt & Goodman (2015)"
+    },
+    {
+      "id": "goal-announcing",
+      "name": "Announcing goals makes you less likely to achieve them",
+      "note": "Rests on a few small studies by Gollwitzer and colleagues; later work found sharing goals with people whose opinion you value can increase commitment and performance.",
+      "source": "Gollwitzer et al. (2009); Klein, Lount, Park & Polin (2020) JAPSP"
+    },
+    {
+      "id": "stress-mindset",
+      "name": "Stress mindset (‘make stress your friend’)",
+      "note": "Based mainly on an observational study where perceived stress predicted mortality only when people also believed stress was harmful; causality and the size of the effect remain unsettled.",
+      "source": "Keller et al. (2012) Health Psychology; Crum, Salovey & Achor (2013)"
+    }
+  ]
+}
