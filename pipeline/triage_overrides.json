@@ -1,6 +1,12 @@
 {
   "_comment": "Applied by merge_pulled.py on top of work/triage/out_*.jsonl. drop_inst: publishers the triage kept that are media or festival organisations rather than universities, research institutes, societies or clinical institutions. drop_pid: individual playlists to skip. rename_inst: credit under a common name.",
-  "drop_inst": ["The Institute of Art and Ideas", "World Science Festival", "Nour Foundation"],
+  "drop_inst": [
+    "The Institute of Art and Ideas",
+    "World Science Festival",
+    "Nour Foundation",
+    "La Hacienda Treatment Center",
+    "Psychedelic Science Sweden"
+  ],
   "drop_pid": [],
   "rename_inst": {
     "Anxiety and Depression Association of America": "Anxiety and Depression Association of America (ADAA)",
@@ -8,6 +14,7 @@
     "Massachusetts General Hospital (Clay Center)": "Massachusetts General Hospital",
     "UC Davis MIND Institute (UCTV)": "UC Davis MIND Institute",
     "UC San Diego CARTA (UCTV)": "UC San Diego (CARTA)",
-    "UC San Diego Kavli Institute for Brain and Mind (UCTV)": "UC San Diego (Kavli Institute for Brain and Mind)"
+    "UC San Diego Kavli Institute for Brain and Mind (UCTV)": "UC San Diego (Kavli Institute for Brain and Mind)",
+    "Virtual Linguistics Campus": "University of Marburg (Virtual Linguistics Campus)"
   }
 }

@@ -36,6 +36,7 @@ drop_inst, drop_pid, rename = set(ov.get("drop_inst", [])), set(ov.get("drop_pid
 pulled = json.load(open(src, encoding="utf-8"))
 cj = json.load(open(P("raw", "institutional", "courses.json"), encoding="utf-8"))
 have = {c["pid"] for c in cj["courses"]}
+have_vids = {it["id"] for c in cj["courses"] for it in c["items"]}
 
 added, skipped = [], []
 for pid, pl in pulled.items():
@@ -52,6 +53,9 @@ for pid, pl in pulled.items():
         skipped.append((pid, f"only {len(items)} items")); continue
     for i, it in enumerate(items, 1):
         it.setdefault("idx", i)
+    overlap = sum(1 for it in items if it["id"] in have_vids) / len(items)
+    if overlap >= 0.6:                                   # the same lectures under another playlist (mirror, "best of", re-listing)
+        skipped.append((pid, "duplicate of a course already in")); continue
     cj["courses"].append({
         "pid": pid, "title": pl.get("title") or "", "desc": pl.get("desc") or "", "count": pl.get("count") or f"{len(items)} videos",
         "owner": pl.get("owner") or (items[0].get("ch") if items else ""), "ownerId": pl.get("ownerId") or (items[0].get("chid") if items else ""),
@@ -59,6 +63,7 @@ for pid, pl in pulled.items():
         "triage": {"confidence": t.get("confidence"), "why": t.get("why")},
     })
     have.add(pid)
+    have_vids |= {it["id"] for it in items}
     added.append((pid, inst, len(items), pl.get("title")))
 
 cj["pulled"] = datetime.date.today().isoformat()
