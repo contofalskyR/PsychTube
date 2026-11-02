@@ -36,7 +36,8 @@ labeled_courses = {o["pid"] for o in jsonl(P("work", "inst", "course_labels.json
 
 os.makedirs(P("work", "inst"), exist_ok=True)
 new_courses = [c for c in courses if c["pid"] not in labeled_courses]
-with open(P("work", "inst", "courses_in.jsonl"), "w", encoding="utf-8") as f:
+if new_courses:                       # leave the previous round's input in place when there is nothing new
+  with open(P("work", "inst", "courses_in.jsonl"), "w", encoding="utf-8") as f:
     for c in new_courses:
         f.write(json.dumps({
             "pid": c["pid"], "inst": c["inst"], "kind": c["kind"], "playlist_title": c["title"], "channel": c.get("owner"),
@@ -65,8 +66,10 @@ for c in courses:
 import re
 done_idx = [int(m.group(1)) for f in glob.glob(P("work", "inst", "out_*.jsonl")) for m in [re.search(r"out_(\d+)\.jsonl$", f)] if m]
 first = max(done_idx) + 1 if done_idx else 0
-for f in glob.glob(P("work", "inst", "batch_*.jsonl")):      # stale inputs from earlier rounds
-    os.remove(f)
+for f in glob.glob(P("work", "inst", "batch_*.jsonl")):      # unanswered inputs from an earlier run (answered ones stay as the record of what was labeled)
+    m = re.search(r"batch_(\d+)\.jsonl$", f)
+    if m and int(m.group(1)) not in done_idx:
+        os.remove(f)
 n = math.ceil(len(rows) / size) if rows else 0
 for i in range(n):
     with open(P("work", "inst", f"batch_{first + i:02d}.jsonl"), "w", encoding="utf-8") as f:
