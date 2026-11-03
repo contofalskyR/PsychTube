@@ -1,0 +1,105 @@
+name: Submit a course
+description: List a complete lecture course on PsychTube. Nothing is uploaded; point us at the public playlist.
+title: "[Course] "
+labels: ["course-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        PsychTube lists complete courses that universities, their lecturers and scientific institutions have already published publicly. Nothing is uploaded here: tell us where the lectures are and we build the course page — every lecture in order, your syllabus and readings linked, a place in the prerequisite pathways, and a "published by" line that says whose course it is. We check that the playlist is public and that the channel belongs to the lecturer or the institution; courses on a lecturer's own channel say so and name the affiliation.
+  - type: input
+    id: playlist
+    attributes:
+      label: Playlist URL
+      description: A public YouTube playlist with the lectures in order (a Panopto folder or an Internet Archive item also works)
+      placeholder: https://www.youtube.com/playlist?list=...
+    validations:
+      required: true
+  - type: input
+    id: course
+    attributes:
+      label: Course code and title
+      placeholder: "PSYC 110: Introduction to Psychology"
+    validations:
+      required: true
+  - type: input
+    id: institution
+    attributes:
+      label: Institution
+      placeholder: Yale University
+    validations:
+      required: true
+  - type: input
+    id: unit
+    attributes:
+      label: Department or programme (optional)
+      placeholder: Department of Psychology
+  - type: input
+    id: lecturer
+    attributes:
+      label: Lecturer(s)
+      placeholder: Paul Bloom
+    validations:
+      required: true
+  - type: input
+    id: faculty_page
+    attributes:
+      label: Faculty page URL
+      description: An institutional page that names the lecturer; we use it to confirm the affiliation
+      placeholder: https://psychology.yale.edu/people/...
+    validations:
+      required: true
+  - type: input
+    id: year
+    attributes:
+      label: Term and year
+      placeholder: Spring 2024
+  - type: dropdown
+    id: level
+    attributes:
+      label: Level
+      options:
+        - Introductory
+        - Intermediate
+        - Advanced
+        - Public lectures
+  - type: input
+    id: syllabus
+    attributes:
+      label: Syllabus URL (optional)
+  - type: input
+    id: readings
+    attributes:
+      label: Readings URL (optional)
+  - type: textarea
+    id: materials
+    attributes:
+      label: Other materials (optional)
+      description: "One per line: label — URL (slides, problem sets, a course site). Links only; PsychTube hosts nothing."
+      placeholder: |
+        Slides — https://...
+        Problem sets — https://...
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Lectures to leave out (administrative videos), guest lectures, a better order, the topics covered
+  - type: dropdown
+    id: who
+    attributes:
+      label: Who is submitting
+      options:
+        - The lecturer
+        - The institution's media or teaching office
+        - Someone else (a student, a reader)
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirm
+      options:
+        - label: The playlist is public and was published by the lecturer or the institution (not a re-upload)
+          required: true
+        - label: I understand PsychTube links to the lectures where they are and hosts nothing
+          required: true

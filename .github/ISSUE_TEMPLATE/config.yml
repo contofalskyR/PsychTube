@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: PsychTube
+    url: https://contofalskyr.github.io/PsychTube/
+    about: The site itself. Courses, shelves and replication notes.
+  - name: The data
+    url: https://contofalskyr.github.io/PsychTube/#data
+    about: psychtube.json and DATA.md, free to reuse.

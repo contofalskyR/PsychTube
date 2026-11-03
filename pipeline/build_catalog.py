@@ -316,6 +316,15 @@ def own_item(it, c):
     return bool(c.get("provider")) or not it.get("chid") or not c.get("ownerId") or it["chid"] in inst_channels[c["_pk"]]
 
 
+# Courses lecturers and institutions submit themselves (.github/ISSUE_TEMPLATE/submit-course.yml -> pipeline/intake_submission.py ->
+# raw/institutional/submissions/issue-<n>.json). The lectures still arrive through the normal pull/label path; the submission adds the
+# syllabus and other materials (links only) and the "submitted by the lecturer" line, once its status is "listed".
+SUBMISSIONS = {}
+for _f in sorted(glob.glob(P("raw", "institutional", "submissions", "issue-*.json"))):
+    _sub = json.load(open(_f, encoding="utf-8"))
+    if _sub.get("pid") and _sub.get("status") == "listed":
+        SUBMISSIONS[_sub["pid"]] = _sub
+
 inst_course = {}       # sid -> course record (series entry under construction)
 inst_member = {}       # vid -> (sid, idx)
 inst_meta = {}         # vid -> fallback metadata built from the playlist row
@@ -354,6 +363,8 @@ for c in inst_courses:
         "pid": c["pid"], "url": c.get("url") or f"https://www.youtube.com/playlist?list={c['pid']}", "ch": c.get("owner"), "chid": c.get("ownerId") if c.get("ownerId") != "?" else None,
         "total": len(items), "items": items, "topic_map": cl.get("topic_map") or {},
         "cross": len(items) - len(own), "partial": partial,
+        "materials": (SUBMISSIONS.get(c["pid"]) or {}).get("materials") or None,
+        "submitted": ({"by": SUBMISSIONS[c["pid"]].get("submitted_by", "other"), "issue": SUBMISSIONS[c["pid"]].get("issue"), "control": bool(SUBMISSIONS[c["pid"]].get("control_verified"))} if c["pid"] in SUBMISSIONS else None),
         # publisher check: who is behind a personal or name-only channel, and whether an institutional page confirms it
         "affil": pub.get("affil") if pub.get("personal") else None, "verified": bool(pub.get("verified")) if pub else None,
         "ok": pub.get("ok", True) if pub else True, "pubwhy": pub.get("why") if pub and not pub.get("ok", True) else None,
@@ -769,6 +780,7 @@ for sid, course in inst_course.items():
                    "topics": (course["ctopics"] or [t for t, _ in topics.most_common(3)])[:3],
                    "vouched": sum(1 for v in vids if v["nrec"]), "pop": pop, "score": round(sum(v["score"] for v in vids), 1),
                    "url": course["url"], "ch": course["ch"], "chid": course["chid"], "provider": course["provider"], "readings": course.get("readings"),
+                   "materials": course.get("materials"), "submitted": course.get("submitted"),
                    "hours": round(sum(v["len"] or 0 for v in vids) / 3600, 1)})
     for v in vids:
         v["series"] = sid
@@ -864,6 +876,7 @@ for i in institutions.values():
         i["units"] = sorted(i["units"])             # the lecturers, alphabetically; other institutions keep their units in order of weight
 vouched_videos = sum(1 for v in catalog if v["nrec"])
 stats["inst_verified_lecturers"] = sum(1 for s in inst_series if s["inst"] == "Independent lecturer" and s.get("verified"))
+stats["submitted_courses"] = sum(1 for s in inst_series if s.get("submitted"))
 stats["inst_unverified_collections"] = sum(1 for s in inst_series if not s.get("ok", True))
 
 data = {

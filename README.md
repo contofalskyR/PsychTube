@@ -74,6 +74,11 @@ science, neuroscience, clinical, social, philosophy, machine learning…) with n
 a vouched talk, a first lecture of a course and a primary source from outside the areas you already
 know — different ones each day, never something you've watched.
 
+Lecturers can **list their own course**: a short GitHub issue form (linked from the Courses hub) takes the
+public playlist, the institution, a faculty page and the syllabus and reading links; the course then gets
+the same page as any other — lectures in order, materials linked, "submitted by the lecturer". Nothing is
+uploaded or hosted.
+
 The live site also keeps a **lecture tracker** in the browser: where you stopped in each lecture,
 which lectures of a course you've finished, "continue watching" and "your courses" on the home page,
 and an up-next panel when a lecture ends. Nothing leaves the browser; Settings → Export moves it.
@@ -114,6 +119,7 @@ pipeline/              scripts that build data.js
   build_catalog.py     merges every source, scores, groups series, writes site/data.js
   make_inst_batches.py writes the labeling inputs for university playlists (course cards + per-lecture topics)
   make_taxonomy_md.py  regenerates classify/TAXONOMY.md from taxonomy.json (run after editing a topic or finding)
+  intake_submission.py turns a "Submit a course" GitHub issue into raw/institutional/submissions/issue-<n>.json
   replication_candidates.py keyword pass over the built catalog for replication-badge candidates
   assemble_candidates.py turns the channel/topic sweep (raw/sweep/) into triage batches (work/triage/)
   build_artifact.py    writes site/hosted/ from site/ + raw/youtube/thumbs_*.json
@@ -175,6 +181,18 @@ Archive item. A course that an institution uploaded as loose videos rather than 
 *Brain and Behavior*, UCD's *Clinical Neurology* series) gets an invented `pid` (`nyu:brain-and-behavior`,
 `ucd:clinical-neurology`), the items in syllabus order and a `url` pointing at the channel search that
 lists them.
+
+### Process a submitted course
+
+Lecturers and institutions can list a course themselves through the "Submit a course" issue form
+(`.github/ISSUE_TEMPLATE/submit-course.yml`; linked from the Courses hub and the About page). To
+process issue N: `python3 pipeline/intake_submission.py N` writes
+`raw/institutional/submissions/issue-N.json` (playlist id, institution, lecturer, faculty page,
+syllabus and other material links, who submitted) and prints the steps: confirm the faculty page names
+the lecturer, pull and merge the playlist as for any course (if it is on the lecturer's own channel, add
+the channel to `pipeline/publishers.json` with the faculty page as evidence), label, set the submission's
+`status` to `listed`, rebuild. The course page then carries the materials as links and a "submitted by
+the lecturer" line. Nothing is uploaded or hosted; PsychTube links to the lectures where they are.
 
 ### Add a standalone institutional talk
 

@@ -364,6 +364,20 @@ a refresh path for pulled courses (C4), the Data API as the primary pull method 
 questions weighted by stance (S2), "uploaded by a third party" on community documentaries (D5), a
 liveness refresh (S8).
 
+## Submitted courses (raw/institutional/submissions/)
+
+The owner's ask after the review round: the site should also be where professors list their courses
+("lectures/course", not slides and problem sets browsable on the site). Done without a backend and
+without hosting anything: a GitHub issue form (`.github/ISSUE_TEMPLATE/submit-course.yml`) asks for
+the public playlist, institution, unit, lecturer, a faculty page, term, level, syllabus/readings and
+other material links, and who is submitting; `pipeline/intake_submission.py N` parses the issue into
+`raw/institutional/submissions/issue-N.json`. The lectures come in through the usual pull → merge →
+label path, so a submitted course is checked like any other (and a personal channel goes through
+`publishers.json`); the submission adds `materials[]` and `submitted` to the series, which the course
+page shows as link buttons and a "submitted by the lecturer" line. Verification of channel control (a
+token in the playlist description) is designed in as `control_verified` but not asked for yet. Entry
+points: a box at the foot of the Courses hub and a paragraph on About.
+
 ## Hosted copy
 
 `pipeline/build_artifact.py` writes `site/hosted/` (index.html with inline CSS, app.js, data.js,

@@ -95,7 +95,9 @@ listed), `cross` (videos in the playlist that are other channels' uploads and th
 recordings are listed. Collections on a lecturer's own channel have `inst: "Independent lecturer"`,
 the `lecturer`, their `affil` (the institution the channel says they teach at) and `verified: true`
 when an institutional page confirms it (`pipeline/publishers.json` holds the evidence); `ok: false`
-marks the unverified ones, with `pubwhy` saying why. `institutions[]` summarizes per canonical
+marks the unverified ones, with `pubwhy` saying why. Courses a lecturer or institution submitted
+themselves carry `materials[]` (`{label, url}`: syllabus, readings, slides — links only) and
+`submitted` (`{by: "lecturer" | "institution" | "other", issue, control}`). `institutions[]` summarizes per canonical
 institution (`name`, `short`, `units[]`, `courses`, `lectures`, `pop`, `unverified`); `inst_channels`
 lists every channel id the institutions publish on, so a long video from one of them can be treated as
 institutional even when it is not in a pulled playlist.
