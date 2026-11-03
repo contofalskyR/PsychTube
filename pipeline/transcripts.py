@@ -60,7 +60,7 @@ def plan():
                 print("no slug for", c["title"]); continue
             base = f"https://ocw.mit.edu/courses/{slug}/"
             for it in c["items"]:
-                out.append({"pid": pid, "p": "ocw", "name": "MIT OpenCourseWare", "base": base, "vid": it["id"], "tr": 1, "url": f"{base}{it['id']}_transcript.pdf"})
+                out.append({"pid": pid, "p": "ocw", "name": "MIT OpenCourseWare", "base": base, "vid": it["id"], "title": it["title"], "tr": 1, "url": f"{base}{it['id']}_transcript.pdf"})
         elif pid in OYC:
             path, name = OYC[pid]
             base = f"https://oyc.yale.edu/{path}/"

@@ -82,35 +82,79 @@ def links(page, base):
     return [urllib.parse.urljoin(base, m) for m in re.findall(r'href="([^"#]+)"', page.decode("utf-8", "replace"))]
 
 
-def crawl_ocw(base, want_ids):
-    """Resource pages under an OCW course -> {youtube_id: {"pdf": url|None, "srt": url|None, "page": url}} for the ids we want."""
+LEC_NUM = re.compile(r"^\s*(?:lec(?:ture)?\.?\s*)?(\d{1,2})\s*[:.|)]", re.I)
+
+
+def norm_title(t):
+    t = re.sub(r"\|.*$", "", t)                       # "Lec 1 | MIT 9.00SC Introduction to Psychology" -> "Lec 1 "
+    t = re.sub(r"\((?:audio|video)[^)]*\)", "", t, flags=re.I)
+    t = re.sub(r"[^a-z0-9]+", " ", t.lower()).strip()
+    t = re.sub(r"^(lec|lecture)\s+", "", t)
+    return t
+
+
+def lec_num(t):
+    m = LEC_NUM.match(t) or re.match(r"^\s*lec(?:ture)?\s*(\d{1,2})\b", t, re.I)
+    return int(m.group(1)) if m else None
+
+
+def crawl_ocw(base, want):
+    """Resource pages under an OCW course -> {our youtube_id: {"page", "pdf", "srt"}}. `want` is {youtube_id: our title}.
+    Courses whose videos are on YouTube embed the id on the resource page; courses with self-hosted video (older audio
+    lectures, 2024 recordings) carry no id, so those resources are matched to our videos by lecture number and title."""
     found = {}
     st, home, _ = get(base)
     if st != 200:
         print("OCW course page", st, base, file=sys.stderr)
         return found
-    galleries = sorted({u for u in links(home, base) if "/video_galleries/" in u and u.startswith(base)})
-    pages = {u for u in links(home, base) if "/resources/" in u and u.startswith(base)}
-    for g in galleries:
+    home_links = links(home, base)
+    galleries = sorted({u for u in home_links if "/video_galleries/" in u and u.startswith(base)})
+    sections = sorted({u for u in home_links if "/pages/" in u and u.startswith(base)})
+    pages = {u for u in home_links if "/resources/" in u and u.startswith(base)}
+    for g in galleries + sections:
         st, gp, _ = get(g)
         if st == 200:
             pages |= {u for u in links(gp, base) if "/resources/" in u and u.startswith(base)}
-    pages = sorted(u if u.endswith("/") else u + "/" for u in pages)
-    print(f"  {len(galleries)} galleries, {len(pages)} resource pages under {base}", flush=True)
+    pages = sorted({(u if u.endswith("/") else u + "/") for u in pages})
+    print(f"  {len(galleries)} galleries, {len(sections)} section pages, {len(pages)} resource pages under {base}", flush=True)
+    resources = []
     for u in pages:
-        if len(found) >= len(want_ids):
-            break
+        if re.search(r"_pdf/?$|pset|exam|syllabus|readings|notes|slides|assignment|quiz|solution|handout", u, re.I) and not re.search(r"lec\d|lecture|_mp4", u, re.I):
+            continue                                    # a problem set or notes page is not a video page
         st, rp, _ = get(u)
         if st != 200:
             continue
         h = rp.decode("utf-8", "replace")
-        m = re.search(r"youtube(?:-nocookie)?\.com/embed/([\w-]{11})", h)
-        if not m or m.group(1) not in want_ids or m.group(1) in found:
+        if not re.search(r"<video|youtube(?:-nocookie)?\.com/embed/|_transcript\.pdf|\.mp4\b", h):
             continue
-        vid = m.group(1)
-        pdf = re.search(r'href="([^"]+_' + re.escape(vid) + r'\.pdf)"', h)
-        srt = re.search(r'href="([^"]+_' + re.escape(vid) + r'\.(?:srt|vtt))"', h)
-        found[vid] = {"page": u, "pdf": urllib.parse.urljoin(u, pdf.group(1)) if pdf else None, "srt": urllib.parse.urljoin(u, srt.group(1)) if srt else None}
+        m = re.search(r"youtube(?:-nocookie)?\.com/embed/([\w-]{11})", h)
+        vid = m.group(1) if m else None
+        pdf = re.search(r'href="([^"]+_transcript\.pdf)"', h) or (re.search(r'href="([^"]+_' + re.escape(vid) + r'\.pdf)"', h) if vid else None)
+        srt = re.search(r'href="([^"]+\.(?:srt|vtt))"', h)
+        tm = re.search(r"<title>(.*?)</title>", h, re.S)
+        title = html.unescape(re.sub(r"\s+", " ", tm.group(1)).split(" | ")[0].strip()) if tm else ""
+        resources.append({"page": u, "vid": vid, "title": title, "pdf": urllib.parse.urljoin(u, pdf.group(1)) if pdf else None,
+                          "srt": urllib.parse.urljoin(u, srt.group(1)) if srt else None})
+    by_vid = {r["vid"]: r for r in resources if r["vid"]}
+    for vid, our_title in want.items():
+        if vid in by_vid:
+            found[vid] = by_vid[vid]
+    unmatched = {vid: t for vid, t in want.items() if vid not in found}
+    if unmatched:
+        rest = [r for r in resources if not r["vid"] or r["vid"] not in want]
+        for vid, our_title in unmatched.items():
+            n, nt = lec_num(our_title), norm_title(our_title)
+            best = None
+            for r in rest:
+                rn, rt = lec_num(r["title"]), norm_title(r["title"])
+                if n is not None and rn == n and (nt == rt or len(set(nt.split()) & set(rt.split())) >= max(2, len(set(rt.split())) * 0.5) or len(nt.split()) <= 2):
+                    best = r; break
+                if n is None and nt and nt == rt:
+                    best = r; break
+            if best and (best["pdf"] or best["srt"]):
+                found[vid] = best
+                rest.remove(best)
+    print(f"  matched {len(found)}/{len(want)} ({len(by_vid)} by embedded id, {len(resources)} video resources)", flush=True)
     return found
 
 
@@ -146,7 +190,7 @@ def main():
     for (pid, p, base), rows in by_course.items():
         print(f"{p} {base} ({len(rows)} lectures)", flush=True)
         if p == "ocw":
-            want = {r["vid"] for r in rows}
+            want = {r["vid"]: r.get("title", "") for r in rows}
             found = crawl_ocw(base, want)
             for r in rows:
                 f = found.get(r["vid"])
