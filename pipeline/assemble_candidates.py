@@ -4,6 +4,7 @@
 Reads  raw/sweep/channels.json   {chid: {title, subs, verified, psychCh, playlists:[{id,title,n,src}]}}  (institutional channels)
        raw/sweep/topic.json      [{id,title,ch,chid,verified,count,q:[...]}]                               (topic playlist searches)
        raw/institutional/courses.json (already-ingested playlists are skipped)
+       work/triage/out_*.jsonl        (already-judged playlists are skipped; new batches are numbered after them)
 Writes work/triage/batch_NN.jsonl  -> label with pipeline/classify/INSTRUCTIONS_triage.md into work/triage/out_NN.jsonl
 
 Usage: python3 pipeline/assemble_candidates.py [batch_size]
@@ -19,6 +20,13 @@ P = lambda *a: os.path.join(ROOT, *a)
 size = int(sys.argv[1]) if len(sys.argv) > 1 else 150
 
 have = {c["pid"] for c in json.load(open(P("raw", "institutional", "courses.json")))["courses"]}
+import glob
+judged = set()                                           # already triaged (kept or dropped) in an earlier round
+for f in glob.glob(P("work", "triage", "out_*.jsonl")):
+    for line in open(f, encoding="utf-8"):
+        if line.strip():
+            judged.add(json.loads(line)["pid"])
+have |= judged
 chans = json.load(open(P("raw", "sweep", "channels.json"))) if os.path.exists(P("raw", "sweep", "channels.json")) else {}
 topic = json.load(open(P("raw", "sweep", "topic.json"))) if os.path.exists(P("raw", "sweep", "topic.json")) else []
 
@@ -62,12 +70,15 @@ for pl in topic:
                  "source": "search", "queries": pl.get("q", [])[:3]})
 
 os.makedirs(P("work", "triage"), exist_ok=True)
+done_idx = [int(m.group(1)) for f in glob.glob(P("work", "triage", "out_*.jsonl")) for m in [re.search(r"out_(\d+)\.jsonl$", f)] if m]
+first = max(done_idx) + 1 if done_idx else 0             # new batches are numbered after the answered ones
 for f in os.listdir(P("work", "triage")):
-    if f.startswith("batch_"):
+    m = re.match(r"batch_(\d+)\.jsonl$", f)
+    if m and int(m.group(1)) not in done_idx:            # unanswered inputs from an earlier run
         os.remove(P("work", "triage", f))
 n = math.ceil(len(rows) / size) if rows else 0
 for i in range(n):
-    with open(P("work", "triage", f"batch_{i:02d}.jsonl"), "w", encoding="utf-8") as f:
+    with open(P("work", "triage", f"batch_{first + i:02d}.jsonl"), "w", encoding="utf-8") as f:
         for r in rows[i * size:(i + 1) * size]:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
-print(f"{len(rows)} candidate playlists ({sum(1 for r in rows if r['source']=='sweep')} from channel sweep, {sum(1 for r in rows if r['source']=='search')} from topic searches) -> {n} batches in work/triage/")
+print(f"{len(rows)} candidate playlists ({sum(1 for r in rows if r['source']=='sweep')} from channel sweep, {sum(1 for r in rows if r['source']=='search')} from topic searches) -> {n} batches in work/triage/ (batch_{first:02d}.jsonl…)")
