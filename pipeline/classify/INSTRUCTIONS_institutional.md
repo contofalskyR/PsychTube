@@ -21,7 +21,7 @@ Titles like "PSY409_Lecture07" carry no information: label those by the playlist
 Write a JSONL file (path given below) with exactly one line per input row, same order, this shape:
 
 ```json
-{"vid": "...", "keep": true, "topics": ["memory", "learning-studying"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "...", "keep": true, "topics": ["memory", "learning-studying"], "cw": [], "contested": "", "contested_role": "", "course": true, "english": true, "promo": false, "confidence": 0.9}
 ```
 
 - `keep` (bool): true unless the video is clearly **not** about psychology, neuroscience, psychiatry,
@@ -44,6 +44,13 @@ Write a JSONL file (path given below) with exactly one line per input row, same 
 - `contested_role`: `"promotes"` or `"critique"` when `contested` is set, else `""`.
 - `course`: true if the video is one lecture of a taught course or an ordered lecture series; false for
   a standalone talk, seminar or interview.
+- `english`: false when the lecture is clearly **not delivered in English** (title or description in another
+  language, "(Spanish)" / "en français" / "Hindi medium" markers, a translated version in a playlist that
+  also carries the English one). Non-English titles on English lectures (a quoted book title, a Latin
+  term) are still `true`. Default `true`.
+- `promo`: true for a trailer, teaser, announcement ("Tune in Dec. 21!"), channel or course promo,
+  fundraising appeal, or a clip under two minutes with no teaching in it. Such rows should also have
+  `keep: false`. Default `false`.
 - `confidence`: 0–1, your confidence in the `keep` decision.
 
 Be decisive and consistent. Use only topic ids that exist in TAXONOMY.md. Output nothing but the

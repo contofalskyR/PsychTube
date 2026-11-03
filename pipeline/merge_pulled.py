@@ -34,6 +34,9 @@ for f in sorted(glob.glob(P("work", "triage", "out_*.jsonl"))):
 ov = json.load(open(P("pipeline", "triage_overrides.json"), encoding="utf-8")) if os.path.exists(P("pipeline", "triage_overrides.json")) else {}
 drop_inst, drop_pid, rename = set(ov.get("drop_inst", [])), set(ov.get("drop_pid", [])), ov.get("rename_inst", {})
 pulled = json.load(open(src, encoding="utf-8"))
+pulled_on = (pulled.get("pulled") if isinstance(pulled.get("pulled"), str) else None) or datetime.date.today().isoformat()
+if isinstance(pulled.get("courses"), dict):        # the runner's wrapper: {pulled, courses, errors}
+    pulled = pulled["courses"]
 cj = json.load(open(P("raw", "institutional", "courses.json"), encoding="utf-8"))
 have = {c["pid"] for c in cj["courses"]}
 have_vids = {it["id"] for c in cj["courses"] for it in c["items"]}
@@ -59,14 +62,15 @@ for pid, pl in pulled.items():
     cj["courses"].append({
         "pid": pid, "title": pl.get("title") or "", "desc": pl.get("desc") or "", "count": pl.get("count") or f"{len(items)} videos",
         "owner": pl.get("owner") or (items[0].get("ch") if items else ""), "ownerId": pl.get("ownerId") or (items[0].get("chid") if items else ""),
-        "n": len(items), "items": items, "inst": inst, "kind": t.get("kind") or "course",
+        "n": len(items), "items": items, "inst": inst, "kind": t.get("kind") or "talks",   # unknown kind: the weakest claim, not "course"
+        "pulled": pulled_on,                                                                      # build_catalog resolves "3y ago" against this
         "triage": {"confidence": t.get("confidence"), "why": t.get("why")},
     })
     have.add(pid)
     have_vids |= {it["id"] for it in items}
     added.append((pid, inst, len(items), pl.get("title")))
 
-cj["pulled"] = datetime.date.today().isoformat()
+cj["pulled"] = max(cj.get("pulled") or "", pulled_on) if added else cj.get("pulled")   # only moves when something was added
 json.dump(cj, open(P("raw", "institutional", "courses.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=None, separators=(",", ":"))
 print(f"added {len(added)} playlists ({sum(a[2] for a in added)} lectures); skipped {len(skipped)}")
 for pid, inst, n, title in added:

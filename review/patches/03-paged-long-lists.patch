@@ -1,0 +1,49 @@
+diff --git a/site/app.js b/site/app.js
+index 4276f78..ab2e478 100644
+--- a/site/app.js
++++ b/site/app.js
+@@ -202,6 +202,24 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+   const card = (v, opts = {}) => `<a class="card ${opts.cls || ""}" href="#v-${v.id}" data-id="${v.id}">${thumb(v, opts.idx)}<div class="body"><div class="title">${esc(v.title)}</div><div class="ch">${esc(v.ch || "")}</div>${opts.noVouch ? "" : vouchLine(v, opts.chips)}${opts.desc ? `<div class="desc">${esc(v.why || v.summary)}</div>` : ""}</div></a>`;
+   const grid = (list, opts) => list.length ? `<div class="grid">${list.map(v => card(v, opts)).join("")}</div>` : "";
+   const rowOf = (list, opts) => `<div class="row">${list.map(v => card(v, opts)).join("")}</div>`;
++  // Long lists (an area page is ~7,000 cards, 15 s of main-thread work on a mid-range phone) render a page at a time.
++  // The next page comes from a button, never from scrolling: rows still end.
++  const PAGE = 60;
++  const moreBtn = left => `<p style="margin:18px 0"><button class="btn quiet" data-more>Show ${Math.min(PAGE, left)} more <span class="faint">· ${left.toLocaleString()} left</span></button></p>`;
++  const paged = (list, opts, open) => `${open || `<div class="grid" data-paged>`}${list.slice(0, PAGE).map(v => card(v, opts)).join("")}</div>${list.length > PAGE ? moreBtn(list.length - PAGE) : ""}`;
++  function wireMore(list, opts) {
++    const box = main.querySelector("[data-paged]"); let btn = main.querySelector("[data-more]"); if (!box || !btn) return;
++    let shown = PAGE;
++    const more = () => {
++      const first = list[shown];
++      box.insertAdjacentHTML("beforeend", list.slice(shown, shown + PAGE).map(v => card(v, opts)).join(""));
++      shown += PAGE;
++      const next = box.querySelector(`[data-id="${first.id}"]`); if (next) next.focus({ preventScroll: true });   // keyboard users land on the first new card
++      const left = list.length - shown;
++      if (left <= 0) btn.parentNode.remove(); else { btn.parentNode.outerHTML = moreBtn(left); btn = main.querySelector("[data-more]"); btn.onclick = more; }
++    };
++    btn.onclick = more;
++  }
+   const section = (title, body, more, sub) => body ? `<section class="section"><div class="section-head"><div><h2>${title}</h2>${sub ? `<div class="sub">${sub}</div>` : ""}</div>${more ? `<a class="more" href="${more}">See all</a>` : ""}</div>${body}</section>` : "";
+ 
+   // ------------------------------------------------------------ recommendation
+@@ -442,7 +460,8 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+         ${types.length > 1 ? `<select class="btn" id="typeSel" aria-label="Type"><option value="any">Any type</option>${types.map(t => `<option value="${t}" ${t === type ? "selected" : ""}>${t}</option>`).join("")}</select>` : ""}
+         <span class="faint">${plural(list.length, "video")}</span>
+       </div>
+-      ${list.length ? grid(list) : `<div class="empty"><h2>Nothing matches these filters</h2><p>Try another length or type.</p></div>`}`;
++      ${list.length ? paged(list) : `<div class="empty"><h2>Nothing matches these filters</h2><p>Try another length or type.</p></div>`}`;
++    wireMore(list);
+     const sel = document.getElementById("typeSel");
+     if (sel) sel.onchange = () => { location.hash = link("type", sel.value); };
+   }
+@@ -601,7 +620,8 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+     main.innerHTML = `<h1>${res.length ? plural(res.length, "result") : "No results"} for “${esc(q)}”</h1>
+       ${topicHits.length ? `<div class="topic-pills">${topicHits.map(t => `<a class="tpill" href="#t-${t.id}">${esc(t.name)} <span class="faint">${t.n}</span></a>`).join("")}</div>` : ""}
+       ${seriesHits.length ? `<div class="row" style="margin-top:12px">${seriesHits.map(sd => seriesCard(sd)).join("")}</div>` : ""}
+-      ${res.length ? `<div style="margin-top:14px">${res.map(v => card(v, { cls: "row-item", desc: true, chips: 4 })).join("")}</div>` : `<div class="empty"><p>Try a topic word (memory, Sapolsky, replication), a channel, or a person.</p></div>`}`;
++      ${res.length ? paged(res, { cls: "row-item", desc: true, chips: 4 }, `<div style="margin-top:14px" data-paged>`) : `<div class="empty"><p>Try a topic word (memory, Sapolsky, replication), a channel, or a person.</p></div>`}`;
++    wireMore(res, { cls: "row-item", desc: true, chips: 4 });
+   }
+ 
+   // ------------------------------------------------------------ player controller (tracks position per provider)

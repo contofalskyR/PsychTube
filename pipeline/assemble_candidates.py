@@ -30,9 +30,9 @@ have |= judged
 chans = json.load(open(P("raw", "sweep", "channels.json"))) if os.path.exists(P("raw", "sweep", "channels.json")) else {}
 topic = json.load(open(P("raw", "sweep", "topic.json"))) if os.path.exists(P("raw", "sweep", "topic.json")) else []
 
-EXAM = re.compile(r"UGC|NET\b|CUET|UPSC|\bCSS\b|\bPMS\b|MCAT|EPPP|NCLEX|NORCET|AIIMS|A[- ]?Level|GCSE|IGCSE|AP Psych|exam|preparation|MCQ|notes|revision|BLEPP|IGNOU|AIOU|nursing|crash course|short lectures?|Adda247|coaching|tutor|tuition|study material|competitive|Classes by|academy", re.I)
+EXAM = re.compile(r"\bUGC\b|\bNET\b|\bCUET\b|\bUPSC\b|\bCSS\b|\bPMS\b|\bMCAT\b|\bEPPP\b|\bNCLEX\b|\bNORCET\b|\bAIIMS\b|\bA[- ]?Levels?\b|\bGCSE\b|\bIGCSE\b|\bAP Psych|\bexams?\b|\bpreparation\b|\bMCQs?\b|\bnotes\b|\brevision\b|\bBLEPP\b|\bIGNOU\b|\bAIOU\b|\bnursing\b|\bcrash course\b|\bshort lectures?\b|\bAdda247\b|\bcoaching\b|\btutors?\b|\btuition\b|\bstudy material\b|\bcompetitive\b|\bClasses by\b|\bacademy\b", re.I)   # word-anchored: "Examples" and "tutorials" are not exam prep
 MIRROR = re.compile(r"Sapolsky|Peterson|Paul Bloom|Yale|Stanford|MIT\b|Harvard|Berkeley|Oxford|OpenCourseWare|CrashCourse|Khan", re.I)
-YOUTUBER = re.compile(r"CrashCourse|khanacademy|Professor Dave|Psych2Go|Sprouts|Practical Psychology|Psych Explained|Cognito|Mr\. Sinn|Medicosis|Dirty Medicine|Osmosis|Ninja Nerd|Simple Psychology|TED", re.I)
+YOUTUBER = re.compile(r"CrashCourse|khanacademy|Professor Dave|Psych2Go|\bSprouts\b|Practical Psychology|Psych Explained|\bCognito\b|Mr\. Sinn|Medicosis|Dirty Medicine|\bOsmosis\b|Ninja Nerd|Simple Psychology|\bTEDx?\b|\bTED-Ed\b", re.I)   # \bTED\b: not "animated" or "Associated"
 PERSON = re.compile(r"^(Dr\.?|Prof\.?|Professor)?\s*[A-Z][a-z]+(\s[A-Z]\.)?\s[A-Z][a-zA-Z'\-]+(,?\s(PhD|MD|Ph\.D\.))?$")
 
 

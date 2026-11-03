@@ -1,233 +1,240 @@
 {
  "stats": {
-  "kept": 16877,
-  "inst_lectures": 16205,
-  "inst_also_vouched": 39,
+  "inst_crosschannel_not_credited": 489,
+  "inst_watchlists_dropped": 26,
+  "inst_partial_playlists": 5,
+  "quotes_withheld": 4,
+  "kept": 15880,
+  "inst_lectures": 15200,
+  "inst_also_vouched": 27,
   "dropped_not_psych_or_unlabeled": 694,
-  "dropped_thin_vouch": 144,
-  "dropped_inst_not_psych": 941,
-  "inst_loose": 103,
-  "dropped_inst_promo": 464,
-  "inst_inherited_topics": 1621,
-  "dropped_inst_thirdparty": 46,
-  "replication_tagged": 60,
+  "dropped_thin_vouch": 145,
+  "dropped_non_english": 50,
+  "dropped_inst_not_psych": 869,
+  "dropped_inst_promo": 433,
+  "inst_inherited_topics": 738,
+  "inst_unverified_publisher": 576,
+  "inst_loose": 102,
+  "replication_tagged": 51,
   "shelf_added": 70,
-  "pathways": 9
+  "pathways": 9,
+  "inst_verified_lecturers": 37,
+  "inst_unverified_collections": 28
  },
  "topics": [
   [
    "how-the-brain-works",
-   2991
+   2802
   ],
   [
    "brain-disorders",
-   2252
+   2073
   ],
   [
    "ai-and-mind",
-   1278
+   1220
   ],
   [
    "brain-tech",
-   1156
+   1083
   ],
   [
    "psychiatry-medication",
-   1148
+   1064
   ],
   [
    "depression-anxiety",
-   1057
+   1002
   ],
   [
    "child-development",
-   979
-  ],
-  [
-   "language-thought",
-   939
+   942
   ],
   [
    "perception-illusions",
-   935
+   932
   ],
   [
-   "therapy",
-   862
+   "language-thought",
+   906
   ],
   [
    "psych-research",
-   848
+   842
+  ],
+  [
+   "therapy",
+   818
   ],
   [
    "consciousness",
-   833
+   777
   ],
   [
    "adolescence-aging",
-   815
+   771
   ],
   [
    "adhd-autism",
-   662
-  ],
-  [
-   "groups-prejudice",
-   649
-  ],
-  [
-   "memory",
-   641
-  ],
-  [
-   "trauma-stress",
    629
   ],
   [
+   "groups-prejudice",
+   625
+  ],
+  [
+   "memory",
+   617
+  ],
+  [
+   "trauma-stress",
+   585
+  ],
+  [
    "serious-mental-illness",
-   594
+   561
   ],
   [
    "happiness-meaning",
-   564
+   535
   ],
   [
    "emotion",
-   538
+   522
   ],
   [
    "history-of-psychology",
-   536
+   521
   ],
   [
    "decision-risk",
-   524
-  ],
-  [
-   "addiction",
-   459
+   480
   ],
   [
    "crime-forensic",
-   442
+   430
   ],
   [
-   "personality",
-   438
-  ],
-  [
-   "work-organizations",
-   435
-  ],
-  [
-   "neurochemistry",
-   417
+   "addiction",
+   414
   ],
   [
    "replication-crisis",
-   397
+   387
   ],
   [
-   "rationality-biases",
-   362
+   "personality",
+   381
+  ],
+  [
+   "neurochemistry",
+   344
   ],
   [
    "animal-minds",
-   350
+   338
   ],
   [
-   "mindfulness-meditation",
-   337
+   "rationality-biases",
+   334
+  ],
+  [
+   "work-organizations",
+   333
   ],
   [
    "attention-focus",
+   332
+  ],
+  [
+   "mindfulness-meditation",
    326
   ],
   [
    "behavioral-genetics",
-   305
+   291
   ],
   [
    "morality-cooperation",
-   290
-  ],
-  [
-   "sleep-dreams",
-   279
+   256
   ],
   [
    "motivation-habits",
-   243
+   249
+  ],
+  [
+   "sleep-dreams",
+   240
   ],
   [
    "sex-gender",
-   242
+   236
   ],
   [
    "parenting",
-   221
+   215
   ],
   [
    "education-teaching",
-   217
+   200
   ],
   [
    "learning-studying",
-   216
+   196
   ],
   [
    "persuasion-manipulation",
-   214
+   192
   ],
   [
    "relationships-attachment",
-   190
+   183
   ],
   [
    "psychedelics",
-   168
-  ],
-  [
-   "tech-and-mind",
-   157
+   161
   ],
   [
    "free-will",
-   156
+   154
+  ],
+  [
+   "tech-and-mind",
+   149
   ],
   [
    "intelligence-expertise",
-   126
+   118
   ],
   [
    "design-behavior",
-   97
-  ],
-  [
-   "conformity-obedience",
-   90
+   94
   ],
   [
    "performance",
-   85
+   84
   ],
   [
    "creativity-insight",
+   83
+  ],
+  [
+   "conformity-obedience",
    82
   ],
   [
-   "pseudoscience-skepticism",
-   78
+   "grief-loneliness",
+   69
   ],
   [
-   "grief-loneliness",
-   75
+   "pseudoscience-skepticism",
+   60
   ]
  ],
  "sources": {
   "hn": 2130,
-  "reddit": 234,
-  "se": 161
+  "reddit": 233,
+  "se": 158
  },
  "communities": [
   [
@@ -236,7 +243,7 @@
   ],
   [
    "Psychology & Neuroscience SE",
-   153
+   150
   ],
   [
    "r/neurophilosophy",
@@ -256,7 +263,7 @@
   ],
   [
    "r/psychologyresearch",
-   19
+   18
   ],
   [
    "r/AcademicPsychology",
@@ -277,24 +284,12 @@
  ],
  "series": [
   [
-   "Human Behavioral Biology (2010)",
+   "Human Behavioral Biology",
    25
-  ],
-  [
-   "Psy 100: Learning",
-   23
-  ],
-  [
-   "PSY-496: I/O Psychology",
-   118
   ],
   [
    "Psychology, Brain and Mind Lectures",
    71
-  ],
-  [
-   "General Psychology, Fall 2020",
-   42
   ],
   [
    "Adhd Videos",
@@ -321,24 +316,12 @@
    20
   ],
   [
-   "UCD Psych 1000",
-   92
-  ],
-  [
    "Videos from the Center on the Developing Child",
    18
   ],
   [
-   "Psy 100: Memory",
-   8
-  ],
-  [
    "MIT 9.00SC Introduction to Psychology",
    24
-  ],
-  [
-   "Science of Psychology Videos",
-   7
   ],
   [
    "Neurodiversity",
@@ -350,7 +333,7 @@
   ],
   [
    "Human Brain (UCTV)",
-   154
+   152
   ],
   [
    "Neuroethics Seminar Series 2015-2016",
@@ -405,16 +388,16 @@
    61
   ],
   [
-   "Principles of Behavioral Economics",
-   61
-  ],
-  [
    "Bayesian Data Analysis for the Behavioral Sciences",
    60
   ],
   [
-   "Organizational Behaviour: Individual Dynamics in Organization",
+   "Principles of Behavioral Economics",
    60
+  ],
+  [
+   "Organizational Behaviour: Individual Dynamics in Organization",
+   59
   ],
   [
    "Foundations of Neuroimaging (2021)",
@@ -481,19 +464,7 @@
    44
   ],
   [
-   "Counseling and Psychotherapy Theories",
-   44
-  ],
-  [
-   "Behavioral and Personal Finance",
-   42
-  ],
-  [
    "Contemporary Issues in Philosophy of Mind and Cognition",
-   42
-  ],
-  [
-   "The Science of Well-Being for Teens",
    42
   ],
   [
@@ -517,8 +488,16 @@
    40
   ],
   [
+   "The Science of Well-Being for Teens",
+   40
+  ],
+  [
    "Drugs and Human Behavior",
    40
+  ],
+  [
+   "Counseling and Psychotherapy Theories",
+   38
   ],
   [
    "UC Berkeley Philosophy 3: The Nature of Mind (Fall 2014)",
@@ -537,15 +516,7 @@
    35
   ],
   [
-   "Psychology of Stress, Health and Well-being",
-   35
-  ],
-  [
    "Selected Topics in Psychology",
-   35
-  ],
-  [
-   "Psych Pharm, Spring 2026",
    35
   ],
   [
@@ -561,6 +532,10 @@
    34
   ],
   [
+   "Psychology of Stress, Health and Well-being",
+   34
+  ],
+  [
    "UC Berkeley Philosophy 3: The Nature of Mind (Fall 2011)",
    33
   ],
@@ -570,6 +545,10 @@
   ],
   [
    "Cognitive Neuroscience",
+   33
+  ],
+  [
+   "General Psychology, Fall 2020",
    33
   ],
   [
@@ -589,16 +568,12 @@
    32
   ],
   [
+   "Human Behavioral Biology (2025 re-release)",
+   32
+  ],
+  [
    "Psychology of Emotion: Theory and Applications",
-   32
-  ],
-  [
-   "PSYC 2301 General Psychology",
-   32
-  ],
-  [
-   "Human Behavioral Biology (2010)",
-   32
+   31
   ],
   [
    "PSYC 1001 Introduction to Psychology 1",
@@ -606,14 +581,6 @@
   ],
   [
    "Introduction to Cognitive Psychology",
-   30
-  ],
-  [
-   "Advanced Psychopharmacology Modules 1-3",
-   30
-  ],
-  [
-   "Forensic Psychology",
    30
   ],
   [
@@ -627,10 +594,6 @@
   [
    "Brains, Minds and Machines Summer Course 2020",
    29
-  ],
-  [
-   "Abnormal Psychology Lecture Series",
-   28
   ],
   [
    "Psych 1000 Introduction to Psychology",
@@ -677,10 +640,6 @@
    25
   ],
   [
-   "ADC514: Psychopharmacology of Addiction",
-   25
-  ],
-  [
    "Principles and Practices of Indian Music Therapy",
    25
   ],
@@ -714,6 +673,10 @@
   ],
   [
    "PSYC 250 Developmental Psychology",
+   24
+  ],
+  [
+   "Forensic Psychology",
    24
   ],
   [
@@ -825,19 +788,11 @@
    21
   ],
   [
-   "The Psychology of Language",
+   "Behavioral and Personal Finance",
    21
   ],
   [
-   "Consumer Psychology",
-   21
-  ],
-  [
-   "Language, Culture and Cognition: An Introduction",
-   21
-  ],
-  [
-   "Bilingualism: A Cognitive and Psycholinguistic Perspective",
+   "Abnormal Psychology Lecture Series",
    21
   ],
   [
@@ -857,12 +812,24 @@
    20
   ],
   [
-   "PSY 523 Psychology and Language",
+   "The Psychology of Language",
    20
   ],
   [
-   "PSYC 2344 Cultural Psychology",
-   19
+   "Consumer Psychology",
+   20
+  ],
+  [
+   "Language, Culture and Cognition: An Introduction",
+   20
+  ],
+  [
+   "Bilingualism: A Cognitive and Psycholinguistic Perspective",
+   20
+  ],
+  [
+   "PSY 523 Psychology and Language",
+   20
   ],
   [
    "Drugs & Human Behavior",
@@ -885,7 +852,7 @@
    18
   ],
   [
-   "GCC PSY 101 Part 1: Brain, Freud, Sleep and Dreams",
+   "PSYC 2344 Cultural Psychology",
    18
   ],
   [
@@ -913,10 +880,6 @@
    16
   ],
   [
-   "ADC505: Counseling Skills and Techniques",
-   16
-  ],
-  [
    "PSY 1: Introduction to Psychological Science",
    15
   ],
@@ -931,10 +894,6 @@
   [
    "PSYC 1000C Introduction to Psychology (2023)",
    15
-  ],
-  [
-   "CPSY 323: Psychopharmacology",
-   14
   ],
   [
    "Mind and Brain: The Mind Part",
@@ -986,14 +945,6 @@
   ],
   [
    "Abnormal Psychology (Vallejo)",
-   12
-  ],
-  [
-   "Psych 36: Biological Psychology",
-   12
-  ],
-  [
-   "Moral and Political Psychology",
    12
   ],
   [
@@ -1085,10 +1036,6 @@
    8
   ],
   [
-   "2010PSY Health Psychology",
-   8
-  ],
-  [
    "Introduction to Neuroscience and AI, Spring 2026",
    8
   ],
@@ -1113,11 +1060,11 @@
    7
   ],
   [
-   "Evolutionary Psychology",
+   "Psych 36: Biological Psychology",
    7
   ],
   [
-   "BD 101: Childhood and Growing Up",
+   "Evolutionary Psychology",
    7
   ],
   [
@@ -1173,12 +1120,8 @@
    4
   ],
   [
-   "Psychology: Psychopharmacology",
-   3
-  ],
-  [
    "McGill Cares: Dementia Education Program Webcasts",
-   145
+   123
   ],
   [
    "Experts in Emotion Series",
@@ -1186,19 +1129,19 @@
   ],
   [
    "Frontiers of the Brain (Your Fantastic Mind)",
-   63
+   53
   ],
   [
    "Neural Basis of Consciousness (2020, by topic)",
    50
   ],
   [
-   "Alan Hu Foundation Mental Health Lecture Series",
+   "CalSouthern Psychology Lectures",
    49
   ],
   [
-   "CalSouthern Psychology Lectures",
-   49
+   "Alan Hu Foundation Mental Health Lecture Series",
+   44
   ],
   [
    "NeuroBytes: Medical Students Series",
@@ -1221,10 +1164,6 @@
    24
   ],
   [
-   "Inside the Brain: A Journey Through Anatomy",
-   24
-  ],
-  [
    "Virtual Resident Education Lecture Series",
    23
   ],
@@ -1234,15 +1173,11 @@
   ],
   [
    "Child and Adolescent Mental Health",
-   21
+   19
   ],
   [
    "Shrinking It Down: Mental Health Made Simple",
-   20
-  ],
-  [
-   "Introduction to Philosophy: Descartes and the Mind-Body Problem",
-   20
+   19
   ],
   [
    "Neurotorium Educational Series",
@@ -1257,11 +1192,15 @@
    17
   ],
   [
-   "Geoffrey Aguirre: fMRI and Neuroscience Lectures",
-   17
+   "Introduction to Philosophy: Descartes and the Mind-Body Problem",
+   16
   ],
   [
    "Workforce Lecture Series",
+   16
+  ],
+  [
+   "Inside the Brain: A Journey Through Anatomy",
    16
   ],
   [
@@ -1279,6 +1218,10 @@
   [
    "Lifelong Brain Development and Brain Ageing",
    14
+  ],
+  [
+   "Healthy Minds with Dr. Jeffrey Borenstein: Season 10",
+   13
   ],
   [
    "Healthy Minds with Dr. Jeffrey Borenstein: Season 8",
@@ -1301,7 +1244,7 @@
    12
   ],
   [
-   "Psychology Lectures",
+   "Geoffrey Aguirre: fMRI and Neuroscience Lectures",
    12
   ],
   [
@@ -1313,14 +1256,6 @@
    12
   ],
   [
-   "The Science of Well-Being",
-   11
-  ],
-  [
-   "Healthy Minds with Dr. Jeffrey Borenstein: Season 10",
-   11
-  ],
-  [
    "Healthy Minds with Dr. Jeffrey Borenstein: Season 7",
    11
   ],
@@ -1329,7 +1264,7 @@
    11
   ],
   [
-   "Information and Neuroscience",
+   "Psychology Lectures",
    11
   ],
   [
@@ -1337,7 +1272,15 @@
    11
   ],
   [
+   "The Science of Well-Being",
+   10
+  ],
+  [
    "Early Career Mental Health Professionals",
+   10
+  ],
+  [
+   "Information and Neuroscience",
    10
   ],
   [
@@ -1351,10 +1294,6 @@
   [
    "KnowNeuropsychology, Volume II",
    10
-  ],
-  [
-   "Relating Individual Brains to Individual Minds",
-   9
   ],
   [
    "Basics of Neurobiology",
@@ -1374,6 +1313,10 @@
   ],
   [
    "Wallerstein Lecture Series",
+   8
+  ],
+  [
+   "Relating Individual Brains to Individual Minds",
    8
   ],
   [
@@ -1401,19 +1344,11 @@
    7
   ],
   [
-   "CNS1: A First Simple Neuron Model",
-   7
-  ],
-  [
    "Islamic Psychology",
    7
   ],
   [
    "Character, Formation, and Flourishing Seminar Series",
-   7
-  ],
-  [
-   "The Story of Cognitive Psychology",
    7
   ],
   [
@@ -1481,6 +1416,10 @@
    6
   ],
   [
+   "CNS1: A First Simple Neuron Model",
+   6
+  ],
+  [
    "Forensic Psychology Guest Lecture",
    6
   ],
@@ -1517,10 +1456,6 @@
    5
   ],
   [
-   "Baggs Memorial Happiness Lectures",
-   5
-  ],
-  [
    "Kay Redfield Jamison: Bipolar Disorder",
    5
   ],
@@ -1545,7 +1480,19 @@
    4
   ],
   [
+   "Baggs Memorial Happiness Lectures",
+   4
+  ],
+  [
    "Are Brains Analogue or Digital?",
+   4
+  ],
+  [
+   "Science of Psychology Videos",
+   4
+  ],
+  [
+   "The Story of Cognitive Psychology",
    4
   ],
   [
@@ -1573,24 +1520,8 @@
    3
   ],
   [
-   "Brain Basics",
-   3
-  ],
-  [
    "Nancy Adler Lecture Series",
    3
-  ],
-  [
-   "Inside The Brain: A Lifetime of Change",
-   3
-  ],
-  [
-   "IntroPsy: Emotion and Motivation",
-   3
-  ],
-  [
-   "Stanford Psychiatry and Behavioral Sciences",
-   270
   ],
   [
    "Law and Mental Health",
@@ -1601,12 +1532,16 @@
    206
   ],
   [
+   "Stanford Psychiatry and Behavioral Sciences",
+   165
+  ],
+  [
    "BBRF Meet the Scientist Webinar Series",
    161
   ],
   [
    "C-STAR Lectures on Aphasia and Language Rehabilitation",
-   157
+   155
   ],
   [
    "Mental Health and Psychology (UCTV)",
@@ -1630,15 +1565,11 @@
   ],
   [
    "ADAA Free Mental Health Webinars",
-   101
-  ],
-  [
-   "Research and Science at the Memory and Aging Center",
-   91
+   100
   ],
   [
    "Autism Talks and Lectures",
-   89
+   81
   ],
   [
    "Autism and Neurodevelopmental Disorders (UCTV)",
@@ -1653,12 +1584,12 @@
    69
   ],
   [
-   "Art and the Brain",
-   67
+   "Research and Science at the Memory and Aging Center",
+   66
   ],
   [
    "BPS Archive: Psychology in the Pub and Research Skills",
-   65
+   62
   ],
   [
    "Aphasia CRE Seminar Series",
@@ -1673,6 +1604,10 @@
    57
   ],
   [
+   "Art and the Brain",
+   55
+  ],
+  [
    "Psychology",
    53
   ],
@@ -1682,7 +1617,7 @@
   ],
   [
    "Brain Channel",
-   51
+   50
   ],
   [
    "Transdisciplinary Research Colloquium on Psychedelics",
@@ -1690,7 +1625,7 @@
   ],
   [
    "NeuroSpin Seminars",
-   48
+   47
   ],
   [
    "Brains, Minds and Machines Seminar Series",
@@ -1725,10 +1660,6 @@
    41
   ],
   [
-   "Neuroscience at Oxford",
-   39
-  ],
-  [
    "Psychiatry Grand Rounds 2021",
    39
   ],
@@ -1737,11 +1668,11 @@
    39
   ],
   [
-   "Wu Tsai Neurosciences Institute Talks",
-   38
+   "Harvard Brain Science Initiative Lectures and Seminars",
+   39
   ],
   [
-   "Harvard Brain Science Initiative Lectures and Seminars",
+   "Wu Tsai Neurosciences Institute Talks",
    38
   ],
   [
@@ -1786,10 +1717,6 @@
   ],
   [
    "Michigan Alzheimer's Disease Center Leaders Initiative Seminar Series",
-   31
-  ],
-  [
-   "Heinz C. Prechter Bipolar Research Program",
    31
   ],
   [
@@ -1845,15 +1772,7 @@
    27
   ],
   [
-   "UCL Neuroscience, Physiology and Pharmacology",
-   27
-  ],
-  [
    "Simons Foundation Autism Lectures",
-   27
-  ],
-  [
-   "Language Neuroscience",
    27
   ],
   [
@@ -1866,6 +1785,10 @@
   ],
   [
    "2025 5th Annual Precision Mental Health Symposium",
+   25
+  ],
+  [
+   "Heinz C. Prechter Bipolar Research Program",
    25
   ],
   [
@@ -1909,10 +1832,6 @@
    24
   ],
   [
-   "James Giordano Interviews on Neuroscience, Ethics and Science Fiction",
-   24
-  ],
-  [
    "Duke Neurology Grand Rounds 2023",
    24
   ],
@@ -1953,16 +1872,8 @@
    22
   ],
   [
-   "Brain Injury and Me",
-   22
-  ],
-  [
    "CBMM Research Talks",
    22
-  ],
-  [
-   "ADHD Talks and Lectures",
-   21
   ],
   [
    "Sleep Medicine Grand Rounds",
@@ -1989,23 +1900,15 @@
    21
   ],
   [
-   "Ruthazer Lab Talks and Neuro Light Lunch",
-   21
-  ],
-  [
-   "Lectures by Earl Miller",
-   21
-  ],
-  [
    "The Mind and Human Violence",
    20
   ],
   [
-   "Talks by UCL Psychology and Language Sciences Academics",
+   "2021-2022 Psychiatry and Behavioral Sciences Grand Rounds",
    20
   ],
   [
-   "2021-2022 Psychiatry and Behavioral Sciences Grand Rounds",
+   "ADHD Talks and Lectures",
    20
   ],
   [
@@ -2019,10 +1922,6 @@
   [
    "Columbia Neuroscience Seminars",
    20
-  ],
-  [
-   "UCLA Neurotechnology Symposium",
-   19
   ],
   [
    "2024-2025 Psychiatry and Behavioral Sciences Grand Rounds",
@@ -2057,6 +1956,10 @@
    18
   ],
   [
+   "UCLA Neurotechnology Symposium",
+   18
+  ],
+  [
    "Highlights from APA 2025",
    18
   ],
@@ -2085,7 +1988,15 @@
    18
   ],
   [
-   "Biology, Genetics and Neurology of Neurodevelopmental Conditions",
+   "Ruthazer Lab Talks and Neuro Light Lunch",
+   18
+  ],
+  [
+   "Lectures by Earl Miller",
+   18
+  ],
+  [
+   "Neuroscience at Oxford",
    17
   ],
   [
@@ -2105,6 +2016,10 @@
    17
   ],
   [
+   "Menninger Mindscape",
+   17
+  ],
+  [
    "CCN 2022",
    17
   ],
@@ -2121,19 +2036,11 @@
    17
   ],
   [
-   "Athena Demertzi: Talks on Consciousness and the Brain",
-   17
-  ],
-  [
    "NZBRI Public Talks",
    17
   ],
   [
-   "Lunch Hour Lectures: Psychology and Language Sciences",
-   16
-  ],
-  [
-   "Treatment, Therapy and Intervention in Neurodevelopmental Conditions",
+   "Biology, Genetics and Neurology of Neurodevelopmental Conditions",
    16
   ],
   [
@@ -2161,10 +2068,6 @@
    16
   ],
   [
-   "Menninger Mindscape",
-   16
-  ],
-  [
    "Neuroscience and Society (Dana Foundation and AAAS)",
    16
   ],
@@ -2189,15 +2092,7 @@
    16
   ],
   [
-   "Caltech Researchers on Their Work",
-   16
-  ],
-  [
    "Monell Seminar Series",
-   16
-  ],
-  [
-   "Aphasia Voices",
    16
   ],
   [
@@ -2205,7 +2100,15 @@
    16
   ],
   [
+   "Lunch Hour Lectures: Psychology and Language Sciences",
+   15
+  ],
+  [
    "Psychiatry Grand Rounds 2026",
+   15
+  ],
+  [
+   "Treatment, Therapy and Intervention in Neurodevelopmental Conditions",
    15
   ],
   [
@@ -2237,15 +2140,19 @@
    15
   ],
   [
+   "Aphasia Voices",
+   15
+  ],
+  [
+   "Language Neuroscience",
+   15
+  ],
+  [
    "2023-2024 Psychiatry and Behavioral Sciences Grand Rounds",
    14
   ],
   [
    "2022-2023 Psychiatry and Behavioral Sciences Grand Rounds",
-   14
-  ],
-  [
-   "FENS History of Neuroscience",
    14
   ],
   [
@@ -2265,15 +2172,15 @@
    14
   ],
   [
+   "Brain Injury and Me",
+   14
+  ],
+  [
    "Duke Neurology Grand Rounds 2026",
    14
   ],
   [
    "RCPsych Lectures",
-   13
-  ],
-  [
-   "Developing a National Dementia Strategy Conference",
    13
   ],
   [
@@ -2290,10 +2197,6 @@
   ],
   [
    "FENS Hertie Winter School 2017: Neural Control of Behaviour, Navigation",
-   13
-  ],
-  [
-   "Brain Health Learning Network",
    13
   ],
   [
@@ -2329,20 +2232,8 @@
    13
   ],
   [
-   "Dementia Research Seminars and Interviews",
-   13
-  ],
-  [
-   "James Giordano Lectures on Neuroethics",
-   13
-  ],
-  [
    "Brain Awareness Week 2021",
    13
-  ],
-  [
-   "Oxford Psychiatry",
-   12
   ],
   [
    "Mental Health Information",
@@ -2421,15 +2312,7 @@
    11
   ],
   [
-   "CAJAL Advanced Neuroscience Training Programme",
-   11
-  ],
-  [
    "Mind & Life XXVI: Mind, Brain and Matter",
-   11
-  ],
-  [
-   "BBRFI Webinars",
    11
   ],
   [
@@ -2453,11 +2336,11 @@
    11
   ],
   [
-   "Visiting Lecturers on Mind and Brain",
-   11
+   "2024-2025 Child and Adolescent Psychiatry Grand Rounds",
+   10
   ],
   [
-   "2024-2025 Child and Adolescent Psychiatry Grand Rounds",
+   "2023-2024 Child and Adolescent Psychiatry Grand Rounds",
    10
   ],
   [
@@ -2482,6 +2365,10 @@
   ],
   [
    "FENS Hertie Winter School 2018: Neural Control of Instinctive and Innate Behaviour",
+   10
+  ],
+  [
+   "CAJAL Advanced Neuroscience Training Programme",
    10
   ],
   [
@@ -2513,6 +2400,10 @@
    10
   ],
   [
+   "BBRFI Webinars",
+   10
+  ],
+  [
    "SPSP 2021 Annual Convention",
    10
   ],
@@ -2525,19 +2416,11 @@
    10
   ],
   [
-   "CSN Lab Presentations",
-   10
-  ],
-  [
    "The Multilingual Mind Lecture Series 2021/2022",
    10
   ],
   [
    "The Multilingual Mind Lecture Series 2021",
-   10
-  ],
-  [
-   "Nuffield Department of Clinical Neurosciences Talks",
    10
   ],
   [
@@ -2551,10 +2434,6 @@
   [
    "Risk and Resilience to Alzheimer's Disease in African Americans",
    10
-  ],
-  [
-   "2023-2024 Child and Adolescent Psychiatry Grand Rounds",
-   9
   ],
   [
    "Suicide Prevention Symposium",
@@ -2609,12 +2488,12 @@
    9
   ],
   [
-   "Philosophy of Deep Learning",
+   "Dementia Research Seminars and Interviews",
    9
   ],
   [
-   "Psychology in Sheffield",
-   8
+   "Philosophy of Deep Learning",
+   9
   ],
   [
    "2021 Wu Tsai Neuro Symposium",
@@ -2641,10 +2520,6 @@
    8
   ],
   [
-   "Michigan Alzheimer's Disease Center Presentations for Professionals",
-   8
-  ],
-  [
    "Picower New Insight Symposium 2014",
    8
   ],
@@ -2653,11 +2528,19 @@
    8
   ],
   [
+   "Developing a National Dementia Strategy Conference",
+   8
+  ],
+  [
    "2017 APA Convention: Gender and Sexual Orientation",
    8
   ],
   [
    "CogSci 2022 Symposia",
+   8
+  ],
+  [
+   "FENS History of Neuroscience",
    8
   ],
   [
@@ -2745,6 +2628,10 @@
    7
   ],
   [
+   "Michigan Alzheimer's Disease Center Presentations for Professionals",
+   7
+  ],
+  [
    "What's Next in Autism Genomics?",
    7
   ],
@@ -2781,10 +2668,6 @@
    7
   ],
   [
-   "Hey Parents, Let's Talk Mental Health",
-   7
-  ],
-  [
    "Mindscape: Trauma",
    7
   ],
@@ -2809,10 +2692,6 @@
    7
   ],
   [
-   "Addiction and Mental Health Seminar Series",
-   7
-  ],
-  [
    "T&C Chen Center for Social and Decision Neuroscience Seminars",
    7
   ],
@@ -2833,12 +2712,12 @@
    7
   ],
   [
-   "2026 CNStalks",
+   "Caltech Researchers on Their Work",
    7
   ],
   [
-   "Understanding Mental Health (#OxfordMentalHealth)",
-   6
+   "2026 CNStalks",
+   7
   ],
   [
    "10th Annual Wu Tsai Neurosciences Symposium",
@@ -2981,6 +2860,10 @@
    6
   ],
   [
+   "Addiction and Mental Health Seminar Series",
+   6
+  ],
+  [
    "Cognitive Neuroscience Hub Presentations 2024",
    6
   ],
@@ -3001,20 +2884,12 @@
    6
   ],
   [
-   "Ashley Juavinett Public Talks",
-   6
-  ],
-  [
    "Black Luminaries in Neuropsychology",
    6
   ],
   [
    "2024 Seminars",
    6
-  ],
-  [
-   "Experimental Psychology",
-   5
   ],
   [
    "2025 Wu Tsai Neurosciences Symposium",
@@ -3313,10 +3188,6 @@
    5
   ],
   [
-   "Best of Dr. Aaron T. Beck",
-   5
-  ],
-  [
    "Dementia and Personhood: Facts and Myths",
    5
   ],
@@ -3357,11 +3228,15 @@
    4
   ],
   [
+   "Oxford Psychiatry",
+   4
+  ],
+  [
    "Mental Health Lectures",
    4
   ],
   [
-   "Learn at FASS: Psychology",
+   "Talks by UCL Psychology and Language Sciences Academics",
    4
   ],
   [
@@ -3637,10 +3512,6 @@
    4
   ],
   [
-   "Mind & Life XXIX: Mapping the Mind",
-   4
-  ],
-  [
    "Mind & Life XXII",
    4
   ],
@@ -3697,6 +3568,14 @@
    3
   ],
   [
+   "Psychology in Sheffield",
+   3
+  ],
+  [
+   "Learn at FASS: Psychology",
+   3
+  ],
+  [
    "Mind, Brain, Computation and Technology Seminars",
    3
   ],
@@ -3729,10 +3608,6 @@
    3
   ],
   [
-   "2014-2015 Minds Behind The MIND",
-   3
-  ],
-  [
    "Child Psychiatry Fellow Grand Rounds",
    3
   ],
@@ -3762,6 +3637,10 @@
   ],
   [
    "QMiP Annual Conference 2017",
+   3
+  ],
+  [
+   "UCL Neuroscience, Physiology and Pharmacology",
    3
   ],
   [
@@ -3961,6 +3840,14 @@
    3
   ],
   [
+   "Best of Dr. Aaron T. Beck",
+   3
+  ],
+  [
+   "Mindscape 2016 Symposium Speakers",
+   3
+  ],
+  [
    "Advances in Psychiatry 2014: Addictive Behavior",
    3
   ],
@@ -3985,6 +3872,10 @@
    3
   ],
   [
+   "Nuffield Department of Clinical Neurosciences Talks",
+   3
+  ],
+  [
    "Aphasia Research",
    3
   ],
@@ -3998,6 +3889,10 @@
   ],
   [
    "Clinical and Educational Services Grand Rounds",
+   2
+  ],
+  [
+   "2014-2015 Minds Behind The MIND",
    2
   ],
   [
@@ -4029,10 +3924,6 @@
    2
   ],
   [
-   "Mindscape 2016 Symposium Speakers",
-   2
-  ],
-  [
    "A Journey Into Consciousness: Anil Seth and Michael Pollan",
    2
   ],
@@ -4042,6 +3933,10 @@
   ],
   [
    "Outsmarting Human Minds",
+   1
+  ],
+  [
+   "Experimental Psychology",
    1
   ],
   [

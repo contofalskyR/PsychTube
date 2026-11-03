@@ -8,8 +8,11 @@ Writes work/inst/courses_in.jsonl       one row per playlist  -> label with INST
        (courses that already have a line in work/inst/course_labels.jsonl and videos that already have a line in
        work/inst/out_*.jsonl are skipped, so re-running after adding playlists only emits the new work)
 
-Usage: python3 pipeline/make_inst_batches.py [batch_size] [--only-mixed]
-       --only-mixed  skip lectures of courses whose card says per_video_topics=false (they inherit the course topics)
+Usage: python3 pipeline/make_inst_batches.py [batch_size] [--only-mixed] [--label-big N]
+       --only-mixed   skip lectures of courses whose card says per_video_topics=false (they inherit the course topics)
+       --label-big N  but still queue those lectures when the course has more than N of them (a 40-lecture course
+                      filed under one topic hides lectures on others; the review found inherited labels wrong twice
+                      as often as judged ones)
 """
 import glob
 import json
@@ -49,6 +52,7 @@ if new_courses:                       # leave the previous round's input in plac
         }, ensure_ascii=False) + "\n")
 
 only_mixed = "--only-mixed" in sys.argv      # per-lecture labels only where the course card says the lectures span topics
+label_big = int(sys.argv[sys.argv.index("--label-big") + 1]) if "--label-big" in sys.argv else None
 card = {o["pid"]: o for o in jsonl(P("work", "inst", "course_labels.jsonl"))}
 rows = []
 seen = set()
@@ -56,7 +60,7 @@ for c in courses:
     cl = card.get(c["pid"])
     if cl is not None and cl.get("keep") is False:
         continue                                              # the card dropped the whole playlist
-    if only_mixed and cl is not None and cl.get("per_video_topics") is False:
+    if only_mixed and cl is not None and cl.get("per_video_topics") is False and not (label_big is not None and c["n"] > label_big):
         continue                                              # lectures inherit the course topics
     for it in c["items"]:
         vid = it["id"]

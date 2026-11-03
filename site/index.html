@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23E8B04B' d='M32 6c-5 0-7 6-6 10s-4 6-8 7-8 6-6 11 7 6 9 10-1 10 4 12 7-3 7-7 2-5 7-5 6 4 8 0-1-8 3-13 7-6 6-11-6-6-8-8-2-8-4-10-6 0-12 4z'/%3E%3C/svg%3E">
+<script>try { var t = JSON.parse(localStorage.getItem("pt:settings") || "{}").theme || "dark"; if (t !== "system") document.documentElement.setAttribute("data-theme", t); } catch (e) {}</script>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -30,27 +31,27 @@
 </header>
 
 <nav class="rail" aria-label="Sections">
-  <a href="#home" data-nav="home"><span class="ic">⌂</span>Home</a>
-  <a href="#topics" data-nav="topics"><span class="ic">◍</span>Topics</a>
-  <a href="#courses" data-nav="courses"><span class="ic">≡</span>Courses</a>
-  <a href="#clips" data-nav="clips"><span class="ic">⟐</span>Clips</a>
-  <a href="#longs" data-nav="longs"><span class="ic">◷</span>Longs</a>
-  <a href="#care" data-nav="care"><span class="ic">△</span>Handle with care</a>
-  <a href="#shelf-originals" data-nav="originals"><span class="ic">◎</span>Primary sources</a>
-  <a href="#shelf-demos" data-nav="demos"><span class="ic">◇</span>Try it yourself</a>
-  <a href="#shelf-therapy" data-nav="therapy"><span class="ic">◐</span>Therapy in practice</a>
-  <a href="#shelf-cases" data-nav="cases"><span class="ic">⊕</span>Clinical cases</a>
+  <a href="#home" data-nav="home"><span class="ic" aria-hidden="true">⌂</span>Home</a>
+  <a href="#topics" data-nav="topics"><span class="ic" aria-hidden="true">◍</span>Topics</a>
+  <a href="#courses" data-nav="courses"><span class="ic" aria-hidden="true">≡</span>Courses</a>
+  <a href="#shelf-originals" data-nav="originals"><span class="ic" aria-hidden="true">◎</span>Primary sources</a>
+  <a href="#shelf-demos" data-nav="demos"><span class="ic" aria-hidden="true">◇</span>Try it yourself</a>
+  <a href="#shelf-therapy" data-nav="therapy"><span class="ic" aria-hidden="true">◐</span>Therapy in practice</a>
+  <a href="#shelf-cases" data-nav="cases"><span class="ic" aria-hidden="true">⊕</span>Clinical cases</a>
+  <a href="#care" data-nav="care"><span class="ic" aria-hidden="true">△</span>Replication notes</a>
+  <a href="#longs" data-nav="longs"><span class="ic" aria-hidden="true">◷</span>Over an hour</a>
+  <a href="#clips" data-nav="clips"><span class="ic" aria-hidden="true">⟐</span>Clips</a>
   <div class="rail-gap"></div>
-  <a href="#history" data-nav="history"><span class="ic">↺</span>History</a>
-  <a href="#liked" data-nav="liked"><span class="ic">♥</span>Liked</a>
-  <a href="#later" data-nav="later"><span class="ic">⌁</span>Watch later</a>
+  <a href="#history" data-nav="history"><span class="ic" aria-hidden="true">↺</span>History</a>
+  <a href="#liked" data-nav="liked"><span class="ic" aria-hidden="true">♥</span>Liked</a>
+  <a href="#later" data-nav="later"><span class="ic" aria-hidden="true">⌁</span>Watch later</a>
   <div class="rail-gap"></div>
-  <a href="#data" data-nav="data"><span class="ic">⇩</span>Data</a>
-  <a href="#about" data-nav="about"><span class="ic">i</span>About</a>
-  <a href="#prefs" data-nav="settings"><span class="ic">⚙</span>Settings</a>
+  <a href="#data" data-nav="data"><span class="ic" aria-hidden="true">⇩</span>Data</a>
+  <a href="#about" data-nav="about"><span class="ic" aria-hidden="true">i</span>About</a>
+  <a href="#prefs" data-nav="settings"><span class="ic" aria-hidden="true">⚙</span>Settings</a>
 </nav>
 
-<main id="main" class="main" tabindex="-1"></main>
+<main id="main" class="main" tabindex="-1"><p class="lede" style="margin-top:24px">Loading the catalog…</p></main>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 

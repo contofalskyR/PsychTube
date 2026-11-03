@@ -1,0 +1,1468 @@
+{
+ "_comment": "Publisher check (pipeline/classify/INSTRUCTIONS_publishers.md): one row per channel that is a person's own channel or a publisher whose channel name was all the triage had. ok=false puts the collection at tier 1 with 'affiliation not verified' on the card; verified=true needs an institutional page tying the person to the institution. Edit by hand; the build reads it.",
+ "checked": "2026-11-03",
+ "channels": {
+  "UCCSIveazurb4qrNIV7KV9fg": {
+   "channel": "The Theoretical Neuroscience Channel",
+   "kind": "society",
+   "personal": false,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": true,
+   "why": "an academic seminar series (World Wide Theoretical Neuroscience Seminar, run by David Hansel and Carl van Vreeswijk)",
+   "evidence": [
+    "https://lists.cnsorg.org/hyperkitty/list/comp-neuro@lists.cnsorg.org/thread/T55GJPWGEUIGSXRJFWMNOW37VRHVOQCE/",
+    "https://world-wide.org/seminar/homage-carl-van-vreeswijk-9tn6k51c"
+   ],
+   "note": "Online seminar series run by David Hansel and Carl van Vreeswijk (d. 2022); organizer affiliations not shown on pages seen. Many speakers; channel is a series, not an institution."
+  },
+  "UCRGLFq7ZJL6RZLBi_-Jfj-Q": {
+   "channel": "Statistics and Research with Dr. Wendi L. Benson",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Wendi L. Benson",
+   "role": "professor",
+   "affil": "Marshall University",
+   "unit": "Psychology Department",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://www.marshall.edu/psych/profile/wendi-l-benson/",
+    "https://www.marshall.edu/psych/files/CV-for-Dr.-Wendi-L.-Benson.pdf"
+   ],
+   "note": "Marshall faculty page lists Assistant Professor Benson (PhD I/O psychology, WSU Vancouver); channel is named for her."
+  },
+  "UCeFHdqLP3ZcCRxdsnU11i0A": {
+   "channel": "Sharon Griffin",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Sharon Griffin",
+   "role": "instructor",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "Searches did not identify this instructor or her college. Course code PSYC 2301 suggests a Texas college, but no page ties her to one."
+  },
+  "UCvUpRk3sc8gJbm48irA08hQ": {
+   "channel": "Hossein Adeli",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Hossein Adeli",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "No page found tying this person to an institution. Search hits were for other people (Hojjat Adeli at Ohio State, Ehsan Adeli at Stanford)."
+  },
+  "UCZ50_jFV4Ef3Nqy1l0Ajr0w": {
+   "channel": "Frank M. LoSchiavo",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Frank M. LoSchiavo",
+   "role": "professor",
+   "affil": "Ohio University",
+   "unit": "Psychology, Zanesville campus",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://www.ohio.edu/directory/frank-m-loschiavo",
+    "https://ohio.edu/cas/loschiav"
+   ],
+   "note": "Ohio University directory lists Frank M. LoSchiavo, Professor of Psychology, Zanesville campus; channel bears his name and PSY 2510 course."
+  },
+  "UCN6Hha6oz263r-x6TetX5mQ": {
+   "channel": "Matthew Poole",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Matthew Poole",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "No page found identifying the instructor or his institution. Series follows the OpenStax Lifespan Development text."
+  },
+  "UCMX9XsktDCFaKOdKU4eqQrw": {
+   "channel": "Roger Corley",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Roger Corley",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "No page found tying a Roger Corley to a psychology appointment. Search results were unrelated people."
+  },
+  "UCZ_35nXGFsNB4rigT_XbNeA": {
+   "channel": "Andy Brocker",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Andy Brocker",
+   "role": "instructor",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "No page found. Playlist title says Vallejo, possibly a high school or college there; not established."
+  },
+  "UCUqMcSBpX16pp1_5no31cgg": {
+   "channel": "Dr. Joe Rangel",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Joe Rangel",
+   "role": "instructor",
+   "affil": "Windward Community College",
+   "unit": "Psychology",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://windward.hawaii.edu/directory/jrangel",
+    "https://windward.hawaii.edu/about-wcc/directory/jrangel/"
+   ],
+   "note": "WCC directory entry for Joseph Rangel and a WCC course listing for PSY 224 under his name; channel is his name."
+  },
+  "UCWcximYrebclxO5HrzABWNQ": {
+   "channel": "NiCole T. Buchanan",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "NiCole T. Buchanan",
+   "role": "professor",
+   "affil": "Michigan State University",
+   "unit": "Department of Psychology",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://psychology.msu.edu/_assets/pdfs/faculty-cvs/Buchanan-CV--October-2025-public.pdf",
+    "https://psychology.msu.edu/_assets/pdfs/PSY280-002_Syllabus_.pdf"
+   ],
+   "note": "MSU CV lists her as Professor of Psychology; channel bears her name and lectures say Psy 280 w. Prof. Buchanan. Channel also holds off-topic videos."
+  },
+  "UChU_1SBps0awdMWPrZJDj9Q": {
+   "channel": "Alex Reynolds, PhD",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Alex Reynolds",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "No page found tying this Alex Reynolds, PhD to an institution; common name, search hits not matched to the channel."
+  },
+  "UCgg8Vyfn-iWQ7AqwZELn3Hg": {
+   "channel": "Jennifer Isom Schmidtke",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Jennifer Isom Schmidtke",
+   "role": "instructor",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "No page found for this instructor or her college; Psych 36 course code not matched to an institution."
+  },
+  "UCq0J5LwLPFPD8K7odbSZifQ": {
+   "channel": "Albany Behavioural Neuroscience Videos",
+   "kind": "unknown",
+   "personal": false,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "a course channel; owner and university not identified",
+   "evidence": [],
+   "note": "Course channel for TPSY214 Spring 2020; no lecturer or institution found. Name 'Albany Behavioural Neuroscience' is not an institution."
+  },
+  "UCnOSBig3HbEHFUi2HBA7EtA": {
+   "channel": "Interactive Intelligence",
+   "kind": "unknown",
+   "personal": false,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": "University of Washington",
+   "unit": null,
+   "verified": false,
+   "self_described": true,
+   "ok": false,
+   "why": "a University of Washington student group, not a department",
+   "evidence": [
+    "https://techfee.uw.edu/proposal/2022-33"
+   ],
+   "note": "Channel says course is run by Interactive Intelligence at UW; UW tech-fee page describes I2 as a student project community (CSE). Lecturers not named."
+  },
+  "UCQx8DibcvVyA6e64OHjiSyg": {
+   "channel": "Dr. Jeffery A. Jones",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Jeffery A. Jones",
+   "role": "professor",
+   "affil": "Wilfrid Laurier University",
+   "unit": "Psychology; Laurier Centre for Cognitive Neuroscience",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://www.wlu.ca/academics/faculties/faculty-of-science/faculty-profiles/jeffery-a-jones/"
+   ],
+   "note": "Laurier profile: Professor and Director of Laurier Centre for Cognitive Neuroscience; channel named Dr. Jeffery A. Jones, course is sensation and perception."
+  },
+  "UC_tQ5fAumXHR1Yt0kiRc2kg": {
+   "channel": "Hans Dooremalen",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Hans Dooremalen",
+   "role": "lecturer",
+   "affil": "Tilburg University",
+   "unit": null,
+   "verified": true,
+   "self_described": true,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://research.tilburguniversity.edu/en/publications/de-adaptieve-functie-van-bewustzijn/"
+   ],
+   "note": "Tilburg research portal lists Hans Dooremalen at Tilburg University; playlist text says clips belong to Tilburg courses. Exact rank and unit not seen."
+  },
+  "UC_hukbByJP7OZ3Xm2tszacQ": {
+   "channel": "Jeffrey Kaplan",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Jeffrey Kaplan",
+   "role": "professor",
+   "affil": "University of North Carolina at Greensboro",
+   "unit": "Philosophy",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://cas.uncg.edu/tag/teaching/"
+   ],
+   "note": "UNCG article (Jan 2022) names Dr. Jeffrey Kaplan, philosophy professor, posting his online-course lectures on YouTube. Philosophy, not psychology."
+  },
+  "UCei3l9jF1JnpuGp9ok855pg": {
+   "channel": "Moscow Center for Consciousness Studies",
+   "kind": "lab",
+   "personal": false,
+   "lecturer": "Keith Frankish",
+   "role": "unknown",
+   "affil": "Lomonosov Moscow State University",
+   "unit": "Philosophy Department",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "lab channel",
+   "evidence": [
+    "https://hardproblem.ru/en/about/",
+    "https://philos.msu.ru/en"
+   ],
+   "note": "Center's site states affiliation with Philosophy Department of Moscow State University. Lecturers are invited speakers (Frankish, Bayne, others), not center staff."
+  },
+  "UCfd_MYsg4KbBdf7ENZP8A-Q": {
+   "channel": "Prof. Mike Botwin's Course Videos",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Michael Botwin",
+   "role": "professor",
+   "affil": "California State University, Fresno",
+   "unit": null,
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://csm.fresnostate.edu/about/directory/psych/botwin-michael.html"
+   ],
+   "note": "Fresno State psychology directory: professor since 1990, personality and evolutionary psychology; the channel's courses are evolutionary psychology."
+  },
+  "UC3n-cydKGrfsYNktx96P64g": {
+   "channel": "David Simpson",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "David Simpson",
+   "role": "lecturer",
+   "affil": "University of Alberta",
+   "unit": "Psychology, Faculty of Arts",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://apps.ualberta.ca/directory/person/dsimpso1"
+   ],
+   "note": "UAlberta directory lists David Simpson, ATS Assistant Lecturer, Psychology; playlist is Psychology 104 at U of Alberta, Fall 2023. Channel link to him is by name."
+  },
+  "UCIOl-Ucdr-Wr4XuqrL1JI8w": {
+   "channel": "Steph Davison",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Steph Davison",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "No page found. Playlist is a coded unit (2010PSY) mixing Crash Course and AP clips; curator, not necessarily lecturer."
+  },
+  "UCaSDgTf-MvlXDijbiXQ2gRw": {
+   "channel": "Asir Ajmal",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Asir Ajmal",
+   "role": "lecturer",
+   "affil": "GIFT University",
+   "unit": null,
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://sass.gift.edu.pk/show-faculty-index.html?faculty_member=dr-m-asir-ajmal"
+   ],
+   "note": "GIFT University School of Arts and Social Sciences faculty page; the playlist is the university's psychology seminar series hosted on his channel."
+  },
+  "UCZ63_krMvEtdO3KPMov_iTg": {
+   "channel": "Andrew Ainsworth",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Andrew Ainsworth",
+   "role": "professor",
+   "affil": "California State University, Northridge",
+   "unit": "Department of Psychology",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://catalog.csun.edu/academics/psy/faculty/ainsworth-andrew/",
+    "https://www.youtube.com/channel/UCZ63_krMvEtdO3KPMov_iTg"
+   ],
+   "note": "CSUN catalog lists him as Professor and Department Chair of Psychology; channel carries his name and CSUN keywords; lectures are Psy320."
+  },
+  "UCBXvMHSAiQv5zpu_nNk_VQQ": {
+   "channel": "Patricia Arrazola",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Patricia Arrazola",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [
+    "https://www.youtube.com/channel/UCBXvMHSAiQv5zpu_nNk_VQQ"
+   ],
+   "note": "Channel named for her; no About text and no faculty or clinical page found for this name. Affiliation not established."
+  },
+  "UCwox0fRxQzjxpeixe023q4g": {
+   "channel": "Dr. Chris Akins",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Chris Akins",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [
+    "https://www.youtube.com/channel/UCwox0fRxQzjxpeixe023q4g"
+   ],
+   "note": "Channel keywords cover political psychology, propaganda, NLP, mental health. Collection mixes third-party videos (Crash Course, mnemonics). No academic page found."
+  },
+  "UC6PUVabJo1Ub5C8XDe1qqNw": {
+   "channel": "Michael Henry",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Michael Henry",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "Name is common; no page tying the channel owner to a CPSY 323 course or institution. Playlist samples are mostly third-party videos (Khan Academy, 2-Minute Neuroscience)."
+  },
+  "by Stacy Kent and 1 other": {
+   "channel": "by Stacy Kent and 1 other",
+   "kind": "unknown",
+   "personal": false,
+   "lecturer": "Stacy Kent",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "a co-owned playlist of other channels' videos; no channel of its own",
+   "evidence": [],
+   "note": "Not a real channel ID or name. Playlist holds nursing-exam and third-party videos (Level Up RN, 2-Minute Neuroscience). No instructor page found."
+  },
+  "UC3SXwVb1n4x5x5s_4P3Krxg": {
+   "channel": "City Vision University",
+   "kind": "institution",
+   "personal": false,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": "City Vision University",
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": true,
+   "why": "institution channel",
+   "evidence": [
+    "https://en.wikipedia.org/wiki/List_of_universities_accredited_by_DEAC"
+   ],
+   "note": "Online Christian university listed among DEAC-accredited institutions. Lecturers not named; playlists mix course overviews with third-party videos (Crash Course, a Case/Deaton talk)."
+  },
+  "UC29iFudxEzPuwjLz6OD4Uyw": {
+   "channel": "Daniel Storage",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Daniel Storage",
+   "role": "professor",
+   "affil": "University of Denver",
+   "unit": null,
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://www.youtube.com/channel/UC29iFudxEzPuwjLz6OD4Uyw/about",
+    "https://liberalarts.du.edu/about/people/daniel-shafik-storage"
+   ],
+   "note": "DU College of Arts, Humanities & Social Sciences people page; channel is his name."
+  },
+  "UCZr9beTJcBgvW_02kRW9SpQ": {
+   "channel": "Dr. Bev Knox - Psychology Lectures",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Bev Knox",
+   "role": "professor",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": true,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [
+    "https://www.udemy.com/user/bev-knox/",
+    "https://about.me/knoxbev"
+   ],
+   "note": "Her Udemy and about.me bios say psychology professor and author, no university named. She founded the Bev Knox Institute of Self-Enhancement. Employer not found."
+  },
+  "UC1UoPFXTukbWaPdSccTHpGg": {
+   "channel": "Professor Webb's YouTube Classroom",
+   "kind": "person",
+   "personal": true,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [
+    "https://www.youtube.com/channel/UC1UoPFXTukbWaPdSccTHpGg"
+   ],
+   "note": "Handle @prof.rachellewebb suggests Rachelle Webb; no About text or faculty page found. Collection includes Crash Course clips. Name and institution not established."
+  },
+  "UCXnbbA57T1Vz_xETSuImOUw": {
+   "channel": "Psych 101 w/ Monroe",
+   "kind": "person",
+   "personal": true,
+   "lecturer": null,
+   "role": "instructor",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [
+    "https://www.youtube.com/channel/UCXnbbA57T1Vz_xETSuImOUw"
+   ],
+   "note": "Instructor surname Monroe only; playlist titled GCC PSY 101 but GCC is unresolved (possibly Glendale Community College). No faculty page found. Many videos are third-party."
+  },
+  "UCqZgQ3XC0oBI7ScXKrLoGHw": {
+   "channel": "Marty Sereno",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Marty Sereno",
+   "role": "professor",
+   "affil": "San Diego State University (emeritus) and UC San Diego",
+   "unit": "Department of Psychology",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://pages.ucsd.edu/~msereno/",
+    "https://calendar.ucsd.edu/event/dr.-marty-sereno-from-san-diego-state-university1",
+    "https://ccn.sdsu.edu/martin-sereno/"
+   ],
+   "note": "His page lists emeritus SDSU psychology and adjunct UCSD cognitive science; UCSD event lists him from SDSU; earlier Birkbeck/UCL chair. Channel carries his name and course pages."
+  },
+  "UCNcxBt5Pn4SESRQE52FPzfA": {
+   "channel": "Arveen Kaur",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Arveen Kaur",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [
+    "https://www.youtube.com/channel/UCNcxBt5Pn4SESRQE52FPzfA"
+   ],
+   "note": "Channel named for her; ISSS PMRF lecture series. A search surfaced an iitk.ac.in page for an Arveen K, not confirmed as the same person. Affiliation not established."
+  },
+  "UCQ0BARLmTmfTBTRkPJfz8_w": {
+   "channel": "Professor Caleb Lack",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Caleb Lack",
+   "role": "professor",
+   "affil": "University of Central Oklahoma",
+   "unit": "Department of Psychology",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://caleblack.com/about.html",
+    "https://www3.uco.edu/centraldirectory/profiles/767751"
+   ],
+   "note": "UCO central directory lists Caleb Lack, Ph.D. (psychology); channel is his name."
+  },
+  "UCp97f-ws0N7bjluKY-XeUwg": {
+   "channel": "Alan Hu Foundation",
+   "kind": "company",
+   "personal": false,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "a volunteer-run nonprofit lecture series, not an academic institution",
+   "evidence": [
+    "https://www.hacienda.org/news-events/hacienda-online/pulse/2024/community/alan-hu-foundation"
+   ],
+   "note": "Volunteer-run nonprofit founded by Alan Hu's parents; series began at Las Positas College. Speakers are guest professors (Stanford, UC Berkeley). Not an academic institution."
+  },
+  "UCw3NO1YyzqwX7GBx3e8-OGA": {
+   "channel": "CalSouthern PSYCHOLOGY",
+   "kind": "institution",
+   "personal": false,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": "California Southern University",
+   "unit": "Psychology",
+   "verified": false,
+   "self_described": true,
+   "ok": true,
+   "why": "institution channel",
+   "evidence": [
+    "https://calsouthern.smartcatalogiq.com/en/2023-2024/general-catalog/university-profile/accreditation-and-approvals"
+   ],
+   "note": "Channel description says lectures are filmed at CalSouthern, Irvine. Private online-oriented university. Speakers vary and are not named per collection."
+  },
+  "UCTcCRcpBv4xm8ZKN6zhAuaQ": {
+   "channel": "Patrick M Whitehead",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Patrick M. Whitehead",
+   "role": "professor",
+   "affil": "Albany State University",
+   "unit": "Department of Psychology",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://asurams.academia.edu/PatrickWhitehead/CurriculumVitae",
+    "https://www.asurams.edu/academic-affairs/college-of-arts-sciences/social-sciences/sociology-psychology/faculty-staff.php"
+   ],
+   "note": "ASU Sociology & Psychology faculty page: Associate Professor of Psychology; channel is his name."
+  },
+  "UCXLkBeKS6qqoDNnEImdxpKw": {
+   "channel": "CILE Center: Research Center for Islamic Legislation and Ethics -Official Account- EN/FR/AR",
+   "kind": "institution",
+   "personal": false,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": "Hamad Bin Khalifa University",
+   "unit": "Research Center for Islamic Legislation and Ethics (CILE)",
+   "verified": false,
+   "self_described": false,
+   "ok": true,
+   "why": "institution channel",
+   "evidence": [
+    "https://cile.hbku.edu.qa/about-us",
+    "https://hbku.edu.qa/en/node/25229"
+   ],
+   "note": "Research centre with an hbku.edu.qa site. Playlist holds short clips by many speakers (clergy, psychotherapists, academics). Not a psychology department."
+  },
+  "UCjo_xdN6VU1ec0anKCF4K2g": {
+   "channel": "Fielding Graduate University",
+   "kind": "institution",
+   "personal": false,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": "Fielding Graduate University",
+   "unit": "Media Psychology",
+   "verified": false,
+   "self_described": false,
+   "ok": true,
+   "why": "institution channel",
+   "evidence": [],
+   "note": "Official university channel by name; not independently checked. Media Psychology playlist mixes lab updates, info sessions and student capstone talks, no single lecturer."
+  },
+  "UCqc8NFsaWhOiII37uCbeLcw": {
+   "channel": "Neuro-ID Program PR",
+   "kind": "institution",
+   "personal": false,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": "University of Puerto Rico, Rio Piedras",
+   "unit": "Neuro-ID Program (BP-ENDURE)",
+   "verified": false,
+   "self_described": false,
+   "ok": true,
+   "why": "institution channel",
+   "evidence": [
+    "https://neuroid.uprrp.edu/index.php/about/",
+    "https://neuroid.uprrp.edu/index.php/members"
+   ],
+   "note": "NeuroID program site is hosted at uprrp.edu. Seminars feature invited neuroscientists from other universities. It is a training program, not a department."
+  },
+  "UC81Kr752iT8sGcaKt2OLROg": {
+   "channel": "College Success with Dr. Manuel Saldivar",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Manuel Saldivar",
+   "role": "professor",
+   "affil": "University of Texas Rio Grande Valley",
+   "unit": null,
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://faculty.utrgv.edu/manuel.saldivar/index.html"
+   ],
+   "note": "UTRGV faculty page; channel is his name."
+  },
+  "UCoNBAtMKQKXiZGDcbl93Qlg": {
+   "channel": "Decolpsych",
+   "kind": "society",
+   "personal": false,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": true,
+   "ok": false,
+   "why": "a speaker network with no host institution found",
+   "evidence": [
+    "https://www.youtube.com/channel/UCoNBAtMKQKXiZGDcbl93Qlg"
+   ],
+   "note": "Network or speaker series on decolonising mental health; no host institution found. Speakers are invited guests, not a single lecturer."
+  },
+  "UCmZrFN2IZLXMxCGBEsGaAww": {
+   "channel": "Joshua Erkman",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Joshua Erkman",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "No page found for this name. PSY-496 playlist is 139 mostly third-party talks (Chip Conley, SIOP, Stuart Carr), so it is a curated course list. Institution not established."
+  },
+  "UCxx6v0aqTx1DIrNPh2pkkpQ": {
+   "channel": "Dr. Christopher Warren",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Christopher Warren",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "No page found tying a Christopher Warren to a Psy100 course or an institution. Channel is the instructor's own; affiliation not findable."
+  },
+  "UCKTdGEZ6Kivs-ZUk5_kv_tA": {
+   "channel": "International Open University",
+   "kind": "institution",
+   "personal": false,
+   "lecturer": "Aisha Hamdan",
+   "role": "professor",
+   "affil": "Islamic Online University",
+   "unit": null,
+   "verified": false,
+   "self_described": true,
+   "ok": true,
+   "why": "institution channel",
+   "evidence": [
+    "https://spiritualityandhealth.duke.edu/files/2021/03/Aisha_Hamdan.pdf"
+   ],
+   "note": "Playlist text names Dr. Aisha Hamdan teaching at Islamic Online University (purely online). A 2011 CV shows a Saudi university post, not IOU. IOU link is self-described only."
+  },
+  "UCbqtMBewNON1ZaJ4xeXXdjA": {
+   "channel": "Richard Mangold Psychology Instructor",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Richard Mangold",
+   "role": "instructor",
+   "affil": "Illinois Valley Community College",
+   "unit": "Psychology/Sociology",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://ivcc.edu/facultywebpages/mangold.php"
+   ],
+   "note": "IVCC faculty page lists Dr. Richard Mangold, Psychology/Sociology Instructor, teaching Psych 1000. Channel name is his name; page does not link the channel."
+  },
+  "UCPP4sx8_Zg-S0Vsp3Ghb2WA": {
+   "channel": "SocialNeuro",
+   "kind": "unknown",
+   "personal": true,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": "University of Queensland",
+   "unit": null,
+   "verified": false,
+   "self_described": true,
+   "ok": false,
+   "why": "course lectures said to be University of Queensland's; the channel's owner is not identified",
+   "evidence": [
+    "https://course-profiles.uq.edu.au/course-profiles/PSYC1040-21039-7620"
+   ],
+   "note": "Playlist text says PSYC1040 at University of Queensland. UQ profile (older offering) lists Eric Vanman as coordinator; no page links him to this channel. Owner unknown."
+  },
+  "UCaUU57dzRsEgIqhvDuw3N8Q": {
+   "channel": "by Christina Collins",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Christina Collins",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "Playlist is a curated clip list (TED etc.) for a course coded UCD Psych 1000. No page found identifying the person or which UCD. Affiliation not findable."
+  },
+  "UCrQM0k1Sbe0MI1q_K3WWCPA": {
+   "channel": "Lee Rusty Waller",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Lee Rusty Waller",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "PSYC 2301 is a Texas common-course number used at many colleges. No page found tying Waller to an institution. Not findable."
+  },
+  "UCPg5fwebPWkzY63DmQzSKJA": {
+   "channel": "Dr John LMFT",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "John",
+   "role": "clinician",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "Channel name claims LMFT. No licence record or instructor page found; surname unknown. Playlists are curated clips (TED, Crash Course). Affiliation not findable."
+  },
+  "UCvcpJVfzN4mTlhLWkLk4yNQ": {
+   "channel": "ProfessorWolfe",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Amanda Wolfe",
+   "role": "lecturer",
+   "affil": "Kennesaw State University",
+   "unit": "Department of Psychological Science",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://facultyweb.kennesaw.edu/awolfe7/index.php",
+    "https://www.kennesaw.edu/radow/academics/psychological-science/about/faculty-and-staff.php",
+    "https://facultyweb.kennesaw.edu/awolfe7/",
+    "https://facultyweb.kennesaw.edu/awolfe7/courses.php"
+   ],
+   "note": "KSU faculty page lists PSYC 2000 The Science of Psychology; the playlist is 'Science of Psychology Videos' and a video is 'Using PsycInfo (Kennesaw State University)'."
+  },
+  "UCnQO4IgCTbcawmU0gNqLKQQ": {
+   "channel": "Luke Sjulson",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Lucas Sjulson",
+   "role": "unknown",
+   "affil": "Albert Einstein College of Medicine",
+   "unit": "Psychiatry and Behavioral Sciences",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://einstein.elsevierpure.com/en/persons/lucas-sjulson/"
+   ],
+   "note": "Einstein profile lists Lucas (Luke) Sjulson, PhD MD, Psychiatry and Behavioral Sciences; playlist says he co-taught this 2020 nanocourse at Einstein. Rank not checked."
+  },
+  "UCAMXreyILTDh2cxRre79Lhg": {
+   "channel": "Paul Merritt",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Paul Merritt",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "Searches found no Paul Merritt faculty page matching these courses (only an unrelated Michele Merritt). Channel is his own; affiliation not findable."
+  },
+  "UCIsJPB_w5ZhPHTybqAtXrmA": {
+   "channel": "Andy Blunden",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Andy Blunden",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [
+    "https://ethicalpolitics.org/ablunden/video/index.htm"
+   ],
+   "note": "Independent scholar (ethicalpolitics.org). His page says the CHAT course was delivered at Monash and Witwatersrand in 2011 and Melbourne in 2015; no standing appointment found."
+  },
+  "UCMdihazndR0f9XBoSXWqnYg": {
+   "channel": "Statistics of DOOM",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Erin Buchanan",
+   "role": "professor",
+   "affil": "Harrisburg University of Science and Technology",
+   "unit": "Analytics",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://www.harrisburgu.edu/news/hu-spotlight-dr-erin-buchanan/",
+    "https://search.missouristate.edu/people/erinbuchanan"
+   ],
+   "note": "HU page says Buchanan runs Statistics of DOOM. She was previously at Missouri State (teaches Psychology and Language); PSY 523 likely from there, number unconfirmed. Lecturer not named in videos."
+  },
+  "UCSPYCEatjZr3n9eNbN8UvNw": {
+   "channel": "Alexander Swan, Ph.D.",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Alexander Swan",
+   "role": "professor",
+   "affil": "Eureka College",
+   "unit": "Psychology",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://eureka.edu/directory/staff/alexander-swan",
+    "https://www.eureka.edu/blog/article/2018/05/eureka-college-faculty-member-collaborates-on-personality-study"
+   ],
+   "note": "Eureka College news: Assistant Professor of Psychology Alexander B. Swan; lectures are PSY 315W, channel is his name."
+  },
+  "UC47fTrbJT0-x2RHLytyv1qg": {
+   "channel": "Taryn Myers",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Taryn Myers",
+   "role": "professor",
+   "affil": "Virginia Wesleyan University",
+   "unit": "Psychology",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://www.vwu.edu/academics/majors/psychology/meet-the-faculty.php",
+    "https://www.kent.edu/brainhealth/profile/taryn-myers",
+    "https://www.abct.org/wp-content/uploads/2021/04/Clinical_Psychology_Myers_Virginia_Wesleyan_University.pdf"
+   ],
+   "note": "VWU lists Taryn A. Myers, Professor and Chair of Psychology (PhD Kent State, clinical). Channel is her name; ABCT hosts her VWU clinical psychology syllabus."
+  },
+  "UCU82CI3zfRRVsVklx4Le2dA": {
+   "channel": "Daniel Lametti",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Daniel Lametti",
+   "role": "professor",
+   "affil": "Acadia University",
+   "unit": "Psychology",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://psychology.acadiau.ca/daniel-lametti.html",
+    "https://www2.acadiau.ca/online/courses/psyc-2143-coint.html"
+   ],
+   "note": "Acadia lists Lametti as Professor of Psychology teaching Cognition; Acadia course page lists him as PSYC 2143 instructor. Channel is his name."
+  },
+  "UC8p0CuG4He9nqCR4nnzhZ7w": {
+   "channel": "C-STAR Lecture Series",
+   "kind": "lab",
+   "personal": false,
+   "lecturer": "Julius Fridriksson",
+   "role": "professor",
+   "affil": "University of South Carolina",
+   "unit": "Center for the Study of Aphasia Recovery (C-STAR)",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "lab channel",
+   "evidence": [
+    "https://www.sc.edu/study/colleges_schools/public_health/about/news/2017/c-star_lecture_series.php"
+   ],
+   "note": "USC Arnold School page describes the C-STAR lecture series led by Fridriksson. Many guest speakers; center is multi-institution (USC, MUSC, Johns Hopkins, UC Irvine)."
+  },
+  "UCCabJxhy6wokraEGgFcYD5g": {
+   "channel": "Dr. Aqualus Gordon",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Aqualus Gordon",
+   "role": "professor",
+   "affil": "University of Central Missouri",
+   "unit": "Psychological Sciences",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://www.bapt.org.uk/post/type-and-academia-with-dr-aqualus-gordon-professor-of-psychological-sciences-usa"
+   ],
+   "note": "BAPT interview lists Aqualus M. Gordon, PhD, Associate Professor of Psychological Sciences, University of Central Missouri. Channel is his name."
+  },
+  "UCnDXZFB5BrdRwR1K7eV65Tg": {
+   "channel": "C. H. Harney, M.A.",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "C. H. Harney",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "Channel name claims an M.A. only. No faculty page found. Playlist mixes own short lectures with recorded outside talks (Pinker, divided brain)."
+  },
+  "UCI2iUwxRe_k5DL0G1iglvQA": {
+   "channel": "Angela Bosak",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Angela Bosak",
+   "role": "instructor",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "AP Psychology (high-school) flipped-classroom lectures; no institution found."
+  },
+  "UCvRuQWqbKbHJFCC4xabOI4g": {
+   "channel": "University of Consciousness, Qualia (UCQ)",
+   "kind": "unknown",
+   "personal": false,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "a YouTube channel; not a university and no owner identified",
+   "evidence": [],
+   "note": "Not a real university; owner and lecturer not identified in searches. Playlists give no instructor name. Not findable."
+  },
+  "UCisGw1mVpsNYtGbBBtK1IzA": {
+   "channel": "Reed Matrix",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Jody Reed",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "Videos credit Dr. Jody Reed; no page found for this person. Earlier pass noted no evident academic affiliation. Affiliation not findable."
+  },
+  "UCe1qv0E1UzNPtGhz2nQaoig": {
+   "channel": "Dementia Researcher",
+   "kind": "institution",
+   "personal": false,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": "University College London",
+   "unit": "Dementia Researcher network",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "institution channel",
+   "evidence": [
+    "https://www.dementiaresearcher.nihr.ac.uk/webinars"
+   ],
+   "note": "Dementia Researcher site says it is delivered by UCL, funded by NIHR, Alzheimer's Association, ARUK, Alzheimer's Society. Salon has many guest speakers; no single lecturer."
+  },
+  "UCY-ANi3wxkUSGhAel7T0TGw": {
+   "channel": "IIT Roorkee July 2018",
+   "kind": "institution",
+   "personal": false,
+   "lecturer": "M. K. Asthana",
+   "role": "professor",
+   "affil": "IIT Roorkee",
+   "unit": null,
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "institution channel",
+   "evidence": [
+    "https://nptel.ac.in/courses/109107399"
+   ],
+   "note": "NPTEL page lists Prof. M. K. Asthana of IIT Roorkee as instructor; playlist description names him, NPTEL and IIT Roorkee. Channel is an NPTEL/IIT Roorkee upload channel. Department not stated."
+  },
+  "UCBuA5EkcwEY1yBj7MZaRlpQ": {
+   "channel": "MultiMind ITN",
+   "kind": "institution",
+   "personal": false,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": "University of Konstanz",
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": true,
+   "why": "institution channel",
+   "evidence": [
+    "https://www.cordis.europa.eu/project/id/765556/it"
+   ],
+   "note": "MultiMind is an EU Marie Curie training network (2018-2022) coordinated by Konstanz; channel-to-project link not seen. Invited speakers from many universities. Not a single institution."
+  },
+  "UC2GHqKcSUoPilRB-iwl-oMA": {
+   "channel": "Andrew Conley",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Andrew Conley",
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": false,
+   "why": "affiliation not verified",
+   "evidence": [],
+   "note": "Channel keywords are pottery and ceramics; no academic profile found. Course code 175.205 and the playlist (others' TED/Crash Course clips) not tied to any institution."
+  },
+  "UCt3R1upNvfkHkEN3PzwubHA": {
+   "channel": "sureshbadamath",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Suresh Bada Math",
+   "role": "professor",
+   "affil": "NIMHANS",
+   "unit": "Department of Psychiatry",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://independent.academia.edu/SureshBadaMath",
+    "https://vidwan.inflibnet.ac.in/profile/61197"
+   ],
+   "note": "VIDWAN (INFLIBNET) expert profile: Professor, Dept of Psychiatry, NIMHANS Bangalore; channel is his name."
+  },
+  "UCBA2RfegJd2mu9AAG2shHXg": {
+   "channel": "LawNeuro.org",
+   "kind": "institution",
+   "personal": false,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": "Vanderbilt University",
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": true,
+   "why": "institution channel",
+   "evidence": [
+    "https://web.vanderbilt.edu/?p=2756",
+    "https://lawneuro.org/mission.php"
+   ],
+   "note": "Channel of the MacArthur Foundation Research Network on Law and Neuroscience, hosted at Vanderbilt. Many speakers; no single lecturer. Channel-to-network link inferred from name."
+  },
+  "UCUoq1yo8O1HHBTW5b6VvyZQ": {
+   "channel": "James Giordano (Neurobioethics)",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "James Giordano",
+   "role": "professor",
+   "affil": "Georgetown University",
+   "unit": "Department of Neurology; Pellegrino Center for Clinical Bioethics",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://medicalhumanities.georgetown.edu/profiles/james-giordano/"
+   ],
+   "note": "Georgetown profile: Professor of Neurology and Biochemistry, Chief of Neuroethics Studies. Channel named for him and lectures show him as speaker. Profile also lists Professor Emeritus in its header."
+  },
+  "UCsQ8bpizzh41NNvaAIKzPFQ": {
+   "channel": "Athena Demertzi",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Athena Demertzi",
+   "role": "professor",
+   "affil": "University of Liege",
+   "unit": "GIGA Consciousness; Physiology of Cognition Lab",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://www.baps.be/news/interview/meet-the-lab-series-interview-with-prof.-athena-demertzi"
+   ],
+   "note": "BAPS interview lists her as Prof. at ULiege, FNRS Research Associate, leading the Physiology of Cognition Lab. Channel is in her name and playlist reads 'My talks'."
+  },
+  "UCg_yo5qlnn3KEKqksq40lKg": {
+   "channel": "James Giordano",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "James Giordano",
+   "role": "professor",
+   "affil": "Georgetown University",
+   "unit": "Department of Neurology; Pellegrino Center for Clinical Bioethics",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://medicalhumanities.georgetown.edu/profiles/james-giordano/"
+   ],
+   "note": "Same person as the other Giordano channel. Videos are LMU Bioethics (O'Malley) interviews from his 2011-12 Fulbright visit at LMU Munich; they may be produced by LMU, not by him."
+  },
+  "UCWOq-2OBibYPo8-PFcY7qVA": {
+   "channel": "TINS Institute",
+   "kind": "institution",
+   "personal": false,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": "Transylvanian Institute of Neuroscience",
+   "unit": null,
+   "verified": false,
+   "self_described": false,
+   "ok": true,
+   "why": "institution channel",
+   "evidence": [
+    "https://researchseminars.org/seminar/TINS"
+   ],
+   "note": "TINS Neuroscience Seminar Series is run by the Transylvanian Institute of Neuroscience (Cluj, Romania), organizer Loredana Dan. Channel-to-institute link inferred from name. Speakers are external."
+  },
+  "UCfyCdscSjtvmfPo67C-crog": {
+   "channel": "Ryan Rhodes",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Ryan Rhodes",
+   "role": "lecturer",
+   "affil": "Rutgers University",
+   "unit": "Center for Cognitive Science (RuCCS)",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://ruccs.rutgers.edu/people/people-details/148-ntt-faculty-and-lecturers/678-ryan-rhodes"
+   ],
+   "note": "RuCCS page lists Ryan Rhodes as Assistant Teaching Professor and says he runs a YouTube channel (handle @LanguageofMind); match to this channel ID not confirmed beyond name and topic."
+  },
+  "UCJeHAXoSZcDBFgDo_iqsrjQ": {
+   "channel": "Mind Brain Center @ AMRITA",
+   "kind": "department",
+   "personal": false,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": "Amrita Vishwa Vidyapeetham",
+   "unit": "Amrita Mind Brain Center",
+   "verified": false,
+   "self_described": true,
+   "ok": true,
+   "why": "department channel",
+   "evidence": [
+    "https://easychair.org/cfp/accs8"
+   ],
+   "note": "ACCS8 was held Jan 2022 at Amrita Vishwa Vidyapeetham, Kollam. Playlist description says the center organized it; no amrita.edu page opened. Speakers are many external researchers."
+  },
+  "UCvwynGKKFos42dGxeU_TvnA": {
+   "channel": "Transcultural Psychiatry",
+   "kind": "department",
+   "personal": false,
+   "lecturer": "Laurence Kirmayer",
+   "role": "professor",
+   "affil": "McGill University",
+   "unit": "Division of Social and Transcultural Psychiatry",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "department channel",
+   "evidence": [
+    "https://www.mcgill.ca/psychiatry/laurence-kirmayer"
+   ],
+   "note": "McGill page: Kirmayer is James McGill Professor, directs the Division and founded the annual Advanced Study Institute. Playlist description names the Division. Multiple speakers."
+  },
+  "UCFiU9ZsUybQPq14MgvZJZSQ": {
+   "channel": "MIND Summer School",
+   "kind": "institution",
+   "personal": false,
+   "lecturer": "Jeremy Manning",
+   "role": "professor",
+   "affil": "Dartmouth College",
+   "unit": "Department of Psychological and Brain Sciences",
+   "verified": false,
+   "self_described": false,
+   "ok": true,
+   "why": "institution channel",
+   "evidence": [
+    "https://dartmouth.edu/ccn/summer_school/2017_mind_summer_school.html",
+    "https://faculty-directory.dartmouth.edu/jeremy-r-manning"
+   ],
+   "note": "Dartmouth computational neuroscience methods school (not philosophy of mind). Manning is an Associate Professor there and a speaker; organizer role and channel owner unconfirmed."
+  },
+  "UCi7oO_5bHjdQ2Zh9Dfo_MQQ": {
+   "channel": "by Earl Miller",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Earl K. Miller",
+   "role": "professor",
+   "affil": "Massachusetts Institute of Technology",
+   "unit": "Department of Brain and Cognitive Sciences; Picower Institute",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://ekmillerlab.mit.edu/earl-miller"
+   ],
+   "note": "Lab page: Picower Professor of Neuroscience at MIT, links a YouTube playlist. Channel named for him and videos feature him as speaker. Channel ID match to the lab's playlist not checked."
+  },
+  "UCVoAq8ER81lGicizvwBFCIQ": {
+   "channel": "Ashley Juavinett",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Ashley Juavinett",
+   "role": "professor",
+   "affil": "University of California San Diego",
+   "unit": null,
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://biology.ucsd.edu/research/faculty/ajuavinett"
+   ],
+   "note": "UCSD biology faculty page: returned to UCSD as Assistant Teaching Professor in 2018 (current rank may be higher). Channel is in her name and videos name her as speaker."
+  },
+  "UCtTsynyRLrrdEwz5Xc3I2sA": {
+   "channel": "Dementia and Neuropsychological Rehabilitation",
+   "kind": "unknown",
+   "personal": false,
+   "lecturer": "Jonathan Evans",
+   "role": "professor",
+   "affil": "University of Glasgow",
+   "unit": "School of Health and Wellbeing",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "lecturer verified (Jonathan Evans, University of Glasgow); channel owner unidentified",
+   "evidence": [
+    "https://gla.ac.uk/researchinstitutes/healthwellbeing/staff/jonathanevans"
+   ],
+   "note": "Glasgow page: Jonathan Evans is Professor of Clinical Neuropsychology; lecture titles name him. Channel owner and workshop host not identified; two imaging lectures are by other speakers."
+  },
+  "UCNlYCFfsbGOWfXzdgnCidoA": {
+   "channel": "KnowNeuropsychology",
+   "kind": "society",
+   "personal": false,
+   "lecturer": null,
+   "role": "unknown",
+   "affil": null,
+   "unit": null,
+   "verified": false,
+   "self_described": true,
+   "ok": true,
+   "why": "society channel",
+   "evidence": [
+    "https://www.youtube.com/channel/UCNlYCFfsbGOWfXzdgnCidoA/about"
+   ],
+   "note": "Channel says it was created by a team of neuropsychologists and trainees, hosts open-access lectures (knowneuropsych.org). No named owner or institution found. Many different speakers."
+  },
+  "UCK2X4drICLLYH9LE8fZQ4qw": {
+   "channel": "Wessel Cognitive Neurology Lab",
+   "kind": "lab",
+   "personal": false,
+   "lecturer": "Jan Wessel",
+   "role": "professor",
+   "affil": "University of Iowa",
+   "unit": "Departments of Psychological and Brain Sciences and Neurology",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "lab channel",
+   "evidence": [
+    "https://wessel.lab.uiowa.edu"
+   ],
+   "note": "Lab site: Jan R. Wessel directs the Wessel Cognitive Neurology Lab and the Cognitive Control Collaborative. Rank not stated on page. Showcase has speakers from other universities."
+  },
+  "UCnvtSm-FGHC9HLw4p5hhhPg": {
+   "channel": "Clinical Neuroanatomy Seminars",
+   "kind": "lab",
+   "personal": false,
+   "lecturer": "Stephanie Forkel",
+   "role": "professor",
+   "affil": "Radboud University",
+   "unit": "Donders Centre for Cognition",
+   "verified": false,
+   "self_described": false,
+   "ok": true,
+   "why": "lab channel",
+   "evidence": [
+    "https://bordeaux-neurocampus.fr/?p=131404",
+    "https://www.ru.nl/en/people/forkel-s"
+   ],
+   "note": "Seminars organized by Forkel and Michel Thiebaut de Schotten (IMN, Bordeaux). Forkel also at Donders per ru.nl listing (not opened). Channel owner not confirmed. Many outside speakers."
+  },
+  "UC0Xnnm5rKkUgs0TCew-M5Dw": {
+   "channel": "Keith Donohue",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Keith Donohue",
+   "role": "lecturer",
+   "affil": "North Dakota State University",
+   "unit": null,
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://www.youtube.com/channel/UC0Xnnm5rKkUgs0TCew-M5Dw/about",
+    "https://catalog.ndsu.edu/search/?P=PSYC+212",
+    "https://catalog.ndsu.edu/past-bulletin-archive/2024-25/attic/web/colleges/science-mathematics/"
+   ],
+   "note": "NDSU bulletin: Lecturer of Psychology, Ph.D. 2008 Florida State; channel about text says it holds his NDSU lectures."
+  },
+  "UC7hfjGv3Qx1G0ULygi0zy8w": {
+   "channel": "Dr Ashok Jansari NeuroTalk",
+   "kind": "person",
+   "personal": true,
+   "lecturer": "Ashok Jansari",
+   "role": "lecturer",
+   "affil": "Goldsmiths, University of London",
+   "unit": "Department of Psychology",
+   "verified": true,
+   "self_described": false,
+   "ok": true,
+   "why": "affiliation verified",
+   "evidence": [
+    "https://www.gold.ac.uk/news/ashok-jansari-cognitive-neuropsychology/"
+   ],
+   "note": "Goldsmiths news: Senior Lecturer in Psychology who made free Neuro Talk videos on his YouTube channel. Channel is in his name. Talks are public lectures given during 2020 lockdown."
+  }
+ }
+}

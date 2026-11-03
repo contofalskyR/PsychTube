@@ -1,0 +1,280 @@
+diff --git a/site/app.js b/site/app.js
+index 095ab06..ea05b97 100644
+--- a/site/app.js
++++ b/site/app.js
+@@ -26,8 +26,8 @@
+   const FIRESIDE_TYPES = new Set(["interview", "podcast"]);
+   function formTier(v) {
+     if (!v.len || v.len < LONG_FORM) return 0;
++    if (v.type === "podcast" || PODCAST_RX.test(v.ch || "")) return 2;   // checked first: a podcast in a department's playlist is still a podcast
+     if (v.inst || v.orig) return 0;
+-    if (v.type === "podcast" || PODCAST_RX.test(v.ch || "")) return 2;
+     return 1;
+   }
+   const TIER_WEIGHT = [1, 0.5, 0.25];
+@@ -103,7 +103,12 @@
+   const isWatched = id => state.history.some(h => h.id === id);
+   // ---- lecture tracker: where you are in every video, and through every course (this browser only)
+   let progTimer = null, progDirty = false;
+-  const flushProgress = () => { clearTimeout(progTimer); if (progDirty) { store.set("progress", state.progress); progDirty = false; } };
++  const flushProgress = () => {
++    clearTimeout(progTimer); if (!progDirty) return;
++    const disk = store.get("progress", {});              // another tab may have saved since we loaded: newest record per lecture wins
++    for (const [k, p] of Object.entries(disk)) { const cur = state.progress[k]; if (p && (!cur || (p.ts || 0) > (cur.ts || 0))) state.progress[k] = p; }
++    store.set("progress", state.progress); progDirty = false;
++  };
+   const saveProgress = () => { progDirty = true; clearTimeout(progTimer); progTimer = setTimeout(flushProgress, 800); };
+   const progOf = id => state.progress[id] || null;
+   const isDone = id => !!(state.progress[id] && state.progress[id].done);
+@@ -118,7 +123,7 @@
+   function markDone(id, done) {
+     const cur = state.progress[id] || {}; const v = byId.get(id);
+     if (done) state.progress[id] = { t: cur.d || (v && v.len) || cur.t || 0, d: cur.d || (v && v.len) || 0, done: true, ts: Date.now() };
+-    else delete state.progress[id];
++    else state.progress[id] = { t: 0, d: cur.d || (v && v.len) || 0, done: false, ts: Date.now() };   // a dated record, so a merge can't resurrect the old one
+     progDirty = true; flushProgress();
+   }
+   const seriesProgress = sd => { const n = sd.vids.length; const done = sd.vids.filter(isDone).length; const partial = sd.vids.reduce((a, id) => a + (isDone(id) ? 0 : (pctOf(byId.get(id) || { id }) / 100)), 0); const pct = n ? Math.round(100 * (done + partial) / n) : 0; const last = Math.max(0, ...sd.vids.map(id => (state.progress[id] || {}).ts || 0)); const leftSec = sd.vids.reduce((a, id) => { const v = byId.get(id); if (!v || !v.len) return a; const p = state.progress[id]; return a + (p && p.done ? 0 : Math.max(0, v.len - ((p && p.t) || 0))); }, 0); return { n, done, pct, last, leftSec, started: last > 0 }; };
+@@ -143,9 +148,11 @@
+   const instShort = name => { const i = (PT.institutions || []).find(x => x.name === name); return i ? i.short : name; };
+   const instChip = v => v.inst ? `<span class="chip inst" title="Published by ${esc(v.inst.n)}">${esc(instShort(v.inst.n))}</span>` : "";
+   function vouchLine(v, max) {
+-    const n = v.nrec || v.nmention;
+-    if (!n && v.inst) return `<div class="vouch"><span class="pub">Published by</span> ${instChip(v)}<span class="faint">${v.inst.loose ? (v.type === "lecture" ? "standalone lecture" : "standalone talk") : `lecture ${v.inst.i} of ${v.inst.of}`}</span></div>`;
++    const n = v.nrec || 0;
++    const unit = (KIND_WORD[(series.get(v.series) || {}).kind] || "lecture");
++    if (!n && v.inst) return `<div class="vouch"><span class="pub">Published by</span> ${instChip(v)}<span class="faint">${v.inst.loose ? (v.type === "lecture" ? "standalone lecture" : "standalone talk") : `${unit} ${v.inst.i} of ${v.inst.of}`}</span></div>`;
+     if (!n && v.orig) return `<div class="vouch"><span class="pub">${SHELF_LABEL[v.orig.shelf] || "Primary source"}</span><span class="faint">${esc((v.orig.uploader || "").split(" (")[0].slice(0, 40))}${v.orig.year ? ` · ${v.orig.year}` : ""}</span></div>`;
++    if (!n) return v.nmention ? `<div class="vouch"><span class="faint">cited ${plural(v.nmention, "time")}, not recommended</span> ${communityChips(v, max)}</div>` : "";
+     return `<div class="vouch"><span class="n">${n}</span>${n === 1 ? "vouch" : "vouches"} ${communityChips(v, max)}${instChip(v)}</div>`;
+   }
+   const SHELF_LABEL = { originals: "Primary source", demos: "Demo", therapy: "Therapy demo", cases: "Clinical case" };
+@@ -158,7 +165,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+   const statusChip = (id, extra) => `<span class="status s-${esc(statusOf(id))}${extra ? " " + extra : ""}">${esc(statusLabel(id))}</span>`;
+   const careWorthy = v => !!(v.badge && v.badge.role !== "critique" && !GOOD_STATUS.has(statusOf(v.badge.id)));   // a replicated finding is not a warning
+   function tagFor(v, idx) {
+-    if (v.badge && v.badge.role === "critique") return `<span class="tag critique">Debunk</span>`;
++    if (v.badge && v.badge.role === "critique") return `<span class="tag critique">Pushback</span>`;
+     if (v.badge && GOOD_STATUS.has(statusOf(v.badge.id))) return `<span class="tag good" title="${esc(PT.contested[v.badge.id].name)}">Replicated</span>`;
+     if (v.badge) return `<span class="tag" title="${esc(PT.contested[v.badge.id].name)}">${esc(statusLabel(v.badge.id))}</span>`;
+     if (idx != null) return `<span class="tag series">${idx}</span>`;
+@@ -171,8 +178,9 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+     return `<div class="ph" aria-hidden="true">${esc((v.title || "?").trim()[0] || "?")}</div>`;
+   }
+   const img = id => { const u = thumbUrl(id); return u ? `<img loading="lazy" src="${u}" alt="" data-fb="1" onerror="window.__ptImgErr(this)">` : ""; };
++  const thumbInner = (v, idx) => `${placeholder(v)}${img(v.id)}${tagFor(v, idx)}${doneBadge(v)}${v.len ? `<span class="pill">${fmtDur(v.len)}</span>` : ""}${progressBar(v)}`;
+   function thumb(v, idx) {
+-    return `<div class="thumb ${isDone(v.id) ? "is-done" : ""}">${placeholder(v)}${img(v.id)}${tagFor(v, idx)}${doneBadge(v)}${v.len ? `<span class="pill">${fmtDur(v.len)}</span>` : ""}${progressBar(v)}</div>`;
++    return `<div class="thumb ${isDone(v.id) ? "is-done" : ""}">${thumbInner(v, idx)}</div>`;
+   }
+   window.__ptPoster = (img, id, failed) => {
+     // hq720 -> hq2 (frame from the middle) -> hqdefault; a 120px-wide "image" is YouTube's placeholder, not a frame
+@@ -338,7 +346,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+     setNav("home"); setTitle("");
+     const s = PT.stats;
+     const fy = forYou(12);
+-    const canon = V.filter(visible).slice(0, 12);
++    const canon = V.filter(v => visible(v) && v.nrec > 0).sort((a, b) => (b.cscore != null ? b.cscore : b.score) - (a.cscore != null ? a.cscore : a.score)).slice(0, 12);
+     const recent = V.filter(v => visible(v) && v.last >= 2024).sort((a, b) => (b.last - a.last) || (b.score - a.score)).slice(0, 12);
+     const care = V.filter(v => careWorthy(v) && !(state.settings.hideCW && v.cw.length)).slice(0, 12);
+     const longs = V.filter(v => visible(v) && v.len >= 3600).slice(0, 12);
+@@ -431,7 +439,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+   function pageTopic(id, params) {
+     const t = topics.get(id); if (!t) return notFound();
+     const a = areaOf.get(id);
+-    const list = V.filter(v => v.topics.includes(id) && visible(v)).sort((x, y) => (x.topics[0] === id ? 0 : 1) - (y.topics[0] === id ? 0 : 1) || y.score - x.score);
++    const list = V.filter(v => v.topics.includes(id) && visible(v)).sort((x, y) => (x.topics[0] === id ? 0 : 1) - (y.topics[0] === id ? 0 : 1) || y.rank - x.rank || y.score - x.score);
+     const siblings = a.topics.map(s => `<a class="tpill ${s.id === id ? "active" : ""}" href="#t-${s.id}">${esc(s.name)} <span class="faint">${s.n}</span></a>`).join("");
+     listPage({ nav: "topics", title: esc(t.name), intro: esc(t.desc), path: `t-${id}`, params, list, extra: `<div class="topic-pills">${siblings}</div>` });
+   }
+@@ -516,7 +524,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+     setNav("clips"); setTitle("Clips");
+     const list = V.filter(v => visible(v) && v.clips && v.clips.length);
+     main.innerHTML = `<h1>Clips</h1><p class="lede">Moments people linked to directly, with a timestamp. Psychology people point at the specific minute.</p>
+-      ${list.map(v => `<div class="card row-item"><a class="thumb" href="#v-${v.id}?t=${v.clips[0]}" aria-label="${esc(v.title)}">${thumb(v).replace('<div class="thumb">', "").replace(/<\/div>$/, "")}</a><div><a class="title" href="#v-${v.id}">${esc(v.title)}</a><div class="ch">${esc(v.ch)}</div><div class="clips" style="margin-top:8px">${v.clips.map(t => { const vo = v.vouches.find(x => x.t === t); return `<a class="btn quiet" style="font-size:13px" href="#v-${v.id}?t=${t}"><b style="color:var(--amber)">${fmtDur(t)}</b>${vo ? ` <span class="muted">${esc(vo.q.slice(0, 90))}${vo.q.length > 90 ? "…" : ""}</span>` : ""}</a>`; }).join("")}</div></div></div>`).join("") || `<div class="empty"><h2>No clips yet</h2></div>`}`;
++      ${list.map(v => `<div class="card row-item"><a class="thumb" href="#v-${v.id}?t=${v.clips[0]}" aria-label="${esc(v.title)}">${thumbInner(v)}</a><div><a class="title" href="#v-${v.id}">${esc(v.title)}</a><div class="ch">${esc(v.ch)}</div><div class="clips" style="margin-top:8px">${v.clips.map(t => { const vo = v.vouches.find(x => x.t === t); return `<a class="btn quiet" style="font-size:13px" href="#v-${v.id}?t=${t}"><b style="color:var(--amber)">${fmtDur(t)}</b>${vo ? ` <span class="muted">${esc(vo.q.slice(0, 90))}${vo.q.length > 90 ? "…" : ""}</span>` : ""}</a>`; }).join("")}</div></div></div>`).join("") || `<div class="empty"><h2>No clips yet</h2></div>`}`;
+   }
+   function pageCare(params) {
+     setNav("care"); setTitle("Handle with care");
+@@ -533,6 +541,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+     main.innerHTML = `<h1>Handle with care</h1><p class="lede">Psychology's most-shared videos include some of its least reliable findings — and some of its sturdiest. Every finding here has a replication status and the papers behind it, so you can watch the classic and then read what happened next. The notes are PsychTube's, not the communities'; the status is a summary of the sources listed, not a verdict on a whole field.</p>
+       <div class="toolbar">${seg}</div>
+       ${ids.map(id => { const c = PT.contested[id]; const g = groups.get(id) || { promotes: [], critique: [], source: [] }; return `<section class="section care-list" id="care-${esc(id)}"><div class="section-head"><div><h2>${esc(c.name)} ${statusChip(id)}</h2><div class="sub" style="max-width:80ch;color:var(--ink-2)">${esc(c.note)}</div>${c.sources && c.sources.length ? `<ul class="papers sub">${c.sources.map(paperLine).join("")}</ul>` : `<div class="sub faint">${esc(c.source)}</div>`}</div></div>${g.source.length ? `<h3 class="care-h">The original</h3>${grid(g.source)}` : ""}${g.promotes.length ? `${g.source.length ? `<h3 class="care-h">Videos that present it</h3>` : ""}${grid(g.promotes)}` : ""}${g.critique.length ? `<h3 class="care-h" style="color:var(--mint)">The pushback</h3>${grid(g.critique)}` : ""}${!g.source.length && !g.promotes.length && !g.critique.length ? `<p class="faint">No video in the catalog is tagged with this finding yet.</p>` : ""}</section>`; }).join("")}`;
++    if (p.f) requestAnimationFrame(() => { const el = document.getElementById("care-" + p.f); if (el) el.scrollIntoView(); });   // after the router's scrollTo(0, 0)
+   }
+   // ------------------------------------------------------------ pathways (quiet side feature: ordered routes through the courses)
+   const PATHWAYS = PT.pathways || [];
+@@ -564,7 +573,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+         <div class="shelf-media">${v ? card(v, { cls: "small", chips: 0 }) : `<div class="shelf-none"><b>No authorized copy online</b><span>${esc(it.uploader || "Listed for the paper and the record.")}</span></div>`}</div>
+         <div class="shelf-text"><h2>${esc(it.title)}${it.year ? ` <span class="faint">${it.year}</span>` : ""}</h2>${it.people ? `<p class="people">${esc(it.people)}</p>` : ""}<p>${esc(it.what || "")}</p>
+           ${it.paper || it.paper2 ? `<ul class="papers">${paperLine(it.paper)}${paperLine(it.paper2)}</ul>` : ""}
+-          <div class="shelf-foot">${it.status ? `<a href="#care?status=${esc(statusOf(it.status))}#care-${esc(it.status)}" class="status s-${esc(statusOf(it.status))}">${esc(statusLabel(it.status))}: ${esc(PT.contested[it.status].name)}</a>` : ""}${(it.alt || []).map(a => `<a href="${esc(a.url)}" target="_blank" rel="noopener" class="faint" style="text-decoration:underline">${esc(a.label)} ↗</a>`).join("")}${it.topics.map(t => topics.get(t) ? `<a class="chip" href="#t-${t}">${esc(topics.get(t).name)}</a>` : "").join("")}</div>
++          <div class="shelf-foot">${it.status ? `<a href="#care?status=${esc(statusOf(it.status))}&amp;f=${esc(it.status)}" class="status s-${esc(statusOf(it.status))}">${esc(statusLabel(it.status))}: ${esc(PT.contested[it.status].name)}</a>` : ""}${(it.alt || []).map(a => `<a href="${esc(a.url)}" target="_blank" rel="noopener" class="faint" style="text-decoration:underline">${esc(a.label)} ↗</a>`).join("")}${it.topics.map(t => topics.get(t) ? `<a class="chip" href="#t-${t}">${esc(topics.get(t).name)}</a>` : "").join("")}</div>
+         </div></li>`; }).join("")}</ol>`;
+   }
+   function pageSimple(nav, title, intro, list, params, path) {
+@@ -595,7 +604,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+     let lastSave = 0; let ticker = null; let ended = false;
+     const record = (t, d, force) => { if (!(t > 0)) return; const now = Date.now(); if (!force && now - lastSave < 4000) return; lastSave = now; setProgress(v.id, t, d); };
+     const finish = () => { if (ended) return; ended = true; markDone(v.id, true); if (onEnded) onEnded(); };
+-    const fallbackIframe = () => { box.innerHTML = `<iframe id="player" src="${embedUrl(v, start, autoplay)}" title="${esc(v.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`; player = { kind: "iframe", stop() {}, seek(t) { document.getElementById("player").src = embedUrl(v, t, true); } }; };
++    const fallbackIframe = () => { box.innerHTML = `<iframe id="player" src="${embedUrl(v, start, autoplay)}" title="${esc(v.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`; player = { kind: "iframe", stop() {}, save() {}, seek(t) { document.getElementById("player").src = embedUrl(v, t, true); } }; };
+ 
+     if (v.p === "archive" && v.f) {
+       // the Internet Archive serves the MP4 itself, so a plain <video> gives exact positions
+@@ -604,7 +613,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+       el.addEventListener("timeupdate", () => record(el.currentTime, el.duration));
+       el.addEventListener("pause", () => record(el.currentTime, el.duration, true));
+       el.addEventListener("ended", () => { record(el.duration, el.duration, true); finish(); });
+-      player = { kind: "video", stop() { record(el.currentTime, el.duration, true); el.pause(); }, seek(t) { el.currentTime = t; el.play().catch(() => {}); } };
++      player = { kind: "video", stop() { record(el.currentTime, el.duration, true); el.pause(); }, save() { record(el.currentTime, el.duration, true); }, seek(t) { el.currentTime = t; el.play().catch(() => {}); } };
+       return;
+     }
+     if (v.p === "panopto") {
+@@ -616,7 +625,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+           videoParams: { interactivity: "none", showtitle: false, showbrand: false, autoplay, start: start || 0, offerviewer: true },
+           events: { onReady: () => { if (start) { try { api.seekTo(start); } catch (e) { /* ignore */ } } },
+             onStateChange: st => { const S = window.PlayerState || {}; if (st === S.Playing) { clearInterval(ticker); ticker = setInterval(poll, 4000); } else { clearInterval(ticker); poll(); if (st === S.Ended) finish(); } } } });
+-        player = { kind: "panopto", stop() { clearInterval(ticker); poll(); }, seek(t) { try { api.seekTo(t); api.playVideo && api.playVideo(); } catch (e) { fallbackIframe(); player.seek(t); } } };
++        player = { kind: "panopto", stop() { clearInterval(ticker); poll(); }, save() { try { const t = api.getCurrentTime(); if (t > 0) record(t, api.getDuration(), true); } catch (e) { /* not ready */ } }, seek(t) { try { api.seekTo(t); api.playVideo && api.playVideo(); } catch (e) { fallbackIframe(); player.seek(t); } } };
+       }).catch(fallbackIframe);
+       return;
+     }
+@@ -629,11 +638,12 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+         playerVars: { start: start || 0, autoplay: autoplay ? 1 : 0, rel: 0, modestbranding: 1, playsinline: 1, origin: location.origin },
+         events: { onStateChange: e => { const S = window.YT.PlayerState; if (e.data === S.PLAYING) { clearInterval(ticker); ticker = setInterval(poll, 4000); } else { clearInterval(ticker); if (e.data === S.PAUSED || e.data === S.BUFFERING) poll(); if (e.data === S.ENDED) { try { record(yt.getDuration(), yt.getDuration(), true); } catch (x) { /* ignore */ } finish(); } } },
+           onError: () => { /* keep the frame; YouTube shows its own message */ } } });
+-      player = { kind: "youtube", stop() { clearInterval(ticker); poll(); try { yt.destroy(); } catch (e) { /* ignore */ } }, seek(t) { try { yt.seekTo(t, true); yt.playVideo(); } catch (e) { /* ignore */ } } };
++      player = { kind: "youtube", stop() { clearInterval(ticker); poll(); try { yt.destroy(); } catch (e) { /* ignore */ } }, save() { try { const t = yt.getCurrentTime(); if (t > 0) record(t, yt.getDuration(), true); } catch (e) { /* not ready */ } }, seek(t) { try { yt.seekTo(t, true); yt.playVideo(); } catch (e) { /* ignore */ } } };
+     }).catch(fallbackIframe);
+   }
+-  window.addEventListener("pagehide", () => { if (player) { try { player.stop(); } catch (e) { /* ignore */ } } flushProgress(); });
+-  document.addEventListener("visibilitychange", () => { if (document.hidden) { if (player) { try { player.stop(); } catch (e) { /* ignore */ } } flushProgress(); } });
++  const saveNow = () => { if (player && player.save) { try { player.save(); } catch (e) { /* ignore */ } } flushProgress(); };
++  window.addEventListener("pagehide", saveNow);                                     // bfcache may bring the page back: keep the player
++  document.addEventListener("visibilitychange", () => { if (document.hidden) saveNow(); });   // a backgrounded lecture keeps playing
+   let upNextTimer = null;
+   function showUpNext(v, sameSeries, nextId) {
+     const el = document.getElementById("upnext"); if (!el) return;
+@@ -720,7 +730,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+     const myCourses = kind === "history" ? PT.series.map(sd => [sd, seriesProgress(sd)]).filter(([sd, sp]) => sp.started).sort((a, b) => b[1].last - a[1].last) : [];
+     main.innerHTML = `<h1>${title}</h1><p class="lede">${intro}</p>${myCourses.length ? `<section class="section"><div class="section-head"><div><h2>Your courses</h2><div class="sub">${myCourses.filter(([, sp]) => sp.pct >= 100).length} finished, ${myCourses.filter(([, sp]) => sp.pct < 100).length} in progress.</div></div></div><div class="grid">${myCourses.map(([sd]) => seriesCard(sd)).join("")}</div></section><h2 style="margin:8px 0 10px">Videos</h2>` : ""}${list.length ? `<div class="toolbar"><button class="btn quiet" id="clearBtn">Clear ${title.toLowerCase()}</button></div>${grid(list)}` : `<div class="empty"><h2>Nothing here yet</h2><p>${kind === "history" ? "Open a video and it will show up here." : "Save a video and it will show up here."} <a href="#home" style="text-decoration:underline">Browse the home page</a>.</p></div>`}`;
+     const cb = document.getElementById("clearBtn");
+-    if (cb) cb.onclick = () => { if (kind === "history") { state.history = []; store.set("history", []); state.progress = {}; store.set("progress", {}); } if (kind === "liked") { state.liked.clear(); store.set("liked", []); } if (kind === "later") { state.later.clear(); store.set("later", []); } route(); };
++    if (cb) cb.onclick = () => { if (!confirm(`Clear ${title.toLowerCase()}? Lecture progress is kept; Settings → Export makes a backup first.`)) return; if (kind === "history") { state.history = []; store.set("history", []); } if (kind === "liked") { state.liked.clear(); store.set("liked", []); } if (kind === "later") { state.later.clear(); store.set("later", []); } route(); };
+   }
+   function pageData() {
+     setNav("data"); setTitle("Data");
+@@ -752,7 +762,7 @@ remembers what I've watched.</pre>
+         <li><b>Score by people, not clicks.</b> A video's score is the number of distinct people who recommended it, weighted by how strongly (an enthusiastic HN recommendation counts more than a passing citation; an upvoted answer counts more than a question), with a bonus when several communities agree.</li>
+         <li><b>Show the receipts.</b> Each card shows who vouched; each watch page quotes them and links to the original comment.</li>
+         <li><b>Keep your place.</b> The player reports where you are, so every lecture resumes where you stopped and every course shows how far you've come — a Continue button that means it, not a 40-tab history. YouTube only remembers one video at a time; here the course is the unit.</li>
+-        <li><b>Flag the shaky stuff.</b> Videos that present a finding known to have shrunk or failed replication carry a “Handle with care” note with the follow-up research. Videos that push back get a “Debunk” mark.</li>
++        <li><b>Flag the shaky stuff.</b> Videos that present a finding known to have shrunk or failed replication carry a “Handle with care” note with the follow-up research. Videos that push back get a “Pushback” mark.</li>
+         ${PT.stats.inst && PT.stats.inst.courses ? `<li><b>Take the universities at their word.</b> A complete course that a university, one of its lecturers or a scientific institution published is institutional backing of a different kind, so the <a href="#courses" style="text-decoration:underline">Courses</a> hub carries ${PT.stats.inst.lectures.toLocaleString()} lectures from ${PT.stats.inst.courses} such playlists (MIT OpenCourseWare, Yale Courses, Stanford, the IITs via NPTEL, Gresham College, the Royal Institution, professors' own channels…), every lecture in order, whether or not a forum ever linked it. Those cards say “Published by” instead of a vouch count, and the lectures the communities <i>also</i> vouched for say both.</li>` : ""}
+       </ul>
+       <h2>What it deliberately lacks</h2>
+@@ -775,9 +785,9 @@ remembers what I've watched.</pre>
+     const ex = document.getElementById("exportBtn");
+     if (ex) ex.onclick = () => { const blob = new Blob([JSON.stringify({ psychtube: 1, exported: new Date().toISOString(), history: state.history, liked: [...state.liked], later: [...state.later], progress: state.progress, settings: state.settings }, null, 1)], { type: "application/json" }); const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `psychtube-data-${new Date().toISOString().slice(0, 10)}.json`; document.body.appendChild(a); a.click(); a.remove(); };
+     const imp = document.getElementById("importFile");
+-    if (imp) imp.onchange = () => { const f = imp.files[0]; if (!f) return; f.text().then(txt => { const d = JSON.parse(txt); if (!d || !d.psychtube) throw new Error("not a PsychTube export"); const ids = new Set(V.map(v => v.id)); if (Array.isArray(d.history)) state.history = [...d.history.filter(h => ids.has(h.id)), ...state.history.filter(h => !d.history.some(x => x.id === h.id))].slice(0, 500); if (Array.isArray(d.liked)) d.liked.forEach(x => ids.has(x) && state.liked.add(x)); if (Array.isArray(d.later)) d.later.forEach(x => ids.has(x) && state.later.add(x)); if (d.progress && typeof d.progress === "object") for (const [k, p] of Object.entries(d.progress)) { if (ids.has(k) && p && typeof p.t === "number") { const cur = state.progress[k]; if (!cur || (p.ts || 0) >= (cur.ts || 0) || p.done) state.progress[k] = { t: +p.t || 0, d: +p.d || 0, done: !!p.done, ts: +p.ts || Date.now() }; } } store.set("history", state.history); store.set("liked", [...state.liked]); store.set("later", [...state.later]); store.set("progress", state.progress); toast("Imported"); pageSettings(); }).catch(e => toast("Couldn't import: " + e.message)); };
++    if (imp) imp.onchange = () => { const f = imp.files[0]; if (!f) return; f.text().then(txt => { const d = JSON.parse(txt); if (!d || !d.psychtube) throw new Error("not a PsychTube export"); const ids = new Set(V.map(v => v.id)); if (Array.isArray(d.history)) state.history = [...d.history.filter(h => ids.has(h.id)), ...state.history.filter(h => !d.history.some(x => x.id === h.id))].slice(0, 500); if (Array.isArray(d.liked)) d.liked.forEach(x => ids.has(x) && state.liked.add(x)); if (Array.isArray(d.later)) d.later.forEach(x => ids.has(x) && state.later.add(x)); if (d.progress && typeof d.progress === "object") for (const [k, p] of Object.entries(d.progress)) { if (ids.has(k) && p && typeof p.t === "number") { const cur = state.progress[k]; if (!cur || (p.ts || 0) >= (cur.ts || 0) || p.done) state.progress[k] = { t: +p.t || 0, d: +p.d || 0, done: !!p.done, ts: +p.ts || Date.now() }; } } store.set("history", state.history); store.set("liked", [...state.liked]); store.set("later", [...state.later]); store.set("progress", state.progress); if (d.settings && typeof d.settings === "object") { for (const k of ["theme", "thumbs", "hideCare", "hideCW", "autoplay", "autoNext", "background"]) if (k in d.settings) s[k] = d.settings[k]; saveSettings(); applyTheme(); } toast("Imported"); pageSettings(); }).catch(e => toast("Couldn't import: " + e.message)); };
+     main.querySelectorAll("[data-set]").forEach(b => b.onclick = () => { const val = b.dataset.val === "true" ? true : b.dataset.val === "false" ? false : b.dataset.val; s[b.dataset.set] = val; saveSettings(); applyTheme(); pageSettings(); });
+-    document.getElementById("wipeBtn").onclick = () => { ["history", "liked", "later"].forEach(k => store.set(k, [])); store.set("progress", {}); state.history = []; state.liked.clear(); state.later.clear(); state.progress = {}; toast("Cleared"); };
++    document.getElementById("wipeBtn").onclick = () => { if (!confirm("Clear history, likes, watch later and every lecture's progress from this browser? This can't be undone.")) return; ["history", "liked", "later"].forEach(k => store.set(k, [])); store.set("progress", {}); state.history = []; state.liked.clear(); state.later.clear(); state.progress = {}; toast("Cleared"); };
+   }
+   function notFound() { setTitle("Not found"); main.innerHTML = `<div class="empty"><h2>Not here</h2><p>That video or page isn't in the catalog. <a href="#home" style="text-decoration:underline">Back to the home page</a>.</p></div>`; }
+ 
+@@ -792,10 +802,12 @@ remembers what I've watched.</pre>
+     unmountPlayer(); clearInterval(upNextTimer);
+     // routes are plain hash names: #home, #v-<id>, #t-<topic>, #a-<area>, #s-<series>, #q-<query>, #topics, #prefs ...
+     // in-page filters ride along after "?" (e.g. #t-memory?sort=newest); legacy "#/v/<id>" links still work.
+-    let h = decodeURIComponent(location.hash.replace(/^#/, "")) || "home";
+-    if (h.startsWith("/")) { h = h.slice(1).replace(/^(v|t|a|s)\//, "$1-").replace(/^search\?q=/, "q-").replace(/^settings/, "prefs") || "home"; }
+-    const [path, qs] = h.split("?");
+-    const params = Object.fromEntries(new URLSearchParams(qs || ""));
++    const raw = location.hash.replace(/^#/, "");
++    const dec = s => { try { return decodeURIComponent(s); } catch (e) { return s; } };   // a malformed %-escape must not kill the router
++    const qi = raw.indexOf("?");                                                         // split before decoding, so an encoded "?" stays in a search
++    let path = dec(qi < 0 ? raw : raw.slice(0, qi)) || "home";
++    const params = Object.fromEntries(new URLSearchParams(qi < 0 ? "" : raw.slice(qi + 1)));
++    if (path.startsWith("/")) { path = path.slice(1).replace(/^(v|t|a|s)\//, "$1-").replace(/^settings/, "prefs") || "home"; if (path === "search" && params.q) path = "q-" + params.q; }
+     const m = /^(v|t|a|s|q|shelf)-(.+)$/.exec(path);
+     const p0 = m ? m[1] : path;
+     const arg = m ? m[2] : "";
+@@ -813,7 +825,7 @@ remembers what I've watched.</pre>
+     else if (p0 === "shelf") pageShelf(arg);
+     else if (p0 === "pathways") pagePathways(params);
+     else if (p0 === "longs") pageSimple("longs", "Longs", "Everything over an hour: full lectures, long interviews, documentaries. Where YouTube puts Shorts, PsychTube puts Longs.", V.filter(v => visible(v) && v.len >= 3600), params, "longs");
+-    else if (p0 === "canon") pageSimple("", "The canon", "The most vouched-for psychology videos across every community, by distinct recommenders.", V.filter(v => visible(v) && v.nrec > 0).sort((a, b) => b.score - a.score), params, "canon");
++    else if (p0 === "canon") pageSimple("", "The canon", "The most vouched-for psychology videos across every community, by distinct recommenders.", V.filter(v => visible(v) && v.nrec > 0).sort((a, b) => (b.cscore != null ? b.cscore : b.score) - (a.cscore != null ? a.cscore : a.score)), params, "canon");
+     else if (p0 === "history" || p0 === "liked" || p0 === "later") pageLibrary(p0);
+     else if (p0 === "q") pageSearch({ q: arg });
+     else if (p0 === "data") pageData();
+@@ -822,26 +834,34 @@ remembers what I've watched.</pre>
+     else notFound();
+     if (p0 !== "v") window.scrollTo(0, 0);
+   }
+-  window.addEventListener("hashchange", route);
++  let depth = (history.state && history.state.ptDepth) || 0;
++  try { history.replaceState({ ...(history.state || {}), ptDepth: depth }, ""); } catch (e) { /* sandboxed */ }
++  window.addEventListener("hashchange", () => {
++    if (history.state && typeof history.state.ptDepth === "number") depth = history.state.ptDepth;
++    else { depth += 1; try { history.replaceState({ ptDepth: depth }, ""); } catch (e) { /* sandboxed */ } }
++    route();
++  });
+ 
+   // ------------------------------------------------------------ search box
+   const q = document.getElementById("q");
+   document.getElementById("searchForm").addEventListener("submit", e => { e.preventDefault(); const val = q.value.trim(); if (val) location.hash = "#q-" + encodeURIComponent(val); });
+   let typing;
+-  q.addEventListener("input", () => { clearTimeout(typing); typing = setTimeout(() => { const val = q.value.trim(); if (val.length >= 2) { history.replaceState(null, "", "#q-" + encodeURIComponent(val)); pageSearch({ q: val }); q.focus(); } }, 220); });
++  q.addEventListener("input", () => { clearTimeout(typing); typing = setTimeout(() => { const val = q.value.trim(); if (val.length >= 2) { history.replaceState(history.state, "", "#q-" + encodeURIComponent(val)); pageSearch({ q: val }); q.focus(); } }, 220); });
+ 
+   // ------------------------------------------------------------ keyboard
+   document.getElementById("themeBtn").onclick = () => { state.settings.theme = effectiveTheme() === "dark" ? "light" : "dark"; saveSettings(); applyTheme(); };
+   document.getElementById("helpBtn").onclick = () => document.getElementById("helpDialog").showModal();
+   document.addEventListener("keydown", e => {
+     const inField = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName) || document.activeElement.isContentEditable;
+-    if (e.key === "Escape") { if (inField) { document.activeElement.blur(); return; } const d = document.getElementById("helpDialog"); if (d.open) { d.close(); return; } if (current.page) history.back(); return; }
++    if (e.key === "Escape") { if (inField) { document.activeElement.blur(); return; } const d = document.getElementById("helpDialog"); if (d.open) { d.close(); return; } if (current.page && depth > 0) history.back(); return; }
+     if (inField || e.metaKey || e.ctrlKey || e.altKey) return;
++    if (/^(VIDEO|AUDIO|IFRAME)$/.test(document.activeElement.tagName)) return;   // the media element owns its keys
+     if (e.key === "/") { e.preventDefault(); q.focus(); q.select(); return; }
+     if (e.key === "?") { document.getElementById("helpDialog").showModal(); return; }
+     if (e.key === "t") { document.getElementById("themeBtn").click(); return; }
+     const cards = [...main.querySelectorAll("a.card[data-id], .lectures a.lt")];
+     const i = cards.indexOf(document.activeElement);
++    if ((e.key === "ArrowRight" || e.key === "ArrowLeft") && i < 0) return;      // arrows move between cards only when a card has focus
+     if (e.key === "j" || e.key === "ArrowRight") { e.preventDefault(); const n = cards[Math.min(cards.length - 1, i + 1)]; if (n) { n.focus(); n.scrollIntoView({ block: "nearest", inline: "nearest" }); } return; }
+     if (e.key === "k" || e.key === "ArrowLeft") { e.preventDefault(); const n = cards[Math.max(0, i - 1)]; if (n) { n.focus(); n.scrollIntoView({ block: "nearest", inline: "nearest" }); } return; }
+     const focusedId = document.activeElement && document.activeElement.dataset ? document.activeElement.dataset.id : null;
+@@ -850,5 +870,6 @@ remembers what I've watched.</pre>
+     if (e.key === "w" && target) { toggleLater(target); return; }
+   });
+ 
++  document.querySelector(".skip").addEventListener("click", e => { e.preventDefault(); main.focus(); main.scrollIntoView(); });
+   route();
+ })();
+diff --git a/site/index.html b/site/index.html
+index 38017bb..8491404 100644
+--- a/site/index.html
++++ b/site/index.html
+@@ -10,6 +10,7 @@
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap" rel="stylesheet">
+ <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23E8B04B' d='M32 6c-5 0-7 6-6 10s-4 6-8 7-8 6-6 11 7 6 9 10-1 10 4 12 7-3 7-7 2-5 7-5 6 4 8 0-1-8 3-13 7-6 6-11-6-6-8-8-2-8-4-10-6 0-12 4z'/%3E%3C/svg%3E">
++<script>try { var t = JSON.parse(localStorage.getItem("pt:settings") || "{}").theme || "dark"; if (t !== "system") document.documentElement.setAttribute("data-theme", t); } catch (e) {}</script>
+ <link rel="stylesheet" href="styles.css">
+ </head>
+ <body>
+@@ -50,7 +51,7 @@
+   <a href="#prefs" data-nav="settings"><span class="ic">⚙</span>Settings</a>
+ </nav>
+ 
+-<main id="main" class="main" tabindex="-1"></main>
++<main id="main" class="main" tabindex="-1"><p class="lede" style="margin-top:24px">Loading the catalog…</p></main>
+ 
+ <div class="toast" id="toast" role="status" aria-live="polite"></div>
+ 

@@ -7,7 +7,7 @@
    "for": "You want to understand the brain and have never taken a psychology or biology course.",
    "steps": [
     {"label": "Start with the whole field", "why": "A first psychology course gives you the vocabulary everything else assumes: perception, memory, learning, emotion, disorders.", "series": ["c-yale-psyc-110-introduction-to-psychology", "c-mit-9-00sc-introduction-to-psychology", "c-general-psychology-fall-2020"]},
-    {"label": "Behavior from the biology up", "why": "Sapolsky's Stanford course is the most recommended lecture series in psychology: evolution, genes, hormones and neurons as causes of behavior, with no prerequisites.", "series": ["c-human-behavioral-biology-2010"]},
+    {"label": "Behavior from the biology up", "why": "Sapolsky's Stanford course is the most recommended lecture series in psychology: evolution, genes, hormones and neurons as causes of behavior, with no prerequisites.", "series": ["c-human-behavioral-biology", "c-human-behavioral-biology-2010"]},
     {"label": "A real neuroscience course", "why": "Neurons, neurotransmitters, the senses, motor systems, memory, emotion: NYU's undergraduate course in syllabus order.", "series": ["c-brain-and-behavior", "c-introductory-neuroscience-and-neuro-instrumentation"]},
     {"label": "How the human brain is organized", "why": "Kanwisher's MIT course on what we know about the human brain specifically: faces, places, language, number, theory of mind.", "series": ["c-mit-9-13-the-human-brain", "c-mit-9-11-the-human-brain"]},
     {"label": "See the classic cases", "why": "Aphasia, neglect, blindsight, split brains: the patients whose deficits revealed the architecture.", "shelf": "cases"},
@@ -32,7 +32,7 @@
    "name": "Clinical neuropsychology",
    "for": "You want to understand what brain damage does to the mind, and how it is examined at the bedside.",
    "steps": [
-    {"label": "A neuroscience course first", "why": "You need the systems before the syndromes: NYU's Brain and Behavior, or Sapolsky's course if you prefer behavior first.", "series": ["c-brain-and-behavior", "c-human-behavioral-biology-2010"]},
+    {"label": "A neuroscience course first", "why": "You need the systems before the syndromes: NYU's Brain and Behavior, or Sapolsky's course if you prefer behavior first.", "series": ["c-brain-and-behavior", "c-human-behavioral-biology", "c-human-behavioral-biology-2010"]},
     {"label": "The neurological examination", "why": "UCD's bedside series: the examination step by step, then real patients with Parkinson's, MS, epilepsy and Huntington's disease.", "series": ["c-clinical-neurology-examination-and-patients", "c-peripheral-neuroanatomy-and-the-neurological-exam"]},
     {"label": "The classic cases on film", "why": "The aphasias, hemispatial neglect, prosopagnosia, blindsight, agnosia, alien hand, phantom limbs, locked-in syndrome, Phineas Gage.", "shelf": "cases"},
     {"label": "Where the functions live", "why": "Kanwisher's course on the functional organization of the human brain is the map the cases are drawn on.", "series": ["c-mit-9-13-the-human-brain"]},

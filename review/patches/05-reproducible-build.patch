@@ -1,0 +1,110 @@
+diff --git a/pipeline/build_catalog.py b/pipeline/build_catalog.py
+index fabef4f..0b55efa 100644
+--- a/pipeline/build_catalog.py
++++ b/pipeline/build_catalog.py
+@@ -70,7 +70,7 @@ def parse_ts(t):
+ 
+ 
+ def month_of(epoch):
+-    return dt.datetime.utcfromtimestamp(epoch).strftime("%Y-%m")
++    return dt.datetime.fromtimestamp(epoch, dt.timezone.utc).strftime("%Y-%m")   # utcfromtimestamp is deprecated since 3.12
+ 
+ 
+ # ---------------------------------------------------------------- load labels
+@@ -198,7 +198,9 @@ INST_SHORT = {
+ INST_W = 1.0
+ THIRD_PARTY = re.compile(r"CrashCourse|Crash Course|Khan ?Academy|Kurzgesagt|SciShow|Veritasium|Vsauce|AsapSCIENCE|Psych2Go|Sprouts|Practical Psychology|2-Minute Neuroscience|Neuro Transmissions|Big Think|Professor Dave|Bozeman|Amoeba Sisters|Osmosis|Ninja Nerd|Simply Psychology|Mr\.? Sinn|Cognito|Medicosis|The School of Life|Wondrium|Great Courses|National Geographic|^Vox$|Freethink|BBC", re.I)
+ inst_file = P("raw", "institutional", "courses.json")
+-inst_courses = json.load(open(inst_file))["courses"] if os.path.exists(inst_file) else []
++inst_json = json.load(open(inst_file)) if os.path.exists(inst_file) else {"courses": []}
++inst_courses = inst_json["courses"]
++INST_PULLED = inst_json.get("pulled") or dt.date.today().isoformat()   # when a course has no pull date of its own
+ course_labels = {o["pid"]: o for o in jsonl(P("work", "inst", "course_labels.jsonl"))}
+ 
+ 
+@@ -214,14 +216,20 @@ def approx_views(info):
+     return int(n)
+ 
+ 
+-def approx_pub(info):
++def approx_pub(info, pulled):
++    """'3y ago' -> a date, resolved against the day the playlist was pulled, not the day of the build
++    (resolving against the build clock moved 12,845 upload dates by a year every year)."""
+     m = re.search(r"(\d+)\s*(y|mo|w|d|h)\b", info or "")
+     if not m:
+         return None
+     n, unit = int(m.group(1)), m.group(2)
+-    now = dt.datetime.utcnow()
+-    years = n if unit == "y" else 0
+-    return f"{now.year - years:04d}-01-01" if unit == "y" else now.strftime("%Y-%m-01")
++    ref = dt.date.fromisoformat(pulled)
++    if unit == "y":
++        return f"{ref.year - n:04d}-01-01"
++    if unit == "mo":
++        y, mo = divmod(ref.year * 12 + ref.month - 1 - n, 12)
++        return f"{y:04d}-{mo + 1:02d}-01"
++    return ref.strftime("%Y-%m-01")
+ 
+ 
+ inst_course = {}       # sid -> course record (series entry under construction)
+@@ -257,7 +265,7 @@ for c in inst_courses:
+             continue  # first course wins when a video sits in two playlists
+         inst_member[vid] = (sid, it["idx"])
+         inst_meta[vid] = {"title": it["title"], "ch": it.get("ch") or c.get("owner"), "chid": it.get("chid") or c.get("ownerId"),
+-                          "len": it.get("len"), "views": approx_views(it.get("info")), "pub": it.get("pub") or approx_pub(it.get("info")),
++                          "len": it.get("len"), "views": approx_views(it.get("info")), "pub": it.get("pub") or approx_pub(it.get("info"), c.get("pulled") or INST_PULLED),
+                           "approx": not c.get("provider")}
+         if c.get("provider"):           # not YouTube (e.g. a university's Panopto): the site needs the host to embed and link
+             inst_meta[vid]["p"] = c["provider"]
+@@ -527,7 +535,8 @@ for group, bonus in list(((s, 1.5) for s in by_author.values())) + list(((s, 1.0
+                 if a != b:
+                     related[a][b] += bonus
+ for v in catalog:
+-    v["rel"] = [r for r, _ in related[v["id"]].most_common(12)]
++    # ties broken by id: the co-citation groups are sets, whose iteration order changes with PYTHONHASHSEED
++    v["rel"] = [r for r, _ in sorted(related[v["id"]].items(), key=lambda kv: (-kv[1], kv[0]))[:12]]
+ 
+ # ---------------------------------------------------------------- series (courses)
+ 
+@@ -629,7 +638,8 @@ for pw in (json.load(open(P("pipeline", "pathways.json"), encoding="utf-8"))["pa
+         pathways_out.append({"id": pw["id"], "name": pw["name"], "for": pw.get("for", ""), "steps": steps})
+ stats["pathways"] = len(pathways_out)
+ 
+-generated = dt.datetime.utcnow().strftime("%Y-%m-%d")
++# SOURCE_DATE_EPOCH (reproducible-builds.org) pins the stamp so two builds of the same inputs are byte-identical
++generated = dt.datetime.fromtimestamp(int(os.environ.get("SOURCE_DATE_EPOCH") or dt.datetime.now(dt.timezone.utc).timestamp()), dt.timezone.utc).strftime("%Y-%m-%d")
+ src_totals = collections.Counter()
+ for v in catalog:
+     for s, n in v["src"].items():
+diff --git a/pipeline/merge_pulled.py b/pipeline/merge_pulled.py
+index d9f6ca7..bc27991 100644
+--- a/pipeline/merge_pulled.py
++++ b/pipeline/merge_pulled.py
+@@ -34,6 +34,9 @@ for f in sorted(glob.glob(P("work", "triage", "out_*.jsonl"))):
+ ov = json.load(open(P("pipeline", "triage_overrides.json"), encoding="utf-8")) if os.path.exists(P("pipeline", "triage_overrides.json")) else {}
+ drop_inst, drop_pid, rename = set(ov.get("drop_inst", [])), set(ov.get("drop_pid", [])), ov.get("rename_inst", {})
+ pulled = json.load(open(src, encoding="utf-8"))
++pulled_on = (pulled.get("pulled") if isinstance(pulled.get("pulled"), str) else None) or datetime.date.today().isoformat()
++if isinstance(pulled.get("courses"), dict):        # the runner's wrapper: {pulled, courses, errors}
++    pulled = pulled["courses"]
+ cj = json.load(open(P("raw", "institutional", "courses.json"), encoding="utf-8"))
+ have = {c["pid"] for c in cj["courses"]}
+ have_vids = {it["id"] for c in cj["courses"] for it in c["items"]}
+@@ -59,14 +62,15 @@ for pid, pl in pulled.items():
+     cj["courses"].append({
+         "pid": pid, "title": pl.get("title") or "", "desc": pl.get("desc") or "", "count": pl.get("count") or f"{len(items)} videos",
+         "owner": pl.get("owner") or (items[0].get("ch") if items else ""), "ownerId": pl.get("ownerId") or (items[0].get("chid") if items else ""),
+-        "n": len(items), "items": items, "inst": inst, "kind": t.get("kind") or "course",
++        "n": len(items), "items": items, "inst": inst, "kind": t.get("kind") or "talks",   # unknown kind: the weakest claim, not "course"
++        "pulled": pulled_on,                                                                      # build_catalog resolves "3y ago" against this
+         "triage": {"confidence": t.get("confidence"), "why": t.get("why")},
+     })
+     have.add(pid)
+     have_vids |= {it["id"] for it in items}
+     added.append((pid, inst, len(items), pl.get("title")))
+ 
+-cj["pulled"] = datetime.date.today().isoformat()
++cj["pulled"] = max(cj.get("pulled") or "", pulled_on) if added else cj.get("pulled")   # only moves when something was added
+ json.dump(cj, open(P("raw", "institutional", "courses.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=None, separators=(",", ":"))
+ print(f"added {len(added)} playlists ({sum(a[2] for a in added)} lectures); skipped {len(skipped)}")
+ for pid, inst, n, title in added:

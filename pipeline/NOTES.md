@@ -200,13 +200,19 @@ day plus a shuffle counter, so the picks change daily and on demand; the backgro
 
 ## Ordering by legitimacy (site/app.js)
 
-Long-form content is ordered by legitimacy first. `formTier(v)` is 0 for anything under 25 minutes and
-for an institution's own lecture or a curated shelf copy, 1 for fireside chats, interviews, independent
-talks and documentaries, and 2 for podcasts (`type: podcast`, or a channel name that matches the podcast
-list); `rank = max(score, 1) × {1, 0.5, 0.25}` and every list that used to follow `score` (topic and
-area pages, search, the home rows, Longs) follows `rank`. The canon keeps `score`. The multipliers were
-chosen so that a vouched interview (score 4–15) still outranks an unvouched course lecture (1.0) but a
-podcast episode needs several recommenders to climb past one; short demos and clips are untouched.
+Long-form content is ordered by legitimacy first. `formTier(v)` is 0 for anything under 25 minutes,
+for a taught course or lecture series an institution published, for a curated shelf copy and for a
+long video on one of the institutions' own channels (`PT.inst_channels`, exported by the build);
+1 for the institutions' seminars, grand rounds and conference talks (`series.kind === "talks"`,
+standalone talks); 2 for fireside chats, interviews, independent talks, documentaries and lecturers'
+channels whose affiliation is unverified (`inst.ok === false`); 3 for podcasts (`type: podcast`, or a
+channel name that matches the podcast list — checked first, so a podcast inside a department's
+playlist is still a podcast). `rank = max(score, 1) × {1, 0.75, 0.5, 0.25}`. Since the review round,
+browsing lists (topic and area pages, Over an hour, the home rows) sort by **tier first**, then rank:
+the weights alone had left Joe Rogan #1109 at the top of Sleep & dreams. The canon and the
+"Most vouched" sort use the community score (`cscore` where present); search mixes text match with
+`log(1 + rank)`. Short demos and clips are untouched. The user's rule, in their words: "institutional
+legitimacy > fireside chat type stuff > podcasts for long form; short demonstrations should be chill".
 
 ## Lecture tracker (site/app.js)
 
@@ -218,8 +224,9 @@ of `getCurrentTime()`), Panopto's Embed API (`https://developers.panopto.com/scr
 `t ≥ d − 45 s` or `t/d ≥ 0.92`, or when the viewer marks it. Course progress is derived from the
 lectures (`seriesProgress`: watched count, percent including partial lectures, time left, last
 activity) rather than stored, so a lecture watched from a topic page still advances its course.
-Saving is debounced and flushed on `pagehide`; only dirty state is written, so a stale in-memory
-copy never overwrites what another tab saved. Settings → Export writes `{psychtube:1, history, liked,
+Saving is debounced and flushed on `pagehide` and when the tab is hidden; a flush merges with what is
+already stored (newest `ts` per lecture wins), so another tab's progress is not overwritten. History, likes and
+watch-later are still written whole. Settings → Export writes `{psychtube:1, history, liked,
 later, progress, settings}` as JSON and Import merges it (newest `ts` wins, unknown ids dropped).
 The claude.ai artifact copy cannot embed players, so it has no tracker; the GitHub Pages site does.
 
@@ -235,6 +242,11 @@ The claude.ai artifact copy cannot embed players, so it has no tracker; the GitH
   once per lecture (`classify/INSTRUCTIONS_institutional.md` → `work/inst/out_*.jsonl`: topics and a
   `keep` that drops the odd non-psychology talk from mixed playlists). `pipeline/make_inst_batches.py`
   writes both inputs. A lecture with no per-lecture label yet inherits its course's topics.
+- Per-lecture labels also carry `english` (false when the lecture is not delivered in English) and
+  `promo` (trailers, announcements, clips with no teaching) since the review round; the build drops
+  both. `make_inst_batches.py --label-big 10` queues the lectures of single-topic courses with more
+  than ten lectures as well, because inherited topics were wrong about twice as often as judged ones
+  (887 lectures labeled this way in batches 114–119).
 - `pipeline/overrides.json` holds manual corrections applied on top of the labels.
 - `pipeline/taxonomy.json` holds the 50 topics, the content-note ids and the contested-findings notes
   (with status and verified sources, see below). Edit the notes there; the site reads them at build time.
@@ -249,7 +261,7 @@ breadth bonus (1 + 0.2 per extra source + 0.05 per extra community) and add 0.3 
 with a recommendation. `nrec` counts (source, author) pairs whose best weight is ≥ 0.7.
 
 Inclusion: HackerTube videos need `keep: true`. Community videos also need two recommenders, one
-mention with 3+ upvotes, or an upvoted Stack Exchange answer. Dead/private videos (no title from
+mention with 2+ upvotes (`top_up >= 2` in the code), or an upvoted Stack Exchange answer. Dead/private videos (no title from
 YouTube) are dropped.
 
 Institutional tier: being in a kept university playlist counts as one vouch of weight 1.0 from the
@@ -261,6 +273,83 @@ vouch and the cross-source breadth bonus). Series: each playlist is one `series`
 `lecturer`, `year`, `kind` (course / series / talks), `level`, `note`, `url`; `pop` is the summed
 community score of its lectures and ranks courses on the hub. Channel-heuristic series are still
 built for vouched lectures not in any playlist.
+
+## Review round (review/REVIEW.md, 2026-11-03)
+
+An external review (another model, given the philosophy prompt in the README's spirit; its report and
+patches are in `review/`) found nine must-fix items. What was done, in the review's numbering:
+
+- **M1 per-video provenance** (patch 06, then more): a playlist item is credited to the institution only
+  when it sits on one of the institution's channels — the channel that owns a kept playlist or
+  standalone talk, or one listed in `triage_overrides.json → affiliated_channels` (Stanford Medicine,
+  Stanford CME, Oxford BRC, GBHI for UCSF, UCTV for the UC campuses, the Dalai Lama's channel for
+  Mind & Life, NPTEL's per-course channels…). Other channels' videos lose the badge and the series
+  position (489 items; the list is written to `work/inst/crosschannel.json` after every build). A
+  playlist that is mostly other channels' videos is a watch list: dropped when it has fewer than four
+  own items (26), otherwise kept as `partial` with only the own items listed (5; the series page says
+  so). Channels are keyed by the canonical institution, so every Stanford unit's channel counts for
+  every Stanford playlist. `pid_inst` re-credits a playlist whole (the Chen Institute's copy of BU's
+  course → Boston University).
+- **M7/D4 publisher check**: `classify/INSTRUCTIONS_publishers.md` and four Sonnet passes with web
+  search over the 87 channels that are a person's own or whose name was all the triage had, plus a
+  dozen checked by hand against faculty pages (`work/inst/pubcheck/`, merged into
+  `pipeline/publishers.json`). A personal channel is "Independent lecturer" whatever the triage said;
+  the collection names the lecturer and their affiliation and says whether an institutional page
+  confirms it (40 channels verified; 35 of 56 lecturer collections). Unverified ones (`ok: false`, 28
+  collections, 579 lectures) stay in the catalog at tier 2 with "affiliation not verified" on the card
+  and the series page, and a weaker institutional vouch (0.5). "University of Consciousness, Qualia",
+  "Interactive Intelligence" (a UW student group), the Alan Hu Foundation and Decolpsych are named for
+  what they are. The hub groups lecturers' channels last.
+- **S9 canonical institutions** (`pipeline/institutions.json`): "Columbia University (Zuckerman
+  Institute)", "Columbia University Department of Psychiatry" and "Columbia University" are one
+  publisher with units; 332 raw labels → 262 canonical names (179 with courses). The chip shows the
+  short name, the card and the series page keep the unit.
+- **M2 honest counts** (patches 01/02): courses, series and talk collections counted apart; "vouch"
+  means recommender; "Pushback" instead of "Debunk"; the canon row is the canon; "talk N of M".
+- **M3 ordering**: see "Ordering by legitimacy" above (podcast test first, `rank` on topic pages,
+  institutional channels at tier 0, tier-first sorting, talks at 0.75).
+- **M4/M5 phone**: paged lists (60 cards, a button, never on scroll), a loading state, the theme before
+  first paint, a player that survives a tab switch (patches 01/03).
+- **M6 broken pages**: Clips, the shelf status links and the skip link (patch 01). The two "Clear"
+  buttons now confirm inside the page: the hosted copy runs where `confirm()` returns false at once.
+- **M8 language**: per-lecture `english` label plus a title heuristic in the build — other scripts, a
+  bilingual title that leads with the other language, Spanish/French/Portuguese/German/Italian
+  function words (two or more, outnumbering English ones), "(Spanish)"-style markers; 50 videos
+  dropped, listed in `work/dropped_non_english.json` after each build. `BD 101` (exam revision) is in
+  `drop_pid`. The overrides are now applied at build time too.
+- **M9 reproducibility** (patch 05): ties broken by id, `SOURCE_DATE_EPOCH`, relative ages resolved
+  against the pull date, `merge_pulled` reads the runner format.
+- **S2 scoring** (patch 07): two repeat mentions per person at most, months counted by each person's
+  first recommendation, downvoted comments count nothing. 54 scores moved; 19 of the canon's top 20 stayed.
+- **S3 replication**: `TAXONOMY.md` is generated from `taxonomy.json` (`make_taxonomy_md.py`; it had 30
+  of 66 findings), the Ariely dishonesty programme is a `fraud` finding, and a new keyword pass
+  (`replication_candidates.py`, patterns for all 67 findings) produced 81 candidates, judged into
+  `tags_2026-11-03.jsonl` (26 tagged; tags under 0.6 confidence are ignored by the build).
+- **S5 type/promo**: `type` follows the per-lecture label; the promo filter covers courses too (under a
+  minute, or under four minutes with a promo-shaped title, or `promo: true`).
+- **S7 unlisted**: kept (the playlist is the publication) but exported as `unl` and said on the watch page.
+- **S10 shelves**: every item has a `form` ("original recording", "documentary of the time", "later
+  report"…) shown on the card and the shelf, auto-added therapy items carry `auto` and `legit:
+  relisted` when a playlist re-listed another channel's video, and the shelf prints whose copy is
+  playing. The Internet Archive rights check (uploader / licenseurl of the Shostrom films) still needs
+  archive.org, which this environment cannot reach: open question, recorded here.
+- **S11–S17 front end** (patches 01/04 plus): progress merged on flush, dated "unwatched" records,
+  settings in the export; router survives malformed escapes and a "?" in a query; Esc never leaves the
+  site; arrows stay with a focused `<video>`; a Settings toggle for the single-letter shortcuts; whole-
+  word search with a suffix stemmer; contrast ≥ 4.6:1 on every token pair; filters are links with
+  `aria-current`; focus moves to the page heading after navigation; the biased shuffle is Fisher–Yates;
+  `tagFor` survives a stale badge; the dead `seriesRow`/`FIRESIDE_TYPES` are gone.
+- **C1 size guard** in `build_artifact.py` (fails within 3% of 16 MB). **C5** exam/YouTuber regexes are
+  word-anchored. **C6** quotes that are personal disclosures are withheld (4). **C7** the second Human
+  Behavioral Biology collection is the 2025 re-release and says so. Names: "Replication notes" (page;
+  the home row stays "Handle with care"), "Over an hour" for Longs; the rail lists the shelves before
+  Clips, so a phone's bottom bar shows them.
+
+Not done, deliberately or for lack of reach: a split `data.js` (C1), a CSP (C2), self-hosted fonts (C3),
+a refresh path for pulled courses (C4), the Data API as the primary pull method (D7), Stack Exchange
+questions weighted by stance (S2), "uploaded by a third party" on community documentaries (D5), a
+liveness refresh (S8), and the design calls D1 (the headline), D2 (Teach-me's place on the home page),
+D8 (dark theme and autoplay defaults), which are the owner's.
 
 ## Hosted copy
 

@@ -1,0 +1,119 @@
+diff --git a/site/app.js b/site/app.js
+index ea05b97..4276f78 100644
+--- a/site/app.js
++++ b/site/app.js
+@@ -41,6 +41,10 @@
+   const series = new Map(PT.series.map(s => [s.id, s]));
+   const maxScore = Math.max(...V.map(v => v.score));
+   const SRC_NAME = { hn: "Hacker News", reddit: "Reddit", se: "Psych SE" };
++  const INST_SERIES = PT.series.filter(sd => sd.inst);
++  const KINDS = { course: INST_SERIES.filter(sd => sd.kind === "course").length, series: INST_SERIES.filter(sd => sd.kind === "series").length, talks: INST_SERIES.filter(sd => sd.kind === "talks").length };
++  const PUBLISHERS = (PT.institutions || []).filter(i => i.courses && !/^Independent lecturer/.test(i.name)).length;   // lecturers' own channels are not institutions
++  const LECTURERS = new Set(INST_SERIES.filter(sd => /^Independent lecturer/.test(sd.inst)).map(sd => sd.chid || sd.ch)).size;   // distinct channels, not institution labels
+ 
+   // ------------------------------------------------------------ local state
+   const store = {
+@@ -252,25 +256,32 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+ 
+   // ------------------------------------------------------------ search
+   const norm = s => (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+-  const index = V.map(v => {
++  const words = s => " " + norm(s).replace(/[^a-z0-9\u00c0-\u024f]+/g, " ").trim() + " ";      // " word word " so a match can be anchored at a word start
++  const STOPWORDS = new Set("a an and are as at be by can do does for how in is it its of on or the to what why with".split(" "));
++  // "prosopagnosia" -> "prosopagnos" finds "prosopagnosic"; "neurons" -> "neuron"; "placebo" stays "placebo"
++  const stem = t => { const s = t.replace(/(ics|ic|ias|ia|ies|es|s|ing|ed|al)$/, ""); return t.length >= 6 && s.length >= 5 ? s : t; };
++  let index = null;   // built on the first search, not at start-up
++  const buildIndex = () => V.map(v => {
+     const sd = v.series ? series.get(v.series) : null;
+     return {
+       v,
+-      title: norm(v.title), ch: norm([v.ch, v.inst ? v.inst.n : "", sd && sd.inst ? sd.name + " " + (sd.lecturer || "") + " " + (sd.short || "") : ""].join(" ")),
+-      topicText: norm(v.topics.map(t => topics.get(t) ? topics.get(t).name + " " + topics.get(t).desc : t).join(" ")),
+-      text: norm([v.why, v.summary, v.quote, (v.kw || []).join(" "), v.communities.join(" "), ...v.vouches.map(x => x.q)].join(" ")),
++      title: words(v.title), ch: words([v.ch, v.inst ? v.inst.n : "", sd && sd.inst ? sd.name + " " + (sd.lecturer || "") + " " + (sd.short || "") : ""].join(" ")),
++      topicText: words(v.topics.map(t => topics.get(t) ? topics.get(t).name + " " + topics.get(t).desc : t).join(" ")),
++      text: words([v.why, v.summary, v.quote, (v.kw || []).join(" "), v.communities.join(" "), ...v.vouches.map(x => x.q)].join(" ")),
+     };
+   });
+   function search(q, limit) {
++    if (!index) index = buildIndex();
+     // long terms match on their stem so "prosopagnosia" finds "prosopagnosics", "amnesia" finds "amnesic", "aphasia" "aphasic"
+-    const terms = norm(q).split(/\s+/).filter(Boolean).map(t => (t.length >= 7 ? t.slice(0, -2) : t));
++    const all = norm(q).split(/[^a-z0-9\u00c0-\u024f]+/).filter(Boolean);
++    const terms = (all.some(t => !STOPWORDS.has(t)) ? all.filter(t => !STOPWORDS.has(t)) : all).map(t => (t.length <= 2 ? " " + t + " " : " " + stem(t)));   // short terms must be whole words
+     if (!terms.length) return [];
+     const res = [];
+     for (const e of index) {
+       let s = 0, ok = true;
+       for (const t of terms) {
+         let ts = 0;
+-        if (e.title.includes(t)) ts += 6 + (e.title.startsWith(t) ? 2 : 0);
++        if (e.title.includes(t)) ts += 6 + (e.title.startsWith(t) ? 2 : 0);   // startsWith(" term"): the title begins with it
+         if (e.ch.includes(t)) ts += 4;
+         if (e.topicText.includes(t)) ts += 2;
+         if (e.text.includes(t)) ts += 1;
+@@ -318,7 +329,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+     const talks = V.filter(v => away(v) && v.nrec >= 2 && !careWorthy(v)).slice(0, 400);
+     const firstLectures = V.filter(v => away(v) && v.inst && v.inst.i === 1 && series.get(v.series) && series.get(v.series).kind === "course" && series.get(v.series).level !== "advanced");
+     const originals = V.filter(v => away(v) && v.orig);
+-    const picks = [...take(talks, 1).map(v => [v, "a talk people vouched for"]), ...take(firstLectures, 1).map(v => [v, "lecture 1 of a course"]), ...take(originals, 1).map(v => [v, v.orig.shelf === "demos" ? "an experiment to try" : "a primary source"])];
++    const picks = [...take(talks, 1).map(v => [v, "a talk people vouched for"]), ...take(firstLectures, 1).map(v => [v, "lecture 1 of a course"]), ...take(originals, 1).map(v => [v, ({ demos: "an experiment to try", therapy: "therapy as it is done", cases: "a clinical case on film" })[v.orig.shelf] || "a primary source"])];
+     while (picks.length < 3) { const extra = take(talks.length ? talks : V.filter(away), 1); if (!extra.length) break; picks.push([extra[0], "another field"]); }
+     return { picks, mine };
+   }
+@@ -369,13 +380,13 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+     main.innerHTML = `
+       <div class="masthead">
+         <h1>The psychology videos that psychology people keep telling each other to watch${inst.courses ? " — and the courses universities put online" : ""}.</h1>
+-        <p class="lede"><b>${(s.vouched || s.videos).toLocaleString()}</b> videos vouched for in <b>${s.mentions.toLocaleString()}</b> comments across ${whereText}${inst.courses ? `, plus <b>${inst.lectures.toLocaleString()}</b> lectures from <b>${inst.courses}</b> complete courses published by ${inst.institutions} universities and scientific institutions` : ""}. No algorithm, no accounts, no autoplay rabbit hole. Every card shows who vouched, or who published.${hidden ? ` <span class="faint">${hidden} with content notes are hidden (<a href="#prefs" style="text-decoration:underline">settings</a>).</span>` : ""}</p>
++        <p class="lede"><b>${(s.vouched || s.videos).toLocaleString()}</b> videos that people recommended on ${whereText} (${s.mentions.toLocaleString()} mentions in all)${inst.courses ? `, plus <b>${inst.lectures.toLocaleString()}</b> lectures and talks published by ${PUBLISHERS} universities, institutes, societies and hospitals${LECTURERS ? ` and ${LECTURERS} lecturers' own channels` : ""}: <b>${KINDS.course}</b> taught courses, <b>${KINDS.series}</b> lecture series and <b>${KINDS.talks}</b> seminar and conference collections` : ""}. No accounts, no analytics, no autoplay rabbit hole. Every card shows who vouched, or who published.${hidden ? ` <span class="faint">${hidden} with content notes are hidden (<a href="#prefs" style="text-decoration:underline">settings</a>).</span>` : ""}</p>
+       </div>
+       ${inProgress.length ? section("Continue watching", rowOf(inProgress), "#history", "Pick up where you left off. Positions are saved in this browser.") : ""}
+       ${myCourses.length ? section("Your courses", `<div class="row">${myCourses.map(([sd]) => seriesCard(sd)).join("")}</div>`, "#courses", "Courses you've started, most recent first.") : ""}
+       ${section(state.history.length ? "For you" : "Start here", rowOf(fy), null, state.history.length ? "Based on what you've watched here. Nothing leaves your browser." : "A fresh mix every day, one video per topic.")}
+       ${teachSection()}
+-      ${courseRow.length ? section("Courses", `<div class="row">${courseRow.map(sd => seriesCard(sd)).join("")}</div>`, "#courses", `Complete courses, every lecture in order, published by the universities themselves. ${inst.courses} courses from ${inst.institutions} institutions.`) : ""}
++      ${courseRow.length ? section("Courses", `<div class="row">${courseRow.map(sd => seriesCard(sd)).join("")}</div>`, "#courses", `Taught courses and lecture series, every lecture in order, as the institutions published them: ${KINDS.course} courses and ${KINDS.series} series. Seminars and conference talks have their own shelf on the Courses page.`) : ""}
+       ${section("The canon", rowOf(canon), "#canon", "The most vouched-for videos across all communities.")}
+       ${shelfRows}
+       ${!courseRow.length && PT.series.length ? section("Courses & series", `<div class="row">${PT.series.slice(0, 8).map(sd => seriesCard(sd)).join("")}</div>`, "#courses", "Full lecture series people recommend whole.") : ""}
+@@ -702,7 +713,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+       ${origBox}
+       ${c ? `<div class="box ${v.badge.role === "critique" ? "critique" : GOOD_STATUS.has(c.status) ? "good" : "care"}"><h2>${v.badge.role === "critique" ? "This video pushes back on: " : v.badge.role === "source" ? "What became of it: " : GOOD_STATUS.has(c.status) ? "Holds up: " : "Handle with care: "}${esc(c.name)} ${statusChip(v.badge.id)}</h2><p>${esc(c.note)}</p>${c.sources && c.sources.length ? `<ul class="papers">${c.sources.map(paperLine).join("")}</ul>` : `<p class="faint">${esc(c.source)}.</p>`}<p class="faint" style="margin:0"><a href="#care" style="text-decoration:underline">All replication notes</a></p></div>` : ""}
+       ${instBox}${looseBox}
+-      ${v.nmention ? `<div class="box"><h2>Why people recommend it</h2>${v.why ? `<p class="why">${esc(v.why)}</p>` : ""}${v.summary ? `<p class="muted">${esc(v.summary)}</p>` : ""}${v.quote ? `<p class="quote">“${esc(v.quote)}”</p>` : ""}
++      ${v.nmention ? `<div class="box"><h2>${v.nrec ? "Why people recommend it" : "Where it was mentioned"}</h2>${v.why ? `<p class="why">${esc(v.why)}</p>` : ""}${v.summary ? `<p class="muted">${v.why ? "" : "From the uploader's description: "}${esc(v.summary)}</p>` : ""}${v.quote ? `<p class="quote">“${esc(v.quote)}”</p>` : ""}
+         <p class="faint" style="margin:0">${plural(v.nrec, "distinct recommender")} across ${plural(v.communities.length, "community")}; ${plural(v.nmention, "mention")} in total (${srcSummary}), ${v.first === v.last ? v.first : `${v.first}–${v.last}`}.</p></div>` : v.summary ? `<div class="box"><h2>About this lecture</h2><p class="muted">${esc(v.summary)}</p></div>` : ""}
+       ${v.clips && v.clips.length ? `<div class="box"><h2>Moments people point to</h2><div class="clips">${v.clips.map(t => { const vo = v.vouches.find(x => x.t === t); return LINKOUT ? `<a class="btn quiet" style="font-size:13px" href="${watchUrl(v, t)}" target="_blank" rel="noopener"><b style="color:var(--amber)">${fmtDur(t)}</b>${vo ? ` <span class="muted">${esc(vo.q.slice(0, 100))}</span>` : ""}</a>` : `<button data-seek="${t}"><b>${fmtDur(t)}</b>${vo ? ` ${esc(vo.q.slice(0, 100))}` : ""}</button>`; }).join("")}</div></div>` : ""}
+       ${v.vouches.length ? `<div class="box"><h2>Who vouched</h2><ul class="vlist">${vouchHtml}</ul>${v.nmention > v.vouches.length ? `<p class="faint" style="margin:10px 0 0">Showing ${v.vouches.length} of ${v.nmention} mentions.</p>` : ""}</div>` : ""}
+@@ -737,7 +748,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+     const s = PT.stats;
+     main.innerHTML = `<h1>The data</h1><div class="prose">
+       <p class="lede">Everything behind PsychTube, free to reuse. Give it to your agent and build your own.</p>
+-      <div class="stats"><div><b>${s.videos.toLocaleString()}</b><span>videos</span></div><div><b>${s.mentions.toLocaleString()}</b><span>vouching comments</span></div><div><b>${s.communities}</b><span>communities</span></div><div><b>${s.inst ? s.inst.courses : PT.series.length}</b><span>${s.inst ? "university courses" : "lecture series"}</span></div>${s.inst ? `<div><b>${s.inst.lectures.toLocaleString()}</b><span>course lectures</span></div>` : ""}</div>
++      <div class="stats"><div><b>${s.videos.toLocaleString()}</b><span>videos</span></div><div><b>${s.mentions.toLocaleString()}</b><span>mentions (recommendations and citations)</span></div><div><b>${s.communities}</b><span>communities</span></div>${s.inst ? `<div><b>${KINDS.course + KINDS.series}</b><span>courses and lecture series</span></div><div><b>${KINDS.talks}</b><span>seminar and conference collections</span></div><div><b>${s.inst.lectures.toLocaleString()}</b><span>institutional lectures and talks</span></div>` : `<div><b>${PT.series.length}</b><span>lecture series</span></div>`}</div>
+       ${ART ? `<p class="muted">This hosted copy can't hand out files. The export (<code>psychtube.json</code> + <code>DATA.md</code>) ships in the project folder next to the site, and the whole pipeline is there to rebuild it.</p>` : `<p><a class="btn primary" href="data/psychtube.json" download>Download psychtube.json</a> <a class="btn" href="data/DATA.md">Read DATA.md</a></p>`}
+       <h2>Give it to your agent</h2>
+       <p>Download the JSON, open your AI agent in that folder, and tell it what to build. For example:</p>
+@@ -747,7 +758,7 @@ remembers what I've watched.</pre>
+       <h2>Where the vouches come from</h2>
+       <ul>${Object.entries(s.sources).map(([k, n]) => `<li><b>${SRC_NAME[k]}</b>: ${n.toLocaleString()} mentions</li>`).join("")}</ul>
+       <p>Hacker News mentions come from <a href="https://hackertube.org/data" target="_blank" rel="noopener" style="text-decoration:underline">HackerTube's export</a> (ODC-By, labeled by Claude). Reddit comments come from the Arctic Shift archive of psychology subreddits. Stack Exchange posts come from the Psychology &amp; Neuroscience site via its public API (CC BY-SA). Video titles, channels and lengths come from YouTube and belong to their creators. Topic labels, badges and notes were written by Claude and may contain mistakes.</p>
+-      ${s.inst && s.inst.courses ? `<p>Course lectures (<code>inst</code> on a video, <code>institutions</code> and the <code>series</code> entries with an <code>inst</code> field) come from ${s.inst.courses} public YouTube playlists on the channels of ${s.inst.institutions} universities and scientific institutions, pulled whole and kept in playlist order. Each lecture carries the institution, the course, its position and the playlist link; lectures no community vouched for have <code>nrec: 0</code>.</p>` : ""}
++      ${s.inst && s.inst.courses ? `<p>Course lectures (<code>inst</code> on a video, <code>institutions</code> and the <code>series</code> entries with an <code>inst</code> field) come from ${s.inst.courses} public collections (YouTube playlists, plus a few courses on Panopto and the Internet Archive) published by ${PUBLISHERS} institutions and ${LECTURERS} lecturers' own channels, pulled whole and kept in playlist order: ${KINDS.course} taught courses, ${KINDS.series} lecture series and ${KINDS.talks} collections of seminar, grand-rounds and conference talks. Each lecture carries the institution, the course, its position and the playlist link; lectures no community vouched for have <code>nrec: 0</code>.</p>` : ""}
+       <h2>Thumbnails</h2><p>Cards show an automatic frame from the middle of each video (<code>i.ytimg.com/vi/&lt;id&gt;/hq2.jpg</code>) instead of the uploader's thumbnail, so you see what the video looks like, not what the thumbnail designer wants you to feel. Switch to uploader thumbnails in <a href="#prefs" style="text-decoration:underline">settings</a>.</p>
+       <p class="faint">Generated ${PT.generated}.</p></div>`;
+   }
+@@ -763,10 +774,10 @@ remembers what I've watched.</pre>
+         <li><b>Show the receipts.</b> Each card shows who vouched; each watch page quotes them and links to the original comment.</li>
+         <li><b>Keep your place.</b> The player reports where you are, so every lecture resumes where you stopped and every course shows how far you've come — a Continue button that means it, not a 40-tab history. YouTube only remembers one video at a time; here the course is the unit.</li>
+         <li><b>Flag the shaky stuff.</b> Videos that present a finding known to have shrunk or failed replication carry a “Handle with care” note with the follow-up research. Videos that push back get a “Pushback” mark.</li>
+-        ${PT.stats.inst && PT.stats.inst.courses ? `<li><b>Take the universities at their word.</b> A complete course that a university, one of its lecturers or a scientific institution published is institutional backing of a different kind, so the <a href="#courses" style="text-decoration:underline">Courses</a> hub carries ${PT.stats.inst.lectures.toLocaleString()} lectures from ${PT.stats.inst.courses} such playlists (MIT OpenCourseWare, Yale Courses, Stanford, the IITs via NPTEL, Gresham College, the Royal Institution, professors' own channels…), every lecture in order, whether or not a forum ever linked it. Those cards say “Published by” instead of a vouch count, and the lectures the communities <i>also</i> vouched for say both.</li>` : ""}
++        ${PT.stats.inst && PT.stats.inst.courses ? `<li><b>Take the universities at their word.</b> A complete course that a university, one of its lecturers or a scientific institution published is institutional backing of a different kind, so the <a href="#courses" style="text-decoration:underline">Courses</a> hub carries ${PT.stats.inst.lectures.toLocaleString()} lectures and talks from ${PT.stats.inst.courses} collections (${KINDS.course} taught courses, ${KINDS.series} lecture series, ${KINDS.talks} seminar and conference collections) (MIT OpenCourseWare, Yale Courses, Stanford, the IITs via NPTEL, Gresham College, the Royal Institution, professors' own channels…), every lecture in order, whether or not a forum ever linked it. Those cards say “Published by” instead of a vouch count, and the lectures the communities <i>also</i> vouched for say both.</li>` : ""}
+       </ul>
+       <h2>What it deliberately lacks</h2>
+-      <ul><li>No accounts. History, likes, watch-later and your lecture progress live in your browser (Settings → Export moves them to another device).</li><li>No autoplay-next, no infinite feed. Rows end.</li><li>No uploader thumbnails by default. You see a frame from the middle of the video.</li></ul>
++      <ul><li>No accounts. History, likes, watch-later and your lecture progress live in your browser (Settings → Export moves them to another device).</li><li>No infinite feed: rows end. Autoplay-next is off unless you turn it on, and then only offers the next lecture of the same course or series.</li><li>No uploader thumbnails by default. You see a frame from the middle of the video.</li></ul>
+       <h2>Keyboard</h2><p><kbd class="k">/</kbd> search, <kbd class="k">j</kbd>/<kbd class="k">k</kbd> move, <kbd class="k">Enter</kbd> open, <kbd class="k">l</kbd> like, <kbd class="k">w</kbd> watch later, <kbd class="k">t</kbd> theme, <kbd class="k">Esc</kbd> back.</p>
+       <h2>Credits</h2><p>Built in an afternoon with Claude, in the spirit of Andrej Karpathy's <a href="https://hackertube.org" target="_blank" rel="noopener" style="text-decoration:underline">HackerTube</a>, whose open data seeded this. Comments belong to their authors; videos to their creators. Not affiliated with YouTube, Reddit, Hacker News or Stack Exchange.</p></div>`;
+   }

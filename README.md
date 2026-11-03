@@ -18,9 +18,18 @@ the British Neuropsychological Society, UCSF's Memory and Aging Center, the apha
 and a hundred-odd university and hospital lectures on the syndromes themselves.
 
 Long-form content (over 25 minutes) is ordered by legitimacy before popularity: an institution's own
-lecture or a shelf copy first, fireside chats and interviews second, podcasts third, with the community
-score deciding within each tier. Short pieces — demos, clips, TED talks — are not penalised, and the
-canon stays a pure count of recommenders.
+course or lecture series (or a shelf copy, or a long video on one of the institutions' own channels)
+first, the institutions' seminars and conference talks second, fireside chats and interviews third,
+podcasts last, with the community score deciding within each tier. Short pieces — demos, clips, TED
+talks — are not penalised, and the canon stays a pure count of recommenders.
+
+Provenance is checked **video by video**: a lecture is credited to an institution only when it sits on
+one of the institution's own channels, so a TED talk or a CrashCourse clip re-listed in a department's
+playlist is not the department's lecture, and a playlist that is mostly other channels' videos is a
+watch list, not a publication. Courses on a lecturer's own channel say so, name the lecturer and their
+affiliation, and say whether an institutional page confirms it; the unconfirmed ones rank with
+independent talks. An external review in November 2026 (`review/REVIEW.md`) drove this and a round of
+other fixes, recorded in `pipeline/NOTES.md`.
 
 The Courses hub has two shelves: **taught courses and lecture series** (a full term as the institution
 published it), and **seminars & conferences** — research seminar series, hospital grand rounds and the
@@ -48,8 +57,9 @@ hemispherectomy twelve years on, patient SM's missing amygdala, Phineas Gage's s
 
 Every contested finding carries a **replication status** — replicated, smaller than claimed, mixed,
 did not replicate, overstated, misreported, myth, fraud/retraction, reversed — with the replication or
-review papers it rests on; 66 findings, from power posing and ego depletion to the McGurk effect and
-Stroop (which hold up). The "Handle with care" page groups them by status, and a video's watch page
+review papers it rests on; 67 findings, from power posing, ego depletion and the retracted honesty-pledge
+study to the McGurk effect and Stroop (which hold up). The "Replication notes" page groups them by
+status (the home row is still "Handle with care"), and a video's watch page
 says whether it presents the finding, pushes back on it, or *is* the original footage.
 
 For people who want a prerequisite chain rather than a catalog, a quiet **Pathways** page (linked from
@@ -92,13 +102,19 @@ site/data/             the export: psychtube.json + DATA.md (give these to your 
 site/hosted/           the variant published as a claude.ai artifact (no embeds allowed there, so it
                        carries its own thumbnails and links out to YouTube); built by build_artifact.py
 pipeline/              scripts that build data.js
-  taxonomy.json        50 topics in 9 areas + 66 contested findings (status + verified sources) + content-note ids
+  taxonomy.json        52 topics in 9 areas + 67 contested findings (status + verified sources) + content-note ids
   shelves.json         the curated shelves (primary sources, demos, therapy, clinical cases): video, uploader, legitimacy, paper, status
   pathways.json        the Pathways page: ordered routes through the courses, by series id
-  triage_overrides.json publishers and playlists dropped after triage, institution renames
+  triage_overrides.json publishers and playlists dropped after triage, institution renames, affiliated
+                       channels (which channels count as an institution's own), playlist re-credits
+  institutions.json    raw institution label -> canonical publisher + unit, and the chip short names
+  publishers.json      the publisher check: who is behind each personal or name-only channel, their
+                       affiliation, whether an institutional page confirms it (ok=false -> unverified)
   merge_pulled.py      appends pulled playlists to raw/institutional/courses.json after triage
   build_catalog.py     merges every source, scores, groups series, writes site/data.js
   make_inst_batches.py writes the labeling inputs for university playlists (course cards + per-lecture topics)
+  make_taxonomy_md.py  regenerates classify/TAXONOMY.md from taxonomy.json (run after editing a topic or finding)
+  replication_candidates.py keyword pass over the built catalog for replication-badge candidates
   assemble_candidates.py turns the channel/topic sweep (raw/sweep/) into triage batches (work/triage/)
   build_artifact.py    writes site/hosted/ from site/ + raw/youtube/thumbs_*.json
   overrides.json       manual label corrections applied on top of the LLM labels
@@ -122,7 +138,8 @@ python3 pipeline/build_catalog.py
 ```
 
 reads everything under `raw/` and `work/` and rewrites `site/data.js` and `site/data/psychtube.json`.
-It is deterministic given the inputs, so re-running it after adding raw data is safe.
+It is deterministic given the inputs (set `SOURCE_DATE_EPOCH` to pin the `generated` stamp as well), so
+re-running it after adding raw data is safe.
 
 ### Add more Reddit vouches
 
@@ -136,9 +153,21 @@ batches with `pipeline/make_batches.py` and have Claude (or any model) fill them
 
 Append the playlist to `raw/institutional/courses.json` (`pid`, `inst`, `kind`, and the items as the
 other entries have them; `pipeline/NOTES.md` shows the innertube calls that list a playlist, or use
-the Data API's `playlistItems`), then `python3 pipeline/make_inst_batches.py`, label the new rows
+the Data API's `playlistItems`), then `python3 pipeline/make_inst_batches.py --only-mixed` (without the flag it
+also queues the lectures of single-topic courses that inherit their course's topics), label the new rows
 with `pipeline/classify/INSTRUCTIONS_courses.md` and `INSTRUCTIONS_institutional.md`, and rebuild.
 Keep to official channels and lecturers' own channels; mirrors get taken down.
+
+Provenance is per video: the build credits an item to the institution only when it sits on one of the
+institution's own channels (a channel that owns a kept playlist or standalone talk, or one listed under
+`affiliated_channels` in `pipeline/triage_overrides.json`, keyed by the canonical name in
+`pipeline/institutions.json`). After a build, `work/inst/crosschannel.json` lists what was not credited,
+most items first; when a channel there is the institution's own (a medical school's CME channel, the
+university's TV service), add its id to `affiliated_channels` and rebuild. A playlist that is mostly other
+channels' videos is treated as a watch list. If the playlist is on a person's own channel, add the
+channel to `pipeline/publishers.json` (`pipeline/classify/INSTRUCTIONS_publishers.md` says what to
+check): the collection then shows the lecturer and their affiliation, and ranks with the institutions
+only when an institutional page confirms it (`verified: true`, `ok: true`).
 
 A course that is not on YouTube gets `"provider": "panopto"` (with `"host"`) or `"provider": "archive"`
 (with each item's `file`); `pipeline/NOTES.md` has the calls that list a Panopto folder or an Internet
@@ -167,8 +196,11 @@ metadata in a `raw/youtube/meta_*.json` file (the keyless fetcher in `pipeline/N
 
 Edit the finding in `pipeline/taxonomy.json` → `contested_findings`: `status` (one of the ids in
 `status_labels`), a note that says what the later research found, and `sources` with verified DOIs.
-To tag more videos with a finding, add rows to `work/replication/tags.jsonl` (`vid`, `contested`,
-`role`); `pipeline/NOTES.md` describes the keyword pass that produced the current ones.
+Then `python3 pipeline/make_taxonomy_md.py`, so the labelers' `TAXONOMY.md` lists it. To tag more
+videos with a finding, run `python3 pipeline/replication_candidates.py` after a build (it has a keyword
+pattern per finding; add one for a new finding), judge the candidates it writes into a
+`work/replication/tags_<date>.jsonl` (`vid`, `contested`, `role`, `confidence`), and rebuild; the build
+merges every `tags*.jsonl` and ignores tags under 0.6 confidence.
 
 ### Find more courses (the sweep)
 

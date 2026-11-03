@@ -36,8 +36,9 @@
       if(o.playlistVideoRenderer){ const v=o.playlistVideoRenderer; const by=v.shortBylineText||{}; const run=(by.runs||[])[0]||{}; const be=((run.navigationEndpoint||{}).browseEndpoint)||{}; let info=''; try{ info=text(v.videoInfo); }catch(e){}
         if(!items.has(v.videoId)) items.set(v.videoId, {id:v.videoId, title:text(v.title), len: v.lengthSeconds? +v.lengthSeconds : null, idx: ++order, ch: run.text||'', chid: be.browseId||'', info}); }
       if(o.lockupViewModel && /VIDEO/.test(o.lockupViewModel.contentType||'')){ const l=o.lockupViewModel; const id=l.contentId; if(items.has(id)) return; const md=(l.metadata||{}).lockupMetadataViewModel||{}; const rows=(((md.metadata||{}).contentMetadataViewModel||{}).metadataRows)||[]; let ch='',chid='',info='';
-        try{ const p=rows[0].metadataParts[0]; ch=p.text.content; chid=p.text.commandRuns[0].onTap.innertubeCommand.browseEndpoint.browseId; }catch(e){}
-        try{ info=rows[1].metadataParts.map(p=>p.text.content).join(' · '); }catch(e){}
+        let infoRow=1;
+        try{ const p=rows[0].metadataParts[0]; const be=p.text.commandRuns[0].onTap.innertubeCommand.browseEndpoint; ch=p.text.content; chid=be.browseId; }catch(e){ infoRow=0; ch=''; chid=''; }   // no byline: rows[0] is views · age
+        try{ info=rows[infoRow].metadataParts.map(p=>p.text.content).join(' · '); }catch(e){}
         let len=null; try{ window.__walk(l.contentImage, x=>{ if(len==null && x.thumbnailBadgeViewModel){ const v=parseLen(x.thumbnailBadgeViewModel.text||''); if(v!=null) len=v; } }); }catch(e){}
         items.set(id, {id, title:text(md.title), len, idx: ++order, ch, chid, info}); }
       if(o.playlistHeaderRenderer){ const h=o.playlistHeaderRenderer; head.title=text(h.title); head.owner=text(h.ownerText); head.count=text(h.numVideosText); head.desc=text(h.descriptionText); try{ head.ownerId=h.ownerEndpoint.browseEndpoint.browseId; }catch(e){} }

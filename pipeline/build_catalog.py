@@ -70,7 +70,7 @@ def parse_ts(t):
 
 
 def month_of(epoch):
-    return dt.datetime.utcfromtimestamp(epoch).strftime("%Y-%m")
+    return dt.datetime.fromtimestamp(epoch, dt.timezone.utc).strftime("%Y-%m")   # utcfromtimestamp is deprecated since 3.12
 
 
 # ---------------------------------------------------------------- load labels
@@ -153,7 +153,7 @@ for r in reddit_recs:
         continue
     seen_rc.add(r["c"])
     sc = r.get("sc") if r.get("sc") is not None else 1
-    w = (1.0 if sc >= 1 else 0.3) * (1.0 + min(max(sc, 0), 50) ** 0.5 * 0.08)
+    w = (1.0 if sc >= 1 else 0.0) * (1.0 + min(max(sc, 0), 50) ** 0.5 * 0.08)   # sc <= 0: the community disagreed
     link = (r.get("l") or "").replace("t3_", "")
     for v in r["v"]:
         videos[v["id"]]["vouches"].append({
@@ -198,8 +198,62 @@ INST_SHORT = {
 INST_W = 1.0
 THIRD_PARTY = re.compile(r"CrashCourse|Crash Course|Khan ?Academy|Kurzgesagt|SciShow|Veritasium|Vsauce|AsapSCIENCE|Psych2Go|Sprouts|Practical Psychology|2-Minute Neuroscience|Neuro Transmissions|Big Think|Professor Dave|Bozeman|Amoeba Sisters|Osmosis|Ninja Nerd|Simply Psychology|Mr\.? Sinn|Cognito|Medicosis|The School of Life|Wondrium|Great Courses|National Geographic|^Vox$|Freethink|BBC", re.I)
 inst_file = P("raw", "institutional", "courses.json")
-inst_courses = json.load(open(inst_file))["courses"] if os.path.exists(inst_file) else []
+inst_json = json.load(open(inst_file)) if os.path.exists(inst_file) else {"courses": []}
+inst_courses = inst_json["courses"]
+INST_PULLED = inst_json.get("pulled") or dt.date.today().isoformat()   # when a course has no pull date of its own
 course_labels = {o["pid"]: o for o in jsonl(P("work", "inst", "course_labels.jsonl"))}
+TRIAGE_OV = json.load(open(P("pipeline", "triage_overrides.json"), encoding="utf-8")) if os.path.exists(P("pipeline", "triage_overrides.json")) else {}
+# the overrides also apply at build time, so a playlist dropped or re-credited after it was merged needs no re-merge
+_drop_pid, _drop_inst, _rename = set(TRIAGE_OV.get("drop_pid", [])), set(TRIAGE_OV.get("drop_inst", [])), TRIAGE_OV.get("rename_inst", {})
+_pid_inst = {k: v for k, v in (TRIAGE_OV.get("pid_inst") or {}).items() if not k.startswith("_")}
+inst_courses = [c for c in inst_courses if c["pid"] not in _drop_pid and _rename.get(c["inst"], c["inst"]) not in _drop_inst]
+for c in inst_courses:
+    c["inst"] = _pid_inst.get(c["pid"]) or _rename.get(c["inst"], c["inst"])
+    if not c.get("ownerId") and not c.get("provider") and c.get("items"):
+        # a co-owned or ownerless playlist: the dominant channel is the owner if it holds at least half the items, otherwise it is nobody's
+        top = collections.Counter(it.get("chid") for it in c["items"] if it.get("chid")).most_common(1)
+        if top and top[0][1] * 2 >= len(c["items"]):
+            c["ownerId"] = top[0][0]
+            c["owner"] = next(it.get("ch") for it in c["items"] if it.get("chid") == top[0][0])
+        else:
+            c["ownerId"] = "?"              # no own channel: every item is someone else's (the watch-list rule below drops it)
+
+# One institution, many labels: "Columbia University (Zuckerman Institute)", "Columbia University Department of Psychiatry" and
+# "Columbia University" are one publisher with three units. pipeline/institutions.json maps each raw label to a canonical name
+# and a unit; the hub groups by the canonical name, the chip shows its short form, the unit stays on the card.
+INSTITUTIONS = json.load(open(P("pipeline", "institutions.json"), encoding="utf-8")) if os.path.exists(P("pipeline", "institutions.json")) else {"canon": {}, "short": {}}
+INST_SHORT.update(INSTITUTIONS.get("short") or {})
+# Publishers whose channel is a person's own, or whose name was all the triage had, were checked against institutional pages
+# (pipeline/publishers.json, INSTRUCTIONS_publishers.md). A personal channel is "Independent lecturer" whatever the triage said:
+# the university did not publish it, the lecturer did. ok=false keeps the collection but at tier 1, labelled "affiliation not verified".
+PUBLISHERS = (json.load(open(P("pipeline", "publishers.json"), encoding="utf-8")) if os.path.exists(P("pipeline", "publishers.json")) else {}).get("channels", {})
+
+
+def canon_inst(raw, ownerId=None):
+    """raw institution label -> (canonical name, unit)."""
+    pub = PUBLISHERS.get(ownerId or "")
+    if pub and pub.get("personal"):
+        return "Independent lecturer", pub.get("lecturer") or pub.get("channel") or raw
+    row = INSTITUTIONS["canon"].get(raw)
+    if row:
+        return row["name"], row.get("unit")
+    m = re.match(r"^Independent lecturer(?: \((.*)\))?$", raw)
+    if m:
+        return "Independent lecturer", m.group(1)
+    m = re.match(r"^(.*?)\s*\((.*)\)$", raw)
+    if m:
+        return m.group(1).strip(), m.group(2).strip()
+    return raw, None
+
+
+def pub_key(name, unit):
+    """who 'owns' a channel for provenance: the institution, or one lecturer (never all lecturers together)."""
+    return f"{name} · {unit}" if name == "Independent lecturer" else name
+
+
+for c in inst_courses:
+    c["_canon"], c["_unit"] = canon_inst(c["inst"], c.get("ownerId"))
+    c["_pk"] = pub_key(c["_canon"], c["_unit"])
 
 
 def slug(s):
@@ -214,14 +268,52 @@ def approx_views(info):
     return int(n)
 
 
-def approx_pub(info):
+def approx_pub(info, pulled):
+    """'3y ago' -> a date, resolved against the day the playlist was pulled, not the day of the build
+    (resolving against the build clock moved 12,845 upload dates by a year every year)."""
     m = re.search(r"(\d+)\s*(y|mo|w|d|h)\b", info or "")
     if not m:
         return None
     n, unit = int(m.group(1)), m.group(2)
-    now = dt.datetime.utcnow()
-    years = n if unit == "y" else 0
-    return f"{now.year - years:04d}-01-01" if unit == "y" else now.strftime("%Y-%m-01")
+    ref = dt.date.fromisoformat(pulled)
+    if unit == "y":
+        return f"{ref.year - n:04d}-01-01"
+    if unit == "mo":
+        y, mo = divmod(ref.year * 12 + ref.month - 1 - n, 12)
+        return f"{y:04d}-{mo + 1:02d}-01"
+    return ref.strftime("%Y-%m-01")
+
+
+# Provenance is per video, not per playlist. A lecturer's playlist that re-lists a TED talk, a Veritasium video or a podcast
+# episode does not make the institution its publisher, so a playlist item is credited only when it sits on one of the
+# institution's own channels: a channel that owns one of its kept playlists or standalone talks, or one listed for it under
+# "affiliated_channels" in triage_overrides.json. Other items keep their community vouches (if any) and lose the badge, the
+# course position and the tier-0 rank. A playlist that is mostly other channels' videos is a watch list, not a publication.
+inst_channels = collections.defaultdict(set)   # publisher key -> its own channel ids (canonical, so every Stanford unit's channel counts for every Stanford playlist)
+for c in inst_courses:
+    if c.get("ownerId") and c["ownerId"] != "?":
+        inst_channels[c["_pk"]].add(c["ownerId"])
+_loose_path = P("raw", "institutional", "loose.json")
+for lv in (json.load(open(_loose_path, encoding="utf-8"))["videos"] if os.path.exists(_loose_path) else []):
+    if (meta.get(lv["id"]) or {}).get("chid"):
+        inst_channels[pub_key(*canon_inst(lv["inst"], meta[lv["id"]]["chid"]))].add(meta[lv["id"]]["chid"])
+for _inst, _chids in (TRIAGE_OV.get("affiliated_channels") or {}).items():
+    if not _inst.startswith("_"):
+        inst_channels[_inst] |= set(_chids)
+INST_CHANNEL_IDS = sorted({ch for s in inst_channels.values() for ch in s if PUBLISHERS.get(ch, {}).get("ok", True)})   # exported: a long video on one of these channels ranks as institutional even outside a pulled playlist
+COUNT_RX = re.compile(r"[\d.,]+\s*[KMB]?(\s*views?)?", re.I)
+cross_review = collections.Counter()   # (institution, channel) -> items not credited; written to work/inst/crosschannel.json for review
+cross_n = watchlists = partials = 0
+
+
+def own_item(it, c):
+    """Repair the playlist-parse slip (a view count in the channel field) and say whether the item is the institution's own."""
+    if not it.get("chid") and COUNT_RX.fullmatch(it.get("ch") or ""):
+        it["info"] = (it.get("ch") or "") + " · " + (it.get("info") or "")
+        it["ch"], it["chid"] = c.get("owner"), c.get("ownerId")
+    if c.get("ownerId") == "?":
+        return False
+    return bool(c.get("provider")) or not it.get("chid") or not c.get("ownerId") or it["chid"] in inst_channels[c["_pk"]]
 
 
 inst_course = {}       # sid -> course record (series entry under construction)
@@ -241,23 +333,41 @@ for c in inst_courses:
         sid += "-" + c["pid"][-3:].lower()
     used_sids.add(sid)
     items = [it for it in c["items"] if it.get("title") not in ("[Private video]", "[Deleted video]")]
+    own = {k for k, it in enumerate(items) if own_item(it, c)}
+    partial = bool(items) and len(own) / len(items) < 0.5
+    if partial and len(own) < 4:
+        watchlists += 1                     # mostly other people's videos and almost none of its own: a watch list, not a publication
+        for k, it in enumerate(items):
+            if k not in own:
+                cross_review[(c["_canon"], it.get("ch") or "?")] += 1
+        continue
+    if partial:
+        partials += 1                       # a watch list that also carries the institution's own recordings: those are listed, the rest is not
     readings = next((u.rstrip(".,") for u in re.findall(r"https?://[^\s)>\]]+", c.get("desc") or "")
                      if re.search(r"ocw\.mit\.edu|oyc\.yale\.edu|open\.yale|\.edu/|\.ac\.uk|nptel|swayam|syllabus|course", u, re.I)
                      and not re.search(r"youtube|youtu\.be|twitter|facebook|instagram|bit\.ly|tinyurl|linkedin|tiktok|forms\.gle|patreon", u, re.I)), None)
+    pub = PUBLISHERS.get(c.get("ownerId") or "") or {}
     inst_course[sid] = {
-        "id": sid, "name": name, "inst": c["inst"], "short": INST_SHORT.get(c["inst"], c["inst"]), "provider": c.get("provider") or "youtube", "readings": readings,
-        "lecturer": cl.get("lecturer") or "", "year": cl.get("year"), "kind": cl.get("kind") or c["kind"],
+        "id": sid, "name": name, "inst": c["_canon"], "unit": c["_unit"], "short": INST_SHORT.get(c["_canon"], c["_canon"]), "provider": c.get("provider") or "youtube", "readings": readings,
+        "lecturer": (pub.get("lecturer") if pub.get("personal") else None) or cl.get("lecturer") or "", "year": cl.get("year"), "kind": cl.get("kind") or c["kind"],
         "level": cl.get("level") or "", "note": clean(cl.get("note"), 200), "ctopics": [t for t in cl.get("topics", []) if t in TOPIC_IDS],
-        "pid": c["pid"], "url": c.get("url") or f"https://www.youtube.com/playlist?list={c['pid']}", "ch": c.get("owner"), "chid": c.get("ownerId"),
+        "pid": c["pid"], "url": c.get("url") or f"https://www.youtube.com/playlist?list={c['pid']}", "ch": c.get("owner"), "chid": c.get("ownerId") if c.get("ownerId") != "?" else None,
         "total": len(items), "items": items, "topic_map": cl.get("topic_map") or {},
+        "cross": len(items) - len(own), "partial": partial,
+        # publisher check: who is behind a personal or name-only channel, and whether an institutional page confirms it
+        "affil": pub.get("affil") if pub.get("personal") else None, "verified": bool(pub.get("verified")) if pub else None,
+        "ok": pub.get("ok", True) if pub else True, "pubwhy": pub.get("why") if pub and not pub.get("ok", True) else None,
     }
-    for it in items:
+    for k, it in enumerate(items):
         vid = it["id"]
+        if k not in own:
+            cross_n += 1; cross_review[(c["_canon"], it.get("ch") or "?")] += 1
+            continue                        # another channel's video re-listed in this playlist: not the institution's
         if vid in inst_member:
             continue  # first course wins when a video sits in two playlists
         inst_member[vid] = (sid, it["idx"])
         inst_meta[vid] = {"title": it["title"], "ch": it.get("ch") or c.get("owner"), "chid": it.get("chid") or c.get("ownerId"),
-                          "len": it.get("len"), "views": approx_views(it.get("info")), "pub": it.get("pub") or approx_pub(it.get("info")),
+                          "len": it.get("len"), "views": approx_views(it.get("info")), "pub": it.get("pub") or approx_pub(it.get("info"), c.get("pulled") or INST_PULLED),
                           "approx": not c.get("provider")}
         if c.get("provider"):           # not YouTube (e.g. a university's Panopto): the site needs the host to embed and link
             inst_meta[vid]["p"] = c["provider"]
@@ -265,7 +375,7 @@ for c in inst_courses:
             if it.get("file"):
                 inst_meta[vid]["f"] = it["file"]   # Internet Archive: the MP4 file name, so the site can use its own <video> player
         videos[vid]["vouches"].append({
-            "s": "inst", "c": c["inst"], "a": c.get("owner"), "d": None, "k": "course", "w": INST_W,
+            "s": "inst", "c": c["_canon"], "a": c.get("owner"), "d": None, "k": "course", "w": INST_W if inst_course[sid]["ok"] else 0.5,
             "q": f"Lecture {it['idx']} of {len(items)} in {name}", "u": c.get("url") or f"https://www.youtube.com/playlist?list={c['pid']}",
             "up": None, "thread": None, "t": None,
         })
@@ -276,14 +386,30 @@ inst_loose = {}
 LOOSE = json.load(open(P("raw", "institutional", "loose.json"), encoding="utf-8"))["videos"] if os.path.exists(P("raw", "institutional", "loose.json")) else []
 for lv in LOOSE:
     vid = lv["id"]
-    if vid in inst_member or vid in inst_loose:
+    if vid in inst_member or vid in inst_loose or lv["inst"] in _drop_inst:
         continue
-    inst_loose[vid] = {"inst": lv["inst"], "kind": lv.get("kind") or "talk", "why": lv.get("why", "")}
+    _chid = (meta.get(vid) or {}).get("chid")
+    _name, _unit = canon_inst(_rename.get(lv["inst"], lv["inst"]), _chid)
+    _pub = PUBLISHERS.get(_chid or "") or {}
+    inst_loose[vid] = {"inst": _name, "unit": _unit, "kind": lv.get("kind") or "talk", "why": lv.get("why", ""), "ok": _pub.get("ok", True) if _pub else True}
     videos[vid]["vouches"].append({
-        "s": "inst", "c": lv["inst"], "a": lv.get("ch") or lv["inst"], "d": None, "k": "talk", "w": INST_W,
-        "q": f"A standalone {lv.get('kind') or 'talk'} published by {lv['inst']}", "u": f"https://www.youtube.com/watch?v={vid}",
+        "s": "inst", "c": _name, "a": lv.get("ch") or _name, "d": None, "k": "talk", "w": INST_W if inst_loose[vid]["ok"] else 0.5,
+        "q": f"A standalone {lv.get('kind') or 'talk'} published by {_name}", "u": f"https://www.youtube.com/watch?v={vid}",
         "up": None, "thread": None, "t": None,
     })
+
+# ---------------------------------------------------------------- quotes that are personal disclosures (privacy)
+# A recommendation still counts, but a commenter's own history of abuse, illness or self-harm is not shown next to their username.
+SENSITIVE_RX = re.compile(r"\b(as someone (who|in|with|recovering)|as a (survivor|victim)|i (was|am|have been|'ve been|got) (sexually |physically |emotionally )?(abused|molested|raped|assaulted)"
+                          r"|i('m| am| was) (a |an )?(recovering|addict|suicidal|anorexic|bulimic|bipolar|schizophrenic|psychotic)"
+                          r"|my (abuser|rapist|eating disorder|anorexia|bulimia|psychosis|schizophrenia|bipolar|ptsd|suicide attempt|self.?harm|addiction|relapse|overdose|trauma|diagnosis)\b"
+                          r"|i (tried|attempted) (to kill myself|suicide)|i (self.?harm|cut myself|overdosed|relapsed)|in therapy (right now|for)|(childhood|child|sexual) abuse (i |that i |survivor))", re.I)
+withheld = 0
+for rec in videos.values():
+    for vo in rec["vouches"]:
+        if vo["s"] != "inst" and vo.get("q") and SENSITIVE_RX.search(vo["q"]):
+            vo["q"] = "(quote withheld: the comment is a personal disclosure)"
+            withheld += 1
 
 # ---------------------------------------------------------------- score + select
 
@@ -291,24 +417,70 @@ def score_video(vouches):
     """distinct-voucher weighted sum, with a breadth bonus across communities."""
     best_by_author = {}
     extra = 0.0
+    repeats = collections.Counter()
+    first_month = {}                       # month of each recommender's first recommendation
     for v in vouches:
         key = (v["s"], (v.get("a") or "?").lower())
         if key in best_by_author:
-            extra += 0.15 * v["w"]
+            if repeats[key] < 2:           # at most two repeat mentions per person count (one user linked a video 15 times)
+                extra += 0.15 * v["w"]
+            repeats[key] += 1
             best_by_author[key] = max(best_by_author[key], v["w"])
         else:
             best_by_author[key] = v["w"]
+        if v["w"] >= 0.7 and v.get("d") and v["s"] != "inst":
+            first_month[key] = min(first_month.get(key, v["d"]), v["d"])
     base = sum(best_by_author.values()) + extra
     communities = {v["c"] for v in vouches if v["w"] >= 0.7}
     sources = {v["s"] for v in vouches if v["w"] >= 0.7}
     breadth = 1.0 + 0.2 * (len(sources) - 1) + 0.05 * max(0, len(communities) - 1)
-    months = {v["d"] for v in vouches if v["w"] >= 0.7 and v.get("d")}
+    months = set(first_month.values())     # longevity across people, not one person returning every month
     recommenders = sum(1 for w in best_by_author.values() if w >= 0.7)
     return round(base * breadth + 0.3 * len(months), 2), recommenders, sorted(months)
 
 
 catalog = []
+dropped_lang = []
 stats = collections.Counter()
+stats["inst_crosschannel_not_credited"] = cross_n
+stats["inst_watchlists_dropped"] = watchlists
+stats["inst_partial_playlists"] = partials
+stats["quotes_withheld"] = withheld
+SHELF_VIDS = {it["video"]["id"] for sh in (json.load(open(P("pipeline", "shelves.json"), encoding="utf-8"))["shelves"] if os.path.exists(P("pipeline", "shelves.json")) else []) for it in sh["items"] if it.get("video")}
+# language guard (the playlist triage checked English; lectures and community videos were never checked one by one):
+# a title mostly in another script, or marked as a translation, is not for an English-language catalog
+NON_LATIN_RX = re.compile(r"[Ѐ-ӿ؀-ۿऀ-ॿঀ-৿਀-੿஀-௿ఀ-౿฀-๿぀-ヿ一-鿿가-힯֐-׿]")
+LATIN_RX = re.compile(r"[A-Za-zÀ-ɏ]")
+OTHER_LANG_RX = re.compile(r"\((spanish|español|french|français|hindi|urdu|chinese|中文|mandarin|russian|portugu[eê]s|deutsch|german|italiano|japanese|korean|arabic|turkish|polish)( version| subtitles?| audio)?\)|\b(en español|en français|em português|auf deutsch|hindi (medium|version)|versión en español|version française|subtitulado|中文版|русская версия)\b", re.I)
+PROMO_RX = re.compile(r"\b(trailer|teaser|promo|tune in|coming soon|now available|announcement|announcing|channel intro|subscribe|sneak peek|save the date|registration (is )?open|register now|apply now|call for (papers|abstracts)|welcome video|course promo|preview)\b", re.I)
+
+
+# Latin-script languages: function words that English does not share. A title with two or more of them, and more of them
+# than English function words, is a Spanish/French/Portuguese/German/Italian title ("Módulo 6: La discapacidad en nuestra
+# cultura", "McGill à vos côtés : Stades de la démence"); "Marianne La France on Gender and Emotion" is not.
+OTHER_FN = set("""de la el los las en y para con del una por qué cómo sobre dentro niños personas salud cerebro su al como
+le les des du pour avec dans et est une sur aux au chez vers à ce cette ses nos vos comment pourquoi entre maladie
+os um uma em na dos das saúde cérebro
+der und ein eine für von zu auf über nicht wie ist sind oder
+il lo gli di della per che nel nella sul sulla""".split())
+EN_FN = set("the a an of in on and to for with from by at is are how why what your our we you it this that as or about into than".split())
+
+
+def non_english(title, desc=""):
+    letters = NON_LATIN_RX.findall(title or "")
+    latin = LATIN_RX.findall(title or "")
+    if letters and len(letters) > 0.4 * (len(letters) + len(latin)):
+        return True
+    if re.match(r"\s*(?:" + NON_LATIN_RX.pattern + r"[\s　-〿，、。！？：；]*){3,}", title or ""):
+        return True                        # "增強大腦的韌性 Harnessing Brain Adaptability": a bilingual title that leads with the other language is the translated version
+    toks = re.findall(r"[a-zà-ÿ]+", re.sub(r"\bet al\b\.?", " ", (title or "").lower()))   # "Santos et al." is not French
+    other = sum(1 for t in toks if t in OTHER_FN) + sum(0.25 for t in toks if re.search(r"[áéíóúñçàèêùôâîûäöüß]", t))   # accented names count a little, not much
+    en = sum(1 for t in toks if t in EN_FN)
+    if other >= 2 and other > en:
+        return True
+    return bool(OTHER_LANG_RX.search((title or "") + " " + (desc or "")[:200]))
+
+
 for vid, rec in videos.items():
     inst = inst_member.get(vid)            # (series id, lecture index) when a university playlist carries it
     loose = inst_loose.get(vid)            # a standalone institutional talk (no series)
@@ -320,7 +492,7 @@ for vid, rec in videos.items():
         m = inst_meta[vid]
     if loose and not inst:
         inst = True                        # selection rules below treat it as institutional; course stays None
-        course = {"kind": loose["kind"], "inst": loose["inst"], "ctopics": [], "topic_map": {}, "chid": (m or {}).get("chid"), "total": 1}
+        course = {"kind": loose["kind"], "inst": loose["inst"], "unit": loose.get("unit"), "ctopics": [], "topic_map": {}, "chid": (m or {}).get("chid"), "total": 1, "ok": loose["ok"]}
     hn = rec["hn"]
     lab = hn_labels.get(vid) if hn else (new_labels.get(vid) or inst_labels.get(vid))
     if hn is None and not inst:
@@ -333,8 +505,13 @@ for vid, rec in videos.items():
     if inst and not hn and not any(v["s"] != "inst" for v in rec["vouches"]) and THIRD_PARTY.search((m or {}).get("ch") or "") and (m or {}).get("chid") and m["chid"] != course.get("chid"):
         stats["dropped_inst_thirdparty"] += 1   # a CrashCourse / Khan Academy / Sprouts clip a lecturer added to their playlist is not the institution's lecture
         continue
-    if inst and course["kind"] == "talks" and not hn and not any(v["s"] != "inst" for v in rec["vouches"]) and (m or {}).get("len") and m["len"] < 240:
-        stats["dropped_inst_promo"] += 1       # a 2-minute clip in a university talk collection is a promo, not a lecture
+    community_vouched = hn is not None or any(v["s"] != "inst" for v in rec["vouches"])
+    if inst and not community_vouched and (m or {}).get("len") and (
+            (course["kind"] == "talks" and m["len"] < 240)                                        # a 2-minute clip in a talk collection is a promo
+            or m["len"] < 60                                                                       # under a minute is never a lecture
+            or (m["len"] < 240 and PROMO_RX.search((m or {}).get("title") or ""))                  # "Tune in Dec. 21!", trailers, course promos
+            or (lab or {}).get("promo")):                                                          # the per-lecture label says so
+        stats["dropped_inst_promo"] += 1
         continue
     if m is None:
         stats["dropped_no_meta"] += 1
@@ -344,6 +521,10 @@ for vid, rec in videos.items():
         continue
     if m.get("live") and not m.get("len"):
         stats["dropped_live"] += 1
+        continue
+    if vid not in SHELF_VIDS and ((lab or {}).get("english") is False or non_english(m.get("title"), m.get("desc"))):
+        stats["dropped_non_english"] += 1
+        dropped_lang.append({"id": vid, "title": m.get("title"), "ch": m.get("ch")})   # work/dropped_non_english.json, for a look after each build
         continue
     comm_vouches = [v for v in rec["vouches"] if v["s"] != "inst"]
     score, _, months = score_video(rec["vouches"])
@@ -390,12 +571,16 @@ for vid, rec in videos.items():
     first_year = min(int(v["d"][:4]) for v in dated) if dated else None
     last_year = max(int(v["d"][:4]) for v in dated) if dated else None
     kind = course["kind"] if course else None
+    # a lecture is what the per-lecture label judged, not what its playlist is called: an interview show in a
+    # department's "series" playlist is a talk; the playlist kind is the fallback for lectures never labeled
+    is_lecture = (lab or {}).get("course") if lab and "course" in lab else kind in ("course", "series")
     entry = {
         "id": vid, "title": m["title"], "ch": m.get("ch"), "chid": m.get("chid"),
         "len": m.get("len"), "views": m.get("views"), "pub": m.get("pub"),
         "topics": topics, "area": TOPIC_AREA[topics[0]],
-        "type": (hn or {}).get("content_type") or ("lecture" if ((lab or {}).get("course") or kind in ("course", "series")) else ("talk" if inst else None)),
-        "course": bool((lab or {}).get("course")) or kind in ("course", "series"),
+        "type": (hn or {}).get("content_type") or ("lecture" if is_lecture else ("talk" if inst else None)),
+        "course": bool(is_lecture) if inst else bool((lab or {}).get("course")),
+        "unl": bool(m.get("unl")),         # unlisted on YouTube: reachable through the playlist, not the channel page
         "score": score, "nrec": nrec, "nmention": len(comm_vouches),
         "src": dict(src_counts), "communities": [c for c, _ in communities.most_common(6)],
         "why": why, "summary": summary, "quote": clean(((hn or {}).get("quote") or {}).get("text"), 200) if hn else "",
@@ -406,13 +591,24 @@ for vid, rec in videos.items():
         "clips": clips[:6],
         "kw": (m.get("kw") or [])[:6],
     }
+    if inst and comm_vouches:
+        entry["cscore"] = score_video(comm_vouches)[0]   # community-only: what the canon sorts by
     if loose and inst is True:
         entry["inst"] = {"n": loose["inst"], "loose": True}
+        if loose.get("unit"):
+            entry["inst"]["u"] = loose["unit"]
+        if not loose["ok"]:
+            entry["inst"]["ok"] = False
         entry["type"] = "lecture" if loose["kind"] == "lecture" else "talk"
         entry["course"] = False
         stats["inst_loose"] += 1
     elif inst:
         entry["inst"] = {"n": course["inst"], "i": inst[1], "of": course["total"]}   # the series id is entry["series"]
+        if course.get("unit"):
+            entry["inst"]["u"] = course["unit"]
+        if not course.get("ok", True):
+            entry["inst"]["ok"] = False    # publisher not verified: the site ranks it with other long-form, not with the institutions
+            stats["inst_unverified_publisher"] += 1
         if m.get("approx"):
             entry["approx"] = True
         if m.get("p"):
@@ -432,7 +628,9 @@ catalog.sort(key=lambda v: -v["score"])
 
 # ---------------------------------------------------------------- replication tags (keyword candidates judged by Claude: work/replication/tags.jsonl)
 
-rep_tags = {o["vid"]: o for o in jsonl(P("work", "replication", "tags.jsonl")) if o.get("contested") in CONTESTED}
+rep_tags = {}
+for _f in sorted(glob.glob(P("work", "replication", "tags*.jsonl"))):      # tags.jsonl (first pass) + tags_<date>.jsonl (later keyword passes)
+    rep_tags.update({o["vid"]: o for o in jsonl(_f) if o.get("contested") in CONTESTED and (o.get("confidence") if o.get("confidence") is not None else 1) >= 0.6})
 for v in catalog:
     t = rep_tags.get(v["id"])
     if t and not v.get("badge"):
@@ -454,7 +652,10 @@ if therapy_shelf:
         if v["id"] in seen_tp or (v.get("len") or 0) < 240:
             continue
         if (("therapy" in v["topics"]) or re.search(r"Beck Institute|counsel|psychotherap", (v.get("ch") or "") + " " + v["title"], re.I)) and THERAPY_RX.search(v["title"]) and not THERAPY_NEG.search(v["title"]):
-            therapy_shelf["items"].append({"id": "tp-" + v["id"], "title": v["title"], "year": int(v["pub"][:4]) if v.get("pub") else None, "people": v.get("ch"), "what": v.get("summary") or "", "video": {"p": v.get("p") or "youtube", "id": v["id"], "uploader": v.get("ch"), "legit": "official" if v.get("inst") else "channel"}, "alt": [], "paper": None, "status": None, "topics": v["topics"][:2], "auto": True})
+            # "legit" says whose copy this is: the uploader's own channel when it is the institution that lists it, otherwise a channel's copy
+            # re-listed in an institution's playlist (five Todd Grande role-plays reached the shelf through a City Vision University playlist)
+            own_upload = bool(v.get("inst")) and v.get("chid") and v["chid"] in inst_channels.get(pub_key(v["inst"]["n"], v["inst"].get("u")), set())
+            therapy_shelf["items"].append({"id": "tp-" + v["id"], "title": v["title"], "year": int(v["pub"][:4]) if v.get("pub") else None, "people": v.get("ch"), "what": v.get("summary") or "", "video": {"p": v.get("p") or "youtube", "id": v["id"], "uploader": v.get("ch"), "legit": "official" if own_upload else ("relisted" if v.get("inst") else "channel")}, "alt": [], "paper": None, "status": None, "topics": v["topics"][:2], "auto": True, "form": "demonstration"})
             seen_tp.add(v["id"])
 shelves_out = []
 for sh in SHELVES:
@@ -489,12 +690,14 @@ for sh in SHELVES:
                 v["shelf"].append(sh["id"])
             if "orig" not in v:                   # a video on two shelves keeps its first (richer) card
                 v["orig"] = {"sid": it["id"], "shelf": sh["id"], "people": it.get("people"), "year": it.get("year"), "what": it.get("what"),
-                             "paper": it.get("paper"), "paper2": it.get("paper2"), "alt": it.get("alt") or [], "uploader": vd.get("uploader"), "legit": vd.get("legit")}
+                             "paper": it.get("paper"), "paper2": it.get("paper2"), "alt": it.get("alt") or [], "uploader": vd.get("uploader"), "legit": vd.get("legit"),
+                             "form": it.get("form"), "rights": vd.get("rights")}
             if it.get("status") and it["status"] in CONTESTED and not v.get("badge"):
                 v["badge"] = {"id": it["status"], "role": "source"}
         items_out.append({"sid": it["id"], "vid": vid, "title": it["title"], "year": it.get("year"), "people": it.get("people"), "what": it.get("what"),
                           "paper": it.get("paper"), "paper2": it.get("paper2"), "alt": it.get("alt") or [], "status": it.get("status") if it.get("status") in CONTESTED else None,
                           "topics": [t for t in it.get("topics", []) if t in TOPIC_IDS], "legit": (vd or {}).get("legit"), "uploader": (vd or {}).get("uploader"),
+                          "rights": (vd or {}).get("rights"), "form": it.get("form"), "auto": bool(it.get("auto")),
                           "p": (vd or {}).get("p"), "len": (vd or {}).get("len") or (meta.get(vid, {}).get("len") if vid else None) or (by_id_tmp[vid].get("len") if vid else None)})
     shelves_out.append({"id": sh["id"], "name": sh["name"], "short": sh.get("short") or sh["name"], "tagline": sh.get("tagline", ""), "items": items_out})
 catalog.sort(key=lambda v: -v["score"])
@@ -527,7 +730,8 @@ for group, bonus in list(((s, 1.5) for s in by_author.values())) + list(((s, 1.0
                 if a != b:
                     related[a][b] += bonus
 for v in catalog:
-    v["rel"] = [r for r, _ in related[v["id"]].most_common(12)]
+    # ties broken by id: the co-citation groups are sets, whose iteration order changes with PYTHONHASHSEED
+    v["rel"] = [r for r, _ in sorted(related[v["id"]].items(), key=lambda kv: (-kv[1], kv[0]))[:12]]
 
 # ---------------------------------------------------------------- series (courses)
 
@@ -558,9 +762,10 @@ for sid, course in inst_course.items():
         continue
     topics = collections.Counter(t for v in vids for t in v["topics"])
     pop = round(sum(max(0.0, v["score"] - INST_W) for v in vids), 1)   # how much the communities vouched for its lectures
-    series.append({"id": sid, "name": course["name"], "inst": course["inst"], "short": course["short"], "lecturer": course["lecturer"],
+    series.append({"id": sid, "name": course["name"], "inst": course["inst"], "unit": course.get("unit"), "short": course["short"], "lecturer": course["lecturer"],
+                   "affil": course.get("affil"), "verified": course.get("verified"), "ok": course.get("ok", True), "pubwhy": course.get("pubwhy"),
                    "year": course["year"], "kind": course["kind"], "level": course["level"], "note": course["note"],
-                   "n": len(vids), "total": course["total"], "vids": [v["id"] for v in vids],
+                   "n": len(vids), "total": course["total"], "cross": course.get("cross", 0), "partial": course.get("partial", False), "vids": [v["id"] for v in vids],
                    "topics": (course["ctopics"] or [t for t, _ in topics.most_common(3)])[:3],
                    "vouched": sum(1 for v in vids if v["nrec"]), "pop": pop, "score": round(sum(v["score"] for v in vids), 1),
                    "url": course["url"], "ch": course["ch"], "chid": course["chid"], "provider": course["provider"], "readings": course.get("readings"),
@@ -629,7 +834,8 @@ for pw in (json.load(open(P("pipeline", "pathways.json"), encoding="utf-8"))["pa
         pathways_out.append({"id": pw["id"], "name": pw["name"], "for": pw.get("for", ""), "steps": steps})
 stats["pathways"] = len(pathways_out)
 
-generated = dt.datetime.utcnow().strftime("%Y-%m-%d")
+# SOURCE_DATE_EPOCH (reproducible-builds.org) pins the stamp so two builds of the same inputs are byte-identical
+generated = dt.datetime.fromtimestamp(int(os.environ.get("SOURCE_DATE_EPOCH") or dt.datetime.now(dt.timezone.utc).timestamp()), dt.timezone.utc).strftime("%Y-%m-%d")
 src_totals = collections.Counter()
 for v in catalog:
     for s, n in v["src"].items():
@@ -638,16 +844,27 @@ communities_total = collections.Counter(c for v in catalog for c in v["communiti
 inst_series = [s for s in series if s.get("inst")]
 institutions = collections.OrderedDict()
 for s in sorted(inst_series, key=lambda s: (-s["pop"], -s["n"])):
-    i = institutions.setdefault(s["inst"], {"name": s["inst"], "short": s["short"], "courses": 0, "lectures": 0, "pop": 0.0})
+    i = institutions.setdefault(s["inst"], {"name": s["inst"], "short": s["short"], "courses": 0, "lectures": 0, "pop": 0.0, "units": []})
     i["courses"] += 1
     i["lectures"] += s["n"]
     i["pop"] = round(i["pop"] + s["pop"], 1)
+    if s.get("unit") and s["unit"] not in i["units"]:
+        i["units"].append(s["unit"])
+    if not s.get("ok", True):
+        i["unverified"] = i.get("unverified", 0) + 1
 for v in catalog:                                   # standalone institutional talks count toward their institution too
     if v.get("inst") and v["inst"].get("loose"):
-        i = institutions.setdefault(v["inst"]["n"], {"name": v["inst"]["n"], "short": INST_SHORT.get(v["inst"]["n"], v["inst"]["n"]), "courses": 0, "lectures": 0, "pop": 0.0})
+        i = institutions.setdefault(v["inst"]["n"], {"name": v["inst"]["n"], "short": INST_SHORT.get(v["inst"]["n"], v["inst"]["n"]), "courses": 0, "lectures": 0, "pop": 0.0, "units": []})
         i["lectures"] += 1
         i["loose"] = i.get("loose", 0) + 1
+        if v["inst"].get("u") and v["inst"]["u"] not in i["units"]:
+            i["units"].append(v["inst"]["u"])
+for i in institutions.values():
+    if i["name"] == "Independent lecturer":
+        i["units"] = sorted(i["units"])             # the lecturers, alphabetically; other institutions keep their units in order of weight
 vouched_videos = sum(1 for v in catalog if v["nrec"])
+stats["inst_verified_lecturers"] = sum(1 for s in inst_series if s["inst"] == "Independent lecturer" and s.get("verified"))
+stats["inst_unverified_collections"] = sum(1 for s in inst_series if not s.get("ok", True))
 
 data = {
     "generated": generated,
@@ -663,6 +880,13 @@ data = {
     "pathways": pathways_out,
     "cw": TAX["content_warnings"],
     "institutions": list(institutions.values()),
+    "inst_channels": INST_CHANNEL_IDS,      # channels the institutions publish on; a long video from one ranks as institutional even outside a pulled playlist
+    "license": {
+        "data": "The labels, notes, shelves, replication statuses and pathways are PsychTube's own, released under ODC-By 1.0: use them for anything, say where they came from. Video titles, channel names and lengths belong to their uploaders.",
+        "hackertube": "Hacker News mentions derive from HackerTube's export (ODC-By 1.0, hackertube.org/data).",
+        "stackexchange": "Stack Exchange excerpts are adaptations of CC BY-SA posts (2.5, 3.0 or 4.0 by post date); author and link are kept on each quote.",
+        "reddit": "Reddit quotes are short attributed excerpts with a link to the comment; write to the repository to have one removed.",
+    },
     "series": series,
     "videos": catalog,
 }
@@ -672,6 +896,14 @@ for v in catalog:
     # keep the payload small: empty fields are omitted and the site restores the defaults (app.js)
     for k in [k for k, val in v.items() if val in EMPTY and k not in ("id", "title", "topics", "score")]:
         del v[k]
+    if v.get("orig"):
+        for k in [k for k, val in v["orig"].items() if val in EMPTY]:
+            del v["orig"][k]
+for s in series:
+    for k in [k for k, val in s.items() if (val is None or val == "" or val is False) and k != "ok"]:   # numbers stay, even 0: the site sorts on pop and n
+        del s[k]
+    if s.get("ok", True):
+        s.pop("ok", None)                            # only the unverified publishers carry the flag (ok: false)
 
 os.makedirs(P("site", "data"), exist_ok=True)
 with open(P("site", "data.js"), "w", encoding="utf-8") as f:
@@ -680,6 +912,10 @@ with open(P("site", "data.js"), "w", encoding="utf-8") as f:
     f.write(";\n")
 with open(P("site", "data", "psychtube.json"), "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=1)
+with open(P("work", "inst", "crosschannel.json"), "w", encoding="utf-8") as f:   # review list for triage_overrides.json → affiliated_channels
+    json.dump([{"inst": i, "channel": ch, "items": n} for (i, ch), n in cross_review.most_common()], f, ensure_ascii=False, indent=1)
+with open(P("work", "dropped_non_english.json"), "w", encoding="utf-8") as f:
+    json.dump(dropped_lang, f, ensure_ascii=False, indent=1)
 with open(P("work", "catalog_stats.json"), "w") as f:
     json.dump({"stats": dict(stats), "topics": topic_counts.most_common(), "sources": dict(src_totals),
                "communities": communities_total.most_common(40), "series": [(s["name"], s["n"]) for s in series]}, f, indent=1)

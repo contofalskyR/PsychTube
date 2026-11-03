@@ -1,0 +1,616 @@
+{
+ "_comment": "raw institution label (courses.json / loose.json 'inst') -> canonical publisher and unit. Rows not listed: 'X (Unit)' splits into X · Unit; 'Independent lecturer (Name)' -> Independent lecturer · Name; anything else is its own canonical name. A row whose name equals the raw label keeps a parenthetical that is part of the name (UCTV, ADAA) rather than a unit.",
+ "canon": {
+  "Aarhus University (DANDRITE)": {
+   "name": "Aarhus University",
+   "unit": "DANDRITE"
+  },
+  "Boston University (Center for Brain Recovery)": {
+   "name": "Boston University",
+   "unit": "Center for Brain Recovery"
+  },
+  "Brown University (Carney Institute for Brain Science)": {
+   "name": "Brown University",
+   "unit": "Carney Institute for Brain Science"
+  },
+  "C-STAR Lecture Series": {
+   "name": "University of South Carolina",
+   "unit": "C-STAR"
+  },
+  "CILE (Hamad Bin Khalifa University)": {
+   "name": "Hamad Bin Khalifa University",
+   "unit": "CILE"
+  },
+  "CSULB Center for Successful Aging": {
+   "name": "CSU Long Beach",
+   "unit": "Center for Successful Aging"
+  },
+  "CUNY Graduate Center": {
+   "name": "CUNY",
+   "unit": "Graduate Center"
+  },
+  "Center for Philosophy of Science (University of Pittsburgh)": {
+   "name": "University of Pittsburgh",
+   "unit": "Center for Philosophy of Science"
+  },
+  "Cold Spring Harbor Laboratory (DNA Learning Center)": {
+   "name": "Cold Spring Harbor Laboratory",
+   "unit": "DNA Learning Center"
+  },
+  "Columbia University (Center for Science and Society)": {
+   "name": "Columbia University",
+   "unit": "Center for Science and Society"
+  },
+  "Columbia University (Italian Academy)": {
+   "name": "Columbia University",
+   "unit": "Italian Academy"
+  },
+  "Columbia University (Roybal Center)": {
+   "name": "Columbia University",
+   "unit": "Roybal Center"
+  },
+  "Columbia University (Teachers College)": {
+   "name": "Columbia University",
+   "unit": "Teachers College"
+  },
+  "Columbia University (Zuckerman Institute)": {
+   "name": "Columbia University",
+   "unit": "Zuckerman Institute"
+  },
+  "Columbia University Department of Psychiatry": {
+   "name": "Columbia University",
+   "unit": "Department of Psychiatry"
+  },
+  "Cosyne (Computational and Systems Neuroscience)": {
+   "name": "Cosyne",
+   "unit": null
+  },
+  "Cottage Health (Santa Barbara Neuroscience Institute)": {
+   "name": "Cottage Health",
+   "unit": "Santa Barbara Neuroscience Institute"
+  },
+  "Dementia Researcher": {
+   "name": "UCL",
+   "unit": "Dementia Researcher (NIHR network)"
+  },
+  "Douglas Research Centre (McGill University)": {
+   "name": "McGill University",
+   "unit": "Douglas Research Centre"
+  },
+  "Duke University (Neurology)": {
+   "name": "Duke University",
+   "unit": "Neurology"
+  },
+  "EPFL (Gerstner Lab)": {
+   "name": "EPFL",
+   "unit": "Gerstner Lab"
+  },
+  "East Tennessee State University (CME Grand Rounds)": {
+   "name": "East Tennessee State University",
+   "unit": "CME Grand Rounds"
+  },
+  "Emory University (CMBC)": {
+   "name": "Emory University",
+   "unit": "CMBC"
+  },
+  "FENS (Federation of European Neuroscience Societies)": {
+   "name": "FENS",
+   "unit": null
+  },
+  "Griffith University (Health)": {
+   "name": "Griffith University",
+   "unit": "Health"
+  },
+  "Harvard Brain Science Initiative": {
+   "name": "Harvard University",
+   "unit": "Brain Science Initiative"
+  },
+  "Harvard Center on the Developing Child": {
+   "name": "Harvard University",
+   "unit": "Center on the Developing Child"
+  },
+  "Harvard Medical School": {
+   "name": "Harvard University",
+   "unit": "Harvard Medical School"
+  },
+  "Harvard University (Conte Center)": {
+   "name": "Harvard University",
+   "unit": "Conte Center"
+  },
+  "Harvard University (Human Flourishing Program)": {
+   "name": "Harvard University",
+   "unit": "Human Flourishing Program"
+  },
+  "Hebrew University of Jerusalem (ELSC)": {
+   "name": "Hebrew University of Jerusalem",
+   "unit": "ELSC"
+  },
+  "Human Brain Project (HBP Education)": {
+   "name": "Human Brain Project",
+   "unit": "HBP Education"
+  },
+  "IISc Bengaluru (NPTEL)": {
+   "name": "IISc Bengaluru",
+   "unit": "NPTEL"
+  },
+  "IIT Bombay (NPTEL)": {
+   "name": "IIT Bombay",
+   "unit": "NPTEL"
+  },
+  "IIT Delhi (NPTEL)": {
+   "name": "IIT Delhi",
+   "unit": "NPTEL"
+  },
+  "IIT Guwahati (NPTEL)": {
+   "name": "IIT Guwahati",
+   "unit": "NPTEL"
+  },
+  "IIT Kanpur (NPTEL)": {
+   "name": "IIT Kanpur",
+   "unit": "NPTEL"
+  },
+  "IIT Kharagpur (NPTEL)": {
+   "name": "IIT Kharagpur",
+   "unit": "NPTEL"
+  },
+  "IIT Madras (CNSLAB)": {
+   "name": "IIT Madras",
+   "unit": "CNSLAB"
+  },
+  "IIT Madras (NPTEL)": {
+   "name": "IIT Madras",
+   "unit": "NPTEL"
+  },
+  "IIT Madras (SWAYAM Prabha)": {
+   "name": "IIT Madras",
+   "unit": "SWAYAM Prabha"
+  },
+  "IIT Roorkee (NPTEL)": {
+   "name": "IIT Roorkee",
+   "unit": "NPTEL"
+  },
+  "Independent lecturer (Ashley Juavinett, UCSD)": {
+   "name": "Independent lecturer",
+   "unit": "Ashley Juavinett, UCSD"
+  },
+  "Independent lecturer (Ashok Jansari, Goldsmiths)": {
+   "name": "Independent lecturer",
+   "unit": "Ashok Jansari, Goldsmiths"
+  },
+  "Independent lecturer (Athena Demertzi)": {
+   "name": "Independent lecturer",
+   "unit": "Athena Demertzi"
+  },
+  "Independent lecturer (Earl Miller, MIT)": {
+   "name": "Independent lecturer",
+   "unit": "Earl Miller, MIT"
+  },
+  "Independent lecturer (James Giordano)": {
+   "name": "Independent lecturer",
+   "unit": "James Giordano"
+  },
+  "Independent lecturer (Keith Donohue)": {
+   "name": "Independent lecturer",
+   "unit": "Keith Donohue"
+  },
+  "Independent lecturer (Paul Merritt)": {
+   "name": "Independent lecturer",
+   "unit": "Paul Merritt"
+  },
+  "Independent lecturer (Ryan Rhodes)": {
+   "name": "Independent lecturer",
+   "unit": "Ryan Rhodes"
+  },
+  "Interactive Intelligence lab": {
+   "name": "Interactive Intelligence (UW student group)",
+   "unit": null
+  },
+  "John Jay College of Criminal Justice (CUNY)": {
+   "name": "CUNY",
+   "unit": "John Jay College of Criminal Justice"
+  },
+  "King's College London (IoPPN)": {
+   "name": "King's College London",
+   "unit": "IoPPN"
+  },
+  "La Trobe University (Aphasia CRE)": {
+   "name": "La Trobe University",
+   "unit": "Aphasia CRE"
+  },
+  "Loyola University Chicago (Hank Center)": {
+   "name": "Loyola University Chicago",
+   "unit": "Hank Center"
+  },
+  "MIT (CBMM)": {
+   "name": "MIT",
+   "unit": "CBMM"
+  },
+  "MIT (McGovern Institute)": {
+   "name": "MIT",
+   "unit": "McGovern Institute"
+  },
+  "MIT Picower Institute": {
+   "name": "MIT",
+   "unit": "Picower Institute"
+  },
+  "McGill University (Ruthazer Lab)": {
+   "name": "McGill University",
+   "unit": "Ruthazer Lab"
+  },
+  "Michigan State University (CMPR)": {
+   "name": "Michigan State University",
+   "unit": "CMPR"
+  },
+  "Monash University (Biomedical Imaging)": {
+   "name": "Monash University",
+   "unit": "Biomedical Imaging"
+  },
+  "NIH / NIDA": {
+   "name": "NIH",
+   "unit": "NIDA"
+  },
+  "NIH / NIMH": {
+   "name": "NIH",
+   "unit": "NIMH"
+  },
+  "NYU (Lab for the Developing Mind)": {
+   "name": "New York University",
+   "unit": "Lab for the Developing Mind"
+  },
+  "NYU Center for Mind, Brain and Consciousness": {
+   "name": "New York University",
+   "unit": "Center for Mind, Brain and Consciousness"
+  },
+  "National Academies (Health and Medicine Division)": {
+   "name": "National Academies",
+   "unit": "Health and Medicine Division"
+  },
+  "Northwestern University (Mesulam Center)": {
+   "name": "Northwestern University",
+   "unit": "Mesulam Center"
+  },
+  "OSU Center for Brain Injury Recovery & Discovery": {
+   "name": "Ohio State University",
+   "unit": "Center for Brain Injury Recovery & Discovery"
+  },
+  "Rotman Institute of Philosophy (Western)": {
+   "name": "Western University",
+   "unit": "Rotman Institute of Philosophy"
+  },
+  "Ruhr University Bochum (Dynamic Field Theory group)": {
+   "name": "Ruhr University Bochum",
+   "unit": "Dynamic Field Theory group"
+  },
+  "Rutgers University (Gluck Lab)": {
+   "name": "Rutgers University",
+   "unit": "Gluck Lab"
+  },
+  "SFU Institute for Neuroscience and Neurotechnology": {
+   "name": "Simon Fraser University",
+   "unit": "Institute for Neuroscience and Neurotechnology"
+  },
+  "Stanford Center for Precision Mental Health and Wellness": {
+   "name": "Stanford University",
+   "unit": "Center for Precision Mental Health and Wellness"
+  },
+  "Stanford Department of Psychiatry and Behavioral Sciences": {
+   "name": "Stanford University",
+   "unit": "Department of Psychiatry and Behavioral Sciences"
+  },
+  "Stanford HAI": {
+   "name": "Stanford University",
+   "unit": "HAI"
+  },
+  "Stanford University (MCHRI)": {
+   "name": "Stanford University",
+   "unit": "MCHRI"
+  },
+  "Temple University (Neurology)": {
+   "name": "Temple University",
+   "unit": "Neurology"
+  },
+  "The Open University (OpenLearn)": {
+   "name": "The Open University",
+   "unit": "OpenLearn"
+  },
+  "Transcultural Psychiatry (McGill)": {
+   "name": "McGill University",
+   "unit": "Transcultural Psychiatry"
+  },
+  "UC Berkeley (Neurotech Berkeley)": {
+   "name": "UC Berkeley",
+   "unit": "Neurotech Berkeley"
+  },
+  "UC Berkeley Greater Good Science Center": {
+   "name": "UC Berkeley",
+   "unit": "Greater Good Science Center"
+  },
+  "UC San Diego (CARTA)": {
+   "name": "UC San Diego",
+   "unit": "CARTA"
+  },
+  "UC San Diego (Kavli Institute for Brain and Mind)": {
+   "name": "UC San Diego",
+   "unit": "Kavli Institute for Brain and Mind"
+  },
+  "UC San Diego Department of Psychiatry": {
+   "name": "UC San Diego",
+   "unit": "Department of Psychiatry"
+  },
+  "UCL Division of Psychiatry": {
+   "name": "UCL",
+   "unit": "Division of Psychiatry"
+  },
+  "UCLA (CNSI)": {
+   "name": "UCLA",
+   "unit": "CNSI"
+  },
+  "UCLA (Semel Institute Grand Rounds)": {
+   "name": "UCLA",
+   "unit": "Semel Institute Grand Rounds"
+  },
+  "UCLA David Geffen School of Medicine": {
+   "name": "UCLA",
+   "unit": "David Geffen School of Medicine"
+  },
+  "UCLA Health": {
+   "name": "UCLA",
+   "unit": "UCLA Health"
+  },
+  "UCSD (Marty Sereno)": {
+   "name": "UC San Diego",
+   "unit": "Marty Sereno"
+  },
+  "UCSF (Parkinson's Disease Center)": {
+   "name": "UCSF",
+   "unit": "Parkinson's Disease Center"
+  },
+  "UCSF Department of Psychiatry and Behavioral Sciences": {
+   "name": "UCSF",
+   "unit": "Department of Psychiatry and Behavioral Sciences"
+  },
+  "UCSF Memory and Aging Center": {
+   "name": "UCSF",
+   "unit": "Memory and Aging Center"
+  },
+  "UMass Chan Medical School (Psychiatry)": {
+   "name": "UMass Chan Medical School",
+   "unit": "Psychiatry"
+  },
+  "UNC Psychology & Neuroscience": {
+   "name": "UNC Chapel Hill",
+   "unit": "Psychology & Neuroscience"
+  },
+  "UNSW Centre for Healthy Brain Ageing": {
+   "name": "UNSW Sydney",
+   "unit": "Centre for Healthy Brain Ageing"
+  },
+  "USC (Center for Mindfulness Science)": {
+   "name": "USC",
+   "unit": "Center for Mindfulness Science"
+  },
+  "UT Austin (Dell Medical School)": {
+   "name": "UT Austin",
+   "unit": "Dell Medical School"
+  },
+  "University of California Television": {
+   "name": "University of California Television (UCTV)",
+   "unit": null
+  },
+  "University of Cambridge (Zangwill Club)": {
+   "name": "University of Cambridge",
+   "unit": "Zangwill Club"
+  },
+  "University of Chicago (MacLean Center)": {
+   "name": "University of Chicago",
+   "unit": "MacLean Center"
+  },
+  "University of Chicago (Social Sciences Division)": {
+   "name": "University of Chicago",
+   "unit": "Social Sciences Division"
+  },
+  "University of Connecticut (Brain Imaging Research Center)": {
+   "name": "University of Connecticut",
+   "unit": "Brain Imaging Research Center"
+  },
+  "University of Consciousness, Qualia": {
+   "name": "UCQ (a YouTube channel, not a university)",
+   "unit": null
+  },
+  "University of Florida (Fixel Institute)": {
+   "name": "University of Florida",
+   "unit": "Fixel Institute"
+  },
+  "University of Iowa (Geriatric Education Center)": {
+   "name": "University of Iowa",
+   "unit": "Geriatric Education Center"
+  },
+  "University of Marburg (Virtual Linguistics Campus)": {
+   "name": "University of Marburg",
+   "unit": "Virtual Linguistics Campus"
+  },
+  "University of Michigan (Michigan Medicine)": {
+   "name": "University of Michigan",
+   "unit": "Michigan Medicine"
+  },
+  "University of Osnabrück (RTG Computational Cognition)": {
+   "name": "University of Osnabrück",
+   "unit": "RTG Computational Cognition"
+  },
+  "University of Oxford (CSAE)": {
+   "name": "University of Oxford",
+   "unit": "CSAE"
+  },
+  "University of Pennsylvania (Aguirre Lab)": {
+   "name": "University of Pennsylvania",
+   "unit": "Aguirre Lab"
+  },
+  "University of Rochester (Psychiatry Grand Rounds)": {
+   "name": "University of Rochester",
+   "unit": "Psychiatry Grand Rounds"
+  },
+  "University of South Carolina (C-STAR)": {
+   "name": "University of South Carolina",
+   "unit": "C-STAR"
+  },
+  "University of Virginia Division of Perceptual Studies": {
+   "name": "University of Virginia",
+   "unit": "Division of Perceptual Studies"
+  },
+  "University of Washington (Boise psychiatry residency)": {
+   "name": "University of Washington",
+   "unit": "Boise psychiatry residency"
+  },
+  "University of Washington (Medicine)": {
+   "name": "University of Washington",
+   "unit": "Medicine"
+  },
+  "University of Washington eScience Institute": {
+   "name": "University of Washington",
+   "unit": "eScience Institute"
+  },
+  "Virginia Commonwealth University (PM&R)": {
+   "name": "Virginia Commonwealth University",
+   "unit": "PM&R"
+  },
+  "Weill Cornell Medicine (Neurological Surgery)": {
+   "name": "Weill Cornell Medicine",
+   "unit": "Neurological Surgery"
+  },
+  "Wu Tsai Neurosciences Institute, Stanford": {
+   "name": "Stanford University",
+   "unit": "Wu Tsai Neurosciences Institute"
+  },
+  "University of California Television (UCTV)": {
+   "name": "University of California Television (UCTV)",
+   "unit": null
+  },
+  "Anxiety and Depression Association of America (ADAA)": {
+   "name": "Anxiety and Depression Association of America (ADAA)",
+   "unit": null
+  },
+  "Cognitive Computational Neuroscience (CCN)": {
+   "name": "Cognitive Computational Neuroscience (CCN)",
+   "unit": null
+  },
+  "Trinity College (Hartford)": {
+   "name": "Trinity College (Hartford)",
+   "unit": null
+  },
+  "WISE (Qatar Foundation)": {
+   "name": "WISE (Qatar Foundation)",
+   "unit": null
+  },
+  "NeuroSpin (CEA)": {
+   "name": "NeuroSpin (CEA)",
+   "unit": null
+  },
+  "CEC-UGC (India)": {
+   "name": "CEC-UGC (India)",
+   "unit": null
+  },
+  "Cambridgeshire and Peterborough NHS Foundation Trust (Research)": {
+   "name": "Cambridgeshire and Peterborough NHS Foundation Trust (Research)",
+   "unit": null
+  }
+ },
+ "short": {
+  "Massachusetts Institute of Technology": "MIT",
+  "University of California Television (UCTV)": "UCTV",
+  "Virtual University of Pakistan": "VU Pakistan",
+  "The Royal Institution": "Royal Institution",
+  "Royal College of Psychiatrists": "RCPsych",
+  "University of New Mexico": "UNM",
+  "University of Toronto": "U of Toronto",
+  "Simon Fraser University": "SFU",
+  "University of Edinburgh": "Edinburgh",
+  "University of Sheffield": "Sheffield",
+  "University of Amsterdam": "Amsterdam",
+  "University of Oxford": "Oxford",
+  "Harvard University": "Harvard",
+  "Yale University": "Yale",
+  "Stanford University": "Stanford",
+  "Rutgers University": "Rutgers",
+  "Biola University": "Biola",
+  "Vanderbilt University": "Vanderbilt",
+  "The Open University": "Open University",
+  "Columbia University": "Columbia",
+  "University of Michigan": "Michigan",
+  "University of Cambridge": "Cambridge",
+  "University of Pennsylvania": "Penn",
+  "University of Chicago": "UChicago",
+  "University of Washington": "UW",
+  "University of Rochester": "Rochester",
+  "University of Melbourne": "Melbourne",
+  "University of British Columbia": "UBC",
+  "University College Dublin": "UCD",
+  "Trinity College Dublin": "TCD",
+  "King's College London": "KCL",
+  "McGill University": "McGill",
+  "New York University": "NYU",
+  "Brown University": "Brown",
+  "Duke University": "Duke",
+  "Emory University": "Emory",
+  "Western University": "Western",
+  "Cold Spring Harbor Laboratory": "CSHL",
+  "Hebrew University of Jerusalem": "Hebrew University",
+  "Society for Personality and Social Psychology": "SPSP",
+  "Society for Neuroscience": "SfN",
+  "Cognitive Science Society": "CogSci Society",
+  "Cognitive Neuroscience Society": "CNS",
+  "American Psychological Association": "APA",
+  "American Psychiatric Association": "APA (psychiatry)",
+  "American Academy of Neurology": "AAN",
+  "British Psychological Society": "BPS",
+  "British Neuroscience Association": "BNA",
+  "British Neuropsychiatry Association": "BNPA",
+  "Brain & Behavior Research Foundation": "BBRF",
+  "Anxiety and Depression Association of America (ADAA)": "ADAA",
+  "Massachusetts General Hospital": "Mass General",
+  "Beck Institute for Cognitive Behavior Therapy": "Beck Institute",
+  "Mind & Life Institute": "Mind & Life",
+  "UC Davis MIND Institute": "UC Davis MIND",
+  "UK Dementia Research Institute": "UK DRI",
+  "National Aphasia Association": "NAA",
+  "Australian National University": "ANU",
+  "University of South Carolina": "South Carolina",
+  "University of Virginia": "UVA",
+  "Icahn School of Medicine at Mount Sinai": "Mount Sinai",
+  "Indiana University School of Medicine": "IU Medicine",
+  "Max Planck Institute for Human Development": "MPI Human Development",
+  "Max Planck Institute of Psychiatry": "MPI Psychiatry",
+  "Max Planck Institute for Biological Cybernetics": "MPI Biological Cybernetics",
+  "Ernst Strüngmann Institute (ESI) for Neuroscience": "ESI Frankfurt",
+  "Simons Institute for the Theory of Computing": "Simons Institute",
+  "Independent lecturer": "Lecturer's channel",
+  "World Wide Theoretical Neuroscience Seminar": "WWTNS",
+  "Interactive Intelligence (UW student group)": "Interactive Intelligence",
+  "UCQ (a YouTube channel, not a university)": "UCQ (channel)",
+  "Raja Mahendra Pratap Singh University": "RMPSU",
+  "Tianqiao and Chrissy Chen Institute": "Chen Institute",
+  "Hamad Bin Khalifa University": "HBKU",
+  "University of Connecticut": "UConn",
+  "Michigan State University": "MSU",
+  "Georgia Institute of Technology": "Georgia Tech",
+  "California State University, Northridge": "CSU Northridge",
+  "University of Nottingham": "Nottingham",
+  "University of Birmingham": "Birmingham",
+  "University of Bristol": "Bristol",
+  "University of Exeter": "Exeter",
+  "University of Louisville": "Louisville",
+  "University of Minnesota": "Minnesota",
+  "University of Oregon": "Oregon",
+  "University of Houston": "Houston",
+  "University of Waterloo": "Waterloo",
+  "University of Pittsburgh": "Pitt",
+  "Case Western Reserve University": "Case Western",
+  "Weizmann Institute of Science": "Weizmann",
+  "Karolinska Institutet": "Karolinska",
+  "Jagiellonian University": "Jagiellonian",
+  "Champalimaud Foundation": "Champalimaud",
+  "Laureate Institute for Brain Research": "LIBR",
+  "Federation of European Neuroscience Societies": "FENS",
+  "Psychonomic Society": "Psychonomic Society"
+ },
+ "_short_comment": "canonical name -> chip label; names not listed are shown in full (they are short already)"
+}

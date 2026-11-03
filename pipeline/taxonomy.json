@@ -1287,6 +1287,32 @@
      "doi": "10.1080/09602011003760527"
     }
    ]
+  },
+  {
+   "id": "ariely-dishonesty",
+   "name": "Ariely's dishonesty research (honesty pledge, moral reminders)",
+   "note": "The 2012 PNAS study showing that signing an honesty pledge at the top of a form reduces cheating was retracted in 2021 after analysts showed its insurance-company field data had been fabricated (who fabricated it is disputed); the authors' own 2020 replication had already found no effect. A 17-lab registered replication of the earlier 'moral reminder' (Ten Commandments) effect found none either. Talks presenting this research programme as established should be weighed accordingly.",
+   "source": "Retraction of Shu et al. (2012) PNAS, 2021; Kristal et al. (2020) PNAS; Verschuere et al. (2018) AMPPS; Data Colada [98]",
+   "status": "fraud",
+   "sources": [
+    {
+     "cite": "Shu, Mazar, Gino, Ariely & Bazerman (2012). Signing at the beginning makes ethics salient… PNAS, 109(38), 15197–15200. Retracted 2021.",
+     "doi": "10.1073/pnas.1209746109"
+    },
+    {
+     "cite": "Kristal, Whillans, Bazerman, Gino, Shu, Mazar & Ariely (2020). Signing at the beginning versus at the end does not decrease dishonesty. PNAS, 117(13), 7103–7107.",
+     "doi": "10.1073/pnas.1911695117"
+    },
+    {
+     "cite": "Verschuere et al. (2018). Registered Replication Report: Mazar, Amir, and Ariely (2008). Advances in Methods and Practices in Psychological Science, 1(3), 299–317.",
+     "doi": "10.1177/2515245918781032"
+    },
+    {
+     "cite": "Simonsohn, Simmons & Nelson (2021). Evidence of fraud in an influential field experiment about dishonesty. Data Colada [98].",
+     "url": "https://datacolada.org/98"
+    }
+   ],
+   "doi_check": "pending"
   }
  ],
  "status_labels": {

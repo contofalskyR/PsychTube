@@ -39,7 +39,8 @@
      "topics": [
       "learning-studying",
       "history-of-psychology"
-     ]
+     ],
+     "form": "documentary of the time"
     },
     {
      "id": "watson-little-albert-1920",
@@ -62,7 +63,8 @@
      "topics": [
       "learning-studying",
       "history-of-psychology"
-     ]
+     ],
+     "form": "original recording"
     },
     {
      "id": "gesell-1934-infant-behavior",
@@ -92,7 +94,8 @@
      "topics": [
       "child-development",
       "history-of-psychology"
-     ]
+     ],
+     "form": "original recording"
     },
     {
      "id": "spitz-1947-grief",
@@ -121,7 +124,8 @@
      "topics": [
       "relationships-attachment",
       "child-development"
-     ]
+     ],
+     "form": "original recording"
     },
     {
      "id": "skinner-pigeons",
@@ -162,7 +166,8 @@
      "topics": [
       "learning-studying",
       "animal-minds"
-     ]
+     ],
+     "form": "original recording"
     },
     {
      "id": "harlow-1958-nature-of-love",
@@ -185,7 +190,8 @@
      "topics": [
       "relationships-attachment",
       "animal-minds"
-     ]
+     ],
+     "form": "original recording"
     },
     {
      "id": "asch-1951-conformity",
@@ -207,7 +213,8 @@
      "status": "asch-conformity",
      "topics": [
       "conformity-obedience"
-     ]
+     ],
+     "form": "original recording"
     },
     {
      "id": "milgram-1965-obedience",
@@ -233,7 +240,8 @@
      "status": "milgram-nuance",
      "topics": [
       "conformity-obedience"
-     ]
+     ],
+     "form": "original recording"
     },
     {
      "id": "bandura-1961-bobo",
@@ -260,7 +268,8 @@
      "topics": [
       "child-development",
       "learning-studying"
-     ]
+     ],
+     "form": "original recording"
     },
     {
      "id": "split-brain-1964",
@@ -289,7 +298,8 @@
      "topics": [
       "brain-disorders",
       "consciousness"
-     ]
+     ],
+     "form": "documentary of the time"
     },
     {
      "id": "spe-1971",
@@ -324,7 +334,8 @@
      "topics": [
       "conformity-obedience",
       "groups-prejudice"
-     ]
+     ],
+     "form": "original recording"
     },
     {
      "id": "robbers-cave-1954",
@@ -352,7 +363,8 @@
      "status": "robbers-cave",
      "topics": [
       "groups-prejudice"
-     ]
+     ],
+     "form": "original recording"
     },
     {
      "id": "gloria-1965",
@@ -382,7 +394,8 @@
      "topics": [
       "therapy",
       "history-of-psychology"
-     ]
+     ],
+     "form": "original recording"
     },
     {
      "id": "piaget-on-piaget-1977",
@@ -412,7 +425,8 @@
      "topics": [
       "child-development",
       "history-of-psychology"
-     ]
+     ],
+     "form": "documentary of the time"
     },
     {
      "id": "lorenz-1978-geese",
@@ -437,7 +451,8 @@
      "topics": [
       "animal-minds",
       "child-development"
-     ]
+     ],
+     "form": "documentary of the time"
     },
     {
      "id": "jung-evans-1957",
@@ -474,7 +489,8 @@
      "topics": [
       "personality",
       "history-of-psychology"
-     ]
+     ],
+     "form": "original recording"
     },
     {
      "id": "class-divided-1985",
@@ -503,7 +519,8 @@
      "topics": [
       "groups-prejudice",
       "education-teaching"
-     ]
+     ],
+     "form": "documentary of the time"
     },
     {
      "id": "simons-chabris-1999-gorilla",
@@ -532,7 +549,8 @@
      "topics": [
       "attention-focus",
       "perception-illusions"
-     ]
+     ],
+     "form": "original stimulus"
     },
     {
      "id": "simons-levin-1998-door",
@@ -556,7 +574,8 @@
      "topics": [
       "attention-focus",
       "perception-illusions"
-     ]
+     ],
+     "form": "original recording"
     },
     {
      "id": "koko-1981",
@@ -585,7 +604,8 @@
      "topics": [
       "animal-minds",
       "language-thought"
-     ]
+     ],
+     "form": "documentary of the time"
     },
     {
      "id": "kanzi-savage-rumbaugh",
@@ -609,7 +629,8 @@
      "topics": [
       "animal-minds",
       "language-thought"
-     ]
+     ],
+     "form": "later talk by the researcher"
     },
     {
      "id": "ekman-new-guinea-1967",
@@ -632,7 +653,8 @@
      "status": "universal-emotions",
      "topics": [
       "emotion"
-     ]
+     ],
+     "form": "original recording"
     },
     {
      "id": "patient-hm",
@@ -661,7 +683,8 @@
      "topics": [
       "memory",
       "brain-disorders"
-     ]
+     ],
+     "form": "later report"
     },
     {
      "id": "clive-wearing",
@@ -685,7 +708,8 @@
      "topics": [
       "memory",
       "brain-disorders"
-     ]
+     ],
+     "form": "later documentary"
     },
     {
      "id": "hubel-wiesel-1959",
@@ -708,7 +732,8 @@
      "topics": [
       "perception-illusions",
       "how-the-brain-works"
-     ]
+     ],
+     "form": "original recording"
     },
     {
      "id": "gibson-walk-1960-visual-cliff",
@@ -726,7 +751,8 @@
      "topics": [
       "perception-illusions",
       "child-development"
-     ]
+     ],
+     "form": "original recording"
     },
     {
      "id": "ainsworth-strange-situation",
@@ -744,7 +770,8 @@
      "topics": [
       "relationships-attachment",
       "child-development"
-     ]
+     ],
+     "form": "original recording"
     }
    ]
   },
@@ -776,7 +803,8 @@
      "topics": [
       "attention-focus",
       "perception-illusions"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-monkey-business",
@@ -800,7 +828,8 @@
      "topics": [
       "attention-focus",
       "perception-illusions"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-gradual-change",
@@ -824,7 +853,8 @@
      "topics": [
       "attention-focus",
       "perception-illusions"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-change-blindness",
@@ -853,7 +883,8 @@
      "topics": [
       "attention-focus",
       "perception-illusions"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-mcgurk",
@@ -882,7 +913,8 @@
      "topics": [
       "perception-illusions",
       "language-thought"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-rubber-hand",
@@ -911,7 +943,8 @@
      "topics": [
       "perception-illusions",
       "consciousness"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-hollow-mask",
@@ -934,7 +967,8 @@
      "status": null,
      "topics": [
       "perception-illusions"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-stroop",
@@ -958,7 +992,8 @@
      "topics": [
       "attention-focus",
       "language-thought"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-thatcher",
@@ -981,7 +1016,8 @@
      "status": null,
      "topics": [
       "perception-illusions"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-lotto",
@@ -1004,7 +1040,8 @@
      "status": null,
      "topics": [
       "perception-illusions"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-rotating-snakes",
@@ -1032,7 +1069,8 @@
      "status": null,
      "topics": [
       "perception-illusions"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-sound-flash",
@@ -1055,7 +1093,8 @@
      "status": null,
      "topics": [
       "perception-illusions"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-blind-spot",
@@ -1078,7 +1117,8 @@
      "status": null,
      "topics": [
       "perception-illusions"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-benham",
@@ -1101,7 +1141,8 @@
      "status": null,
      "topics": [
       "perception-illusions"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-mirror-drawing",
@@ -1125,7 +1166,8 @@
      "topics": [
       "memory",
       "brain-disorders"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-shepard-tone",
@@ -1148,7 +1190,8 @@
      "status": null,
      "topics": [
       "perception-illusions"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-muller-lyer",
@@ -1172,7 +1215,8 @@
      "topics": [
       "perception-illusions",
       "groups-prejudice"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-binocular-rivalry",
@@ -1196,7 +1240,8 @@
      "topics": [
       "perception-illusions",
       "consciousness"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-checker-shadow",
@@ -1218,7 +1263,8 @@
      "status": null,
      "topics": [
       "perception-illusions"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "demo-the-dress",
@@ -1241,7 +1287,8 @@
      "status": null,
      "topics": [
       "perception-illusions"
-     ]
+     ],
+     "form": "demonstration"
     }
    ]
   },
@@ -1280,7 +1327,8 @@
       "therapy",
       "history-of-psychology"
      ],
-     "paper2": null
+     "paper2": null,
+     "form": "session recording"
     },
     {
      "id": "tp-three-approaches-2-rogers",
@@ -1315,7 +1363,8 @@
      "topics": [
       "therapy",
       "history-of-psychology"
-     ]
+     ],
+     "form": "session recording"
     },
     {
      "id": "tp-three-approaches-3-beck",
@@ -1349,7 +1398,8 @@
      "topics": [
       "therapy",
       "history-of-psychology"
-     ]
+     ],
+     "form": "session recording"
     },
     {
      "id": "tp-beck-abe-2",
@@ -1374,7 +1424,8 @@
      "topics": [
       "therapy",
       "depression-anxiety"
-     ]
+     ],
+     "form": "session recording"
     },
     {
      "id": "tp-beck-abe-10",
@@ -1399,7 +1450,8 @@
      "topics": [
       "therapy",
       "depression-anxiety"
-     ]
+     ],
+     "form": "session recording"
     },
     {
      "id": "tp-beck-restructuring",
@@ -1423,7 +1475,8 @@
      "status": null,
      "topics": [
       "therapy"
-     ]
+     ],
+     "form": "role-play"
     },
     {
      "id": "tp-nottingham-depression",
@@ -1454,7 +1507,8 @@
      "topics": [
       "psychiatry-medication",
       "depression-anxiety"
-     ]
+     ],
+     "form": "teaching interview (actor)"
     },
     {
      "id": "tp-nottingham-psychosis",
@@ -1476,7 +1530,8 @@
      "topics": [
       "serious-mental-illness",
       "psychiatry-medication"
-     ]
+     ],
+     "form": "teaching interview (actor)"
     },
     {
      "id": "tp-nottingham-anxiety",
@@ -1498,7 +1553,8 @@
      "topics": [
       "depression-anxiety",
       "psychiatry-medication"
-     ]
+     ],
+     "form": "teaching interview (actor)"
     },
     {
      "id": "tp-camh-checklist",
@@ -1520,7 +1576,8 @@
      "topics": [
       "psychiatry-medication",
       "therapy"
-     ]
+     ],
+     "form": "teaching demonstration"
     },
     {
      "id": "tp-uofl-cbt",
@@ -1544,7 +1601,8 @@
      "topics": [
       "therapy",
       "depression-anxiety"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "tp-uofl-exposure",
@@ -1569,7 +1627,8 @@
      "topics": [
       "therapy",
       "depression-anxiety"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "tp-yale-mi",
@@ -1593,7 +1652,8 @@
      "topics": [
       "therapy",
       "addiction"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "tp-cooper-pct",
@@ -1617,7 +1677,8 @@
      "status": null,
      "topics": [
       "therapy"
-     ]
+     ],
+     "form": "demonstration with commentary"
     },
     {
      "id": "tp-cooper-julie",
@@ -1640,7 +1701,8 @@
      "status": null,
      "topics": [
       "therapy"
-     ]
+     ],
+     "form": "demonstration"
     },
     {
      "id": "tp-yalom-outpatient",
@@ -1668,7 +1730,8 @@
      "status": null,
      "topics": [
       "therapy"
-     ]
+     ],
+     "form": "session recording (preview)"
     },
     {
      "id": "tp-linehan-dbt",
@@ -1692,7 +1755,8 @@
      "topics": [
       "therapy",
       "personality"
-     ]
+     ],
+     "form": "demonstration (preview)"
     },
     {
      "id": "tp-apa-eft",
@@ -1717,7 +1781,8 @@
      "topics": [
       "therapy",
       "emotion"
-     ]
+     ],
+     "form": "training demonstration"
     },
     {
      "id": "tp-apa-eh-formulation",
@@ -1740,7 +1805,8 @@
      "status": null,
      "topics": [
       "therapy"
-     ]
+     ],
+     "form": "training demonstration"
     }
    ]
   },
@@ -1778,7 +1844,8 @@
      "topics": [
       "brain-disorders",
       "language-thought"
-     ]
+     ],
+     "form": "clinical film of the time"
     },
     {
      "id": "case-aphasia-road-back-1967",
@@ -1803,7 +1870,8 @@
      "topics": [
       "brain-disorders",
       "therapy"
-     ]
+     ],
+     "form": "documentary of the time"
     },
     {
      "id": "case-broca-mike",
@@ -1828,7 +1896,8 @@
      "topics": [
       "brain-disorders",
       "language-thought"
-     ]
+     ],
+     "form": "clinical footage"
     },
     {
      "id": "case-wernicke-byron",
@@ -1853,7 +1922,8 @@
      "topics": [
       "brain-disorders",
       "language-thought"
-     ]
+     ],
+     "form": "clinical footage"
     },
     {
      "id": "case-conduction-neilsen",
@@ -1883,7 +1953,8 @@
      "topics": [
       "brain-disorders",
       "language-thought"
-     ]
+     ],
+     "form": "clinical footage"
     },
     {
      "id": "case-sarah-scott",
@@ -1908,7 +1979,8 @@
      "topics": [
       "brain-disorders",
       "language-thought"
-     ]
+     ],
+     "form": "first-person account over time"
     },
     {
      "id": "case-slp-fluent-aphasia",
@@ -1930,7 +2002,8 @@
      "topics": [
       "therapy",
       "brain-disorders"
-     ]
+     ],
+     "form": "clinical footage"
     },
     {
      "id": "case-neglect-patients",
@@ -1960,7 +2033,8 @@
      "topics": [
       "brain-disorders",
       "attention-focus"
-     ]
+     ],
+     "form": "clinical footage"
     },
     {
      "id": "case-prosopagnosia-60min",
@@ -1990,7 +2064,8 @@
      "topics": [
       "brain-disorders",
       "perception-illusions"
-     ]
+     ],
+     "form": "news report with patients"
     },
     {
      "id": "case-blindsight-tn",
@@ -2015,7 +2090,8 @@
      "topics": [
       "brain-disorders",
       "consciousness"
-     ]
+     ],
+     "form": "clinical footage"
     },
     {
      "id": "case-riddoch-western",
@@ -2040,7 +2116,8 @@
      "topics": [
       "brain-disorders",
       "perception-illusions"
-     ]
+     ],
+     "form": "clinical footage"
     },
     {
      "id": "case-agnosia-cellpress",
@@ -2065,7 +2142,8 @@
      "topics": [
       "brain-disorders",
       "perception-illusions"
-     ]
+     ],
+     "form": "journal video abstract"
     },
     {
      "id": "case-split-brain-nova",
@@ -2090,7 +2168,8 @@
      "topics": [
       "brain-disorders",
       "consciousness"
-     ]
+     ],
+     "form": "later documentary"
     },
     {
      "id": "case-alien-hand-npr",
@@ -2115,7 +2194,8 @@
      "topics": [
       "brain-disorders",
       "consciousness"
-     ]
+     ],
+     "form": "news report with the patient"
     },
     {
      "id": "case-ramachandran-ted",
@@ -2148,7 +2228,8 @@
      "topics": [
       "brain-disorders",
       "perception-illusions"
-     ]
+     ],
+     "form": "talk by the researcher"
     },
     {
      "id": "case-mirror-therapy",
@@ -2173,7 +2254,8 @@
      "topics": [
       "brain-disorders",
       "perception-illusions"
-     ]
+     ],
+     "form": "clinical footage"
     },
     {
      "id": "case-foreign-accent-ucf",
@@ -2207,7 +2289,8 @@
      "topics": [
       "brain-disorders",
       "language-thought"
-     ]
+     ],
+     "form": "clinical interview"
     },
     {
      "id": "case-huntington-ucd",
@@ -2232,7 +2315,8 @@
      "topics": [
       "brain-disorders",
       "neurochemistry"
-     ]
+     ],
+     "form": "clinical footage"
     },
     {
      "id": "case-dbs-onoff",
@@ -2262,7 +2346,8 @@
      "topics": [
       "brain-disorders",
       "brain-tech"
-     ]
+     ],
+     "form": "clinical footage"
     },
     {
      "id": "case-dbs-depression-mayberg",
@@ -2287,7 +2372,8 @@
      "topics": [
       "depression-anxiety",
       "brain-tech"
-     ]
+     ],
+     "form": "talk by the researcher"
     },
     {
      "id": "case-sm-feinstein",
@@ -2312,7 +2398,8 @@
      "topics": [
       "emotion",
       "brain-disorders"
-     ]
+     ],
+     "form": "talk by the researcher"
     },
     {
      "id": "case-tourette-taa",
@@ -2337,7 +2424,8 @@
      "topics": [
       "brain-disorders",
       "child-development"
-     ]
+     ],
+     "form": "first-person account"
     },
     {
      "id": "case-locked-in-wyss",
@@ -2370,7 +2458,8 @@
      "topics": [
       "brain-tech",
       "consciousness"
-     ]
+     ],
+     "form": "clinical footage"
     },
     {
      "id": "case-hemispherectomy-wjz",
@@ -2400,7 +2489,8 @@
      "topics": [
       "brain-disorders",
       "child-development"
-     ]
+     ],
+     "form": "news report with the patient"
     },
     {
      "id": "case-ppa-jill",
@@ -2437,7 +2527,8 @@
      "topics": [
       "brain-disorders",
       "language-thought"
-     ]
+     ],
+     "form": "first-person account"
     },
     {
      "id": "case-phineas-gage-harvard",
@@ -2465,7 +2556,8 @@
      "topics": [
       "brain-disorders",
       "history-of-psychology"
-     ]
+     ],
+     "form": "museum footage"
     },
     {
      "id": "case-helen-keller-1928",
@@ -2489,7 +2581,8 @@
      "topics": [
       "language-thought",
       "child-development"
-     ]
+     ],
+     "form": "newsreel of the time"
     },
     {
      "id": "case-genie",
@@ -2508,7 +2601,8 @@
      "topics": [
       "language-thought",
       "child-development"
-     ]
+     ],
+     "form": "documentary of the time"
     },
     {
      "id": "case-lm-akinetopsia",
@@ -2527,10 +2621,12 @@
      "topics": [
       "brain-disorders",
       "perception-illusions"
-     ]
+     ],
+     "form": "no footage"
     }
    ]
   }
  ],
- "doi_verified": "2026-11-03"
+ "doi_verified": "2026-11-03",
+ "_form_note": "form: what the video is as a record — 'original recording' (the study or session itself, as filmed), 'original stimulus' (the actual experimental material), 'documentary of the time' (a contemporary film about the work, often with the researchers), 'later report' / 'later documentary' / 'later talk by the researcher' (made afterwards), 'demonstration', 'session recording', 'clinical footage'. Shown on the card so 'Primary source' is not claimed for a 2016 news report."
 }

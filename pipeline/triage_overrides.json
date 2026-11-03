@@ -1,28 +1,268 @@
 {
-  "_comment": "Applied by merge_pulled.py on top of work/triage/out_*.jsonl. drop_inst: publishers the triage kept that are media or festival organisations rather than universities, research institutes, societies or clinical institutions. drop_pid: individual playlists to skip. rename_inst: credit under a common name.",
-  "drop_inst": [
-    "The Institute of Art and Ideas",
-    "World Science Festival",
-    "Nour Foundation",
-    "La Hacienda Treatment Center",
-    "Psychedelic Science Sweden",
-    "Institute of Noetic Sciences"
+ "_comment": "Applied by merge_pulled.py on top of work/triage/out_*.jsonl. drop_inst: publishers the triage kept that are media or festival organisations rather than universities, research institutes, societies or clinical institutions. drop_pid: individual playlists to skip. rename_inst: credit under a common name.",
+ "drop_inst": [
+  "The Institute of Art and Ideas",
+  "World Science Festival",
+  "Nour Foundation",
+  "La Hacienda Treatment Center",
+  "Psychedelic Science Sweden",
+  "Institute of Noetic Sciences",
+  "TEDx"
+ ],
+ "drop_pid": [
+  "PLB6D81FE5DD5583B4",
+  "PLKyB9RYzaFRgjLlGLL1hJ4a-gD8Mlhpjz",
+  "PLKyB9RYzaFRikK8w8Ec7W_E15UbTKHFM1",
+  "PLKyB9RYzaFRimy_Xnqo1PrYRlvqR1QWH6",
+  "PLKyB9RYzaFRjrMC98cZ9GQa_NwBQQd8TT",
+  "PL7I1gvrUERZZiu-bSWGFvlrwOfXymEbUC"
+ ],
+ "rename_inst": {
+  "Anxiety and Depression Association of America": "Anxiety and Depression Association of America (ADAA)",
+  "NPTEL (India)": "NPTEL",
+  "Massachusetts General Hospital (Clay Center)": "Massachusetts General Hospital",
+  "UC Davis MIND Institute (UCTV)": "UC Davis MIND Institute",
+  "UC San Diego CARTA (UCTV)": "UC San Diego (CARTA)",
+  "UC San Diego Kavli Institute for Brain and Mind (UCTV)": "UC San Diego (Kavli Institute for Brain and Mind)",
+  "Virtual Linguistics Campus": "University of Marburg (Virtual Linguistics Campus)"
+ },
+ "_drop_pid_note": "Virtual University of Pakistan 'Topic Based Video' series (2020+): 4-10 minute segments whose lecture language cannot be verified (no captions); the older 45-lecture VU courses stay. PL7I1gvrUERZZiu-bSWGFvlrwOfXymEbUC: RMPSU 'BD 101' B.Ed. exam-revision sessions (MCQ reviews, several in Hindi) — exam prep, excluded by the triage rules.",
+ "affiliated_channels": {
+  "_comment": "canonical institution (pipeline/institutions.json) -> channel ids whose uploads count as that institution's own: a medical school's CME channel, a university's TV service, a programme's per-course channel. work/inst/crosschannel.json lists what the build did not credit, most items first. The names are for the reader; the build uses the ids.",
+  "Stanford University": [
+   "UC-6iaRuDk6vbi_R6KgzsQqQ",
+   "UC-EnprmCZ3OXyAoG7vjVNCA",
+   "UCDSuMhIdmPjhsGejBFTmeqA",
+   "UCDrQaGaHpOav5y7m1SCSJRg",
+   "UCEHjx6St5SXfpg6oGJhIuuw",
+   "UCFgUnZnbwIHJhMLq3zHV0og",
+   "UCGnI3Vulgsap7AyRNLrpPvA",
+   "UCN8g9b2eCpSRMs6AyY15U3g",
+   "UCQSkEWiP2yPi_Q4ZE7lSulw",
+   "UCWyh_hdKzC1uBTlpfPWFiiQ",
+   "UCXb0w5GOQy0rLW1w8qGh_NQ",
+   "UCdKG2JnvPu6mY1NDXYFfN0g",
+   "UCl_mlar6gQ3z94OLr7YPkbA",
+   "UCqcemITS8NdwWoSlE_jcY7w",
+   "UCsNdxeQ_cAzTvCeD-y3PUeg",
+   "UCxdM_BlltGbSjch5BVzrhag"
   ],
-  "drop_pid": [
-    "PLB6D81FE5DD5583B4",
-    "PLKyB9RYzaFRgjLlGLL1hJ4a-gD8Mlhpjz",
-    "PLKyB9RYzaFRikK8w8Ec7W_E15UbTKHFM1",
-    "PLKyB9RYzaFRimy_Xnqo1PrYRlvqR1QWH6",
-    "PLKyB9RYzaFRjrMC98cZ9GQa_NwBQQd8TT"
+  "_names:Stanford University": [
+   "Stanford Medicine",
+   "Stanford CME",
+   "Stanford Center for Health Education",
+   "Stanford Parenting Center",
+   "Stanford Health Care",
+   "Stanford",
+   "Stanford Medicine Children's Health",
+   "Stanford Center for Precision Mental Health (CPMH)",
+   "Stanford CARE",
+   "Stanford AI for Mental Health",
+   "Stanford University School of Engineering",
+   "Stanford Healthcare Innovation Lab",
+   "Stanford Department of Medicine",
+   "YogaX - Stanford Psychiatry ",
+   "Stanford Psychiatry and Behavioral Sciences",
+   "Wu Tsai Neurosciences Institute, Stanford"
   ],
-  "rename_inst": {
-    "Anxiety and Depression Association of America": "Anxiety and Depression Association of America (ADAA)",
-    "NPTEL (India)": "NPTEL",
-    "Massachusetts General Hospital (Clay Center)": "Massachusetts General Hospital",
-    "UC Davis MIND Institute (UCTV)": "UC Davis MIND Institute",
-    "UC San Diego CARTA (UCTV)": "UC San Diego (CARTA)",
-    "UC San Diego Kavli Institute for Brain and Mind (UCTV)": "UC San Diego (Kavli Institute for Brain and Mind)",
-    "Virtual Linguistics Campus": "University of Marburg (Virtual Linguistics Campus)"
-  },
-  "_drop_pid_note": "Virtual University of Pakistan 'Topic Based Video' series (2020+): 4-10 minute segments whose lecture language cannot be verified (no captions); the older 45-lecture VU courses stay."
+  "UCSF": [
+   "UCCcDZB6scQBbApEvW7uteAw",
+   "UCTFbirR7VEaj534FgNxKsaw",
+   "UCZv4OTOdiGpdW3ZuYM-7UOg",
+   "UCh6KFtW4a4Ozr81GI1cxaBQ",
+   "UCsBQQfUTu-kYF1FDSRGBNZQ"
+  ],
+  "_names:UCSF": [
+   "Global Brain Health Institute (GBHI)",
+   "University of California Television (UCTV)",
+   "UC San Francisco (UCSF)",
+   "UCSF Dept. of Psychiatry and Behavioral Sciences",
+   "UCSF Edward and Pearl Fein Memory and Aging Center"
+  ],
+  "UCLA": [
+   "UCPpw6jRIL1B9nU0k7-GujOQ",
+   "UCUcIbvtnfDm50vJl0ednaIg",
+   "UCh6KFtW4a4Ozr81GI1cxaBQ"
+  ],
+  "_names:UCLA": [
+   "UCLA",
+   "University of California Television (UCTV)",
+   "UCLA Relationship Institute"
+  ],
+  "UC Berkeley": [
+   "UCh6KFtW4a4Ozr81GI1cxaBQ"
+  ],
+  "_names:UC Berkeley": [
+   "University of California Television (UCTV)"
+  ],
+  "UC San Diego": [
+   "UCh6KFtW4a4Ozr81GI1cxaBQ"
+  ],
+  "_names:UC San Diego": [
+   "University of California Television (UCTV)"
+  ],
+  "UC Davis MIND Institute": [
+   "UCh6KFtW4a4Ozr81GI1cxaBQ"
+  ],
+  "_names:UC Davis MIND Institute": [
+   "University of California Television (UCTV)"
+  ],
+  "UC Irvine": [
+   "UCh6KFtW4a4Ozr81GI1cxaBQ"
+  ],
+  "_names:UC Irvine": [
+   "University of California Television (UCTV)"
+  ],
+  "University of California Television (UCTV)": [
+   "UC8f1AX5OcUfoRDNZW8idVeA"
+  ],
+  "_names:University of California Television (UCTV)": [
+   "UCTVInsight"
+  ],
+  "Mind & Life Institute": [
+   "UCiPJ_g02LuOgOG0ZNk5j1jA"
+  ],
+  "_names:Mind & Life Institute": [
+   "Dalai Lama"
+  ],
+  "NPTEL": [
+   "UCU-wRn5RyHqZg0p8ZpIp3hA",
+   "UCgVyoC6VV4oZ_HyFz6IBn4A"
+  ],
+  "_names:NPTEL": [
+   "Brief introduction to Psychology",
+   "Introduction to Cognitive Psychology - IITG"
+  ],
+  "University of Michigan": [
+   "UCQOEDcYQCphEoq5CQYf838g",
+   "UCfp5MBK2IC90Bdm5IQUJvYw"
+  ],
+  "_names:University of Michigan": [
+   "Eisenberg Family Depression Center",
+   "Michigan Medicine"
+  ],
+  "University of Oxford": [
+   "UC6TA43v3x60np4Uw49mbWIg",
+   "UC9tbuuXaRYB-n94vmTYj2Fw",
+   "UCDjfS2TydCk3wzyGFqPz0kQ",
+   "UCQ_QZp5QX-mjSFT6HPak-cQ",
+   "UCY5NDinr2975LghozXAeTWQ",
+   "UCZbSlf8eq5gmA5UrWt-c4-Q",
+   "UCfzIl99c9BYVyu97H5ISn7g",
+   "UCjSph_VbRMwWuPEVzoCLqWA",
+   "UCmXB98lpzelFrlryV2llXUQ",
+   "UCnzdR4g0Ykb9hU9FQR4W0TA",
+   "UCoO0EHoAMaGf4NfG9wTKeHQ",
+   "UCqcWXxRB-DmqQjPWH17WImw",
+   "UCyHWzWInAc9oEexlM3e0R3g"
+  ],
+  "_names:University of Oxford": [
+   "Oxford BRC",
+   "Nuffield Department of Clinical Neurosciences",
+   "Oxford Education",
+   "Experimental Psychology Dept, University of Oxford",
+   "Department of Psychiatry, University of Oxford",
+   "OxfordSparks",
+   "Brain Network Dynamics Unit, Oxford",
+   "Oxford Martin School",
+   "Oxford University BabyLab",
+   "Bodleian Libraries",
+   "OxfordMindfulness",
+   "Nuffield Department of Medicine",
+   "Graduate Study at Oxford"
+  ],
+  "UCL": [
+   "UC4jcptjdFE31PnI7a2yfXIw",
+   "UCQMJ_obgh8b4u1IrBaMkfrQ",
+   "UCThyZpUXvT1atGZ0P1-2Vng",
+   "UCZTmtNqJCAjdbPz7NwQgmMw"
+  ],
+  "_names:UCL": [
+   "UCL Lunch Hour Lectures",
+   "UCL Psychiatry",
+   "UCL PALS",
+   "UCL"
+  ],
+  "Australian National University": [
+   "UCxzvNYT-17mjYJMuDzGx7AA"
+  ],
+  "_names:Australian National University": [
+   "ANU TV"
+  ],
+  "Caltech": [
+   "UCeCHMMrQVIqgssGn81NI4aw",
+   "UClGTZDyz3CSl92TgDqIr0nw"
+  ],
+  "_names:Caltech": [
+   "caltech",
+   "Caltech Neuroscience"
+  ],
+  "Harvard University": [
+   "UCLv7Gzc3VTO6ggFlXY0sOyw",
+   "UCqiyDOiAWz7Q9yNSkgZi53A",
+   "UCrcDe1BXeEmtYG7Qk2kSDtg"
+  ],
+  "_names:Harvard University": [
+   "Harvard T.H. Chan School of Public Health",
+   "Outsmarting Implicit Bias",
+   "Harvard University"
+  ],
+  "University of Edinburgh": [
+   "UCAHIBI6yV4i0VqR58270Xxw",
+   "UCZv8UXOfXHaQaalmp7AMLwg"
+  ],
+  "_names:University of Edinburgh": [
+   "The University of Edinburgh",
+   "GiffordLectures"
+  ],
+  "McGill University": [
+   "UCIgLN7HZxRW8VoY3h1-_GZQ",
+   "UCU-zRL8UpX6D7ex8yWxJrug",
+   "UCsDrmHUY0abr4tz2z-b2wEg"
+  ],
+  "_names:McGill University": [
+   "McGill's Graduate Neuroscience Program - IPN",
+   "Neurophotonics Centre",
+   "MontrealNeuro"
+  ],
+  "University of Pennsylvania": [
+   "UC3Srrk-jQGfS5UZ8CWI7DhQ",
+   "UCZuzhTcxpJZ1VEJ5s9H9MdA"
+  ],
+  "_names:University of Pennsylvania": [
+   "PennLPS",
+   "University of Pennsylvania"
+  ],
+  "University of Sheffield": [
+   "UCEGHUlDW9SbkGX0duzJ5tvg",
+   "UCvSg1ZDJyl6sBDKdhjrs2Iw"
+  ],
+  "_names:University of Sheffield": [
+   "The University of Sheffield",
+   "Sheffield Autism Research Lab (ShARL)"
+  ],
+  "Brain & Behavior Research Foundation": [
+   "UC4fhqXpIi7pcpyRd13Z1WQA",
+   "UCp6U8ZdHbZgCW2Z7kAvmiFQ"
+  ],
+  "_names:Brain & Behavior Research Foundation": [
+   "Brain & Behavior Research Foundation"
+  ],
+  "Boston University": [
+   "UCbmDLQc0UtqpVwOB2LRqoqg"
+  ],
+  "_names:Boston University": [
+   "Boston University Center for Brain Recovery"
+  ],
+  "Hebrew University of Jerusalem": [
+   "UCwmmgFefQdVPW_oa47Gfg6g"
+  ],
+  "_names:Hebrew University of Jerusalem": [
+   "Hebrew University of Jerusalem"
+  ]
+ },
+ "pid_inst": {
+  "_comment": "playlist id -> institution to credit instead of the playlist owner's, when the owner re-lists another institution's recordings whole",
+  "PLiABNpSFzEHniEuI26SI1d04YUVfIpF8t": "Boston University (Center for Brain Recovery)"
+ }
 }
