@@ -196,6 +196,7 @@ INST_SHORT = {
     "CEC-UGC (India)": "UGC-CEC",
 }
 INST_W = 1.0
+THIRD_PARTY = re.compile(r"CrashCourse|Crash Course|Khan ?Academy|Kurzgesagt|SciShow|Veritasium|Vsauce|AsapSCIENCE|Psych2Go|Sprouts|Practical Psychology|2-Minute Neuroscience|Neuro Transmissions|Big Think|Professor Dave|Bozeman|Amoeba Sisters|Osmosis|Ninja Nerd|Simply Psychology|Mr\.? Sinn|Cognito|Medicosis|The School of Life|Wondrium|Great Courses|National Geographic|^Vox$|Freethink|BBC", re.I)
 inst_file = P("raw", "institutional", "courses.json")
 inst_courses = json.load(open(inst_file))["courses"] if os.path.exists(inst_file) else []
 course_labels = {o["pid"]: o for o in jsonl(P("work", "inst", "course_labels.jsonl"))}
@@ -306,6 +307,9 @@ for vid, rec in videos.items():
             continue
     if inst and lab and lab.get("keep") is False and not hn:
         stats["dropped_inst_not_psych"] += 1
+        continue
+    if inst and not hn and not any(v["s"] != "inst" for v in rec["vouches"]) and THIRD_PARTY.search((m or {}).get("ch") or "") and (m or {}).get("chid") and m["chid"] != course.get("chid"):
+        stats["dropped_inst_thirdparty"] += 1   # a CrashCourse / Khan Academy / Sprouts clip a lecturer added to their playlist is not the institution's lecture
         continue
     if inst and course["kind"] == "talks" and not hn and not any(v["s"] != "inst" for v in rec["vouches"]) and (m or {}).get("len") and m["len"] < 240:
         stats["dropped_inst_promo"] += 1       # a 2-minute clip in a university talk collection is a promo, not a lecture

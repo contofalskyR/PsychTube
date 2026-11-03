@@ -1,0 +1,150 @@
+{"vid": "BB0qVcp7FOQ", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "Wa8_nLwQIpg", "keep": true, "topics": ["neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "VatdTJka3_M", "keep": true, "topics": ["how-the-brain-works", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "dkbV_PA61bg", "keep": true, "topics": ["neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "mVJjWYXS4JM", "keep": true, "topics": ["neurochemistry"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "7D8d_KN2qGU", "keep": true, "topics": ["serious-mental-illness", "depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "ZwMlHkWKDwM", "keep": true, "topics": ["depression-anxiety", "serious-mental-illness"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "3J1swiS7uJo", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "l8pObJTzRzY", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "bTwI4AUZS8g", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "ZBSo_GFN3qI", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.7}
+{"vid": "Pl7nzXaVqak", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.7}
+{"vid": "qTw_2tbNM7M", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "LbFfUDvggZ4", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "TFTA2XH8D-U", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "p5zFgT4aofA", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "uhmpi3yLeGg", "keep": true, "topics": ["psychiatry-medication", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "qPix_X-9t7E", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.7}
+{"vid": "GOB4sBeMX4k", "keep": true, "topics": ["serious-mental-illness", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "r-gJaMoMon0", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.85}
+{"vid": "8eHGCeG_tYQ", "keep": true, "topics": ["psychiatry-medication", "depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "Yj0KgCdbK00", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "6jsB-6PAa_Q", "keep": true, "topics": ["brain-disorders", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "oWmdGAn6Zqw", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "oDdvWNNp2dc", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "nI4nJ4q7wcI", "keep": true, "topics": ["serious-mental-illness", "perception-illusions"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "97Wgm6QuJUA", "keep": true, "topics": ["serious-mental-illness"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "A7Mnw23FfDc", "keep": true, "topics": ["psychiatry-medication", "language-thought"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "R8f8Sv1MTTo", "keep": true, "topics": ["depression-anxiety", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "YHxnDK0eFXk", "keep": true, "topics": ["child-development", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "wYn_-YnGNV0", "keep": true, "topics": ["child-development", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "kscJ9f0uFmg", "keep": true, "topics": ["child-development", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "6XHCL3o1osU", "keep": true, "topics": ["child-development", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "gOltu0RTgAk", "keep": true, "topics": ["child-development", "personality"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "P-1gXSJAbIw", "keep": true, "topics": ["therapy", "emotion"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "CQa_mOHZr-8", "keep": true, "topics": ["therapy", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "_85NiA5x-4g", "keep": true, "topics": ["serious-mental-illness"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "AQbEOICjflA", "keep": true, "topics": ["therapy"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "E6uyZavKVLU", "keep": true, "topics": ["therapy", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "sQqzLjar9No", "keep": true, "topics": ["therapy"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "GL2OrEzzrGc", "keep": true, "topics": ["serious-mental-illness"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "VuwKCQrCI54", "keep": true, "topics": ["psychiatry-medication", "groups-prejudice"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "jZn1jOl3BYo", "keep": true, "topics": ["serious-mental-illness"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "azO-0ZX5cOY", "keep": true, "topics": ["depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "59wWgRjjmko", "keep": true, "topics": ["therapy", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.75}
+{"vid": "Qs1x9W6ubi0", "keep": true, "topics": ["therapy", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.75}
+{"vid": "khMydk7V9rc", "keep": true, "topics": ["depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "r6w5cnJK_T0", "keep": true, "topics": ["addiction"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "YpJHqxrX6RE", "keep": true, "topics": ["therapy", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "pXZ_pqoliGg", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "6iazTKy2IRY", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "vY3lgxCYRyM", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.85}
+{"vid": "2NzgnPSRb4w", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "DrPAoBqjvuA", "keep": true, "topics": ["psychiatry-medication", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "HM7rzModii4", "keep": true, "topics": ["brain-disorders", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "wVLCgh8UKHA", "keep": true, "topics": ["serious-mental-illness", "emotion"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "s1Mc_sGFPb4", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "PHahL9jbRSI", "keep": true, "topics": ["psychiatry-medication", "brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "rUbaI3fGN2I", "keep": true, "topics": ["depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "izxq9vLyWA4", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "USSOHJjAypE", "keep": true, "topics": ["psych-research"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.7}
+{"vid": "m_z1f6v7xzU", "keep": true, "topics": ["addiction"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "pCIV9IvEngE", "keep": true, "topics": ["addiction"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "erAWB9yf4tk", "keep": true, "topics": ["addiction"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "Ytfz9pkOGMY", "keep": true, "topics": ["addiction", "psychiatry-medication"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "n-Y4wrpcbp0", "keep": true, "topics": ["addiction", "tech-and-mind"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "tGneOnrWerk", "keep": true, "topics": ["trauma-stress", "adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "mr1q8PRP4_4", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.6}
+{"vid": "jr6SOSaYjrE", "keep": true, "topics": ["addiction", "tech-and-mind"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "wdVGse74Go4", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.85}
+{"vid": "1i_3Z3tQ7PM", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.85}
+{"vid": "uyGvsWWibKg", "keep": true, "topics": ["depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "3Jp0r1XSabU", "keep": true, "topics": ["depression-anxiety", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "4tkcmkRKUnU", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "-FU2L63VdDQ", "keep": true, "topics": ["serious-mental-illness"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "RXy0AdAW8Fg", "keep": true, "topics": ["psychiatry-medication", "brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "yAEBne3Z-Hc", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "ABdGNDXDm_Q", "keep": true, "topics": ["personality", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "FcMK7qLQ07k", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "HZh0A-lWSmY", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "WhowH0kb7n0", "keep": true, "topics": ["how-the-brain-works", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "09eVouoCLaw", "keep": true, "topics": ["neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "yg44T2HcA2o", "keep": true, "topics": ["how-the-brain-works", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "G4r3qCkLUDQ", "keep": true, "topics": ["psychiatry-medication", "depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "uiXcAbrO8kU", "keep": true, "topics": ["psychiatry-medication", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "pGEQILM7C7Y", "keep": true, "topics": ["depression-anxiety", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "kMKc8nfPATI", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "4D3IlIcqny4", "keep": true, "topics": ["depression-anxiety", "neurochemistry"], "cw": [], "contested": "serotonin-depression", "contested_role": "promotes", "course": false, "confidence": 0.9}
+{"vid": "sfU-LmdYRnI", "keep": true, "topics": ["neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "RrWBhVlD1H8", "keep": true, "topics": ["serious-mental-illness"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "W4N-7AlzK7s", "keep": true, "topics": ["neurochemistry", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "gmwiJ6ghLIM", "keep": true, "topics": ["trauma-stress", "depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "2wCbwpnIJsA", "keep": true, "topics": ["depression-anxiety", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "coIXxdZ2EsA", "keep": true, "topics": ["depression-anxiety", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "EfwJlv5TVAg", "keep": true, "topics": ["depression-anxiety", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "q8NtmDrb_qo", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "qeXP_ricT4s", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.85}
+{"vid": "ye28W_OygOw", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.6}
+{"vid": "NKV5iaUVBUI", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.5}
+{"vid": "uFgGWlmuJoM", "keep": true, "topics": ["therapy", "personality"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "F9fsFuGULm0", "keep": true, "topics": ["neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "eTmQWS6djyc", "keep": true, "topics": ["psychiatry-medication", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "PyviSI7CJTQ", "keep": true, "topics": ["psychiatry-medication", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "Qc3wdbLJFcI", "keep": true, "topics": ["psychiatry-medication", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "6qS83wD29PY", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "6vbOatj6cJM", "keep": true, "topics": ["how-the-brain-works", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "bQIU2KDtHTI", "keep": true, "topics": ["neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "29QfkTjIWHU", "keep": true, "topics": ["neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "rKEHswIToPc", "keep": true, "topics": ["psychiatry-medication", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "LdJ2m5_0M2g", "keep": true, "topics": ["neurochemistry", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "H5nRc7PuGwg", "keep": true, "topics": ["neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "bXg1-wp5yqk", "keep": true, "topics": ["serious-mental-illness", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "x-_k-pIKfVg", "keep": true, "topics": ["psychiatry-medication", "serious-mental-illness"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "KnTwqKp0UaQ", "keep": true, "topics": ["depression-anxiety", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "SeceaZEkNZE", "keep": true, "topics": ["psychiatry-medication", "depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "rdFF1_tPyGA", "keep": true, "topics": ["serious-mental-illness", "depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "11-8ecpwOXs", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "pUIiq9Yzltg", "keep": true, "topics": ["serious-mental-illness"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "_sM8KBZ9k4Q", "keep": true, "topics": ["neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "JvPN7Bdb04o", "keep": true, "topics": ["psychiatry-medication", "depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "GvZq67dcHXs", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "vSUnBvuquE0", "keep": true, "topics": ["serious-mental-illness", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "GhIasaQWEfQ", "keep": true, "topics": ["serious-mental-illness", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "6r2KaSlOns8", "keep": true, "topics": ["serious-mental-illness", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "IP8e-F-9UW8", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "8ApjCRWhMUE", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "ztRK2dbglpY", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "YG6cQ7InqX4", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "rNWzwX2PFkk", "keep": true, "topics": ["neurochemistry", "depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "NBqQXl7TeAc", "keep": true, "topics": ["psychiatry-medication", "depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "CdRoOVsa1ag", "keep": true, "topics": ["depression-anxiety", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "2T11kp0YFLQ", "keep": true, "topics": ["serious-mental-illness", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "sOimBjnJKJQ", "keep": true, "topics": ["adhd-autism"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "IdPL2w4kolU", "keep": true, "topics": ["adhd-autism", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "f6s-kiMOhE0", "keep": true, "topics": ["adhd-autism"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "tSajEQay8gM", "keep": true, "topics": ["addiction", "psychiatry-medication"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "UtmeNJauCWA", "keep": true, "topics": ["psychiatry-medication", "neurochemistry"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "piM6Qw_115w", "keep": true, "topics": ["psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "IX9k4s_UWiU", "keep": true, "topics": ["addiction", "grief-loneliness"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": false, "confidence": 0.7}
+{"vid": "62FYNwd-8Jo", "keep": true, "topics": ["addiction", "how-the-brain-works"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "jj4maao-9XI", "keep": true, "topics": ["addiction", "how-the-brain-works"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "i7jt9PWLPGo", "keep": true, "topics": ["addiction", "neurochemistry"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "KJOv8bM4h8E", "keep": true, "topics": ["addiction", "psychiatry-medication"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "-ASe1gC1ZYc", "keep": true, "topics": ["addiction"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "D5Vsm_Daexg", "keep": true, "topics": ["neurochemistry", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "PGYAjGtdQI8", "keep": true, "topics": ["addiction", "neurochemistry"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "d9YApsJlbqo", "keep": true, "topics": ["addiction"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "h1A1xXxWHCw", "keep": true, "topics": ["addiction", "neurochemistry"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "UlYC0syLe7g", "keep": true, "topics": ["addiction"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "SAsRYl-prws", "keep": true, "topics": ["addiction", "psychiatry-medication"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}

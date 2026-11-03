@@ -7,7 +7,13 @@
     "La Hacienda Treatment Center",
     "Psychedelic Science Sweden"
   ],
-  "drop_pid": [],
+  "drop_pid": [
+    "PLB6D81FE5DD5583B4",
+    "PLKyB9RYzaFRgjLlGLL1hJ4a-gD8Mlhpjz",
+    "PLKyB9RYzaFRikK8w8Ec7W_E15UbTKHFM1",
+    "PLKyB9RYzaFRimy_Xnqo1PrYRlvqR1QWH6",
+    "PLKyB9RYzaFRjrMC98cZ9GQa_NwBQQd8TT"
+  ],
   "rename_inst": {
     "Anxiety and Depression Association of America": "Anxiety and Depression Association of America (ADAA)",
     "NPTEL (India)": "NPTEL",
@@ -16,5 +22,6 @@
     "UC San Diego CARTA (UCTV)": "UC San Diego (CARTA)",
     "UC San Diego Kavli Institute for Brain and Mind (UCTV)": "UC San Diego (Kavli Institute for Brain and Mind)",
     "Virtual Linguistics Campus": "University of Marburg (Virtual Linguistics Campus)"
-  }
+  },
+  "_drop_pid_note": "Virtual University of Pakistan 'Topic Based Video' series (2020+): 4-10 minute segments whose lecture language cannot be verified (no captions); the older 45-lecture VU courses stay."
 }

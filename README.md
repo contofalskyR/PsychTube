@@ -10,6 +10,11 @@ the IITs via NPTEL, Gresham College, the Royal Institution, professors' own chan
 university's own Panopto (Steven Pinker's Harvard courses) and on the Internet Archive (UC Berkeley's
 webcast courses) — every lecture in order, marked "published by" instead of a vouch count.
 
+The Courses hub has two shelves: **taught courses and lecture series** (a full term as the institution
+published it), and **seminars & conferences** — research seminar series, hospital grand rounds and the
+sessions of annual meetings, which are institutional but not a course and not peer-reviewed, and are
+labelled that way on every card and watch page.
+
 The live site also keeps a **lecture tracker** in the browser: where you stopped in each lecture,
 which lectures of a course you've finished, "continue watching" and "your courses" on the home page,
 and an up-next panel when a lecture ends. Nothing leaves the browser; Settings → Export moves it.

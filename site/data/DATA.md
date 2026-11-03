@@ -64,7 +64,9 @@ there because a university, one of its lecturers, or a scientific institution pu
 course as a public playlist; every lecture of a kept course is included in order, and `nrec` is 0
 unless a community also vouched for that lecture. Each institutional `series[]` entry carries the
 institution (`inst`, `short`), `lecturer`, `year`, `kind` (`course` = a taught course in lecture
-order, `series` = a themed lecture series, `talks` = a collection of separate talks), `level`
+order, `series` = a themed lecture series, `talks` = a collection of separate talks: a research seminar
+series, a hospital's grand rounds, the sessions of a conference — institutional, but not a course and
+not peer-reviewed, so weigh a `talks` item as a speaker's own account of their work), `level`
 (`intro`, `advanced`, `public`), a one-line `note`, the playlist `url`, `vouched` (how many of its
 lectures the communities vouched for) and `pop` (their summed community score; sort courses by it for
 "most recommended course"). `institutions[]` summarizes per institution.

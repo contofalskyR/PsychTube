@@ -1,227 +1,229 @@
 {
  "stats": {
-  "kept": 3857,
-  "inst_lectures": 3274,
-  "inst_also_vouched": 21,
+  "kept": 14277,
+  "inst_lectures": 13708,
+  "inst_also_vouched": 38,
   "dropped_not_psych_or_unlabeled": 694,
-  "dropped_thin_vouch": 149,
-  "dropped_inst_not_psych": 139,
-  "dropped_inst_promo": 97
+  "dropped_thin_vouch": 146,
+  "dropped_inst_not_psych": 730,
+  "dropped_inst_promo": 367,
+  "inst_inherited_topics": 1621,
+  "dropped_inst_thirdparty": 45
  },
  "topics": [
   [
    "how-the-brain-works",
-   641
-  ],
-  [
-   "consciousness",
-   359
-  ],
-  [
-   "happiness-meaning",
-   337
-  ],
-  [
-   "ai-and-mind",
-   290
-  ],
-  [
-   "perception-illusions",
-   280
-  ],
-  [
-   "child-development",
-   277
-  ],
-  [
-   "history-of-psychology",
-   275
-  ],
-  [
-   "psych-research",
-   255
-  ],
-  [
-   "personality",
-   248
-  ],
-  [
-   "decision-risk",
-   227
-  ],
-  [
-   "therapy",
-   216
-  ],
-  [
-   "rationality-biases",
-   201
-  ],
-  [
-   "emotion",
-   187
-  ],
-  [
-   "depression-anxiety",
-   169
-  ],
-  [
-   "psychiatry-medication",
-   167
-  ],
-  [
-   "memory",
-   163
-  ],
-  [
-   "work-organizations",
-   155
+   2296
   ],
   [
    "brain-disorders",
-   144
+   1205
   ],
   [
-   "brain-tech",
-   141
+   "psychiatry-medication",
+   1071
   ],
   [
-   "free-will",
-   140
+   "depression-anxiety",
+   999
   ],
   [
-   "groups-prejudice",
-   137
+   "ai-and-mind",
+   989
   ],
   [
-   "persuasion-manipulation",
-   136
+   "child-development",
+   909
   ],
   [
-   "attention-focus",
-   133
+   "therapy",
+   789
+  ],
+  [
+   "perception-illusions",
+   773
+  ],
+  [
+   "psych-research",
+   772
   ],
   [
    "language-thought",
-   131
+   754
   ],
   [
-   "morality-cooperation",
-   116
-  ],
-  [
-   "motivation-habits",
-   112
-  ],
-  [
-   "sex-gender",
-   105
-  ],
-  [
-   "mindfulness-meditation",
-   102
-  ],
-  [
-   "animal-minds",
-   102
-  ],
-  [
-   "adhd-autism",
-   95
-  ],
-  [
-   "serious-mental-illness",
-   94
-  ],
-  [
-   "trauma-stress",
-   87
-  ],
-  [
-   "relationships-attachment",
-   83
-  ],
-  [
-   "replication-crisis",
-   81
-  ],
-  [
-   "sleep-dreams",
-   77
-  ],
-  [
-   "neurochemistry",
-   73
-  ],
-  [
-   "addiction",
-   64
-  ],
-  [
-   "behavioral-genetics",
-   60
+   "consciousness",
+   740
   ],
   [
    "adolescence-aging",
-   59
+   727
   ],
   [
-   "conformity-obedience",
-   45
+   "brain-tech",
+   679
   ],
   [
-   "intelligence-expertise",
-   45
+   "adhd-autism",
+   638
+  ],
+  [
+   "groups-prejudice",
+   618
+  ],
+  [
+   "trauma-stress",
+   598
+  ],
+  [
+   "serious-mental-illness",
+   565
+  ],
+  [
+   "happiness-meaning",
+   555
+  ],
+  [
+   "memory",
+   527
+  ],
+  [
+   "history-of-psychology",
+   515
+  ],
+  [
+   "decision-risk",
+   504
+  ],
+  [
+   "emotion",
+   476
+  ],
+  [
+   "personality",
+   433
+  ],
+  [
+   "work-organizations",
+   430
   ],
   [
    "crime-forensic",
-   45
+   416
   ],
   [
-   "design-behavior",
-   39
+   "addiction",
+   398
   ],
   [
-   "tech-and-mind",
-   33
+   "rationality-biases",
+   357
   ],
   [
-   "learning-studying",
-   29
+   "neurochemistry",
+   346
   ],
   [
-   "psychedelics",
-   26
+   "mindfulness-meditation",
+   330
   ],
   [
-   "creativity-insight",
-   23
+   "replication-crisis",
+   314
   ],
   [
-   "pseudoscience-skepticism",
-   21
+   "animal-minds",
+   301
   ],
   [
-   "education-teaching",
-   20
+   "attention-focus",
+   284
   ],
   [
-   "grief-loneliness",
-   13
+   "behavioral-genetics",
+   278
+  ],
+  [
+   "morality-cooperation",
+   249
+  ],
+  [
+   "motivation-habits",
+   239
+  ],
+  [
+   "sex-gender",
+   238
+  ],
+  [
+   "sleep-dreams",
+   231
   ],
   [
    "parenting",
-   11
+   217
+  ],
+  [
+   "persuasion-manipulation",
+   214
+  ],
+  [
+   "education-teaching",
+   209
+  ],
+  [
+   "learning-studying",
+   198
+  ],
+  [
+   "relationships-attachment",
+   176
+  ],
+  [
+   "tech-and-mind",
+   151
+  ],
+  [
+   "free-will",
+   150
+  ],
+  [
+   "intelligence-expertise",
+   117
+  ],
+  [
+   "psychedelics",
+   112
+  ],
+  [
+   "design-behavior",
+   96
+  ],
+  [
+   "conformity-obedience",
+   89
   ],
   [
    "performance",
-   7
+   80
+  ],
+  [
+   "creativity-insight",
+   74
+  ],
+  [
+   "pseudoscience-skepticism",
+   72
+  ],
+  [
+   "grief-loneliness",
+   64
   ]
  ],
  "sources": {
   "hn": 2130,
-  "reddit": 229,
-  "se": 160
+  "reddit": 232,
+  "se": 161
  },
  "communities": [
   [
@@ -230,11 +232,11 @@
   ],
   [
    "Psychology & Neuroscience SE",
-   152
+   153
   ],
   [
    "r/neurophilosophy",
-   58
+   60
   ],
   [
    "r/askpsychology",
@@ -271,12 +273,24 @@
  ],
  "series": [
   [
-   "Human Behavioral Biology",
+   "Human Behavioral Biology (2010)",
    25
+  ],
+  [
+   "Psy 100: Learning",
+   23
+  ],
+  [
+   "PSY-496: I/O Psychology",
+   118
   ],
   [
    "Psychology, Brain and Mind Lectures",
    71
+  ],
+  [
+   "General Psychology, Fall 2020",
+   42
   ],
   [
    "Adhd Videos",
@@ -303,12 +317,40 @@
    20
   ],
   [
+   "UCD Psych 1000",
+   92
+  ],
+  [
+   "Videos from the Center on the Developing Child",
+   18
+  ],
+  [
+   "Psy 100: Memory",
+   8
+  ],
+  [
    "MIT 9.00SC Introduction to Psychology",
    24
   ],
   [
+   "Science of Psychology Videos",
+   7
+  ],
+  [
    "Neurodiversity",
    3
+  ],
+  [
+   "APA Convention 2017-2018",
+   9
+  ],
+  [
+   "Human Brain (UCTV)",
+   154
+  ],
+  [
+   "What Works for Borderline Personality Disorder?",
+   7
   ],
   [
    "MIT 9.11 The Human Brain",
@@ -323,7 +365,23 @@
    94
   ],
   [
+   "Neural Basis of Consciousness (2021 lectures)",
+   87
+  ],
+  [
+   "Neuroscience of Human Movement",
+   83
+  ],
+  [
+   "PSY 2510 Social Psychology",
+   66
+  ],
+  [
    "PSYA01 Introductory Psychology",
+   64
+  ],
+  [
+   "Graduate Introduction to Cognitive Science",
    64
   ],
   [
@@ -335,7 +393,19 @@
    61
   ],
   [
+   "Child's Growth and Development",
+   61
+  ],
+  [
+   "Principles of Behavioral Economics",
+   61
+  ],
+  [
    "Bayesian Data Analysis for the Behavioral Sciences",
+   60
+  ],
+  [
+   "Organizational Behaviour: Individual Dynamics in Organization",
    60
   ],
   [
@@ -345,6 +415,14 @@
   [
    "Organizational Behaviour",
    56
+  ],
+  [
+   "Basics of Psychiatry",
+   54
+  ],
+  [
+   "Systems Neuroscience",
+   52
   ],
   [
    "Introductory Neuroscience and Neuro-Instrumentation",
@@ -387,6 +465,30 @@
    44
   ],
   [
+   "Counseling and Psychotherapy Theories",
+   44
+  ],
+  [
+   "Behavioral and Personal Finance",
+   42
+  ],
+  [
+   "Contemporary Issues in Philosophy of Mind and Cognition",
+   42
+  ],
+  [
+   "The Science of Well-Being for Teens",
+   42
+  ],
+  [
+   "Sports Psychology",
+   41
+  ],
+  [
+   "Memory",
+   41
+  ],
+  [
    "Basics of Experimental Design for Cognitive Psychology",
    40
   ],
@@ -395,8 +497,20 @@
    40
   ],
   [
+   "Social Psychology",
+   40
+  ],
+  [
+   "Drugs and Human Behavior",
+   40
+  ],
+  [
    "UC Berkeley Philosophy 3: The Nature of Mind (Fall 2014)",
    37
+  ],
+  [
+   "Psychology 101 Lectures",
+   36
   ],
   [
    "MIT 9.14 Brain Structure and Its Origins",
@@ -404,6 +518,18 @@
   ],
   [
    "Applied Positive Psychology",
+   35
+  ],
+  [
+   "Psychology of Stress, Health and Well-being",
+   35
+  ],
+  [
+   "Selected Topics in Psychology",
+   35
+  ],
+  [
+   "Psych Pharm, Spring 2026",
    35
   ],
   [
@@ -419,6 +545,18 @@
    33
   ],
   [
+   "Statistics in Psychology",
+   33
+  ],
+  [
+   "Cognitive Neuroscience",
+   33
+  ],
+  [
+   "Selected Topics in Psychology",
+   33
+  ],
+  [
    "Psychology of Personality and Individual Differences",
    32
   ],
@@ -427,8 +565,48 @@
    32
   ],
   [
+   "Psychology of Emotion: Theory and Applications",
+   32
+  ],
+  [
+   "PSYC 2301 General Psychology",
+   32
+  ],
+  [
+   "Human Behavioral Biology (2010)",
+   32
+  ],
+  [
+   "PSYC 1001 Introduction to Psychology 1",
+   31
+  ],
+  [
+   "Introduction to Cognitive Psychology",
+   30
+  ],
+  [
+   "Advanced Psychopharmacology Modules 1-3",
+   30
+  ],
+  [
+   "Forensic Psychology",
+   30
+  ],
+  [
    "PSYC 200: Introduction to Psychology",
    29
+  ],
+  [
+   "Psychological Statistics (Psy320)",
+   29
+  ],
+  [
+   "Abnormal Psychology Lecture Series",
+   28
+  ],
+  [
+   "Psych 1000 Introduction to Psychology",
+   27
   ],
   [
    "Philosophy and the Science of Human Nature",
@@ -440,6 +618,14 @@
   ],
   [
    "UC Berkeley Philosophy 3: The Nature of Mind (Fall 2013)",
+   26
+  ],
+  [
+   "PSYC1040 Psychology Research Methodology",
+   26
+  ],
+  [
+   "Music and Neuroscience",
    26
   ],
   [
@@ -456,6 +642,18 @@
   ],
   [
    "UC Berkeley Psychology 164: Social Cognition (Spring 2014)",
+   25
+  ],
+  [
+   "Everyday Parenting: The ABCs of Child Rearing",
+   25
+  ],
+  [
+   "ADC514: Psychopharmacology of Addiction",
+   25
+  ],
+  [
+   "Principles and Practices of Indian Music Therapy",
    25
   ],
   [
@@ -483,6 +681,26 @@
    24
   ],
   [
+   "Brief Introduction to Psychology",
+   24
+  ],
+  [
+   "PSYC 250 Developmental Psychology",
+   24
+  ],
+  [
+   "PSYC 2301 Introduction to Psychology",
+   24
+  ],
+  [
+   "PSYC 1011 Introduction to Psychology 2",
+   24
+  ],
+  [
+   "Psychology Flipped Classroom Lectures",
+   24
+  ],
+  [
    "The Psychology, Biology and Politics of Food",
    23
   ],
@@ -504,6 +722,18 @@
   ],
   [
    "UC Berkeley Psychology 140: Developmental Psychology (Spring 2015)",
+   23
+  ],
+  [
+   "PSY319: Introduction to Counseling",
+   23
+  ],
+  [
+   "PSYC 1000C Introduction to Psychology (2022)",
+   23
+  ],
+  [
+   "PSYC2143 Introduction to Cognition",
    23
   ],
   [
@@ -535,11 +765,39 @@
    22
   ],
   [
+   "Human Behaviour",
+   22
+  ],
+  [
+   "Psychology 104: Basic Psychological Processes",
+   22
+  ],
+  [
    "UC Berkeley Economics 119: Psychology and Economics (Fall 2011)",
    21
   ],
   [
    "UC Berkeley Economics 119: Psychology and Economics (Fall 2013)",
+   21
+  ],
+  [
+   "The Psychology of Language",
+   21
+  ],
+  [
+   "Consumer Psychology",
+   21
+  ],
+  [
+   "Language, Culture and Cognition: An Introduction",
+   21
+  ],
+  [
+   "Bilingualism: A Cognitive and Psycholinguistic Perspective",
+   21
+  ],
+  [
+   "PSY 354: Clinical Psychology",
    21
   ],
   [
@@ -551,11 +809,31 @@
    20
   ],
   [
+   "PSY 523 Psychology and Language",
+   20
+  ],
+  [
+   "PSYC 2344 Cultural Psychology",
+   19
+  ],
+  [
    "NEW303 Hypotheses of the Unconscious",
    18
   ],
   [
    "Positive Psychology",
+   18
+  ],
+  [
+   "Environmental Psychology",
+   18
+  ],
+  [
+   "History of Psychology",
+   18
+  ],
+  [
+   "GCC PSY 101 Part 1: Brain, Freud, Sleep and Dreams",
    18
   ],
   [
@@ -567,8 +845,40 @@
    17
   ],
   [
+   "OpenStax Lifespan Development",
+   17
+  ],
+  [
+   "Industrial/Organizational Psychology Lectures",
+   16
+  ],
+  [
+   "ADC505: Counseling Skills and Techniques",
+   16
+  ],
+  [
    "PSY 1: Introduction to Psychological Science",
    15
+  ],
+  [
+   "Biopsychology Lectures",
+   15
+  ],
+  [
+   "VLC301 Psycholinguistics",
+   15
+  ],
+  [
+   "PSYC 1000C Introduction to Psychology (2023)",
+   15
+  ],
+  [
+   "CPSY 323: Psychopharmacology",
+   14
+  ],
+  [
+   "Mind and Brain: The Mind Part",
+   14
   ],
   [
    "MIT 6.868J The Society of Mind (2011)",
@@ -579,7 +889,87 @@
    13
   ],
   [
+   "The Science of Happiness (GG101x)",
+   13
+  ],
+  [
+   "Community Psychology Lectures",
+   13
+  ],
+  [
+   "Evolutionary Psychology: Basics",
+   13
+  ],
+  [
+   "Neural Dynamics",
+   13
+  ],
+  [
+   "Intro to Cognitive Science Chapter Overviews",
+   13
+  ],
+  [
+   "Neuroscience Methods",
+   13
+  ],
+  [
+   "PSY 313: Clinical Neuropsychology",
+   13
+  ],
+  [
+   "The Degenerating Brain: From Research to Hope",
+   12
+  ],
+  [
+   "Abnormal Psychology (Vallejo)",
+   12
+  ],
+  [
+   "Psych 36: Biological Psychology",
+   12
+  ],
+  [
+   "Moral and Political Psychology",
+   12
+  ],
+  [
+   "Cognitive Neuroscience Lectures",
+   12
+  ],
+  [
+   "Cognitive Neuroscience",
+   11
+  ],
+  [
+   "PSY224 Abnormal Psychology",
+   11
+  ],
+  [
+   "Psych 100",
+   11
+  ],
+  [
+   "Dementia for Scientists, Module 9: Cognition Oriented Treatments",
+   10
+  ],
+  [
+   "Adolescent Health and Well-being: A Holistic Approach",
+   10
+  ],
+  [
    "Behavioral Neuroscience Lab: Psychology 116",
+   9
+  ],
+  [
+   "Dementia for Scientists, Module 1: Definition and Evaluation",
+   9
+  ],
+  [
+   "Fundamentals of Human Sensation and Perception",
+   9
+  ],
+  [
+   "Philosophy of Mind",
    9
   ],
   [
@@ -587,8 +977,60 @@
    8
   ],
   [
+   "Dementia for Scientists, Module 2: Pathology and Pathogenesis",
+   8
+  ],
+  [
+   "Social Psychology: An Introduction",
+   8
+  ],
+  [
+   "Introduction to Neuroscience and AI, Fall 2023",
+   8
+  ],
+  [
+   "2010PSY Health Psychology",
+   8
+  ],
+  [
+   "Introduction to Neuroscience and AI, Spring 2026",
+   8
+  ],
+  [
    "Moralities of Everyday Life",
    7
+  ],
+  [
+   "Peripheral Neuroanatomy and the Neurological Exam",
+   7
+  ],
+  [
+   "Evolutionary Psychology",
+   7
+  ],
+  [
+   "BD 101: Childhood and Growing Up",
+   7
+  ],
+  [
+   "PS100: Introduction to Psychology",
+   7
+  ],
+  [
+   "Dementia for Scientists, Module 5: Therapy Development",
+   6
+  ],
+  [
+   "TPSY214",
+   6
+  ],
+  [
+   "PSYC-100: Consciousness, Sleep, Attention and Memory",
+   6
+  ],
+  [
+   "The Problems of Other Minds",
+   6
   ],
   [
    "MIT 6.868J The Society of Mind (2007)",
@@ -599,16 +1041,180 @@
    5
   ],
   [
+   "Dementia for Scientists, Module 4: Dementia Imaging",
+   4
+  ],
+  [
+   "Dementia for Scientists, Module 3: Dementia Genetics",
+   4
+  ],
+  [
+   "Psychology: Psychopharmacology",
+   3
+  ],
+  [
+   "McGill Cares: Dementia Education Program Webcasts",
+   145
+  ],
+  [
    "Experts in Emotion Series",
    63
+  ],
+  [
+   "Frontiers of the Brain (Your Fantastic Mind)",
+   63
+  ],
+  [
+   "Neural Basis of Consciousness (2020, by topic)",
+   50
+  ],
+  [
+   "Alan Hu Foundation Mental Health Lecture Series",
+   49
+  ],
+  [
+   "CalSouthern Psychology Lectures",
+   49
+  ],
+  [
+   "Psych 101 Study Buddy Series",
+   24
   ],
   [
    "Psychology Public Lectures",
    21
   ],
   [
+   "Child and Adolescent Mental Health",
+   21
+  ],
+  [
+   "Shrinking It Down: Mental Health Made Simple",
+   20
+  ],
+  [
+   "Introduction to Philosophy: Descartes and the Mind-Body Problem",
+   20
+  ],
+  [
+   "Neurotorium Educational Series",
+   19
+  ],
+  [
+   "Data Science and AI for Neuroscience Summer School 2022",
+   17
+  ],
+  [
+   "Workforce Lecture Series",
+   16
+  ],
+  [
+   "Healthy Minds with Dr. Jeffrey Borenstein: Season 5",
+   15
+  ],
+  [
+   "Healthy Minds with Dr. Jeffrey Borenstein: Season 4",
+   14
+  ],
+  [
+   "Social Psychology (2061)",
+   14
+  ],
+  [
+   "Healthy Minds with Dr. Jeffrey Borenstein: Season 8",
+   13
+  ],
+  [
+   "Perspectives in Youth Mental Health",
+   13
+  ],
+  [
+   "How to Think Straight About Psychology",
+   13
+  ],
+  [
+   "Healthy Minds with Dr. Jeffrey Borenstein: Season 9",
+   12
+  ],
+  [
+   "Healthy Minds with Dr. Jeffrey Borenstein: Season 6",
+   12
+  ],
+  [
+   "Psychology Lectures",
+   12
+  ],
+  [
    "The Science of Well-Being",
    11
+  ],
+  [
+   "Healthy Minds with Dr. Jeffrey Borenstein: Season 10",
+   11
+  ],
+  [
+   "Healthy Minds with Dr. Jeffrey Borenstein: Season 7",
+   11
+  ],
+  [
+   "Lectures on Cultural-Historical Activity Theory",
+   11
+  ],
+  [
+   "Early Career Mental Health Professionals",
+   10
+  ],
+  [
+   "Relating Individual Brains to Individual Minds",
+   9
+  ],
+  [
+   "Basics of Neurobiology",
+   9
+  ],
+  [
+   "UBC Medicine Neuroanatomy, Season 1",
+   9
+  ],
+  [
+   "Problem of Cognitive Ontology Series",
+   9
+  ],
+  [
+   "Wallerstein Lecture Series",
+   8
+  ],
+  [
+   "From Freud to Today: Psychoanalytic Theories in Clinical Practice",
+   8
+  ],
+  [
+   "Cognitive-Behavioral Therapy with Children and Adolescents",
+   8
+  ],
+  [
+   "Minding the Mind Public Lecture Series 2023",
+   8
+  ],
+  [
+   "Insight into Personality Psychology",
+   7
+  ],
+  [
+   "CNS1: A First Simple Neuron Model",
+   7
+  ],
+  [
+   "Islamic Psychology",
+   7
+  ],
+  [
+   "Character, Formation, and Flourishing Seminar Series",
+   7
+  ],
+  [
+   "The Story of Cognitive Psychology",
+   7
   ],
   [
    "Why Do We Have Emotions?",
@@ -631,8 +1237,76 @@
    6
   ],
   [
+   "Swartz Foundation Mind/Brain Lectures",
+   6
+  ],
+  [
+   "Ray Dolan: Emotion, Behaviour and Memories",
+   6
+  ],
+  [
+   "Henry Markram: The Human Brain Project",
+   6
+  ],
+  [
+   "Conversations About Mental Health",
+   6
+  ],
+  [
+   "Diversity Science",
+   6
+  ],
+  [
+   "SPSP Experts: Open Science",
+   6
+  ],
+  [
+   "The Illusionist View of Consciousness",
+   6
+  ],
+  [
+   "Forensic Psychology Guest Lecture",
+   6
+  ],
+  [
+   "Psychiatric Interviews for Teaching",
+   6
+  ],
+  [
    "A Romp through the Philosophy of Mind",
    5
+  ],
+  [
+   "Samuel Barondes Lecture in Biological Psychiatry",
+   5
+  ],
+  [
+   "Addressing Tobacco in Behavioral Health",
+   5
+  ],
+  [
+   "Baggs Memorial Happiness Lectures",
+   5
+  ],
+  [
+   "Kay Redfield Jamison: Bipolar Disorder",
+   5
+  ],
+  [
+   "Iain Couzin: Collective Animal Behaviour",
+   5
+  ],
+  [
+   "The Languages of Animals: David Attenborough's 1973 Christmas Lectures",
+   5
+  ],
+  [
+   "Intelligence and Machines",
+   4
+  ],
+  [
+   "Are Brains Analogue or Digital?",
+   4
   ],
   [
    "Neuroscience: The Brain and the Mind",
@@ -643,11 +1317,83 @@
    3
   ],
   [
+   "Nancy Adler Lecture Series",
+   3
+  ],
+  [
+   "Inside The Brain: A Lifetime of Change",
+   3
+  ],
+  [
+   "IntroPsy: Emotion and Motivation",
+   3
+  ],
+  [
+   "Stanford Psychiatry and Behavioral Sciences",
+   270
+  ],
+  [
+   "Law and Mental Health",
+   228
+  ],
+  [
+   "Neuromatch Conference 4 (NMC4)",
+   206
+  ],
+  [
+   "BBRF Meet the Scientist Webinar Series",
+   161
+  ],
+  [
+   "C-STAR Lectures on Aphasia and Language Rehabilitation",
+   157
+  ],
+  [
+   "Mental Health and Psychology (UCTV)",
+   146
+  ],
+  [
    "Psychiatry Grand Rounds",
    136
   ],
   [
+   "Psychiatry and Behavioral Sciences Grand Rounds",
+   105
+  ],
+  [
+   "Psychiatry Grand Rounds",
+   103
+  ],
+  [
+   "ADAA Free Mental Health Webinars",
+   101
+  ],
+  [
+   "Autism Talks and Lectures",
+   89
+  ],
+  [
+   "Autism and Neurodevelopmental Disorders (UCTV)",
+   78
+  ],
+  [
+   "Child and Adolescent Psychiatry and Behavioral Sciences Grand Rounds",
+   69
+  ],
+  [
+   "BPS Archive: Psychology in the Pub and Research Skills",
+   65
+  ],
+  [
+   "Neuromatch Conference 3 (NMC3) Talks",
+   60
+  ],
+  [
    "Psychology",
+   53
+  ],
+  [
+   "McCance Center for Brain Health Seminar Series",
    53
   ],
   [
@@ -655,16 +1401,232 @@
    51
   ],
   [
+   "NeuroSpin Seminars",
+   48
+  ],
+  [
    "Brains, Minds and Machines Seminar Series",
    46
+  ],
+  [
+   "Psychiatry Mental Health Webinars (Mind Matters)",
+   46
+  ],
+  [
+   "RuCCS Colloquia",
+   45
+  ],
+  [
+   "UCSD Department of Psychiatry 50th Anniversary Symposium",
+   43
+  ],
+  [
+   "UBC Psychology Colloquia",
+   42
+  ],
+  [
+   "Alzheimer's and Dementia (UCTV)",
+   41
+  ],
+  [
+   "Heller Lectures (ELSC Seminars)",
+   41
   ],
   [
    "Neuroscience at Oxford",
    39
   ],
   [
+   "Psychiatry Grand Rounds 2021",
+   39
+  ],
+  [
+   "Psychiatry Grand Rounds",
+   39
+  ],
+  [
    "Wu Tsai Neurosciences Institute Talks",
    38
+  ],
+  [
+   "Kavli Institute for Brain and Mind",
+   36
+  ],
+  [
+   "Stress Management (UCTV)",
+   36
+  ],
+  [
+   "Catalyst Seminar Series",
+   36
+  ],
+  [
+   "BIRC Seminars",
+   35
+  ],
+  [
+   "Brain Insight Lectures",
+   34
+  ],
+  [
+   "Mind/Body Connection (UCTV)",
+   33
+  ],
+  [
+   "Psychiatry Grand Rounds 2025",
+   32
+  ],
+  [
+   "Michigan Alzheimer's Disease Center Leaders Initiative Seminar Series",
+   31
+  ],
+  [
+   "Heinz C. Prechter Bipolar Research Program",
+   31
+  ],
+  [
+   "History of Neuroscience in Autobiography",
+   31
+  ],
+  [
+   "Children's Mental Health",
+   31
+  ],
+  [
+   "Psychiatry Grand Rounds (UW Boise)",
+   31
+  ],
+  [
+   "Understanding Higher-level Intelligence from AI, Psychology, and Neuroscience",
+   30
+  ],
+  [
+   "Intensive Services Grand Rounds",
+   29
+  ],
+  [
+   "Summer Institute on Neurodevelopmental Disabilities",
+   29
+  ],
+  [
+   "Research School of Psychology Seminars",
+   29
+  ],
+  [
+   "Serious Mental Illness",
+   29
+  ],
+  [
+   "BBRF Mental Health Research Symposium Presentations",
+   29
+  ],
+  [
+   "van Vreeswijk Theoretical Neuroscience Seminar, Season 2020-2021",
+   29
+  ],
+  [
+   "SPSP 2015 Annual Convention Talks",
+   28
+  ],
+  [
+   "Michigan Alzheimer's Disease Center Speaker Series",
+   27
+  ],
+  [
+   "UCL Neuroscience, Physiology and Pharmacology",
+   27
+  ],
+  [
+   "Simons Foundation Autism Lectures",
+   27
+  ],
+  [
+   "Psychiatry Grand Rounds 2023",
+   26
+  ],
+  [
+   "Clinical Pathological Correlation Conferences",
+   26
+  ],
+  [
+   "2025 5th Annual Precision Mental Health Symposium",
+   25
+  ],
+  [
+   "CCN 2019",
+   25
+  ],
+  [
+   "SPSP 2014 Annual Convention Talks",
+   25
+  ],
+  [
+   "GIFT University Psychology Seminars",
+   25
+  ],
+  [
+   "Psychiatry Grand Rounds 2024",
+   24
+  ],
+  [
+   "2025-2026 Psychiatry and Behavioral Sciences Grand Rounds",
+   24
+  ],
+  [
+   "CCN 2018",
+   24
+  ],
+  [
+   "Columbia Grand Rounds 2022",
+   23
+  ],
+  [
+   "Videos for Psychology Teachers",
+   23
+  ],
+  [
+   "IoPPN Research Festival 2019",
+   22
+  ],
+  [
+   "Computational Theories of the Brain",
+   22
+  ],
+  [
+   "APA 2024 Convention",
+   22
+  ],
+  [
+   "APA Higher Ed Webinars",
+   22
+  ],
+  [
+   "CCN 2026",
+   22
+  ],
+  [
+   "Psychiatry Rounds, Spring 2023",
+   22
+  ],
+  [
+   "ADHD Talks and Lectures",
+   21
+  ],
+  [
+   "Sleep Medicine Grand Rounds",
+   21
+  ],
+  [
+   "APA 2021 Keynotes",
+   21
+  ],
+  [
+   "BNPA 39th Annual Conference 2026",
+   21
+  ],
+  [
+   "BNPA 38th Annual Conference 2025",
+   21
   ],
   [
    "The Mind and Human Violence",
@@ -675,11 +1637,267 @@
    20
   ],
   [
+   "2021-2022 Psychiatry and Behavioral Sciences Grand Rounds",
+   20
+  ],
+  [
+   "Mind and Behaviour Research Group",
+   20
+  ],
+  [
+   "FENS Hertie Winter School 2015: Neurobiology of Language and Communication",
+   20
+  ],
+  [
+   "UCLA Neurotechnology Symposium",
+   19
+  ],
+  [
+   "2024-2025 Psychiatry and Behavioral Sciences Grand Rounds",
+   19
+  ],
+  [
+   "2022-2023 Child and Adolescent Psychiatry Grand Rounds",
+   19
+  ],
+  [
+   "APA 2020 Keynotes",
+   19
+  ],
+  [
+   "FENS Hertie Winter School 2016: Memory Mechanisms in Humans",
+   19
+  ],
+  [
+   "Georgia Tech Neuro Seminar Series 2021-2022",
+   19
+  ],
+  [
+   "2026 6th Annual Precision Mental Health Symposium",
+   18
+  ],
+  [
+   "Highlights from APA 2025",
+   18
+  ],
+  [
+   "Psychonomic Society Keynote Addresses",
+   18
+  ],
+  [
+   "BNPA 36th Annual Conference 2023",
+   18
+  ],
+  [
+   "ISCS 2014: Keynotes and Master Lectures",
+   18
+  ],
+  [
+   "Psychiatry Rounds, Spring 2025",
+   18
+  ],
+  [
+   "Psychiatry Grand Rounds (Minnesota)",
+   18
+  ],
+  [
+   "Dementia Researcher Salon",
+   18
+  ],
+  [
+   "Biology, Genetics and Neurology of Neurodevelopmental Conditions",
+   17
+  ],
+  [
+   "LLMs, Cognitive Science, Linguistics, and Neuroscience",
+   17
+  ],
+  [
+   "Psychonomics International Granada and Leading Edge Workshop",
+   17
+  ],
+  [
+   "FENS-SfN Summer School 2017: Chemical Neuromodulation",
+   17
+  ],
+  [
+   "Psychiatry Patient Education Programs",
+   17
+  ],
+  [
+   "CCN 2022",
+   17
+  ],
+  [
+   "Psychiatry Grand Rounds (NGHS)",
+   17
+  ],
+  [
+   "Psychiatry Rounds, Spring 2024",
+   17
+  ],
+  [
    "Lunch Hour Lectures: Psychology and Language Sciences",
    16
   ],
   [
+   "Treatment, Therapy and Intervention in Neurodevelopmental Conditions",
+   16
+  ],
+  [
+   "Neurodiversity Summit and Talks",
+   16
+  ],
+  [
+   "The Brain and Computation Boot Camp",
+   16
+  ],
+  [
+   "Global Approaches to Integrated Care",
+   16
+  ],
+  [
+   "BNPA 37th Annual Conference 2024",
+   16
+  ],
+  [
+   "BNPA 35th Annual Conference 2022",
+   16
+  ],
+  [
+   "ISCS 2016: Keynotes and Master Lectures",
+   16
+  ],
+  [
+   "Menninger Mindscape",
+   16
+  ],
+  [
+   "Neuroscience and Society (Dana Foundation and AAAS)",
+   16
+  ],
+  [
+   "CCN 2025",
+   16
+  ],
+  [
+   "CCN 2024",
+   16
+  ],
+  [
+   "Psychiatry Rounds, Spring 2026",
+   16
+  ],
+  [
+   "Psychiatry Grand Rounds 2026",
+   15
+  ],
+  [
+   "Evolution of Language (CARTA)",
+   15
+  ],
+  [
+   "FENS-SfN Summer School 2016: Cellular Mechanisms and Networks in Addiction",
+   15
+  ],
+  [
+   "BBRF International Mental Health Research Symposium 2021",
+   15
+  ],
+  [
+   "BP-ENDURE Virtual Seminar Series",
+   15
+  ],
+  [
+   "Buckeye Neurotrauma Lectures",
+   15
+  ],
+  [
+   "Visiting Lecture Series",
+   15
+  ],
+  [
+   "2023-2024 Psychiatry and Behavioral Sciences Grand Rounds",
+   14
+  ],
+  [
+   "2022-2023 Psychiatry and Behavioral Sciences Grand Rounds",
+   14
+  ],
+  [
+   "FENS History of Neuroscience",
+   14
+  ],
+  [
+   "BBRF International Mental Health Research Symposium 2018",
+   14
+  ],
+  [
+   "Mental Health Treatment Options",
+   14
+  ],
+  [
    "RCPsych Lectures",
+   13
+  ],
+  [
+   "Developing a National Dementia Strategy Conference",
+   13
+  ],
+  [
+   "Technology, Mind and Society 2020 Keynotes",
+   13
+  ],
+  [
+   "APA 2019 Convention",
+   13
+  ],
+  [
+   "Dialogues Between Neuroscience and Society",
+   13
+  ],
+  [
+   "FENS Hertie Winter School 2017: Neural Control of Behaviour, Navigation",
+   13
+  ],
+  [
+   "Brain Health Learning Network",
+   13
+  ],
+  [
+   "Secret Science Club Neuroscience and Society Talks",
+   13
+  ],
+  [
+   "ESI SyNC 2025: Altered States of Consciousness and Their Neural Basis",
+   13
+  ],
+  [
+   "Psychiatry Rounds, Fall 2024",
+   13
+  ],
+  [
+   "Psychiatry Rounds, Fall 2023",
+   13
+  ],
+  [
+   "The Evolution of Mindfulness Speaker Series",
+   13
+  ],
+  [
+   "Theorizing and Modeling in Neuroscience Conference",
+   13
+  ],
+  [
+   "Neuroscience of the Everyday World Conference 2024",
+   13
+  ],
+  [
+   "Neuroscience of the Everyday World Conference 2025",
+   13
+  ],
+  [
+   "Dementia Research Seminars and Interviews",
    13
   ],
   [
@@ -691,7 +1909,311 @@
    12
   ],
   [
+   "2025-2026 Distinguished Lecturer Series",
+   12
+  ],
+  [
+   "Anxiety in Neurodevelopmental Conditions",
+   12
+  ],
+  [
+   "Environmental and Social Determinants of Child Mental Health",
+   12
+  ],
+  [
+   "Human Origins: Lessons from Autism Disorders (CARTA)",
+   12
+  ],
+  [
+   "Occupational Psychology Conference Keynotes",
+   12
+  ],
+  [
+   "ELSC Seminars and Lectures",
+   12
+  ],
+  [
+   "CogSci Mind Challenge",
+   12
+  ],
+  [
+   "Cosyne 2020 Workshop: Interpretable Computational Neuroscience",
+   12
+  ],
+  [
+   "Psychiatry Rounds, Fall 2025",
+   12
+  ],
+  [
+   "Neuroscience and the Soul Conference",
+   12
+  ],
+  [
+   "Neuroscience of the Everyday World Symposium",
+   12
+  ],
+  [
+   "Psychiatry Special Seminars",
+   11
+  ],
+  [
+   "2025 Summer Institute on Neurodevelopmental Disabilities",
+   11
+  ],
+  [
+   "Is the Human Mind Unique? (CARTA)",
+   11
+  ],
+  [
+   "Embodied, Situated, and Grounded Intelligence: Implications for AI",
+   11
+  ],
+  [
+   "Autism: Emerging Concepts",
+   11
+  ],
+  [
+   "CAJAL Advanced Neuroscience Training Programme",
+   11
+  ],
+  [
+   "Mind & Life XXVI: Mind, Brain and Matter",
+   11
+  ],
+  [
+   "BBRFI Webinars",
+   11
+  ],
+  [
+   "Neuro& Webinar Series",
+   11
+  ],
+  [
+   "CCN 2023",
+   11
+  ],
+  [
+   "Computational Cognition Workshop 2021",
+   11
+  ],
+  [
+   "Annual Distinguished Lectures in Multicultural Psychology",
+   11
+  ],
+  [
+   "2024-2025 Child and Adolescent Psychiatry Grand Rounds",
+   10
+  ],
+  [
+   "2022-2023 Distinguished Lecturer Series",
+   10
+  ],
+  [
+   "Symposium on Cognition Oriented Treatments in Aging and Dementia",
+   10
+  ],
+  [
+   "Edinburgh Psychology Keynotes",
+   10
+  ],
+  [
+   "Targeted Discovery in Brain Data",
+   10
+  ],
+  [
+   "Expert Discussions (APA Annual Meeting)",
+   10
+  ],
+  [
+   "FENS Hertie Winter School 2018: Neural Control of Instinctive and Innate Behaviour",
+   10
+  ],
+  [
+   "BNPA 33rd Annual Conference 2020",
+   10
+  ],
+  [
+   "Mind & Life Inspiring Minds Series",
+   10
+  ],
+  [
+   "Mind & Life XXVII: Craving, Desire and Addiction",
+   10
+  ],
+  [
+   "Mind & Life XXV: Contemplative Practice and Health",
+   10
+  ],
+  [
+   "Mind & Life XXIII: Ecology, Ethics and Interdependence",
+   10
+  ],
+  [
+   "BBRF International Mental Health Research Symposium 2019",
+   10
+  ],
+  [
+   "27th Annual New York Mental Health Research Symposium",
+   10
+  ],
+  [
+   "SPSP 2021 Annual Convention",
+   10
+  ],
+  [
+   "Women's Mental Health",
+   10
+  ],
+  [
+   "Understanding PTSD and Trauma",
+   10
+  ],
+  [
+   "CSN Lab Presentations",
+   10
+  ],
+  [
+   "The Multilingual Mind Lecture Series 2021/2022",
+   10
+  ],
+  [
+   "The Multilingual Mind Lecture Series 2021",
+   10
+  ],
+  [
+   "2023-2024 Child and Adolescent Psychiatry Grand Rounds",
+   9
+  ],
+  [
+   "Suicide Prevention Symposium",
+   9
+  ],
+  [
+   "Practicing Mindfulness and Compassion Conference",
+   9
+  ],
+  [
+   "Autism Tree Project Annual Neuroscience Conference",
+   9
+  ],
+  [
+   "Technology, Mind and Society 2021 Keynotes",
+   9
+  ],
+  [
+   "Essentials of Qualitative Methods",
+   9
+  ],
+  [
+   "CNS 2023 Keynote and Award Talks",
+   9
+  ],
+  [
+   "BNA2021 Festival of Neuroscience: Sessions",
+   9
+  ],
+  [
+   "BNPA 32nd Annual Conference 2019",
+   9
+  ],
+  [
+   "BNPA 34th Annual Conference 2021",
+   9
+  ],
+  [
+   "Mind & Life XVIII",
+   9
+  ],
+  [
+   "ESI SyNC 2023: Linking Hypotheses",
+   9
+  ],
+  [
+   "CCN 2021",
+   9
+  ],
+  [
+   "Cognitive Neuroscience Hub Presentations 2025",
+   9
+  ],
+  [
    "Psychology in Sheffield",
+   8
+  ],
+  [
+   "2021 Wu Tsai Neuro Symposium",
+   8
+  ],
+  [
+   "Columbia Conference on Mental Health Journalism and Media 2019",
+   8
+  ],
+  [
+   "UCSF Psychiatry Guest Lectures",
+   8
+  ],
+  [
+   "Allison J. Doupe Memorial Symposium",
+   8
+  ],
+  [
+   "2018 Summer Institute on Neurodevelopmental Disabilities",
+   8
+  ],
+  [
+   "Zero Suicide Engagement Forums",
+   8
+  ],
+  [
+   "Michigan Alzheimer's Disease Center Presentations for Professionals",
+   8
+  ],
+  [
+   "Picower New Insight Symposium 2014",
+   8
+  ],
+  [
+   "Glial and Neuronal Biology of the Aging Brain",
+   8
+  ],
+  [
+   "2017 APA Convention: Gender and Sexual Orientation",
+   8
+  ],
+  [
+   "CogSci 2022 Symposia",
+   8
+  ],
+  [
+   "Mind & Life XXX: Perceptions, Concepts and Self",
+   8
+  ],
+  [
+   "Mind & Life XIV",
+   8
+  ],
+  [
+   "BBRF International Mental Health Research Symposium 2020",
+   8
+  ],
+  [
+   "BBRF 2014 Prizewinner Symposium Presentations",
+   8
+  ],
+  [
+   "Technology and Youth Mental Health Webinar Series",
+   8
+  ],
+  [
+   "Cosyne 2020 Workshop: What's a Behavior? Systems Neuroscience Meets Behavioral Ecology",
+   8
+  ],
+  [
+   "Navigating the New Era of Social and Personality Psychology",
+   8
+  ],
+  [
+   "Cognitive Neuroscience Hub Presentations 2026",
    8
   ],
   [
@@ -703,11 +2225,595 @@
    7
   ],
   [
+   "Knight Initiative for Brain Resilience: 2023 Inaugural Symposium",
+   7
+  ],
+  [
+   "The Future of Precision Neuroscience and Mental Health",
+   7
+  ],
+  [
+   "2016 COAST/SSEW Symposium: Food Addiction",
+   7
+  ],
+  [
+   "2024 Summer Institute on Neurodevelopmental Disabilities",
+   7
+  ],
+  [
+   "2019 Summer Institute on Neurodevelopmental Disabilities",
+   7
+  ],
+  [
+   "2025 Center for Consciousness Science Symposium: Covert Consciousness",
+   7
+  ],
+  [
+   "Neuromodulation in Aging and Dementia 2024",
+   7
+  ],
+  [
+   "Rinne Lewy Body Dementia Initiative Presentations",
+   7
+  ],
+  [
+   "What's Next in Autism Genomics?",
+   7
+  ],
+  [
+   "BPS Conference 2020",
+   7
+  ],
+  [
+   "2017 APA Convention: Neuroscience and the Brain",
+   7
+  ],
+  [
+   "Training Videos on Gender and Sexual Minority Issues",
+   7
+  ],
+  [
+   "BNA Festive Symposium 2023: Unwrapping the Neuroscience of Emotion",
+   7
+  ],
+  [
+   "BNA Festive Symposium 2021: Ding Dong Merrily on AI",
+   7
+  ],
+  [
+   "BBRF International Mental Health Research Symposium 2024",
+   7
+  ],
+  [
+   "BBRF International Mental Health Research Symposium 2022",
+   7
+  ],
+  [
+   "McCance Center July 2020 Neuroimaging Symposium",
+   7
+  ],
+  [
+   "Hey Parents, Let's Talk Mental Health",
+   7
+  ],
+  [
+   "Mindscape: Trauma",
+   7
+  ],
+  [
+   "ESI SyNC 2022: The Ever Changing Brain",
+   7
+  ],
+  [
+   "SPSP 2022 Social-Personality Undergraduate Research (SPUR) Presentations",
+   7
+  ],
+  [
+   "Understanding Depression",
+   7
+  ],
+  [
+   "Psychiatry Rounds, Fall 2026",
+   7
+  ],
+  [
+   "UW Global Mental Health Speaker Series",
+   7
+  ],
+  [
+   "Addiction and Mental Health Seminar Series",
+   7
+  ],
+  [
+   "T&C Chen Center for Social and Decision Neuroscience Seminars",
+   7
+  ],
+  [
+   "Cognitive Colloquia",
+   7
+  ],
+  [
    "Understanding Mental Health (#OxfordMentalHealth)",
    6
   ],
   [
+   "10th Annual Wu Tsai Neurosciences Symposium",
+   6
+  ],
+  [
+   "2022 Wu Tsai Neuro Symposium: Remembering the Past, Imagining the Future",
+   6
+  ],
+  [
+   "2023 3rd Annual Precision Mental Health and Wellness Symposium",
+   6
+  ],
+  [
+   "Mental and Behavioral Health in Pediatric Primary Care and COVID-19",
+   6
+  ],
+  [
+   "2015 COAST/SSEW Symposium: Microbiome and the Mind",
+   6
+  ],
+  [
+   "2011-2012 Distinguished Lecturer Series",
+   6
+  ],
+  [
+   "2017 Summer Institute on Neurodevelopmental Disabilities",
+   6
+  ],
+  [
+   "Michigan Psychedelic Center Seminar Series: Psychedelics from Cells to Society",
+   6
+  ],
+  [
+   "2026 AI for Mental Health (AI4MH) Symposium",
+   6
+  ],
+  [
+   "Origins of Consciousness Workshop",
+   6
+  ],
+  [
+   "Stories of Psychology 2019",
+   6
+  ],
+  [
+   "Stories of Psychology 2018",
+   6
+  ],
+  [
+   "BPS Annual Conference 2018",
+   6
+  ],
+  [
+   "Moving Psychological Science Forward 2018",
+   6
+  ],
+  [
+   "Technology in Testing and Assessment",
+   6
+  ],
+  [
+   "APF at Home Webinars",
+   6
+  ],
+  [
+   "Future Directions Forum 2019",
+   6
+  ],
+  [
+   "2017 APA Convention: Health",
+   6
+  ],
+  [
+   "Big Ideas in Cognitive Neuroscience",
+   6
+  ],
+  [
+   "One World Seminar Series 2022-2023",
+   6
+  ],
+  [
+   "CogSci 2021 IP20: Trends in Cognitive Science",
+   6
+  ],
+  [
+   "CogSci 2021 Glushko Dissertation Prize Talks",
+   6
+  ],
+  [
+   "CogSci 2020 Paper Session: Language and Meaning",
+   6
+  ],
+  [
+   "FENS-SfN Summer School 2018: Neural Stem Cells, Brain Organoids and Brain Repair",
+   6
+  ],
+  [
+   "FENS-SfN Summer School 2015: Neurodegenerative Diseases",
+   6
+  ],
+  [
+   "FENS-SfN Summer School 2014: Neurodevelopmental Psychiatric Disorders",
+   6
+  ],
+  [
+   "Credibility Lunchbox: In Vivo Neuroscience",
+   6
+  ],
+  [
+   "BYOB2021: Public Events about Neuroscience",
+   6
+  ],
+  [
+   "Mind & Life Summer Research Institute 2026",
+   6
+  ],
+  [
+   "ISCR 2018: International Symposium for Contemplative Research",
+   6
+  ],
+  [
+   "BBRF International Mental Health Research Symposium 2025",
+   6
+  ],
+  [
+   "BBRF International Mental Health Research Symposium 2023",
+   6
+  ],
+  [
+   "Mindscape: Depression",
+   6
+  ],
+  [
+   "CCN 2020 Generative Adversarial Collaboration Workshops",
+   6
+  ],
+  [
+   "Stress and Mental Health",
+   6
+  ],
+  [
+   "Cognitive Neuroscience Hub Presentations 2024",
+   6
+  ],
+  [
+   "Decolpsych Distinguished Speaker Series",
+   6
+  ],
+  [
+   "Colloquium Speaker Series",
+   6
+  ],
+  [
    "Experimental Psychology",
+   5
+  ],
+  [
+   "2025 Wu Tsai Neurosciences Symposium",
+   5
+  ],
+  [
+   "2024 Wu Tsai Neuro Symposium: Brains & Machines",
+   5
+  ],
+  [
+   "2024 4th Annual Precision Mental Health and Wellness Symposium",
+   5
+  ],
+  [
+   "Hope Over the Horizon: 2024 Columbia Depression Summit",
+   5
+  ],
+  [
+   "Gray Matters at Columbia",
+   5
+  ],
+  [
+   "Exercise and the Brain Symposium",
+   5
+  ],
+  [
+   "2026-2027 Psychiatry and Behavioral Sciences Grand Rounds",
+   5
+  ],
+  [
+   "2024-2025 Distinguished Lecturer Series",
+   5
+  ],
+  [
+   "2023-2024 Distinguished Lecturer Series",
+   5
+  ],
+  [
+   "2021 Distinguished Lecturer Series",
+   5
+  ],
+  [
+   "Picower Institute 2018 Spring Symposium",
+   5
+  ],
+  [
+   "BPS 2019 Annual Conference: Psychological Impact of Inequality",
+   5
+  ],
+  [
+   "Psychology Research Day 2019",
+   5
+  ],
+  [
+   "Stories of Psychology 2017",
+   5
+  ],
+  [
+   "Interdisciplinary Psychiatry",
+   5
+  ],
+  [
+   "Simons Collaboration on the Global Brain Annual Meeting",
+   5
+  ],
+  [
+   "Salk's Year of Brain Health",
+   5
+  ],
+  [
+   "APA 2021 Main Stage",
+   5
+  ],
+  [
+   "Technology, Mind and Society 2019 Keynotes",
+   5
+  ],
+  [
+   "2017 APA Convention: Violence and Trauma",
+   5
+  ],
+  [
+   "2017 APA Convention: Race and Culture",
+   5
+  ],
+  [
+   "2017 APA Convention: Clinical and Counseling",
+   5
+  ],
+  [
+   "Needs of Families Experiencing Homelessness",
+   5
+  ],
+  [
+   "Minority Mental Health Summit",
+   5
+  ],
+  [
+   "Psychologists in Integrated Health Care",
+   5
+  ],
+  [
+   "CNS 2024 Keynote and Award Talks",
+   5
+  ],
+  [
+   "CNS 2022 Keynote and Award Talks",
+   5
+  ],
+  [
+   "Finances and Feelings: The Affective Neuroscience of SES",
+   5
+  ],
+  [
+   "Big Theory versus Big Data",
+   5
+  ],
+  [
+   "One World Seminar Series 2023-2024",
+   5
+  ],
+  [
+   "One World Seminar Series 2021-2022",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 20: Emotion",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 19: Language Acquisition 2",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 17: Education",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 41: Causation 2",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 16: Reasoning",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 37: Inference",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 36: Pragmatics 2",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 33: Computational Neuroscience 2",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 32: Syntax and Morphology",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 31: Semantics",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 30: Development 2",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 12: Memory and Learning",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 29: Groups and Cooperation",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 11: Concepts",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 10: Development 1",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 28: Exploration",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 27: Communication",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 8: Pragmatics 1",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 25: Language and Concept Acquisition",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 7: Analogy and Reasoning",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 6: Creativity and Insight",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 24: Spatial Cognition",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 22: Computational Neuroscience 1",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 21: Human-Computer Interaction",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 5: Language Evolution",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 4: Language Production",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 3: Social Cognition",
+   5
+  ],
+  [
+   "CogSci 2022 Talk 1: Vision",
+   5
+  ],
+  [
+   "CogSci 2022 Workshop 1: Deep Learning for Brain Encoding and Decoding",
+   5
+  ],
+  [
+   "CogSci 2022 Glushko Talks",
+   5
+  ],
+  [
+   "CogSci 2021 IP5: Categorization",
+   5
+  ],
+  [
+   "CogSci 2021 IP2: Communication",
+   5
+  ],
+  [
+   "CogSci 2020 Glushko Dissertation Prize Talks",
+   5
+  ],
+  [
+   "CogSci 2020 Paper Session: Neural Networks",
+   5
+  ],
+  [
+   "CogSci 2020 Paper Session: Agent-based Models",
+   5
+  ],
+  [
+   "BNA Festive Symposium 2022: Mental Health",
+   5
+  ],
+  [
+   "Building Bridges Along the Psychiatric Drug Discovery Pipeline",
+   5
+  ],
+  [
+   "BNA Festive Symposium 2020: The Seven Ages of (Hu)man",
+   5
+  ],
+  [
+   "Mind & Life XXXIX: Minds, Artificial Intelligence, and Ethics",
+   5
+  ],
+  [
+   "Mind & Life XXXIII: Reimagining Human Flourishing",
+   5
+  ],
+  [
+   "Mind & Life XXXII: Botho/Ubuntu",
+   5
+  ],
+  [
+   "Mind & Life XIII: Investigating the Mind, Science and Clinical Applications of Meditation",
+   5
+  ],
+  [
+   "Mass General Brigham Neurology Grand Rounds",
+   5
+  ],
+  [
+   "Best of Dr. Aaron T. Beck",
+   5
+  ],
+  [
+   "Dementia and Personhood: Facts and Myths",
+   5
+  ],
+  [
+   "Mindscape: Suicide",
+   5
+  ],
+  [
+   "ESI SyNC 2024: Time in the Brain",
+   5
+  ],
+  [
+   "ESI SyNC 2021: The Natural Brain",
+   5
+  ],
+  [
+   "SPSP 2021 Social-Personality Undergraduate Research (SPUR) Presentations",
+   5
+  ],
+  [
+   "SPSP 2020 Annual Convention Sessions",
    5
   ],
   [
@@ -723,11 +2829,655 @@
    4
   ],
   [
+   "2022 Mind, Brain, Computation and Technology Symposium",
+   4
+  ],
+  [
+   "Neurodiversity Summit 2021",
+   4
+  ],
+  [
+   "2007-2008 Minds Behind The MIND",
+   4
+  ],
+  [
+   "2012-2013 Distinguished Lecturer Series",
+   4
+  ],
+  [
+   "2013-2014 Distinguished Lecturer Series",
+   4
+  ],
+  [
+   "2019-2020 Distinguished Lecturer Series",
+   4
+  ],
+  [
+   "2018-2019 Distinguished Lecturer Series",
+   4
+  ],
+  [
+   "2017-2018 Distinguished Lecturer Series",
+   4
+  ],
+  [
+   "Coping with Stress Town Halls",
+   4
+  ],
+  [
+   "Clinical Psychology (BPS)",
+   4
+  ],
+  [
+   "DECP Annual Conference 2018",
+   4
+  ],
+  [
+   "DECP Annual Conference 2017",
+   4
+  ],
+  [
+   "Stories of Psychology 2016",
+   4
+  ],
+  [
+   "DECP Annual Conference 2016",
+   4
+  ],
+  [
+   "Brain Research at the Molecular and Cellular Level",
+   4
+  ],
+  [
+   "Presidential Lectures 2025: Diverse Brains",
+   4
+  ],
+  [
+   "Presidential Lectures 2024: The Social Brain",
+   4
+  ],
+  [
+   "Moving Psychological Science Toward a Population Health Approach",
+   4
+  ],
+  [
+   "APA Webinars",
+   4
+  ],
+  [
+   "Technology, Mind and Society 2018 Keynotes",
+   4
+  ],
+  [
+   "2017 APA Convention: Public Policy and the Law",
+   4
+  ],
+  [
+   "CNS 2026 Keynote and Award Talks",
+   4
+  ],
+  [
+   "CNS 2025 Keynote and Award Talks",
+   4
+  ],
+  [
+   "Brenda Milner: A Lifetime of Brain Science",
+   4
+  ],
+  [
+   "One World Seminar Series 2025-2026",
+   4
+  ],
+  [
+   "Symposium on Cognition, Behavior, and Society",
+   4
+  ],
+  [
+   "CogSci 2022 Talk 18: Language Modeling",
+   4
+  ],
+  [
+   "CogSci 2022 Talk 40: Memory",
+   4
+  ],
+  [
+   "CogSci 2022 Talk 14: Language Acquisition 1",
+   4
+  ],
+  [
+   "CogSci 2022 Talk 38: Networks and Groups",
+   4
+  ],
+  [
+   "CogSci 2022 Talk 13: Applied Language",
+   4
+  ],
+  [
+   "CogSci 2022 Talk 35: Embodied Cognition",
+   4
+  ],
+  [
+   "CogSci 2022 Talk 9: Language Processing",
+   4
+  ],
+  [
+   "CogSci 2022 Talk 26: Real-world Decisions",
+   4
+  ],
+  [
+   "CogSci 2022 Talk 23: Culture and Cognition",
+   4
+  ],
+  [
+   "CogSci 2022 Talk 2: Decision Making",
+   4
+  ],
+  [
+   "CogSci 2022 Workshop 5: Shared Intentionality for Diverse Learners",
+   4
+  ],
+  [
+   "CogSci 2022 Workshop 4: Category Theory for Cognitive Science",
+   4
+  ],
+  [
+   "CogSci 2022 Workshop 3: Dimensions of Diversity in Spatial Cognition",
+   4
+  ],
+  [
+   "CogSci 2021 Symposium 11: Animal Consciousness",
+   4
+  ],
+  [
+   "CogSci 2021 IP8: Development Models",
+   4
+  ],
+  [
+   "CogSci 2021 IP6: Language Models 1",
+   4
+  ],
+  [
+   "CogSci 2021 IP31: Risk and Decision Making",
+   4
+  ],
+  [
+   "CogSci 2021 IP30: Social Cognition",
+   4
+  ],
+  [
+   "CogSci 2021 IP28: Perception 2",
+   4
+  ],
+  [
+   "CogSci 2021 IP25: Social and Judgements",
+   4
+  ],
+  [
+   "CogSci 2021 IP24: Pragmatics 1",
+   4
+  ],
+  [
+   "CogSci 2021 IP23: Perception 1",
+   4
+  ],
+  [
+   "CogSci 2021 IP22: Moral and Choices",
+   4
+  ],
+  [
+   "CogSci 2021 IP18: Movement and Action",
+   4
+  ],
+  [
+   "CogSci 2021 IP17: Judgements and Decisions",
+   4
+  ],
+  [
+   "CogSci 2021 IP14: Development and Learning",
+   4
+  ],
+  [
+   "CogSci 2021 IP12: Neural Networks and Imaging",
+   4
+  ],
+  [
+   "CogSci 2021 Paper Session: Learning",
+   4
+  ],
+  [
+   "CogSci 2020 Symposium",
+   4
+  ],
+  [
+   "CogSci 2020 Paper Session: Pragmatics",
+   4
+  ],
+  [
+   "CogSci 2020 Paper Session: Complex Dynamics",
+   4
+  ],
+  [
+   "CogSci 2020 Paper Session: Language and Groups",
+   4
+  ],
+  [
+   "CogSci 2020 Paper Session: Language Development",
+   4
+  ],
+  [
+   "CogSci 2020 Paper Session: Facets of Cognition",
+   4
+  ],
+  [
+   "CogSci 2020 Paper Session: Learning and Development",
+   4
+  ],
+  [
+   "CogSci 2020 Paper Session: Forms of Learning",
+   4
+  ],
+  [
+   "CogSci 2020 Paper Session: Human Learning",
+   4
+  ],
+  [
+   "CogSci 2020 Paper Session: Neuroscience and Psychophysics",
+   4
+  ],
+  [
+   "BNA Webinars for Children and Young People",
+   4
+  ],
+  [
+   "Science and Wisdom of Emotions Summit",
+   4
+  ],
+  [
+   "Mind & Life Conversations with the Dalai Lama",
+   4
+  ],
+  [
+   "Mind & Life XI: Investigating the Mind",
+   4
+  ],
+  [
+   "Mind & Life XXIX: Mapping the Mind",
+   4
+  ],
+  [
+   "Mind & Life XXII",
+   4
+  ],
+  [
+   "McCance Center February 2021 Neuroimaging Symposium",
+   4
+  ],
+  [
+   "Mayo Clinic Conference on Brain Health and Dementia",
+   4
+  ],
+  [
+   "Building Skills and Destigmatizing Mental Health: A Working Summit",
+   4
+  ],
+  [
+   "Machine+Behavior Conference 2024",
+   4
+  ],
+  [
+   "SPSP 2017 Annual Convention Talks",
+   4
+  ],
+  [
+   "SPSP 2018 Annual Convention Talks",
+   4
+  ],
+  [
+   "When Institutions Are Barriers: Bias and Contextual Cues",
+   4
+  ],
+  [
+   "Suicide Prevention",
+   4
+  ],
+  [
    "Our Mental Wellness",
    3
   ],
   [
+   "Mind, Brain, Computation and Technology Seminars",
+   3
+  ],
+  [
+   "Chat with the Experts in Precision Mental Health",
+   3
+  ],
+  [
+   "Hope Over the Horizon: 2025 Depression Center Symposium",
+   3
+  ],
+  [
+   "2022 Summer Institute on Neurodevelopmental Disabilities",
+   3
+  ],
+  [
+   "2008-2009 Minds Behind The MIND",
+   3
+  ],
+  [
+   "2006-2007 Minds Behind The MIND",
+   3
+  ],
+  [
+   "2021 Summer Institute on Neurodevelopmental Disabilities",
+   3
+  ],
+  [
+   "2020 Summer Institute on Neurodevelopmental Disabilities",
+   3
+  ],
+  [
+   "2014-2015 Minds Behind The MIND",
+   3
+  ],
+  [
+   "Child Psychiatry Fellow Grand Rounds",
+   3
+  ],
+  [
+   "2023 Center for Consciousness Science Symposium: Near-Death Experience",
+   3
+  ],
+  [
+   "Altered States of Consciousness",
+   3
+  ],
+  [
+   "Memory University 2022",
+   3
+  ],
+  [
+   "2025 Aging Brain Initiative Symposium: The Neuro-Immune Axis",
+   3
+  ],
+  [
+   "2023 MIT Aging Brain Initiative Symposium",
+   3
+  ],
+  [
+   "Triangulating Intelligence: Neuroscience, Psychology, and AI",
+   3
+  ],
+  [
+   "QMiP Annual Conference 2017",
+   3
+  ],
+  [
+   "BRAIN Initiative Cell Atlas Workshop",
+   3
+  ],
+  [
+   "Global Mental Health Research Webinar Series",
+   3
+  ],
+  [
+   "NIMH Director's Innovation Speaker Series",
+   3
+  ],
+  [
+   "Presidential Lectures 2026: Brain and Body",
+   3
+  ],
+  [
+   "Presidential Lectures 2023: The Neuroscience of Sleep",
+   3
+  ],
+  [
+   "2017 APA Convention: Social and Personality",
+   3
+  ],
+  [
+   "2017 APA Convention: General and Basic Research",
+   3
+  ],
+  [
+   "PsyTalks",
+   3
+  ],
+  [
+   "SONA Webinar Series",
+   3
+  ],
+  [
+   "One World Seminar Series 2024-2025",
+   3
+  ],
+  [
+   "CogSci 2022 Talk 15: Causation 1",
+   3
+  ],
+  [
+   "CogSci 2022 Talk 39: Language Acquisition 3",
+   3
+  ],
+  [
+   "CogSci 2022 Talk 34: Morality",
+   3
+  ],
+  [
+   "CogSci 2022 Invited Symposium: Diversity and Social Interaction",
+   3
+  ],
+  [
+   "CogSci 2021 Symposium 6: Explanation in Human Thinking",
+   3
+  ],
+  [
+   "CogSci 2021 Symposium 3: Conceptual Blending in Animal Cognition",
+   3
+  ],
+  [
+   "CogSci 2021 IP9: Language Models 2",
+   3
+  ],
+  [
+   "CogSci 2021 IP7: Vision",
+   3
+  ],
+  [
+   "CogSci 2021 IP4: Comprehension",
+   3
+  ],
+  [
+   "CogSci 2021 IP3: Cognitive Modeling",
+   3
+  ],
+  [
+   "CogSci 2021 IP27: Language Development 2",
+   3
+  ],
+  [
+   "CogSci 2021 IP21: Language Development 1",
+   3
+  ],
+  [
+   "CogSci 2021 IP19: Reasonings and Predictions",
+   3
+  ],
+  [
+   "CogSci 2021 IP16: Humans and Other Animals",
+   3
+  ],
+  [
+   "CogSci 2021 IP15: Development, Social",
+   3
+  ],
+  [
+   "CogSci 2021 Paper Session: Linguistics",
+   3
+  ],
+  [
+   "CogSci 2021 Invited Panel: Comparative and Neural Approaches to Social Cognition",
+   3
+  ],
+  [
+   "CogSci 2021 Elman Prize Symposium",
+   3
+  ],
+  [
+   "CogSci 2020 Keynote Lectures",
+   3
+  ],
+  [
+   "CogSci 2020 Panel: Deep Integration between Development and Cognitive Science",
+   3
+  ],
+  [
+   "CogSci 2020 Paper Session: Word Learning",
+   3
+  ],
+  [
+   "CogSci 2020 Paper Session: Attention and Faces",
+   3
+  ],
+  [
+   "CogSci 2020 Paper Session: Linguistics",
+   3
+  ],
+  [
+   "CogSci 2020 Paper Session: Semantics",
+   3
+  ],
+  [
+   "CogSci 2020 Paper Session: Choices and Decisions",
+   3
+  ],
+  [
+   "CogSci 2020 Paper Session: Events, Actions and Sequencing",
+   3
+  ],
+  [
+   "CogSci 2020 Paper Session: Emotion and Beliefs",
+   3
+  ],
+  [
+   "CogSci 2020 Paper Session: Judgment and Decision Making",
+   3
+  ],
+  [
+   "CogSci 2020 Paper Session: Reading and Processing",
+   3
+  ],
+  [
+   "CogSci 2020 Paper Session: Biases",
+   3
+  ],
+  [
+   "CogSci 2020 Paper Session: Concepts and Systems",
+   3
+  ],
+  [
+   "CogSci 2020 Paper Session: Comparative and Cultural Cognition",
+   3
+  ],
+  [
+   "CogSci 2020 Paper Session: Social Learning",
+   3
+  ],
+  [
+   "CogSci 2020 Paper Session: Speech and Phonetics",
+   3
+  ],
+  [
+   "CogSci 2020 Paper Session: Spatial Cognition",
+   3
+  ],
+  [
+   "Credibility Lunchbox: Neuroimaging",
+   3
+  ],
+  [
+   "Credibility in Neuroscience: In Vitro Webinars",
+   3
+  ],
+  [
+   "Mayo Clinic Keynote Lecture Series: Neuroscience",
+   3
+  ],
+  [
+   "Flourishing in a Time of Prescribed Social Distancing: CT-R Webinar Series",
+   3
+  ],
+  [
+   "Advances in Psychiatry 2014: Addictive Behavior",
+   3
+  ],
+  [
+   "Talking About Decisions",
+   3
+  ],
+  [
+   "Colloquium Winter 2020/21",
+   3
+  ],
+  [
+   "SPSP 2024 Annual Convention",
+   3
+  ],
+  [
+   "SPSP 2019 Annual Convention Talks",
+   3
+  ],
+  [
+   "Big Questions in Evolutionary Science for Social-Personality Psychology",
+   3
+  ],
+  [
    "Living with Mental Health",
+   2
+  ],
+  [
+   "Clinical and Educational Services Grand Rounds",
+   2
+  ],
+  [
+   "2012-2013 Minds Behind The MIND",
+   2
+  ],
+  [
+   "DCP Annual Conference 2019",
+   2
+  ],
+  [
+   "BPS Webinars",
+   2
+  ],
+  [
+   "DCP Annual Conference 2014",
+   2
+  ],
+  [
+   "2017 APA Convention: Physical and Developmental Disabilities",
+   2
+  ],
+  [
+   "2017 APA Convention: Groups and Organizations",
+   2
+  ],
+  [
+   "2017 APA Convention: Development and Aging",
+   2
+  ],
+  [
+   "Mindscape 2016 Symposium Speakers",
+   2
+  ],
+  [
+   "A Journey Into Consciousness: Anil Seth and Michael Pollan",
+   2
+  ],
+  [
+   "Understanding Bipolar Disorder",
    2
   ],
   [
@@ -736,6 +3486,10 @@
   ],
   [
    "Center for Addiction Research",
+   1
+  ],
+  [
+   "2016 Summer Institute on Neurodevelopmental Disabilities",
    1
   ]
  ]

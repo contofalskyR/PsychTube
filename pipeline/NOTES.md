@@ -49,6 +49,25 @@ systematic, in three passes, all from the youtube.com tab:
    Internet Archive) are added by hand as above; NIH VideoCast, university Kaltura/MediaSpace and
    Vimeo instances are the known remaining gaps.
 
+**Round 2 (2026-11-02, evening).** 2,748 candidates from the registry and topic searches were triaged
+(881 kept), plus 461 from a second round of 30 searches aimed at clinical neuropsychology (aphasia,
+agnosia, neglect, amnesia, split-brain, blindsight, neuropsychological assessment, behavioural
+neurology, dementia, TBI) and psychotherapy/counselling demonstrations (24 kept). 876 playlists were
+pulled in ~26 minutes from the youtube.com tab with `pipeline/yt_pull_runner.js` (one `browse` call per
+page of 100, ~650 ms apart, no rate-limit trouble); `pipeline/merge_pulled.py` added 795 of them to
+`courses.json` (72 re-listed lectures already in, 9 too short) with the triage's institution and kind,
+after `pipeline/triage_overrides.json` dropped media/festival publishers (Institute of Art and Ideas,
+World Science Festival, Nour Foundation), a rehab centre, an advocacy group, and the Virtual
+University of Pakistan's 2020+ "Topic Based Video" series (4–10-minute segments whose lecture language
+cannot be checked: no captions). Course cards: 694 of 795 kept (the rest were promos, award clips,
+patient-education snippets, re-hosted CrashCourse). Per-lecture labels were written for the 10,500
+lectures of cards marked `per_video_topics: true`; the others inherit the card's topics. The build also
+drops third-party explainer clips (CrashCourse, Khan Academy, Sprouts…) that lecturers re-list inside
+their course playlists (`dropped_inst_thirdparty`) and no longer counts playlist membership as a
+co-recommendation. Most of what came in is seminar series, grand rounds and conference sessions, so
+the Courses hub now has two shelves — taught courses, and seminars & conferences marked as not
+peer-reviewed — and a filter box.
+
 Rate limits: the player endpoint started answering `LOGIN_REQUIRED` ("confirm you're not a bot") after
 ~1,800 calls with a minimal client context; sending the page's full `INNERTUBE_CONTEXT` (with
 `visitorData`) and slowing to ~4 requests/second avoided it. `browse` never complained.
