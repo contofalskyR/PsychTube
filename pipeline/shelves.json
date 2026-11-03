@@ -1,0 +1,1250 @@
+{
+ "_comment": "Curated shelves. Each item: a video (provider youtube|archive, plus uploader and a legitimacy class: official = rights holder / institution / researcher's own channel; archive = held in a library or archive collection; none = no authorized copy online, listed for the paper and the note) and the paper it belongs to (DOI verified against Crossref by pipeline/verify_dois.py). status = id in taxonomy.json replication list, when the finding has a replication story.",
+ "shelves": [
+  {
+   "id": "originals",
+   "name": "Primary sources",
+   "short": "Originals",
+   "tagline": "The original films. Classic experiments and case studies as they were recorded, from the archives that hold them, each with the paper it belongs to and what later research made of it.",
+   "items": [
+    {
+     "id": "pavlov-1948-film",
+     "title": "Conditioned Reflexes: An Introduction to the Work of Ivan Pavlov",
+     "year": 1948,
+     "people": "Ivan Pavlov (filmed 1920s–30s); Moscow Film Studios of Popular Science",
+     "what": "Pavlov's own laboratory: salivary conditioning in dogs, conditioned feeding in fish and a puppy, and the apparatus behind the famous bell. Soviet popular-science film built from footage shot in Pavlov's lifetime.",
+     "video": {
+      "p": "archive",
+      "id": "ivanpavlov-conditioned-reflexes-an-introduction-to-the-work-of-ivan-pavlov-1948",
+      "f": "Conditioned Reflexes An introduction to the work of Ivan Pavlov - 1948.mp4",
+      "len": 1209,
+      "uploader": "Internet Archive (community upload of the 1948 film)",
+      "legit": "archive"
+     },
+     "alt": [
+      {
+       "label": "1930s newsreel footage of Pavlov's dogs (Huntley Film Archives)",
+       "url": "https://www.youtube.com/watch?v=axJ9CwcH9WM"
+      }
+     ],
+     "paper": {
+      "cite": "Pavlov, I. P. (1906). The scientific investigation of the psychical faculties or processes in the higher animals. Science, 24(620), 613–619.",
+      "doi": "10.1126/science.24.620.613"
+     },
+     "paper2": {
+      "cite": "Pavlov, I. P. (1927). Conditioned Reflexes: An Investigation of the Physiological Activity of the Cerebral Cortex (G. V. Anrep, Trans.). Oxford University Press.",
+      "url": "https://archive.org/details/in.ernet.dli.2015.209371"
+     },
+     "status": "pavlov-bell",
+     "topics": [
+      "learning-studying",
+      "history-of-psychology"
+     ]
+    },
+    {
+     "id": "watson-little-albert-1920",
+     "title": "Little Albert (Watson & Rayner, 1920)",
+     "year": 1920,
+     "people": "John B. Watson, Rosalie Rayner",
+     "what": "Watson's own film of the conditioning of an infant's fear of a white rat — the footage every textbook shows. Only copies uploaded by individuals exist online; the film itself is in the public domain but no archive hosts a clean transfer.",
+     "video": null,
+     "alt": [
+      {
+       "label": "Where the footage survives: Beck, Levinson & Irons (2009) on the search for Albert",
+       "url": "https://doi.org/10.1037/a0017234"
+      }
+     ],
+     "paper": {
+      "cite": "Watson, J. B., & Rayner, R. (1920). Conditioned emotional reactions. Journal of Experimental Psychology, 3(1), 1–14.",
+      "doi": "10.1037/h0069608"
+     },
+     "status": "little-albert",
+     "topics": [
+      "learning-studying",
+      "history-of-psychology"
+     ]
+    },
+    {
+     "id": "gesell-1934-infant-behavior",
+     "title": "Growth of Infant Behavior: Early Stages",
+     "year": 1934,
+     "people": "Arnold Gesell, Yale Clinic of Child Development; Encyclopaedia Britannica Films",
+     "what": "Gesell's split-screen cinematography of infants at successive ages — the films behind the first developmental norms, made in the Yale photographic dome.",
+     "video": {
+      "p": "archive",
+      "id": "growthofinfantbehaviorearlystages",
+      "f": "growthofinfantbehaviorearlystages.mp4",
+      "len": 640,
+      "uploader": "Internet Archive educational-film collection",
+      "legit": "archive"
+     },
+     "alt": [
+      {
+       "label": "Part 2: Later Stages (1934)",
+       "url": "https://archive.org/details/growthofinfantbehaviorlaterstages"
+      }
+     ],
+     "paper": {
+      "cite": "Gesell, A., & Thompson, H. (1929). Learning and growth in identical infant twins: An experimental study by the method of co-twin control. Genetic Psychology Monographs, 6, 1–124.",
+      "doi": null
+     },
+     "status": null,
+     "topics": [
+      "child-development",
+      "history-of-psychology"
+     ]
+    },
+    {
+     "id": "spitz-1947-grief",
+     "title": "Grief: A Peril in Infancy",
+     "year": 1947,
+     "people": "René Spitz, Katherine Wolf",
+     "what": "Spitz's film of infants in a foundling home developing 'anaclitic depression' after separation from their mothers — the footage that changed hospital and orphanage practice.",
+     "video": {
+      "p": "youtube",
+      "id": "LyVkXaqXOv4",
+      "len": 1451,
+      "uploader": "National Library of Medicine (official channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "Psychogenic Disease in Infancy (Spitz, 1952) — Prelinger Archives, public domain",
+       "url": "https://archive.org/details/PsychogenicD"
+      }
+     ],
+     "paper": {
+      "cite": "Spitz, R. A. (1945). Hospitalism: An inquiry into the genesis of psychiatric conditions in early childhood. The Psychoanalytic Study of the Child, 1(1), 53–74.",
+      "doi": "10.1080/00797308.1945.11823126"
+     },
+     "status": null,
+     "topics": [
+      "relationships-attachment",
+      "child-development"
+     ]
+    },
+    {
+     "id": "skinner-pigeons",
+     "title": "Skinner's pigeons: ping-pong, turning, and the missile project",
+     "year": 1950,
+     "people": "B. F. Skinner",
+     "what": "The B. F. Skinner Foundation's own transfers of Skinner's films: pigeons shaped to play ping-pong and to turn in circles, and Project Pigeon/Orcon, the wartime pigeon-guided missile.",
+     "video": {
+      "p": "youtube",
+      "id": "vGazyH6fQQ4",
+      "len": 39,
+      "uploader": "B. F. Skinner Foundation (official channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "Pigeon Turn (shaping)",
+       "url": "https://www.youtube.com/watch?v=TtfQlkGwE2U"
+      },
+      {
+       "label": "Project Orcon (1942–44)",
+       "url": "https://www.youtube.com/watch?v=qP1hJLepOhw"
+      },
+      {
+       "label": "Behavior Theory in Practice (1965), the teaching films Skinner supervised",
+       "url": "https://archive.org/details/behaviortheoryinpracticepart1"
+      }
+     ],
+     "paper": {
+      "cite": "Skinner, B. F. (1948). 'Superstition' in the pigeon. Journal of Experimental Psychology, 38(2), 168–172.",
+      "doi": "10.1037/h0055873"
+     },
+     "paper2": {
+      "cite": "Skinner, B. F. (1960). Pigeons in a pelican. American Psychologist, 15(1), 28–37.",
+      "doi": "10.1037/h0045345"
+     },
+     "status": null,
+     "topics": [
+      "learning-studying",
+      "animal-minds"
+     ]
+    },
+    {
+     "id": "harlow-1958-nature-of-love",
+     "title": "Harlow's monkeys (The Nature of Love, 1958)",
+     "year": 1958,
+     "people": "Harry Harlow, University of Wisconsin Primate Laboratory",
+     "what": "Infant rhesus monkeys choosing a cloth 'mother' over a wire one that fed them. Harlow's films were shot for his APA presidential address; copies online are all re-uploads of a 1959 CBS program, so none is linked here.",
+     "video": null,
+     "alt": [
+      {
+       "label": "Harlow's address, with the film stills (American Psychologist, 1958)",
+       "url": "https://doi.org/10.1037/h0047884"
+      }
+     ],
+     "paper": {
+      "cite": "Harlow, H. F. (1958). The nature of love. American Psychologist, 13(12), 673–685.",
+      "doi": "10.1037/h0047884"
+     },
+     "status": null,
+     "topics": [
+      "relationships-attachment",
+      "animal-minds"
+     ]
+    },
+    {
+     "id": "asch-1951-conformity",
+     "title": "Asch's line judgments",
+     "year": 1951,
+     "people": "Solomon Asch",
+     "what": "The conformity experiment: one real participant, a room of confederates, and a line-length judgment that was never in doubt. The clip everyone knows is from a later educational re-staging rather than Asch's 1951 sessions, which were not filmed; no authorized copy is online.",
+     "video": null,
+     "alt": [
+      {
+       "label": "Asch's own account with photographs (Scientific American, 1955)",
+       "url": "https://doi.org/10.1038/scientificamerican1155-31"
+      }
+     ],
+     "paper": {
+      "cite": "Asch, S. E. (1956). Studies of independence and conformity: I. A minority of one against a unanimous majority. Psychological Monographs, 70(9), 1–70.",
+      "doi": "10.1037/h0093718"
+     },
+     "status": "asch-conformity",
+     "topics": [
+      "conformity-obedience"
+     ]
+    },
+    {
+     "id": "milgram-1965-obedience",
+     "title": "Obedience (Milgram's film)",
+     "year": 1965,
+     "people": "Stanley Milgram, Yale University",
+     "what": "Milgram's own 45-minute documentary of the obedience experiments, filmed during the final condition in 1962. The film is distributed by Penn State Media Sales and Alexander Street; the copies on YouTube and the Internet Archive are unauthorized, so none is linked here.",
+     "video": null,
+     "alt": [
+      {
+       "label": "Penn State Media Sales (the distributor)",
+       "url": "https://mediasales.psu.edu/"
+      },
+      {
+       "label": "Yale's Milgram papers",
+       "url": "https://archives.yale.edu/repositories/12/resources/4440"
+      }
+     ],
+     "paper": {
+      "cite": "Milgram, S. (1963). Behavioral study of obedience. Journal of Abnormal and Social Psychology, 67(4), 371–378.",
+      "doi": "10.1037/h0040525"
+     },
+     "status": "milgram-nuance",
+     "topics": [
+      "conformity-obedience"
+     ]
+    },
+    {
+     "id": "bandura-1961-bobo",
+     "title": "The Bobo doll films",
+     "year": 1961,
+     "people": "Albert Bandura, Dorothea Ross, Sheila Ross, Stanford University",
+     "what": "Children imitating an adult's aggression toward an inflatable clown after watching it modelled — the footage from Bandura's 1961 and 1963 studies. Stanford holds the films; the online copies are re-uploads, so none is linked here.",
+     "video": null,
+     "alt": [
+      {
+       "label": "Bandura's papers at Stanford",
+       "url": "https://searchworks.stanford.edu/view/10711726"
+      }
+     ],
+     "paper": {
+      "cite": "Bandura, A., Ross, D., & Ross, S. A. (1961). Transmission of aggression through imitation of aggressive models. Journal of Abnormal and Social Psychology, 63(3), 575–582.",
+      "doi": "10.1037/h0045925"
+     },
+     "paper2": {
+      "cite": "Bandura, A., Ross, D., & Ross, S. A. (1963). Imitation of film-mediated aggressive models. Journal of Abnormal and Social Psychology, 66(1), 3–11.",
+      "doi": "10.1037/h0048687"
+     },
+     "status": "media-violence",
+     "topics": [
+      "child-development",
+      "learning-studying"
+     ]
+    },
+    {
+     "id": "split-brain-1964",
+     "title": "Split Brain (1964)",
+     "year": 1964,
+     "people": "Roger Sperry, Michael Gazzaniga, Caltech; National Educational Television",
+     "what": "Caltech's split-brain program as it was being done: callosotomy patients and animals tested with stimuli shown to one hemisphere at a time, two years after the first human reports.",
+     "video": {
+      "p": "archive",
+      "id": "splitbrain",
+      "f": "splitbrain.mp4",
+      "len": 771,
+      "uploader": "Internet Archive educational-film collection (National Educational Television)",
+      "legit": "archive"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Gazzaniga, M. S., Bogen, J. E., & Sperry, R. W. (1962). Some functional effects of sectioning the cerebral commissures in man. Proceedings of the National Academy of Sciences, 48(10), 1765–1769.",
+      "doi": "10.1073/pnas.48.10.1765"
+     },
+     "paper2": {
+      "cite": "Sperry, R. W. (1968). Hemisphere deconnection and unity in conscious awareness. American Psychologist, 23(10), 723–733.",
+      "doi": "10.1037/h0026839"
+     },
+     "status": "split-brain-consciousness",
+     "topics": [
+      "brain-disorders",
+      "consciousness"
+     ]
+    },
+    {
+     "id": "spe-1971",
+     "title": "The Stanford Prison Experiment (original footage, with sound)",
+     "year": 1971,
+     "people": "Philip Zimbardo, Craig Haney, Curtis Banks, Stanford University",
+     "what": "Zimbardo's own film reels from the basement of Jordan Hall, digitised by Stanford University Archives from the Philip G. Zimbardo papers. Watch it next to the archival re-analysis under 'handle with care'.",
+     "video": {
+      "p": "archive",
+      "id": "cst_000035",
+      "embed": true,
+      "len": 1145,
+      "uploader": "Stanford University Archives (Philip G. Zimbardo papers), streamed from the Internet Archive / California Revealed",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "Film #1 (silent)",
+       "url": "https://archive.org/details/cst_000036"
+      },
+      {
+       "label": "Stanford's SPE exhibit",
+       "url": "https://exhibits.stanford.edu/spe"
+      }
+     ],
+     "paper": {
+      "cite": "Haney, C., Banks, C., & Zimbardo, P. (1973). Interpersonal dynamics in a simulated prison. International Journal of Criminology and Penology, 1, 69–97.",
+      "doi": null,
+      "url": "https://purl.stanford.edu/pq781mc3307"
+     },
+     "status": "stanford-prison",
+     "topics": [
+      "conformity-obedience",
+      "groups-prejudice"
+     ]
+    },
+    {
+     "id": "robbers-cave-1954",
+     "title": "Robbers Cave (1954), from the archive that holds it",
+     "year": 1954,
+     "people": "Muzafer Sherif, Carolyn Wood Sherif, University of Oklahoma",
+     "what": "The Cummings Center for the History of Psychology, which holds the Sherif papers and films, walks through the boys'-camp experiment with the original footage and documents.",
+     "video": {
+      "p": "youtube",
+      "id": "8PRuxMprSDQ",
+      "len": 285,
+      "uploader": "Cummings Center for the History of Psychology, University of Akron (official channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "The full 1961 report (Intergroup Conflict and Cooperation)",
+       "url": "https://psychclassics.yorku.ca/Sherif/"
+      }
+     ],
+     "paper": {
+      "cite": "Sherif, M. (1958). Superordinate goals in the reduction of intergroup conflict. American Journal of Sociology, 63(4), 349–356.",
+      "doi": "10.1086/222258"
+     },
+     "status": "robbers-cave",
+     "topics": [
+      "groups-prejudice"
+     ]
+    },
+    {
+     "id": "gloria-1965",
+     "title": "Three Approaches to Psychotherapy (the Gloria films)",
+     "year": 1965,
+     "people": "Carl Rogers, Fritz Perls, Albert Ellis; Everett Shostrom (producer)",
+     "what": "One client, Gloria, in a session with each of three founders — client-centred, Gestalt and rational-emotive therapy — followed by her own evaluation. The most-watched psychotherapy footage ever made.",
+     "video": {
+      "p": "archive",
+      "id": "threeapproachestopsychotherapy1drfrederickperls",
+      "f": "threeapproachestopsychotherapy1drfrederickperls.mp4",
+      "len": 1883,
+      "uploader": "Internet Archive educational-film collection (Psychological & Educational Films)",
+      "legit": "archive"
+     },
+     "alt": [
+      {
+       "label": "Part 3: Albert Ellis",
+       "url": "https://archive.org/details/threeapproachestopsychotherapy1dralbertellis"
+      }
+     ],
+     "paper": {
+      "cite": "Rogers, C. R. (1957). The necessary and sufficient conditions of therapeutic personality change. Journal of Consulting Psychology, 21(2), 95–103.",
+      "doi": "10.1037/h0045357"
+     },
+     "status": null,
+     "topics": [
+      "therapy",
+      "history-of-psychology"
+     ]
+    },
+    {
+     "id": "piaget-on-piaget-1977",
+     "title": "Piaget on Piaget: The Epistemology of Jean Piaget",
+     "year": 1977,
+     "people": "Jean Piaget; Yale University Media Design Studio",
+     "what": "Piaget, filmed shortly before his death, explaining his ideas in his own words and re-running his classic experiments with children — conservation, classification, perspective-taking.",
+     "video": {
+      "p": "archive",
+      "id": "piagetonpiagettheepistemologyofjeanpiaget",
+      "f": "piagetonpiagettheepistemologyofjeanpiaget.mp4",
+      "len": 2549,
+      "uploader": "Internet Archive educational-film collection (Yale University Media Design Studio)",
+      "legit": "archive"
+     },
+     "alt": [
+      {
+       "label": "Piaget's Developmental Theory: Classification (1968), with Piaget and Inhelder",
+       "url": "https://archive.org/details/piagetsdevelopmentaltheoryclassification"
+      }
+     ],
+     "paper": {
+      "cite": "Piaget, J. (1952). The Origins of Intelligence in Children (M. Cook, Trans.). International Universities Press.",
+      "doi": "10.1037/11494-000"
+     },
+     "status": null,
+     "topics": [
+      "child-development",
+      "history-of-psychology"
+     ]
+    },
+    {
+     "id": "lorenz-1978-geese",
+     "title": "Konrad Lorenz: Of Geese and Men",
+     "year": 1978,
+     "people": "Konrad Lorenz",
+     "what": "Lorenz at Grünau with his greylag geese, telling how imprinting and his other central ideas came out of watching them — five years after the Nobel Prize.",
+     "video": {
+      "p": "archive",
+      "id": "konradlorenzofgeeseandmen",
+      "f": "konradlorenzofgeeseandmen.mp4",
+      "len": 1637,
+      "uploader": "Internet Archive educational-film collection",
+      "legit": "archive"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Lorenz, K. (1935). Der Kumpan in der Umwelt des Vogels. Journal für Ornithologie, 83(2), 137–213.",
+      "doi": "10.1007/BF01905355"
+     },
+     "status": null,
+     "topics": [
+      "animal-minds",
+      "child-development"
+     ]
+    },
+    {
+     "id": "jung-evans-1957",
+     "title": "Richard Evans interviews Carl Jung (Houston, 1957)",
+     "year": 1957,
+     "people": "Carl Jung, Richard I. Evans, University of Houston",
+     "what": "Four hours of Jung on camera, filmed for the University of Houston — the longest record of Jung speaking about his own concepts, held and published by the Cummings Center.",
+     "video": {
+      "p": "youtube",
+      "id": "tLeXXoumkqU",
+      "len": 3524,
+      "uploader": "Cummings Center for the History of Psychology (official channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "Part 2: Motivation, meetings, psychosomatic medicine",
+       "url": "https://www.youtube.com/watch?v=inL-7MDqZ9Q"
+      },
+      {
+       "label": "Part 3: Summary and development of major ideas",
+       "url": "https://www.youtube.com/watch?v=-qywJOuRCzI"
+      },
+      {
+       "label": "Part 4: Introversion/extraversion",
+       "url": "https://www.youtube.com/watch?v=MPnr2nUWYfY"
+      }
+     ],
+     "paper": {
+      "cite": "Evans, R. I. (1964). Conversations with Carl Jung and Reactions from Ernest Jones. Van Nostrand.",
+      "doi": null
+     },
+     "status": null,
+     "topics": [
+      "personality",
+      "history-of-psychology"
+     ]
+    },
+    {
+     "id": "class-divided-1985",
+     "title": "A Class Divided (Eye of the Storm, 1968–1985)",
+     "year": 1985,
+     "people": "Jane Elliott; William Peters, PBS Frontline",
+     "what": "The blue-eyes/brown-eyes exercise in Jane Elliott's Iowa third-grade classroom (ABC's 1970 footage) and the class reunited fifteen years later. A demonstration, not an experiment — which is part of what to watch for.",
+     "video": {
+      "p": "youtube",
+      "id": "1mcCLm_LwpE",
+      "len": 3181,
+      "uploader": "FRONTLINE PBS (official channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "Frontline's page for the film",
+       "url": "https://www.pbs.org/wgbh/frontline/documentary/class-divided/"
+      }
+     ],
+     "paper": {
+      "cite": "Peters, W. (1987). A Class Divided: Then and Now (expanded ed.). Yale University Press.",
+      "doi": null
+     },
+     "status": null,
+     "topics": [
+      "groups-prejudice",
+      "education-teaching"
+     ]
+    },
+    {
+     "id": "simons-chabris-1999-gorilla",
+     "title": "The selective attention test (the gorilla)",
+     "year": 1999,
+     "people": "Daniel Simons, Christopher Chabris",
+     "what": "Count the passes. The original stimulus from the inattentional-blindness study, on the author's own channel.",
+     "video": {
+      "p": "youtube",
+      "id": "vJG698U2Mvo",
+      "len": 82,
+      "uploader": "Daniel Simons (the author's channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "The Monkey Business Illusion (2010 follow-up)",
+       "url": "https://www.youtube.com/watch?v=IGQmdoK_ZfY"
+      }
+     ],
+     "paper": {
+      "cite": "Simons, D. J., & Chabris, C. F. (1999). Gorillas in our midst: Sustained inattentional blindness for dynamic events. Perception, 28(9), 1059–1074.",
+      "doi": "10.1068/p281059"
+     },
+     "status": "inattentional-blindness",
+     "topics": [
+      "attention-focus",
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "simons-levin-1998-door",
+     "title": "The 'Door' study (change blindness)",
+     "year": 1998,
+     "people": "Daniel Simons, Daniel Levin",
+     "what": "A stranger asks for directions, two men carry a door between them, and half the people never notice they are now talking to someone else. The original footage.",
+     "video": {
+      "p": "youtube",
+      "id": "FWSxSQsspiQ",
+      "len": 97,
+      "uploader": "Daniel Simons (the author's channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Simons, D. J., & Levin, D. T. (1998). Failure to detect changes to people during a real-world interaction. Psychonomic Bulletin & Review, 5(4), 644–649.",
+      "doi": "10.3758/BF03208840"
+     },
+     "status": null,
+     "topics": [
+      "attention-focus",
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "koko-1981",
+     "title": "Koko (1981 film) and the Gorilla Foundation's own footage",
+     "year": 1981,
+     "people": "Francine 'Penny' Patterson, Koko; Gorilla Foundation",
+     "what": "National Geographic's 1981 film of Koko signing, and the Foundation's own archive channel. Pair it with the replication note: whether apes' signing is language is one of psychology's long arguments.",
+     "video": {
+      "p": "youtube",
+      "id": "FqJf1mB5PjQ",
+      "len": 455,
+      "uploader": "National Geographic (official channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "The Gorilla Foundation's channel (kokoflix)",
+       "url": "https://www.youtube.com/channel/UClbB3T1q32FQ2SoDhO8xi_Q"
+      }
+     ],
+     "paper": {
+      "cite": "Patterson, F. G. (1978). The gestures of a gorilla: Language acquisition in another pongid. Brain and Language, 5(1), 72–97.",
+      "doi": "10.1016/0093-934X(78)90008-1"
+     },
+     "status": "ape-language",
+     "topics": [
+      "animal-minds",
+      "language-thought"
+     ]
+    },
+    {
+     "id": "kanzi-savage-rumbaugh",
+     "title": "Kanzi and Sue Savage-Rumbaugh",
+     "year": 2004,
+     "people": "Sue Savage-Rumbaugh, Kanzi; Great Ape Trust",
+     "what": "Savage-Rumbaugh presents the bonobo Kanzi's lexigram use and comprehension of spoken English, with the lab footage, in her own words.",
+     "video": {
+      "p": "youtube",
+      "id": "a8nDJaH-fVE",
+      "len": 1166,
+      "uploader": "TED (official channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Savage-Rumbaugh, S., McDonald, K., Sevcik, R. A., Hopkins, W. D., & Rubert, E. (1986). Spontaneous symbol acquisition and communicative use by pygmy chimpanzees (Pan paniscus). Journal of Experimental Psychology: General, 115(3), 211–235.",
+      "doi": "10.1037/0096-3445.115.3.211"
+     },
+     "status": "ape-language",
+     "topics": [
+      "animal-minds",
+      "language-thought"
+     ]
+    },
+    {
+     "id": "ekman-new-guinea-1967",
+     "title": "Ekman's New Guinea expedition footage",
+     "year": 1967,
+     "people": "Paul Ekman, the Fore people of Papua New Guinea",
+     "what": "Ekman's own film from the Fore, the isolated group whose recognition of posed expressions became the evidence for universal basic emotions — and the starting point of a fifty-year argument.",
+     "video": {
+      "p": "youtube",
+      "id": "lur1yIcQqEs",
+      "len": 99,
+      "uploader": "Paul Ekman Group (official channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Ekman, P., & Friesen, W. V. (1971). Constants across cultures in the face and emotion. Journal of Personality and Social Psychology, 17(2), 124–129.",
+      "doi": "10.1037/h0030377"
+     },
+     "status": "universal-emotions",
+     "topics": [
+      "emotion"
+     ]
+    },
+    {
+     "id": "patient-hm",
+     "title": "Patient H.M. (Henry Molaison)",
+     "year": 1953,
+     "people": "Henry Molaison, William Scoville, Brenda Milner, Suzanne Corkin",
+     "what": "The man whose 1953 surgery for epilepsy removed most of both hippocampi and taught psychology what the hippocampus is for. No research footage of H.M. is public; this PBS NewsHour report shows the brain itself being sectioned and the people who studied him.",
+     "video": {
+      "p": "youtube",
+      "id": "_7akPs8ptg4",
+      "len": 387,
+      "uploader": "PBS NewsHour (official channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "The Brain Observatory's H.M. project",
+       "url": "https://www.thebrainobservatory.org/project-hm"
+      }
+     ],
+     "paper": {
+      "cite": "Scoville, W. B., & Milner, B. (1957). Loss of recent memory after bilateral hippocampal lesions. Journal of Neurology, Neurosurgery & Psychiatry, 20(1), 11–21.",
+      "doi": "10.1136/jnnp.20.1.11"
+     },
+     "status": null,
+     "topics": [
+      "memory",
+      "brain-disorders"
+     ]
+    },
+    {
+     "id": "clive-wearing",
+     "title": "Clive Wearing: The Man with the Seven Second Memory",
+     "year": 2005,
+     "people": "Clive Wearing, Deborah Wearing; ITV",
+     "what": "The conductor left with a memory span of seconds after herpes encephalitis in 1985, filmed twenty years on: dense amnesia with preserved musicianship and procedural memory.",
+     "video": {
+      "p": "youtube",
+      "id": "k_P7Y0-wgos",
+      "len": 2881,
+      "uploader": "Real Stories (Little Dot Studios, the distributor's channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Wilson, B. A., Baddeley, A. D., & Kapur, N. (1995). Dense amnesia in a professional musician following herpes simplex virus encephalitis. Journal of Clinical and Experimental Neuropsychology, 17(5), 668–681.",
+      "doi": "10.1080/01688639508405157"
+     },
+     "status": null,
+     "topics": [
+      "memory",
+      "brain-disorders"
+     ]
+    },
+    {
+     "id": "hubel-wiesel-1959",
+     "title": "Hubel & Wiesel's orientation-selective cells",
+     "year": 1959,
+     "people": "David Hubel, Torsten Wiesel, Johns Hopkins / Harvard",
+     "what": "The recording in which a cat's visual-cortex neuron fires to a bar of light at one orientation and falls silent at others — audible as crackle on the loudspeaker. The film clips online are re-uploads, so none is linked.",
+     "video": null,
+     "alt": [
+      {
+       "label": "Hubel's own account, Eye, Brain, and Vision (free online)",
+       "url": "https://hubel.med.harvard.edu/"
+      }
+     ],
+     "paper": {
+      "cite": "Hubel, D. H., & Wiesel, T. N. (1959). Receptive fields of single neurones in the cat's striate cortex. The Journal of Physiology, 148(3), 574–591.",
+      "doi": "10.1113/jphysiol.1959.sp006308"
+     },
+     "status": null,
+     "topics": [
+      "perception-illusions",
+      "how-the-brain-works"
+     ]
+    },
+    {
+     "id": "gibson-walk-1960-visual-cliff",
+     "title": "The visual cliff",
+     "year": 1960,
+     "people": "Eleanor Gibson, Richard Walk, Cornell University",
+     "what": "Crawling infants refusing to cross a glass-covered drop even when their mothers call. Gibson and Walk's 1960 film survives only in re-uploads; the Scientific American report has the photographs.",
+     "video": null,
+     "alt": [],
+     "paper": {
+      "cite": "Gibson, E. J., & Walk, R. D. (1960). The 'visual cliff'. Scientific American, 202(4), 64–71.",
+      "doi": "10.1038/scientificamerican0460-64"
+     },
+     "status": null,
+     "topics": [
+      "perception-illusions",
+      "child-development"
+     ]
+    },
+    {
+     "id": "ainsworth-strange-situation",
+     "title": "The Strange Situation",
+     "year": 1969,
+     "people": "Mary Ainsworth, Silvia Bell, Johns Hopkins University",
+     "what": "Twenty minutes, eight episodes, a stranger and two separations: the procedure that gave attachment research its measure. Ainsworth's own tapes are not public; online demonstrations are re-stagings.",
+     "video": null,
+     "alt": [],
+     "paper": {
+      "cite": "Ainsworth, M. D. S., & Bell, S. M. (1970). Attachment, exploration, and separation: Illustrated by the behavior of one-year-olds in a strange situation. Child Development, 41(1), 49–67.",
+      "doi": "10.2307/1127388"
+     },
+     "status": null,
+     "topics": [
+      "relationships-attachment",
+      "child-development"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "demos",
+   "name": "Try it yourself",
+   "short": "Demos",
+   "tagline": "Experiments that work on you. Each demonstration is the original or the researcher's own, with the paper that explains what just happened.",
+   "items": [
+    {
+     "id": "demo-gorilla",
+     "title": "Count the passes (the gorilla)",
+     "year": 1999,
+     "people": "Daniel Simons, Christopher Chabris",
+     "what": "Count how many times the players in white pass the ball. Then watch again.",
+     "video": {
+      "p": "youtube",
+      "id": "vJG698U2Mvo",
+      "len": 82,
+      "uploader": "Daniel Simons (the author's channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Simons, D. J., & Chabris, C. F. (1999). Gorillas in our midst: Sustained inattentional blindness for dynamic events. Perception, 28(9), 1059–1074.",
+      "doi": "10.1068/p281059"
+     },
+     "status": "inattentional-blindness",
+     "topics": [
+      "attention-focus",
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "demo-monkey-business",
+     "title": "The Monkey Business Illusion",
+     "year": 2010,
+     "people": "Daniel Simons",
+     "what": "If you already know about the gorilla, this one is for you: knowing what to expect does not make you notice everything.",
+     "video": {
+      "p": "youtube",
+      "id": "IGQmdoK_ZfY",
+      "len": 102,
+      "uploader": "Daniel Simons (the author's channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Simons, D. J. (2010). Monkeying around with the gorillas in our midst: Familiarity with an inattentional-blindness task does not improve the detection of unexpected events. i-Perception, 1(1), 3–6.",
+      "doi": "10.1068/i0386"
+     },
+     "status": "inattentional-blindness",
+     "topics": [
+      "attention-focus",
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "demo-gradual-change",
+     "title": "Gradual change test",
+     "year": 2000,
+     "people": "Daniel Simons, Steven Franconeri, Rebecca Reimer",
+     "what": "Something in the picture changes slowly over a few seconds. Most people see nothing until it is pointed out.",
+     "video": {
+      "p": "youtube",
+      "id": "1nL5ulsWMYc",
+      "len": 80,
+      "uploader": "Daniel Simons (the author's channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Simons, D. J., Franconeri, S. L., & Reimer, R. L. (2000). Change blindness in the absence of a visual disruption. Perception, 29(10), 1143–1154.",
+      "doi": "10.1068/p3104"
+     },
+     "status": null,
+     "topics": [
+      "attention-focus",
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "demo-change-blindness",
+     "title": "Change blindness (flicker)",
+     "year": 1997,
+     "people": "Ronald Rensink, Kevin O'Regan, James Clark; demonstration by Chris Chambers",
+     "what": "Two versions of a scene alternate with a blank in between; find the difference. The blank wipes out the motion signal you would normally use.",
+     "video": {
+      "p": "youtube",
+      "id": "bh_9XFzbWV8",
+      "len": 115,
+      "uploader": "Chris Chambers, Cardiff University (the researcher's channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "NOVA on change blindness (PBS)",
+       "url": "https://www.youtube.com/watch?v=VkrrVozZR2c"
+      }
+     ],
+     "paper": {
+      "cite": "Rensink, R. A., O'Regan, J. K., & Clark, J. J. (1997). To see or not to see: The need for attention to perceive changes in scenes. Psychological Science, 8(5), 368–373.",
+      "doi": "10.1111/j.1467-9280.1997.tb00427.x"
+     },
+     "status": null,
+     "topics": [
+      "attention-focus",
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "demo-mcgurk",
+     "title": "The McGurk effect",
+     "year": 1976,
+     "people": "Harry McGurk, John MacDonald; BBC Horizon",
+     "what": "Watch the mouth and you hear 'fa'; close your eyes and the same soundtrack says 'ba'. Vision rewrites hearing.",
+     "video": {
+      "p": "youtube",
+      "id": "G-lN8vWm3m0",
+      "len": 206,
+      "uploader": "BBC (official channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "UC Irvine's 18-second version",
+       "url": "https://www.youtube.com/watch?v=501_cVo9LdY"
+      }
+     ],
+     "paper": {
+      "cite": "McGurk, H., & MacDonald, J. (1976). Hearing lips and seeing voices. Nature, 264(5588), 746–748.",
+      "doi": "10.1038/264746a0"
+     },
+     "status": "mcgurk-effect",
+     "topics": [
+      "perception-illusions",
+      "language-thought"
+     ]
+    },
+    {
+     "id": "demo-rubber-hand",
+     "title": "The rubber hand illusion",
+     "year": 1998,
+     "people": "Matthew Botvinick, Jonathan Cohen; BBC Horizon",
+     "what": "Stroke a rubber hand and the hidden real hand in time with each other and within a minute the rubber hand feels like yours — until the hammer comes out.",
+     "video": {
+      "p": "youtube",
+      "id": "sxwn1w7MJvk",
+      "len": 193,
+      "uploader": "BBC (official channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "New Scientist's version",
+       "url": "https://www.youtube.com/watch?v=TCQbygjG0RU"
+      }
+     ],
+     "paper": {
+      "cite": "Botvinick, M., & Cohen, J. (1998). Rubber hands 'feel' touch that eyes see. Nature, 391(6669), 756.",
+      "doi": "10.1038/35784"
+     },
+     "status": "rubber-hand",
+     "topics": [
+      "perception-illusions",
+      "consciousness"
+     ]
+    },
+    {
+     "id": "demo-hollow-mask",
+     "title": "The hollow mask",
+     "year": 1970,
+     "people": "Richard Gregory; The Royal Institution",
+     "what": "A mask seen from behind looks convex anyway, and turns to follow you. Knowing it is hollow changes nothing: your face-prior wins.",
+     "video": {
+      "p": "youtube",
+      "id": "pH9dAbPOR6M",
+      "len": 57,
+      "uploader": "The Royal Institution (official channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Hill, H., & Bruce, V. (1993). Independent effects of lighting, orientation, and stereopsis on the hollow-face illusion. Perception, 22(8), 887–897.",
+      "doi": "10.1068/p220887"
+     },
+     "status": null,
+     "topics": [
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "demo-stroop",
+     "title": "The Stroop test",
+     "year": 1935,
+     "people": "John Ridley Stroop; Science World",
+     "what": "Say the ink colour, not the word. The word gets read whether you want it or not.",
+     "video": {
+      "p": "youtube",
+      "id": "InoH1d1Ue3Y",
+      "len": 206,
+      "uploader": "Science World (official channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Stroop, J. R. (1935). Studies of interference in serial verbal reactions. Journal of Experimental Psychology, 18(6), 643–662.",
+      "doi": "10.1037/h0054651"
+     },
+     "status": "stroop-effect",
+     "topics": [
+      "attention-focus",
+      "language-thought"
+     ]
+    },
+    {
+     "id": "demo-thatcher",
+     "title": "The Thatcher illusion",
+     "year": 1980,
+     "people": "Peter Thompson; QI",
+     "what": "Invert a face, flip its eyes and mouth back upright, and it looks fine — until you turn it over.",
+     "video": {
+      "p": "youtube",
+      "id": "-U_VjxQBhoo",
+      "len": 188,
+      "uploader": "QI (official channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Thompson, P. (1980). Margaret Thatcher: A new illusion. Perception, 9(4), 483–484.",
+      "doi": "10.1068/p090483"
+     },
+     "status": null,
+     "topics": [
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "demo-lotto",
+     "title": "Colour illusions, by the researcher who makes them",
+     "year": 2009,
+     "people": "Beau Lotto",
+     "what": "Identical greys that look different, identical colours that look like different colours — demonstrations from Lotto's lab, with the argument for why perception works this way.",
+     "video": {
+      "p": "youtube",
+      "id": "mf5otGNbkuc",
+      "len": 1140,
+      "uploader": "TED (official channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Lotto, R. B., & Purves, D. (2000). An empirical explanation of color contrast. Proceedings of the National Academy of Sciences, 97(23), 12834–12839.",
+      "doi": "10.1073/pnas.210369597"
+     },
+     "status": null,
+     "topics": [
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "demo-rotating-snakes",
+     "title": "Rotating snakes",
+     "year": 2003,
+     "people": "Akiyoshi Kitaoka; Popular Science",
+     "what": "A still image that moves whenever you look away from it. Kitaoka's design, and what eye movements and luminance steps have to do with it.",
+     "video": {
+      "p": "youtube",
+      "id": "mwzJVyKtlic",
+      "len": 150,
+      "uploader": "Popular Science (official channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "Kitaoka's own illusion pages",
+       "url": "https://www.ritsumei.ac.jp/~akitaoka/index-e.html"
+      }
+     ],
+     "paper": {
+      "cite": "Conway, B. R., Kitaoka, A., Yazdanbakhsh, A., Pack, C. C., & Livingstone, M. S. (2005). Neural basis for a powerful static motion illusion. Journal of Neuroscience, 25(23), 5651–5656.",
+      "doi": "10.1523/JNEUROSCI.1084-05.2005"
+     },
+     "status": null,
+     "topics": [
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "demo-sound-flash",
+     "title": "The sound-induced flash illusion",
+     "year": 2000,
+     "people": "Ladan Shams, Yukiyasu Kamitani, Shinsuke Shimojo",
+     "what": "One flash, two beeps — and you see two flashes. Hearing rewrites vision, the mirror image of McGurk.",
+     "video": {
+      "p": "youtube",
+      "id": "D3Z1cxA2Tp0",
+      "len": 44,
+      "uploader": "Live Science (official channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Shams, L., Kamitani, Y., & Shimojo, S. (2000). What you see is what you hear. Nature, 408(6814), 788.",
+      "doi": "10.1038/35048669"
+     },
+     "status": null,
+     "topics": [
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "demo-blind-spot",
+     "title": "Find your blind spot",
+     "year": 1992,
+     "people": "V. S. Ramachandran; New York Hall of Science",
+     "what": "Where the optic nerve leaves the eye there are no photoreceptors, and you have never noticed. Here is how to find the hole — and watch your brain paint over it.",
+     "video": {
+      "p": "youtube",
+      "id": "QXzgokis33I",
+      "len": 95,
+      "uploader": "New York Hall of Science (official channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Ramachandran, V. S. (1992). Blind spots. Scientific American, 266(5), 86–91.",
+      "doi": "10.1038/scientificamerican0592-86"
+     },
+     "status": null,
+     "topics": [
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "demo-benham",
+     "title": "Benham's disk",
+     "year": 1894,
+     "people": "Charles Benham, Gustav Fechner; Maryland Science Center",
+     "what": "Spin a black-and-white pattern and see colours that are not there. Still not fully explained.",
+     "video": {
+      "p": "youtube",
+      "id": "8tbWUJFUV90",
+      "len": 124,
+      "uploader": "Maryland Science Center (official channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "von Campenhausen, C., & Schramme, J. (1995). 100 years of Benham's top in colour science. Perception, 24(6), 695–717.",
+      "doi": "10.1068/p240695"
+     },
+     "status": null,
+     "topics": [
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "demo-mirror-drawing",
+     "title": "Mirror drawing (H.M.'s task)",
+     "year": 1962,
+     "people": "Brenda Milner; Udacity",
+     "what": "Trace a star while watching your hand only in a mirror. H.M. got better at this every day while remembering none of the practice — the task that split procedural from declarative memory.",
+     "video": {
+      "p": "youtube",
+      "id": "wFoIvB-04YY",
+      "len": 67,
+      "uploader": "Udacity (official channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Corkin, S. (1968). Acquisition of motor skill after bilateral medial temporal-lobe excision. Neuropsychologia, 6(3), 255–265.",
+      "doi": "10.1016/0028-3932(68)90024-9"
+     },
+     "status": null,
+     "topics": [
+      "memory",
+      "brain-disorders"
+     ]
+    },
+    {
+     "id": "demo-shepard-tone",
+     "title": "The Shepard tone",
+     "year": 1964,
+     "people": "Roger Shepard; Vox",
+     "what": "A scale that climbs forever and never gets higher — the auditory barber pole, and why Dunkirk feels the way it does.",
+     "video": {
+      "p": "youtube",
+      "id": "LVWTQcZbLgY",
+      "len": 182,
+      "uploader": "Vox (official channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Shepard, R. N. (1964). Circularity in judgments of relative pitch. The Journal of the Acoustical Society of America, 36(12), 2346–2353.",
+      "doi": "10.1121/1.1919362"
+     },
+     "status": null,
+     "topics": [
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "demo-muller-lyer",
+     "title": "Müller-Lyer, in motion",
+     "year": 1889,
+     "people": "Franz Müller-Lyer; Gianni Sarcone (Best Illusion of the Year Contest)",
+     "what": "The fins slide and the shaft seems to stretch and shrink, though it never changes length. The cross-cultural work on this illusion started the 'WEIRD' argument.",
+     "video": {
+      "p": "youtube",
+      "id": "jhf5KRE6NeA",
+      "len": 69,
+      "uploader": "Best Illusion of the Year Contest (official channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Segall, M. H., Campbell, D. T., & Herskovits, M. J. (1963). Cultural differences in the perception of geometric illusions. Science, 139(3556), 769–771.",
+      "doi": "10.1126/science.139.3556.769"
+     },
+     "status": null,
+     "topics": [
+      "perception-illusions",
+      "groups-prejudice"
+     ]
+    },
+    {
+     "id": "demo-binocular-rivalry",
+     "title": "Binocular rivalry",
+     "year": 1838,
+     "people": "Charles Wheatstone; JoVE",
+     "what": "Show each eye a different image and perception flips between them every few seconds while the input never changes — a window on consciousness, set up here as a lab protocol.",
+     "video": {
+      "p": "youtube",
+      "id": "FMcCyTT9mrg",
+      "len": 121,
+      "uploader": "JoVE, Journal of Visualized Experiments (official channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Blake, R., & Logothetis, N. K. (2002). Visual competition. Nature Reviews Neuroscience, 3(1), 13–21.",
+      "doi": "10.1038/nrn701"
+     },
+     "status": null,
+     "topics": [
+      "perception-illusions",
+      "consciousness"
+     ]
+    },
+    {
+     "id": "demo-checker-shadow",
+     "title": "Adelson's checker-shadow",
+     "year": 1995,
+     "people": "Edward Adelson, MIT",
+     "what": "Squares A and B are the same grey. Adelson's own page has the image and the proof; the videos online are all copies, so none is linked.",
+     "video": null,
+     "alt": [
+      {
+       "label": "The illusion on Adelson's MIT page",
+       "url": "http://persci.mit.edu/gallery/checkershadow"
+      }
+     ],
+     "paper": {
+      "cite": "Adelson, E. H. (2000). Lightness perception and lightness illusions. In M. S. Gazzaniga (Ed.), The New Cognitive Neurosciences (2nd ed., pp. 339–351). MIT Press.",
+      "doi": null
+     },
+     "status": null,
+     "topics": [
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "demo-the-dress",
+     "title": "The dress",
+     "year": 2015,
+     "people": "Bevil Conway, Rosa Lafer-Sousa; BBC News",
+     "what": "Blue and black or white and gold: the photograph that split the internet, and the lighting assumption that decides which you see.",
+     "video": {
+      "p": "youtube",
+      "id": "kc1GjIAFdMA",
+      "len": 112,
+      "uploader": "BBC News (official channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Lafer-Sousa, R., Hermann, K. L., & Conway, B. R. (2015). Striking individual differences in color perception uncovered by 'the dress' photograph. Current Biology, 25(13), R545–R546.",
+      "doi": "10.1016/j.cub.2015.04.053"
+     },
+     "status": null,
+     "topics": [
+      "perception-illusions"
+     ]
+    }
+   ]
+  }
+ ],
+ "doi_verified": "2026-11-02 via api.crossref.org"
+}

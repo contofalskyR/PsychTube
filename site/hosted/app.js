@@ -13,6 +13,8 @@
     for (const k of ["why", "summary", "quote", "ch"]) if (v[k] == null) v[k] = "";
     for (const k of ["nrec", "nmention", "months", "score"]) if (v[k] == null) v[k] = 0;
     if (v.badge === undefined) v.badge = null;
+    if (v.shelf === undefined) v.shelf = [];
+    if (v.orig === undefined) v.orig = null;
   }
   const byId = new Map(V.map(v => [v.id, v]));
   const topics = new Map();
@@ -106,7 +108,7 @@
   const nextInSeriesFor = sd => { const open = sd.vids.find(id => !isDone(id)); return open || sd.vids[0]; };
   const progressBar = v => { const p = pctOf(v); return p > 0 && p < 100 ? `<i class="prog" style="width:${p}%" aria-label="${p}% watched"></i>` : ""; };
   const doneBadge = v => isDone(v.id) ? `<span class="done-badge" title="Watched">✓</span>` : "";
-  const visible = v => (!state.settings.hideCare || !v.badge || v.badge.role === "critique") && (!state.settings.hideCW || !v.cw.length);
+  const visible = v => (!state.settings.hideCare || !careWorthy(v)) && (!state.settings.hideCW || !v.cw.length);
 
   // ------------------------------------------------------------ card templates
   function communityChips(v, max) {
@@ -126,11 +128,19 @@
   function vouchLine(v, max) {
     const n = v.nrec || v.nmention;
     if (!n && v.inst) return `<div class="vouch"><span class="pub">Published by</span> ${instChip(v)}<span class="faint">lecture ${v.inst.i} of ${v.inst.of}</span></div>`;
+    if (!n && v.orig) return `<div class="vouch"><span class="pub">${v.orig.shelf === "demos" ? "Demo" : "Primary source"}</span><span class="faint">${esc((v.orig.uploader || "").split(" (")[0].slice(0, 40))}${v.orig.year ? ` · ${v.orig.year}` : ""}</span></div>`;
     return `<div class="vouch"><span class="n">${n}</span>${n === 1 ? "vouch" : "vouches"} ${communityChips(v, max)}${instChip(v)}</div>`;
   }
+  const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "Smaller than claimed", mixed: "Mixed evidence", failed: "Did not replicate", overstated: "Overstated", misreported: "Misreported", myth: "Myth", fraud: "Fraud or retraction", reversed: "Reversed" };
+  const GOOD_STATUS = new Set(["replicated"]);
+  const statusOf = id => (PT.contested[id] || {}).status || "mixed";
+  const statusLabel = id => STATUS_LABELS[statusOf(id)] || "Contested";
+  const statusChip = (id, extra) => `<span class="status s-${esc(statusOf(id))}${extra ? " " + extra : ""}">${esc(statusLabel(id))}</span>`;
+  const careWorthy = v => !!(v.badge && v.badge.role !== "critique" && !GOOD_STATUS.has(statusOf(v.badge.id)));   // a replicated finding is not a warning
   function tagFor(v, idx) {
-    if (v.badge && v.badge.role !== "critique") return `<span class="tag" title="${esc(PT.contested[v.badge.id].name)}">Handle with care</span>`;
     if (v.badge && v.badge.role === "critique") return `<span class="tag critique">Debunk</span>`;
+    if (v.badge && GOOD_STATUS.has(statusOf(v.badge.id))) return `<span class="tag good" title="${esc(PT.contested[v.badge.id].name)}">Replicated</span>`;
+    if (v.badge) return `<span class="tag" title="${esc(PT.contested[v.badge.id].name)}">${esc(statusLabel(v.badge.id))}</span>`;
     if (idx != null) return `<span class="tag series">${idx}</span>`;
     return "";
   }
@@ -174,7 +184,7 @@
       const used = new Set();
       const tops = [...topics.keys()].sort(() => r() - 0.5);
       for (const t of tops) {
-        const cands = V.filter(v => visible(v) && v.topics[0] === t && !used.has(v.id) && !(v.badge && v.badge.role !== "critique") && (v.nrec >= 2 || v.score >= 2.5)).slice(0, 3);
+        const cands = V.filter(v => visible(v) && v.topics[0] === t && !used.has(v.id) && !careWorthy(v) && (v.nrec >= 2 || v.score >= 2.5)).slice(0, 3);
         if (!cands.length) continue;
         const pick = cands[Math.floor(r() * cands.length)];
         used.add(pick.id); picks.push(pick);
@@ -248,13 +258,68 @@
   function setNav(id) { document.querySelectorAll(".rail a").forEach(a => { if (a.dataset.nav === id) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); }); }
   function setTitle(t) { if (t) { const ta = document.createElement("textarea"); ta.innerHTML = t; t = ta.value; } document.title = t ? `${t} — PsychTube` : "PsychTube"; }
 
+  // ---- "Teach me something I don't know": a background picker (no account) that serves the fields next door
+  const BACKGROUNDS = [
+    ["cogsci", "Cognitive science research", ["memory", "attention-focus", "learning-studying", "intelligence-expertise", "creativity-insight", "language-thought", "rationality-biases", "decision-risk", "ai-and-mind"]],
+    ["neuro", "Neuroscience", ["how-the-brain-works", "perception-illusions", "sleep-dreams", "neurochemistry", "brain-disorders", "brain-tech", "animal-minds"]],
+    ["clinical", "Clinical / counselling", ["depression-anxiety", "adhd-autism", "trauma-stress", "addiction", "therapy", "psychiatry-medication", "psychedelics", "mindfulness-meditation", "serious-mental-illness", "grief-loneliness"]],
+    ["psychiatry", "Medicine / psychiatry", ["psychiatry-medication", "serious-mental-illness", "brain-disorders", "neurochemistry", "addiction", "depression-anxiety", "psychedelics"]],
+    ["social", "Social psychology", ["conformity-obedience", "persuasion-manipulation", "morality-cooperation", "groups-prejudice", "relationships-attachment", "tech-and-mind"]],
+    ["dev", "Developmental / education", ["child-development", "parenting", "adolescence-aging", "sex-gender", "behavioral-genetics", "education-teaching"]],
+    ["personality", "Personality & emotion", ["personality", "emotion", "motivation-habits", "happiness-meaning", "behavioral-genetics"]],
+    ["philosophy", "Philosophy of mind", ["consciousness", "free-will", "ai-and-mind", "history-of-psychology"]],
+    ["ml", "AI / machine learning", ["ai-and-mind", "brain-tech", "intelligence-expertise", "decision-risk"]],
+    ["methods", "Stats / methods / meta-science", ["psych-research", "replication-crisis", "pseudoscience-skepticism"]],
+    ["applied", "Applied / organisational", ["work-organizations", "design-behavior", "performance", "crime-forensic", "persuasion-manipulation"]],
+    ["curious", "Just curious, no background", []],
+  ];
+  const BG = Object.fromEntries(BACKGROUNDS.map(([id, name, t]) => [id, { id, name, topics: new Set(t) }]));
+  let teachShuffle = 0;
+  function teachPicks() {
+    const mine = (state.settings.background || []).map(b => BG[b]).filter(Boolean);
+    const home = new Set(); for (const b of mine) for (const t of b.topics) home.add(t);
+    const seen = new Set(state.history.map(h => h.id));
+    const seed = Math.floor(Date.now() / 864e5) * 131 + teachShuffle * 7919 + mine.length;
+    const r = rng(seed);
+    const pick = (list) => list.length ? list[Math.floor(r() * list.length)] : null;
+    const away = v => visible(v) && !seen.has(v.id) && !home.has(v.topics[0]) && !v.topics.some(t => home.has(t));
+    const usedAreas = new Set(), usedTopics = new Set();
+    const take = (list, n) => { const out = []; let guard = 0; while (out.length < n && list.length && guard++ < 60) { const v = pick(list); if (!v) break; if (usedTopics.has(v.topics[0]) || (usedAreas.has(v.area) && usedAreas.size < 4)) { list = list.filter(x => x !== v); continue; } out.push(v); usedAreas.add(v.area); usedTopics.add(v.topics[0]); list = list.filter(x => x !== v); } return out; };
+    // three kinds of pick: a talk people vouched for, the first lecture of a taught course, a primary source or demo
+    const talks = V.filter(v => away(v) && v.nrec >= 2 && !careWorthy(v)).slice(0, 400);
+    const firstLectures = V.filter(v => away(v) && v.inst && v.inst.i === 1 && series.get(v.series) && series.get(v.series).kind === "course" && series.get(v.series).level !== "advanced");
+    const originals = V.filter(v => away(v) && v.orig);
+    const picks = [...take(talks, 1).map(v => [v, "a talk people vouched for"]), ...take(firstLectures, 1).map(v => [v, "lecture 1 of a course"]), ...take(originals, 1).map(v => [v, v.orig.shelf === "demos" ? "an experiment to try" : "a primary source"])];
+    while (picks.length < 3) { const extra = take(talks.length ? talks : V.filter(away), 1); if (!extra.length) break; picks.push([extra[0], "another field"]); }
+    return { picks, mine };
+  }
+  function teachSection() {
+    const chosen = state.settings.background || [];
+    const { picks, mine } = teachPicks();
+    const chips = BACKGROUNDS.map(([id, name]) => `<button class="bgchip" data-bg="${id}" aria-pressed="${chosen.includes(id)}">${esc(name)}</button>`).join("");
+    const you = mine.length ? mine.map(b => b.name.toLowerCase()).join(" + ") : "";
+    const cardsHtml = picks.map(([v, why]) => `<div class="teach-pick"><div class="teach-why">${esc(why)} · <a href="#t-${v.topics[0]}">${esc(topics.get(v.topics[0]).name)}</a></div>${card(v, { chips: 1 })}</div>`).join("");
+    return `<section class="section teach" id="teach"><div class="section-head"><div><h2>Teach me something I don't know</h2><div class="sub">${chosen.length ? `Picked from outside <b>${esc(you)}</b>: ${picks.length} things from the fields next door. Nothing leaves your browser.` : "Say where you're coming from and PsychTube will pick from the fields next door — a vouched talk, the first lecture of a course, an original experiment. No account; it's remembered in this browser."}</div></div><div class="teach-actions">${chosen.length ? `<button class="btn quiet" id="teachShuffle">Shuffle</button><button class="btn quiet" id="teachChange">${picks.length ? "Change" : "Choose"}</button>` : ""}</div></div>
+      <div class="bgpicker" id="bgpicker" ${chosen.length ? "hidden" : ""}><div class="bgchips">${chips}</div><div class="faint" style="margin-top:8px">Pick everything that describes you; the picks avoid those fields.</div></div>
+      ${chosen.length ? `<div class="teach-grid">${cardsHtml || `<p class="faint">You have watched your way through the fields next door. Shuffle, or change your background.</p>`}</div>` : ""}</section>`;
+  }
+  function wireTeach() {
+    const sec = document.getElementById("teach"); if (!sec) return;
+    sec.querySelectorAll(".bgchip").forEach(b => b.onclick = () => {
+      const id = b.dataset.bg; let cur = new Set(state.settings.background || []);
+      if (id === "curious") cur = cur.has("curious") ? new Set() : new Set(["curious"]); else { cur.delete("curious"); if (cur.has(id)) cur.delete(id); else cur.add(id); }
+      state.settings.background = [...cur]; saveSettings(); teachShuffle = 0; pageHome(); const el = document.getElementById("teach"); if (el) el.scrollIntoView({ block: "start", behavior: "smooth" });
+    });
+    const sh = document.getElementById("teachShuffle"); if (sh) sh.onclick = () => { teachShuffle++; pageHome(); const el = document.getElementById("teach"); if (el) el.scrollIntoView({ block: "start" }); };
+    const ch = document.getElementById("teachChange"); if (ch) ch.onclick = () => { const pk = document.getElementById("bgpicker"); pk.hidden = !pk.hidden; };
+  }
   function pageHome() {
     setNav("home"); setTitle("");
     const s = PT.stats;
     const fy = forYou(12);
     const canon = V.filter(visible).slice(0, 12);
     const recent = V.filter(v => visible(v) && v.last >= 2024).sort((a, b) => (b.last - a.last) || (b.score - a.score)).slice(0, 12);
-    const care = V.filter(v => v.badge && v.badge.role !== "critique" && !(state.settings.hideCW && v.cw.length)).slice(0, 12);
+    const care = V.filter(v => careWorthy(v) && !(state.settings.hideCW && v.cw.length)).slice(0, 12);
     const longs = V.filter(v => visible(v) && v.len >= 3600).slice(0, 12);
     const seriesRow = PT.series.slice(0, 8).map(sid => { const first = byId.get(sid.vids[0]); return { ...first, title: `${sid.name}: ${sid.n} lectures`, id: first.id, _series: sid }; });
     const areaRows = areas.map(a => {
@@ -268,7 +333,8 @@
     const where = ["Hacker News", nSubs ? `${nSubs} psychology subreddits` : null, "Psychology Stack Exchange"].filter(Boolean);
     const whereText = where.length > 1 ? where.slice(0, -1).join(", ") + " and " + where[where.length - 1] : where[0];
     const inst = s.inst || { courses: 0, lectures: 0, institutions: 0 };
-    const courseRow = PT.series.filter(sd => sd.inst && sd.kind !== "talks").slice(0, 10);   // taught courses first; seminars live on their own shelf
+    const courseRow = PT.series.filter(sd => sd.inst && sd.kind !== "talks").sort((a, b) => ((a.inst === "Independent lecturer") - (b.inst === "Independent lecturer")) || (b.pop - a.pop) || (b.n - a.n)).slice(0, 10);   // named institutions before lecturers' own channels
+    const shelfRows = (PT.shelves || []).map(sh => { const vids = sh.items.map(it => it.vid && byId.get(it.vid)).filter(v => v && visible(v)).slice(0, 12); return vids.length ? section(sh.name, rowOf(vids), `#shelf-${sh.id}`, sh.id === "demos" ? "Experiments that work on you, from the researchers' own channels, each with its paper." : "The original films of the classic experiments, from the archives that hold them, each with its paper.") : ""; }).join("");   // taught courses first; seminars live on their own shelf
     const inProgress = Object.entries(state.progress).filter(([pid, p]) => !p.done && p.t > 45 && byId.has(pid)).sort((a, b) => b[1].ts - a[1].ts).map(([pid]) => byId.get(pid)).slice(0, 12);
     const myCourses = PT.series.map(sd => [sd, seriesProgress(sd)]).filter(([sd, sp]) => sp.started).sort((a, b) => b[1].last - a[1].last).slice(0, 8);
     main.innerHTML = `
@@ -279,14 +345,17 @@
       ${inProgress.length ? section("Continue watching", rowOf(inProgress), "#history", "Pick up where you left off. Positions are saved in this browser.") : ""}
       ${myCourses.length ? section("Your courses", `<div class="row">${myCourses.map(([sd]) => seriesCard(sd)).join("")}</div>`, "#courses", "Courses you've started, most recent first.") : ""}
       ${section(state.history.length ? "For you" : "Start here", rowOf(fy), null, state.history.length ? "Based on what you've watched here. Nothing leaves your browser." : "A fresh mix every day, one video per topic.")}
+      ${teachSection()}
       ${courseRow.length ? section("Courses", `<div class="row">${courseRow.map(sd => seriesCard(sd)).join("")}</div>`, "#courses", `Complete courses, every lecture in order, published by the universities themselves. ${inst.courses} courses from ${inst.institutions} institutions.`) : ""}
       ${section("The canon", rowOf(canon), "#canon", "The most vouched-for videos across all communities.")}
+      ${shelfRows}
       ${!courseRow.length && PT.series.length ? section("Courses & series", `<div class="row">${PT.series.slice(0, 8).map(sd => seriesCard(sd)).join("")}</div>`, "#courses", "Full lecture series people recommend whole.") : ""}
       ${section("Recently recommended", rowOf(recent), null, "Vouched for in 2024 or later.")}
       ${areaRows}
       ${care.length ? section("Handle with care", rowOf(care), "#care", "Popular videos built on findings that later shrank, failed to replicate or were overstated. Watch, then read the note.") : ""}
       ${section("Long watches", rowOf(longs), "#longs", "Everything over an hour.")}
     `;
+    wireTeach();
   }
   const KIND_WORD = { course: "lecture", series: "lecture", talks: "talk" };
   function seriesCard(sd) {
@@ -427,13 +496,35 @@
     main.innerHTML = `<h1>Clips</h1><p class="lede">Moments people linked to directly, with a timestamp. Psychology people point at the specific minute.</p>
       ${list.map(v => `<div class="card row-item"><a class="thumb" href="#v-${v.id}?t=${v.clips[0]}" aria-label="${esc(v.title)}">${thumb(v).replace('<div class="thumb">', "").replace(/<\/div>$/, "")}</a><div><a class="title" href="#v-${v.id}">${esc(v.title)}</a><div class="ch">${esc(v.ch)}</div><div class="clips" style="margin-top:8px">${v.clips.map(t => { const vo = v.vouches.find(x => x.t === t); return `<a class="btn quiet" style="font-size:13px" href="#v-${v.id}?t=${t}"><b style="color:var(--amber)">${fmtDur(t)}</b>${vo ? ` <span class="muted">${esc(vo.q.slice(0, 90))}${vo.q.length > 90 ? "…" : ""}</span>` : ""}</a>`; }).join("")}</div></div></div>`).join("") || `<div class="empty"><h2>No clips yet</h2></div>`}`;
   }
-  function pageCare() {
+  function pageCare(params) {
     setNav("care"); setTitle("Handle with care");
+    const p = params || {}; const want = p.status || "all";
     const groups = new Map();
-    for (const v of V) if (v.badge) { const g = groups.get(v.badge.id) || { promotes: [], critique: [] }; g[v.badge.role === "critique" ? "critique" : "promotes"].push(v); groups.set(v.badge.id, g); }
-    const order = [...groups.keys()].sort((a, b) => (groups.get(b).promotes.length + groups.get(b).critique.length) - (groups.get(a).promotes.length + groups.get(a).critique.length));
-    main.innerHTML = `<h1>Handle with care</h1><p class="lede">Psychology's most-shared videos include some of its least reliable findings. These are still worth watching — they shaped the field and the conversation — but each comes with what happened next. The notes are PsychTube's, not the communities'.</p>
-      ${order.map(id => { const c = PT.contested[id]; const g = groups.get(id); return `<section class="section care-list"><div class="section-head"><div><h2>${esc(c.name)}</h2><div class="sub" style="max-width:80ch;color:var(--ink-2)">${esc(c.note)} <span class="faint">${esc(c.source)}</span></div></div></div>${g.promotes.length ? grid(g.promotes) : ""}${g.critique.length ? `<h3 style="margin:14px 0 10px;color:var(--mint)">The pushback</h3>${grid(g.critique)}` : ""}</section>`; }).join("")}`;
+    for (const v of V) if (v.badge) { const g = groups.get(v.badge.id) || { promotes: [], critique: [], source: [] }; g[v.badge.role === "critique" ? "critique" : v.badge.role === "source" ? "source" : "promotes"].push(v); groups.set(v.badge.id, g); }
+    const ORDER = ["failed", "myth", "misreported", "reversed", "overstated", "smaller", "mixed", "fraud", "replicated"];
+    const ids = Object.keys(PT.contested).filter(id => want === "all" || statusOf(id) === want)
+      .sort((a, b) => { const sa = ORDER.indexOf(statusOf(a)), sb = ORDER.indexOf(statusOf(b)); if (sa !== sb) return sa - sb; const na = groups.has(a) ? groups.get(a).promotes.length + groups.get(a).critique.length + groups.get(a).source.length : 0; const nb = groups.has(b) ? groups.get(b).promotes.length + groups.get(b).critique.length + groups.get(b).source.length : 0; return nb - na || a.localeCompare(b); });
+    const counts = {}; for (const id of Object.keys(PT.contested)) counts[statusOf(id)] = (counts[statusOf(id)] || 0) + 1;
+    const link = val => `#care?${new URLSearchParams({ ...p, status: val }).toString()}`;
+    const seg = `<div class="seg" role="group"><a role="button" href="#care" aria-pressed="${want === "all"}" class="segbtn">All <span class="n">${Object.keys(PT.contested).length}</span></a>${ORDER.filter(st => counts[st]).map(st => `<a role="button" href="${link(st)}" aria-pressed="${want === st}" class="segbtn">${esc(STATUS_LABELS[st] || st)} <span class="n">${counts[st]}</span></a>`).join("")}</div>`;
+    const paperLine = pp => `<li>${esc(pp.cite)}${pp.doi ? ` <a href="https://doi.org/${esc(pp.doi)}" target="_blank" rel="noopener">doi:${esc(pp.doi)}</a>` : pp.url ? ` <a href="${esc(pp.url)}" target="_blank" rel="noopener">link ↗</a>` : ""}</li>`;
+    main.innerHTML = `<h1>Handle with care</h1><p class="lede">Psychology's most-shared videos include some of its least reliable findings — and some of its sturdiest. Every finding here has a replication status and the papers behind it, so you can watch the classic and then read what happened next. The notes are PsychTube's, not the communities'; the status is a summary of the sources listed, not a verdict on a whole field.</p>
+      <div class="toolbar">${seg}</div>
+      ${ids.map(id => { const c = PT.contested[id]; const g = groups.get(id) || { promotes: [], critique: [], source: [] }; return `<section class="section care-list" id="care-${esc(id)}"><div class="section-head"><div><h2>${esc(c.name)} ${statusChip(id)}</h2><div class="sub" style="max-width:80ch;color:var(--ink-2)">${esc(c.note)}</div>${c.sources && c.sources.length ? `<ul class="papers sub">${c.sources.map(paperLine).join("")}</ul>` : `<div class="sub faint">${esc(c.source)}</div>`}</div></div>${g.source.length ? `<h3 class="care-h">The original</h3>${grid(g.source)}` : ""}${g.promotes.length ? `${g.source.length ? `<h3 class="care-h">Videos that present it</h3>` : ""}${grid(g.promotes)}` : ""}${g.critique.length ? `<h3 class="care-h" style="color:var(--mint)">The pushback</h3>${grid(g.critique)}` : ""}${!g.source.length && !g.promotes.length && !g.critique.length ? `<p class="faint">No video in the catalog is tagged with this finding yet.</p>` : ""}</section>`; }).join("")}`;
+  }
+  function pageShelf(id) {
+    const sh = (PT.shelves || []).find(x => x.id === id); if (!sh) return notFound();
+    setNav(id === "demos" ? "demos" : "originals"); setTitle(sh.name);
+    const paperLine = pp => pp ? `<li>${esc(pp.cite)}${pp.doi ? ` <a href="https://doi.org/${esc(pp.doi)}" target="_blank" rel="noopener">doi:${esc(pp.doi)}</a>` : pp.url ? ` <a href="${esc(pp.url)}" target="_blank" rel="noopener">link ↗</a>` : ""}</li>` : "";
+    const withVideo = sh.items.filter(it => it.vid && byId.has(it.vid)).length;
+    main.innerHTML = `<h1>${esc(sh.name)}</h1><p class="lede">${esc(sh.tagline)}</p>
+      <p class="shelf-note">${withVideo} of ${sh.items.length} have a copy from the rights holder, the institution or an archive; the rest are listed with the paper and a note on where the film lives, rather than linking a re-upload.</p>
+      <ol class="shelf">${sh.items.map(it => { const v = it.vid ? byId.get(it.vid) : null; return `<li class="shelf-item${v ? "" : " novideo"}">
+        <div class="shelf-media">${v ? card(v, { cls: "small", chips: 0 }) : `<div class="shelf-none"><b>No authorized copy online</b><span>${esc(it.uploader || "Listed for the paper and the record.")}</span></div>`}</div>
+        <div class="shelf-text"><h2>${esc(it.title)}${it.year ? ` <span class="faint">${it.year}</span>` : ""}</h2>${it.people ? `<p class="people">${esc(it.people)}</p>` : ""}<p>${esc(it.what || "")}</p>
+          ${it.paper || it.paper2 ? `<ul class="papers">${paperLine(it.paper)}${paperLine(it.paper2)}</ul>` : ""}
+          <div class="shelf-foot">${it.status ? `<a href="#care?status=${esc(statusOf(it.status))}#care-${esc(it.status)}" class="status s-${esc(statusOf(it.status))}">${esc(statusLabel(it.status))}: ${esc(PT.contested[it.status].name)}</a>` : ""}${(it.alt || []).map(a => `<a href="${esc(a.url)}" target="_blank" rel="noopener" class="faint" style="text-decoration:underline">${esc(a.label)} ↗</a>`).join("")}${it.topics.map(t => topics.get(t) ? `<a class="chip" href="#t-${t}">${esc(topics.get(t).name)}</a>` : "").join("")}</div>
+        </div></li>`; }).join("")}</ol>`;
   }
   function pageSimple(nav, title, intro, list, params, path) {
     listPage({ nav, title, intro, list, params, path });
@@ -531,6 +622,10 @@
     const nextInSeries = sameSeries ? sameSeries.vids[posInSeries + 1] : null;
     const c = v.badge ? PT.contested[v.badge.id] : null;
     const srcSummary = Object.entries(v.src).map(([s, n]) => `${n} on ${SRC_NAME[s]}`).join(", ");
+    const paperLine = pp => pp ? `<li>${esc(pp.cite)}${pp.doi ? ` <a href="https://doi.org/${esc(pp.doi)}" target="_blank" rel="noopener">doi:${esc(pp.doi)}</a>` : pp.url ? ` <a href="${esc(pp.url)}" target="_blank" rel="noopener">link ↗</a>` : ""}</li>` : "";
+    const o = v.orig;
+    const shelfName = id => { const sh = (PT.shelves || []).find(x => x.id === id); return sh ? sh.name : id; };
+    const origBox = o ? `<div class="box orig"><h2>${o.shelf === "demos" ? "Try it yourself" : "Primary source"}${o.year ? ` · ${o.year}` : ""}</h2>${o.people ? `<p class="people">${esc(o.people)}</p>` : ""}<p>${esc(o.what || "")}</p>${o.paper || o.paper2 ? `<h3>The paper</h3><ul class="papers">${paperLine(o.paper)}${paperLine(o.paper2)}</ul>` : ""}${o.alt && o.alt.length ? `<p class="faint">${o.alt.map(a => `<a href="${esc(a.url)}" target="_blank" rel="noopener" style="text-decoration:underline">${esc(a.label)} ↗</a>`).join(" · ")}</p>` : ""}<p class="faint" style="margin:0">${o.uploader ? `Copy: ${esc(o.uploader)}${o.legit === "official" ? " — the rights holder's or institution's own." : o.legit === "archive" ? " — a library/archive collection." : ""} · ` : ""}<a href="#shelf-${esc(o.shelf)}" style="text-decoration:underline">All ${esc(shelfName(o.shelf).toLowerCase())}</a></p></div>` : "";
     const instBox = v.inst && sameSeries ? `<div class="box inst"><h2>Published by ${esc(v.inst.n)}</h2><p>${esc(KIND_WORD[sameSeries.kind] === "talk" ? "Talk" : "Lecture")} ${v.inst.i} of ${v.inst.of} in <a href="#s-${sameSeries.id}">${esc(sameSeries.name)}</a>${sameSeries.lecturer ? `, taught by ${esc(sameSeries.lecturer)}` : ""}${sameSeries.year ? ` (${sameSeries.year})` : ""}; put online by ${esc(v.ch || sameSeries.ch || "")}. ${v.nrec ? "The communities below vouched for this lecture on its own, too." : "It's here on the institution's authority, not a forum's: no community has vouched for this particular lecture."}${sameSeries.kind === "talks" ? " <b>A recorded talk, not a course:</b> a speaker's own account of their work, as presented at a seminar, grand rounds or conference — not peer-reviewed." : ""}${sameSeries.note ? ` <span class="muted">${esc(sameSeries.note)}</span>` : ""}</p><p class="faint" style="margin:0"><a href="#s-${sameSeries.id}" style="text-decoration:underline">${sameSeries.kind === "talks" ? "Whole collection" : "Whole course"}</a>${nextInSeries ? ` · <a href="#v-${nextInSeries}" style="text-decoration:underline">${sameSeries.kind === "talks" ? "Next talk" : "Next lecture"}</a>` : ""}${sameSeries.url ? ` · <a href="${esc(sameSeries.url)}" target="_blank" rel="noopener" style="text-decoration:underline">${sameSeries.provider === "panopto" ? "Course on Panopto" : sameSeries.provider === "archive" ? "Course on the Internet Archive" : "Playlist on YouTube"} ↗</a>` : ""}</p></div>` : "";
     const groupsByComm = new Map();
     for (const vo of v.vouches) { const arr = groupsByComm.get(vo.c) || []; arr.push(vo); groupsByComm.set(vo.c, arr); }
@@ -552,7 +647,8 @@
         <button class="btn quiet" id="doneBtn" aria-pressed="${isDone(id)}">${isDone(id) ? "✓ Watched" : "Mark watched"}</button>
         ${nextInSeries ? `<a class="btn quiet" href="#v-${nextInSeries}">Next lecture →</a>` : ""}
       </div>
-      ${c ? `<div class="box ${v.badge.role === "critique" ? "critique" : "care"}"><h2>${v.badge.role === "critique" ? "This video pushes back on: " : "Handle with care: "}${esc(c.name)}</h2><p>${esc(c.note)}</p><p class="faint" style="margin:0">${esc(c.source)}. <a href="#care" style="text-decoration:underline">All contested findings</a></p></div>` : ""}
+      ${origBox}
+      ${c ? `<div class="box ${v.badge.role === "critique" ? "critique" : GOOD_STATUS.has(c.status) ? "good" : "care"}"><h2>${v.badge.role === "critique" ? "This video pushes back on: " : v.badge.role === "source" ? "What became of it: " : GOOD_STATUS.has(c.status) ? "Holds up: " : "Handle with care: "}${esc(c.name)} ${statusChip(v.badge.id)}</h2><p>${esc(c.note)}</p>${c.sources && c.sources.length ? `<ul class="papers">${c.sources.map(paperLine).join("")}</ul>` : `<p class="faint">${esc(c.source)}.</p>`}<p class="faint" style="margin:0"><a href="#care" style="text-decoration:underline">All replication notes</a></p></div>` : ""}
       ${instBox}
       ${v.nmention ? `<div class="box"><h2>Why people recommend it</h2>${v.why ? `<p class="why">${esc(v.why)}</p>` : ""}${v.summary ? `<p class="muted">${esc(v.summary)}</p>` : ""}${v.quote ? `<p class="quote">“${esc(v.quote)}”</p>` : ""}
         <p class="faint" style="margin:0">${plural(v.nrec, "distinct recommender")} across ${plural(v.communities.length, "community")}; ${plural(v.nmention, "mention")} in total (${srcSummary}), ${v.first === v.last ? v.first : `${v.first}–${v.last}`}.</p></div>` : v.summary ? `<div class="box"><h2>About this lecture</h2><p class="muted">${esc(v.summary)}</p></div>` : ""}
@@ -658,7 +754,7 @@ remembers what I've watched.</pre>
     if (h.startsWith("/")) { h = h.slice(1).replace(/^(v|t|a|s)\//, "$1-").replace(/^search\?q=/, "q-").replace(/^settings/, "prefs") || "home"; }
     const [path, qs] = h.split("?");
     const params = Object.fromEntries(new URLSearchParams(qs || ""));
-    const m = /^(v|t|a|s|q)-(.+)$/.exec(path);
+    const m = /^(v|t|a|s|q|shelf)-(.+)$/.exec(path);
     const p0 = m ? m[1] : path;
     const arg = m ? m[2] : "";
     current = { page: p0, id: arg };
@@ -671,7 +767,8 @@ remembers what I've watched.</pre>
     else if (p0 === "courses") pageCourses(params);
     else if (p0 === "s") pageSeries(arg);
     else if (p0 === "clips") pageClips();
-    else if (p0 === "care") pageCare();
+    else if (p0 === "care") pageCare(params);
+    else if (p0 === "shelf") pageShelf(arg);
     else if (p0 === "longs") pageSimple("longs", "Longs", "Everything over an hour: full lectures, long interviews, documentaries. Where YouTube puts Shorts, PsychTube puts Longs.", V.filter(v => visible(v) && v.len >= 3600), params, "longs");
     else if (p0 === "canon") pageSimple("", "The canon", "The most vouched-for psychology videos across every community, by distinct recommenders.", V.filter(v => visible(v) && v.nrec > 0), params, "canon");
     else if (p0 === "history" || p0 === "liked" || p0 === "later") pageLibrary(p0);

@@ -8,7 +8,8 @@
   "dropped_inst_not_psych": 730,
   "dropped_inst_promo": 367,
   "inst_inherited_topics": 1621,
-  "dropped_inst_thirdparty": 45
+  "dropped_inst_thirdparty": 45,
+  "shelf_added": 32
  },
  "topics": [
   [
@@ -17,7 +18,7 @@
   ],
   [
    "brain-disorders",
-   1205
+   1208
   ],
   [
    "psychiatry-medication",
@@ -33,15 +34,15 @@
   ],
   [
    "child-development",
-   909
+   913
   ],
   [
    "therapy",
-   789
+   790
   ],
   [
    "perception-illusions",
-   773
+   787
   ],
   [
    "psych-research",
@@ -49,11 +50,11 @@
   ],
   [
    "language-thought",
-   754
+   757
   ],
   [
    "consciousness",
-   740
+   742
   ],
   [
    "adolescence-aging",
@@ -69,7 +70,7 @@
   ],
   [
    "groups-prejudice",
-   618
+   622
   ],
   [
    "trauma-stress",
@@ -85,11 +86,11 @@
   ],
   [
    "memory",
-   527
+   529
   ],
   [
    "history-of-psychology",
-   515
+   520
   ],
   [
    "decision-risk",
@@ -97,11 +98,11 @@
   ],
   [
    "emotion",
-   476
+   477
   ],
   [
    "personality",
-   433
+   434
   ],
   [
    "work-organizations",
@@ -133,11 +134,11 @@
   ],
   [
    "animal-minds",
-   301
+   305
   ],
   [
    "attention-focus",
-   284
+   289
   ],
   [
    "behavioral-genetics",
@@ -169,15 +170,15 @@
   ],
   [
    "education-teaching",
-   209
+   210
   ],
   [
    "learning-studying",
-   198
+   200
   ],
   [
    "relationships-attachment",
-   176
+   177
   ],
   [
    "tech-and-mind",
@@ -201,7 +202,7 @@
   ],
   [
    "conformity-obedience",
-   89
+   90
   ],
   [
    "performance",

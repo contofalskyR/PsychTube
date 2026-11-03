@@ -403,6 +403,53 @@ for vid, rec in videos.items():
 
 catalog.sort(key=lambda v: -v["score"])
 
+# ---------------------------------------------------------------- curated shelves (primary sources, demos)
+
+SHELVES = json.load(open(P("pipeline", "shelves.json"), encoding="utf-8"))["shelves"] if os.path.exists(P("pipeline", "shelves.json")) else []
+by_id_tmp = {v["id"]: v for v in catalog}
+shelves_out = []
+for sh in SHELVES:
+    items_out = []
+    for it in sh["items"]:
+        vd = it.get("video")
+        vid = vd["id"] if vd else None
+        if vid and vid not in by_id_tmp:
+            m = meta.get(vid) or {}
+            topics_i = [t for t in it.get("topics", []) if t in TOPIC_IDS] or ["history-of-psychology"]
+            entry = {
+                "id": vid, "title": m.get("title") or it["title"], "ch": m.get("ch") or vd.get("uploader", "").split(" (")[0], "chid": m.get("chid"),
+                "len": m.get("len") or vd.get("len"), "views": m.get("views"), "pub": m.get("pub") or (f"{it['year']}-01-01" if it.get("year") else None),
+                "topics": topics_i, "area": TOPIC_AREA[topics_i[0]],
+                "type": "demo" if sh["id"] == "demos" else "documentary", "course": False,
+                "score": 1.0, "nrec": 0, "nmention": 0, "src": {}, "communities": [],
+                "why": "", "summary": clean(it.get("what"), 240), "quote": "", "vouches": [],
+                "badge": None, "cw": [], "first": None, "last": None, "months": 0, "clips": [], "kw": [],
+            }
+            if vd["p"] != "youtube":
+                entry["p"] = vd["p"]
+                entry["host"] = "archive.org" if vd["p"] == "archive" else vd.get("host")
+                if vd.get("f"):
+                    entry["f"] = vd["f"]
+            catalog.append(entry)
+            by_id_tmp[vid] = entry
+            stats["shelf_added"] += 1
+        if vid:
+            v = by_id_tmp[vid]
+            v.setdefault("shelf", [])
+            if sh["id"] not in v["shelf"]:
+                v["shelf"].append(sh["id"])
+            if "orig" not in v:                   # a video on two shelves keeps its first (richer) card
+                v["orig"] = {"sid": it["id"], "shelf": sh["id"], "people": it.get("people"), "year": it.get("year"), "what": it.get("what"),
+                             "paper": it.get("paper"), "paper2": it.get("paper2"), "alt": it.get("alt") or [], "uploader": vd.get("uploader"), "legit": vd.get("legit")}
+            if it.get("status") and it["status"] in CONTESTED and not v.get("badge"):
+                v["badge"] = {"id": it["status"], "role": "source"}
+        items_out.append({"sid": it["id"], "vid": vid, "title": it["title"], "year": it.get("year"), "people": it.get("people"), "what": it.get("what"),
+                          "paper": it.get("paper"), "paper2": it.get("paper2"), "alt": it.get("alt") or [], "status": it.get("status") if it.get("status") in CONTESTED else None,
+                          "topics": [t for t in it.get("topics", []) if t in TOPIC_IDS], "legit": (vd or {}).get("legit"), "uploader": (vd or {}).get("uploader"),
+                          "p": (vd or {}).get("p"), "len": (vd or {}).get("len") or (meta.get(vid, {}).get("len") if vid else None)})
+    shelves_out.append({"id": sh["id"], "name": sh["name"], "short": sh.get("short") or sh["name"], "tagline": sh.get("tagline", ""), "items": items_out})
+catalog.sort(key=lambda v: -v["score"])
+
 # ---------------------------------------------------------------- related graph
 
 by_id = {v["id"]: v for v in catalog}
@@ -526,7 +573,10 @@ data = {
               "inst": {"courses": len(inst_series), "lectures": sum(s["n"] for s in inst_series), "institutions": len(institutions),
                        "also_vouched": sum(s["vouched"] for s in inst_series)}},
     "areas": areas_out,
-    "contested": {k: {"name": c["name"], "note": c["note"], "source": c["source"]} for k, c in CONTESTED.items()},
+    "contested": {k: {"name": c["name"], "note": c["note"], "source": c["source"], "status": c.get("status", "mixed"),
+                      "sources": [{kk: vv for kk, vv in src.items() if vv} for src in c.get("sources", [])]} for k, c in CONTESTED.items()},
+    "status_labels": TAX.get("status_labels", {}),
+    "shelves": shelves_out,
     "cw": TAX["content_warnings"],
     "institutions": list(institutions.values()),
     "series": series,
