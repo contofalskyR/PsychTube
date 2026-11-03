@@ -1,0 +1,130 @@
+diff --git a/pipeline/build_catalog.py b/pipeline/build_catalog.py
+index 0b55efa..db05670 100644
+--- a/pipeline/build_catalog.py
++++ b/pipeline/build_catalog.py
+@@ -232,6 +232,36 @@ def approx_pub(info, pulled):
+     return ref.strftime("%Y-%m-01")
+ 
+ 
++# Provenance is per video, not per playlist. A lecturer's playlist that re-lists a TED talk, a Veritasium video or a podcast
++# episode does not make the institution its publisher, so a playlist item is credited only when it sits on one of the
++# institution's own channels: a channel that owns one of its kept playlists or standalone talks, or one listed for it under
++# "affiliated_channels" in triage_overrides.json. Other items keep their community vouches (if any) and lose the badge, the
++# course position and the tier-0 rank. A playlist that is mostly other channels' videos is a watch list, not a publication.
++TRIAGE_OV = json.load(open(P("pipeline", "triage_overrides.json"), encoding="utf-8")) if os.path.exists(P("pipeline", "triage_overrides.json")) else {}
++inst_channels = collections.defaultdict(set)
++for c in inst_courses:
++    if c.get("ownerId"):
++        inst_channels[c["inst"]].add(c["ownerId"])
++_loose_path = P("raw", "institutional", "loose.json")
++for lv in (json.load(open(_loose_path, encoding="utf-8"))["videos"] if os.path.exists(_loose_path) else []):
++    if (meta.get(lv["id"]) or {}).get("chid"):
++        inst_channels[lv["inst"]].add(meta[lv["id"]]["chid"])
++for _inst, _chids in (TRIAGE_OV.get("affiliated_channels") or {}).items():
++    if not _inst.startswith("_"):
++        inst_channels[_inst] |= set(_chids)
++COUNT_RX = re.compile(r"[\d.,]+\s*[KMB]?(\s*views?)?", re.I)
++cross_review = collections.Counter()   # (institution, channel) -> items not credited; written to work/inst/crosschannel.json for review
++cross_n = watchlists = 0
++
++
++def own_item(it, c):
++    """Repair the playlist-parse slip (a view count in the channel field) and say whether the item is the institution's own."""
++    if not it.get("chid") and COUNT_RX.fullmatch(it.get("ch") or ""):
++        it["info"] = (it.get("ch") or "") + " · " + (it.get("info") or "")
++        it["ch"], it["chid"] = c.get("owner"), c.get("ownerId")
++    return bool(c.get("provider")) or not it.get("chid") or not c.get("ownerId") or it["chid"] in inst_channels[c["inst"]]
++
++
+ inst_course = {}       # sid -> course record (series entry under construction)
+ inst_member = {}       # vid -> (sid, idx)
+ inst_meta = {}         # vid -> fallback metadata built from the playlist row
+@@ -249,6 +279,13 @@ for c in inst_courses:
+         sid += "-" + c["pid"][-3:].lower()
+     used_sids.add(sid)
+     items = [it for it in c["items"] if it.get("title") not in ("[Private video]", "[Deleted video]")]
++    own = {k for k, it in enumerate(items) if own_item(it, c)}
++    if items and len(own) / len(items) < 0.5:
++        watchlists += 1                     # mostly other people's videos: a watch list, not something the institution published
++        for k, it in enumerate(items):
++            if k not in own:
++                cross_review[(c["inst"], it.get("ch") or "?")] += 1
++        continue
+     readings = next((u.rstrip(".,") for u in re.findall(r"https?://[^\s)>\]]+", c.get("desc") or "")
+                      if re.search(r"ocw\.mit\.edu|oyc\.yale\.edu|open\.yale|\.edu/|\.ac\.uk|nptel|swayam|syllabus|course", u, re.I)
+                      and not re.search(r"youtube|youtu\.be|twitter|facebook|instagram|bit\.ly|tinyurl|linkedin|tiktok|forms\.gle|patreon", u, re.I)), None)
+@@ -259,8 +296,11 @@ for c in inst_courses:
+         "pid": c["pid"], "url": c.get("url") or f"https://www.youtube.com/playlist?list={c['pid']}", "ch": c.get("owner"), "chid": c.get("ownerId"),
+         "total": len(items), "items": items, "topic_map": cl.get("topic_map") or {},
+     }
+-    for it in items:
++    for k, it in enumerate(items):
+         vid = it["id"]
++        if k not in own:
++            cross_n += 1; cross_review[(c["inst"], it.get("ch") or "?")] += 1
++            continue                        # another channel's video re-listed in this playlist: not the institution's
+         if vid in inst_member:
+             continue  # first course wins when a video sits in two playlists
+         inst_member[vid] = (sid, it["idx"])
+@@ -284,7 +324,7 @@ inst_loose = {}
+ LOOSE = json.load(open(P("raw", "institutional", "loose.json"), encoding="utf-8"))["videos"] if os.path.exists(P("raw", "institutional", "loose.json")) else []
+ for lv in LOOSE:
+     vid = lv["id"]
+-    if vid in inst_member or vid in inst_loose:
++    if vid in inst_member or vid in inst_loose or lv["inst"] in set(TRIAGE_OV.get("drop_inst", [])):
+         continue
+     inst_loose[vid] = {"inst": lv["inst"], "kind": lv.get("kind") or "talk", "why": lv.get("why", "")}
+     videos[vid]["vouches"].append({
+@@ -317,6 +357,8 @@ def score_video(vouches):
+ 
+ catalog = []
+ stats = collections.Counter()
++stats["inst_crosschannel_not_credited"] = cross_n
++stats["inst_watchlists_dropped"] = watchlists
+ for vid, rec in videos.items():
+     inst = inst_member.get(vid)            # (series id, lecture index) when a university playlist carries it
+     loose = inst_loose.get(vid)            # a standalone institutional talk (no series)
+@@ -414,6 +456,8 @@ for vid, rec in videos.items():
+         "clips": clips[:6],
+         "kw": (m.get("kw") or [])[:6],
+     }
++    if inst and comm_vouches:
++        entry["cscore"] = score_video(comm_vouches)[0]   # community-only: what the canon sorts by
+     if loose and inst is True:
+         entry["inst"] = {"n": loose["inst"], "loose": True}
+         entry["type"] = "lecture" if loose["kind"] == "lecture" else "talk"
+@@ -690,6 +734,8 @@ with open(P("site", "data.js"), "w", encoding="utf-8") as f:
+     f.write(";\n")
+ with open(P("site", "data", "psychtube.json"), "w", encoding="utf-8") as f:
+     json.dump(data, f, ensure_ascii=False, indent=1)
++with open(P("work", "inst", "crosschannel.json"), "w", encoding="utf-8") as f:   # review list for triage_overrides.json → affiliated_channels
++    json.dump([{"inst": i, "channel": ch, "items": n} for (i, ch), n in cross_review.most_common()], f, ensure_ascii=False, indent=1)
+ with open(P("work", "catalog_stats.json"), "w") as f:
+     json.dump({"stats": dict(stats), "topics": topic_counts.most_common(), "sources": dict(src_totals),
+                "communities": communities_total.most_common(40), "series": [(s["name"], s["n"]) for s in series]}, f, indent=1)
+diff --git a/pipeline/triage_overrides.json b/pipeline/triage_overrides.json
+index 925ee6c..720150e 100644
+--- a/pipeline/triage_overrides.json
++++ b/pipeline/triage_overrides.json
+@@ -6,7 +6,8 @@
+     "Nour Foundation",
+     "La Hacienda Treatment Center",
+     "Psychedelic Science Sweden",
+-    "Institute of Noetic Sciences"
++    "Institute of Noetic Sciences",
++    "TEDx"
+   ],
+   "drop_pid": [
+     "PLB6D81FE5DD5583B4",
+@@ -24,5 +25,8 @@
+     "UC San Diego Kavli Institute for Brain and Mind (UCTV)": "UC San Diego (Kavli Institute for Brain and Mind)",
+     "Virtual Linguistics Campus": "University of Marburg (Virtual Linguistics Campus)"
+   },
+-  "_drop_pid_note": "Virtual University of Pakistan 'Topic Based Video' series (2020+): 4-10 minute segments whose lecture language cannot be verified (no captions); the older 45-lecture VU courses stay."
+-}
++  "_drop_pid_note": "Virtual University of Pakistan 'Topic Based Video' series (2020+): 4-10 minute segments whose lecture language cannot be verified (no captions); the older 45-lecture VU courses stay.",
++  "affiliated_channels": {
++    "_comment": "institution (as in courses.json 'inst') -> extra channel ids whose uploads count as that institution's own, e.g. a department's CME or events channel. work/inst/crosschannel.json lists what the build did not credit, most items first."
++  }
++}
+\ No newline at end of file

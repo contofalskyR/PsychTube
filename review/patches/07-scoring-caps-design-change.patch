@@ -1,0 +1,40 @@
+diff --git a/pipeline/build_catalog.py b/pipeline/build_catalog.py
+index db05670..d952ed7 100644
+--- a/pipeline/build_catalog.py
++++ b/pipeline/build_catalog.py
+@@ -153,7 +153,7 @@ for r in reddit_recs:
+         continue
+     seen_rc.add(r["c"])
+     sc = r.get("sc") if r.get("sc") is not None else 1
+-    w = (1.0 if sc >= 1 else 0.3) * (1.0 + min(max(sc, 0), 50) ** 0.5 * 0.08)
++    w = (1.0 if sc >= 1 else 0.0) * (1.0 + min(max(sc, 0), 50) ** 0.5 * 0.08)   # sc <= 0: the community disagreed
+     link = (r.get("l") or "").replace("t3_", "")
+     for v in r["v"]:
+         videos[v["id"]]["vouches"].append({
+@@ -339,18 +339,24 @@ def score_video(vouches):
+     """distinct-voucher weighted sum, with a breadth bonus across communities."""
+     best_by_author = {}
+     extra = 0.0
++    repeats = collections.Counter()
++    first_month = {}                       # month of each recommender's first recommendation
+     for v in vouches:
+         key = (v["s"], (v.get("a") or "?").lower())
+         if key in best_by_author:
+-            extra += 0.15 * v["w"]
++            if repeats[key] < 2:           # at most two repeat mentions per person count (one user linked a video 15 times)
++                extra += 0.15 * v["w"]
++            repeats[key] += 1
+             best_by_author[key] = max(best_by_author[key], v["w"])
+         else:
+             best_by_author[key] = v["w"]
++        if v["w"] >= 0.7 and v.get("d") and v["s"] != "inst":
++            first_month[key] = min(first_month.get(key, v["d"]), v["d"])
+     base = sum(best_by_author.values()) + extra
+     communities = {v["c"] for v in vouches if v["w"] >= 0.7}
+     sources = {v["s"] for v in vouches if v["w"] >= 0.7}
+     breadth = 1.0 + 0.2 * (len(sources) - 1) + 0.05 * max(0, len(communities) - 1)
+-    months = {v["d"] for v in vouches if v["w"] >= 0.7 and v.get("d")}
++    months = set(first_month.values())     # longevity across people, not one person returning every month
+     recommenders = sum(1 for w in best_by_author.values() if w >= 0.7)
+     return round(base * breadth + 0.3 * len(months), 2), recommenders, sorted(months)
+ 

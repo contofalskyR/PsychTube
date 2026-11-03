@@ -1,0 +1,98 @@
+diff --git a/README.md b/README.md
+index 17d3c8d..c779edd 100644
+--- a/README.md
++++ b/README.md
+@@ -122,7 +122,8 @@ python3 pipeline/build_catalog.py
+ ```
+ 
+ reads everything under `raw/` and `work/` and rewrites `site/data.js` and `site/data/psychtube.json`.
+-It is deterministic given the inputs, so re-running it after adding raw data is safe.
++It is deterministic given the inputs (set `SOURCE_DATE_EPOCH` to pin the `generated` stamp as well), so
++re-running it after adding raw data is safe.
+ 
+ ### Add more Reddit vouches
+ 
+@@ -136,7 +137,8 @@ batches with `pipeline/make_batches.py` and have Claude (or any model) fill them
+ 
+ Append the playlist to `raw/institutional/courses.json` (`pid`, `inst`, `kind`, and the items as the
+ other entries have them; `pipeline/NOTES.md` shows the innertube calls that list a playlist, or use
+-the Data API's `playlistItems`), then `python3 pipeline/make_inst_batches.py`, label the new rows
++the Data API's `playlistItems`), then `python3 pipeline/make_inst_batches.py --only-mixed` (without the flag it
++also queues the lectures of single-topic courses that inherit their course's topics), label the new rows
+ with `pipeline/classify/INSTRUCTIONS_courses.md` and `INSTRUCTIONS_institutional.md`, and rebuild.
+ Keep to official channels and lecturers' own channels; mirrors get taken down.
+ 
+diff --git a/pipeline/NOTES.md b/pipeline/NOTES.md
+index 52772f6..dabb44d 100644
+--- a/pipeline/NOTES.md
++++ b/pipeline/NOTES.md
+@@ -218,8 +218,9 @@ of `getCurrentTime()`), Panopto's Embed API (`https://developers.panopto.com/scr
+ `t ≥ d − 45 s` or `t/d ≥ 0.92`, or when the viewer marks it. Course progress is derived from the
+ lectures (`seriesProgress`: watched count, percent including partial lectures, time left, last
+ activity) rather than stored, so a lecture watched from a topic page still advances its course.
+-Saving is debounced and flushed on `pagehide`; only dirty state is written, so a stale in-memory
+-copy never overwrites what another tab saved. Settings → Export writes `{psychtube:1, history, liked,
++Saving is debounced and flushed on `pagehide` and when the tab is hidden; a flush merges with what is
++already stored (newest `ts` per lecture wins), so another tab's progress is not overwritten. History, likes and
++watch-later are still written whole. Settings → Export writes `{psychtube:1, history, liked,
+ later, progress, settings}` as JSON and Import merges it (newest `ts` wins, unknown ids dropped).
+ The claude.ai artifact copy cannot embed players, so it has no tracker; the GitHub Pages site does.
+ 
+@@ -249,7 +250,7 @@ breadth bonus (1 + 0.2 per extra source + 0.05 per extra community) and add 0.3
+ with a recommendation. `nrec` counts (source, author) pairs whose best weight is ≥ 0.7.
+ 
+ Inclusion: HackerTube videos need `keep: true`. Community videos also need two recommenders, one
+-mention with 3+ upvotes, or an upvoted Stack Exchange answer. Dead/private videos (no title from
++mention with 2+ upvotes (`top_up >= 2` in the code), or an upvoted Stack Exchange answer. Dead/private videos (no title from
+ YouTube) are dropped.
+ 
+ Institutional tier: being in a kept university playlist counts as one vouch of weight 1.0 from the
+diff --git a/pipeline/yt_helpers.js b/pipeline/yt_helpers.js
+index bc67bbe..8ba1090 100644
+--- a/pipeline/yt_helpers.js
++++ b/pipeline/yt_helpers.js
+@@ -36,8 +36,9 @@
+       if(o.playlistVideoRenderer){ const v=o.playlistVideoRenderer; const by=v.shortBylineText||{}; const run=(by.runs||[])[0]||{}; const be=((run.navigationEndpoint||{}).browseEndpoint)||{}; let info=''; try{ info=text(v.videoInfo); }catch(e){}
+         if(!items.has(v.videoId)) items.set(v.videoId, {id:v.videoId, title:text(v.title), len: v.lengthSeconds? +v.lengthSeconds : null, idx: ++order, ch: run.text||'', chid: be.browseId||'', info}); }
+       if(o.lockupViewModel && /VIDEO/.test(o.lockupViewModel.contentType||'')){ const l=o.lockupViewModel; const id=l.contentId; if(items.has(id)) return; const md=(l.metadata||{}).lockupMetadataViewModel||{}; const rows=(((md.metadata||{}).contentMetadataViewModel||{}).metadataRows)||[]; let ch='',chid='',info='';
+-        try{ const p=rows[0].metadataParts[0]; ch=p.text.content; chid=p.text.commandRuns[0].onTap.innertubeCommand.browseEndpoint.browseId; }catch(e){}
+-        try{ info=rows[1].metadataParts.map(p=>p.text.content).join(' · '); }catch(e){}
++        let infoRow=1;
++        try{ const p=rows[0].metadataParts[0]; const be=p.text.commandRuns[0].onTap.innertubeCommand.browseEndpoint; ch=p.text.content; chid=be.browseId; }catch(e){ infoRow=0; ch=''; chid=''; }   // no byline: rows[0] is views · age
++        try{ info=rows[infoRow].metadataParts.map(p=>p.text.content).join(' · '); }catch(e){}
+         let len=null; try{ window.__walk(l.contentImage, x=>{ if(len==null && x.thumbnailBadgeViewModel){ const v=parseLen(x.thumbnailBadgeViewModel.text||''); if(v!=null) len=v; } }); }catch(e){}
+         items.set(id, {id, title:text(md.title), len, idx: ++order, ch, chid, info}); }
+       if(o.playlistHeaderRenderer){ const h=o.playlistHeaderRenderer; head.title=text(h.title); head.owner=text(h.ownerText); head.count=text(h.numVideosText); head.desc=text(h.descriptionText); try{ head.ownerId=h.ownerEndpoint.browseEndpoint.browseId; }catch(e){} }
+diff --git a/site/data/DATA.md b/site/data/DATA.md
+index d2112c7..69d1029 100644
+--- a/site/data/DATA.md
++++ b/site/data/DATA.md
+@@ -42,6 +42,9 @@ PsychTube shows) and `.../hqdefault.jpg` is the uploader's thumbnail. Embed a pl
+ 
+ ## `videos[]`: one object per video, best-scored first
+ 
++Fields that would be empty, zero or false are **omitted** to keep the file small: a video without `nrec` has
++`nrec: 0`, one without `badge` has none, and so on. Read them with a default (`v.get("nrec", 0)`).
++
+ | field | meaning |
+ |---|---|
+ | `id` | 11-character YouTube id |
+@@ -100,7 +103,8 @@ replication `status`. Items whose `vid` is `null` have no authorized copy online
+ Asch, Milgram, Bobo doll, the visual cliff, the Strange Situation); they are listed for the paper and
+ the note, so a UI should show them without a player. Each item's `legit` says whose copy it is;
+ unofficial re-uploads were not used. The therapy shelf also picks up demonstration videos that a
+-labeled course brought in (role-plays, intake and case-formulation videos; `sid` prefixed `tp-`).
++labeled course brought in (role-plays, intake and case-formulation videos). Hand-curated therapy items also
++have `tp-` ids, so the prefix does not tell the two apart.
+ Shelf videos not otherwise in the catalog have `type` `documentary` (originals, cases) or `demo`
+ (demos, therapy).
+ 
+@@ -170,7 +174,7 @@ TED talk — are not penalised. The export does not carry `rank`; compute it fro
+ ## License and attribution
+ 
+ Hacker News-derived records follow HackerTube's ODC-By 1.0 (credit HackerTube and the
+-open-index/hacker-news dataset). Stack Exchange content is CC BY-SA 4.0 (credit the authors via the
++open-index/hacker-news dataset). Stack Exchange content is CC BY-SA (2.5, 3.0 or 4.0 depending on the post's date; quotes are excerpts; credit the authors via the
+ links). Reddit comments remain the work of their authors and are quoted briefly with links back.
+ Video titles and channel names belong to their creators. Labels, notes and summaries written for
+ PsychTube are released under ODC-By 1.0: use them for anything, just say where they came from.

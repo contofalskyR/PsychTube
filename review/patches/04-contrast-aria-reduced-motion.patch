@@ -1,0 +1,191 @@
+diff --git a/site/app.js b/site/app.js
+index ab2e478..4a42db7 100644
+--- a/site/app.js
++++ b/site/app.js
+@@ -171,7 +171,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+   function tagFor(v, idx) {
+     if (v.badge && v.badge.role === "critique") return `<span class="tag critique">Pushback</span>`;
+     if (v.badge && GOOD_STATUS.has(statusOf(v.badge.id))) return `<span class="tag good" title="${esc(PT.contested[v.badge.id].name)}">Replicated</span>`;
+-    if (v.badge) return `<span class="tag" title="${esc(PT.contested[v.badge.id].name)}">${esc(statusLabel(v.badge.id))}</span>`;
++    if (v.badge) return `<span class="tag s-${esc(statusOf(v.badge.id))}" title="${esc(PT.contested[v.badge.id].name)}">${esc(statusLabel(v.badge.id))}</span>`;
+     if (idx != null) return `<span class="tag series">${idx}</span>`;
+     return "";
+   }
+@@ -220,6 +220,8 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+     };
+     btn.onclick = more;
+   }
++  const SEG_LABEL = { sort: "Sort", src: "Source", dur: "Length", shelf: "Shelf", level: "Level" };
++  const SMOOTH = () => (matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
+   const section = (title, body, more, sub) => body ? `<section class="section"><div class="section-head"><div><h2>${title}</h2>${sub ? `<div class="sub">${sub}</div>` : ""}</div>${more ? `<a class="more" href="${more}">See all</a>` : ""}</div>${body}</section>` : "";
+ 
+   // ------------------------------------------------------------ recommendation
+@@ -366,7 +368,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+     sec.querySelectorAll(".bgchip").forEach(b => b.onclick = () => {
+       const id = b.dataset.bg; let cur = new Set(state.settings.background || []);
+       if (id === "curious") cur = cur.has("curious") ? new Set() : new Set(["curious"]); else { cur.delete("curious"); if (cur.has(id)) cur.delete(id); else cur.add(id); }
+-      state.settings.background = [...cur]; saveSettings(); teachShuffle = 0; pageHome(); const el = document.getElementById("teach"); if (el) el.scrollIntoView({ block: "start", behavior: "smooth" });
++      state.settings.background = [...cur]; saveSettings(); teachShuffle = 0; pageHome(); const el = document.getElementById("teach"); if (el) el.scrollIntoView({ block: "start", behavior: SMOOTH() });
+     });
+     const sh = document.getElementById("teachShuffle"); if (sh) sh.onclick = () => { teachShuffle++; pageHome(); const el = document.getElementById("teach"); if (el) el.scrollIntoView({ block: "start" }); };
+     const ch = document.getElementById("teachChange"); if (ch) ch.onclick = () => { const pk = document.getElementById("bgpicker"); pk.hidden = !pk.hidden; };
+@@ -448,7 +450,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+     if (sort === "longest") list.sort((a, b) => (b.len || 0) - (a.len || 0));
+     const types = [...new Set(opts.list.map(v => v.type).filter(Boolean))].sort();
+     const link = (k, val) => `#${opts.path}?${new URLSearchParams({ ...params, [k]: val }).toString()}`;
+-    const seg = (k, cur, items) => `<div class="seg" role="group">${items.map(([val, label]) => `<a role="button" href="${link(k, val)}" aria-pressed="${cur === val}" class="segbtn">${label}</a>`).join("")}</div>`;
++    const seg = (k, cur, items) => `<div class="seg" role="group" aria-label="${SEG_LABEL[k] || k}">${items.map(([val, label]) => `<a href="${link(k, val)}" aria-current="${cur === val}" class="segbtn">${label}</a>`).join("")}</div>`;
+     main.innerHTML = `
+       <h1>${opts.title}</h1>
+       ${opts.intro ? `<p class="lede">${opts.intro}</p>` : ""}
+@@ -500,7 +502,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+     const s = PT.stats.inst || { courses: 0, lectures: 0, institutions: 0, also_vouched: 0 };
+     const nFormal = all.filter(isFormal).length, nTalks = all.length - nFormal;
+     const link = (k, val) => `#courses?${new URLSearchParams({ ...p, [k]: val }).toString()}`;
+-    const seg = (k, cur, items) => `<div class="seg" role="group">${items.map(([val, label]) => `<a role="button" href="${link(k, val)}" aria-pressed="${cur === val}" class="segbtn">${label}</a>`).join("")}</div>`;
++    const seg = (k, cur, items) => `<div class="seg" role="group" aria-label="${SEG_LABEL[k] || k}">${items.map(([val, label]) => `<a href="${link(k, val)}" aria-current="${cur === val}" class="segbtn">${label}</a>`).join("")}</div>`;
+     const lectures = shelfSeries.reduce((a, sd) => a + sd.n, 0);
+     const shelfNote = shelf === "talks"
+       ? `<b>Seminars, grand rounds and conference sessions.</b> Recorded talks that departments, institutes and societies publish: a research seminar series, a hospital's psychiatry grand rounds, the sessions of an annual meeting. They are institutional but <b>not a course and not peer-reviewed</b> — a speaker's own account of their work, often preliminary. Good for seeing where a field is right now; weigh them accordingly.`
+@@ -544,7 +546,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+       ${sd.inst ? `<div class="eyebrow"><span class="chip inst">${esc(sd.inst)}</span> ${sd.kind === "talks" ? "talk collection" : sd.kind === "series" ? "lecture series" : "complete course"}</div>` : ""}
+       <h1>${esc(sd.name)}</h1>
+       ${sd.inst ? `<p class="lede">${sd.note ? esc(sd.note) + " " : ""}<span class="muted">${meta.map(esc).join(" · ")}.</span>${sd.vouched ? ` <span class="muted">${sd.vouched === vids.length ? "Every" : sd.vouched} ${sd.vouched === 1 ? unit + " was" : unit + "s were"} also vouched for by the communities.</span>` : ""}</p>` : `<p class="lede">${plural(vids.length, "lecture")} people recommended from this series.</p>`}
+-      ${sp.started ? `<div class="course-progress"><div class="bar" role="progressbar" aria-valuenow="${sp.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${sp.pct}%"></i></div><span>${sp.pct >= 100 ? `Finished — all ${sp.n} ${unit}s` : `${sp.done} of ${sp.n} ${unit}s watched · ${sp.pct}%${sp.leftSec ? ` · about ${fmtLen(sp.leftSec)} left` : ""}`}</span></div>` : ""}
++      ${sp.started ? `<div class="course-progress"><div class="bar" role="progressbar" aria-label="Course progress" aria-valuenow="${sp.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${sp.pct}%"></i></div><span>${sp.pct >= 100 ? `Finished — all ${sp.n} ${unit}s` : `${sp.done} of ${sp.n} ${unit}s watched · ${sp.pct}%${sp.leftSec ? ` · about ${fmtLen(sp.leftSec)} left` : ""}`}</span></div>` : ""}
+       <div class="toolbar"><a class="btn primary" href="#v-${next.id}">${sp.pct >= 100 ? "Watch again" : sp.started ? "Continue" : "Start"}: ${esc(next.title.slice(0, 60))}${nextAt ? ` <span class="faint">from ${fmtDur(nextAt)}</span>` : ""}</a>${sd.readings ? `<a class="btn quiet" href="${esc(sd.readings)}" target="_blank" rel="noopener">Syllabus &amp; readings ↗</a>` : ""}${sd.url ? `<a class="btn quiet" href="${esc(sd.url)}" target="_blank" rel="noopener">${sd.provider === "panopto" ? "Course on Panopto" : sd.provider === "archive" ? "Course on the Internet Archive" : "Playlist on YouTube"} ↗</a>` : ""}${sd.chid || next.chid ? `<a class="btn quiet" href="https://www.youtube.com/channel/${esc(sd.chid || next.chid)}" target="_blank" rel="noopener">${esc(sd.ch || next.ch || "Channel")} ↗</a>` : ""}${sd.topics.map(t => `<a class="chip" href="#t-${t}">${esc(topics.get(t) ? topics.get(t).name : t)}</a>`).join("")}</div></div>
+       ${pathwaysFor(id).map(({ pw, i }) => { const prev = i > 0 ? stepTarget(pw.steps[i - 1]) : null, nxt = i + 1 < pw.steps.length ? stepTarget(pw.steps[i + 1]) : null; return `<p class="pathline">Step ${i + 1} of ${pw.steps.length} in the <a href="#pathways?p=${esc(pw.id)}">${esc(pw.name)}</a> pathway${prev ? ` · before it: <a href="${prev.href}">${esc(prev.name)}</a>` : ""}${nxt ? ` · after it: <a href="${nxt.href}">${esc(nxt.name)}</a>` : ""}</p>`; }).join("")}
+       <ol class="lectures">${vids.map((v, i) => `<li class="${isDone(v.id) ? "done" : ""}" data-row="${v.id}"><span class="num">${isDone(v.id) ? "✓" : sd.inst ? v.inst.i : i + 1}</span><a class="thumb ${isDone(v.id) ? "is-done" : ""}" href="#v-${v.id}" aria-label="${esc(v.title)}">${sd.inst && !thumbUrl(v.id) ? `<div class="ph lec" style="--h:${hueOf(sd.id)}" aria-hidden="true"><b>${v.inst.i}</b></div>` : ""}${img(v.id)}${v.len ? `<span class="pill">${fmtDur(v.len)}</span>` : ""}${progressBar(v)}</a><div><a class="lt" href="#v-${v.id}">${esc(v.title)}</a>${v.why || (v.summary && !sd.inst) ? `<div class="muted" style="font-size:13.5px">${esc(v.why || v.summary)}</div>` : ""}${v.nrec ? vouchLine(v) : sd.inst ? `<div class="vouch"><span class="faint">${v.len ? fmtLen(v.len) : ""}${v.topics[0] && v.topics[0] !== sd.topics[0] ? ` · ${esc(topics.get(v.topics[0]).name)}` : ""}</span></div>` : ""}<div class="track">${isDone(v.id) ? `<span class="watched">Watched</span>` : pctOf(v) ? `<span class="muted">${pctOf(v)}% · <a href="#v-${v.id}">resume at ${fmtDur(resumeAt(v) || progOf(v.id).t)}</a></span>` : ""}<button class="mini" data-done="${v.id}">${isDone(v.id) ? "Mark unwatched" : "Mark watched"}</button></div></div></li>`).join("")}</ol>`;
+@@ -566,7 +568,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
+       .sort((a, b) => { const sa = ORDER.indexOf(statusOf(a)), sb = ORDER.indexOf(statusOf(b)); if (sa !== sb) return sa - sb; const na = groups.has(a) ? groups.get(a).promotes.length + groups.get(a).critique.length + groups.get(a).source.length : 0; const nb = groups.has(b) ? groups.get(b).promotes.length + groups.get(b).critique.length + groups.get(b).source.length : 0; return nb - na || a.localeCompare(b); });
+     const counts = {}; for (const id of Object.keys(PT.contested)) counts[statusOf(id)] = (counts[statusOf(id)] || 0) + 1;
+     const link = val => `#care?${new URLSearchParams({ ...p, status: val }).toString()}`;
+-    const seg = `<div class="seg" role="group"><a role="button" href="#care" aria-pressed="${want === "all"}" class="segbtn">All <span class="n">${Object.keys(PT.contested).length}</span></a>${ORDER.filter(st => counts[st]).map(st => `<a role="button" href="${link(st)}" aria-pressed="${want === st}" class="segbtn">${esc(STATUS_LABELS[st] || st)} <span class="n">${counts[st]}</span></a>`).join("")}</div>`;
++    const seg = `<div class="seg" role="group" aria-label="Replication status"><a href="#care" aria-current="${want === "all"}" class="segbtn">All <span class="n">${Object.keys(PT.contested).length}</span></a>${ORDER.filter(st => counts[st]).map(st => `<a href="${link(st)}" aria-current="${want === st}" class="segbtn">${esc(STATUS_LABELS[st] || st)} <span class="n">${counts[st]}</span></a>`).join("")}</div>`;
+     const paperLine = pp => `<li>${esc(pp.cite)}${pp.doi ? ` <a href="https://doi.org/${esc(pp.doi)}" target="_blank" rel="noopener">doi:${esc(pp.doi)}</a>` : pp.url ? ` <a href="${esc(pp.url)}" target="_blank" rel="noopener">link ↗</a>` : ""}</li>`;
+     main.innerHTML = `<h1>Handle with care</h1><p class="lede">Psychology's most-shared videos include some of its least reliable findings — and some of its sturdiest. Every finding here has a replication status and the papers behind it, so you can watch the classic and then read what happened next. The notes are PsychTube's, not the communities'; the status is a summary of the sources listed, not a verdict on a whole field.</p>
+       <div class="toolbar">${seg}</div>
+diff --git a/site/index.html b/site/index.html
+index 8491404..d43cf32 100644
+--- a/site/index.html
++++ b/site/index.html
+@@ -31,24 +31,24 @@
+ </header>
+ 
+ <nav class="rail" aria-label="Sections">
+-  <a href="#home" data-nav="home"><span class="ic">⌂</span>Home</a>
+-  <a href="#topics" data-nav="topics"><span class="ic">◍</span>Topics</a>
+-  <a href="#courses" data-nav="courses"><span class="ic">≡</span>Courses</a>
+-  <a href="#clips" data-nav="clips"><span class="ic">⟐</span>Clips</a>
+-  <a href="#longs" data-nav="longs"><span class="ic">◷</span>Longs</a>
+-  <a href="#care" data-nav="care"><span class="ic">△</span>Handle with care</a>
+-  <a href="#shelf-originals" data-nav="originals"><span class="ic">◎</span>Primary sources</a>
+-  <a href="#shelf-demos" data-nav="demos"><span class="ic">◇</span>Try it yourself</a>
+-  <a href="#shelf-therapy" data-nav="therapy"><span class="ic">◐</span>Therapy in practice</a>
+-  <a href="#shelf-cases" data-nav="cases"><span class="ic">⊕</span>Clinical cases</a>
++  <a href="#home" data-nav="home"><span class="ic" aria-hidden="true">⌂</span>Home</a>
++  <a href="#topics" data-nav="topics"><span class="ic" aria-hidden="true">◍</span>Topics</a>
++  <a href="#courses" data-nav="courses"><span class="ic" aria-hidden="true">≡</span>Courses</a>
++  <a href="#clips" data-nav="clips"><span class="ic" aria-hidden="true">⟐</span>Clips</a>
++  <a href="#longs" data-nav="longs"><span class="ic" aria-hidden="true">◷</span>Longs</a>
++  <a href="#care" data-nav="care"><span class="ic" aria-hidden="true">△</span>Handle with care</a>
++  <a href="#shelf-originals" data-nav="originals"><span class="ic" aria-hidden="true">◎</span>Primary sources</a>
++  <a href="#shelf-demos" data-nav="demos"><span class="ic" aria-hidden="true">◇</span>Try it yourself</a>
++  <a href="#shelf-therapy" data-nav="therapy"><span class="ic" aria-hidden="true">◐</span>Therapy in practice</a>
++  <a href="#shelf-cases" data-nav="cases"><span class="ic" aria-hidden="true">⊕</span>Clinical cases</a>
+   <div class="rail-gap"></div>
+-  <a href="#history" data-nav="history"><span class="ic">↺</span>History</a>
+-  <a href="#liked" data-nav="liked"><span class="ic">♥</span>Liked</a>
+-  <a href="#later" data-nav="later"><span class="ic">⌁</span>Watch later</a>
++  <a href="#history" data-nav="history"><span class="ic" aria-hidden="true">↺</span>History</a>
++  <a href="#liked" data-nav="liked"><span class="ic" aria-hidden="true">♥</span>Liked</a>
++  <a href="#later" data-nav="later"><span class="ic" aria-hidden="true">⌁</span>Watch later</a>
+   <div class="rail-gap"></div>
+-  <a href="#data" data-nav="data"><span class="ic">⇩</span>Data</a>
+-  <a href="#about" data-nav="about"><span class="ic">i</span>About</a>
+-  <a href="#prefs" data-nav="settings"><span class="ic">⚙</span>Settings</a>
++  <a href="#data" data-nav="data"><span class="ic" aria-hidden="true">⇩</span>Data</a>
++  <a href="#about" data-nav="about"><span class="ic" aria-hidden="true">i</span>About</a>
++  <a href="#prefs" data-nav="settings"><span class="ic" aria-hidden="true">⚙</span>Settings</a>
+ </nav>
+ 
+ <main id="main" class="main" tabindex="-1"><p class="lede" style="margin-top:24px">Loading the catalog…</p></main>
+diff --git a/site/styles.css b/site/styles.css
+index 7d8a1b6..6b0b065 100644
+--- a/site/styles.css
++++ b/site/styles.css
+@@ -9,7 +9,7 @@
+   --bg-4: #2f2a45;
+   --ink: #eeeaf6;
+   --ink-2: #b5aecb;
+-  --ink-3: #857da0;
++  --ink-3: #8f88aa;
+   --line: rgba(238, 234, 246, 0.09);
+   --amber: #e8b04b;
+   --amber-2: #f3cc7a;
+@@ -19,6 +19,7 @@
+   --violet-soft: rgba(160, 145, 224, 0.16);
+   --coral: #f07a5e;
+   --coral-soft: rgba(240, 122, 94, 0.16);
++  --tag-care: #b84a32;
+   --mint: #7bd1be;
+   --mint-ink: #0a2a24;
+   --inst: #86b6e8;
+@@ -34,24 +35,24 @@
+ @media (prefers-color-scheme: light) {
+   :root:not([data-theme="dark"]) {
+     --bg: #f4f3f8; --bg-2: #ffffff; --bg-3: #ecebf3; --bg-4: #e0ddeb;
+-    --ink: #1a1726; --ink-2: #4a4560; --ink-3: #777190; --line: rgba(26, 23, 38, 0.11);
+-    --amber: #8f6508; --amber-2: #b07e12; --amber-ink: #fff6dc; --amber-text: #8f6508;
++    --ink: #1a1726; --ink-2: #4a4560; --ink-3: #66607e; --line: rgba(26, 23, 38, 0.11);
++    --amber: #8f6508; --amber-2: #b07e12; --amber-ink: #fff6dc; --amber-text: #6f4c03;
+     --violet: #5b49ae; --violet-soft: rgba(91, 73, 174, 0.12);
+-    --coral: #be4a33; --coral-soft: rgba(190, 74, 51, 0.12);
+-    --mint: #1e8a78; --mint-ink: #ffffff; --focus: #5b49ae;
+-    --inst: #2f6aa8; --inst-soft: rgba(47, 106, 168, 0.12);
++    --coral: #a33d28; --coral-soft: rgba(163, 61, 40, 0.12); --tag-care: #a33d28;
++    --mint: #13624f; --mint-ink: #ffffff; --focus: #5b49ae;
++    --inst: #28598f; --inst-soft: rgba(40, 89, 143, 0.12);
+     --shadow: 0 18px 40px -24px rgba(26, 23, 38, 0.35);
+     color-scheme: light;
+   }
+ }
+ :root[data-theme="light"] {
+   --bg: #f4f3f8; --bg-2: #ffffff; --bg-3: #ecebf3; --bg-4: #e0ddeb;
+-  --ink: #1a1726; --ink-2: #4a4560; --ink-3: #777190; --line: rgba(26, 23, 38, 0.11);
+-  --amber: #8f6508; --amber-2: #b07e12; --amber-ink: #fff6dc; --amber-text: #8f6508;
++  --ink: #1a1726; --ink-2: #4a4560; --ink-3: #66607e; --line: rgba(26, 23, 38, 0.11);
++  --amber: #8f6508; --amber-2: #b07e12; --amber-ink: #fff6dc; --amber-text: #6f4c03;
+   --violet: #5b49ae; --violet-soft: rgba(91, 73, 174, 0.12);
+-  --coral: #be4a33; --coral-soft: rgba(190, 74, 51, 0.12);
+-  --mint: #1e8a78; --mint-ink: #ffffff; --focus: #5b49ae;
+-  --inst: #2f6aa8; --inst-soft: rgba(47, 106, 168, 0.12);
++  --coral: #a33d28; --coral-soft: rgba(163, 61, 40, 0.12); --tag-care: #a33d28;
++  --mint: #13624f; --mint-ink: #ffffff; --focus: #5b49ae;
++  --inst: #28598f; --inst-soft: rgba(40, 89, 143, 0.12);
+   --shadow: 0 18px 40px -24px rgba(26, 23, 38, 0.35);
+   color-scheme: light;
+ }
+@@ -172,10 +173,12 @@ p { margin: 0 0 10px; }
+ }
+ .tag {
+   position: absolute; z-index: 2; left: 8px; top: 8px; padding: 3px 8px; border-radius: 5px;
+-  font-size: 11.5px; font-weight: 700; background: var(--coral); color: #fff;
++  font-size: 11.5px; font-weight: 700; background: var(--tag-care); color: #fff;
+ }
+ .tag.series { background: var(--pill-bg); }
+ .tag.critique { background: var(--mint); color: var(--mint-ink); }
++.tag.s-smaller, .tag.s-mixed { background: var(--bg-4); color: var(--ink); }
++.tag.s-overstated, .tag.s-misreported, .tag.s-reversed { background: var(--amber); color: var(--amber-ink); }
+ .card .title { margin: 10px 0 3px; font-size: 15px; font-weight: 600; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+ .card .ch { color: var(--ink-2); font-size: 13.5px; }
+ .vouch { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin-top: 5px; font-size: 12.5px; color: var(--ink-3); }
+@@ -215,7 +218,7 @@ a.chip.inst:hover { text-decoration: underline; }
+ .seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--line); border-radius: 999px; padding: 2px; background: var(--bg-2); }
+ .seg > button, .seg > a { border: 0; background: transparent; padding: 5px 12px; border-radius: 999px; cursor: pointer; font-size: 13.5px; color: var(--ink-2); font-weight: 550; white-space: nowrap; }
+ .seg > button:hover, .seg > a:hover { color: var(--ink); }
+-.seg > [aria-pressed="true"] { background: var(--bg-4); color: var(--ink); }
++.seg > [aria-pressed="true"], .seg > [aria-current="true"] { background: var(--bg-4); color: var(--ink); }
+ .btn {
+   border: 1px solid var(--line); background: var(--bg-3); color: var(--ink); border-radius: 999px; padding: 8px 14px; cursor: pointer;
+   font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 7px;
