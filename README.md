@@ -17,7 +17,11 @@ neuropsychology is covered this way as well as through courses: KnowNeuropsychol
 the British Neuropsychological Society, UCSF's Memory and Aging Center, the aphasia research centres,
 and a hundred-odd university and hospital lectures on the syndromes themselves.
 
-Long-form content (over 25 minutes) is ordered by legitimacy before popularity: an institution's own
+The order of the site is institutions first: on every list an institution's own course lecture or a shelf
+copy comes before the institutions' seminar talks, which come before anything a forum recommended, at any
+length. Reddit mentions never get a video in on their own (Hacker News and Stack Exchange vouches still
+do, and all three stay visible as receipts). Long-form content (over 25 minutes) is further ordered by
+legitimacy before popularity: an institution's own
 course or lecture series (or a shelf copy, or a long video on one of the institutions' own channels)
 first, the institutions' seminars and conference talks second, fireside chats and interviews third,
 podcasts last, with the community score deciding within each tier. Short pieces — demos, clips, TED

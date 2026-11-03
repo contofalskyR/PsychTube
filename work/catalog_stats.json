@@ -4,146 +4,143 @@
   "inst_watchlists_dropped": 26,
   "inst_partial_playlists": 5,
   "quotes_withheld": 4,
-  "kept": 15880,
+  "kept": 15737,
   "inst_lectures": 15200,
   "inst_also_vouched": 27,
   "dropped_not_psych_or_unlabeled": 694,
   "dropped_thin_vouch": 145,
   "dropped_non_english": 50,
   "dropped_inst_not_psych": 869,
+  "dropped_reddit_only": 143,
   "dropped_inst_promo": 433,
   "inst_inherited_topics": 738,
   "inst_unverified_publisher": 576,
   "inst_loose": 102,
-  "replication_tagged": 51,
-  "shelf_added": 70,
+  "replication_tagged": 44,
+  "shelf_added": 71,
   "pathways": 9,
-  "sim_videos": 15950,
-  "sim_series": 11575,
+  "sim_videos": 15808,
+  "sim_series": 11521,
   "sim_empty": 0,
   "sim_semantic": 1,
   "inst_verified_lecturers": 37,
   "submitted_courses": 0,
   "inst_unverified_collections": 28,
-  "core_videos": 1596,
+  "core_videos": 1454,
   "inst_part_videos": 14354
  },
  "topics": [
   [
    "how-the-brain-works",
-   2802
+   2772
   ],
   [
    "brain-disorders",
-   2073
+   2067
   ],
   [
    "ai-and-mind",
-   1220
+   1206
   ],
   [
    "brain-tech",
-   1083
+   1079
   ],
   [
    "psychiatry-medication",
-   1064
+   1060
   ],
   [
    "depression-anxiety",
-   1002
+   1000
   ],
   [
    "child-development",
-   942
+   940
   ],
   [
    "perception-illusions",
-   932
+   914
   ],
   [
    "language-thought",
-   906
+   905
   ],
   [
    "psych-research",
-   842
+   836
   ],
   [
    "therapy",
-   818
-  ],
-  [
-   "consciousness",
-   777
+   810
   ],
   [
    "adolescence-aging",
    771
   ],
   [
-   "adhd-autism",
-   629
+   "consciousness",
+   741
   ],
   [
-   "groups-prejudice",
-   625
+   "adhd-autism",
+   626
   ],
   [
    "memory",
    617
   ],
   [
+   "groups-prejudice",
+   616
+  ],
+  [
    "trauma-stress",
-   585
+   578
   ],
   [
    "serious-mental-illness",
-   561
+   551
   ],
   [
    "happiness-meaning",
-   535
+   534
   ],
   [
    "emotion",
-   522
+   519
   ],
   [
    "history-of-psychology",
-   521
+   516
   ],
   [
    "decision-risk",
-   480
+   463
   ],
   [
    "crime-forensic",
-   430
+   428
   ],
   [
    "addiction",
-   414
+   413
   ],
   [
    "replication-crisis",
-   387
+   386
   ],
   [
    "personality",
-   381
+   373
   ],
   [
    "neurochemistry",
-   344
+   341
   ],
   [
    "animal-minds",
-   338
-  ],
-  [
-   "rationality-biases",
-   334
+   337
   ],
   [
    "work-organizations",
@@ -151,23 +148,27 @@
   ],
   [
    "attention-focus",
-   332
+   329
   ],
   [
    "mindfulness-meditation",
-   326
+   325
+  ],
+  [
+   "rationality-biases",
+   321
   ],
   [
    "behavioral-genetics",
-   291
+   288
   ],
   [
    "morality-cooperation",
-   256
+   246
   ],
   [
    "motivation-habits",
-   249
+   245
   ],
   [
    "sleep-dreams",
@@ -175,7 +176,7 @@
   ],
   [
    "sex-gender",
-   236
+   233
   ],
   [
    "parenting",
@@ -191,31 +192,31 @@
   ],
   [
    "persuasion-manipulation",
-   192
+   188
   ],
   [
    "relationships-attachment",
-   183
+   176
   ],
   [
    "psychedelics",
-   161
+   156
   ],
   [
    "free-will",
-   154
+   151
   ],
   [
    "tech-and-mind",
-   149
+   147
   ],
   [
    "intelligence-expertise",
-   118
+   116
   ],
   [
    "design-behavior",
-   94
+   92
   ],
   [
    "performance",
@@ -223,24 +224,24 @@
   ],
   [
    "creativity-insight",
-   83
-  ],
-  [
-   "conformity-obedience",
    82
   ],
   [
+   "conformity-obedience",
+   80
+  ],
+  [
    "grief-loneliness",
-   69
+   68
   ],
   [
    "pseudoscience-skepticism",
-   60
+   59
   ]
  ],
  "sources": {
   "hn": 2130,
-  "reddit": 233,
+  "reddit": 68,
   "se": 158
  },
  "communities": [
@@ -254,39 +255,31 @@
   ],
   [
    "r/neurophilosophy",
-   61
-  ],
-  [
-   "r/askpsychology",
-   33
-  ],
-  [
-   "r/BehavioralEconomics",
-   32
+   25
   ],
   [
    "r/cognitivescience",
-   23
+   9
   ],
   [
-   "r/psychologyresearch",
-   18
+   "r/BehavioralEconomics",
+   8
+  ],
+  [
+   "r/askpsychology",
+   7
   ],
   [
    "r/AcademicPsychology",
-   12
-  ],
-  [
-   "r/psychology",
-   12
-  ],
-  [
-   "r/cogsci",
-   6
+   4
   ],
   [
    "r/socialpsychology",
-   5
+   3
+  ],
+  [
+   "r/psychologyresearch",
+   1
   ]
  ],
  "series": [
@@ -309,10 +302,6 @@
   [
    "Personality and Its Transformations",
    72
-  ],
-  [
-   "CrashCourse",
-   4
   ],
   [
    "The Psychological Significance of the Biblical Stories: Genesis",

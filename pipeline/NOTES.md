@@ -410,6 +410,25 @@ page shows as link buttons and a "submitted by the lecturer" line. Verification 
 token in the playlist description) is designed in as `control_verified` but not asked for yet. Entry
 points: a box at the foot of the Courses hub and a paragraph on About.
 
+## Institutions first, forums as a footnote (2026-11-03, afternoon)
+
+The owner's direction after the review round: "institutional / peer review first; Reddit is not a good
+source even if it has 10K upvotes; the main goal is as many institutional videos as possible." So:
+
+- Inclusion: a video no longer gets in on Reddit mentions alone (`dropped_reddit_only`, 143 videos);
+  Hacker News and Stack Exchange vouches still do, and Reddit mentions stay as receipts on videos that
+  are here for another reason. The raw Reddit data is untouched; one condition in `build_catalog.py`
+  reverses this.
+- Ordering: within a tier, an institution's taught-course lecture or a shelf copy first, then the
+  institutions' seminar and conference talks, then forum picks — at any length. (The earlier rule had let
+  a one-minute clip people shared outrank the MIT lecture on the Sleep page.) `instFirst()` in app.js.
+- Home page: Courses, then a new Seminars & conferences row, the four shelves, Handle with care, Start
+  here (a course's first lecture or an original film per topic where there is one), Teach-me, areas,
+  Over an hour, and last "What the forums recommend" (the former canon row) as a footnote. Headline:
+  "The psychology lectures universities put online, in order, with the receipts." The lede leads with the
+  institutional counts and names the forum set as a footnote.
+- About: "Institutions first" and "Forums as a footnote" are the first two principles.
+
 ## Two-part catalog (site/data-core.js + site/data-inst.js)
 
 The catalog had reached 9.8 MB in one `data.js`, parsed before anything rendered (the review measured

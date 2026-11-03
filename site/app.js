@@ -60,7 +60,11 @@
   const TIER_WEIGHT = [1, 0.75, 0.5, 0.25];
   // browsing order: tier first, then the weighted score. A strongly vouched podcast still ranks above other podcasts and
   // keeps its place in search and on the canon, but on a topic page the institutions' own long-form comes before it.
-  const byLegitimacy = (a, b) => (a.tier - b.tier) || (b.rank - a.rank) || (b.score - a.score);
+  // within a tier: a taught course's lecture or a shelf copy, then the institutions' seminar and conference talks, then
+  // the forum picks — at any length, so a two-minute clip people shared does not outrank the lecture it was clipped from
+  const isTalkItem = v => { const sd = v.series ? series.get(v.series) : null; return (sd && sd.kind === "talks") || (v.inst && v.inst.loose && v.type !== "lecture"); };
+  const instFirst = v => (v.orig ? 0 : v.inst ? (isTalkItem(v) ? 1 : 0) : 2);
+  const byLegitimacy = (a, b) => (a.tier - b.tier) || (instFirst(a) - instFirst(b)) || (b.rank - a.rank) || (b.score - a.score);
   function ingest(videos) {
     for (const raw of videos) {
       if (byId.has(raw.id)) continue;
@@ -305,7 +309,9 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
       const tops = [...topics.keys()];
       for (let i = tops.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [tops[i], tops[j]] = [tops[j], tops[i]]; }   // Fisher–Yates: the same row in every browser on the same day
       for (const t of tops) {
-        const cands = V.filter(v => visible(v) && v.topics[0] === t && !used.has(v.id) && !careWorthy(v) && (v.nrec >= 2 || v.score >= 2.5)).slice(0, 3);
+        // per topic: an institution's first lecture or a shelf item when there is one, a well-vouched video otherwise
+        const inst1 = V.filter(v => visible(v) && v.topics[0] === t && !used.has(v.id) && !careWorthy(v) && ((v.inst && v.inst.i === 1 && v.inst.ok !== false && !isTalkItem(v)) || v.orig)).slice(0, 3);
+        const cands = inst1.length ? inst1 : V.filter(v => visible(v) && v.topics[0] === t && !used.has(v.id) && !careWorthy(v) && (v.nrec >= 2 || v.score >= 2.5)).slice(0, 3);
         if (!cands.length) continue;
         const pick = cands[Math.floor(r() * cands.length)];
         used.add(pick.id); picks.push(pick);
@@ -467,23 +473,24 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
     const shelfRows = (PT.shelves || []).map(sh => { const vids = sh.items.map(it => it.vid && byId.get(it.vid)).filter(v => v && visible(v)).slice(0, 12); return vids.length ? section(sh.name, rowOf(vids), `#shelf-${sh.id}`, SHELF_SUB[sh.id] || sh.tagline) : ""; }).join("");   // taught courses first; seminars live on their own shelf
     const inProgress = Object.entries(state.progress).filter(([pid, p]) => !p.done && p.t > 45 && byId.has(pid)).sort((a, b) => b[1].ts - a[1].ts).map(([pid]) => byId.get(pid)).slice(0, 12);
     const myCourses = PT.series.map(sd => [sd, seriesProgress(sd)]).filter(([sd, sp]) => sp.started).sort((a, b) => b[1].last - a[1].last).slice(0, 8);
+    const talkRow = PT.series.filter(sd => sd.inst && sd.kind === "talks" && sd.ok !== false).sort((a, b) => (b.pop - a.pop) || (b.n - a.n)).slice(0, 10);
     main.innerHTML = `
       <div class="masthead">
-        <h1>${inst.courses ? "The psychology courses universities put online — and the videos psychology people keep telling each other to watch." : "The psychology videos that psychology people keep telling each other to watch."}</h1>
-        <p class="lede"><b>${(s.vouched || s.videos).toLocaleString()}</b> videos that people recommended on ${whereText} (${s.mentions.toLocaleString()} mentions in all)${inst.courses ? `, plus <b>${inst.lectures.toLocaleString()}</b> lectures and talks published by ${PUBLISHERS} universities, institutes, societies and hospitals${LECTURERS ? ` and ${LECTURERS} lecturers' own channels` : ""}: <b>${KINDS.course}</b> taught courses, <b>${KINDS.series}</b> lecture series and <b>${KINDS.talks}</b> seminar and conference collections` : ""}. No accounts, no analytics, no autoplay rabbit hole. Every card shows who vouched, or who published.${hidden ? ` <span class="faint">${hidden} with content notes are hidden (<a href="#prefs" style="text-decoration:underline">settings</a>).</span>` : ""}</p>
+        <h1>${inst.courses ? "The psychology lectures universities put online, in order, with the receipts." : "The psychology videos that psychology people keep telling each other to watch."}</h1>
+        <p class="lede">${inst.courses ? `<b>${inst.lectures.toLocaleString()}</b> lectures and talks published by <b>${PUBLISHERS}</b> universities, institutes, societies and hospitals${LECTURERS ? ` and ${LECTURERS} lecturers' own channels` : ""}: <b>${KINDS.course}</b> taught courses, <b>${KINDS.series}</b> lecture series and <b>${KINDS.talks}</b> seminar and conference collections, every lecture in order, each credited to the channel that published it. Beside them, the original films of the classic experiments, replication notes on the findings that didn't hold up, and ${(s.vouched || 0).toLocaleString()} videos that psychology forums (Hacker News, Stack Exchange) recommend — kept as a footnote with the comments as receipts, not as the ranking.` : `<b>${(s.vouched || s.videos).toLocaleString()}</b> videos that people recommended on ${whereText} (${s.mentions.toLocaleString()} mentions in all).`} No accounts, no analytics, no autoplay rabbit hole.${hidden ? ` <span class="faint">${hidden} with content notes are hidden (<a href="#prefs" style="text-decoration:underline">settings</a>).</span>` : ""}</p>
       </div>
       ${inProgress.length ? section("Continue watching", rowOf(inProgress), "#history", "Pick up where you left off. Positions are saved in this browser.") : ""}
       ${myCourses.length ? section("Your courses", `<div class="row">${myCourses.map(([sd]) => seriesCard(sd)).join("")}</div>`, "#courses", "Courses you've started, most recent first.") : ""}
-      ${section(state.history.length ? "For you" : "Start here", rowOf(fy), null, state.history.length ? "Based on what you've watched here. Nothing leaves your browser." : "A fresh mix every day, one video per topic.")}
-      ${courseRow.length ? section("Courses", `<div class="row">${courseRow.map(sd => seriesCard(sd)).join("")}</div>`, "#courses", `Taught courses and lecture series, every lecture in order, as the institutions published them: ${KINDS.course} courses and ${KINDS.series} series. Seminars and conference talks have their own shelf on the Courses page.`) : ""}
-      ${section("The canon", rowOf(canon), "#canon", "The most vouched-for videos across all communities.")}
+      ${courseRow.length ? section("Courses", `<div class="row">${courseRow.map(sd => seriesCard(sd)).join("")}</div>`, "#courses", `Taught courses and lecture series, every lecture in order, as the institutions published them: ${KINDS.course} courses and ${KINDS.series} series.`) : ""}
+      ${talkRow.length ? section("Seminars & conferences", `<div class="row">${talkRow.map(sd => seriesCard(sd)).join("")}</div>`, "#courses?shelf=talks", `Research seminars, grand rounds and the sessions of annual meetings: ${KINDS.talks} collections. Institutional, not a course and not peer-reviewed.`) : ""}
       ${shelfRows}
+      ${care.length ? section("Handle with care", rowOf(care), "#care", "Popular videos built on findings that later shrank, failed to replicate or were overstated. Watch, then read the note.") : ""}
+      ${section(state.history.length ? "For you" : "Start here", rowOf(fy), null, state.history.length ? "Based on what you've watched here. Nothing leaves your browser." : "A fresh mix every day, one per topic: a course's first lecture or an original film where there is one.")}
       ${!courseRow.length && PT.series.length ? section("Courses & series", `<div class="row">${PT.series.slice(0, 8).map(sd => seriesCard(sd)).join("")}</div>`, "#courses", "Full lecture series people recommend whole.") : ""}
       ${teachSection()}
-      ${section("Recently recommended", rowOf(recent), null, "Vouched for in 2024 or later.")}
       ${areaStrip}
-      ${care.length ? section("Handle with care", rowOf(care), "#care", "Popular videos built on findings that later shrank, failed to replicate or were overstated. Watch, then read the note.") : ""}
       ${section("Over an hour", rowOf(longs), "#longs", "Full lectures, long interviews and documentaries.")}
+      ${section("What the forums recommend", rowOf(canon), "#canon", "The videos most vouched for on Hacker News and Psychology Stack Exchange, by distinct recommenders. A footnote to the catalog, with the comments as receipts.")}
     `;
     wireTeach();
   }
@@ -893,12 +900,13 @@ remembers what I've watched.</pre>
   function pageAbout() {
     setNav("about"); setTitle("About");
     main.innerHTML = `<h1>About PsychTube</h1><div class="prose">
-      <p class="lede">YouTube's recommendations are tuned for the median viewer. Psychology on YouTube is a special kind of bad: confident narrators, "7 signs" lists, findings that collapsed a decade ago. PsychTube flips the question: instead of what the algorithm predicts you'll click, it asks <b>what have psychology people actually told each other to watch?</b></p>
+      <p class="lede">YouTube's recommendations are tuned for the median viewer. Psychology on YouTube is a special kind of bad: confident narrators, "7 signs" lists, findings that collapsed a decade ago. PsychTube flips the question: instead of what the algorithm predicts you'll click, it asks <b>what have universities, their lecturers and the field's institutions actually published?</b> — and lists it in order, credited to whoever put it online.</p>
       <h2>How it works</h2>
       <ul>
-        <li><b>Mine the vouches.</b> Every comment that links a YouTube video on Hacker News (via HackerTube's export), in ${[...new Set(V.flatMap(v => v.communities))].filter(c => c.startsWith("r/")).length} psychology subreddits (via the Arctic Shift archive), and on Psychology &amp; Neuroscience Stack Exchange.</li>
+        <li><b>Institutions first.</b> The catalog is built from the complete courses, lecture series and seminar collections that universities, research institutes, learned societies and hospitals publish on their own channels, every lecture in order. On every list the institutions' own come before anything else; among them, taught courses before seminars and conference talks, which are a speaker's own account and not peer-reviewed.</li>
+        <li><b>Forums as a footnote.</b> A smaller set of videos is here because people on Hacker News (via HackerTube's export) or Psychology &amp; Neuroscience Stack Exchange recommended them, with the comments kept as receipts. Reddit mentions are shown where they exist but never get a video in on their own. These picks sit after the institutional material, never above it.</li>
         <li><b>Keep the psychology.</b> Claude read every candidate (title, channel, description, and the comments that linked it) and kept only videos whose primary subject is psychology, neuroscience, mental health or behavior, then filed each under 1–3 of ${topics.size} topics.</li>
-        <li><b>Score by people, not clicks.</b> A video's score is the number of distinct people who recommended it, weighted by how strongly (an enthusiastic HN recommendation counts more than a passing citation; an upvoted answer counts more than a question), with a bonus when several communities agree.</li>
+        <li><b>Within a tier, score by people, not clicks.</b> A video's score is the number of distinct people who recommended it, weighted by how strongly (an enthusiastic HN recommendation counts more than a passing citation; an upvoted answer counts more than a question), with a bonus when several communities agree.</li>
         <li><b>Show the receipts.</b> Each card shows who vouched; each watch page quotes them and links to the original comment.</li>
         <li><b>Keep your place.</b> The player reports where you are, so every lecture resumes where you stopped and every course shows how far you've come — a Continue button that means it, not a 40-tab history. YouTube only remembers one video at a time; here the course is the unit.</li>
         <li><b>Flag the shaky stuff.</b> Videos that present a finding known to have shrunk or failed replication carry a “Handle with care” note with the follow-up research. Videos that push back get a “Pushback” mark.</li>
@@ -968,7 +976,7 @@ remembers what I've watched.</pre>
     else if (p0 === "shelf") pageShelf(arg);
     else if (p0 === "pathways") pagePathways(params);
     else if (p0 === "longs") pageSimple("longs", "Over an hour", "Full lectures, long interviews and documentaries: everything over an hour, ordered by who published it first.", V.filter(v => visible(v) && v.len >= 3600), params, "longs");
-    else if (p0 === "canon") pageSimple("", "The canon", "The most vouched-for psychology videos across every community, by distinct recommenders.", V.filter(v => visible(v) && v.nrec > 0).sort((a, b) => (b.cscore != null ? b.cscore : b.score) - (a.cscore != null ? a.cscore : a.score)), params, "canon");
+    else if (p0 === "canon") pageSimple("", "What the forums recommend", "The psychology videos most vouched for on Hacker News and Psychology Stack Exchange, by distinct recommenders — a footnote to the institutional catalog, with the comments as receipts.", V.filter(v => visible(v) && v.nrec > 0).sort((a, b) => (b.cscore != null ? b.cscore : b.score) - (a.cscore != null ? a.cscore : a.score)), params, "canon");
     else if (p0 === "history" || p0 === "liked" || p0 === "later") pageLibrary(p0);
     else if (p0 === "q") pageSearch({ q: arg });
     else if (p0 === "data") pageData();

@@ -174,8 +174,10 @@ compute them from `len`, `inst`, `orig`, `series[].kind`, `chid` ∈ `inst_chann
   only what people recommended, or with `inst` when you want complete courses.
 
 - Only `nrec` counts recommendations. A video with `nrec: 1` was recommended by one person (and may
-  have been cited by others); decide whether that is enough for your use. Videos from Reddit and
-  Stack Exchange needed either two recommenders or one upvoted mention to be included.
+  have been cited by others); decide whether that is enough for your use. Community videos needed
+  either two recommenders, one upvoted mention or a Stack Exchange answer to be included, and at least
+  one Hacker News or Stack Exchange mention: Reddit mentions alone do not get a video in (they still
+  appear as receipts where a video is here for another reason).
 - `score` is comparable across videos; sort by it for "best of", sample from it for variety.
 - Topic labels, `why`/`summary` lines, badges and content notes were written by an LLM (Claude).
   They are good, not perfect: expect a few percent to be off.

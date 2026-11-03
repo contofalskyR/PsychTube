@@ -548,6 +548,12 @@ for vid, rec in videos.items():
         if nrec < 2 and top_up < 2 and not se_answer:
             stats["dropped_thin_vouch"] += 1
             continue
+        # Reddit alone does not get a video in (the owner's call: not a good source, however many upvotes). Reddit mentions
+        # still show as receipts on videos that are here for another reason: a Hacker News or Stack Exchange vouch, a
+        # shelf, an institution.
+        if not any(v["s"] in ("hn", "se") for v in comm_vouches):
+            stats["dropped_reddit_only"] += 1
+            continue
     topics = [t for t in (lab or {}).get("topics", []) if t in TOPIC_IDS][:3]
     if course and course.get("topic_map"):
         # a course-level correction (course_labels.jsonl "topic_map"), e.g. a statistics course filed under the wrong topic
