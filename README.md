@@ -15,6 +15,30 @@ published it), and **seminars & conferences** — research seminar series, hospi
 sessions of annual meetings, which are institutional but not a course and not peer-reviewed, and are
 labelled that way on every card and watch page.
 
+Three curated shelves sit beside the catalog, each item with the paper it belongs to (DOIs verified
+against Crossref) and a note on whose copy it is: **Primary sources** (the original films of the classic
+experiments and case studies, from the archives that hold them: Pavlov's laboratory, Gesell, Skinner's
+pigeons, the 1964 split-brain film, the Stanford prison experiment footage, Robbers Cave, the Gloria
+films, H.M., Clive Wearing…), **Try it yourself** (demonstrations that work on the viewer: the gorilla,
+McGurk, the rubber hand, the hollow mask, Stroop, binocular rivalry…) and **Therapy in practice**
+(psychotherapy as it is done: Judith Beck's full CBT sessions, Nottingham's simulated psychiatric
+interviews, Yale's motivational interviewing, Mick Cooper's person-centred sessions, and all three
+Shostrom "Three Approaches to Psychotherapy" series — Rogers, Perls, Ellis in 1965; Rogers, Shostrom,
+Lazarus in 1977; Beck, Strupp, Meichenbaum in 1986 — from the Internet Archive). Experiments with no
+authorized copy online (Little Albert, Harlow, Asch, Milgram, the Bobo doll…) are listed with their
+paper and no player rather than with a bootleg.
+
+Every contested finding carries a **replication status** — replicated, smaller than claimed, mixed,
+did not replicate, overstated, misreported, myth, fraud/retraction, reversed — with the replication or
+review papers it rests on; 66 findings, from power posing and ego depletion to the McGurk effect and
+Stroop (which hold up). The "Handle with care" page groups them by status, and a video's watch page
+says whether it presents the finding, pushes back on it, or *is* the original footage.
+
+The home page also has **"Teach me something I don't know"**: pick your background (cognitive
+science, neuroscience, clinical, social, philosophy, machine learning…) with no account, and it picks
+a vouched talk, a first lecture of a course and a primary source from outside the areas you already
+know — different ones each day, never something you've watched.
+
 The live site also keeps a **lecture tracker** in the browser: where you stopped in each lecture,
 which lectures of a course you've finished, "continue watching" and "your courses" on the home page,
 and an up-next panel when a lecture ends. Nothing leaves the browser; Settings → Export moves it.
@@ -43,7 +67,10 @@ site/data/             the export: psychtube.json + DATA.md (give these to your 
 site/hosted/           the variant published as a claude.ai artifact (no embeds allowed there, so it
                        carries its own thumbnails and links out to YouTube); built by build_artifact.py
 pipeline/              scripts that build data.js
-  taxonomy.json        50 topics in 9 areas + contested-findings notes + content-note ids
+  taxonomy.json        50 topics in 9 areas + 66 contested findings (status + verified sources) + content-note ids
+  shelves.json         the curated shelves (primary sources, demos, therapy): video, uploader, legitimacy, paper, status
+  triage_overrides.json publishers and playlists dropped after triage, institution renames
+  merge_pulled.py      appends pulled playlists to raw/institutional/courses.json after triage
   build_catalog.py     merges every source, scores, groups series, writes site/data.js
   make_inst_batches.py writes the labeling inputs for university playlists (course cards + per-lecture topics)
   assemble_candidates.py turns the channel/topic sweep (raw/sweep/) into triage batches (work/triage/)
@@ -58,7 +85,8 @@ raw/                   compact source data: HackerTube rows for kept videos, Sta
                        the institutional channel/playlist sweep (raw/sweep/), Internet Archive course
                        metadata (raw/archive/)
 work/                  intermediate files (classification batches and outputs; work/inst/ for the courses,
-                       work/triage/ for the sweep's keep/drop decisions)
+                       work/triage/ for the sweep's keep/drop decisions, work/replication/ for the
+                       replication-status tags)
 ```
 
 ## Rebuild the catalog
@@ -88,12 +116,31 @@ Keep to official channels and lecturers' own channels; mirrors get taken down.
 
 A course that is not on YouTube gets `"provider": "panopto"` (with `"host"`) or `"provider": "archive"`
 (with each item's `file`); `pipeline/NOTES.md` has the calls that list a Panopto folder or an Internet
-Archive item.
+Archive item. A course that an institution uploaded as loose videos rather than a playlist (NYU's
+*Brain and Behavior*) gets an invented `pid` (`nyu:brain-and-behavior`), the items in syllabus order
+and a `url` pointing at the channel search that lists them.
+
+### Add a primary source, a demo or a therapy session
+
+Append an item to the right shelf in `pipeline/shelves.json`: the video (`p: youtube` with its id, or
+`p: archive` with the item identifier and the MP4 file name), who uploaded it and how legitimate that
+copy is (`official`, `archive`), the paper (`cite` plus `doi` or `url`), the `status` id if the finding
+has a replication story, and 1–2 topics. Check the DOI against Crossref before committing. If there is
+no authorized copy online, set `"video": null` and let the item stand for the paper. Put the video's
+metadata in a `raw/youtube/meta_*.json` file (the keyless fetcher in `pipeline/NOTES.md`) and rebuild.
+
+### Add or update a replication status
+
+Edit the finding in `pipeline/taxonomy.json` → `contested_findings`: `status` (one of the ids in
+`status_labels`), a note that says what the later research found, and `sources` with verified DOIs.
+To tag more videos with a finding, add rows to `work/replication/tags.jsonl` (`vid`, `contested`,
+`role`); `pipeline/NOTES.md` describes the keyword pass that produced the current ones.
 
 ### Find more courses (the sweep)
 
 `raw/sweep/channels.json` is a registry of ~390 institutional YouTube channels with their playlists,
-and `raw/sweep/topic.json` the results of ~100 playlist searches. `python3 pipeline/assemble_candidates.py`
+and `raw/sweep/topic.json` the results of ~180 playlist searches (general, clinical neuropsychology,
+psychotherapy demonstrations, neuroscience). `python3 pipeline/assemble_candidates.py`
 turns everything not yet in `courses.json` into `work/triage/batch_NN.jsonl`; have Claude judge each
 card by `pipeline/classify/INSTRUCTIONS_triage.md` into `out_NN.jsonl`, pull the kept playlists, and
 continue as above. Re-running the sweep later (new channels, new playlists on known channels) only

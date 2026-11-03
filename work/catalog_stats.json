@@ -1,204 +1,205 @@
 {
  "stats": {
-  "kept": 14277,
-  "inst_lectures": 13708,
-  "inst_also_vouched": 38,
+  "kept": 15458,
+  "inst_lectures": 14889,
+  "inst_also_vouched": 39,
   "dropped_not_psych_or_unlabeled": 694,
-  "dropped_thin_vouch": 146,
-  "dropped_inst_not_psych": 730,
-  "dropped_inst_promo": 367,
+  "dropped_thin_vouch": 145,
+  "dropped_inst_not_psych": 801,
+  "dropped_inst_promo": 384,
   "inst_inherited_topics": 1621,
   "dropped_inst_thirdparty": 45,
-  "shelf_added": 32
+  "replication_tagged": 60,
+  "shelf_added": 46
  },
  "topics": [
   [
    "how-the-brain-works",
-   2296
+   2734
   ],
   [
    "brain-disorders",
-   1208
-  ],
-  [
-   "psychiatry-medication",
-   1071
-  ],
-  [
-   "depression-anxiety",
-   999
+   1323
   ],
   [
    "ai-and-mind",
-   989
+   1152
   ],
   [
-   "child-development",
-   913
-  ],
-  [
-   "therapy",
-   790
-  ],
-  [
-   "perception-illusions",
-   787
-  ],
-  [
-   "psych-research",
-   772
-  ],
-  [
-   "language-thought",
-   757
-  ],
-  [
-   "consciousness",
-   742
-  ],
-  [
-   "adolescence-aging",
-   727
+   "psychiatry-medication",
+   1114
   ],
   [
    "brain-tech",
-   679
+   1038
+  ],
+  [
+   "depression-anxiety",
+   1035
+  ],
+  [
+   "child-development",
+   935
+  ],
+  [
+   "perception-illusions",
+   865
+  ],
+  [
+   "therapy",
+   832
+  ],
+  [
+   "psych-research",
+   806
+  ],
+  [
+   "consciousness",
+   802
+  ],
+  [
+   "language-thought",
+   785
+  ],
+  [
+   "adolescence-aging",
+   753
   ],
   [
    "adhd-autism",
-   638
+   649
   ],
   [
    "groups-prejudice",
-   622
+   643
   ],
   [
    "trauma-stress",
-   598
-  ],
-  [
-   "serious-mental-illness",
-   565
-  ],
-  [
-   "happiness-meaning",
-   555
+   621
   ],
   [
    "memory",
-   529
+   587
+  ],
+  [
+   "serious-mental-illness",
+   579
+  ],
+  [
+   "happiness-meaning",
+   557
   ],
   [
    "history-of-psychology",
-   520
+   526
   ],
   [
    "decision-risk",
-   504
+   521
   ],
   [
    "emotion",
-   477
-  ],
-  [
-   "personality",
-   434
-  ],
-  [
-   "work-organizations",
-   430
+   507
   ],
   [
    "crime-forensic",
-   416
+   437
+  ],
+  [
+   "personality",
+   435
+  ],
+  [
+   "work-organizations",
+   432
   ],
   [
    "addiction",
-   398
-  ],
-  [
-   "rationality-biases",
-   357
-  ],
-  [
-   "neurochemistry",
-   346
-  ],
-  [
-   "mindfulness-meditation",
-   330
+   416
   ],
   [
    "replication-crisis",
-   314
+   382
+  ],
+  [
+   "neurochemistry",
+   371
+  ],
+  [
+   "rationality-biases",
+   360
   ],
   [
    "animal-minds",
-   305
+   344
+  ],
+  [
+   "mindfulness-meditation",
+   335
   ],
   [
    "attention-focus",
-   289
+   307
   ],
   [
    "behavioral-genetics",
-   278
+   293
   ],
   [
    "morality-cooperation",
-   249
-  ],
-  [
-   "motivation-habits",
-   239
-  ],
-  [
-   "sex-gender",
-   238
+   288
   ],
   [
    "sleep-dreams",
-   231
+   244
+  ],
+  [
+   "motivation-habits",
+   241
+  ],
+  [
+   "sex-gender",
+   239
   ],
   [
    "parenting",
-   217
+   218
+  ],
+  [
+   "education-teaching",
+   216
   ],
   [
    "persuasion-manipulation",
    214
   ],
   [
-   "education-teaching",
-   210
-  ],
-  [
    "learning-studying",
-   200
+   212
   ],
   [
    "relationships-attachment",
-   177
+   180
+  ],
+  [
+   "psychedelics",
+   162
+  ],
+  [
+   "free-will",
+   156
   ],
   [
    "tech-and-mind",
    151
   ],
   [
-   "free-will",
-   150
-  ],
-  [
    "intelligence-expertise",
    117
   ],
   [
-   "psychedelics",
-   112
-  ],
-  [
    "design-behavior",
-   96
+   97
   ],
   [
    "conformity-obedience",
@@ -206,24 +207,24 @@
   ],
   [
    "performance",
-   80
+   81
   ],
   [
    "creativity-insight",
-   74
+   77
   ],
   [
    "pseudoscience-skepticism",
-   72
+   76
   ],
   [
    "grief-loneliness",
-   64
+   66
   ]
  ],
  "sources": {
   "hn": 2130,
-  "reddit": 232,
+  "reddit": 233,
   "se": 161
  },
  "communities": [
@@ -237,7 +238,7 @@
   ],
   [
    "r/neurophilosophy",
-   60
+   61
   ],
   [
    "r/askpsychology",
@@ -350,6 +351,10 @@
    154
   ],
   [
+   "Neuroethics Seminar Series 2015-2016",
+   17
+  ],
+  [
    "What Works for Borderline Personality Disorder?",
    7
   ],
@@ -408,6 +413,14 @@
   [
    "Organizational Behaviour: Individual Dynamics in Organization",
    60
+  ],
+  [
+   "Foundations of Neuroimaging (2021)",
+   59
+  ],
+  [
+   "Foundations of Neuroimaging (Updated)",
+   58
   ],
   [
    "MIT RES.9-003 Brains, Minds and Machines Summer Course",
@@ -702,6 +715,14 @@
    24
   ],
   [
+   "Cognitive Science: A Multidisciplinary Introduction",
+   24
+  ],
+  [
+   "Brain and Behavior",
+   24
+  ],
+  [
    "The Psychology, Biology and Politics of Food",
    23
   ],
@@ -735,6 +756,10 @@
   ],
   [
    "PSYC2143 Introduction to Cognition",
+   23
+  ],
+  [
+   "NeuroHackademy 2026",
    23
   ],
   [
@@ -802,6 +827,10 @@
    21
   ],
   [
+   "NeuroHackademy 2025",
+   21
+  ],
+  [
    "MIT 9.40 Introduction to Neural Computation",
    20
   ],
@@ -835,6 +864,14 @@
   ],
   [
    "GCC PSY 101 Part 1: Brain, Freud, Sleep and Dreams",
+   18
+  ],
+  [
+   "ILAE-YES Course on Advanced Neuroimaging Techniques in Epilepsy",
+   18
+  ],
+  [
+   "Data Science and AI for Neuroscience Summer School 2023",
    18
   ],
   [
@@ -958,6 +995,14 @@
    10
   ],
   [
+   "3rd HBP School: Future Neuroscience",
+   10
+  ],
+  [
+   "CNS4: Two-Dimensional Neuron Models and Phase Plane Analysis",
+   10
+  ],
+  [
    "Behavioral Neuroscience Lab: Psychology 116",
    9
   ],
@@ -971,6 +1016,10 @@
   ],
   [
    "Philosophy of Mind",
+   9
+  ],
+  [
+   "CNS7: Modern Phenomenological Neuron Models",
    9
   ],
   [
@@ -998,6 +1047,10 @@
    8
   ],
   [
+   "CNS5: Variability of Spike Trains",
+   8
+  ],
+  [
    "Moralities of Everyday Life",
    7
   ],
@@ -1018,6 +1071,14 @@
    7
   ],
   [
+   "CS 198-96 Intro to Neurotechnology",
+   7
+  ],
+  [
+   "CNS8: Fokker-Planck Equation for Integrate-and-Fire Neurons",
+   7
+  ],
+  [
    "Dementia for Scientists, Module 5: Therapy Development",
    6
   ],
@@ -1031,6 +1092,14 @@
   ],
   [
    "The Problems of Other Minds",
+   6
+  ],
+  [
+   "CNS6: Noise Models for Neuron Models",
+   6
+  ],
+  [
+   "CNS3: Synapses, Dendrites and the Cable Equation",
    6
   ],
   [
@@ -1078,6 +1147,14 @@
    49
   ],
   [
+   "MIND Summer School 2018",
+   28
+  ],
+  [
+   "MIND Summer School 2019",
+   26
+  ],
+  [
    "Psych 101 Study Buddy Series",
    24
   ],
@@ -1102,7 +1179,15 @@
    19
   ],
   [
+   "MIND Summer School 2017",
+   18
+  ],
+  [
    "Data Science and AI for Neuroscience Summer School 2022",
+   17
+  ],
+  [
+   "Geoffrey Aguirre: fMRI and Neuroscience Lectures",
    17
   ],
   [
@@ -1119,6 +1204,10 @@
   ],
   [
    "Social Psychology (2061)",
+   14
+  ],
+  [
+   "Lifelong Brain Development and Brain Ageing",
    14
   ],
   [
@@ -1162,6 +1251,10 @@
    11
   ],
   [
+   "Information and Neuroscience",
+   11
+  ],
+  [
    "Early Career Mental Health Professionals",
    10
   ],
@@ -1179,6 +1272,10 @@
   ],
   [
    "Problem of Cognitive Ontology Series",
+   9
+  ],
+  [
+   "Lecture Series on Neuroscience",
    9
   ],
   [
@@ -1358,6 +1455,10 @@
    136
   ],
   [
+   "McGovern Institute Talks and Events",
+   118
+  ],
+  [
    "Psychiatry and Behavioral Sciences Grand Rounds",
    105
   ],
@@ -1402,6 +1503,10 @@
    51
   ],
   [
+   "Transdisciplinary Research Colloquium on Psychedelics",
+   50
+  ],
+  [
    "NeuroSpin Seminars",
    48
   ],
@@ -1419,6 +1524,10 @@
   ],
   [
    "UCSD Department of Psychiatry 50th Anniversary Symposium",
+   43
+  ],
+  [
+   "Philosophy of Mind and Cognitive Science Talks",
    43
   ],
   [
@@ -1450,6 +1559,10 @@
    38
   ],
   [
+   "Harvard Brain Science Initiative Lectures and Seminars",
+   38
+  ],
+  [
    "Kavli Institute for Brain and Mind",
    36
   ],
@@ -1471,6 +1584,10 @@
   ],
   [
    "Mind/Body Connection (UCTV)",
+   33
+  ],
+  [
+   "Zangwill Club Talks",
    33
   ],
   [
@@ -1566,6 +1683,14 @@
    25
   ],
   [
+   "Amsterdam Neuroscience Meetings and Webinars",
+   25
+  ],
+  [
+   "2022 Beijing Brain Conference",
+   25
+  ],
+  [
    "Psychiatry Grand Rounds 2024",
    24
   ],
@@ -1575,6 +1700,14 @@
   ],
   [
    "CCN 2018",
+   24
+  ],
+  [
+   "Neuroscience and Neurotechnology Seminar Series",
+   24
+  ],
+  [
+   "James Giordano Interviews on Neuroscience, Ethics and Science Fiction",
    24
   ],
   [
@@ -1630,6 +1763,22 @@
    21
   ],
   [
+   "Psychology Grand Rounds",
+   21
+  ],
+  [
+   "William K. Warren Jr. Frontiers in Neuroscience",
+   21
+  ],
+  [
+   "Ruthazer Lab Talks and Neuro Light Lunch",
+   21
+  ],
+  [
+   "Lectures by Earl Miller",
+   21
+  ],
+  [
    "The Mind and Human Violence",
    20
   ],
@@ -1647,6 +1796,10 @@
   ],
   [
    "FENS Hertie Winter School 2015: Neurobiology of Language and Communication",
+   20
+  ],
+  [
+   "Columbia Neuroscience Seminars",
    20
   ],
   [
@@ -1738,6 +1891,14 @@
    17
   ],
   [
+   "Monday Colloquium",
+   17
+  ],
+  [
+   "Athena Demertzi: Talks on Consciousness and the Brain",
+   17
+  ],
+  [
    "Lunch Hour Lectures: Psychology and Language Sciences",
    16
   ],
@@ -1790,6 +1951,22 @@
    16
   ],
   [
+   "Roybal Center Grand Rounds",
+   16
+  ],
+  [
+   "KITP Neuroscience Talks",
+   16
+  ],
+  [
+   "Caltech Researchers on Their Work",
+   16
+  ],
+  [
+   "Monell Seminar Series",
+   16
+  ],
+  [
    "Psychiatry Grand Rounds 2026",
    15
   ],
@@ -1818,6 +1995,10 @@
    15
   ],
   [
+   "Colloquium on Law, Neuroscience, and Criminal Justice (2013)",
+   15
+  ],
+  [
    "2023-2024 Psychiatry and Behavioral Sciences Grand Rounds",
    14
   ],
@@ -1835,6 +2016,10 @@
   ],
   [
    "Mental Health Treatment Options",
+   14
+  ],
+  [
+   "8th Annual Conference of Cognitive Science (ACCS8)",
    14
   ],
   [
@@ -1899,6 +2084,14 @@
   ],
   [
    "Dementia Research Seminars and Interviews",
+   13
+  ],
+  [
+   "James Giordano Lectures on Neuroethics",
+   13
+  ],
+  [
+   "Brain Awareness Week 2021",
    13
   ],
   [
@@ -2002,6 +2195,14 @@
    11
   ],
   [
+   "Colloquium on Law, Neuroscience, and Criminal Justice (2014)",
+   11
+  ],
+  [
+   "Visiting Lecturers on Mind and Brain",
+   11
+  ],
+  [
    "2024-2025 Child and Adolescent Psychiatry Grand Rounds",
    10
   ],
@@ -2082,6 +2283,10 @@
    10
   ],
   [
+   "Nuffield Department of Clinical Neurosciences Talks",
+   10
+  ],
+  [
    "2023-2024 Child and Adolescent Psychiatry Grand Rounds",
    9
   ],
@@ -2135,6 +2340,10 @@
   ],
   [
    "Cognitive Neuroscience Hub Presentations 2025",
+   9
+  ],
+  [
+   "Philosophy of Deep Learning",
    9
   ],
   [
@@ -2215,6 +2424,14 @@
   ],
   [
    "Cognitive Neuroscience Hub Presentations 2026",
+   8
+  ],
+  [
+   "The Situated Brain: Culture, Context and Ecologies of Mind",
+   8
+  ],
+  [
+   "Neuroscience and Society Overview",
    8
   ],
   [
@@ -2331,6 +2548,18 @@
   ],
   [
    "Cognitive Colloquia",
+   7
+  ],
+  [
+   "Faith and Neuroscience Colloquium: Perspectives on Personhood",
+   7
+  ],
+  [
+   "Clinical Psychology Colloquium",
+   7
+  ],
+  [
+   "The Human Sense of Smell",
    7
   ],
   [
@@ -2487,6 +2716,18 @@
   ],
   [
    "Colloquium Speaker Series",
+   6
+  ],
+  [
+   "TINS Neuroscience Seminar Series",
+   6
+  ],
+  [
+   "Nobel Conference 1984: How We Know",
+   6
+  ],
+  [
+   "Ashley Juavinett Public Talks",
    6
   ],
   [

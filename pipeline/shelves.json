@@ -359,7 +359,7 @@
      "title": "Three Approaches to Psychotherapy (the Gloria films)",
      "year": 1965,
      "people": "Carl Rogers, Fritz Perls, Albert Ellis; Everett Shostrom (producer)",
-     "what": "One client, Gloria, in a session with each of three founders — client-centred, Gestalt and rational-emotive therapy — followed by her own evaluation. The most-watched psychotherapy footage ever made.",
+     "what": "One client, Gloria, in a session with each of three founders — client-centred (Rogers), Gestalt (Perls) and rational-emotive therapy (Ellis) — followed by her own evaluation. The most-watched psychotherapy footage ever made; the Archive holds the Perls and Ellis sessions.",
      "video": {
       "p": "archive",
       "id": "threeapproachestopsychotherapy1drfrederickperls",
@@ -370,7 +370,7 @@
      },
      "alt": [
       {
-       "label": "Part 3: Albert Ellis",
+       "label": "Albert Ellis with Gloria",
        "url": "https://archive.org/details/threeapproachestopsychotherapy1dralbertellis"
       }
      ],
@@ -1244,7 +1244,506 @@
      ]
     }
    ]
+  },
+  {
+   "id": "therapy",
+   "name": "Therapy in practice",
+   "short": "Therapy demos",
+   "tagline": "Psychotherapy as it is actually done: full sessions, role-plays, simulated psychiatric interviews and case-formulation demonstrations from training institutes, university programs and the classic films. Not lectures about therapy, but therapy.",
+   "items": [
+    {
+     "id": "tp-gloria-1965",
+     "title": "Three Approaches to Psychotherapy (the Gloria films)",
+     "year": 1965,
+     "people": "Carl Rogers, Fritz Perls, Albert Ellis; Everett Shostrom (producer)",
+     "what": "One client, Gloria, in a session with each of three founders — client-centred (Rogers), Gestalt (Perls) and rational-emotive therapy (Ellis) — followed by her own evaluation. The most-watched psychotherapy footage ever made; the Archive holds the Perls and Ellis sessions.",
+     "video": {
+      "p": "archive",
+      "id": "threeapproachestopsychotherapy1drfrederickperls",
+      "f": "threeapproachestopsychotherapy1drfrederickperls.mp4",
+      "len": 1883,
+      "uploader": "Internet Archive educational-film collection (Psychological & Educational Films)",
+      "legit": "archive"
+     },
+     "alt": [
+      {
+       "label": "Albert Ellis with Gloria",
+       "url": "https://archive.org/details/threeapproachestopsychotherapy1dralbertellis"
+      }
+     ],
+     "paper": {
+      "cite": "Rogers, C. R. (1957). The necessary and sufficient conditions of therapeutic personality change. Journal of Consulting Psychology, 21(2), 95–103.",
+      "doi": "10.1037/h0045357"
+     },
+     "status": null,
+     "topics": [
+      "therapy",
+      "history-of-psychology"
+     ],
+     "paper2": null
+    },
+    {
+     "id": "tp-three-approaches-2-rogers",
+     "title": "Three Approaches to Psychotherapy II: Carl Rogers with Kathy",
+     "year": 1977,
+     "people": "Carl Rogers; Everett Shostrom (producer)",
+     "what": "Twelve years after Gloria, the same format with a new client, Kathy: Rogers introduces client-centred therapy and then conducts a full, unscripted session. The companion films show Everett Shostrom (actualizing therapy) and Arnold Lazarus (multimodal therapy) with the same client.",
+     "video": {
+      "p": "archive",
+      "id": "threeapproachestopsychotherapy2drcarlrogers",
+      "f": "threeapproachestopsychotherapy2drcarlrogers.mp4",
+      "len": 2703,
+      "uploader": "Internet Archive educational-film collection (Psychological & Educational Films)",
+      "legit": "archive"
+     },
+     "alt": [
+      {
+       "label": "Everett Shostrom with Kathy",
+       "url": "https://archive.org/details/threeapproachestopsychotherapy2dreverettshostrom"
+      },
+      {
+       "label": "Arnold Lazarus with Kathy",
+       "url": "https://archive.org/details/threeapproachestopsychotherapy2drarnoldlazarus"
+      }
+     ],
+     "paper": {
+      "cite": "Rogers, C. R. (1957). The necessary and sufficient conditions of therapeutic personality change. Journal of Consulting Psychology, 21(2), 95–103.",
+      "doi": "10.1037/h0045357"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "therapy",
+      "history-of-psychology"
+     ]
+    },
+    {
+     "id": "tp-three-approaches-3-beck",
+     "title": "Three Approaches to Psychotherapy III: Aaron Beck with Richard",
+     "year": 1986,
+     "people": "Aaron T. Beck; Everett Shostrom (producer)",
+     "what": "The founder of cognitive therapy in a full session with Richard, the client of the third Shostrom series. Hans Strupp (psychodynamic therapy) and Donald Meichenbaum (cognitive-behaviour modification) see the same client in the companion films — three schools, one person, one afternoon.",
+     "video": {
+      "p": "archive",
+      "id": "threeapproachestopsychotherapy3draaronbeck",
+      "f": "threeapproachestopsychotherapy3draaronbeck.mp4",
+      "len": 2777,
+      "uploader": "Internet Archive educational-film collection (Psychological & Educational Films)",
+      "legit": "archive"
+     },
+     "alt": [
+      {
+       "label": "Hans Strupp with Richard",
+       "url": "https://archive.org/details/threeapproachestopsychotherapy3drhansstrupp"
+      },
+      {
+       "label": "Donald Meichenbaum with Richard",
+       "url": "https://archive.org/details/threeapproachestopsychotherapy3drdonaldmeichenbaum"
+      }
+     ],
+     "paper": {
+      "cite": "Beck, A. T., Rush, A. J., Shaw, B. F., & Emery, G. (1979). Cognitive Therapy of Depression. Guilford Press."
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "therapy",
+      "history-of-psychology"
+     ]
+    },
+    {
+     "id": "tp-beck-abe-2",
+     "title": "CBT, session 2 with Abe (Judith Beck)",
+     "year": 2022,
+     "people": "Judith S. Beck; Beck Institute for Cognitive Behavior Therapy",
+     "what": "A full 50-minute cognitive behavior therapy session, early in treatment: agenda-setting, mood check, the first automatic-thought work. Abe is the client whose treatment runs through the 3rd edition of Basics and Beyond.",
+     "video": {
+      "p": "youtube",
+      "id": "ac5Jct33oUU",
+      "len": 2980,
+      "uploader": "Beck Institute (the authors' own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Beck, J. S. (2020). Cognitive Behavior Therapy: Basics and Beyond (3rd ed.). Guilford Press.",
+      "url": "https://www.guilford.com/books/Cognitive-Behavior-Therapy/Judith-Beck/9781462544196"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "therapy",
+      "depression-anxiety"
+     ]
+    },
+    {
+     "id": "tp-beck-abe-10",
+     "title": "CBT, session 10 with Abe (Judith Beck)",
+     "year": 2022,
+     "people": "Judith S. Beck; Beck Institute for Cognitive Behavior Therapy",
+     "what": "The same client ten sessions in: reviewing action plans, working on core beliefs and planning for the end of treatment. Watch session 2 first to see what changed.",
+     "video": {
+      "p": "youtube",
+      "id": "ikYCr-0GAfw",
+      "len": 2706,
+      "uploader": "Beck Institute (the authors' own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Beck, J. S. (2020). Cognitive Behavior Therapy: Basics and Beyond (3rd ed.). Guilford Press.",
+      "url": "https://www.guilford.com/books/Cognitive-Behavior-Therapy/Judith-Beck/9781462544196"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "therapy",
+      "depression-anxiety"
+     ]
+    },
+    {
+     "id": "tp-beck-restructuring",
+     "title": "Cognitive restructuring in CBT (role-play)",
+     "year": 2015,
+     "people": "Judith S. Beck; Beck Institute",
+     "what": "A six-minute role-play of the core CBT move: catching an automatic thought, examining the evidence and arriving at a more balanced one.",
+     "video": {
+      "p": "youtube",
+      "id": "orPPdMvaNGA",
+      "len": 342,
+      "uploader": "Beck Institute (the authors' own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Beck, J. S. (2020). Cognitive Behavior Therapy: Basics and Beyond (3rd ed.). Guilford Press.",
+      "url": "https://www.guilford.com/books/Cognitive-Behavior-Therapy/Judith-Beck/9781462544196"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "therapy"
+     ]
+    },
+    {
+     "id": "tp-nottingham-depression",
+     "title": "Psychiatric interview for teaching: depression",
+     "year": 2012,
+     "people": "University of Nottingham, School of Medicine",
+     "what": "A simulated psychiatric assessment with an actor-patient, filmed for medical students: how a clinician takes a history of low mood, screens for risk and reaches a formulation. One of a six-film series.",
+     "video": {
+      "p": "youtube",
+      "id": "4YhpWZCdiZc",
+      "len": 884,
+      "uploader": "University of Nottingham (the university's own channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "Anxiety",
+       "url": "https://www.youtube.com/watch?v=Ii2FHbtVJzc"
+      },
+      {
+       "label": "Psychosis",
+       "url": "https://www.youtube.com/watch?v=ZB28gfSmz1Y"
+      }
+     ],
+     "paper": null,
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "psychiatry-medication",
+      "depression-anxiety"
+     ]
+    },
+    {
+     "id": "tp-nottingham-psychosis",
+     "title": "Psychiatric interview for teaching: psychosis",
+     "year": 2012,
+     "people": "University of Nottingham, School of Medicine",
+     "what": "A simulated first-episode psychosis assessment with an actor-patient: eliciting delusions and hallucinations without arguing with them, and assessing insight and risk.",
+     "video": {
+      "p": "youtube",
+      "id": "ZB28gfSmz1Y",
+      "len": 749,
+      "uploader": "University of Nottingham (the university's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": null,
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "serious-mental-illness",
+      "psychiatry-medication"
+     ]
+    },
+    {
+     "id": "tp-nottingham-anxiety",
+     "title": "Psychiatric interview for teaching: anxiety",
+     "year": 2012,
+     "people": "University of Nottingham, School of Medicine",
+     "what": "A simulated assessment of an anxiety disorder with an actor-patient: panic symptoms, avoidance, and the questions that separate the anxiety disorders from each other.",
+     "video": {
+      "p": "youtube",
+      "id": "Ii2FHbtVJzc",
+      "len": 722,
+      "uploader": "University of Nottingham (the university's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": null,
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "depression-anxiety",
+      "psychiatry-medication"
+     ]
+    },
+    {
+     "id": "tp-camh-checklist",
+     "title": "Psychiatric interviewing: asking items on a checklist",
+     "year": 2016,
+     "people": "Centre for Addiction and Mental Health (CAMH), Toronto",
+     "what": "A teaching demonstration from Canada's largest psychiatric hospital on turning a symptom checklist into a conversation rather than an interrogation.",
+     "video": {
+      "p": "youtube",
+      "id": "uuBYeNwkCvQ",
+      "len": 400,
+      "uploader": "CAMH Education (the hospital's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": null,
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "psychiatry-medication",
+      "therapy"
+     ]
+    },
+    {
+     "id": "tp-uofl-cbt",
+     "title": "Getting started: CBT in action",
+     "year": 2017,
+     "people": "University of Louisville Depression Center",
+     "what": "A demonstration of the opening moves of cognitive behavioral therapy for depression with a therapist and client, made by a university depression center for training.",
+     "video": {
+      "p": "youtube",
+      "id": "dJ1eDL15_Lw",
+      "len": 746,
+      "uploader": "UofL Depression Center (the university's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Beck, A. T., Rush, A. J., Shaw, B. F., & Emery, G. (1979). Cognitive Therapy of Depression. Guilford Press."
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "therapy",
+      "depression-anxiety"
+     ]
+    },
+    {
+     "id": "tp-uofl-exposure",
+     "title": "Exposure therapy in vivo for OCD",
+     "year": 2017,
+     "people": "University of Louisville Depression Center",
+     "what": "Exposure and response prevention as it is actually done: a therapist guides a client through a feared situation and the urge to neutralise, in real time.",
+     "video": {
+      "p": "youtube",
+      "id": "yss0L517rpY",
+      "len": 518,
+      "uploader": "UofL Depression Center (the university's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Foa, E. B., & Kozak, M. J. (1986). Emotional processing of fear: Exposure to corrective information. Psychological Bulletin, 99(1), 20–35.",
+      "doi": "10.1037/0033-2909.99.1.20"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "therapy",
+      "depression-anxiety"
+     ]
+    },
+    {
+     "id": "tp-yale-mi",
+     "title": "Motivational interviewing: a patient-centred conversation",
+     "year": 2020,
+     "people": "Yale School of Medicine",
+     "what": "A demonstration of motivational interviewing — open questions, reflections, rolling with ambivalence — in a clinical conversation about behaviour change.",
+     "video": {
+      "p": "youtube",
+      "id": "TtN0KFEctc0",
+      "len": 634,
+      "uploader": "YaleCourses (the university's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Miller, W. R., & Rollnick, S. (2013). Motivational Interviewing: Helping People Change (3rd ed.). Guilford Press."
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "therapy",
+      "addiction"
+     ]
+    },
+    {
+     "id": "tp-cooper-pct",
+     "title": "Person-centred therapy demonstration, with commentary",
+     "year": 2022,
+     "people": "Mick Cooper (University of Roehampton)",
+     "what": "A full counselling session in a contemporary person-centred style, with the therapist's own commentary on what he was doing and why. Ninety minutes; the session itself is about an hour.",
+     "video": {
+      "p": "youtube",
+      "id": "TvgiHkhWJTc",
+      "len": 5443,
+      "uploader": "Mick Cooper (the therapist's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Rogers, C. R. (1957). The necessary and sufficient conditions of therapeutic personality change. Journal of Consulting Psychology, 21(2), 95–103.",
+      "doi": "10.1037/h0045357"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "therapy"
+     ]
+    },
+    {
+     "id": "tp-cooper-julie",
+     "title": "Counselling session demonstration: Julie",
+     "year": 2020,
+     "people": "Mick Cooper (University of Roehampton)",
+     "what": "An unedited demonstration session with a volunteer client, used in counselling training: an example of a pluralistic, collaborative way of working.",
+     "video": {
+      "p": "youtube",
+      "id": "Md3rdQssxxE",
+      "len": 3197,
+      "uploader": "Mick Cooper (the therapist's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Cooper, M., & McLeod, J. (2011). Pluralistic Counselling and Psychotherapy. SAGE."
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "therapy"
+     ]
+    },
+    {
+     "id": "tp-yalom-outpatient",
+     "title": "Irvin Yalom: outpatient group psychotherapy (preview)",
+     "year": 2009,
+     "people": "Irvin D. Yalom; Psychotherapy.net",
+     "what": "Yalom leading an outpatient therapy group, from the training film series he made with Psychotherapy.net. This is the publisher's preview; the full film is behind their subscription.",
+     "video": {
+      "p": "youtube",
+      "id": "PwnfWMNbg48",
+      "len": 252,
+      "uploader": "Psychotherapy.net (the publisher's preview of its training film)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "Inpatient group (preview)",
+       "url": "https://www.youtube.com/watch?v=05Elmr65RDg"
+      }
+     ],
+     "paper": {
+      "cite": "Yalom, I. D., & Leszcz, M. (2005). The Theory and Practice of Group Psychotherapy (5th ed.). Basic Books."
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "therapy"
+     ]
+    },
+    {
+     "id": "tp-linehan-dbt",
+     "title": "Marsha Linehan: dialectical behavior therapy (preview)",
+     "year": 2013,
+     "people": "Marsha M. Linehan; Psychotherapy.net",
+     "what": "The developer of DBT in session, from a Psychotherapy.net training film. The publisher's preview; the full session is behind their subscription.",
+     "video": {
+      "p": "youtube",
+      "id": "S4Ccpqh6giM",
+      "len": 299,
+      "uploader": "Psychotherapy.net (the publisher's preview of its training film)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Linehan, M. M. (1993). Cognitive-Behavioral Treatment of Borderline Personality Disorder. Guilford Press."
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "therapy",
+      "personality"
+     ]
+    },
+    {
+     "id": "tp-apa-eft",
+     "title": "Deliberate practice in emotion-focused therapy",
+     "year": 2021,
+     "people": "Rhonda Goldman, Alexandre Vaz, Tony Rousmaniere; APA Books",
+     "what": "How therapists rehearse the skills of emotion-focused therapy: the authors of the APA deliberate-practice volume work through its exercises, responding to scripted client statements in the moment.",
+     "video": {
+      "p": "youtube",
+      "id": "RvczMRzD870",
+      "len": 2761,
+      "uploader": "American Psychological Association (the publisher's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Goldman, R. N., Vaz, A., & Rousmaniere, T. (2021). Deliberate Practice in Emotion-Focused Therapy. American Psychological Association.",
+      "doi": "10.1037/0000227-000"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "therapy",
+      "emotion"
+     ]
+    },
+    {
+     "id": "tp-apa-eh-formulation",
+     "title": "Case formulation in existential–humanistic therapy",
+     "year": 2025,
+     "people": "Louis Hoffman; American Psychological Association",
+     "what": "A clinician walks through how an existential–humanistic therapist formulates a case — what is attended to, and what the formulation changes in the room.",
+     "video": {
+      "p": "youtube",
+      "id": "aa9UvXkcoos",
+      "len": 1055,
+      "uploader": "American Psychological Association (the publisher's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Schneider, K. J., & Krug, O. T. (2010). Existential-Humanistic Therapy. American Psychological Association."
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "therapy"
+     ]
+    }
+   ]
   }
  ],
- "doi_verified": "2026-11-02 via api.crossref.org"
+ "doi_verified": "2026-11-03"
 }

@@ -11,12 +11,20 @@ One file, `psychtube.json`, with this shape:
   "stats": {"videos": 0, "vouched": 0, "mentions": 0, "sources": {"hn": 0, "reddit": 0, "se": 0}, "communities": 0, "series": 0,
             "inst": {"courses": 0, "lectures": 0, "institutions": 0, "also_vouched": 0}},
   "areas": [{"id": "brain", "name": "Brain & Neuroscience", "topics": [{"id": "memory", "name": "Memory", "desc": "...", "n": 12}]}],
-  "contested": {"power-posing": {"name": "...", "note": "...", "source": "..."}},
+  "contested": {"power-posing": {"name": "...", "note": "...", "source": "...", "status": "failed",
+                                 "sources": [{"cite": "Ranehill et al. (2015)...", "doi": "10.1177/0956797614553946"}]}},
+  "status_labels": {"replicated": "Replicated", "smaller": "Smaller than claimed", "mixed": "Mixed evidence", "failed": "Did not replicate",
+                    "overstated": "Overstated", "misreported": "Misreported", "myth": "Myth", "fraud": "Fraud or retraction", "reversed": "Reversed"},
+  "shelves": [{"id": "originals", "name": "Primary sources", "short": "Originals", "tagline": "...",
+               "items": [{"sid": "pavlov-1948-film", "vid": "<video id or null>", "title": "...", "year": 1948, "people": "...", "what": "...",
+                          "paper": {"cite": "...", "doi": "..."}, "paper2": null, "alt": [{"label": "...", "url": "..."}], "status": "pavlov-bell",
+                          "topics": ["learning-studying"], "legit": "archive", "uploader": "...", "p": "archive", "len": 1200}]}],
   "cw": ["suicide-self-harm", "eating-disorders", "sexual-content", "abuse-violence", "substance-use"],
   "institutions": [{"name": "MIT", "short": "MIT", "courses": 0, "lectures": 0, "pop": 0}],
   "series": [{"id": "c-mit-9-13-the-human-brain", "name": "MIT 9.13 The Human Brain", "inst": "MIT", "short": "MIT", "lecturer": "Nancy Kanwisher", "year": 2019,
               "kind": "course", "level": "intro", "note": "...", "n": 17, "total": 17, "vids": ["..."], "topics": ["..."],
-              "vouched": 2, "pop": 3.1, "score": 20.1, "url": "https://www.youtube.com/playlist?list=...", "ch": "MIT OpenCourseWare", "chid": "...", "hours": 19.5},
+              "vouched": 2, "pop": 3.1, "score": 20.1, "url": "https://www.youtube.com/playlist?list=...", "ch": "MIT OpenCourseWare", "chid": "...", "hours": 19.5,
+              "readings": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/"},
              {"id": "crashcourse", "name": "CrashCourse", "n": 5, "vids": ["..."], "topics": ["..."], "vouched": 5, "pop": 0, "score": 0, "hours": 1}],
   "videos": [ ...see below... ]
 }
@@ -38,9 +46,9 @@ PsychTube shows) and `.../hqdefault.jpg` is the uploader's thumbnail. Embed a pl
 | `title`, `ch`, `chid` | title, channel name and channel id as shown on YouTube |
 | `len`, `views`, `pub` | duration in seconds, view count and upload date (YYYY-MM-DD) at build time |
 | `topics` | 1–3 topic ids from `areas[].topics[]`, best fit first; `area` is the area of the first one |
-| `type` | talk, lecture, course, documentary, explainer, interview, podcast, tutorial, demo, other (when known) |
+| `type` | talk, lecture, course, documentary, explainer, interview, podcast, tutorial, demo, other (when known); shelf videos not otherwise in the catalog are `documentary` (primary sources) or `demo` (demonstrations and therapy sessions) |
 | `course`, `series` | whether it is one lecture of a series, and the `series[].id` it belongs to |
-| `p`, `host`, `f` | present when the video is not on YouTube. `p: "panopto"` with the Panopto `host` (e.g. `harvard.hosted.panopto.com`): `id` is the Panopto session id, the watch page is `https://<host>/Panopto/Pages/Viewer.aspx?id=<id>`, the embed is `https://<host>/Panopto/Pages/Embed.aspx?id=<id>` and a thumbnail is `https://<host>/Panopto/Services/FrameGrabber.svc/FrameRedirect?objectId=<id>&mode=Delivery`. `p: "archive"` (`host: "archive.org"`): `id` is the Internet Archive item identifier of this lecture (UC Berkeley webcasts: `ucberkeley_webcast_<original YouTube id>`), `f` the MP4 file name inside it; play `https://archive.org/download/<id>/<f>` in a `<video>` element (or embed `https://archive.org/embed/<id>`), the item page is `https://archive.org/details/<id>` and a thumbnail is `https://archive.org/services/img/<id>`. |
+| `p`, `host`, `f` | present when the video is not on YouTube. `p: "panopto"` with the Panopto `host` (e.g. `harvard.hosted.panopto.com`): `id` is the Panopto session id, the watch page is `https://<host>/Panopto/Pages/Viewer.aspx?id=<id>`, the embed is `https://<host>/Panopto/Pages/Embed.aspx?id=<id>` and a thumbnail is `https://<host>/Panopto/Services/FrameGrabber.svc/FrameRedirect?objectId=<id>&mode=Delivery`. `p: "archive"` (`host: "archive.org"`): `id` is the Internet Archive item identifier of this lecture (UC Berkeley webcasts: `ucberkeley_webcast_<original YouTube id>`), `f` the MP4 file name inside it; play `https://archive.org/download/<id>/<f>` in a `<video>` element (or embed `https://archive.org/embed/<id>`; items without `f` are stream-only and must use the embed), the item page is `https://archive.org/details/<id>` and a thumbnail is `https://archive.org/services/img/<id>`. |
 | `inst` | present on lectures from the institutional tier: `{"n": institution, "s": series id, "i": position in the playlist, "of": playlist length}`. `approx: true` marks lectures whose `views`/`pub` were estimated from the playlist page rather than fetched exactly |
 | `score` | PsychTube's ranking signal: distinct recommenders weighted by strength of recommendation, with a bonus when several communities agree and for the number of distinct months it was recommended |
 | `nrec` | distinct people whose mention counted as a recommendation |
@@ -49,7 +57,8 @@ PsychTube shows) and `.../hqdefault.jpg` is the uploader's thumbnail. Embed a pl
 | `communities` | where it was mentioned, most often first: "Hacker News", "r/askpsychology", "Psychology & Neuroscience SE", … |
 | `why`, `summary`, `quote` | one line on why people recommend it, a 2–3 sentence summary and a pull quote (for Hacker News videos these come from HackerTube's Claude-written cards; otherwise `summary` is the start of the YouTube description) |
 | `vouches` | up to 12 of the mentions: `s` (source), `c` (community), `a` (author), `d` (YYYY-MM), `k` (kind: strong_rec, rec, reference, critical, joke, comment, post, question, answer), `q` (a short quote), `u` (link to the original), `up` (upvotes where known), `t` (timestamp in seconds when the link pointed at a moment), `thread` (the discussion it appeared in) |
-| `badge` | `{"id", "role"}` when the video presents (`role: "promotes"`) or critiques (`role: "critique"`) a contested finding; look the id up in `contested` |
+| `badge` | `{"id", "role"}` when the video presents (`role: "promotes"`) or critiques (`role: "critique"`) a contested finding, or is the original footage of it (`role: "source"`); look the id up in `contested`, whose `status` says what became of the finding and whose `sources[]` are the replication or review papers (DOIs verified) |
+| `shelf`, `orig` | present on the curated shelves (`shelves[]`): `shelf` lists the shelf ids the video sits on and `orig` is its card — `{sid, shelf, people, year, what, paper, paper2, alt, uploader, legit}` — the people behind it, the paper it belongs to (`paper.doi` or `paper.url`), alternative copies and how legitimate the copy is (`legit`: `official` = the rights holder's, institution's or researcher's own upload; `archive` = a library or archive collection) |
 | `cw` | content notes that apply (ids from `cw`) |
 | `first`, `last`, `months` | first and last year it was mentioned, and how many distinct months it was recommended |
 | `clips` | timestamps (seconds) people linked to directly |
@@ -70,6 +79,32 @@ not peer-reviewed, so weigh a `talks` item as a speaker's own account of their w
 (`intro`, `advanced`, `public`), a one-line `note`, the playlist `url`, `vouched` (how many of its
 lectures the communities vouched for) and `pop` (their summed community score; sort courses by it for
 "most recommended course"). `institutions[]` summarizes per institution.
+
+## Shelves: primary sources, demonstrations, therapy in practice
+
+`shelves[]` are three hand-curated lists (`pipeline/shelves.json` in the repository): **originals**, the
+original films of classic experiments and case studies (Pavlov's laboratory, the Gesell infant films,
+Skinner's pigeons, the 1964 split-brain film, the Stanford prison experiment footage, Robbers Cave, the
+Gloria films, H.M. and Clive Wearing, …); **demos**, experiments that work on the viewer (the gorilla,
+the McGurk effect, the rubber hand, the hollow mask, Stroop, binocular rivalry, …); and **therapy**,
+psychotherapy as it is done — full sessions, role-plays, simulated psychiatric interviews and case
+formulations from training institutes and university programs, including the three Shostrom "Three
+Approaches to Psychotherapy" series (1965, 1977, 1986) from the Internet Archive. Every item carries
+the paper it belongs to (`paper.doi`, verified against Crossref) and, where there is one, the
+replication `status`. Items whose `vid` is `null` have no authorized copy online (Little Albert, Harlow,
+Asch, Milgram, Bobo doll, the visual cliff, the Strange Situation); they are listed for the paper and
+the note, so a UI should show them without a player. Each item's `legit` says whose copy it is;
+unofficial re-uploads were not used. The therapy shelf also picks up demonstration videos that a
+labeled course brought in (role-plays, intake and case-formulation videos; `sid` prefixed `tp-`).
+
+## Replication status
+
+`contested` has 66 findings, each with a one-paragraph `note`, a `status` (`replicated`, `smaller`,
+`mixed`, `failed`, `overstated`, `misreported`, `myth`, `fraud`, `reversed`; display text in
+`status_labels`) and `sources[]` — the replication, meta-analysis or review papers the status rests on,
+with verified DOIs. Videos reach a finding through `badge`: `promotes` (presents it as established),
+`critique` (pushes back on it) or `source` (the original footage). Findings with status `replicated` are
+reassuring, not cautionary: a UI should not flag those videos the way it flags `failed` ones.
 
 ## Things to know before you build
 
@@ -102,7 +137,9 @@ lectures the communities vouched for) and `pop` (their summed community score; s
    1.2+; a Reddit comment 1 plus a bonus for upvotes), with a bonus when several communities agree.
 4. **Contested findings** were tagged where a video presents a finding that later shrank, failed to
    replicate or was overstated (power posing, the Stanford Prison Experiment, the marshmallow test,
-   ego depletion, …) and where a video critiques one.
+   ego depletion, …) and where a video critiques one — first from the classification pass, then from a
+   keyword search over every title and description that Claude judged video by video
+   (`work/replication/`). Each finding's status and sources were checked against Crossref.
 5. **YouTube metadata** (title, channel, length, views, upload date) was fetched at build time and
    dead or private videos were dropped.
 

@@ -241,8 +241,11 @@ for c in inst_courses:
         sid += "-" + c["pid"][-3:].lower()
     used_sids.add(sid)
     items = [it for it in c["items"] if it.get("title") not in ("[Private video]", "[Deleted video]")]
+    readings = next((u.rstrip(".,") for u in re.findall(r"https?://[^\s)>\]]+", c.get("desc") or "")
+                     if re.search(r"ocw\.mit\.edu|oyc\.yale\.edu|open\.yale|\.edu/|\.ac\.uk|nptel|swayam|syllabus|course", u, re.I)
+                     and not re.search(r"youtube|youtu\.be|twitter|facebook|instagram|bit\.ly|tinyurl|linkedin|tiktok|forms\.gle|patreon", u, re.I)), None)
     inst_course[sid] = {
-        "id": sid, "name": name, "inst": c["inst"], "short": INST_SHORT.get(c["inst"], c["inst"]), "provider": c.get("provider") or "youtube",
+        "id": sid, "name": name, "inst": c["inst"], "short": INST_SHORT.get(c["inst"], c["inst"]), "provider": c.get("provider") or "youtube", "readings": readings,
         "lecturer": cl.get("lecturer") or "", "year": cl.get("year"), "kind": cl.get("kind") or c["kind"],
         "level": cl.get("level") or "", "note": clean(cl.get("note"), 200), "ctopics": [t for t in cl.get("topics", []) if t in TOPIC_IDS],
         "pid": c["pid"], "url": c.get("url") or f"https://www.youtube.com/playlist?list={c['pid']}", "ch": c.get("owner"), "chid": c.get("ownerId"),
@@ -403,10 +406,32 @@ for vid, rec in videos.items():
 
 catalog.sort(key=lambda v: -v["score"])
 
+# ---------------------------------------------------------------- replication tags (keyword candidates judged by Claude: work/replication/tags.jsonl)
+
+rep_tags = {o["vid"]: o for o in jsonl(P("work", "replication", "tags.jsonl")) if o.get("contested") in CONTESTED}
+for v in catalog:
+    t = rep_tags.get(v["id"])
+    if t and not v.get("badge"):
+        v["badge"] = {"id": t["contested"], "role": t.get("role") or "promotes"}
+        stats["replication_tagged"] += 1
+
 # ---------------------------------------------------------------- curated shelves (primary sources, demos)
 
 SHELVES = json.load(open(P("pipeline", "shelves.json"), encoding="utf-8"))["shelves"] if os.path.exists(P("pipeline", "shelves.json")) else []
 by_id_tmp = {v["id"]: v for v in catalog}
+# the therapy shelf is curated in shelves.json and topped up from the catalog itself: psychotherapy demonstrations,
+# role-plays, intake and case-formulation videos that a course or a vouched channel already brought in
+THERAPY_RX = re.compile(r"role.?play|session demonstration|therapy session|full session|simulat|case (formulation|conceptuali[sz]ation|study)|motivational interviewing|clinical interview|intake and assessment|in.class therapy", re.I)
+THERAPY_NEG = re.compile(r"grand rounds|conference|symposium|keynote|webinar|panel|history of|overview|promo|trailer|lecture \d|storytelling|wide circle|role of role|skills for|goal setting|gloria|what is|why |how to", re.I)
+therapy_shelf = next((sh for sh in SHELVES if sh["id"] == "therapy"), None)
+if therapy_shelf:
+    seen_tp = {it["video"]["id"] for it in therapy_shelf["items"] if it.get("video")}
+    for v in catalog:
+        if v["id"] in seen_tp or (v.get("len") or 0) < 240:
+            continue
+        if (("therapy" in v["topics"]) or re.search(r"Beck Institute|counsel|psychotherap", (v.get("ch") or "") + " " + v["title"], re.I)) and THERAPY_RX.search(v["title"]) and not THERAPY_NEG.search(v["title"]):
+            therapy_shelf["items"].append({"id": "tp-" + v["id"], "title": v["title"], "year": int(v["pub"][:4]) if v.get("pub") else None, "people": v.get("ch"), "what": v.get("summary") or "", "video": {"p": v.get("p") or "youtube", "id": v["id"], "uploader": v.get("ch"), "legit": "official" if v.get("inst") else "channel"}, "alt": [], "paper": None, "status": None, "topics": v["topics"][:2], "auto": True})
+            seen_tp.add(v["id"])
 shelves_out = []
 for sh in SHELVES:
     items_out = []
@@ -420,7 +445,7 @@ for sh in SHELVES:
                 "id": vid, "title": m.get("title") or it["title"], "ch": m.get("ch") or vd.get("uploader", "").split(" (")[0], "chid": m.get("chid"),
                 "len": m.get("len") or vd.get("len"), "views": m.get("views"), "pub": m.get("pub") or (f"{it['year']}-01-01" if it.get("year") else None),
                 "topics": topics_i, "area": TOPIC_AREA[topics_i[0]],
-                "type": "demo" if sh["id"] == "demos" else "documentary", "course": False,
+                "type": "demo" if sh["id"] in ("demos", "therapy") else "documentary", "course": False,
                 "score": 1.0, "nrec": 0, "nmention": 0, "src": {}, "communities": [],
                 "why": "", "summary": clean(it.get("what"), 240), "quote": "", "vouches": [],
                 "badge": None, "cw": [], "first": None, "last": None, "months": 0, "clips": [], "kw": [],
@@ -446,7 +471,7 @@ for sh in SHELVES:
         items_out.append({"sid": it["id"], "vid": vid, "title": it["title"], "year": it.get("year"), "people": it.get("people"), "what": it.get("what"),
                           "paper": it.get("paper"), "paper2": it.get("paper2"), "alt": it.get("alt") or [], "status": it.get("status") if it.get("status") in CONTESTED else None,
                           "topics": [t for t in it.get("topics", []) if t in TOPIC_IDS], "legit": (vd or {}).get("legit"), "uploader": (vd or {}).get("uploader"),
-                          "p": (vd or {}).get("p"), "len": (vd or {}).get("len") or (meta.get(vid, {}).get("len") if vid else None)})
+                          "p": (vd or {}).get("p"), "len": (vd or {}).get("len") or (meta.get(vid, {}).get("len") if vid else None) or (by_id_tmp[vid].get("len") if vid else None)})
     shelves_out.append({"id": sh["id"], "name": sh["name"], "short": sh.get("short") or sh["name"], "tagline": sh.get("tagline", ""), "items": items_out})
 catalog.sort(key=lambda v: -v["score"])
 
@@ -514,7 +539,7 @@ for sid, course in inst_course.items():
                    "n": len(vids), "total": course["total"], "vids": [v["id"] for v in vids],
                    "topics": (course["ctopics"] or [t for t, _ in topics.most_common(3)])[:3],
                    "vouched": sum(1 for v in vids if v["nrec"]), "pop": pop, "score": round(sum(v["score"] for v in vids), 1),
-                   "url": course["url"], "ch": course["ch"], "chid": course["chid"], "provider": course["provider"],
+                   "url": course["url"], "ch": course["ch"], "chid": course["chid"], "provider": course["provider"], "readings": course.get("readings"),
                    "hours": round(sum(v["len"] or 0 for v in vids) / 3600, 1)})
     for v in vids:
         v["series"] = sid

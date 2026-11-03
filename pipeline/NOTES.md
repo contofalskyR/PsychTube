@@ -68,9 +68,77 @@ co-recommendation. Most of what came in is seminar series, grand rounds and conf
 the Courses hub now has two shelves — taught courses, and seminars & conferences marked as not
 peer-reviewed — and a filter box.
 
+**Round 3 (2026-11-03): neuroscience.** The catalog was thin on neuroscience proper, so 50 playlist
+searches aimed at it (neuroscience lectures / course / seminar series / grand rounds, computational and
+cognitive neuroscience, neuroimaging, neuroethics, connectomics, neural coding, brain development, summer
+schools…) produced 62 new playlists after triage; 59 went in (1,281 lectures; the Institute of Noetic
+Sciences was dropped by the overrides, one was a re-listing). They are mostly seminar series — the
+McGovern Institute's 130 talks, Columbia and Harvard neuroscience seminars, the Zangwill Club, Oxford's
+Nuffield Department of Clinical Neurosciences, Monell, MIND and NeuroHackademy summer schools, Wulfram
+Gerstner's EPFL computational-neuroscience modules, Marty Sereno's Foundations of Neuroimaging. NYU's
+*Brain and Behavior* (Wendy Suzuki, 2012, 24 lectures) exists only as loose uploads on NYU's channel,
+so it was assembled by hand: `__channelSearch(chid, "Brain and Behavior")` listed the videos, the
+syllabus order came from the course description, and the course sits in `courses.json` under the
+invented pid `nyu:brain-and-behavior` with a `url` to the channel search (the build uses `url` when
+present instead of composing a playlist link). 60 course cards and 1,269 per-lecture labels followed
+the same instructions as before (1,198 kept; the drops are promos, retreat clips, immunology, and
+software-administration tutorials inside the hackathon schools). Catalog after the round: 15,504
+videos, 14,889 institutional lectures in 863 collections from 217 institutions.
+
 Rate limits: the player endpoint started answering `LOGIN_REQUIRED` ("confirm you're not a bot") after
 ~1,800 calls with a minimal client context; sending the page's full `INNERTUBE_CONTEXT` (with
 `visitorData`) and slowing to ~4 requests/second avoided it. `browse` never complained.
+
+## Curated shelves (pipeline/shelves.json)
+
+Three shelves are hand-written rather than mined: **originals** (the original films of classic
+experiments and case studies), **demos** (demonstrations that work on the viewer) and **therapy**
+(psychotherapy as it is done). Each item names the people, says what the footage is, gives the paper
+it belongs to (`doi` or `url`), lists alternative copies, and records whose copy the video is
+(`legit`: `official` = the rights holder's, institution's or researcher's own upload; `archive` = a
+library or archive collection). Copies were found with `__videoSearch` in the youtube.com tab and
+`advancedsearch.php` on archive.org, then checked by uploader; unofficial re-uploads were not used,
+and experiments with no authorized copy online (Little Albert, Harlow, Asch, Milgram, Bobo doll, the
+visual cliff, the Strange Situation, Hubel & Wiesel) are kept as `"video": null` so the shelf still
+shows the paper and the note. Internet Archive items in stream-only collections (Stanford's `cst_*`)
+carry `embed: true` and play through `archive.org/embed/`; the rest play the MP4 directly. Every DOI
+was verified against `api.crossref.org/works/<doi>` from the archive.org tab (CORS allows it);
+`doi_verified` records the date. Metadata for shelf videos not otherwise in the catalog comes from
+`raw/youtube/meta_shelf.json` and `meta_therapy.json` (`__ytMeta2`, see above). The build adds those
+videos to the catalog (type `documentary` or `demo`, score 1.0), sets `shelf` and `orig` on every
+shelf video, gives the video a `source` badge when the item has a `status`, and tops the therapy shelf
+up with demonstration videos a labeled course already brought in (title regex over `therapy`-topic
+videos: role-plays, session demonstrations, intake and case-formulation videos; promos, "lecture N"
+titles and talks *about* role-play are excluded). The 1965, 1977 and 1986 Shostrom series ("Three
+Approaches to Psychotherapy": Gloria with Rogers/Perls/Ellis; Kathy with Rogers/Shostrom/Lazarus;
+Richard with Beck/Strupp/Meichenbaum) are all on the Internet Archive in the `educationalfilms`
+collection; the Rogers–Gloria session itself is not there, only on unofficial YouTube uploads, so the
+shelf lists the Perls film with the Ellis session as an alternative.
+
+## Replication status (taxonomy.json → contested_findings, work/replication/)
+
+Each of the 66 contested findings has a `status` — `replicated`, `smaller`, `mixed`, `failed`,
+`overstated`, `misreported`, `myth`, `fraud`, `reversed` (labels in `status_labels`) — and `sources`,
+the replication, meta-analysis or review papers the status rests on, with DOIs verified against
+Crossref (two were wrong on the first pass and corrected: Paap & Greenberg 2013 is
+`10.1016/j.cogpsych.2012.12.002`; Tully's "Pavlov's dogs" is `10.1016/s0960-9822(03)00066-6`).
+Findings that hold up (Stroop, McGurk, the rubber hand, inattentional blindness, split-brain, the
+Asch majority effect, Robbers Cave, Pavlov) are in the list on purpose so that a video presenting
+them gets a reassuring chip rather than nothing. Besides the badges the classifiers assigned, a keyword
+pass over every title and description produced 132 candidates (`work/replication/candidates.jsonl`)
+that Claude judged one by one into `tags.jsonl` (`vid`, `contested`, `role`); the build merges those
+onto videos without a badge. The care page groups findings by status and separates the original
+footage, the videos that present the finding and the pushback.
+
+## "Teach me something I don't know" (site/app.js)
+
+No account: the viewer picks one or more backgrounds (`BACKGROUNDS` maps each — cognitive science,
+neuroscience, clinical, psychiatry, social, developmental, personality, philosophy, machine learning,
+methods, applied, just curious — to the topics they already know) and the picker chooses three videos
+from outside those topics and outside the watch history: a vouched talk (`nrec ≥ 2`), lecture 1 of a
+non-advanced course, and a primary source or demo, with distinct topics and areas. The seed is the
+day plus a shuffle counter, so the picks change daily and on demand; the backgrounds are saved in
+`settings.background` with the other preferences.
 
 ## Lecture tracker (site/app.js)
 
@@ -101,7 +169,7 @@ The claude.ai artifact copy cannot embed players, so it has no tracker; the GitH
   writes both inputs. A lecture with no per-lecture label yet inherits its course's topics.
 - `pipeline/overrides.json` holds manual corrections applied on top of the labels.
 - `pipeline/taxonomy.json` holds the 50 topics, the content-note ids and the contested-findings notes
-  (with sources). Edit the notes there; the site reads them at build time.
+  (with status and verified sources, see below). Edit the notes there; the site reads them at build time.
 
 ## Scoring (build_catalog.py)
 
