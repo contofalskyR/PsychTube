@@ -1,0 +1,263 @@
+[
+ {
+  "pid": "PLuKMerO1zya9aq5oXj7NuHn2BlJN2-aF4",
+  "keep": true,
+  "inst": "Harvard Center on the Developing Child",
+  "kind": "series",
+  "english": true,
+  "confidence": 0.55,
+  "why": "Child development talks series from Harvard research center"
+ },
+ {
+  "pid": "PLuKMerO1zya_9i9ZBzIp4t9nOAFPSjBJT",
+  "keep": true,
+  "inst": "Harvard Center on the Developing Child",
+  "kind": "series",
+  "english": true,
+  "confidence": 0.55,
+  "why": "Early childhood development talks series"
+ },
+ {
+  "pid": "PL34Itxy6FXf0DK2bcMwxvJMIiLWxnRFXR",
+  "keep": true,
+  "inst": "The Institute of Art and Ideas",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.5,
+  "why": "Psychology talks and debates; ideas-festival publisher, not academic"
+ },
+ {
+  "pid": "PL34Itxy6FXf1zgV2Tc_z8Tlw8-S1LOz_7",
+  "keep": true,
+  "inst": "The Institute of Art and Ideas",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.55,
+  "why": "Consciousness talks and debates; ideas-festival publisher"
+ },
+ {
+  "pid": "PLRkgJXWxV42Ye1t7fu837IPhlfc-okSyh",
+  "keep": true,
+  "inst": "Nour Foundation",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.6,
+  "why": "Symposium on language, cognition, and AI"
+ },
+ {
+  "pid": "PLRkgJXWxV42aTfnUjgB4eegFDvzEU1Bgx",
+  "keep": true,
+  "inst": "Nour Foundation",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.5,
+  "why": "Symposium on reason and ethical change of mind"
+ },
+ {
+  "pid": "PLRkgJXWxV42ahi_-2IH8f7QcNjpIu2p9_",
+  "keep": true,
+  "inst": "Nour Foundation",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.65,
+  "why": "Symposium on formation of the self"
+ },
+ {
+  "pid": "PLRkgJXWxV42aiOdt5OgN-grhh0z7enwkV",
+  "keep": true,
+  "inst": "Nour Foundation",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.7,
+  "why": "Symposium on the science of consciousness"
+ },
+ {
+  "pid": "PLRkgJXWxV42YG-vnoYA4mzjOI0ryp0-z1",
+  "keep": true,
+  "inst": "Nour Foundation",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.6,
+  "why": "Symposium on the psychology of awe"
+ },
+ {
+  "pid": "PLRkgJXWxV42ar5tT7YYzKgEw4_suWUpFE",
+  "keep": true,
+  "inst": "Nour Foundation",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.6,
+  "why": "Symposium on consciousness and AI"
+ },
+ {
+  "pid": "PLRkgJXWxV42aulFEdmTje5TEWQ_GC8a7R",
+  "keep": true,
+  "inst": "Nour Foundation",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.55,
+  "why": "Symposium on expanded views of consciousness"
+ },
+ {
+  "pid": "PLRkgJXWxV42YJ3UVZgp97iWbHiRfsXRdc",
+  "keep": true,
+  "inst": "Nour Foundation",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.65,
+  "why": "Symposium on dreaming and the unconscious"
+ },
+ {
+  "pid": "PLRkgJXWxV42Z-3DyBGvpk9GY4ktqZDba2",
+  "keep": true,
+  "inst": "Nour Foundation",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.7,
+  "why": "Symposium on the new science of the unconscious"
+ },
+ {
+  "pid": "PLRkgJXWxV42Yv4N3cl6RW6v7trPdBYnVg",
+  "keep": true,
+  "inst": "Nour Foundation",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.55,
+  "why": "Symposium on moral psychology and human nature"
+ },
+ {
+  "pid": "PLRkgJXWxV42Y55vHXOfvHK2fHmQ5tahEi",
+  "keep": true,
+  "inst": "Nour Foundation",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.65,
+  "why": "Symposium on the science of happiness"
+ },
+ {
+  "pid": "PLRkgJXWxV42aHwQ2M56gx4SbY502Wlwo7",
+  "keep": true,
+  "inst": "Nour Foundation",
+  "kind": "series",
+  "english": true,
+  "confidence": 0.65,
+  "why": "Emerging science of consciousness series"
+ },
+ {
+  "pid": "PLRkgJXWxV42ZAxuNxqCn_OpPMFyl7Ss88",
+  "keep": true,
+  "inst": "Nour Foundation",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.65,
+  "why": "Symposium on the science of mindfulness"
+ },
+ {
+  "pid": "PLRkgJXWxV42aiQibjUuUiKmppTHRzNts_",
+  "keep": true,
+  "inst": "Nour Foundation",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.65,
+  "why": "Symposium on music and the mind"
+ },
+ {
+  "pid": "PLRkgJXWxV42ac5urn_mWSNUfZCH6bBON7",
+  "keep": true,
+  "inst": "Nour Foundation",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.7,
+  "why": "Symposium on the science of memory"
+ },
+ {
+  "pid": "PLRkgJXWxV42ZdepmPmfBfmzmzUBFZJIQ0",
+  "keep": true,
+  "inst": "Nour Foundation",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.65,
+  "why": "Symposium on human consciousness and cognition"
+ },
+ {
+  "pid": "PL39F972FF166640AD",
+  "keep": true,
+  "inst": "Nour Foundation",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.65,
+  "why": "UN symposium on the mind-body problem"
+ },
+ {
+  "pid": "PLKy-B3Qf_RDUks8AMEbeoDhqlJbYMUM8G",
+  "keep": true,
+  "inst": "World Science Festival",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.55,
+  "why": "Panel on animal intelligence and cognition"
+ },
+ {
+  "pid": "PLKy-B3Qf_RDUurqY9QW4FKnUTXGMgIxJN",
+  "keep": true,
+  "inst": "World Science Festival",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.5,
+  "why": "Panel on cognition without brains"
+ },
+ {
+  "pid": "PLKy-B3Qf_RDUPpQUOlTwA19jILETxGvCM",
+  "keep": true,
+  "inst": "World Science Festival",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.5,
+  "why": "Panel on the evolution of risky behavior"
+ },
+ {
+  "pid": "PLKy-B3Qf_RDUQPRrfSSTjC2kYDKH7N5Dp",
+  "keep": true,
+  "inst": "World Science Festival",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.55,
+  "why": "Panel on psychedelics and the mind"
+ },
+ {
+  "pid": "PLKy-B3Qf_RDUqbAZvjWfkCuRe5Gm4kvo-",
+  "keep": true,
+  "inst": "World Science Festival",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.55,
+  "why": "Oliver Sacks tribute programme on mind and brain"
+ },
+ {
+  "pid": "PLKy-B3Qf_RDWySBp3jtsZ7GbIzeZnucod",
+  "keep": true,
+  "inst": "World Science Festival",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.6,
+  "why": "Mind and brain programmes collection, 42 videos"
+ },
+ {
+  "pid": "PLA0DAB9A6ABEB4AEA",
+  "keep": true,
+  "inst": "La Hacienda Treatment Center",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.5,
+  "why": "Addiction neuroscience talks from a treatment centre; format unverified"
+ },
+ {
+  "pid": "PLXF_AC5B9M_5hHdep9rSHdxKMd3Venp0s",
+  "keep": true,
+  "inst": "Psychedelic Science Sweden",
+  "kind": "talks",
+  "english": true,
+  "confidence": 0.6,
+  "why": "Scientific network colloquium on psychedelic psychiatry"
+ }
+]

@@ -455,3 +455,42 @@ second part held back 2.5 s, no errors, scroll kept across the merge.
 thumbs.js). It sets `window.PT_ARTIFACT = true`, which makes app.js use embedded thumbnails, replace
 the player with a "Watch on YouTube" poster, and leave theme control to the host. Routes are plain
 hash names (`#v-<id>`, `#t-<topic>`, `#prefs`) for the same reason.
+
+## Transcripts (pipeline/transcripts.py)
+
+Asked for: the lecture transcripts. Not taken from YouTube. The web caption endpoint answers 400
+("precondition check failed") to programmatic calls, the Data API serves only a channel's *own* caption
+tracks, and pulling other channels' captions by imitating a client is bot access under YouTube's terms —
+the one thing that would discredit the site with the audience it is for. What is taken are the transcripts
+the providers publish themselves, under their own open licences:
+
+- MIT OpenCourseWare: one PDF per lecture, `https://ocw.mit.edu/courses/<course-slug>/<YouTubeId>_transcript.pdf`
+  (CC BY-NC-SA). The slug comes from the playlist title (`MIT 9.13 The Human Brain, Spring 2019` →
+  `9-13-the-human-brain-spring-2019`) and each PDF's existence is checked before it is linked.
+- Open Yale Courses: a transcript tab on every lecture page, `https://oyc.yale.edu/<dept>/<course>/lecture-N`
+  (CC BY-NC-SA); PSYC 110, PSYC 123 and PHIL 181 in the catalog.
+
+`transcripts.py plan` writes the candidate URLs (`work/transcripts/plan.json`), they are checked with HEAD
+requests from a machine that can reach the sites, `transcripts.py apply <checked.json>` writes
+`pipeline/transcripts.json`, and the build puts `tr` on the series (`{p, name, base, n}`) and on each lecture
+(`1` = derive from the base and the video id, otherwise a path under the base). The watch page shows a
+"Transcript" button next to "Open on YouTube"; the course page says how many lectures have one. Lecturers who
+submit a course can attach a caption file through the submission form; that is the third source.
+
+## Round 5 (2026-11-03, evening): the developmental and cognitive-science institutions
+
+Aim: breadth of institutional lectures before polish, aimed at the developmental and cognitive-science
+seniors who would judge the site by whether their field's institutions are in it. 137 channel searches
+(societies: APS, SRCD, Cognitive Development Society, Jean Piaget Society, ICIS, EPS, Society for Mathematical
+Psychology, VSS, Psychonomic Society…; departments and institutes: Harvard, MIT BCS, Stanford, Princeton,
+Yale, Columbia/Zuckerman, NYU, Penn MindCORE, RuCCS, JHU, CMU, Berkeley, UCSD, UCLA, Chicago, Rochester BCS,
+Duke, UNC, UT Austin, Toronto, McGill, UBC, Western, York CVR, Cambridge Zangwill Club, Birkbeck Babylab,
+MRC CBU, Nottingham, Bristol, Sussex, Leiden, Amsterdam, Tel Aviv Sagol, Bar-Ilan, RIKEN CBS, TIFR, NBRC…;
+Nobel Prize, Royal Society, National Academy of Sciences) → 84 new channels; their playlists were enumerated
+(`merge_r5_sweep.py` keeps only psychology-looking playlists from general university channels) alongside
+109 playlist searches by topic and by name (core knowledge, theory of mind, language acquisition,
+numerical cognition, Carey, Spelke, Gopnik, Tomasello, Baillargeon, Kuhl, Gleitman, Werker, Karmiloff-Smith,
+Kanwisher, Tenenbaum, Schulz, Saxe, Xu…). Channels without a playlists tab are offered as uploads
+pseudo-playlists (`UU` + channel id) after a look at what they upload. Then the usual path: assemble →
+triage (`INSTRUCTIONS_triage.md`) → pull → merge → course cards and lecture labels → publisher check for
+personal channels → build.

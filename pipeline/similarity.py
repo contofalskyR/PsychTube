@@ -49,7 +49,7 @@ def tok(s):
 
 def video_text(v, series_by_id, topics):
     sd = series_by_id.get(v.get("series")) if v.get("series") else None
-    parts = [v.get("title", "")] * 3 + [v.get("why", ""), v.get("summary", ""), " ".join(v.get("kw") or [])]
+    parts = [v.get("title", "")] * 3 + [v.get("why", ""), v.get("summary", ""), " ".join(v.get("kw") or []), " ".join(v.get("tkw") or [])]
     parts += [topics.get(t, {}).get("name", "") for t in v.get("topics", [])] * 2
     if sd:
         parts += [sd.get("name", ""), sd.get("lecturer", "")]

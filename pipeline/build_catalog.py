@@ -325,6 +325,12 @@ for _f in sorted(glob.glob(P("raw", "institutional", "submissions", "issue-*.jso
     if _sub.get("pid") and _sub.get("status") == "listed":
         SUBMISSIONS[_sub["pid"]] = _sub
 
+# Official transcripts (pipeline/transcripts.json, written by pipeline/transcripts.py): {pid: {"p": "ocw"|"oyc", "name": ..., "base": url,
+# "have": {video_id: 1 | "path"}}}. YouTube's own captions are not fetched (no sanctioned route for other channels' captions);
+# MIT OpenCourseWare and Open Yale Courses publish transcripts themselves, and those are linked per lecture.
+TRANSCRIPTS = json.load(open(P("pipeline", "transcripts.json"), encoding="utf-8")) if os.path.exists(P("pipeline", "transcripts.json")) else {}
+TKW = json.load(open(P("work", "transcripts", "tkw.json"), encoding="utf-8")) if os.path.exists(P("work", "transcripts", "tkw.json")) else {}   # pipeline/site_transcripts.py
+
 inst_course = {}       # sid -> course record (series entry under construction)
 inst_member = {}       # vid -> (sid, idx)
 inst_meta = {}         # vid -> fallback metadata built from the playlist row
@@ -630,6 +636,12 @@ for vid, rec in videos.items():
             entry["approx"] = True
         if m.get("p"):
             entry["p"] = m["p"]            # video provider when not YouTube ("panopto", "archive"); id is then the provider's id
+        tr = TRANSCRIPTS.get(course["pid"])
+        if tr and vid in tr.get("have", {}):
+            entry["tr"] = tr["have"][vid]  # official transcript: 1 = derive from the series' base + video id, else the path under the base
+            stats["transcripts"] += 1
+            if TKW.get(vid):
+                entry["tkw"] = TKW[vid][:12]   # the lecture's distinctive terms from its transcript: searched and used for similarity
             entry["host"] = m.get("host")
             if m.get("f"):
                 entry["f"] = m["f"]
@@ -787,6 +799,8 @@ for sid, course in inst_course.items():
                    "vouched": sum(1 for v in vids if v["nrec"]), "pop": pop, "score": round(sum(v["score"] for v in vids), 1),
                    "url": course["url"], "ch": course["ch"], "chid": course["chid"], "provider": course["provider"], "readings": course.get("readings"),
                    "materials": course.get("materials"), "submitted": course.get("submitted"),
+                   "tr": ({"p": TRANSCRIPTS[course["pid"]]["p"], "name": TRANSCRIPTS[course["pid"]]["name"], "base": TRANSCRIPTS[course["pid"]]["base"],
+                           "n": sum(1 for v in vids if v.get("tr"))} if course["pid"] in TRANSCRIPTS and any(v.get("tr") for v in vids) else None),
                    "hours": round(sum(v["len"] or 0 for v in vids) / 3600, 1)})
     for v in vids:
         v["series"] = sid

@@ -140,6 +140,12 @@
     if (v && v.p === "archive") return `https://archive.org/details/${id}${t ? "?start=" + t : ""}`;
     return `https://www.youtube.com/watch?v=${id}${t ? "&t=" + t + "s" : ""}`;
   };
+  // official transcript published by the course's own provider (MIT OpenCourseWare PDFs, Open Yale Courses pages); nothing scraped from YouTube
+  const transcriptUrl = (v, sd) => {
+    if (!v || !v.tr || !sd || !sd.tr) return null;
+    if (v.tr === 1) return sd.tr.p === "ocw" ? `${sd.tr.base}${v.id}_transcript.pdf` : sd.tr.base;
+    return sd.tr.base + v.tr;
+  };
   const embedUrl = (v, start, autoplay) => v.p === "panopto"
     ? `https://${v.host}/Panopto/Pages/Embed.aspx?id=${v.id}&autoplay=${autoplay ? "true" : "false"}&offerviewer=true&showtitle=false&showbrand=false&captions=false&interactivity=all${start ? "&start=" + start : ""}`
     : v.p === "archive"
@@ -362,7 +368,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
       v,
       title: words(v.title), ch: words([v.ch, v.inst ? v.inst.n : "", sd && sd.inst ? sd.name + " " + (sd.lecturer || "") + " " + (sd.short || "") : ""].join(" ")),
       topicText: words(v.topics.map(t => topics.get(t) ? topics.get(t).name + " " + topics.get(t).desc : t).join(" ")),
-      text: words([v.why, v.summary, v.quote, (v.kw || []).join(" "), v.communities.join(" "), ...v.vouches.map(x => x.q)].join(" ")),
+      text: words([v.why, v.summary, v.quote, (v.kw || []).join(" "), (v.tkw || []).join(" "), v.communities.join(" "), ...v.vouches.map(x => x.q)].join(" ")),
     };
   });
   function search(q, limit) {
@@ -649,7 +655,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
       <h1>${esc(sd.name)}</h1>
       ${sd.inst ? `<p class="lede">${sd.note ? esc(sd.note) + " " : ""}<span class="muted">${meta.map(esc).join(" · ")}.</span>${sd.vouched ? ` <span class="muted">${sd.vouched === vids.length ? "Every" : sd.vouched} ${sd.vouched === 1 ? unit + " was" : unit + "s were"} also vouched for by the communities.</span>` : ""}${missing ? ` <span class="muted">${missing}</span>` : ""}</p>${publisherLine ? `<p class="shelf-note">${publisherLine}</p>` : ""}${submittedLine}` : `<p class="lede">${plural(vids.length, "lecture")} people recommended from this series.</p>`}
       ${sp.started ? `<div class="course-progress"><div class="bar" role="progressbar" aria-label="Course progress" aria-valuenow="${sp.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${sp.pct}%"></i></div><span>${sp.pct >= 100 ? `Finished — all ${sp.n} ${unit}s` : `${sp.done} of ${sp.n} ${unit}s watched · ${sp.pct}%${sp.leftSec ? ` · about ${fmtLen(sp.leftSec)} left` : ""}`}</span></div>` : ""}
-      <div class="toolbar"><a class="btn primary" href="#v-${next.id}">${sp.pct >= 100 ? "Watch again" : sp.started ? "Continue" : "Start"}: ${esc(next.title.slice(0, 60))}${nextAt ? ` <span class="faint">from ${fmtDur(nextAt)}</span>` : ""}</a>${(sd.materials || []).map(mt => `<a class="btn quiet" href="${esc(mt.url)}" target="_blank" rel="noopener">${esc(mt.label)} ↗</a>`).join("")}${sd.readings && !(sd.materials || []).some(mt => mt.url === sd.readings) ? `<a class="btn quiet" href="${esc(sd.readings)}" target="_blank" rel="noopener">Syllabus &amp; readings ↗</a>` : ""}${sd.url ? `<a class="btn quiet" href="${esc(sd.url)}" target="_blank" rel="noopener">${sd.provider === "panopto" ? "Course on Panopto" : sd.provider === "archive" ? "Course on the Internet Archive" : "Playlist on YouTube"} ↗</a>` : ""}${sd.chid || next.chid ? `<a class="btn quiet" href="https://www.youtube.com/channel/${esc(sd.chid || next.chid)}" target="_blank" rel="noopener">${esc(sd.ch || next.ch || "Channel")} ↗</a>` : ""}${sd.topics.map(t => `<a class="chip" href="#t-${t}">${esc(topics.get(t) ? topics.get(t).name : t)}</a>`).join("")}</div></div>
+      <div class="toolbar"><a class="btn primary" href="#v-${next.id}">${sp.pct >= 100 ? "Watch again" : sp.started ? "Continue" : "Start"}: ${esc(next.title.slice(0, 60))}${nextAt ? ` <span class="faint">from ${fmtDur(nextAt)}</span>` : ""}</a>${(sd.materials || []).map(mt => `<a class="btn quiet" href="${esc(mt.url)}" target="_blank" rel="noopener">${esc(mt.label)} ↗</a>`).join("")}${sd.readings && !(sd.materials || []).some(mt => mt.url === sd.readings) ? `<a class="btn quiet" href="${esc(sd.readings)}" target="_blank" rel="noopener">Syllabus &amp; readings ↗</a>` : ""}${sd.tr ? `<span class="chip" title="${esc(sd.tr.name)} publishes transcripts; each lecture page links its own.">${sd.tr.n === vids.length ? "Transcripts for every lecture" : `Transcripts for ${sd.tr.n} of ${vids.length}`}</span>` : ""}${sd.url ? `<a class="btn quiet" href="${esc(sd.url)}" target="_blank" rel="noopener">${sd.provider === "panopto" ? "Course on Panopto" : sd.provider === "archive" ? "Course on the Internet Archive" : "Playlist on YouTube"} ↗</a>` : ""}${sd.chid || next.chid ? `<a class="btn quiet" href="https://www.youtube.com/channel/${esc(sd.chid || next.chid)}" target="_blank" rel="noopener">${esc(sd.ch || next.ch || "Channel")} ↗</a>` : ""}${sd.topics.map(t => `<a class="chip" href="#t-${t}">${esc(topics.get(t) ? topics.get(t).name : t)}</a>`).join("")}</div></div>
       ${stillLoading}
       ${pathwaysFor(id).map(({ pw, i }) => { const prev = i > 0 ? stepTarget(pw.steps[i - 1]) : null, nxt = i + 1 < pw.steps.length ? stepTarget(pw.steps[i + 1]) : null; return `<p class="pathline">Step ${i + 1} of ${pw.steps.length} in the <a href="#pathways?p=${esc(pw.id)}">${esc(pw.name)}</a> pathway${prev ? ` · before it: <a href="${prev.href}">${esc(prev.name)}</a>` : ""}${nxt ? ` · after it: <a href="${nxt.href}">${esc(nxt.name)}</a>` : ""}</p>`; }).join("")}
       ${(sd.sim || []).length ? `<section class="section"><div class="section-head"><div><h2>Courses like this</h2><div class="sub">Matched on what the lectures are about, across institutions.</div></div></div><div class="row">${sd.sim.map(x => series.get(x)).filter(Boolean).slice(0, 6).map(x => seriesCard(x)).join("")}</div></section>` : ""}
@@ -823,6 +829,9 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
     const unlistedNote = v.unl ? ` <span class="muted">Unlisted on YouTube: it is reachable through the playlist, not from the channel page.</span>` : "";
     const looseBox = v.inst && v.inst.loose && !sameSeries ? `<div class="box inst"><h2>Published ${v.inst.n === LECTURER_GROUP ? "on" : "by"} ${esc(pubName)}</h2><p>A standalone ${v.type === "lecture" ? "lecture" : "talk"} on the institution's own channel, outside any course or series; put online by ${esc(v.ch || "")}. ${v.nrec ? "The communities below vouched for it on their own, too." : "It's here on the institution's authority, not a forum's: no community has vouched for this particular video."} <b>Not a course and not peer-reviewed:</b> a speaker's own account of their subject.${unverifiedNote}${unlistedNote}</p>${v.chid ? `<p class="faint" style="margin:0"><a href="https://www.youtube.com/channel/${esc(v.chid)}" target="_blank" rel="noopener" style="text-decoration:underline">${esc(v.ch || "Channel")} ↗</a></p>` : ""}</div>` : "";
     const instBox = v.inst && sameSeries ? `<div class="box inst"><h2>Published ${v.inst.n === LECTURER_GROUP ? "on" : "by"} ${esc(pubName)}</h2><p>${esc(KIND_WORD[sameSeries.kind] === "talk" ? "Talk" : "Lecture")} ${v.inst.i} of ${v.inst.of} in <a href="#s-${sameSeries.id}">${esc(sameSeries.name)}</a>${sameSeries.lecturer ? `, taught by ${esc(sameSeries.lecturer)}${sameSeries.affil && v.inst.n === LECTURER_GROUP ? ` (${esc(sameSeries.affil)}${sameSeries.verified ? "" : ", by the channel's own account"})` : ""}` : ""}${sameSeries.year ? ` (${sameSeries.year})` : ""}; put online by ${esc(v.ch || sameSeries.ch || "")}. ${v.nrec ? "The communities below vouched for this lecture on its own, too." : v.inst.n === LECTURER_GROUP ? "It's here because the lecturer published the whole course, not because a forum linked it." : "It's here on the institution's authority, not a forum's: no community has vouched for this particular lecture."}${sameSeries.kind === "talks" ? " <b>A recorded talk, not a course:</b> a speaker's own account of their work, as presented at a seminar, grand rounds or conference — not peer-reviewed." : ""}${unverifiedNote}${unlistedNote}${sameSeries.note ? ` <span class="muted">${esc(sameSeries.note)}</span>` : ""}</p><p class="faint" style="margin:0"><a href="#s-${sameSeries.id}" style="text-decoration:underline">${sameSeries.kind === "talks" ? "Whole collection" : "Whole course"}</a>${nextInSeries ? ` · <a href="#v-${nextInSeries}" style="text-decoration:underline">${sameSeries.kind === "talks" ? "Next talk" : "Next lecture"}</a>` : ""}${sameSeries.readings ? ` · <a href="${esc(sameSeries.readings)}" target="_blank" rel="noopener" style="text-decoration:underline">Syllabus &amp; readings ↗</a>` : ""}${sameSeries.url ? ` · <a href="${esc(sameSeries.url)}" target="_blank" rel="noopener" style="text-decoration:underline">${sameSeries.provider === "panopto" ? "Course on Panopto" : sameSeries.provider === "archive" ? "Course on the Internet Archive" : "Playlist on YouTube"} ↗</a>` : ""}</p></div>` : "";
+    // the provider's own transcript (MIT OpenCourseWare PDF, Open Yale Courses page): linked always, readable in place on the site
+    const trUrl = transcriptUrl(v, sameSeries);
+    const transcriptBox = trUrl ? `<div class="box transcript" id="trBox"><h2>Transcript</h2><p class="muted" style="margin-top:0">Published by ${esc(sameSeries.tr.name)} under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA</a>: <a href="${esc(trUrl)}" target="_blank" rel="noopener">${sameSeries.tr.p === "ocw" ? "the transcript PDF" : "the lecture page with its transcript"} ↗</a>.${v.tkw && v.tkw.length ? ` <span class="faint">Words this lecture leans on: ${v.tkw.slice(0, 8).map(esc).join(", ")}.</span>` : ""}</p>${ART ? "" : `<div class="tr-tools"><button class="btn quiet" id="trShow">Read it here</button><input id="trFind" type="search" placeholder="Find in the transcript" hidden aria-label="Find in the transcript"></div><div id="trText" class="tr-text" hidden></div>`}</div>` : "";
     const groupsByComm = new Map();
     for (const vo of v.vouches) { const arr = groupsByComm.get(vo.c) || []; arr.push(vo); groupsByComm.set(vo.c, arr); }
     const vouchHtml = [...groupsByComm.entries()].map(([comm, arr]) => arr.map((vo, i) => `<li>
@@ -839,13 +848,14 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
         <button class="btn" id="likeBtn" aria-pressed="${state.liked.has(id)}">♥ ${state.liked.has(id) ? "Liked" : "Like"}</button>
         <button class="btn" id="laterBtn" aria-pressed="${state.later.has(id)}">${state.later.has(id) ? "In watch later" : "Watch later"}</button>
         ${LINKOUT ? "" : `<a class="btn quiet" href="${watchUrl(v, start)}" target="_blank" rel="noopener">Open on ${providerOf(v)} ↗</a>`}
+        ${transcriptUrl(v, sameSeries) ? `<a class="btn quiet" href="${esc(transcriptUrl(v, sameSeries))}" target="_blank" rel="noopener" title="The official transcript published by ${esc(sameSeries.tr.name)}">Transcript${sameSeries.tr.p === "ocw" ? " (PDF)" : ""} ↗</a>` : ""}
         <button class="btn quiet" id="copyBtn">${LINKOUT ? `Copy ${providerOf(v)} link` : "Copy link"}</button>
         <button class="btn quiet" id="doneBtn" aria-pressed="${isDone(id)}">${isDone(id) ? "✓ Watched" : "Mark watched"}</button>
         ${nextInSeries ? `<a class="btn quiet" href="#v-${nextInSeries}">Next lecture →</a>` : ""}
       </div>
       ${origBox}
       ${c ? `<div class="box ${v.badge.role === "critique" ? "critique" : GOOD_STATUS.has(c.status) ? "good" : "care"}"><h2>${v.badge.role === "critique" ? "This video pushes back on: " : v.badge.role === "source" ? "What became of it: " : GOOD_STATUS.has(c.status) ? "Holds up: " : "Handle with care: "}${esc(c.name)} ${statusChip(v.badge.id)}</h2><p>${esc(c.note)}</p>${c.sources && c.sources.length ? `<ul class="papers">${c.sources.map(paperLine).join("")}</ul>` : `<p class="faint">${esc(c.source)}.</p>`}<p class="faint" style="margin:0"><a href="#care" style="text-decoration:underline">All replication notes</a></p></div>` : ""}
-      ${instBox}${looseBox}
+      ${instBox}${looseBox}${transcriptBox}
       ${v.nmention ? `<div class="box"><h2>${v.nrec ? "Why people recommend it" : "Where it was mentioned"}</h2>${v.why ? `<p class="why">${esc(v.why)}</p>` : ""}${v.summary ? `<p class="muted">${v.why ? "" : "From the uploader's description: "}${esc(v.summary)}</p>` : ""}${v.quote ? `<p class="quote">“${esc(v.quote)}”</p>` : ""}
         <p class="faint" style="margin:0">${plural(v.nrec, "distinct recommender")} across ${plural(v.communities.length, "community")}; ${plural(v.nmention, "mention")} in total (${srcSummary}), ${v.first === v.last ? v.first : `${v.first}–${v.last}`}.</p></div>` : v.summary ? `<div class="box"><h2>About this lecture</h2><p class="muted">${esc(v.summary)}</p></div>` : ""}
       ${v.clips && v.clips.length ? `<div class="box"><h2>Moments people point to</h2><div class="clips">${v.clips.map(t => { const vo = v.vouches.find(x => x.t === t); return LINKOUT ? `<a class="btn quiet" style="font-size:13px" href="${watchUrl(v, t)}" target="_blank" rel="noopener"><b style="color:var(--amber)">${fmtDur(t)}</b>${vo ? ` <span class="muted">${esc(vo.q.slice(0, 100))}</span>` : ""}</a>` : `<button data-seek="${t}"><b>${fmtDur(t)}</b>${vo ? ` ${esc(vo.q.slice(0, 100))}` : ""}</button>`; }).join("")}</div></div>` : ""}
@@ -865,7 +875,49 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
     main.querySelectorAll("[data-seek]").forEach(b => b.onclick = () => { const t = +b.dataset.seek; if (player) player.seek(t); else location.hash = `#v-${id}?t=${t}`; });
     document.getElementById("doneBtn").onclick = () => { const b = document.getElementById("doneBtn"); markDone(id, !isDone(id)); b.setAttribute("aria-pressed", isDone(id)); b.textContent = isDone(id) ? "✓ Watched" : "Mark watched"; toast(isDone(id) ? "Marked watched" : "Marked unwatched"); };
     if (!LINKOUT) mountPlayer(v, start, () => showUpNext(v, sameSeries, nextInSeries));
+    if (trUrl && !ART) wireTranscript(v, sameSeries);
     window.scrollTo(0, 0);
+  }
+  // transcript reader: site/data/tr/<playlist>.json holds the provider's transcript as paragraphs; fetched the first time a lecture of
+  // that course asks for it. The single-file copy (file://) cannot fetch, so it keeps the link to the provider's own copy.
+  const trCache = new Map();
+  function wireTranscript(v, sd) {
+    const show = document.getElementById("trShow"), find = document.getElementById("trFind"), box = document.getElementById("trText");
+    if (!show || !box) return;
+    const pid = ((sd.url || "").match(/list=([\w-]+)/) || [])[1];
+    let paras = null;
+    const render = q => {
+      const needle = (q || "").trim().toLowerCase();
+      const rx = needle ? new RegExp("(" + needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "ig") : null;
+      const shown = needle ? paras.filter(p => p.toLowerCase().includes(needle)) : paras;
+      box.innerHTML = (needle ? `<p class="faint">${shown.length ? `${plural(shown.length, "passage")} mention “${esc(q.trim())}”` : `Nothing in this transcript says “${esc(q.trim())}”`}.</p>` : "")
+        + shown.map(p => `<p>${rx ? esc(p).replace(rx, "<mark>$1</mark>") : esc(p)}</p>`).join("");
+    };
+    show.onclick = async () => {
+      if (!paras) {
+        show.disabled = true; show.textContent = "Loading…";
+        try {
+          if (!trCache.has(pid)) {
+            const r = await fetch(`data/tr/${pid}.json`, { cache: "force-cache" });
+            if (!r.ok) throw new Error(r.status);
+            trCache.set(pid, await r.json());
+          }
+          const rec = trCache.get(pid)[v.id];
+          paras = rec ? rec.p : [];
+        } catch (e) {
+          show.disabled = false; show.textContent = "Read it here";
+          box.hidden = false; box.innerHTML = `<p class="faint">The transcript text is on the website copy of PsychTube; here, open the provider's own copy with the link above.</p>`;
+          return;
+        }
+        show.disabled = false;
+      }
+      const open = box.hidden;
+      box.hidden = !open; find.hidden = !open;
+      show.textContent = open ? "Hide the transcript" : "Read it here";
+      show.setAttribute("aria-expanded", open);
+      if (open) { render(find.value); }
+    };
+    find.oninput = () => { if (paras) render(find.value); };
   }
   const stanceLabel = k => ({ strong_rec: "strong rec", rec: "recommends", reference: "cites", critical: "critical", joke: "joke", comment: "comment", post: "post", question: "question", answer: "answer" }[k] || k);
 
