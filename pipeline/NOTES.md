@@ -507,3 +507,15 @@ Rosch's Buddhist Psychology, Psychology of Dreams, Drugs and the Brain, and earl
 fall 2013, Philosophy 3 spring 2010; 130 lectures), each lecture `<item>_<track>` with `item` carrying the archive
 identifier for the player, and eight dated stray lecture items joined their existing courses. `work/archive/want.json`
 lists what the `files` mode fetches; results live on the `archive-data` branch.
+
+## YouTube Data API route (pipeline/yt_api.py, .github/workflows/youtube-api.yml)
+
+The browser-tab pulls depend on the owner's Mac being awake with the desktop app open; the Data API is the route Google
+provides for this and runs from GitHub Actions with a repository secret `YT_API_KEY` (Google Cloud console → APIs &
+Services → enable YouTube Data API v3 → Credentials → API key; free, 10,000 units a day, a playlist/lecture page = 1 unit,
+a search = 100). Modes: `playlists` (channel ids → their playlists and uploads playlist), `pull` (playlist ids → the
+runner's pulled format plus `raw/youtube/meta_api_<date>.json` with durations, views, descriptions, tags; `merge_pulled.py`
+and the labelers work unchanged), `videos`, and `refresh` (re-list every course playlist, ~400 units for the whole catalog:
+new lectures, gone lectures, retitles, gone playlists → `apply_refresh.py` marks them in courses.json; the build leaves
+`gone` lectures and courses out). Results come back on the `yt-data` branch. Searches stay rationed: the channel and topic
+searches of a sweep still happen in the browser tab, the enumeration and pulling move to the API.

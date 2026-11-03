@@ -331,6 +331,7 @@ for _f in sorted(glob.glob(P("raw", "institutional", "submissions", "issue-*.jso
 TRANSCRIPTS = json.load(open(P("pipeline", "transcripts.json"), encoding="utf-8")) if os.path.exists(P("pipeline", "transcripts.json")) else {}
 TKW = json.load(open(P("work", "transcripts", "tkw.json"), encoding="utf-8")) if os.path.exists(P("work", "transcripts", "tkw.json")) else {}   # pipeline/site_transcripts.py
 
+gone_counts = collections.Counter()   # lectures and playlists a Data API refresh found removed (folded into stats below)
 inst_course = {}       # sid -> course record (series entry under construction)
 inst_member = {}       # vid -> (sid, idx)
 inst_meta = {}         # vid -> fallback metadata built from the playlist row
@@ -340,6 +341,9 @@ for c in inst_courses:
     cl = course_labels.get(c["pid"]) or {}
     if cl and not cl.get("keep", True):
         continue
+    if c.get("gone"):                           # the playlist is gone or private since a refresh (apply_refresh.py)
+        gone_counts["courses_gone"] += 1
+        continue
     name = clean(cl.get("name") or c["title"], 120)
     if name_counts[name] > 1 and cl.get("year"):
         name = f"{name} ({cl['year']})"      # e.g. the 2007 and 2011 runs of Minsky's Society of Mind
@@ -347,7 +351,8 @@ for c in inst_courses:
     while sid in used_sids:
         sid += "-" + c["pid"][-3:].lower()
     used_sids.add(sid)
-    items = [it for it in c["items"] if it.get("title") not in ("[Private video]", "[Deleted video]")]
+    items = [it for it in c["items"] if it.get("title") not in ("[Private video]", "[Deleted video]") and not it.get("gone")]
+    gone_counts["lectures_gone"] += sum(1 for it in c["items"] if it.get("gone"))
     own = {k for k, it in enumerate(items) if own_item(it, c)}
     partial = bool(items) and len(own) / len(items) < 0.5
     if partial and len(own) < 4:
@@ -460,7 +465,7 @@ def score_video(vouches):
 
 catalog = []
 dropped_lang = []
-stats = collections.Counter()
+stats = collections.Counter(gone_counts)
 stats["inst_crosschannel_not_credited"] = cross_n
 stats["inst_watchlists_dropped"] = watchlists
 stats["inst_partial_playlists"] = partials

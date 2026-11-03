@@ -13,6 +13,10 @@ googleapis.com; the build machine cannot). Quota: 10,000 units a day; a playlist
                                                                          raw/youtube/meta_api_<date>.json (durations, views, descriptions,
                                                                          tags, category) so merge_pulled.py and the labelers work unchanged
     python3 pipeline/yt_api.py videos work/yt_api/vids.json              video ids -> raw/youtube/meta_api_<date>.json
+    python3 pipeline/yt_api.py refresh                                   every YouTube playlist in raw/institutional/courses.json is
+                                                                         re-listed; work/yt_api/refresh_<date>.json records, per course,
+                                                                         the videos that are new, gone, or retitled, and the playlists that
+                                                                         are gone or private (apply with pipeline/apply_refresh.py)
 """
 import datetime
 import json
@@ -163,9 +167,47 @@ def videos_cmd(vids_path):
     print(f"{len(meta)} videos -> {meta_path}; {UNITS['n']} units")
 
 
+def refresh():
+    """Re-list every YouTube course playlist (1 unit per 50 lectures: ~400 units for the whole catalog) and record the differences."""
+    courses = json.load(open(P("raw", "institutional", "courses.json"), encoding="utf-8"))["courses"]
+    today = datetime.date.today().isoformat()
+    out_path = P("work", "yt_api", f"refresh_{today}.json")
+    os.makedirs(P("work", "yt_api"), exist_ok=True)
+    out = json.load(open(out_path, encoding="utf-8")) if os.path.exists(out_path) else {"date": today, "courses": {}, "gone_playlists": {}}
+    for c in courses:
+        pid = c["pid"]
+        if c.get("provider") or pid in out["courses"] or pid in out["gone_playlists"]:
+            continue
+        head = (call("playlists", part="snippet,contentDetails,status", id=pid) or {}).get("items") or []
+        if not head:
+            out["gone_playlists"][pid] = "not found or private"
+            json.dump(out, open(out_path, "w", encoding="utf-8"), ensure_ascii=False)
+            print(f"{pid} GONE  {c['title'][:60]}", flush=True)
+            continue
+        now = {}
+        for k, it in enumerate(paged("playlistItems", part="snippet", playlistId=pid, maxResults=50), 1):
+            sn = it["snippet"]
+            vid = sn.get("resourceId", {}).get("videoId")
+            if vid and sn["title"] not in ("Private video", "Deleted video"):
+                now[vid] = {"title": sn["title"], "idx": k, "ch": sn.get("videoOwnerChannelTitle") or "", "chid": sn.get("videoOwnerChannelId") or ""}
+        before = {it["id"]: it for it in c["items"]}
+        new = [dict(id=v, **now[v]) for v in now if v not in before]
+        gone = [v for v in before if v not in now]
+        retitled = [{"id": v, "was": before[v]["title"], "now": now[v]["title"]} for v in now if v in before and before[v].get("title") != now[v]["title"]]
+        out["courses"][pid] = {"title": head[0]["snippet"]["title"], "count": head[0]["contentDetails"]["itemCount"], "new": new, "gone": gone, "retitled": retitled}
+        json.dump(out, open(out_path, "w", encoding="utf-8"), ensure_ascii=False)
+        if new or gone:
+            print(f"{pid} +{len(new)} -{len(gone)}  {c['title'][:60]}  ({UNITS['n']} units)", flush=True)
+    n_new = sum(len(x["new"]) for x in out["courses"].values()); n_gone = sum(len(x["gone"]) for x in out["courses"].values())
+    print(f"{len(out['courses'])} playlists re-listed: {n_new} new lectures, {n_gone} gone, {len(out['gone_playlists'])} playlists gone; {UNITS['n']} units -> {out_path}")
+
+
 if __name__ == "__main__":
     if not KEY:
         sys.exit("YT_API_KEY is not set")
+    if len(sys.argv) > 1 and sys.argv[1] == "refresh":
+        refresh()
+        sys.exit()
     if len(sys.argv) > 2 and sys.argv[1] == "playlists":
         playlists(sys.argv[2])
     elif len(sys.argv) > 2 and sys.argv[1] == "pull":
