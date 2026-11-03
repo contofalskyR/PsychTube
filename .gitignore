@@ -11,3 +11,7 @@ work/sim/*.flag
 # fetched transcript text (large; the workflow artifact holds it, site/data/tr/ carries what the site serves)
 work/transcripts/text/
 work/transcripts/oyc_sample.html
+
+# Internet Archive sweep results live on the archive-data branch (large); only want.json is versioned here
+work/archive/items_*.json
+work/archive/files.json

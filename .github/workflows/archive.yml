@@ -1,0 +1,38 @@
+name: Internet Archive sweep
+# Lists an Internet Archive lecture collection (UC Berkeley webcasts) or fetches file metadata for selected items
+# (pipeline/archive_sweep.py), and pushes the result to the `archive-data` branch for the build machine, which cannot
+# reach archive.org. Run by hand.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "list (every item in the collections) or files (metadata for work/archive/want.json)"
+        required: true
+        default: "list"
+permissions:
+  contents: write
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bring the previous results along
+        run: |
+          git fetch origin archive-data:archive-data 2>/dev/null && git checkout archive-data -- work/archive || true
+          git reset -q || true
+          ls -la work/archive || true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: |
+          if [ "${{ inputs.mode }}" = "files" ]; then python3 pipeline/archive_sweep.py files work/archive/want.json; else python3 pipeline/archive_sweep.py list; fi
+      - name: Push results to the archive-data branch
+        run: |
+          git config user.name "archive workflow"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout --orphan archive-data-new
+          git rm -rfq --cached .
+          git add -f work/archive/
+          git commit -qm "Archive sweep (${{ inputs.mode }}) $(date -u +%Y-%m-%dT%H:%MZ) from ${GITHUB_SHA::7}"
+          git push -f origin archive-data-new:archive-data
