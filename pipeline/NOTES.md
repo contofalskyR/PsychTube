@@ -91,9 +91,18 @@ Rate limits: the player endpoint started answering `LOGIN_REQUIRED` ("confirm yo
 
 ## Curated shelves (pipeline/shelves.json)
 
-Three shelves are hand-written rather than mined: **originals** (the original films of classic
-experiments and case studies), **demos** (demonstrations that work on the viewer) and **therapy**
-(psychotherapy as it is done). Each item names the people, says what the footage is, gives the paper
+Four shelves are hand-written rather than mined: **originals** (the original films of classic
+experiments and case studies), **demos** (demonstrations that work on the viewer), **therapy**
+(psychotherapy as it is done) and **cases** (clinical neuropsychology's textbook patients on film:
+29 items found with 62 video searches on youtube.com — aphasias, neglect, prosopagnosia, blindsight,
+agnosia, alien hand, phantom limb, DBS, locked-in syndrome, hemispherectomy, PPA, Gage — keeping only
+hospitals', labs', charities' and broadcasters' own uploads plus two Internet Archive films: the VA's
+c. 1955 *Testing and Individual Therapy for the Aphasic Patient* and NET's 1967 *Aphasia: The Road
+Back*; the classic teaching clips that exist only as re-uploads of documentaries — cogmonaut, the
+Scientific American Frontiers excerpts, the NOVA Genie film — were left out, Genie and LM are listed
+with their papers and no video). The same searches surfaced University College Dublin's bedside
+neurology series (37 loose videos, "Neurology - Topic N"), which went in as the pseudo-playlist
+`ucd:clinical-neurology` the way NYU's course did. Each item names the people, says what the footage is, gives the paper
 it belongs to (`doi` or `url`), lists alternative copies, and records whose copy the video is
 (`legit`: `official` = the rights holder's, institution's or researcher's own upload; `archive` = a
 library or archive collection). Copies were found with `__videoSearch` in the youtube.com tab and
@@ -104,7 +113,7 @@ shows the paper and the note. Internet Archive items in stream-only collections 
 carry `embed: true` and play through `archive.org/embed/`; the rest play the MP4 directly. Every DOI
 was verified against `api.crossref.org/works/<doi>` from the archive.org tab (CORS allows it);
 `doi_verified` records the date. Metadata for shelf videos not otherwise in the catalog comes from
-`raw/youtube/meta_shelf.json` and `meta_therapy.json` (`__ytMeta2`, see above). The build adds those
+`raw/youtube/meta_shelf.json`, `meta_therapy.json` and `meta_cases.json` (`__ytMeta2`, see above). The build adds those
 videos to the catalog (type `documentary` or `demo`, score 1.0), sets `shelf` and `orig` on every
 shelf video, gives the video a `source` badge when the item has a `status`, and tops the therapy shelf
 up with demonstration videos a labeled course already brought in (title regex over `therapy`-topic
@@ -114,6 +123,14 @@ Approaches to Psychotherapy": Gloria with Rogers/Perls/Ellis; Kathy with Rogers/
 Richard with Beck/Strupp/Meichenbaum) are all on the Internet Archive in the `educationalfilms`
 collection; the Rogers–Gloria session itself is not there, only on unofficial YouTube uploads, so the
 shelf lists the Perls film with the Ellis session as an alternative.
+
+**NIH VideoCast (investigated, not integrated).** The 2026 site is a Next.js app over
+`/api/events/past-events` (one year of events, 489 in November 2026, categories including
+"Neuroscience" and "BSSR - Behavioral and Social Sciences") and `/api/events/<request_id>`, whose
+`video_url` is a Vbrick Rev embed with a short-lived JWT (`nihcit.rev.vbrick.com/embed?id=…&jwt_token=…`).
+There is no stable embed or MP4 to point a third-party player at, and the archive window is a year,
+so the lectures cannot be carried the way YouTube, Panopto and Internet Archive items are. If that
+changes, the hook is a `p: "nih"` provider that links out to `videocast.nih.gov/watch=<id>`.
 
 ## Replication status (taxonomy.json → contested_findings, work/replication/)
 

@@ -131,9 +131,9 @@
     if (!n && v.orig) return `<div class="vouch"><span class="pub">${SHELF_LABEL[v.orig.shelf] || "Primary source"}</span><span class="faint">${esc((v.orig.uploader || "").split(" (")[0].slice(0, 40))}${v.orig.year ? ` · ${v.orig.year}` : ""}</span></div>`;
     return `<div class="vouch"><span class="n">${n}</span>${n === 1 ? "vouch" : "vouches"} ${communityChips(v, max)}${instChip(v)}</div>`;
   }
-  const SHELF_LABEL = { originals: "Primary source", demos: "Demo", therapy: "Therapy demo" };
-const SHELF_HEAD = { originals: "Primary source", demos: "Try it yourself", therapy: "Therapy in practice" };
-const SHELF_SUB = { originals: "The original films of the classic experiments, from the archives that hold them, each with its paper.", demos: "Experiments that work on you, from the researchers' own channels, each with its paper.", therapy: "Full sessions, role-plays and simulated interviews from training institutes and university programs: therapy as it is done, not lectures about it." };
+  const SHELF_LABEL = { originals: "Primary source", demos: "Demo", therapy: "Therapy demo", cases: "Clinical case" };
+const SHELF_HEAD = { originals: "Primary source", demos: "Try it yourself", therapy: "Therapy in practice", cases: "Clinical case on film" };
+const SHELF_SUB = { originals: "The original films of the classic experiments, from the archives that hold them, each with its paper.", demos: "Experiments that work on you, from the researchers' own channels, each with its paper.", therapy: "Full sessions, role-plays and simulated interviews from training institutes and university programs: therapy as it is done, not lectures about it.", cases: "Neuropsychology's textbook patients as they present: aphasia, neglect, face blindness, blindsight, phantom limbs — from the hospitals', labs' and archives' own copies, each with its paper." };
 const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "Smaller than claimed", mixed: "Mixed evidence", failed: "Did not replicate", overstated: "Overstated", misreported: "Misreported", myth: "Myth", fraud: "Fraud or retraction", reversed: "Reversed" };
   const GOOD_STATUS = new Set(["replicated"]);
   const statusOf = id => (PT.contested[id] || {}).status || "mixed";
@@ -517,7 +517,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
   }
   function pageShelf(id) {
     const sh = (PT.shelves || []).find(x => x.id === id); if (!sh) return notFound();
-    setNav(id === "demos" ? "demos" : "originals"); setTitle(sh.name);
+    setNav(id); setTitle(sh.name);
     const paperLine = pp => pp ? `<li>${esc(pp.cite)}${pp.doi ? ` <a href="https://doi.org/${esc(pp.doi)}" target="_blank" rel="noopener">doi:${esc(pp.doi)}</a>` : pp.url ? ` <a href="${esc(pp.url)}" target="_blank" rel="noopener">link ↗</a>` : ""}</li>` : "";
     const withVideo = sh.items.filter(it => it.vid && byId.has(it.vid)).length;
     main.innerHTML = `<h1>${esc(sh.name)}</h1><p class="lede">${esc(sh.tagline)}</p>

@@ -1743,6 +1743,793 @@
      ]
     }
    ]
+  },
+  {
+   "id": "cases",
+   "name": "Clinical cases on film",
+   "short": "Cases",
+   "tagline": "Neuropsychology's textbook patients as they actually present: the aphasias, neglect, face blindness, blindsight, split brains, alien hands, phantom limbs and the rest — from hospitals', researchers' and archives' own copies, each with the paper that made the case matter.",
+   "items": [
+    {
+     "id": "case-va-aphasia-1950s",
+     "title": "Testing and Individual Therapy for the Aphasic Patient (US Veterans Administration, c. 1955)",
+     "year": 1955,
+     "people": "US Veterans Administration",
+     "what": "A colour training film from the VA's aphasia programme for Second World War veterans: the language examination, then individual therapy sessions with four brain-injured men. The earliest sound footage of aphasia assessment that is freely available.",
+     "video": {
+      "p": "archive",
+      "id": "47934-testing-and-individual-therapy-aphasic-patient-vwr",
+      "f": "47934 Testing And Individual Therapy Aphasic Patient_vwr.mp4",
+      "len": 1654,
+      "uploader": "Internet Archive educational-film collection",
+      "legit": "archive"
+     },
+     "alt": [
+      {
+       "label": "PeriscopeFilm's copy on YouTube",
+       "url": "https://www.youtube.com/watch?v=nsJp2Q1GriI"
+      }
+     ],
+     "paper": {
+      "cite": "Wepman, J. M. (1951). Recovery from Aphasia. Ronald Press."
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "language-thought"
+     ]
+    },
+    {
+     "id": "case-aphasia-road-back-1967",
+     "title": "Aphasia: The Road Back (NET, 1967)",
+     "year": 1967,
+     "people": "Joseph Wepman (University of Chicago); National Educational Television",
+     "what": "Three stroke patients in Joseph Wepman's rehabilitation programme at the University of Chicago, with his Language Modalities Test used to grade their loss and his approach to speech therapy. From NET's Spectrum series.",
+     "video": {
+      "p": "archive",
+      "id": "aphasiatheroadback",
+      "f": "aphasiatheroadback.mp4",
+      "len": 1080,
+      "uploader": "Internet Archive educational-film collection",
+      "legit": "archive"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Wepman, J. M. (1951). Recovery from Aphasia. Ronald Press."
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "therapy"
+     ]
+    },
+    {
+     "id": "case-broca-mike",
+     "title": "Broca's aphasia: Mike Caputo",
+     "year": 2017,
+     "people": "Mike Caputo; Megan Sutton (Tactus Therapy)",
+     "what": "A stroke survivor with non-fluent aphasia describes what it feels like from the inside — effortful, telegraphic speech with comprehension largely intact — in an interview with his speech-language pathologist.",
+     "video": {
+      "p": "youtube",
+      "id": "JWC-cVQmEmY",
+      "len": 239,
+      "uploader": "Tactus Therapy (the producer's own channel, filmed with the client)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Dronkers, N. F., Plaisant, O., Iba-Zizen, M. T., & Cabanis, E. A. (2007). Paul Broca's historic cases: High resolution MR imaging of the brains of Leborgne and Lelong. Brain, 130(5), 1432–1441.",
+      "doi": "10.1093/brain/awm042"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "language-thought"
+     ]
+    },
+    {
+     "id": "case-wernicke-byron",
+     "title": "Wernicke's aphasia: Byron Peterson",
+     "year": 2015,
+     "people": "Byron Peterson; Megan Sutton (Tactus Therapy)",
+     "what": "The classic teaching clip of fluent aphasia: effortless, well-formed speech that carries little meaning, with poor comprehension. Ninety seconds that every neuropsychology course shows.",
+     "video": {
+      "p": "youtube",
+      "id": "3oef68YabD0",
+      "len": 90,
+      "uploader": "Tactus Therapy (the producer's own channel, filmed with the client)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Binder, J. R. (2015). The Wernicke area: Modern evidence and a reinterpretation. Neurology, 85(24), 2170–2175.",
+      "doi": "10.1212/WNL.0000000000002219"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "language-thought"
+     ]
+    },
+    {
+     "id": "case-conduction-neilsen",
+     "title": "Conduction aphasia",
+     "year": 2024,
+     "people": "Neilsen Rehabilitation Hospital (University of Utah Health)",
+     "what": "The rarest of the three classic aphasias on film: speech and comprehension largely intact, but repetition of even short phrases breaks down — the dissociation that made the arcuate fasciculus famous.",
+     "video": {
+      "p": "youtube",
+      "id": "1yC-uX5VOiE",
+      "len": 395,
+      "uploader": "Neilsen Rehabilitation Hospital (the hospital's own channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "Severe Broca's aphasia (same series)",
+       "url": "https://www.youtube.com/watch?v=6ZmjFFEw_Nc"
+      }
+     ],
+     "paper": {
+      "cite": "Bernal, B., & Ardila, A. (2009). The role of the arcuate fasciculus in conduction aphasia. Brain, 132(9), 2309–2316.",
+      "doi": "10.1093/brain/awp206"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "language-thought"
+     ]
+    },
+    {
+     "id": "case-sarah-scott",
+     "title": "Expressive aphasia after a stroke at 18: Sarah Scott",
+     "year": 2010,
+     "people": "Sarah Scott",
+     "what": "Filmed a year after an ischaemic stroke at eighteen, Sarah explains her aphasia in her own words; the same channel followed her recovery for more than a decade, which makes the series a rare longitudinal record of language returning.",
+     "video": {
+      "p": "youtube",
+      "id": "1aplTvEQ6ew",
+      "len": 439,
+      "uploader": "SymphUK, the channel that has documented Sarah's recovery since 2010",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Dronkers, N. F., Plaisant, O., Iba-Zizen, M. T., & Cabanis, E. A. (2007). Paul Broca's historic cases: High resolution MR imaging of the brains of Leborgne and Lelong. Brain, 130(5), 1432–1441.",
+      "doi": "10.1093/brain/awm042"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "language-thought"
+     ]
+    },
+    {
+     "id": "case-slp-fluent-aphasia",
+     "title": "Speech-language therapy with a patient with fluent aphasia",
+     "year": 2013,
+     "people": "Burke Rehabilitation Hospital",
+     "what": "Ten minutes of an actual therapy session: how a speech-language pathologist works with someone whose words come out fluently but wrong.",
+     "video": {
+      "p": "youtube",
+      "id": "B1SBFUgluK0",
+      "len": 606,
+      "uploader": "Burke Rehabilitation (the hospital's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": null,
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "therapy",
+      "brain-disorders"
+     ]
+    },
+    {
+     "id": "case-neglect-patients",
+     "title": "Hemispatial neglect: two patients",
+     "year": 2013,
+     "people": "Stroke Foundation",
+     "what": "Two stroke survivors describe living with left neglect — the half of the world that stops existing — in a short film made by a stroke charity.",
+     "video": {
+      "p": "youtube",
+      "id": "d4FhZs-m7hA",
+      "len": 348,
+      "uploader": "Stroke Foundation (the charity's own channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "Prism adaptation therapy for neglect (UMass Chan)",
+       "url": "https://www.youtube.com/watch?v=CzUQPjjZSIg"
+      }
+     ],
+     "paper": {
+      "cite": "Bisiach, E., & Luzzatti, C. (1978). Unilateral neglect of representational space. Cortex, 14(1), 129–133.",
+      "doi": "10.1016/S0010-9452(78)80016-1"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "attention-focus"
+     ]
+    },
+    {
+     "id": "case-prosopagnosia-60min",
+     "title": "Face blindness (60 Minutes, 2012)",
+     "year": 2012,
+     "people": "Lesley Stahl; Oliver Sacks, Chuck Close, Brad Duchaine",
+     "what": "The full 60 Minutes report on prosopagnosia: Oliver Sacks and the painter Chuck Close, both face-blind, tested on camera, and Brad Duchaine's lab explaining what the face-recognition system is and how it fails.",
+     "video": {
+      "p": "youtube",
+      "id": "XcgK_7kQUwQ",
+      "len": 1526,
+      "uploader": "60 Minutes (CBS News's own channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "NSF Science Nation: Duchaine's lab on acquired prosopagnosia",
+       "url": "https://www.youtube.com/watch?v=f1Zjq1M75gc"
+      }
+     ],
+     "paper": {
+      "cite": "Duchaine, B., & Nakayama, K. (2006). The Cambridge Face Memory Test: Results for neurologically intact individuals and an investigation of its validity using inverted face stimuli and prosopagnosic participants. Neuropsychologia, 44(4), 576–585.",
+      "doi": "10.1016/j.neuropsychologia.2005.07.001"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "case-blindsight-tn",
+     "title": "Blindsight: patient TN walks the corridor",
+     "year": 2008,
+     "people": "Beatrice de Gelder, Lawrence Weiskrantz and colleagues",
+     "what": "Forty seconds of the most famous blindsight footage: TN, cortically blind after two strokes destroyed his primary visual cortex, walks an obstacle-strewn corridor without touching anything — and reports seeing nothing. The lab's own upload of the paper's supplementary video.",
+     "video": {
+      "p": "youtube",
+      "id": "ACkxe_5Ubq8",
+      "len": 38,
+      "uploader": "CANlab Tilburg (de Gelder's own laboratory channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "de Gelder, B., Tamietto, M., van Boxtel, G., Goebel, R., Sahraie, A., Van den Stock, J., Stienen, B. M. C., Weiskrantz, L., & Pegna, A. (2008). Intact navigation skills after bilateral loss of striate cortex. Current Biology, 18(24), R1128–R1129.",
+      "doi": "10.1016/j.cub.2008.11.002"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "consciousness"
+     ]
+    },
+    {
+     "id": "case-riddoch-western",
+     "title": "The Riddoch phenomenon: seeing only what moves",
+     "year": 2018,
+     "people": "Jody Culham's lab (Western University)",
+     "what": "A woman blinded by bilateral damage to visual cortex can still see objects when they move — the Riddoch phenomenon — demonstrated by the lab that studied her.",
+     "video": {
+      "p": "youtube",
+      "id": "Y7I9tz8sLLY",
+      "len": 60,
+      "uploader": "Western University (the university's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Arcaro, M. J., Thaler, L., Quinlan, D. J., Monaco, S., Khan, S., Valyear, K. F., Goebel, R., Dutton, G. N., Goodale, M. A., Kastner, S., & Culham, J. C. (2019). Psychophysical and neuroimaging responses to moving stimuli in a patient with the Riddoch phenomenon due to bilateral visual cortex lesions. Neuropsychologia, 128, 150–165.",
+      "doi": "10.1016/j.neuropsychologia.2018.05.008"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "case-agnosia-cellpress",
+     "title": "Visual object agnosia: a case study (Neuron, 2011)",
+     "year": 2011,
+     "people": "Christina Konen, Marlene Behrmann, Sabine Kastner",
+     "what": "The journal's video abstract for a single-case study of object agnosia after a lesion to the right lateral fusiform gyrus: what the patient can and cannot recognise, and how his visual cortex reorganised.",
+     "video": {
+      "p": "youtube",
+      "id": "AAZ7kEuNOAI",
+      "len": 284,
+      "uploader": "Cell Press (the publisher's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Konen, C. S., Behrmann, M., Nishimura, M., & Kastner, S. (2011). The functional neuroanatomy of object agnosia: A case study. Neuron, 71(1), 49–60.",
+      "doi": "10.1016/j.neuron.2011.05.030"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "case-split-brain-nova",
+     "title": "Split-brain patients today (NOVA)",
+     "year": 2024,
+     "people": "NOVA (PBS)",
+     "what": "A short NOVA piece on what happens when the corpus callosum is cut for epilepsy, with the classic testing procedure. Pair it with the 1964 film on the Primary sources shelf.",
+     "video": {
+      "p": "youtube",
+      "id": "eHaJPk9RdKo",
+      "len": 318,
+      "uploader": "NOVA PBS Official (the broadcaster's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Gazzaniga, M. S. (2005). Forty-five years of split-brain research and still going strong. Nature Reviews Neuroscience, 6(8), 653–659.",
+      "doi": "10.1038/nrn1723"
+     },
+     "paper2": null,
+     "status": "split-brain-consciousness",
+     "topics": [
+      "brain-disorders",
+      "consciousness"
+     ]
+    },
+    {
+     "id": "case-alien-hand-npr",
+     "title": "Alien hand syndrome: Karen Byrne",
+     "year": 2018,
+     "people": "Karen Byrne; NPR Invisibilia",
+     "what": "After surgery for epilepsy severed her corpus callosum, Karen's left hand began to act on its own — unbuttoning her shirt, slapping her. She tells it herself.",
+     "video": {
+      "p": "youtube",
+      "id": "9FfBT_LuJvc",
+      "len": 166,
+      "uploader": "NPR (the broadcaster's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Biran, I., & Chatterjee, A. (2004). Alien hand syndrome. Archives of Neurology, 61(2), 292–294.",
+      "doi": "10.1001/archneur.61.2.292"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "consciousness"
+     ]
+    },
+    {
+     "id": "case-ramachandran-ted",
+     "title": "Ramachandran: phantom limbs, Capgras and synaesthesia",
+     "year": 2007,
+     "people": "V. S. Ramachandran",
+     "what": "The neurologist presents his own cases — the mirror box for phantom-limb pain, the Capgras patient who thinks his mother is an impostor, and synaesthesia — and what each reveals about how the brain is wired.",
+     "video": {
+      "p": "youtube",
+      "id": "Rl2LwnaUA-k",
+      "len": 1532,
+      "uploader": "TED (the conference's own channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "UCTV: Releasing phantom limb pain",
+       "url": "https://www.youtube.com/watch?v=jNTCFSuKEMA"
+      }
+     ],
+     "paper": {
+      "cite": "Ramachandran, V. S., & Rogers-Ramachandran, D. (1996). Synaesthesia in phantom limbs induced with mirrors. Proceedings of the Royal Society B, 263(1369), 377–386.",
+      "doi": "10.1098/rspb.1996.0058"
+     },
+     "paper2": {
+      "cite": "Hirstein, W., & Ramachandran, V. S. (1997). Capgras syndrome: A novel probe for understanding the neural representation of the identity and familiarity of persons. Proceedings of the Royal Society B, 264(1380), 437–444.",
+      "doi": "10.1098/rspb.1997.0062"
+     },
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "case-mirror-therapy",
+     "title": "Mirror therapy for phantom limb pain",
+     "year": 2014,
+     "people": "Sunnybrook Health Sciences Centre",
+     "what": "An amputee and his therapist use Ramachandran's mirror box: the reflected intact limb convinces the brain that the missing one is moving, and the pain eases.",
+     "video": {
+      "p": "youtube",
+      "id": "6Vkb2iz5Ue0",
+      "len": 198,
+      "uploader": "Sunnybrook Hospital (the hospital's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Chan, B. L., Witt, R., Charrow, A. P., Magee, A., Howard, R., Pasquina, P. F., Heilman, K. M., & Tsao, J. W. (2007). Mirror therapy for phantom limb pain. New England Journal of Medicine, 357(21), 2206–2207.",
+      "doi": "10.1056/NEJMc071927"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "perception-illusions"
+     ]
+    },
+    {
+     "id": "case-foreign-accent-ucf",
+     "title": "Foreign accent syndrome: two patients meet an expert",
+     "year": 2008,
+     "people": "Jack Ryalls (University of Central Florida)",
+     "what": "Two British women who woke from strokes speaking with accents they never had are assessed by Jack Ryalls, who studies the syndrome. Part 1 of a three-part university film.",
+     "video": {
+      "p": "youtube",
+      "id": "f1rC43dvbws",
+      "len": 351,
+      "uploader": "UCF College of Health Professions and Sciences (the university's own channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "Part 2",
+       "url": "https://www.youtube.com/watch?v=NMr17gWxU7s"
+      },
+      {
+       "label": "Part 3",
+       "url": "https://www.youtube.com/watch?v=z_uy9qyCSe4"
+      }
+     ],
+     "paper": {
+      "cite": "Monrad-Krohn, G. H. (1947). Dysprosody or altered 'melody of language'. Brain, 70(4), 405–415.",
+      "doi": "10.1093/brain/70.4.405"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "language-thought"
+     ]
+    },
+    {
+     "id": "case-huntington-ucd",
+     "title": "Huntington's disease: examining a patient",
+     "year": 2013,
+     "people": "UCD School of Medicine",
+     "what": "A patient with Huntington's chorea examined at the bedside for medical students — the movements, the gait, the history — from University College Dublin's clinical neurology series, which PsychTube carries in full.",
+     "video": {
+      "p": "youtube",
+      "id": "KleHA0fv0Eg",
+      "len": 368,
+      "uploader": "UCD Medicine (the university's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Walker, F. O. (2007). Huntington's disease. The Lancet, 369(9557), 218–228.",
+      "doi": "10.1016/S0140-6736(07)60111-1"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "neurochemistry"
+     ]
+    },
+    {
+     "id": "case-dbs-onoff",
+     "title": "Deep brain stimulation switched off and on",
+     "year": 2018,
+     "people": "Parkinson Society British Columbia",
+     "what": "Eighty seconds: a man with Parkinson's disease turns his stimulator off, and then on again. The clearest demonstration there is of what the basal ganglia circuit does.",
+     "video": {
+      "p": "youtube",
+      "id": "34XP72FuvnQ",
+      "len": 80,
+      "uploader": "Parkinson Society BC (the charity's own channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "Stanford Health Care on DBS",
+       "url": "https://www.youtube.com/watch?v=xLgEcb447gA"
+      }
+     ],
+     "paper": {
+      "cite": "Benabid, A. L., Pollak, P., Gervason, C., Hoffmann, D., Gao, D. M., Hommel, M., Perret, J. E., & de Rougemont, J. (1991). Long-term suppression of tremor by chronic stimulation of the ventral intermediate thalamic nucleus. The Lancet, 337(8738), 403–406.",
+      "doi": "10.1016/0140-6736(91)91175-T"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "brain-tech"
+     ]
+    },
+    {
+     "id": "case-dbs-depression-mayberg",
+     "title": "Deep brain stimulation for depression: Helen Mayberg",
+     "year": 2014,
+     "people": "Helen Mayberg",
+     "what": "The neurologist who first stimulated Brodmann area 25 for treatment-resistant depression on a decade of the work: the patients, what changes in the operating room, and what did not pan out.",
+     "video": {
+      "p": "youtube",
+      "id": "1MkVk0HnG5A",
+      "len": 3671,
+      "uploader": "Brain & Behavior Research Foundation (the foundation's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Mayberg, H. S., Lozano, A. M., Voon, V., McNeely, H. E., Seminowicz, D., Hamani, C., Schwalb, J. M., & Kennedy, S. H. (2005). Deep brain stimulation for treatment-resistant depression. Neuron, 45(5), 651–660.",
+      "doi": "10.1016/j.neuron.2005.02.014"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "depression-anxiety",
+      "brain-tech"
+     ]
+    },
+    {
+     "id": "case-sm-feinstein",
+     "title": "The woman with no amygdala: Justin Feinstein on patient SM",
+     "year": 2016,
+     "people": "Justin Feinstein",
+     "what": "The clinical neuropsychologist who studied SM — bilateral amygdala damage, no fear of snakes, spiders or haunted houses, yet panic from a breath of carbon dioxide — tells the story of the research in a public lecture.",
+     "video": {
+      "p": "youtube",
+      "id": "lH3T7kTiGhk",
+      "len": 4907,
+      "uploader": "Laureate Institute for Brain Research (the institute's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Feinstein, J. S., Adolphs, R., Damasio, A., & Tranel, D. (2011). The human amygdala and the induction and experience of fear. Current Biology, 21(1), 34–38.",
+      "doi": "10.1016/j.cub.2010.11.042"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "emotion",
+      "brain-disorders"
+     ]
+    },
+    {
+     "id": "case-tourette-taa",
+     "title": "How do you live with Tourette's?",
+     "year": 2015,
+     "people": "Tourette Association of America",
+     "what": "A fifteen-year-old with Tourette syndrome interviews five other children about tics, school and what they wish people understood.",
+     "video": {
+      "p": "youtube",
+      "id": "Ch8Jt1Zgnnc",
+      "len": 735,
+      "uploader": "Tourette Association of America (the association's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Leckman, J. F. (2002). Tourette's syndrome. The Lancet, 360(9345), 1577–1586.",
+      "doi": "10.1016/S0140-6736(02)11526-1"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "child-development"
+     ]
+    },
+    {
+     "id": "case-locked-in-wyss",
+     "title": "Communicating from complete locked-in syndrome",
+     "year": 2025,
+     "people": "Wyss Center for Bio and Neuroengineering, Geneva",
+     "what": "A man with ALS who can no longer move even his eyes spells out sentences through an implanted brain–computer interface. The centre's own account of the system behind the 2022 Nature Communications paper.",
+     "video": {
+      "p": "youtube",
+      "id": "VPmlWSQZWqc",
+      "len": 349,
+      "uploader": "Wyss Center Geneva (the research centre's own channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "2017: fNIRS yes/no communication (The Star)",
+       "url": "https://www.youtube.com/watch?v=x_Ba1aEjxp0"
+      }
+     ],
+     "paper": {
+      "cite": "Chaudhary, U., Vlachos, I., Zimmermann, J. B., Espinosa, A., Tonin, A., Jaramillo-Gonzalez, A., Khalili-Ardali, M., Topka, H., Lehmberg, J., Friehs, G. M., Woodtli, A., Donoghue, J. P., & Birbaumer, N. (2022). Spelling interface using intracortical signals in a completely locked-in patient enabled via auditory neurofeedback training. Nature Communications, 13, 1236.",
+      "doi": "10.1038/s41467-022-28859-8"
+     },
+     "paper2": {
+      "cite": "Chaudhary, U., Xia, B., Silvoni, S., Cohen, L. G., & Birbaumer, N. (2017). Brain–computer interface–based communication in the completely locked-in state. PLOS Biology, 15(1), e1002593.",
+      "doi": "10.1371/journal.pbio.1002593"
+     },
+     "status": null,
+     "topics": [
+      "brain-tech",
+      "consciousness"
+     ]
+    },
+    {
+     "id": "case-hemispherectomy-wjz",
+     "title": "Twelve years after a hemispherectomy: Jessie Hall",
+     "year": 2021,
+     "people": "WJZ (CBS Baltimore)",
+     "what": "A television station that filmed a six-year-old's hemispherectomy for intractable epilepsy returns as she finishes high school with half a brain.",
+     "video": {
+      "p": "youtube",
+      "id": "umGTYvbPSkU",
+      "len": 268,
+      "uploader": "WJZ (the station's own channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "The earlier report",
+       "url": "https://www.youtube.com/watch?v=aycUso4Vqm0"
+      }
+     ],
+     "paper": {
+      "cite": "Pulsifer, M. B., Brandt, J., Salorio, C. F., Vining, E. P. G., Carson, B. S., & Freeman, J. M. (2004). The cognitive outcome of hemispherectomy in 71 children. Epilepsia, 45(3), 243–254.",
+      "doi": "10.1111/j.0013-9580.2004.15303.x"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "child-development"
+     ]
+    },
+    {
+     "id": "case-ppa-jill",
+     "title": "Primary progressive aphasia: Jill's story",
+     "year": 2021,
+     "people": "FRONTIER FTD Research Group (University of Sydney)",
+     "what": "A research group's film about a woman with the non-fluent variant of primary progressive aphasia — language dissolving while the rest of the mind holds — told by her husband.",
+     "video": {
+      "p": "youtube",
+      "id": "peWdyQzaC70",
+      "len": 401,
+      "uploader": "FRONTIER FTD Research Group (the research group's own channel)",
+      "legit": "official"
+     },
+     "alt": [
+      {
+       "label": "Living with semantic dementia (Rare Dementia Support)",
+       "url": "https://www.youtube.com/watch?v=ubXgZ-c_no0"
+      },
+      {
+       "label": "How PPA progresses (Mesulam Center, Northwestern)",
+       "url": "https://www.youtube.com/watch?v=8lbJyCAtva8"
+      }
+     ],
+     "paper": {
+      "cite": "Gorno-Tempini, M. L., Hillis, A. E., Weintraub, S., Kertesz, A., Mendez, M., Cappa, S. F., Ogar, J. M., Rohrer, J. D., Black, S., Boeve, B. F., Manes, F., Dronkers, N. F., Vandenberghe, R., Rascovsky, K., Patterson, K., Miller, B. L., Knopman, D. S., Hodges, J. R., Mesulam, M. M., & Grossman, M. (2011). Classification of primary progressive aphasia and its variants. Neurology, 76(11), 1006–1014.",
+      "doi": "10.1212/WNL.0b013e31821103e6"
+     },
+     "paper2": {
+      "cite": "Hodges, J. R., Patterson, K., Oxbury, S., & Funnell, E. (1992). Semantic dementia: Progressive fluent aphasia with temporal lobe atrophy. Brain, 115(6), 1783–1806.",
+      "doi": "10.1093/brain/115.6.1783"
+     },
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "language-thought"
+     ]
+    },
+    {
+     "id": "case-phineas-gage-harvard",
+     "title": "Phineas Gage's skull and the tamping iron",
+     "year": 2015,
+     "people": "Warren Anatomical Museum, Harvard Medical School",
+     "what": "Harvard's own two minutes on the skull and iron it holds, and what the 1848 case did and did not show about the frontal lobes.",
+     "video": {
+      "p": "youtube",
+      "id": "yXbAMHzYGJ0",
+      "len": 115,
+      "uploader": "Harvard University (the university's own channel)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Damasio, H., Grabowski, T., Frank, R., Galaburda, A. M., & Damasio, A. R. (1994). The return of Phineas Gage: Clues about the brain from the skull of a famous patient. Science, 264(5162), 1102–1105.",
+      "doi": "10.1126/science.8178168"
+     },
+     "paper2": {
+      "cite": "Van Horn, J. D., Irimia, A., Torgerson, C. M., Chambers, M. C., Kikinis, R., & Toga, A. W. (2012). Mapping connectivity damage in the case of Phineas Gage. PLoS ONE, 7(5), e37454.",
+      "doi": "10.1371/journal.pone.0037454"
+     },
+     "status": "phineas-gage",
+     "topics": [
+      "brain-disorders",
+      "history-of-psychology"
+     ]
+    },
+    {
+     "id": "case-helen-keller-1928",
+     "title": "Helen Keller and Anne Sullivan (newsreel, 1928)",
+     "year": 1928,
+     "people": "Helen Keller, Anne Sullivan Macy",
+     "what": "Deaf and blind from nineteen months, Keller shows on camera how she learned speech by touch — Sullivan demonstrates the method with her hand on Keller's face. Captioned copy from a US Department of Education programme.",
+     "video": {
+      "p": "youtube",
+      "id": "XdTUSignq7Y",
+      "len": 243,
+      "uploader": "Described and Captioned Media Program (a US Department of Education programme)",
+      "legit": "official"
+     },
+     "alt": [],
+     "paper": {
+      "cite": "Keller, H. (1903). The Story of My Life. Doubleday, Page & Co."
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "language-thought",
+      "child-development"
+     ]
+    },
+    {
+     "id": "case-genie",
+     "title": "Genie: language after thirteen years of isolation (no authorized footage)",
+     "year": 1974,
+     "people": "Susan Curtiss, Victoria Fromkin and colleagues (UCLA)",
+     "what": "The most-studied case of language acquisition after the critical period. The research films and NOVA's 1994 'Secret of the Wild Child' exist only as unauthorized uploads, so PsychTube links the paper instead.",
+     "video": null,
+     "alt": [],
+     "paper": {
+      "cite": "Fromkin, V., Krashen, S., Curtiss, S., Rigler, D., & Rigler, M. (1974). The development of language in Genie: A case of language acquisition beyond the 'critical period'. Brain and Language, 1(1), 81–107.",
+      "doi": "10.1016/0093-934X(74)90027-3"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "language-thought",
+      "child-development"
+     ]
+    },
+    {
+     "id": "case-lm-akinetopsia",
+     "title": "LM: the woman who could not see motion (no footage)",
+     "year": 1983,
+     "people": "Josef Zihl, Detlev von Cramon, Norbert Mai",
+     "what": "After bilateral damage to area V5/MT, LM saw the world as a series of stills: tea overflowing the cup because she could not see it rise. No film of her testing was ever released; the paper is the record.",
+     "video": null,
+     "alt": [],
+     "paper": {
+      "cite": "Zihl, J., von Cramon, D., & Mai, N. (1983). Selective disturbance of movement vision after bilateral brain damage. Brain, 106(2), 313–340.",
+      "doi": "10.1093/brain/106.2.313"
+     },
+     "paper2": null,
+     "status": null,
+     "topics": [
+      "brain-disorders",
+      "perception-illusions"
+     ]
+    }
+   ]
   }
  ],
  "doi_verified": "2026-11-03"

@@ -82,20 +82,25 @@ lectures the communities vouched for) and `pop` (their summed community score; s
 
 ## Shelves: primary sources, demonstrations, therapy in practice
 
-`shelves[]` are three hand-curated lists (`pipeline/shelves.json` in the repository): **originals**, the
+`shelves[]` are four hand-curated lists (`pipeline/shelves.json` in the repository): **originals**, the
 original films of classic experiments and case studies (Pavlov's laboratory, the Gesell infant films,
 Skinner's pigeons, the 1964 split-brain film, the Stanford prison experiment footage, Robbers Cave, the
 Gloria films, H.M. and Clive Wearing, …); **demos**, experiments that work on the viewer (the gorilla,
 the McGurk effect, the rubber hand, the hollow mask, Stroop, binocular rivalry, …); and **therapy**,
 psychotherapy as it is done — full sessions, role-plays, simulated psychiatric interviews and case
 formulations from training institutes and university programs, including the three Shostrom "Three
-Approaches to Psychotherapy" series (1965, 1977, 1986) from the Internet Archive. Every item carries
+Approaches to Psychotherapy" series (1965, 1977, 1986) from the Internet Archive; and **cases**,
+clinical neuropsychology's textbook patients on film (the aphasias, hemispatial neglect,
+prosopagnosia, blindsight, visual agnosia, alien hand, phantom limbs, deep brain stimulation,
+locked-in syndrome, hemispherectomy, Phineas Gage…). Every item carries
 the paper it belongs to (`paper.doi`, verified against Crossref) and, where there is one, the
 replication `status`. Items whose `vid` is `null` have no authorized copy online (Little Albert, Harlow,
 Asch, Milgram, Bobo doll, the visual cliff, the Strange Situation); they are listed for the paper and
 the note, so a UI should show them without a player. Each item's `legit` says whose copy it is;
 unofficial re-uploads were not used. The therapy shelf also picks up demonstration videos that a
 labeled course brought in (role-plays, intake and case-formulation videos; `sid` prefixed `tp-`).
+Shelf videos not otherwise in the catalog have `type` `documentary` (originals, cases) or `demo`
+(demos, therapy).
 
 ## Replication status
 

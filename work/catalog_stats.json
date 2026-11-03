@@ -1,25 +1,25 @@
 {
  "stats": {
-  "kept": 15458,
-  "inst_lectures": 14889,
+  "kept": 15491,
+  "inst_lectures": 14922,
   "inst_also_vouched": 39,
   "dropped_not_psych_or_unlabeled": 694,
   "dropped_thin_vouch": 145,
-  "dropped_inst_not_psych": 801,
+  "dropped_inst_not_psych": 805,
   "dropped_inst_promo": 384,
   "inst_inherited_topics": 1621,
   "dropped_inst_thirdparty": 45,
   "replication_tagged": 60,
-  "shelf_added": 46
+  "shelf_added": 70
  },
  "topics": [
   [
    "how-the-brain-works",
-   2734
+   2767
   ],
   [
    "brain-disorders",
-   1323
+   1375
   ],
   [
    "ai-and-mind",
@@ -31,7 +31,7 @@
   ],
   [
    "brain-tech",
-   1038
+   1043
   ],
   [
    "depression-anxiety",
@@ -39,27 +39,27 @@
   ],
   [
    "child-development",
-   935
+   938
   ],
   [
    "perception-illusions",
-   865
+   870
   ],
   [
    "therapy",
-   832
+   834
+  ],
+  [
+   "consciousness",
+   806
   ],
   [
    "psych-research",
    806
   ],
   [
-   "consciousness",
-   802
-  ],
-  [
    "language-thought",
-   785
+   792
   ],
   [
    "adolescence-aging",
@@ -91,7 +91,7 @@
   ],
   [
    "history-of-psychology",
-   526
+   527
   ],
   [
    "decision-risk",
@@ -99,7 +99,7 @@
   ],
   [
    "emotion",
-   507
+   508
   ],
   [
    "crime-forensic",
@@ -139,7 +139,7 @@
   ],
   [
    "attention-focus",
-   307
+   308
   ],
   [
    "behavioral-genetics",
@@ -568,6 +568,10 @@
   ],
   [
    "Selected Topics in Psychology",
+   33
+  ],
+  [
+   "Clinical Neurology: Examination and Patients",
    33
   ],
   [

@@ -26,7 +26,13 @@ interviews, Yale's motivational interviewing, Mick Cooper's person-centred sessi
 Shostrom "Three Approaches to Psychotherapy" series — Rogers, Perls, Ellis in 1965; Rogers, Shostrom,
 Lazarus in 1977; Beck, Strupp, Meichenbaum in 1986 — from the Internet Archive). Experiments with no
 authorized copy online (Little Albert, Harlow, Asch, Milgram, the Bobo doll…) are listed with their
-paper and no player rather than with a bootleg.
+paper and no player rather than with a bootleg. A fourth shelf, **Clinical cases on film**, is the
+neuropsychology textbook on video: Broca's, Wernicke's and conduction aphasia, hemispatial neglect,
+face blindness (the 60 Minutes report with Oliver Sacks and Chuck Close), patient TN's blindsight
+corridor from de Gelder's own lab, the Riddoch phenomenon, alien hand, Ramachandran's phantom limbs
+and Capgras cases, deep brain stimulation switched off and on, locked-in communication, a
+hemispherectomy twelve years on, patient SM's missing amygdala, Phineas Gage's skull at Harvard, two
+1950s–60s aphasia films from the Internet Archive, and Helen Keller on a 1928 newsreel.
 
 Every contested finding carries a **replication status** — replicated, smaller than claimed, mixed,
 did not replicate, overstated, misreported, myth, fraud/retraction, reversed — with the replication or
@@ -68,7 +74,7 @@ site/hosted/           the variant published as a claude.ai artifact (no embeds 
                        carries its own thumbnails and links out to YouTube); built by build_artifact.py
 pipeline/              scripts that build data.js
   taxonomy.json        50 topics in 9 areas + 66 contested findings (status + verified sources) + content-note ids
-  shelves.json         the curated shelves (primary sources, demos, therapy): video, uploader, legitimacy, paper, status
+  shelves.json         the curated shelves (primary sources, demos, therapy, clinical cases): video, uploader, legitimacy, paper, status
   triage_overrides.json publishers and playlists dropped after triage, institution renames
   merge_pulled.py      appends pulled playlists to raw/institutional/courses.json after triage
   build_catalog.py     merges every source, scores, groups series, writes site/data.js
@@ -117,8 +123,9 @@ Keep to official channels and lecturers' own channels; mirrors get taken down.
 A course that is not on YouTube gets `"provider": "panopto"` (with `"host"`) or `"provider": "archive"`
 (with each item's `file`); `pipeline/NOTES.md` has the calls that list a Panopto folder or an Internet
 Archive item. A course that an institution uploaded as loose videos rather than a playlist (NYU's
-*Brain and Behavior*) gets an invented `pid` (`nyu:brain-and-behavior`), the items in syllabus order
-and a `url` pointing at the channel search that lists them.
+*Brain and Behavior*, UCD's *Clinical Neurology* series) gets an invented `pid` (`nyu:brain-and-behavior`,
+`ucd:clinical-neurology`), the items in syllabus order and a `url` pointing at the channel search that
+lists them.
 
 ### Add a primary source, a demo or a therapy session
 
