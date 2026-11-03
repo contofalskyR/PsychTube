@@ -73,21 +73,21 @@ def files(want_path):
             out[ident] = {"error": "no metadata"}
             continue
         md = d.get("metadata", {}) or {}
-        best = None
+        vids = []
         for f in d.get("files", []) or []:
             name = f.get("name", "")
-            if not re.search(r"\.(mp4|m4v|mov|ogv|mkv)$", name, re.I):
-                continue
-            size = int(f.get("size") or 0)
-            # prefer the original/derivative h.264 mp4 of reasonable size; archive 'length' is seconds as a string
-            score = (0 if f.get("source") == "original" else 1, -size)
-            if best is None or score < best[0]:
-                best = (score, f)
+            if not re.search(r"\.(mp4|m4v|mov|ogv|mkv)$", name, re.I) or re.search(r"\.(ia|archive)\.(mp4|ogv)$|_512kb\.mp4$|\.thumbs/", name, re.I):
+                continue                                  # derivatives (.ia.mp4, 512kb) are left out when the original is there; added back below if nothing else
+            vids.append({"name": name, "title": f.get("title"), "length": float(f["length"]) if str(f.get("length") or "").replace(".", "", 1).isdigit() else None,
+                         "size": int(f.get("size") or 0), "source": f.get("source"), "track": f.get("track")})
+        if not vids:
+            for f in d.get("files", []) or []:
+                name = f.get("name", "")
+                if re.search(r"\.(mp4|ogv)$", name, re.I):
+                    vids.append({"name": name, "title": f.get("title"), "length": float(f["length"]) if str(f.get("length") or "").replace(".", "", 1).isdigit() else None,
+                                 "size": int(f.get("size") or 0), "source": f.get("source"), "track": f.get("track")})
         rec = {"date": md.get("date"), "description": md.get("description") if isinstance(md.get("description"), str) else " ".join(md.get("description") or []),
-               "title": md.get("title"), "runtime": md.get("runtime")}
-        if best:
-            f = best[1]
-            rec.update({"file": f.get("name"), "length": float(f["length"]) if str(f.get("length") or "").replace(".", "", 1).isdigit() else None, "size": int(f.get("size") or 0)})
+               "title": md.get("title"), "runtime": md.get("runtime"), "creator": md.get("creator"), "videos": vids}
         out[ident] = rec
         if (i + 1) % 50 == 0:
             json.dump(out, open(out_path, "w", encoding="utf-8"), ensure_ascii=False)
