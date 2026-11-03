@@ -462,3 +462,5 @@ h1:focus-visible { outline: 2px solid var(--focus); outline-offset: 6px; border-
 .tr-text { margin-top: 12px; max-height: 62vh; overflow: auto; padding-right: 8px; font-size: 15px; line-height: 1.62; max-width: 68ch; }
 .tr-text p { margin: 0 0 1em; }
 .tr-text mark { background: color-mix(in srgb, var(--amber) 45%, transparent); color: inherit; border-radius: 3px; padding: 0 2px; }
+.tr-text .tr-head { font-size: 14px; font-weight: 700; margin: 1.4em 0 0.6em; color: var(--ink-2, inherit); }
+.tr-text .tr-head a { font-weight: 500; margin-left: 6px; text-decoration: underline; }

@@ -59,6 +59,37 @@ def clean_ocw(text):
     return text.strip()
 
 
+OYC_CHAPTER = re.compile(r"Chapter\s+(\d+)\.\s*(.+?)\s*\[(\d{2}):(\d{2}):(\d{2})\]")
+
+
+def oyc_sections(text):
+    """Open Yale Courses pages: page chrome before the first chapter marker and everything from "[end of transcript]" on are
+    dropped; "Chapter N. Title [hh:mm:ss]" markers become headings with a seek time. Returns a list of paragraphs, a heading
+    being {"h": title, "t": seconds}."""
+    text = text.split("[end of transcript]")[0]
+    first = OYC_CHAPTER.search(text)
+    if first:
+        text = text[first.start():]
+    else:
+        m = re.search(r"Professor [A-Z][\w.' -]+?:", text)
+        if m:
+            text = text[m.start():]
+    out = []
+    pos = 0
+    pieces = []
+    for m in OYC_CHAPTER.finditer(text):
+        pieces.append((None, text[pos:m.start()]))
+        pieces.append(({"h": f"Chapter {m.group(1)}. {m.group(2)}", "t": int(m.group(3)) * 3600 + int(m.group(4)) * 60 + int(m.group(5))}, None))
+        pos = m.end()
+    pieces.append((None, text[pos:]))
+    for head, body in pieces:
+        if head:
+            out.append(head)
+        elif body and body.strip():
+            out.extend(paragraphs(body))
+    return out
+
+
 def tokens(text):
     return [t for t in re.findall(r"[a-z][a-z'-]{2,}", text.lower()) if t not in STOP and not t.endswith("'s") or (t.endswith("'s") and t[:-2] not in STOP and len(t) > 5)]
 
@@ -76,10 +107,14 @@ def main():
         out = {}
         words = 0
         for vid, r in d.items():
-            text = clean_ocw(r["text"]) if "ocw.mit.edu" in r["src"] else re.sub(r"\s+", " ", r["text"]).strip()
+            if "oyc.yale.edu" in r["src"]:
+                paras = oyc_sections(re.sub(r"[ \t\xa0]+", " ", r["text"]))
+                text = " ".join(p for p in paras if isinstance(p, str))
+            else:
+                text = clean_ocw(r["text"])
+                paras = paragraphs(text)
             if len(text.split()) < 200:
                 continue
-            paras = paragraphs(text)
             out[vid] = {"src": r["src"], "p": paras}
             docs[vid] = tokens(text)
             words += len(text.split())

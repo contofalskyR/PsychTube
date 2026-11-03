@@ -889,9 +889,12 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
     const render = q => {
       const needle = (q || "").trim().toLowerCase();
       const rx = needle ? new RegExp("(" + needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "ig") : null;
-      const shown = needle ? paras.filter(p => p.toLowerCase().includes(needle)) : paras;
+      const isHead = p => typeof p !== "string";
+      const shown = needle ? paras.filter(p => !isHead(p) && p.toLowerCase().includes(needle)) : paras;   // a search shows passages only
+      const headHtml = p => `<h3 class="tr-head">${esc(p.h)}${p.t != null ? ` <a href="#v-${v.id}?t=${p.t}" data-seek="${p.t}" class="faint">${fmtDur(p.t)}</a>` : ""}</h3>`;
       box.innerHTML = (needle ? `<p class="faint">${shown.length ? `${plural(shown.length, "passage")} mention “${esc(q.trim())}”` : `Nothing in this transcript says “${esc(q.trim())}”`}.</p>` : "")
-        + shown.map(p => `<p>${rx ? esc(p).replace(rx, "<mark>$1</mark>") : esc(p)}</p>`).join("");
+        + shown.map(p => isHead(p) ? headHtml(p) : `<p>${rx ? esc(p).replace(rx, "<mark>$1</mark>") : esc(p)}</p>`).join("");
+      box.querySelectorAll("[data-seek]").forEach(a => a.onclick = e => { if (player) { e.preventDefault(); player.seek(+a.dataset.seek); window.scrollTo({ top: 0, behavior: "smooth" }); } });
     };
     show.onclick = async () => {
       if (!paras) {
