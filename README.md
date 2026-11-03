@@ -69,7 +69,7 @@ computational neuroscience, methods and the replication crisis, social and perso
 development — each ending in the primary sources and the seminar series where the field talks to
 itself. They live in `pipeline/pathways.json` and resolve against whatever courses the build has.
 
-The home page also has **"Teach me something I don't know"**: pick your background (cognitive
+The home page also has a one-line **"Teach me something I don't know"**: open it, pick your background (cognitive
 science, neuroscience, clinical, social, philosophy, machine learning…) with no account, and it picks
 a vouched talk, a first lecture of a course and a primary source from outside the areas you already
 know — different ones each day, never something you've watched.

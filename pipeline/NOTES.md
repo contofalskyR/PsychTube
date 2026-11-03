@@ -196,7 +196,8 @@ methods, applied, just curious — to the topics they already know) and the pick
 from outside those topics and outside the watch history: a vouched talk (`nrec ≥ 2`), lecture 1 of a
 non-advanced course, and a primary source or demo, with distinct topics and areas. The seed is the
 day plus a shuffle counter, so the picks change daily and on demand; the backgrounds are saved in
-`settings.background` with the other preferences.
+`settings.background` with the other preferences. On the home page it is a single line below the
+shelves until opened (a quiet side feature, as the review asked); the open state lasts the visit.
 
 ## Ordering by legitimacy (site/app.js)
 
@@ -352,11 +353,16 @@ patches are in `review/`) found nine must-fix items. What was done, in the revie
   the home row stays "Handle with care"), "Over an hour" for Longs; the rail lists the shelves before
   Clips, so a phone's bottom bar shows them.
 
+Design calls the owner took after the review: the headline now leads with the courses ("The psychology
+courses universities put online — and the videos psychology people keep telling each other to watch",
+D1); Teach-me is one line on the home page, below the shelves, until the viewer opens it (D2); the nine
+area rows are gone from the home page, replaced by a strip of area links (12 sections and ~120 cards
+instead of 21 and ~230). Dark theme and autoplay-on-open stay the defaults (D8).
+
 Not done, deliberately or for lack of reach: a split `data.js` (C1), a CSP (C2), self-hosted fonts (C3),
 a refresh path for pulled courses (C4), the Data API as the primary pull method (D7), Stack Exchange
 questions weighted by stance (S2), "uploaded by a third party" on community documentaries (D5), a
-liveness refresh (S8), and the design calls D1 (the headline), D2 (Teach-me's place on the home page),
-D8 (dark theme and autoplay defaults), which are the owner's.
+liveness refresh (S8).
 
 ## Hosted copy
 

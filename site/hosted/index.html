@@ -446,6 +446,11 @@ h1:focus { outline: none; }
 h1:focus-visible { outline: 2px solid var(--focus); outline-offset: 6px; border-radius: 4px; }
 .shelf-text .whose { font-size: 13px; color: var(--ink-3); }
 .shelf-text .whose .form { color: var(--ink-2); font-weight: 600; }
+/* Teach-me collapsed to one line until opened */
+.teach-closed { padding: 2px 0 6px; }
+.teachline { margin: 0; font-size: 15px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; }
+.linkbtn { background: none; border: 0; padding: 0; font: inherit; font-weight: 650; color: var(--amber-text, var(--amber)); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.linkbtn:hover { color: var(--amber-2); }
 
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
 </style>

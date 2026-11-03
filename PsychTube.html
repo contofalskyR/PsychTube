@@ -455,6 +455,11 @@ h1:focus { outline: none; }
 h1:focus-visible { outline: 2px solid var(--focus); outline-offset: 6px; border-radius: 4px; }
 .shelf-text .whose { font-size: 13px; color: var(--ink-3); }
 .shelf-text .whose .form { color: var(--ink-2); font-weight: 600; }
+/* Teach-me collapsed to one line until opened */
+.teach-closed { padding: 2px 0 6px; }
+.teachline { margin: 0; font-size: 15px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; }
+.linkbtn { background: none; border: 0; padding: 0; font: inherit; font-weight: 650; color: var(--amber-text, var(--amber)); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.linkbtn:hover { color: var(--amber-2); }
 
 </style>
 </head>
@@ -908,18 +913,22 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
     while (picks.length < 3) { const extra = take(talks.length ? talks : V.filter(away), 1); if (!extra.length) break; picks.push([extra[0], "another field"]); }
     return { picks, mine };
   }
+  let teachOpen = false;   // the picker is a quiet side feature: one line on the home page until the viewer opens it (this visit only)
   function teachSection() {
     const chosen = state.settings.background || [];
+    if (!teachOpen) return `<section class="section teach teach-closed" id="teach"><p class="teachline"><button class="linkbtn" id="teachOpen">Teach me something I don't know →</button> <span class="faint">${chosen.length ? "three picks from the fields next door, based on the background you gave" : "say where you're coming from and get three things from the fields next door; no account"}</span></p></section>`;
     const { picks, mine } = teachPicks();
     const chips = BACKGROUNDS.map(([id, name]) => `<button class="bgchip" data-bg="${id}" aria-pressed="${chosen.includes(id)}">${esc(name)}</button>`).join("");
     const you = mine.length ? mine.map(b => b.name.toLowerCase()).join(" + ") : "";
     const cardsHtml = picks.map(([v, why]) => `<div class="teach-pick"><div class="teach-why">${esc(why)} · <a href="#t-${v.topics[0]}">${esc(topics.get(v.topics[0]).name)}</a></div>${card(v, { chips: 1 })}</div>`).join("");
-    return `<section class="section teach" id="teach"><div class="section-head"><div><h2>Teach me something I don't know</h2><div class="sub">${chosen.length ? `Picked from outside <b>${esc(you)}</b>: ${picks.length} things from the fields next door. Nothing leaves your browser.` : "Say where you're coming from and PsychTube will pick from the fields next door — a vouched talk, the first lecture of a course, an original experiment. No account; it's remembered in this browser."}</div></div><div class="teach-actions">${chosen.length ? `<button class="btn quiet" id="teachShuffle">Shuffle</button><button class="btn quiet" id="teachChange">${picks.length ? "Change" : "Choose"}</button>` : ""}</div></div>
+    return `<section class="section teach" id="teach"><div class="section-head"><div><h2>Teach me something I don't know</h2><div class="sub">${chosen.length ? `Picked from outside <b>${esc(you)}</b>: ${picks.length} things from the fields next door. Nothing leaves your browser.` : "Say where you're coming from and PsychTube will pick from the fields next door — a vouched talk, the first lecture of a course, an original experiment. No account; it's remembered in this browser."}</div></div><div class="teach-actions">${chosen.length ? `<button class="btn quiet" id="teachShuffle">Shuffle</button><button class="btn quiet" id="teachChange">${picks.length ? "Change" : "Choose"}</button>` : ""}<button class="btn quiet" id="teachClose" aria-label="Collapse">Close</button></div></div>
       <div class="bgpicker" id="bgpicker" ${chosen.length ? "hidden" : ""}><div class="bgchips">${chips}</div><div class="faint" style="margin-top:8px">Pick everything that describes you; the picks avoid those fields.</div></div>
       ${chosen.length ? `<div class="teach-grid">${cardsHtml || `<p class="faint">You have watched your way through the fields next door. Shuffle, or change your background.</p>`}</div>` : ""}</section>`;
   }
   function wireTeach() {
     const sec = document.getElementById("teach"); if (!sec) return;
+    const op = document.getElementById("teachOpen"); if (op) op.onclick = () => { teachOpen = true; pageHome(); const el = document.getElementById("teach"); if (el) { el.scrollIntoView({ block: "start", behavior: SMOOTH() }); const h = el.querySelector("h2"); if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); } } };
+    const cl = document.getElementById("teachClose"); if (cl) cl.onclick = () => { teachOpen = false; pageHome(); const el = document.getElementById("teachOpen"); if (el) { el.scrollIntoView({ block: "center" }); el.focus({ preventScroll: true }); } };
     sec.querySelectorAll(".bgchip").forEach(b => b.onclick = () => {
       const id = b.dataset.bg; let cur = new Set(state.settings.background || []);
       if (id === "curious") cur = cur.has("curious") ? new Set() : new Set(["curious"]); else { cur.delete("curious"); if (cur.has(id)) cur.delete(id); else cur.add(id); }
@@ -936,11 +945,9 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
     const recent = V.filter(v => visible(v) && v.last >= 2024).sort((a, b) => (b.last - a.last) || (b.score - a.score)).slice(0, 12);
     const care = V.filter(v => careWorthy(v) && !(state.settings.hideCW && v.cw.length)).slice(0, 12);
     const longs = V.filter(v => visible(v) && v.len >= 3600).slice(0, 12);
-    const areaRows = areas.map(a => {
-      const ids = new Set(a.topics.map(t => t.id));
-      const list = V.filter(v => visible(v) && ids.has(v.topics[0])).slice(0, 12);
-      return section(esc(a.name), list.length ? rowOf(list) : "", `#a-${a.id}`, `${plural(V.filter(v => ids.has(v.topics[0])).length, "video")}`);
-    }).join("");
+    // the nine areas as a strip of links, not nine rows of twelve cards: the Topics page is one click away and the phone thanks us
+    const counts = new Map(areas.map(a => [a.id, V.filter(v => visible(v) && a.topics.some(t => t.id === v.topics[0])).length]));
+    const areaStrip = section("Browse by area", `<div class="topic-pills">${areas.map(a => `<a class="tpill" href="#a-${a.id}">${esc(a.name)} <span class="faint">${counts.get(a.id).toLocaleString()}</span></a>`).join("")}</div>`, "#topics", `${topics.size} topics in ${areas.length} areas.`);
     const hidden = V.length - V.filter(visible).length;
     const comms = [...new Set(V.flatMap(v => v.communities))];
     const nSubs = comms.filter(c => c.startsWith("r/")).length;
@@ -953,19 +960,19 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
     const myCourses = PT.series.map(sd => [sd, seriesProgress(sd)]).filter(([sd, sp]) => sp.started).sort((a, b) => b[1].last - a[1].last).slice(0, 8);
     main.innerHTML = `
       <div class="masthead">
-        <h1>The psychology videos that psychology people keep telling each other to watch${inst.courses ? " — and the courses universities put online" : ""}.</h1>
+        <h1>${inst.courses ? "The psychology courses universities put online — and the videos psychology people keep telling each other to watch." : "The psychology videos that psychology people keep telling each other to watch."}</h1>
         <p class="lede"><b>${(s.vouched || s.videos).toLocaleString()}</b> videos that people recommended on ${whereText} (${s.mentions.toLocaleString()} mentions in all)${inst.courses ? `, plus <b>${inst.lectures.toLocaleString()}</b> lectures and talks published by ${PUBLISHERS} universities, institutes, societies and hospitals${LECTURERS ? ` and ${LECTURERS} lecturers' own channels` : ""}: <b>${KINDS.course}</b> taught courses, <b>${KINDS.series}</b> lecture series and <b>${KINDS.talks}</b> seminar and conference collections` : ""}. No accounts, no analytics, no autoplay rabbit hole. Every card shows who vouched, or who published.${hidden ? ` <span class="faint">${hidden} with content notes are hidden (<a href="#prefs" style="text-decoration:underline">settings</a>).</span>` : ""}</p>
       </div>
       ${inProgress.length ? section("Continue watching", rowOf(inProgress), "#history", "Pick up where you left off. Positions are saved in this browser.") : ""}
       ${myCourses.length ? section("Your courses", `<div class="row">${myCourses.map(([sd]) => seriesCard(sd)).join("")}</div>`, "#courses", "Courses you've started, most recent first.") : ""}
       ${section(state.history.length ? "For you" : "Start here", rowOf(fy), null, state.history.length ? "Based on what you've watched here. Nothing leaves your browser." : "A fresh mix every day, one video per topic.")}
-      ${teachSection()}
       ${courseRow.length ? section("Courses", `<div class="row">${courseRow.map(sd => seriesCard(sd)).join("")}</div>`, "#courses", `Taught courses and lecture series, every lecture in order, as the institutions published them: ${KINDS.course} courses and ${KINDS.series} series. Seminars and conference talks have their own shelf on the Courses page.`) : ""}
       ${section("The canon", rowOf(canon), "#canon", "The most vouched-for videos across all communities.")}
       ${shelfRows}
       ${!courseRow.length && PT.series.length ? section("Courses & series", `<div class="row">${PT.series.slice(0, 8).map(sd => seriesCard(sd)).join("")}</div>`, "#courses", "Full lecture series people recommend whole.") : ""}
+      ${teachSection()}
       ${section("Recently recommended", rowOf(recent), null, "Vouched for in 2024 or later.")}
-      ${areaRows}
+      ${areaStrip}
       ${care.length ? section("Handle with care", rowOf(care), "#care", "Popular videos built on findings that later shrank, failed to replicate or were overstated. Watch, then read the note.") : ""}
       ${section("Over an hour", rowOf(longs), "#longs", "Full lectures, long interviews and documentaries.")}
     `;
