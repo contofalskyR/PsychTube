@@ -1357,7 +1357,7 @@
      ],
      "legit": "archive",
      "uploader": "Internet Archive (community upload of the 1948 film)",
-     "rights": null,
+     "rights": "community upload (opensource_movies) by an individual account; creator Moscow Film Studios of Popular Science, 1948; no license stated on the item",
      "form": "documentary of the time",
      "auto": false,
      "p": "archive",
@@ -1419,7 +1419,7 @@
      ],
      "legit": "archive",
      "uploader": "Internet Archive educational-film collection",
-     "rights": null,
+     "rights": "digitized and uploaded by Internet Archive staff into its educational-films collection (Lasergraphics scan of the 16 mm print); publisher Erpi/Encyclopaedia Britannica Films, 1934; no license stated",
      "form": "original recording",
      "auto": false,
      "p": "archive",
@@ -1650,7 +1650,7 @@
      ],
      "legit": "archive",
      "uploader": "Internet Archive educational-film collection (National Educational Television)",
-     "rights": null,
+     "rights": "uploaded into the Archive's educational-films collection (Lasergraphics scan); producer National Educational Television, 1964; no license stated",
      "form": "documentary of the time",
      "auto": false,
      "p": "archive",
@@ -1686,7 +1686,7 @@
      ],
      "legit": "official",
      "uploader": "Stanford University Archives (Philip G. Zimbardo papers), streamed from the Internet Archive / California Revealed",
-     "rights": null,
+     "rights": "Stanford University Archives (Philip G. Zimbardo papers), streamed through California Revealed; the item states: copyrighted, rights owned by Philip G. Zimbardo, all rights reserved, stream only; permission requests to universityarchives@stanford.edu",
      "form": "original recording",
      "auto": false,
      "p": "archive",
@@ -1747,7 +1747,7 @@
      ],
      "legit": "archive",
      "uploader": "Internet Archive educational-film collection (Psychological & Educational Films)",
-     "rights": null,
+     "rights": "digitized and uploaded by Internet Archive staff into its educational-films collection (Lasergraphics scan); publisher Psychological & Educational Films, 1965; no license stated; the series is also sold by Psychotherapy.net",
      "form": "original recording",
      "auto": false,
      "p": "archive",
@@ -1778,7 +1778,7 @@
      ],
      "legit": "archive",
      "uploader": "Internet Archive educational-film collection (Yale University Media Design Studio)",
-     "rights": null,
+     "rights": "digitized and uploaded by Internet Archive staff into its educational-films collection (Lasergraphics scan); Yale University Media Design Studio, 1977; no license stated",
      "form": "documentary of the time",
      "auto": false,
      "p": "archive",
@@ -1804,7 +1804,7 @@
      ],
      "legit": "archive",
      "uploader": "Internet Archive educational-film collection",
-     "rights": null,
+     "rights": "digitized and uploaded by Internet Archive staff into its educational-films collection (Lasergraphics scan); Media Guild, 1978; no license stated",
      "form": "documentary of the time",
      "auto": false,
      "p": "archive",
@@ -2735,7 +2735,7 @@
      ],
      "legit": "archive",
      "uploader": "Internet Archive educational-film collection (Psychological & Educational Films)",
-     "rights": null,
+     "rights": "digitized and uploaded by Internet Archive staff into its educational-films collection (Lasergraphics scan); publisher Psychological & Educational Films, 1965; no license stated; the series is also sold by Psychotherapy.net",
      "form": "session recording",
      "auto": false,
      "p": "archive",
@@ -2770,7 +2770,7 @@
      ],
      "legit": "archive",
      "uploader": "Internet Archive educational-film collection (Psychological & Educational Films)",
-     "rights": null,
+     "rights": "digitized and uploaded by Internet Archive staff into its educational-films collection (Lasergraphics scan); publisher Psychological Films, 1977; no license stated; the series is also sold by Psychotherapy.net",
      "form": "session recording",
      "auto": false,
      "p": "archive",
@@ -2804,7 +2804,7 @@
      ],
      "legit": "archive",
      "uploader": "Internet Archive educational-film collection (Psychological & Educational Films)",
-     "rights": null,
+     "rights": "digitized and uploaded by Internet Archive staff into its educational-films collection (Lasergraphics scan); publisher Psychological & Educational Films, 1986; no license stated; the series is also sold by Psychotherapy.net",
      "form": "session recording",
      "auto": false,
      "p": "archive",
@@ -3384,7 +3384,7 @@
      ],
      "legit": "archive",
      "uploader": "Internet Archive educational-film collection",
-     "rights": null,
+     "rights": "Periscope Film's scan of a U.S. Veterans Administration film (a U.S. government work), CC BY-NC-ND 4.0 on the item",
      "form": "clinical film of the time",
      "auto": false,
      "p": "archive",
@@ -3409,7 +3409,7 @@
      ],
      "legit": "archive",
      "uploader": "Internet Archive educational-film collection",
-     "rights": null,
+     "rights": "uploaded into the Archive's educational-films collection (Lasergraphics scan); producer National Educational Television / Indiana University, 1967; no license stated",
      "form": "documentary of the time",
      "auto": false,
      "p": "archive",
@@ -436589,7 +436589,8 @@
     ],
     "uploader": "Internet Archive (community upload of the 1948 film)",
     "legit": "archive",
-    "form": "documentary of the time"
+    "form": "documentary of the time",
+    "rights": "community upload (opensource_movies) by an individual account; creator Moscow Film Studios of Popular Science, 1948; no license stated on the item"
    }
   },
   {
@@ -436630,7 +436631,8 @@
     ],
     "uploader": "Internet Archive educational-film collection",
     "legit": "archive",
-    "form": "original recording"
+    "form": "original recording",
+    "rights": "digitized and uploaded by Internet Archive staff into its educational-films collection (Lasergraphics scan of the 16 mm print); publisher Erpi/Encyclopaedia Britannica Films, 1934; no license stated"
    }
   },
   {
@@ -436765,7 +436767,8 @@
     },
     "uploader": "Internet Archive educational-film collection (National Educational Television)",
     "legit": "archive",
-    "form": "documentary of the time"
+    "form": "documentary of the time",
+    "rights": "uploaded into the Archive's educational-films collection (Lasergraphics scan); producer National Educational Television, 1964; no license stated"
    }
   },
   {
@@ -436814,7 +436817,8 @@
     ],
     "uploader": "Stanford University Archives (Philip G. Zimbardo papers), streamed from the Internet Archive / California Revealed",
     "legit": "official",
-    "form": "original recording"
+    "form": "original recording",
+    "rights": "Stanford University Archives (Philip G. Zimbardo papers), streamed through California Revealed; the item states: copyrighted, rights owned by Philip G. Zimbardo, all rights reserved, stream only; permission requests to universityarchives@stanford.edu"
    }
   },
   {
@@ -436899,7 +436903,8 @@
     ],
     "uploader": "Internet Archive educational-film collection (Psychological & Educational Films)",
     "legit": "archive",
-    "form": "original recording"
+    "form": "original recording",
+    "rights": "digitized and uploaded by Internet Archive staff into its educational-films collection (Lasergraphics scan); publisher Psychological & Educational Films, 1965; no license stated; the series is also sold by Psychotherapy.net"
    }
   },
   {
@@ -436940,7 +436945,8 @@
     ],
     "uploader": "Internet Archive educational-film collection (Yale University Media Design Studio)",
     "legit": "archive",
-    "form": "documentary of the time"
+    "form": "documentary of the time",
+    "rights": "digitized and uploaded by Internet Archive staff into its educational-films collection (Lasergraphics scan); Yale University Media Design Studio, 1977; no license stated"
    }
   },
   {
@@ -436975,7 +436981,8 @@
     },
     "uploader": "Internet Archive educational-film collection",
     "legit": "archive",
-    "form": "documentary of the time"
+    "form": "documentary of the time",
+    "rights": "digitized and uploaded by Internet Archive staff into its educational-films collection (Lasergraphics scan); Media Guild, 1978; no license stated"
    }
   },
   {
@@ -437823,7 +437830,8 @@
     ],
     "uploader": "Internet Archive educational-film collection (Psychological & Educational Films)",
     "legit": "archive",
-    "form": "session recording"
+    "form": "session recording",
+    "rights": "digitized and uploaded by Internet Archive staff into its educational-films collection (Lasergraphics scan); publisher Psychological Films, 1977; no license stated; the series is also sold by Psychotherapy.net"
    }
   },
   {
@@ -437867,7 +437875,8 @@
     ],
     "uploader": "Internet Archive educational-film collection (Psychological & Educational Films)",
     "legit": "archive",
-    "form": "session recording"
+    "form": "session recording",
+    "rights": "digitized and uploaded by Internet Archive staff into its educational-films collection (Lasergraphics scan); publisher Psychological & Educational Films, 1986; no license stated; the series is also sold by Psychotherapy.net"
    }
   },
   {
@@ -438307,7 +438316,8 @@
     ],
     "uploader": "Internet Archive educational-film collection",
     "legit": "archive",
-    "form": "clinical film of the time"
+    "form": "clinical film of the time",
+    "rights": "Periscope Film's scan of a U.S. Veterans Administration film (a U.S. government work), CC BY-NC-ND 4.0 on the item"
    }
   },
   {
@@ -438341,7 +438351,8 @@
     },
     "uploader": "Internet Archive educational-film collection",
     "legit": "archive",
-    "form": "documentary of the time"
+    "form": "documentary of the time",
+    "rights": "uploaded into the Archive's educational-films collection (Lasergraphics scan); producer National Educational Television / Indiana University, 1967; no license stated"
    }
   },
   {

@@ -331,8 +331,15 @@ patches are in `review/`) found nine must-fix items. What was done, in the revie
 - **S10 shelves**: every item has a `form` ("original recording", "documentary of the time", "later
   report"…) shown on the card and the shelf, auto-added therapy items carry `auto` and `legit:
   relisted` when a playlist re-listed another channel's video, and the shelf prints whose copy is
-  playing. The Internet Archive rights check (uploader / licenseurl of the Shostrom films) still needs
-  archive.org, which this environment cannot reach: open question, recorded here.
+  playing. The Internet Archive items were checked against `archive.org/metadata/<id>` (through the
+  desktop browser) and each carries `video.rights` in `shelves.json`: the Shostrom films, Gesell,
+  Piaget and Lorenz were digitized and uploaded by Internet Archive staff (an @archive.org account) in
+  the Archive's own educational-films program, with no license stated — a library's holding streamed
+  from the library, which is what `legit: archive` means; the Shostrom series is also still sold by
+  Psychotherapy.net, and the shelf says so. The Zimbardo footage is Stanford University Archives'
+  stream through California Revealed (copyrighted, all rights reserved, stream only). The VA aphasia
+  film is a Periscope Film scan of a U.S. government work (CC BY-NC-ND 4.0 on the item). The Pavlov
+  film is a community upload (said as much on the card).
 - **S11–S17 front end** (patches 01/04 plus): progress merged on flush, dated "unwatched" records,
   settings in the export; router survives malformed escapes and a "?" in a query; Esc never leaves the
   site; arrows stay with a focused `<video>`; a Settings toggle for the single-letter shortcuts; whole-
