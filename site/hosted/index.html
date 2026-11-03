@@ -266,7 +266,7 @@ a.chip.inst:hover { text-decoration: underline; }
 .vlist { list-style: none; margin: 0; padding: 0; }
 .vlist li { padding: 10px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 112px 1fr; gap: 12px; font-size: 14px; }
 .vlist li:first-child { border-top: 0; }
-.vlist .who { color: var(--ink-3); font-size: 12.5px; line-height: 1.35; }
+.vlist .who { color: var(--ink-3); font-size: 12.5px; line-height: 1.35; min-width: 0; overflow-wrap: anywhere; }
 .vlist .who b { display: block; color: var(--ink-2); font-weight: 650; font-size: 13px; }
 .vlist .what a { color: var(--ink-3); }
 .vlist .what a:hover { color: var(--amber); }
@@ -461,6 +461,14 @@ h1:focus-visible { outline: 2px solid var(--focus); outline-offset: 6px; border-
 .loading-note::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 8px; border-radius: 50%; border: 2px solid var(--line); border-top-color: var(--amber); vertical-align: -1px; animation: spin 0.9s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .loading-note::before { animation: none; } }
+/* transcript reader (watch page): the provider's own transcript, read in place, with find-in-transcript */
+.tr-tools { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 8px; }
+.tr-tools input { flex: 1 1 220px; min-width: 0; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg-2, transparent); color: inherit; font: inherit; font-size: 14px; }
+.tr-text { margin-top: 12px; max-height: 62vh; overflow: auto; padding-right: 8px; font-size: 15px; line-height: 1.62; max-width: 68ch; }
+.tr-text p { margin: 0 0 1em; }
+.tr-text mark { background: color-mix(in srgb, var(--amber) 45%, transparent); color: inherit; border-radius: 3px; padding: 0 2px; }
+.tr-text .tr-head { font-size: 14px; font-weight: 700; margin: 1.4em 0 0.6em; color: var(--ink-2, inherit); }
+.tr-text .tr-head a { font-weight: 500; margin-left: 6px; text-decoration: underline; }
 
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
 </style>
