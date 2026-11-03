@@ -1,13 +1,13 @@
 {
  "stats": {
-  "kept": 16477,
-  "inst_lectures": 15802,
+  "kept": 16877,
+  "inst_lectures": 16205,
   "inst_also_vouched": 39,
   "dropped_not_psych_or_unlabeled": 694,
   "dropped_thin_vouch": 144,
-  "dropped_inst_not_psych": 931,
-  "inst_loose": 106,
-  "dropped_inst_promo": 457,
+  "dropped_inst_not_psych": 941,
+  "inst_loose": 103,
+  "dropped_inst_promo": 464,
   "inst_inherited_topics": 1621,
   "dropped_inst_thirdparty": 46,
   "replication_tagged": 60,
@@ -17,75 +17,75 @@
  "topics": [
   [
    "how-the-brain-works",
-   2859
+   2991
   ],
   [
    "brain-disorders",
-   2201
+   2252
   ],
   [
    "ai-and-mind",
-   1157
-  ],
-  [
-   "psychiatry-medication",
-   1134
+   1278
   ],
   [
    "brain-tech",
-   1073
+   1156
+  ],
+  [
+   "psychiatry-medication",
+   1148
   ],
   [
    "depression-anxiety",
-   1056
+   1057
   ],
   [
    "child-development",
-   959
+   979
   ],
   [
    "language-thought",
-   897
+   939
   ],
   [
    "perception-illusions",
-   888
+   935
   ],
   [
    "therapy",
-   858
+   862
   ],
   [
    "psych-research",
-   836
+   848
   ],
   [
    "consciousness",
-   828
+   833
   ],
   [
    "adolescence-aging",
-   803
+   815
   ],
   [
    "adhd-autism",
-   660
+   662
   ],
   [
    "groups-prejudice",
    649
   ],
   [
+   "memory",
+   641
+  ],
+  [
    "trauma-stress",
    629
   ],
   [
-   "memory",
-   623
-  ],
-  [
    "serious-mental-illness",
-   591
+   594
   ],
   [
    "happiness-meaning",
@@ -97,35 +97,35 @@
   ],
   [
    "history-of-psychology",
-   534
+   536
   ],
   [
    "decision-risk",
    524
   ],
   [
+   "addiction",
+   459
+  ],
+  [
    "crime-forensic",
-   441
+   442
   ],
   [
    "personality",
-   437
+   438
   ],
   [
    "work-organizations",
    435
   ],
   [
-   "addiction",
-   422
+   "neurochemistry",
+   417
   ],
   [
    "replication-crisis",
-   392
-  ],
-  [
-   "neurochemistry",
-   378
+   397
   ],
   [
    "rationality-biases",
@@ -133,19 +133,19 @@
   ],
   [
    "animal-minds",
-   346
+   350
   ],
   [
    "mindfulness-meditation",
-   336
+   337
   ],
   [
    "attention-focus",
-   321
+   326
   ],
   [
    "behavioral-genetics",
-   304
+   305
   ],
   [
    "morality-cooperation",
@@ -153,7 +153,7 @@
   ],
   [
    "sleep-dreams",
-   270
+   279
   ],
   [
    "motivation-habits",
@@ -172,20 +172,20 @@
    217
   ],
   [
+   "learning-studying",
+   216
+  ],
+  [
    "persuasion-manipulation",
    214
   ],
   [
-   "learning-studying",
-   212
-  ],
-  [
    "relationships-attachment",
-   189
+   190
   ],
   [
    "psychedelics",
-   163
+   168
   ],
   [
    "tech-and-mind",
@@ -197,7 +197,7 @@
   ],
   [
    "intelligence-expertise",
-   120
+   126
   ],
   [
    "design-behavior",
@@ -213,11 +213,11 @@
   ],
   [
    "creativity-insight",
-   81
+   82
   ],
   [
    "pseudoscience-skepticism",
-   76
+   78
   ],
   [
    "grief-loneliness",
@@ -549,6 +549,10 @@
    35
   ],
   [
+   "PSYC 212: Psychological Aspects of Drug Use and Abuse",
+   35
+  ],
+  [
    "Foundations of Psychology: Concepts and Applications",
    34
   ],
@@ -618,6 +622,10 @@
   ],
   [
    "Psychological Statistics (Psy320)",
+   29
+  ],
+  [
+   "Brains, Minds and Machines Summer Course 2020",
    29
   ],
   [
@@ -805,6 +813,10 @@
    22
   ],
   [
+   "Brains, Minds and Machines Summer Course 2021",
+   22
+  ],
+  [
    "UC Berkeley Economics 119: Psychology and Economics (Fall 2011)",
    21
   ],
@@ -850,6 +862,10 @@
   ],
   [
    "PSYC 2344 Cultural Psychology",
+   19
+  ],
+  [
+   "Drugs & Human Behavior",
    19
   ],
   [
@@ -961,6 +977,10 @@
    13
   ],
   [
+   "Brains, Minds and Machines Summer Course 2023",
+   13
+  ],
+  [
    "The Degenerating Brain: From Research to Hope",
    12
   ],
@@ -981,6 +1001,10 @@
    12
   ],
   [
+   "Brains, Minds and Machines Summer Course 2019",
+   12
+  ],
+  [
    "Cognitive Neuroscience",
    11
   ],
@@ -990,6 +1014,10 @@
   ],
   [
    "Psych 100",
+   11
+  ],
+  [
+   "Brains, Minds and Machines Summer Course 2022",
    11
   ],
   [
@@ -1006,6 +1034,14 @@
   ],
   [
    "CNS4: Two-Dimensional Neuron Models and Phase Plane Analysis",
+   10
+  ],
+  [
+   "Childhood Psychopathology",
+   10
+  ],
+  [
+   "Brains, Minds and Machines Summer Course 2024",
    10
   ],
   [
@@ -1026,6 +1062,10 @@
   ],
   [
    "CNS7: Modern Phenomenological Neuron Models",
+   9
+  ],
+  [
+   "fMRI Bootcamp",
    9
   ],
   [
@@ -1054,6 +1094,14 @@
   ],
   [
    "CNS5: Variability of Spike Trains",
+   8
+  ],
+  [
+   "Research Methods in Psychology",
+   8
+  ],
+  [
+   "OHBM2022 Educational Course: Analyzing Large Neuroimaging Datasets",
    8
   ],
   [
@@ -1170,6 +1218,10 @@
   ],
   [
    "NeuroBytes",
+   24
+  ],
+  [
+   "Inside the Brain: A Journey Through Anatomy",
    24
   ],
   [
@@ -1341,6 +1393,10 @@
    8
   ],
   [
+   "Lockdown Talks: Series 1",
+   8
+  ],
+  [
    "Insight into Personality Psychology",
    7
   ],
@@ -1445,6 +1501,10 @@
    6
   ],
   [
+   "Lockdown Talks: Series 4",
+   6
+  ],
+  [
    "A Romp through the Philosophy of Mind",
    5
   ],
@@ -1498,6 +1558,14 @@
   ],
   [
    "KnowNeuropsychology, Volume XII",
+   4
+  ],
+  [
+   "Lockdown Talks: Series 3",
+   4
+  ],
+  [
+   "Lockdown Talks: Series 2",
    4
   ],
   [
@@ -1785,6 +1853,10 @@
    27
   ],
   [
+   "Language Neuroscience",
+   27
+  ],
+  [
    "Psychiatry Grand Rounds 2023",
    26
   ],
@@ -1814,6 +1886,10 @@
   ],
   [
    "2022 Beijing Brain Conference",
+   25
+  ],
+  [
+   "Neurology",
    25
   ],
   [
@@ -1878,6 +1954,10 @@
   ],
   [
    "Brain Injury and Me",
+   22
+  ],
+  [
+   "CBMM Research Talks",
    22
   ],
   [
@@ -1966,6 +2046,10 @@
   ],
   [
    "BNS Spring 2024 Meeting",
+   19
+  ],
+  [
+   "Emergent Properties of the Connected Brain",
    19
   ],
   [
@@ -2114,6 +2198,10 @@
   ],
   [
    "Aphasia Voices",
+   16
+  ],
+  [
+   "SVRHM Workshop 2020",
    16
   ],
   [
@@ -2305,6 +2393,14 @@
    12
   ],
   [
+   "Advances in the Quest to Understand Intelligence",
+   12
+  ],
+  [
+   "Scientific Interviews",
+   12
+  ],
+  [
    "Psychiatry Special Seminars",
    11
   ],
@@ -2450,6 +2546,10 @@
   ],
   [
    "Cognitive Control Collaborative Showcase 2021",
+   10
+  ],
+  [
+   "Risk and Resilience to Alzheimer's Disease in African Americans",
    10
   ],
   [
@@ -2733,6 +2833,10 @@
    7
   ],
   [
+   "2026 CNStalks",
+   7
+  ],
+  [
    "Understanding Mental Health (#OxfordMentalHealth)",
    6
   ],
@@ -2902,6 +3006,10 @@
   ],
   [
    "Black Luminaries in Neuropsychology",
+   6
+  ],
+  [
+   "2024 Seminars",
    6
   ],
   [
@@ -3230,6 +3338,18 @@
   ],
   [
    "SPSP 2020 Annual Convention Sessions",
+   5
+  ],
+  [
+   "2025 Seminars",
+   5
+  ],
+  [
+   "2023 Seminars",
+   5
+  ],
+  [
+   "CBMM10: 10-Year Anniversary Workshop",
    5
   ],
   [

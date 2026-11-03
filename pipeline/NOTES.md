@@ -102,7 +102,12 @@ outside any playlist (Dartmouth's Duchaine talk on prosopagnosia, Stanford's *Le
 the Royal Society's Ferrier Prize lecture, Oliver Sacks at the Nobel Museum, UCL's day on psychological
 therapies in acquired brain injury, grand rounds on functional neurological disorder at Temple, Rochester
 and UMass…). Those live in `raw/institutional/loose.json` and get the institutional vouch without a
-series (`inst.loose`); `make_inst_batches.py` labels them like lectures. Uploaders were checked by
+series (`inst.loose`); `make_inst_batches.py` labels them like lectures. The course channels the
+video searches surfaced were pulled the next morning (30 playlists, 443 lectures: MIT CBMM's Brains,
+Minds and Machines summer courses and research talks, the Clinical Neuroanatomy Seminars series, Paul
+Merritt's and Keith Donohue's courses, Ashok Jansari's lockdown talks, a Rutgers Alzheimer's
+conference; cards r6, label batches 111–113). Catalog after the round: 16,947 videos, 16,205
+institutional lectures in 944 collections from 237 institutions (304 counting standalone-talk sources). Uploaders were checked by
 channel: only institutions', societies', hospitals' and researchers' own channels were taken, and
 re-uploads of conference talks were left out.
 
