@@ -121,7 +121,7 @@
   const fmtDur = s => { if (!s) return ""; const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), x = s % 60; return h ? `${h}:${String(m).padStart(2, "0")}:${String(x).padStart(2, "0")}` : `${m}:${String(x).padStart(2, "0")}`; };
   const fmtLen = s => { if (!s) return ""; const h = Math.floor(s / 3600), m = Math.round((s % 3600) / 60); return h ? `${h} h ${m ? m + " min" : ""}`.trim() : `${m} min`; };
   const fmtViews = n => !n ? "" : n >= 1e6 ? (n / 1e6).toFixed(n >= 1e7 ? 0 : 1) + "M views" : n >= 1e3 ? Math.round(n / 1e3) + "K views" : n + " views";
-  const plural = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
+  const plural = (n, w) => `${n} ${n === 1 ? w : /[^aeiou]y$/.test(w) ? w.slice(0, -1) + "ies" : w + "s"}`;   // 2 communities, 3 passages
   const SITE_URL = "https://contofalskyr.github.io/PsychTube/";   // the live copy, where players embed in the page
   // videos are YouTube unless v.p names another provider (Panopto for courses universities host themselves)
   const PROVIDER_NAME = { youtube: "YouTube", panopto: "Panopto", archive: "the Internet Archive" };

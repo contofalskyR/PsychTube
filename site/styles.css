@@ -261,7 +261,7 @@ a.chip.inst:hover { text-decoration: underline; }
 .vlist { list-style: none; margin: 0; padding: 0; }
 .vlist li { padding: 10px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 112px 1fr; gap: 12px; font-size: 14px; }
 .vlist li:first-child { border-top: 0; }
-.vlist .who { color: var(--ink-3); font-size: 12.5px; line-height: 1.35; }
+.vlist .who { color: var(--ink-3); font-size: 12.5px; line-height: 1.35; min-width: 0; overflow-wrap: anywhere; }
 .vlist .who b { display: block; color: var(--ink-2); font-weight: 650; font-size: 13px; }
 .vlist .what a { color: var(--ink-3); }
 .vlist .what a:hover { color: var(--amber); }

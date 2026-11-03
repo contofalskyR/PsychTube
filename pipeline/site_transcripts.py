@@ -34,7 +34,9 @@ thing things kind sort going get got lot lots say said says see look looks mean 
 basically little bit good well much many make made want wants people something anything everything nothing somebody anybody course lecture
 question questions answer answers example examples called call talk talking talked today next last first second time times year years
 professor students student class slide slides audience inaudible laughter applause um uh yes yep hmm let put take gets goes come comes
-different same another back still even ever never always maybe probably pretty quite sure course""".split())
+different same another back still even ever never always maybe probably pretty quite sure course readings reading exam exams syllabus
+assignment assignments pause section sections office hours midterm final paper papers grade grades website email book chapter chapters
+slide slides video videos semester week weeks today tomorrow monday tuesday wednesday thursday friday""".split())
 
 
 def paragraphs(text, lo=90, hi=140):
@@ -54,6 +56,7 @@ def paragraphs(text, lo=90, hi=140):
 
 
 def clean_ocw(text):
+    text = re.sub(r"^\s*MITOCW\s*\|[^:]{0,160}?(?=\b[A-Z][A-Z' .-]{2,40}:)", "", text)   # caption files open with "MITOCW | <title>" before the first speaker
     text = OCW_HEADER.sub("", text, count=1) if "OpenCourseWare" in text[:1200] else text
     text = re.sub(r"\[?(SQUEAKING|RUSTLING|CLICKING|MUSIC PLAYING|LAUGHTER|APPLAUSE|INAUDIBLE)\]?", " ", text)
     return text.strip()
