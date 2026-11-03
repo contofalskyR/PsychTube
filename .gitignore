@@ -15,3 +15,8 @@ work/transcripts/oyc_sample.html
 # Internet Archive sweep results live on the archive-data branch (large); only want.json is versioned here
 work/archive/items_*.json
 work/archive/files.json
+
+# YouTube Data API results live on the yt-data branch
+work/yt_api/channel_playlists.json
+raw/institutional/pulled_api_*.json
+raw/youtube/meta_api_*.json

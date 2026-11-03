@@ -1,0 +1,44 @@
+name: YouTube Data API pull
+# Enumerates channels' playlists or pulls playlists in full through the YouTube Data API v3 (pipeline/yt_api.py), the
+# quota-metered route Google provides for this, and pushes the results to the `yt-data` branch for the build machine.
+# Needs the repository secret YT_API_KEY (Google Cloud console -> APIs & Services -> enable "YouTube Data API v3" ->
+# Credentials -> API key). Run by hand.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "playlists (channel ids in work/yt_api/channels.json) | pull (playlist ids in work/yt_api/pids.json) | videos (ids in work/yt_api/vids.json)"
+        required: true
+        default: "pull"
+permissions:
+  contents: write
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bring the previous results along
+        run: |
+          git fetch origin yt-data:yt-data 2>/dev/null && git checkout yt-data -- work/yt_api raw/institutional raw/youtube 2>/dev/null || true
+          git reset -q || true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - env:
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+        run: |
+          case "${{ inputs.mode }}" in
+            playlists) python3 pipeline/yt_api.py playlists work/yt_api/channels.json ;;
+            videos)    python3 pipeline/yt_api.py videos work/yt_api/vids.json ;;
+            *)         python3 pipeline/yt_api.py pull work/yt_api/pids.json ;;
+          esac
+      - name: Push results to the yt-data branch
+        run: |
+          git config user.name "youtube-api workflow"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout --orphan yt-data-new
+          git rm -rfq --cached .
+          git add -f work/yt_api/ raw/institutional/pulled_api_*.json raw/youtube/meta_api_*.json 2>/dev/null || git add -f work/yt_api/
+          git commit -qm "YouTube Data API ${{ inputs.mode }} $(date -u +%Y-%m-%dT%H:%MZ) from ${GITHUB_SHA::7}"
+          git push -f origin yt-data-new:yt-data
