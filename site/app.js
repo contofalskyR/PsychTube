@@ -9,6 +9,9 @@
   // data.js omits empty fields to stay small; restore the defaults the templates rely on
   for (const v of V) {
     for (const k of ["communities", "vouches", "clips", "rel", "kw", "cw", "topics"]) if (!v[k]) v[k] = [];
+    // content neighbours arrive as indices (smaller file); resolve them to ids before anything re-sorts the arrays
+    v.sim = (v.sim || []).map(i => PT.videos[i] && PT.videos[i].id).filter(Boolean);
+    v.simc = (v.simc || []).map(i => PT.series[i] && PT.series[i].id).filter(Boolean);
     if (!v.src) v.src = {};
     for (const k of ["why", "summary", "quote", "ch"]) if (v[k] == null) v[k] = "";
     for (const k of ["nrec", "nmention", "months", "score"]) if (v[k] == null) v[k] = 0;
@@ -27,6 +30,7 @@
   const LONG_FORM = 25 * 60;
   const PODCAST_RX = /podcast|huberman|lex fridman|rogan|modern wisdom|diary of a ceo|tim ferriss|rich roll|jordan harbinger|chris williamson|theo von|impact theory|the knowledge project|making sense|mindscape|lunar society|dwarkesh|econtalk|hidden brain|ologies|armchair expert/i;
   const INST_CH = new Set(PT.inst_channels || []);   // channels the institutions publish on
+  for (const sd of PT.series) sd.sim = (sd.sim || []).map(i => PT.series[i] && PT.series[i].id).filter(Boolean);
   const series = new Map(PT.series.map(s => [s.id, s]));
   const TIER = { course: 0, talk: 1, fireside: 2, podcast: 3 };
   function formTier(v) {
@@ -171,6 +175,16 @@
   const instTitle = inst => inst.n === LECTURER_GROUP ? `Published on ${inst.u ? inst.u + "'s" : "a lecturer's"} own channel${inst.ok === false ? " (affiliation not verified)" : ""}` : `Published by ${inst.n}${inst.u ? " · " + inst.u : ""}${inst.ok === false ? " (publisher not verified)" : ""}`;
   const instChip = v => v.inst ? `<span class="chip inst ${v.inst.ok === false ? "unverified" : ""}" title="${esc(instTitle(v.inst))}">${esc(instLabel(v.inst))}</span>` : "";
   const kindWord = v => { const sd = series.get(v.series); return sd && sd.kind === "talks" ? "talk" : "lecture"; };
+  // why two videos sit together: the content words they share (titles, keywords, topic names), for the "shares:" line
+  const SHARED_STOP = new Set("the a an and or of in on for to with from by at is are was were be as this that it its into about how why what who when lecture lectures part session class week intro introduction video full course module unit talk talks seminar psychology psychological dr prof professor university college man men woman women new make makes making life way one two first second like get good best need know think people time year years world work works study studies research science scientific understanding understand role approach approaches effect effects case cases overview review series episode interview conversation discussion panel keynote grand rounds phd special topics topic department school institute center centre presents presentation presented annual conference symposium webinar human".split(" "));
+  const splitWords = s => s.toLowerCase().split(/[^a-z0-9'-]+/).filter(t => t.length > 2 && !/^\d+$/.test(t) && !SHARED_STOP.has(t));
+  const wordsOf = x => new Set(splitWords([x.title, ...(x.kw || [])].join(" ")));
+  function sharedWords(a, b) {
+    const wb = wordsOf(b); const own = [...wordsOf(a)].filter(t => wb.has(t));          // words both titles/keywords use
+    if (own.length >= 2) return own.slice(0, 4).join(" · ");
+    const t = a.topics.find(x => b.topics.includes(x));                                    // else the topic they share, by name
+    return [...own, t && topics.get(t) ? `topic: ${topics.get(t).name.toLowerCase()}` : ""].filter(Boolean).slice(0, 2).join(" · ");
+  }
   function vouchLine(v, max) {
     const n = v.nrec || 0;
     if (!n && v.inst) return `<div class="vouch"><span class="pub">${v.inst.n === LECTURER_GROUP ? "Lecturer's channel" : "Published by"}</span> ${instChip(v)}<span class="faint">${v.inst.loose ? (v.type === "lecture" ? "standalone lecture" : "standalone talk") : `${kindWord(v) === "talk" ? "seminar talk" : "lecture"} ${v.inst.i} of ${v.inst.of}`}${v.inst.ok === false ? " · not verified" : ""}</span></div>`;
@@ -286,6 +300,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
       if (v.ch) chanW.set(v.ch, (chanW.get(v.ch) || 0) + w);
       if (v.series) seriesW.set(v.series, (seriesW.get(v.series) || 0) + w);
       for (const r of v.rel || []) out.set(r, (out.get(r) || 0) + 3 * w);
+      (v.sim || []).forEach((r, k) => out.set(r, (out.get(r) || 0) + 2 * w * (1 - k * 0.08)));   // what this lecture is about, not only who else linked it
     });
     for (const v of V) {
       if (watched.has(v.id) || !visible(v)) continue;
@@ -606,6 +621,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
       ${sp.started ? `<div class="course-progress"><div class="bar" role="progressbar" aria-label="Course progress" aria-valuenow="${sp.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${sp.pct}%"></i></div><span>${sp.pct >= 100 ? `Finished — all ${sp.n} ${unit}s` : `${sp.done} of ${sp.n} ${unit}s watched · ${sp.pct}%${sp.leftSec ? ` · about ${fmtLen(sp.leftSec)} left` : ""}`}</span></div>` : ""}
       <div class="toolbar"><a class="btn primary" href="#v-${next.id}">${sp.pct >= 100 ? "Watch again" : sp.started ? "Continue" : "Start"}: ${esc(next.title.slice(0, 60))}${nextAt ? ` <span class="faint">from ${fmtDur(nextAt)}</span>` : ""}</a>${(sd.materials || []).map(mt => `<a class="btn quiet" href="${esc(mt.url)}" target="_blank" rel="noopener">${esc(mt.label)} ↗</a>`).join("")}${sd.readings && !(sd.materials || []).some(mt => mt.url === sd.readings) ? `<a class="btn quiet" href="${esc(sd.readings)}" target="_blank" rel="noopener">Syllabus &amp; readings ↗</a>` : ""}${sd.url ? `<a class="btn quiet" href="${esc(sd.url)}" target="_blank" rel="noopener">${sd.provider === "panopto" ? "Course on Panopto" : sd.provider === "archive" ? "Course on the Internet Archive" : "Playlist on YouTube"} ↗</a>` : ""}${sd.chid || next.chid ? `<a class="btn quiet" href="https://www.youtube.com/channel/${esc(sd.chid || next.chid)}" target="_blank" rel="noopener">${esc(sd.ch || next.ch || "Channel")} ↗</a>` : ""}${sd.topics.map(t => `<a class="chip" href="#t-${t}">${esc(topics.get(t) ? topics.get(t).name : t)}</a>`).join("")}</div></div>
       ${pathwaysFor(id).map(({ pw, i }) => { const prev = i > 0 ? stepTarget(pw.steps[i - 1]) : null, nxt = i + 1 < pw.steps.length ? stepTarget(pw.steps[i + 1]) : null; return `<p class="pathline">Step ${i + 1} of ${pw.steps.length} in the <a href="#pathways?p=${esc(pw.id)}">${esc(pw.name)}</a> pathway${prev ? ` · before it: <a href="${prev.href}">${esc(prev.name)}</a>` : ""}${nxt ? ` · after it: <a href="${nxt.href}">${esc(nxt.name)}</a>` : ""}</p>`; }).join("")}
+      ${(sd.sim || []).length ? `<section class="section"><div class="section-head"><div><h2>Courses like this</h2><div class="sub">Matched on what the lectures are about, across institutions.</div></div></div><div class="row">${sd.sim.map(x => series.get(x)).filter(Boolean).slice(0, 6).map(x => seriesCard(x)).join("")}</div></section>` : ""}
       <ol class="lectures">${vids.map((v, i) => `<li class="${isDone(v.id) ? "done" : ""}" data-row="${v.id}"><span class="num">${isDone(v.id) ? "✓" : sd.inst ? v.inst.i : i + 1}</span><a class="thumb ${isDone(v.id) ? "is-done" : ""}" href="#v-${v.id}" aria-label="${esc(v.title)}">${sd.inst && !thumbUrl(v.id) ? `<div class="ph lec" style="--h:${hueOf(sd.id)}" aria-hidden="true"><b>${v.inst.i}</b></div>` : ""}${img(v.id)}${v.len ? `<span class="pill">${fmtDur(v.len)}</span>` : ""}${progressBar(v)}</a><div><a class="lt" href="#v-${v.id}">${esc(v.title)}</a>${v.why || (v.summary && !sd.inst) ? `<div class="muted" style="font-size:13.5px">${esc(v.why || v.summary)}</div>` : ""}${v.nrec ? vouchLine(v) : sd.inst ? `<div class="vouch"><span class="faint">${v.len ? fmtLen(v.len) : ""}${v.topics[0] && v.topics[0] !== sd.topics[0] ? ` · ${esc(topics.get(v.topics[0]).name)}` : ""}</span></div>` : ""}<div class="track">${isDone(v.id) ? `<span class="watched">Watched</span>` : pctOf(v) ? `<span class="muted">${pctOf(v)}% · <a href="#v-${v.id}">resume at ${fmtDur(resumeAt(v) || progOf(v.id).t)}</a></span>` : ""}<button class="mini" data-done="${v.id}">${isDone(v.id) ? "Mark unwatched" : "Mark watched"}</button></div></div></li>`).join("")}</ol>`;
     main.querySelectorAll("[data-done]").forEach(b => b.onclick = () => { markDone(b.dataset.done, !isDone(b.dataset.done)); pageSeries(id); });
   }
@@ -758,7 +774,9 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
     state.history = [{ id, ts: Date.now() }, ...state.history.filter(h => h.id !== id)].slice(0, 500);
     store.set("history", state.history);
     const rel = (v.rel || []).map(r => byId.get(r)).filter(Boolean).filter(visible);
-    const sameTopic = V.filter(x => x.id !== id && visible(x) && x.topics[0] === v.topics[0] && !rel.includes(x)).slice(0, 10);
+    const sim = (v.sim || []).map(r => byId.get(r)).filter(Boolean).filter(x => visible(x) && !rel.includes(x));
+    const simCourses = (v.simc || []).map(r => series.get(r)).filter(Boolean).filter(sd => sd.id !== v.series);
+    const sameTopic = V.filter(x => x.id !== id && visible(x) && x.topics[0] === v.topics[0] && !rel.includes(x) && !sim.includes(x)).slice(0, 10);
     const sameSeries = v.series ? series.get(v.series) : null;
     const posInSeries = sameSeries ? sameSeries.vids.indexOf(id) : -1;
     const nextInSeries = sameSeries ? sameSeries.vids[posInSeries + 1] : null;
@@ -805,6 +823,8 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
     <aside class="side">
       ${sameSeries ? `<h2>${sameSeries.inst ? `<a href="#s-${sameSeries.id}">${esc(sameSeries.name.length > 48 ? sameSeries.name.slice(0, 46) + "…" : sameSeries.name)}</a>` : "From this series"}</h2>${(posInSeries >= 0 && posInSeries + 1 < sameSeries.vids.length ? sameSeries.vids.slice(posInSeries + 1, posInSeries + 5) : sameSeries.vids.filter(x => x !== id).slice(0, 4)).map(x => byId.get(x)).filter(Boolean).map(x => card(x, { cls: "small", noVouch: true, idx: x.inst ? x.inst.i : undefined })).join("")}${sameSeries.n > 5 ? `<p class="faint" style="margin:4px 0 14px"><a href="#s-${sameSeries.id}" style="text-decoration:underline">All ${sameSeries.n} ${KIND_WORD[sameSeries.kind] || "lecture"}s</a></p>` : ""}` : ""}
       ${rel.length ? `<h2>People who recommended this also recommended</h2>${rel.slice(0, 10).map(x => card(x, { cls: "small", chips: 2 })).join("")}` : ""}
+      ${sim.length ? `<h2>On the same ground <span class="faint" title="Matched on what the videos are about: titles, summaries, keywords and topics. The words under each card are what they share.">by content</span></h2>${sim.slice(0, 8).map(x => `${card(x, { cls: "small", chips: 2 })}${sharedWords(v, x) ? `<div class="because">shares: ${esc(sharedWords(v, x))}</div>` : ""}`).join("")}` : ""}
+      ${simCourses.length ? `<h2>Courses that go deeper</h2><div class="grid" style="grid-template-columns:1fr">${simCourses.slice(0, 3).map(sd => seriesCard(sd)).join("")}</div>` : ""}
       <h2>More in ${esc(topics.get(v.topics[0]) ? topics.get(v.topics[0]).name : "")}</h2>${sameTopic.map(x => card(x, { cls: "small", chips: 2 })).join("")}
     </aside></div>`;
     document.getElementById("likeBtn").onclick = () => toggleLike(id);

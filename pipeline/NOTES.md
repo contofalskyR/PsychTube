@@ -364,6 +364,39 @@ a refresh path for pulled courses (C4), the Data API as the primary pull method 
 questions weighted by stance (S2), "uploaded by a third party" on community documentaries (D5), a
 liveness refresh (S8).
 
+## Content similarity (pipeline/similarity.py)
+
+The owner's next ask after the review: "connectivity to scientific relevancy" — watch a Chomsky lecture in
+an intro cognitive-science course and the linguistics should come up. 96% of the catalog has no
+co-recommendation data, so the `rel` graph (people who linked two videos together) connects almost nothing
+in the institutional tier. `similarity.py`, called by `build_catalog.py` before the export, adds a content
+graph: TF-IDF (unigrams and bigrams, sublinear tf, min_df 2, max_df 0.4) over each video's title ×3,
+summary, keywords, topic names ×2, series name and lecturer; cosine; per video the 8 nearest others
+(`sim`, indices into `videos[]`) with at most two from any one course and duplicate titles skipped, and
+the 3 nearest institutional courses other than its own (`simc`, indices into `series[]`); per course the 6
+nearest courses (`series[].sim`). A gentle legitimacy factor orders near-ties (institution's own ×1.0,
+other ×0.9, unverified publisher ×0.8) without changing who qualifies.
+
+The semantic half: GloVe (Wikipedia + Gigaword, 300-d, the gensim-data release) averaged per video with IDF
+weights and blended 35% into the video–video cosine, so "Chomsky" sits near "linguistics" and "syntax".
+The 394 MB vector file lives in `work/sim/` (not versioned; the URL is in the module), and the rows our
+vocabulary uses are cached in `work/sim/glove300.subset.npz` (17 MB) after the first pass. Without either
+file the build silently uses TF-IDF alone (`stats.sim_semantic` says which), so nothing depends on a
+download — but neighbours then differ, so a reproducible rebuild wants the cache. Course–course and
+video–course matching is lexical only: averaging a whole course's titles into one word vector drifts to a
+generic "brain" centroid and the big talk collections won everywhere; a taught course also counts ×1.0
+against ×0.85 for a talk collection, so "courses that go deeper" prefers courses. Sentence-transformer
+models would do better than GloVe on names ("Michel Foucault" still finds a "Michel Maziade" grand round)
+but Hugging Face is not reachable from the build environment; the module is written so an embedding
+matrix can replace `doc_vectors` when it is.
+
+On the site: the watch page's side column gains "On the same ground (by content)" with a "shares: …" line
+under each card (the title/keyword words the two have in common, else the topic they share) and "Courses
+that go deeper"; the series page gains "Courses like this"; "For you" counts content neighbours of what
+was watched (weight 2, decaying along the list) beside the co-recommendations (weight 3). `data.js` grew
+by about 1 MB (9.8 MB; hosted copy 13.9 of 16 MB), which makes the split of `data.js` the next
+infrastructure job.
+
 ## Submitted courses (raw/institutional/submissions/)
 
 The owner's ask after the review round: the site should also be where professors list their courses

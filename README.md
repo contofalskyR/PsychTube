@@ -74,6 +74,12 @@ science, neuroscience, clinical, social, philosophy, machine learning…) with n
 a vouched talk, a first lecture of a course and a primary source from outside the areas you already
 know — different ones each day, never something you've watched.
 
+Every video also has **content neighbours** (`pipeline/similarity.py`: TF-IDF plus GloVe word vectors,
+cosine, at most two per course): the watch page shows what is on the same ground across the whole
+catalog with the words the two share, and which courses go deeper; course pages show courses like them.
+It is what connects a lecture nobody has ever co-recommended to the rest of the field — a Chomsky lecture
+in an intro course leads to the linguistics and philosophy-of-mind courses.
+
 Lecturers can **list their own course**: a short GitHub issue form (linked from the Courses hub) takes the
 public playlist, the institution, a faculty page and the syllabus and reading links; the course then gets
 the same page as any other — lectures in order, materials linked, "submitted by the lecturer". Nothing is
@@ -121,6 +127,7 @@ pipeline/              scripts that build data.js
   make_taxonomy_md.py  regenerates classify/TAXONOMY.md from taxonomy.json (run after editing a topic or finding)
   intake_submission.py turns a "Submit a course" GitHub issue into raw/institutional/submissions/issue-<n>.json
   replication_candidates.py keyword pass over the built catalog for replication-badge candidates
+  similarity.py        content neighbours (sim/simc on videos, sim on series): TF-IDF + GloVe cosine; called by the build
   assemble_candidates.py turns the channel/topic sweep (raw/sweep/) into triage batches (work/triage/)
   build_artifact.py    writes site/hosted/ from site/ + raw/youtube/thumbs_*.json
   overrides.json       manual label corrections applied on top of the LLM labels
@@ -145,7 +152,9 @@ python3 pipeline/build_catalog.py
 
 reads everything under `raw/` and `work/` and rewrites `site/data.js` and `site/data/psychtube.json`.
 It is deterministic given the inputs (set `SOURCE_DATE_EPOCH` to pin the `generated` stamp as well), so
-re-running it after adding raw data is safe.
+re-running it after adding raw data is safe. For the semantic half of the content neighbours, put the
+GloVe release in `work/sim/` once (`curl -L -o work/sim/glove-wiki-gigaword-300.gz <URL in
+pipeline/similarity.py>`); without it the build uses TF-IDF alone and the neighbours differ slightly.
 
 ### Add more Reddit vouches
 

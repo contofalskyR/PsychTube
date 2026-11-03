@@ -846,6 +846,17 @@ for pw in (json.load(open(P("pipeline", "pathways.json"), encoding="utf-8"))["pa
         pathways_out.append({"id": pw["id"], "name": pw["name"], "for": pw.get("for", ""), "steps": steps})
 stats["pathways"] = len(pathways_out)
 
+# ---------------------------------------------------------------- content similarity (pipeline/similarity.py)
+# TF-IDF cosine neighbours per video (sim: indices into videos[]) and related courses (simc: indices into series[]),
+# so lectures nobody co-recommended still connect to the rest of the catalog by what they are about.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import similarity as _similarity  # noqa: E402
+for _j, _sd in enumerate(series):
+    _sd["_j"] = _j
+stats.update(_similarity.compute(catalog, series, areas_out))
+for _sd in series:
+    _sd.pop("_j", None)
+
 # SOURCE_DATE_EPOCH (reproducible-builds.org) pins the stamp so two builds of the same inputs are byte-identical
 generated = dt.datetime.fromtimestamp(int(os.environ.get("SOURCE_DATE_EPOCH") or dt.datetime.now(dt.timezone.utc).timestamp()), dt.timezone.utc).strftime("%Y-%m-%d")
 src_totals = collections.Counter()

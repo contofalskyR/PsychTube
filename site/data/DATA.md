@@ -73,6 +73,7 @@ Fields that would be empty, zero or false are **omitted** to keep the file small
 | `first`, `last`, `months` | first and last year it was mentioned, and how many distinct months it was recommended |
 | `clips` | timestamps (seconds) people linked to directly |
 | `rel` | ids of videos recommended by the same people (co-recommendation), strongest first |
+| `sim`, `simc` | content neighbours: `sim` is up to 8 **indices into `videos[]`** of the videos closest in content (TF-IDF over title, summary, keywords, topic names, series and lecturer, blended 35% with IDF-weighted GloVe word vectors; cosine; at most two per course), `simc` up to 3 **indices into `series[]`** of the institutional courses closest in content other than its own. Indices, not ids, to keep the file small; `pipeline/similarity.py` has the method. This is what connects a lecture nobody co-recommended to the rest of the catalog |
 | `kw` | a few of the uploader's YouTube keywords |
 
 ## Two tiers: vouched videos and university courses
@@ -97,7 +98,9 @@ the `lecturer`, their `affil` (the institution the channel says they teach at) a
 when an institutional page confirms it (`pipeline/publishers.json` holds the evidence); `ok: false`
 marks the unverified ones, with `pubwhy` saying why. Courses a lecturer or institution submitted
 themselves carry `materials[]` (`{label, url}`: syllabus, readings, slides — links only) and
-`submitted` (`{by: "lecturer" | "institution" | "other", issue, control}`). `institutions[]` summarizes per canonical
+`submitted` (`{by: "lecturer" | "institution" | "other", issue, control}`). Every series also has `sim`,
+up to 6 indices into `series[]` of the courses closest in content (lexical TF-IDF over names, lecturers,
+topics and lecture titles; taught courses weighted a little above talk collections). `institutions[]` summarizes per canonical
 institution (`name`, `short`, `units[]`, `courses`, `lectures`, `pop`, `unverified`); `inst_channels`
 lists every channel id the institutions publish on, so a long video from one of them can be treated as
 institutional even when it is not in a pulled playlist.

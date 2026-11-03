@@ -2,3 +2,8 @@
 __pycache__/
 *.pyc
 work/commit*.json
+
+# word vectors for the semantic half of pipeline/similarity.py (download, see the file header); not versioned
+work/sim/*.gz
+work/sim/*.npz
+work/sim/*.flag
