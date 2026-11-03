@@ -1,0 +1,3296 @@
+[
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "P3FKHH2RzjI",
+"tr": "lecture-1",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-1"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "vg01Q1BI4WM",
+"tr": "lecture-2",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-2"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "7emS3ye3cVU",
+"tr": "lecture-3",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-3"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "rCKK6r15fro",
+"tr": "lecture-4",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-4"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "eznq75eBy2o",
+"tr": "lecture-5",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-5"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "Uf9tlbMckS0",
+"tr": "lecture-6",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-6"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "DmWrOUK2zgA",
+"tr": "lecture-7",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-7"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "Yuwqr5o58Z0",
+"tr": "lecture-8",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-8"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "kZoBgX8rScg",
+"tr": "lecture-9",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-9"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "AMsQfgV07vU",
+"tr": "lecture-10",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-10"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "8UySWKNjw5Y",
+"tr": "lecture-11",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-11"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "i5IrSEIPdwk",
+"tr": "lecture-12",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-12"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "piDznzrNymE",
+"tr": "lecture-13",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-13"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "RCNgknc7Qv8",
+"tr": "lecture-14",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-14"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "xpmESnTeZP8",
+"tr": "lecture-15",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-15"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "jsrB5m3mL-A",
+"tr": "lecture-16",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-16"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "S6OfFaBWtx4",
+"tr": "lecture-17",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-17"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "rW79ZwDPKsY",
+"tr": "lecture-18",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-18"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "4wtl3q87Rn8",
+"tr": "lecture-19",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-19"
+},
+{
+"pid": "PL6A08EB4EEFF3E91F",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-110/",
+"vid": "7dep9KPWp3g",
+"tr": "lecture-20",
+"url": "https://oyc.yale.edu/psychology/psyc-110/lecture-20"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "7b5pxRKZJ4U",
+"tr": "lecture-16",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-16"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "Q2ZDxgZFMxE",
+"tr": "lecture-23",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-23"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "1qk0WYaqafM",
+"tr": "lecture-19",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-19"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "L1ZnPaSsgaQ",
+"tr": "lecture-18",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-18"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "Uxq7D0ekngI",
+"tr": "lecture-22",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-22"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "-zK_EXG5JlM",
+"tr": "lecture-21",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-21"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "QaT8v-l2rHw",
+"tr": "lecture-11",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-11"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "Ts0cWwnVnNw",
+"tr": "lecture-8",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-8"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "ywztGLXWOqA",
+"tr": "lecture-15",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-15"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "8_m5h1qjsW0",
+"tr": "lecture-13",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-13"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "1zXWFbRWT68",
+"tr": "lecture-17",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-17"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "n7GBSLWlCZ0",
+"tr": "lecture-12",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-12"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "ZZHD3EgPZDY",
+"tr": "lecture-14",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-14"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "RCdHeXvnx3E",
+"tr": "lecture-20",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-20"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "QpKh2WXdo9A",
+"tr": "lecture-2",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-2"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "TbUFwGGripI",
+"tr": "lecture-1",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-1"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "rVTgFsfuAv8",
+"tr": "lecture-4",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-4"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "OY98XxlU_-o",
+"tr": "lecture-5",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-5"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "9cVjnKj3QPI",
+"tr": "lecture-9",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-9"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "_yIU_goT4ZU",
+"tr": "lecture-3",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-3"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "85PGReBR85A",
+"tr": "lecture-7",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-7"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "ufy1w2sahbE",
+"tr": "lecture-10",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-10"
+},
+{
+"pid": "PLh9mgdi4rNeyz0eiyC7pXr_20zPMi-tI9",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/psychology/psyc-123/",
+"vid": "DJl4S_n9wFY",
+"tr": "lecture-6",
+"url": "https://oyc.yale.edu/psychology/psyc-123/lecture-6"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "mUHYlyacMmA",
+"tr": "lecture-1",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-1"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "xTGc1Pyp-Jc",
+"tr": "lecture-2",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-2"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "1ojnSKzI2BE",
+"tr": "lecture-3",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-3"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "znE88LapbTs",
+"tr": "lecture-4",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-4"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "q6Kkq7xULSo",
+"tr": "lecture-5",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-5"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "eMkE0qZ1lhU",
+"tr": "lecture-6",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-6"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "5JMNOKVeA9Q",
+"tr": "lecture-7",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-7"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "9EN8gs7D4tY",
+"tr": "lecture-8",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-8"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "reZA81S0zfI",
+"tr": "lecture-9",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-9"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "C8yNxXAm7F4",
+"tr": "lecture-10",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-10"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "xp3m7e9T72k",
+"tr": "lecture-11",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-11"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "K60AdYPVNWk",
+"tr": "lecture-12",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-12"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "rc-vSvT0YuE",
+"tr": "lecture-13",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-13"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "rzGksx_yZ6A",
+"tr": "lecture-14",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-14"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "lIlRWR9vNtE",
+"tr": "lecture-15",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-15"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "Zzi-BIaAljY",
+"tr": "lecture-16",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-16"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "VkjZHAhKuaI",
+"tr": "lecture-17",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-17"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "f4jWztT5Qj4",
+"tr": "lecture-18",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-18"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "UTUDf7SYl1k",
+"tr": "lecture-19",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-19"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "6w7DrbaVwTc",
+"tr": "lecture-20",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-20"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "E-zrvazR39o",
+"tr": "lecture-21",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-21"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "v95aQqvdkNk",
+"tr": "lecture-22",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-22"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "9T2nD6I2DzA",
+"tr": "lecture-23",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-23"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "AOk-5OEtWSU",
+"tr": "lecture-24",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-24"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "gQSWBxWEZNE",
+"tr": "lecture-25",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-25"
+},
+{
+"pid": "PL3F6BC200B2930084",
+"p": "oyc",
+"name": "Open Yale Courses",
+"base": "https://oyc.yale.edu/philosophy/phil-181/",
+"vid": "8WAVYVWnvOU",
+"tr": "lecture-26",
+"url": "https://oyc.yale.edu/philosophy/phil-181/lecture-26"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "2fbrl6WoIyo",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/2fbrl6WoIyo_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "syXplPKQb_o",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/syXplPKQb_o_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "SjjGiqf96rI",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/SjjGiqf96rI_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "-cK1og4ElKE",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/-cK1og4ElKE_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "v4ur5mna060",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/v4ur5mna060_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "MYMYXhR2Ppw",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/MYMYXhR2Ppw_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "lBU64nfe8nM",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/lBU64nfe8nM_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "QvK6YdFKMY8",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/QvK6YdFKMY8_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "SBrCPDC21f4",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/SBrCPDC21f4_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "76O3rulk844",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/76O3rulk844_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "kD3CswjYb2E",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/kD3CswjYb2E_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "gRe7dy2HSTg",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/gRe7dy2HSTg_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "qZdm4mpQA_8",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/qZdm4mpQA_8_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "bihrpOS0qtY",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/bihrpOS0qtY_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "t73rjeOj0eY",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/t73rjeOj0eY_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "Vko17una2Zw",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/Vko17una2Zw_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "yBYebcVw8Zk",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/yBYebcVw8Zk_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "Qw4SkvZ03cc",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/Qw4SkvZ03cc_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "z9XQpjNgeBI",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/z9XQpjNgeBI_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "SXzdOK_J-xE",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/SXzdOK_J-xE_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "SFPPw6sDHEI",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/SFPPw6sDHEI_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "lanmHS0JwYI",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/lanmHS0JwYI_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "zPPsdsAQBx4",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/zPPsdsAQBx4_transcript.pdf"
+},
+{
+"pid": "PL44ABC9278E2EE706",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+"vid": "vf1U3Nt3HQk",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/vf1U3Nt3HQk_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "jQdf2XgbLZo",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/jQdf2XgbLZo_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "COg6Qzt1new",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/COg6Qzt1new_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "yESTOkh6nQE",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/yESTOkh6nQE_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "R6_jm8BOrjw",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/R6_jm8BOrjw_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "jnU15SkboCA",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/jnU15SkboCA_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "IIgJWYMX6LE",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/IIgJWYMX6LE_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "g7h0jNsXlBE",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/g7h0jNsXlBE_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "-gFz4HL_uhA",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/-gFz4HL_uhA_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "14UeTjQOx50",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/14UeTjQOx50_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "4i9jRsZlqUs",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/4i9jRsZlqUs_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "l6zkg3Ihg0g",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/l6zkg3Ihg0g_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "3LXkRwfXIYA",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/3LXkRwfXIYA_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "LzGIpm5UFCg",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/LzGIpm5UFCg_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "YOcLv_Ta7G0",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/YOcLv_Ta7G0_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "KUqGpkR21aM",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/KUqGpkR21aM_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "LIRI_8hjgm8",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/LIRI_8hjgm8_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "x4cEMnDoBAA",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/x4cEMnDoBAA_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "5UwvH2b1j2E",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/5UwvH2b1j2E_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "YKajORo4Gk4",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/YKajORo4Gk4_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "0zijwkFuwbo",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/0zijwkFuwbo_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "3TnQSVytQ8A",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/3TnQSVytQ8A_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "Eki8KqKxGQg",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/Eki8KqKxGQg_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP615Y1j9Ok3szAH5DxhFjTHo",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/",
+"vid": "oM5OgMz4g_M",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-00-introduction-to-psychology-fall-2004/oM5OgMz4g_M_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP60IKRN_pFptIBxeiMc0MCJP",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+"vid": "ba-HMvDn_vU",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/ba-HMvDn_vU_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP60IKRN_pFptIBxeiMc0MCJP",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+"vid": "bAkuNXtgrLA",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/bAkuNXtgrLA_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP60IKRN_pFptIBxeiMc0MCJP",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+"vid": "vFZY--lgmHs",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/vFZY--lgmHs_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP60IKRN_pFptIBxeiMc0MCJP",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+"vid": "YD7QG4G7WVg",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/YD7QG4G7WVg_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP60IKRN_pFptIBxeiMc0MCJP",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+"vid": "Nk0H3o-hRMA",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/Nk0H3o-hRMA_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP60IKRN_pFptIBxeiMc0MCJP",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+"vid": "otriwYhNtm0",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/otriwYhNtm0_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP60IKRN_pFptIBxeiMc0MCJP",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+"vid": "MuRVOQY8KoY",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/MuRVOQY8KoY_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP60IKRN_pFptIBxeiMc0MCJP",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+"vid": "ppxK4R8XWfU",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/ppxK4R8XWfU_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP60IKRN_pFptIBxeiMc0MCJP",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+"vid": "kAX_PRnliMo",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/kAX_PRnliMo_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP60IKRN_pFptIBxeiMc0MCJP",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+"vid": "xA00vkxG3lE",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/xA00vkxG3lE_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP60IKRN_pFptIBxeiMc0MCJP",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+"vid": "YVHM8dSkimo",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/YVHM8dSkimo_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP60IKRN_pFptIBxeiMc0MCJP",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+"vid": "XRdJ5mXBo8A",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/XRdJ5mXBo8A_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP60IKRN_pFptIBxeiMc0MCJP",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+"vid": "SchmVoc5NzY",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/SchmVoc5NzY_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP60IKRN_pFptIBxeiMc0MCJP",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+"vid": "W2PY6z1Wddg",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/W2PY6z1Wddg_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP60IKRN_pFptIBxeiMc0MCJP",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+"vid": "9Bz-5-RC690",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/9Bz-5-RC690_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP60IKRN_pFptIBxeiMc0MCJP",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+"vid": "pfZY5aDJazA",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/pfZY5aDJazA_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP60IKRN_pFptIBxeiMc0MCJP",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/",
+"vid": "B4a0WdGp52g",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-13-the-human-brain-spring-2019/B4a0WdGp52g_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "Qn7WPvap3Zo",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/Qn7WPvap3Zo_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "Z_pkmDx_eI4",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/Z_pkmDx_eI4_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "kr8Hn8y3sEg",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/kr8Hn8y3sEg_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "spjZiKkKnmM",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/spjZiKkKnmM_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "Nh5ObEa5Hys",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/Nh5ObEa5Hys_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "t8xg8ml7Vh8",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/t8xg8ml7Vh8_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "466icY9MQp4",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/466icY9MQp4_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "HanUSsBG-FU",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/HanUSsBG-FU_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "B0CGAAW7vNE",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/B0CGAAW7vNE_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "pxka4eFhURU",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/pxka4eFhURU_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "2STgYpgd2yc",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/2STgYpgd2yc_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "dAqHTEdvgks",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/dAqHTEdvgks_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "fZ06NG0Dii8",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/fZ06NG0Dii8_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "HC0TlX3EcSU",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/HC0TlX3EcSU_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "LM5f-g40Gxg",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/LM5f-g40Gxg_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "3AF4I5hhIkM",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/3AF4I5hhIkM_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "5vDwUpEDy6g",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/5vDwUpEDy6g_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "TBSTGrZMc7c",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/TBSTGrZMc7c_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "8MyPd4F7y54",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/8MyPd4F7y54_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "PoaWyf6Nn6Y",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/PoaWyf6Nn6Y_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "FdW8ZEaqcaw",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/FdW8ZEaqcaw_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "1Jqmt54hjLc",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/1Jqmt54hjLc_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "iGW0nRbAqEM",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/iGW0nRbAqEM_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "ICNNwjUcc-E",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/ICNNwjUcc-E_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "VQlZOIAQZSc",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/VQlZOIAQZSc_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "FqVRwxc8hqQ",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/FqVRwxc8hqQ_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "yvB7-meTXSI",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/yvB7-meTXSI_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "pgjBwhb7A28",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/pgjBwhb7A28_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "mY28rftwuPE",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/mY28rftwuPE_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "Ip9b2vSbW-c",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/Ip9b2vSbW-c_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "TeNrTKjJJ5g",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/TeNrTKjJJ5g_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "G8o7WcoW2Ms",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/G8o7WcoW2Ms_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "xZ72LPLHVSY",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/xZ72LPLHVSY_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "CG9E8P41LL0",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/CG9E8P41LL0_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62ABe0O-0qtaHHxyKQi1ZwR",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/",
+"vid": "ujjKhLp2r5A",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-14-brain-structure-and-its-origins-spring-2014/ujjKhLp2r5A_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "CqJkz9SfGk4",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/CqJkz9SfGk4_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "eQxzotQiuhQ",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/eQxzotQiuhQ_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "JcbX4ayBeoA",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/JcbX4ayBeoA_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "v_VmhyueJNQ",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/v_VmhyueJNQ_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "5LBqn8aqqXw",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/5LBqn8aqqXw_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "fnodeNO6gaQ",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/fnodeNO6gaQ_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "KSD3avale8o",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/KSD3avale8o_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "PvNHQCOR7V0",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/PvNHQCOR7V0_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "2ESEaH-BNcY",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/2ESEaH-BNcY_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "0ppHCmnqbbM",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/0ppHCmnqbbM_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "o4KW5HgFd1w",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/o4KW5HgFd1w_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "N9Yn4Wg48Gs",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/N9Yn4Wg48Gs_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "uJk4b8VsC6c",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/uJk4b8VsC6c_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "nAzefvAHMg4",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/nAzefvAHMg4_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "9mYYNtaZJp8",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/9mYYNtaZJp8_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "-HPdmgS88Og",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/-HPdmgS88Og_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "8IeL2koaHMk",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/8IeL2koaHMk_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "9Nlb3rIoCIc",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/9Nlb3rIoCIc_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "GW-MAJf6Aos",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/GW-MAJf6Aos_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "HU9lnyV47po",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/HU9lnyV47po_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "Q8p2q9GFBMk",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/Q8p2q9GFBMk_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "RjdAI2ycYhI",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/RjdAI2ycYhI_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "tD78-FwKf08",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/tD78-FwKf08_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "Cqj4KVnD0OU",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/Cqj4KVnD0OU_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63TbPEWYEKOq8yAN8mEP_5O",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/",
+"vid": "oLIMFmEgaWo",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-20-animal-behavior-fall-2013/oLIMFmEgaWo_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "g1ka1MXpo3s",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/g1ka1MXpo3s_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "TdOdc_n-ZCA",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/TdOdc_n-ZCA_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "T9HYPlE8xzc",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/T9HYPlE8xzc_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "n-NpJQgSLrk",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/n-NpJQgSLrk_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "_XTuXlXav78",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/_XTuXlXav78_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "M2KHrh_fCHE",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/M2KHrh_fCHE_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "rGYhDvz066I",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/rGYhDvz066I_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "_ly5LmLte50",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/_ly5LmLte50_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "vPXTDpXwBs0",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/vPXTDpXwBs0_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "ezBuTFbF5Gs",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/ezBuTFbF5Gs_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "LJZi6CZafms",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/LJZi6CZafms_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "oPb9AWMN2fY",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/oPb9AWMN2fY_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "-I-WA_kSkfA",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/-I-WA_kSkfA_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "jdiy_lV2xno",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/jdiy_lV2xno_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "t4IA4GsLMEk",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/t4IA4GsLMEk_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "PXJvQGDyESc",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/PXJvQGDyESc_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "9fL2zRnkDdQ",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/9fL2zRnkDdQ_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "-2d9XooPwHo",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/-2d9XooPwHo_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "qubzQvNNaLI",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/qubzQvNNaLI_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "Z937cqa--P8",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/Z937cqa--P8_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "A11axifKMtQ",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/A11axifKMtQ_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "A0KpTR_Ujks",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/A0KpTR_Ujks_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Wy1oqQW2oD2HBdDSY8Ghi",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/",
+"vid": "OAOec-To-84",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-04-sensory-systems-fall-2013/OAOec-To-84_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "PnJEj6TokDA",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/PnJEj6TokDA_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "3GC721pNRLE",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/3GC721pNRLE_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "KXnHxZdn8NU",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/KXnHxZdn8NU_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "88tKZLGOr3M",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/88tKZLGOr3M_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "K1pxJVdqlxw",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/K1pxJVdqlxw_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "dNHqd6nGr5o",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/dNHqd6nGr5o_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "r1VX3WXrYUw",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/r1VX3WXrYUw_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "osYGG7TKcz8",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/osYGG7TKcz8_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "fCqt07IXUPI",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/fCqt07IXUPI_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "smHwRzk81b0",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/smHwRzk81b0_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "4ip-4ai6kN8",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/4ip-4ai6kN8_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "Hf1Ma9YkOMY",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/Hf1Ma9YkOMY_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "VQXxs59Eiak",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/VQXxs59Eiak_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "5KhcA454er0",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/5KhcA454er0_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "Oq_k8F2T1Jc",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/Oq_k8F2T1Jc_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "Yjeexoq_WAI",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/Yjeexoq_WAI_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "N-49t1j-XWY",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/N-49t1j-XWY_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "EpPtCLkCGOk",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/EpPtCLkCGOk_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "vQpo3rTwUjc",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/vQpo3rTwUjc_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61I4aI5T6OaFfRK2gihjiMm",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/",
+"vid": "gt52wUN3VrQ",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-40-introduction-to-neural-computation-spring-2018/gt52wUN3VrQ_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "_svW8NV1A6k",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/_svW8NV1A6k_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "3Mvzp5xvEXA",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/3Mvzp5xvEXA_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "zAx-EEelmLc",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/zAx-EEelmLc_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "Ch56tU3wb9c",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/Ch56tU3wb9c_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "AWYzdtetQbE",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/AWYzdtetQbE_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "8PcPpVQK7N8",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/8PcPpVQK7N8_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "vmE4N0m67AA",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/vmE4N0m67AA_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "fmx5Yj95sgQ",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/fmx5Yj95sgQ_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "RTmoWFZQ-WE",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/RTmoWFZQ-WE_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "Pwm6DqdC4pU",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/Pwm6DqdC4pU_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "hfryF7_QU2c",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/hfryF7_QU2c_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "dfsPKoHv_F4",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/dfsPKoHv_F4_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "6iW0beoK2tI",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/6iW0beoK2tI_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "6nfmDpar0fQ",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/6nfmDpar0fQ_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "l1t2_5UZhPA",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/l1t2_5UZhPA_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "GXuI9fKDxso",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/GXuI9fKDxso_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "-05tcR4izaw",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/-05tcR4izaw_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "zHa-n2M7Bj8",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/zHa-n2M7Bj8_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "GGakcLdPWl4",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/GGakcLdPWl4_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "ggcbVV3Tquo",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/ggcbVV3Tquo_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "Xj4nKgJW5yE",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/Xj4nKgJW5yE_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "43kansULeBE",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/43kansULeBE_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "eKKXJyabCAQ",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/eKKXJyabCAQ_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "TjrRSOHQACw",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/TjrRSOHQACw_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "yEbr410E2RE",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/yEbr410E2RE_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "NRygklHAoEw",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/NRygklHAoEw_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "7XvgBI2KV28",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/7XvgBI2KV28_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "A4R2PQOHT2w",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/A4R2PQOHT2w_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "HA4undazeF0",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/HA4undazeF0_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "hRAlCx8Xd0Q",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/hRAlCx8Xd0Q_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "i0-2sd9RQ6E",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/i0-2sd9RQ6E_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "hWabPMYZzmo",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/hWabPMYZzmo_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "HCBaApqRqSg",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/HCBaApqRqSg_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "PlAelAX6gSU",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/PlAelAX6gSU_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "S7M9hXsCRFI",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/S7M9hXsCRFI_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "7eUfAb8de8c",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/7eUfAb8de8c_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "Em9I6XTQA3I",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/Em9I6XTQA3I_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "juRiFivEj8s",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/juRiFivEj8s_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "FndNHiuFeFU",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/FndNHiuFeFU_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "1kel8U86EVE",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/1kel8U86EVE_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "FRoD9TOJxso",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/FRoD9TOJxso_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "rUqqquitfMQ",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/rUqqquitfMQ_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "7BAChnLg8Co",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/7BAChnLg8Co_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "EAWpLeor4Zk",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/EAWpLeor4Zk_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "D8zaRaVWy9k",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/D8zaRaVWy9k_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "IeD8VXfqPyQ",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/IeD8VXfqPyQ_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "opMnuRnfaX0",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/opMnuRnfaX0_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "QeHuHti530Q",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/QeHuHti530Q_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "3xBTFOxtfNU",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/3xBTFOxtfNU_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "cyQZP23YbCY",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/cyQZP23YbCY_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "fmmRyV9ObkU",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/fmmRyV9ObkU_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "pquNMjlgPwI",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/pquNMjlgPwI_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "FMb-HSnaNs4",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/FMb-HSnaNs4_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "lv3kGg-eRa0",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/lv3kGg-eRa0_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "Unvy1L_NH0c",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/Unvy1L_NH0c_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "pCyWp8R4zsA",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/pCyWp8R4zsA_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "_qTVDxXBK5A",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/_qTVDxXBK5A_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "JZcFjR4dMmw",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/JZcFjR4dMmw_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "NFFX81o9yRA",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/NFFX81o9yRA_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61RTZrT3MIAikp2G5EEvTjf",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/",
+"vid": "Bn49TBjEAI4",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/res-9-003-brains-minds-and-machines-summer-course-summer-2015/Bn49TBjEAI4_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61E-vNcDV0w5xpsIBYNJDkU",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/",
+"vid": "-pb3z2w9gDg",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/-pb3z2w9gDg_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61E-vNcDV0w5xpsIBYNJDkU",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/",
+"vid": "6AS48fTXBBs",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/6AS48fTXBBs_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61E-vNcDV0w5xpsIBYNJDkU",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/",
+"vid": "2KbvJ3iapbc",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/2KbvJ3iapbc_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61E-vNcDV0w5xpsIBYNJDkU",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/",
+"vid": "LuJFPVY1Nzo",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/LuJFPVY1Nzo_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61E-vNcDV0w5xpsIBYNJDkU",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/",
+"vid": "AO7F0n2Dclc",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/AO7F0n2Dclc_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61E-vNcDV0w5xpsIBYNJDkU",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/",
+"vid": "qJZ_1a-t_sA",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/qJZ_1a-t_sA_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61E-vNcDV0w5xpsIBYNJDkU",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/",
+"vid": "oG6FyY2r9G0",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/oG6FyY2r9G0_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61E-vNcDV0w5xpsIBYNJDkU",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/",
+"vid": "ATkGXyfuJqs",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/ATkGXyfuJqs_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61E-vNcDV0w5xpsIBYNJDkU",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/",
+"vid": "o6suzoRLZD4",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/o6suzoRLZD4_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61E-vNcDV0w5xpsIBYNJDkU",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/",
+"vid": "EXXZQjo3twk",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/EXXZQjo3twk_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61E-vNcDV0w5xpsIBYNJDkU",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/",
+"vid": "6Px0livk6m8",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/6Px0livk6m8_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61E-vNcDV0w5xpsIBYNJDkU",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/",
+"vid": "LmE_mdugLWE",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/LmE_mdugLWE_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP61E-vNcDV0w5xpsIBYNJDkU",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/",
+"vid": "TOLwmtn8Miw",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-fall-2011/TOLwmtn8Miw_transcript.pdf"
+},
+{
+"pid": "PL459FB027BA55FA4A",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-spring-2007/",
+"vid": "7OHdAHWhPwQ",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-spring-2007/7OHdAHWhPwQ_transcript.pdf"
+},
+{
+"pid": "PL459FB027BA55FA4A",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-spring-2007/",
+"vid": "kZkLqCdMXWY",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-spring-2007/kZkLqCdMXWY_transcript.pdf"
+},
+{
+"pid": "PL459FB027BA55FA4A",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-spring-2007/",
+"vid": "raoGbWJeR50",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-spring-2007/raoGbWJeR50_transcript.pdf"
+},
+{
+"pid": "PL459FB027BA55FA4A",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-spring-2007/",
+"vid": "PXTQsHOSpv4",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-spring-2007/PXTQsHOSpv4_transcript.pdf"
+},
+{
+"pid": "PL459FB027BA55FA4A",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-spring-2007/",
+"vid": "HFGkQF5v6TQ",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/6-868j-the-society-of-mind-spring-2007/HFGkQF5v6TQ_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "IPJC8loEmd4",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/IPJC8loEmd4_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "qzNJi4AO_Aw",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/qzNJi4AO_Aw_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "pTe0A8ZOAGk",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/pTe0A8ZOAGk_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "aCZi_b68GLw",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/aCZi_b68GLw_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "_Pdlr0jOhbQ",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/_Pdlr0jOhbQ_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "A9j5TFfysoU",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/A9j5TFfysoU_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "piG9-U9loXo",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/piG9-U9loXo_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "BxpmcOO2YqQ",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/BxpmcOO2YqQ_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "5XHGEOOYnzw",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/5XHGEOOYnzw_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "-I6-wJuPXk4",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/-I6-wJuPXk4_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "4FXDthnSA5c",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/4FXDthnSA5c_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "uv2vYLFCgX0",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/uv2vYLFCgX0_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "Aave3OyCGPc",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/Aave3OyCGPc_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "ReKjU4ZUAjg",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/ReKjU4ZUAjg_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "gaZTffZYyrg",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/gaZTffZYyrg_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "ZF7oiSWipB0",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/ZF7oiSWipB0_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "7cEAX5gqd7o",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/7cEAX5gqd7o_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "q-ukGIZt3Do",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/q-ukGIZt3Do_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "dSib18ws_jI",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/dSib18ws_jI_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "v36j3rQaH-s",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/v36j3rQaH-s_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "sdYDZeXzE5Q",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/sdYDZeXzE5Q_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "llVlVvk3KS0",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/llVlVvk3KS0_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP62-9RweyYBIpkqfo5dfcuS8",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/",
+"vid": "Mre84EsXY_Y",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/9-35-perception-spring-2024/Mre84EsXY_Y_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "j5XdY5wkVTA",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/j5XdY5wkVTA_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "lD_73cro7wc",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/lD_73cro7wc_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "UbRlSqmN4uM",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/UbRlSqmN4uM_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "_iNqssktTto",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/_iNqssktTto_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "bBOBSC16NLU",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/bBOBSC16NLU_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "8WhNaFsFC8I",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/8WhNaFsFC8I_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "pwFsPEPPUGU",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/pwFsPEPPUGU_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "Lhtf6jFM8Vo",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/Lhtf6jFM8Vo_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "SC8K6gNAIL4",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/SC8K6gNAIL4_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "JXRd60knm-A",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/JXRd60knm-A_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "S6JHQ3-bsHk",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/S6JHQ3-bsHk_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "l7mu7-YNSg0",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/l7mu7-YNSg0_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "K7QVIqV2QMk",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/K7QVIqV2QMk_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "ik1gdNwHLiY",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/ik1gdNwHLiY_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "szy8tLyFS-Q",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/szy8tLyFS-Q_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "j9Zeole0bYg",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/j9Zeole0bYg_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "qk0mVzI1L78",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/qk0mVzI1L78_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "3UTfFMTqH70",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/3UTfFMTqH70_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "5C-Wp6sL8lg",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/5C-Wp6sL8lg_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "S-BaPQR1ZRU",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/S-BaPQR1ZRU_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "Z0vdSf8m13k",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/Z0vdSf8m13k_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "Re2lkF0vgQw",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/Re2lkF0vgQw_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "_LJnCFFyF-M",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/_LJnCFFyF-M_transcript.pdf"
+},
+{
+"pid": "PLUl4u3cNGP63Z979ri_UXXk_1zrvrF77Q",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/",
+"vid": "UI4Hjug3rEc",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/UI4Hjug3rEc_transcript.pdf"
+},
+{
+"pid": "PL8FD2F66DF27A663D",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/24-08j-philosophical-issues-in-brain-science-spring-2009/",
+"vid": "mcrGC0KTfnY",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/24-08j-philosophical-issues-in-brain-science-spring-2009/mcrGC0KTfnY_transcript.pdf"
+},
+{
+"pid": "PL8FD2F66DF27A663D",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/24-08j-philosophical-issues-in-brain-science-spring-2009/",
+"vid": "EDRa-ESxmJY",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/24-08j-philosophical-issues-in-brain-science-spring-2009/EDRa-ESxmJY_transcript.pdf"
+},
+{
+"pid": "PL8FD2F66DF27A663D",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/24-08j-philosophical-issues-in-brain-science-spring-2009/",
+"vid": "FkhU7i8hRK4",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/24-08j-philosophical-issues-in-brain-science-spring-2009/FkhU7i8hRK4_transcript.pdf"
+},
+{
+"pid": "PL8FD2F66DF27A663D",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/24-08j-philosophical-issues-in-brain-science-spring-2009/",
+"vid": "M3F_hAHJzNQ",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/24-08j-philosophical-issues-in-brain-science-spring-2009/M3F_hAHJzNQ_transcript.pdf"
+},
+{
+"pid": "PL8FD2F66DF27A663D",
+"p": "ocw",
+"name": "MIT OpenCourseWare",
+"base": "https://ocw.mit.edu/courses/24-08j-philosophical-issues-in-brain-science-spring-2009/",
+"vid": "F0Eq5Lt_fSQ",
+"tr": 1,
+"url": "https://ocw.mit.edu/courses/24-08j-philosophical-issues-in-brain-science-spring-2009/F0Eq5Lt_fSQ_transcript.pdf"
+}
+]

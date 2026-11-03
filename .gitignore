@@ -7,3 +7,7 @@ work/commit*.json
 work/sim/*.gz
 work/sim/*.npz
 work/sim/*.flag
+
+# fetched transcript text (large; the workflow artifact holds it, site/data/tr/ carries what the site serves)
+work/transcripts/text/
+work/transcripts/oyc_sample.html
