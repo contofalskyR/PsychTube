@@ -131,6 +131,11 @@ shelf lists the Perls film with the Ellis session as an alternative.
 There is no stable embed or MP4 to point a third-party player at, and the archive window is a year,
 so the lectures cannot be carried the way YouTube, Panopto and Internet Archive items are. If that
 changes, the hook is a `p: "nih"` provider that links out to `videocast.nih.gov/watch=<id>`.
+**Oxford Podcasts** (podcasts.ox.ac.uk) was looked at for the same reason: its `/series?keyword=`
+listing is now almost entirely audio podcasts (CortexCast, Thriving Young Minds, …), and the few
+video lecture series it still holds on mind and brain are the ones already on the university's
+YouTube channel, so no provider was written for it either. University Kaltura/MediaSpace instances
+remain the known gap.
 
 ## Replication status (taxonomy.json → contested_findings, work/replication/)
 
