@@ -576,6 +576,35 @@ for a in TAX["areas"]:
     areas_out.append({"id": a["id"], "name": a["name"], "topics": [
         {"id": t["id"], "name": t["name"], "desc": t["description"], "n": topic_counts.get(t["id"], 0)} for t in a["topics"]]})
 
+# ---------------------------------------------------------------- pathways (pipeline/pathways.json): ordered routes through the courses, resolved against what exists
+series_ids = {sd["id"] for sd in series}
+pathways_out = []
+for pw in (json.load(open(P("pipeline", "pathways.json"), encoding="utf-8"))["pathways"] if os.path.exists(P("pipeline", "pathways.json")) else []):
+    steps = []
+    for st in pw["steps"]:
+        o = {"label": st["label"], "why": st.get("why", "")}
+        if st.get("all"):
+            o["all"] = [sid for sid in st["all"] if sid in series_ids]
+            if not o["all"]:
+                continue
+        elif st.get("series"):
+            hit = next((sid for sid in st["series"] if sid in series_ids), None)
+            if not hit:
+                continue
+            o["series"] = hit
+        elif st.get("shelf"):
+            if st["shelf"] not in {sh["id"] for sh in shelves_out}:
+                continue
+            o["shelf"] = st["shelf"]
+        elif st.get("page"):
+            o["page"] = st["page"]; o["page_label"] = st.get("page_label", st["page"])
+        else:
+            continue
+        steps.append(o)
+    if len(steps) >= 3:
+        pathways_out.append({"id": pw["id"], "name": pw["name"], "for": pw.get("for", ""), "steps": steps})
+stats["pathways"] = len(pathways_out)
+
 generated = dt.datetime.utcnow().strftime("%Y-%m-%d")
 src_totals = collections.Counter()
 for v in catalog:
@@ -602,6 +631,7 @@ data = {
                       "sources": [{kk: vv for kk, vv in src.items() if vv} for src in c.get("sources", [])]} for k, c in CONTESTED.items()},
     "status_labels": TAX.get("status_labels", {}),
     "shelves": shelves_out,
+    "pathways": pathways_out,
     "cw": TAX["content_warnings"],
     "institutions": list(institutions.values()),
     "series": series,

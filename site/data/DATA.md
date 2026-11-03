@@ -19,6 +19,8 @@ One file, `psychtube.json`, with this shape:
                "items": [{"sid": "pavlov-1948-film", "vid": "<video id or null>", "title": "...", "year": 1948, "people": "...", "what": "...",
                           "paper": {"cite": "...", "doi": "..."}, "paper2": null, "alt": [{"label": "...", "url": "..."}], "status": "pavlov-bell",
                           "topics": ["learning-studying"], "legit": "archive", "uploader": "...", "p": "archive", "len": 1200}]}],
+  "pathways": [{"id": "brain", "name": "From zero to the brain", "for": "...", "steps": [{"label": "...", "why": "...", "series": "c-yale-psyc-110-introduction-to-psychology"},
+                                                                                     {"label": "...", "why": "...", "all": ["c-cns1-...", "c-cns3-..."]}, {"label": "...", "why": "...", "shelf": "cases"}, {"label": "...", "why": "...", "page": "care", "page_label": "Handle with care"}]}],
   "cw": ["suicide-self-harm", "eating-disorders", "sexual-content", "abuse-violence", "substance-use"],
   "institutions": [{"name": "MIT", "short": "MIT", "courses": 0, "lectures": 0, "pop": 0}],
   "series": [{"id": "c-mit-9-13-the-human-brain", "name": "MIT 9.13 The Human Brain", "inst": "MIT", "short": "MIT", "lecturer": "Nancy Kanwisher", "year": 2019,
@@ -101,6 +103,14 @@ unofficial re-uploads were not used. The therapy shelf also picks up demonstrati
 labeled course brought in (role-plays, intake and case-formulation videos; `sid` prefixed `tp-`).
 Shelf videos not otherwise in the catalog have `type` `documentary` (originals, cases) or `demo`
 (demos, therapy).
+
+## Pathways
+
+`pathways[]` are nine suggested prerequisite orders through the courses (from zero to the brain,
+clinical psychology, clinical neuropsychology, cognitive science, computational neuroscience, methods,
+social and personality, consciousness, development). Each step points at one `series[].id`, at
+several that belong together (`all`, in order), at a shelf id or at a page; they were written by hand
+and resolved against the catalog at build time.
 
 ## Replication status
 

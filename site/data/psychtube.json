@@ -3947,6 +3947,325 @@
    ]
   }
  ],
+ "pathways": [
+  {
+   "id": "brain",
+   "name": "From zero to the brain",
+   "for": "You want to understand the brain and have never taken a psychology or biology course.",
+   "steps": [
+    {
+     "label": "Start with the whole field",
+     "why": "A first psychology course gives you the vocabulary everything else assumes: perception, memory, learning, emotion, disorders.",
+     "series": "c-yale-psyc-110-introduction-to-psychology"
+    },
+    {
+     "label": "Behavior from the biology up",
+     "why": "Sapolsky's Stanford course is the most recommended lecture series in psychology: evolution, genes, hormones and neurons as causes of behavior, with no prerequisites.",
+     "series": "c-human-behavioral-biology-2010"
+    },
+    {
+     "label": "A real neuroscience course",
+     "why": "Neurons, neurotransmitters, the senses, motor systems, memory, emotion: NYU's undergraduate course in syllabus order.",
+     "series": "c-brain-and-behavior"
+    },
+    {
+     "label": "How the human brain is organized",
+     "why": "Kanwisher's MIT course on what we know about the human brain specifically: faces, places, language, number, theory of mind.",
+     "series": "c-mit-9-13-the-human-brain"
+    },
+    {
+     "label": "See the classic cases",
+     "why": "Aphasia, neglect, blindsight, split brains: the patients whose deficits revealed the architecture.",
+     "shelf": "cases"
+    },
+    {
+     "label": "Then: the research frontier",
+     "why": "Seminar series where working neuroscientists present their own results. Not peer-reviewed; treat each talk as one lab's account.",
+     "series": "c-mcgovern-institute-talks-and-events"
+    }
+   ]
+  },
+  {
+   "id": "clinical",
+   "name": "Clinical psychology: from the textbook to the room",
+   "for": "You are interested in mental illness and psychotherapy and want the science before the practice.",
+   "steps": [
+    {
+     "label": "Start with the whole field",
+     "why": "Disorders and treatment make more sense once you know how normal perception, memory and emotion work.",
+     "series": "c-yale-psyc-110-introduction-to-psychology"
+    },
+    {
+     "label": "Abnormal psychology",
+     "why": "The disorders, their diagnosis and what is known about their causes, as a full course.",
+     "series": "c-abnormal-psychology"
+    },
+    {
+     "label": "The psychiatric side",
+     "why": "A psychiatry department's own introductory course: assessment, the major syndromes, medication.",
+     "series": "c-basics-of-psychiatry"
+    },
+    {
+     "label": "Watch an assessment",
+     "why": "Simulated psychiatric interviews filmed for medical students: what a clinician actually asks.",
+     "series": "c-psychiatric-interviews-for-teaching"
+    },
+    {
+     "label": "Watch therapy being done",
+     "why": "Full sessions and role-plays from training institutes: CBT, person-centred, motivational interviewing, and the Shostrom films.",
+     "shelf": "therapy"
+    },
+    {
+     "label": "Then: grand rounds",
+     "why": "Hospital grand rounds and clinical colloquia, where clinicians present cases and new evidence to each other.",
+     "series": "c-psychiatry-and-behavioral-sciences-grand-rounds"
+    }
+   ]
+  },
+  {
+   "id": "neuropsych",
+   "name": "Clinical neuropsychology",
+   "for": "You want to understand what brain damage does to the mind, and how it is examined at the bedside.",
+   "steps": [
+    {
+     "label": "A neuroscience course first",
+     "why": "You need the systems before the syndromes: NYU's Brain and Behavior, or Sapolsky's course if you prefer behavior first.",
+     "series": "c-brain-and-behavior"
+    },
+    {
+     "label": "The neurological examination",
+     "why": "UCD's bedside series: the examination step by step, then real patients with Parkinson's, MS, epilepsy and Huntington's disease.",
+     "series": "c-clinical-neurology-examination-and-patients"
+    },
+    {
+     "label": "The classic cases on film",
+     "why": "The aphasias, hemispatial neglect, prosopagnosia, blindsight, agnosia, alien hand, phantom limbs, locked-in syndrome, Phineas Gage.",
+     "shelf": "cases"
+    },
+    {
+     "label": "Where the functions live",
+     "why": "Kanwisher's course on the functional organization of the human brain is the map the cases are drawn on.",
+     "series": "c-mit-9-13-the-human-brain"
+    },
+    {
+     "label": "Memory and its loss",
+     "why": "A full course on memory, the function neuropsychology has studied longest.",
+     "series": "c-memory"
+    },
+    {
+     "label": "Then: the clinical neuroscience seminars",
+     "why": "Oxford's clinical neurosciences department and Cambridge's Zangwill Club: current work, presented by the people doing it.",
+     "series": "c-nuffield-department-of-clinical-neurosciences-talks"
+    }
+   ]
+  },
+  {
+   "id": "cogsci",
+   "name": "Cognitive science",
+   "for": "You are coming from computer science, linguistics or philosophy and want the mind as an information-processing system.",
+   "steps": [
+    {
+     "label": "Start with the whole field",
+     "why": "Cognitive science borrows its questions from psychology; a first course shows you which ones.",
+     "series": "c-yale-psyc-110-introduction-to-psychology"
+    },
+    {
+     "label": "Cognitive science as a discipline",
+     "why": "What the field is, where it came from and how its six parent disciplines fit together.",
+     "series": "c-cognitive-science-a-multidisciplinary-introduction"
+    },
+    {
+     "label": "Cognitive psychology proper",
+     "why": "Attention, memory, categories, problem solving: the experimental core.",
+     "series": "c-introduction-to-cognitive-psychology"
+    },
+    {
+     "label": "Language",
+     "why": "Psycholinguistics and language acquisition, the cognitive-science problems that started the cognitive revolution.",
+     "series": "c-the-psychology-of-language"
+    },
+    {
+     "label": "Philosophy of mind",
+     "why": "The conceptual questions underneath: representation, consciousness, what a mind is.",
+     "series": "c-a-romp-through-the-philosophy-of-mind"
+    },
+    {
+     "label": "Then: the field talking to itself",
+     "why": "Conference sessions and seminar series from the Cognitive Science Society and the Rotman Institute.",
+     "series": "c-philosophy-of-mind-and-cognitive-science-talks"
+    }
+   ]
+  },
+  {
+   "id": "compneuro",
+   "name": "Computational neuroscience",
+   "for": "You can handle calculus and a little differential equations and want to model neurons rather than just name their parts.",
+   "steps": [
+    {
+     "label": "The biology you will be modelling",
+     "why": "A neuroscience course first; the models are only interesting once you know what they are models of.",
+     "series": "c-brain-and-behavior"
+    },
+    {
+     "label": "Gerstner's Neuronal Dynamics, module by module",
+     "why": "Wulfram Gerstner's EPFL course, the standard first course in the subject: from the integrate-and-fire neuron to population dynamics. Take the modules in order.",
+     "all": [
+      "c-cns1-a-first-simple-neuron-model",
+      "c-cns3-synapses-dendrites-and-the-cable-equation",
+      "c-cns4-two-dimensional-neuron-models-and-phase-plane-analy",
+      "c-cns5-variability-of-spike-trains",
+      "c-cns6-noise-models-for-neuron-models",
+      "c-cns7-modern-phenomenological-neuron-models",
+      "c-cns8-fokker-planck-equation-for-integrate-and-fire-neuro"
+     ]
+    },
+    {
+     "label": "Neuroscience meets machine learning",
+     "why": "Summer schools where the two fields are taught together.",
+     "series": "c-data-science-and-ai-for-neuroscience-summer-school-2023"
+    },
+    {
+     "label": "Then: the seminars",
+     "why": "Theoretical neuroscience seminars and the Cognitive Computational Neuroscience conference.",
+     "series": "c-van-vreeswijk-theoretical-neuroscience-seminar-season-20"
+    }
+   ]
+  },
+  {
+   "id": "methods",
+   "name": "Methods, statistics and the replication crisis",
+   "for": "You want to be able to tell a solid finding from a fragile one.",
+   "steps": [
+    {
+     "label": "How psychology experiments are built",
+     "why": "Research methodology for psychology: designs, measurement, validity, the ways studies go wrong.",
+     "series": "c-psyc1040-psychology-research-methodology"
+    },
+    {
+     "label": "The statistics",
+     "why": "A full statistics course for psychology students, from distributions to inference.",
+     "series": "c-statistics-in-psychology"
+    },
+    {
+     "label": "Research and data analysis, Berkeley style",
+     "why": "A research-methods course taught with real data analysis.",
+     "series": "c-uc-berkeley-psychology-101-research-and-data-analysis-in"
+    },
+    {
+     "label": "What held up and what did not",
+     "why": "Every contested finding in the catalog with its replication status and the papers behind it.",
+     "page": "care",
+     "page_label": "Handle with care"
+    },
+    {
+     "label": "Then: the originals",
+     "why": "Read the famous experiments against their actual films and papers.",
+     "shelf": "originals"
+    }
+   ]
+  },
+  {
+   "id": "social",
+   "name": "Social and personality psychology",
+   "for": "You are interested in how people influence each other and why they differ.",
+   "steps": [
+    {
+     "label": "Start with the whole field",
+     "why": "Social and personality psychology sit on top of cognition and emotion.",
+     "series": "c-yale-psyc-110-introduction-to-psychology"
+    },
+    {
+     "label": "Social psychology",
+     "why": "Conformity, persuasion, attribution, groups, prejudice: a full course.",
+     "series": "c-social-psychology"
+    },
+    {
+     "label": "Personality",
+     "why": "Traits, their measurement and their biology, and the major theories.",
+     "series": "c-personality-and-its-transformations"
+    },
+    {
+     "label": "Social cognition",
+     "why": "How people think about people: an advanced course.",
+     "series": "c-uc-berkeley-psychology-164-social-cognition-spring-2014"
+    },
+    {
+     "label": "The famous studies, in their original footage",
+     "why": "Robbers Cave, Asch, Milgram, the Stanford prison experiment and what became of each.",
+     "shelf": "originals"
+    }
+   ]
+  },
+  {
+   "id": "mind",
+   "name": "Consciousness and the mind",
+   "for": "You want the hard problem, but with the neuroscience attached.",
+   "steps": [
+    {
+     "label": "Start with the whole field",
+     "why": "Perception, attention and memory are where the science of consciousness begins.",
+     "series": "c-yale-psyc-110-introduction-to-psychology"
+    },
+    {
+     "label": "Philosophy of mind",
+     "why": "The positions and the arguments, from dualism to illusionism.",
+     "series": "c-a-romp-through-the-philosophy-of-mind"
+    },
+    {
+     "label": "The neuroscience of consciousness",
+     "why": "A full lecture course on the neural basis of consciousness: anaesthesia, sleep, blindsight, split brains, the theories.",
+     "series": "c-neural-basis-of-consciousness-2021-lectures"
+    },
+    {
+     "label": "The patients",
+     "why": "Blindsight, split brains, alien hands and locked-in syndrome, on film.",
+     "shelf": "cases"
+    },
+    {
+     "label": "Then: the debate",
+     "why": "Seminar series where philosophers and neuroscientists argue it out.",
+     "series": "c-philosophy-of-mind-and-cognitive-science-talks"
+    }
+   ]
+  },
+  {
+   "id": "development",
+   "name": "How minds develop",
+   "for": "You are interested in children, parents or how a mind gets built.",
+   "steps": [
+    {
+     "label": "Start with the whole field",
+     "why": "Development is every other topic, on a timeline.",
+     "series": "c-yale-psyc-110-introduction-to-psychology"
+    },
+    {
+     "label": "Developmental psychology",
+     "why": "Infancy to adolescence: perception, attachment, language, theory of mind.",
+     "series": "c-uc-berkeley-psychology-140-developmental-psychology-spri-015"
+    },
+    {
+     "label": "Language acquisition",
+     "why": "How children learn language, the developmental problem with the most data.",
+     "series": "c-fundamentals-of-language-acquisition"
+    },
+    {
+     "label": "When development goes wrong",
+     "why": "Developmental psychopathology: autism, ADHD, anxiety and conduct problems across childhood.",
+     "series": "c-uc-berkeley-psychology-131-developmental-psychopathology"
+    },
+    {
+     "label": "The original films",
+     "why": "Gesell's infant films, the Strange Situation, the visual cliff and Piaget, with their papers.",
+     "shelf": "originals"
+    },
+    {
+     "label": "Then: the research institutes",
+     "why": "The UC Davis MIND Institute's lecture series on neurodevelopmental conditions.",
+     "series": "c-summer-institute-on-neurodevelopmental-disabilities"
+    }
+   ]
+  }
+ ],
  "cw": [
   "suicide-self-harm",
   "eating-disorders",
@@ -46401,8 +46720,8 @@
    },
    "rel": [
     "x94PGgYKHQ0",
-    "Kf3-el-dJAw",
-    "VO6XEQIsCoM"
+    "VO6XEQIsCoM",
+    "Kf3-el-dJAw"
    ]
   },
   {
@@ -48550,12 +48869,12 @@
     "Destin"
    ],
    "rel": [
-    "VIRCybGgHts",
-    "0uJIPZfwZFU",
     "ktkjUjcZid0",
     "wVZO1jQUHXU",
-    "vqBPZR63vfA",
-    "MZIaTaNR3gk"
+    "MZIaTaNR3gk",
+    "VIRCybGgHts",
+    "0uJIPZfwZFU",
+    "vqBPZR63vfA"
    ]
   },
   {
@@ -48885,8 +49204,8 @@
    ],
    "rel": [
     "4q1dgn_C0AU",
-    "Kf3-el-dJAw",
-    "vJG698U2Mvo"
+    "vJG698U2Mvo",
+    "Kf3-el-dJAw"
    ]
   },
   {
@@ -52892,10 +53211,10 @@
    ],
    "rel": [
     "cebFWOlx848",
-    "Iq3t0G_zadQ",
     "kcfRe15I47I",
-    "BTOODPf-iuc",
-    "YMPzDiraNnA"
+    "Iq3t0G_zadQ",
+    "YMPzDiraNnA",
+    "BTOODPf-iuc"
    ]
   },
   {
@@ -71300,8 +71619,8 @@
     "of": 119
    },
    "rel": [
-    "tLntiP5Msxw",
-    "Ugcq6FWmNI8"
+    "Ugcq6FWmNI8",
+    "tLntiP5Msxw"
    ],
    "series": "c-ucd-psych-1000"
   },
@@ -71704,10 +72023,10 @@
     "Are Rich People Worse Humans?"
    ],
    "rel": [
-    "eEg3JAOYsw0",
     "SNuZ4OE6vCk",
-    "6dluwVks444",
-    "ZbOAdMdMLdI"
+    "eEg3JAOYsw0",
+    "ZbOAdMdMLdI",
+    "6dluwVks444"
    ]
   },
   {
@@ -75529,9 +75848,9 @@
    ],
    "rel": [
     "cebFWOlx848",
-    "Iq3t0G_zadQ",
-    "1tSqSMOyNFE",
     "kcfRe15I47I",
+    "1tSqSMOyNFE",
+    "Iq3t0G_zadQ",
     "YMPzDiraNnA"
    ]
   },
@@ -75690,8 +76009,8 @@
     "Social psychology"
    ],
    "rel": [
-    "mE617qHso6k",
-    "EuPw6XKD4iM"
+    "EuPw6XKD4iM",
+    "mE617qHso6k"
    ]
   },
   {
@@ -75909,8 +76228,8 @@
    ],
    "rel": [
     "d4aD-epti4c",
-    "dGBYYcH7CS8",
-    "8QScpDGqwsQ"
+    "8QScpDGqwsQ",
+    "dGBYYcH7CS8"
    ]
   },
   {
@@ -75959,8 +76278,8 @@
     "self-help"
    ],
    "rel": [
-    "CSf8i8bHIns",
-    "foVMwJtlR5s"
+    "foVMwJtlR5s",
+    "CSf8i8bHIns"
    ]
   },
   {
@@ -76016,9 +76335,9 @@
    ],
    "rel": [
     "cebFWOlx848",
-    "Iq3t0G_zadQ",
-    "1tSqSMOyNFE",
     "kcfRe15I47I",
+    "1tSqSMOyNFE",
+    "Iq3t0G_zadQ",
     "BTOODPf-iuc"
    ]
   },
@@ -76361,10 +76680,10 @@
    ],
    "rel": [
     "cebFWOlx848",
-    "1tSqSMOyNFE",
     "kcfRe15I47I",
-    "BTOODPf-iuc",
-    "YMPzDiraNnA"
+    "1tSqSMOyNFE",
+    "YMPzDiraNnA",
+    "BTOODPf-iuc"
    ]
   },
   {
@@ -76420,10 +76739,10 @@
    ],
    "rel": [
     "cebFWOlx848",
-    "Iq3t0G_zadQ",
     "1tSqSMOyNFE",
-    "BTOODPf-iuc",
-    "YMPzDiraNnA"
+    "Iq3t0G_zadQ",
+    "YMPzDiraNnA",
+    "BTOODPf-iuc"
    ]
   },
   {
@@ -76800,8 +77119,8 @@
    ],
    "rel": [
     "8P4-qhWSUk0",
-    "AlayqPwDuz0",
     "rkiK9vo3C_k",
+    "AlayqPwDuz0",
     "2o9vdXN4490"
    ]
   },
@@ -76851,8 +77170,8 @@
     "terapia"
    ],
    "rel": [
-    "ps6PHYBUnuk",
     "8P4-qhWSUk0",
+    "ps6PHYBUnuk",
     "rkiK9vo3C_k",
     "2o9vdXN4490"
    ]
@@ -76903,8 +77222,8 @@
     "terapia"
    ],
    "rel": [
-    "ps6PHYBUnuk",
     "8P4-qhWSUk0",
+    "ps6PHYBUnuk",
     "AlayqPwDuz0",
     "2o9vdXN4490"
    ]
@@ -76956,8 +77275,8 @@
    ],
    "rel": [
     "ps6PHYBUnuk",
-    "AlayqPwDuz0",
     "rkiK9vo3C_k",
+    "AlayqPwDuz0",
     "2o9vdXN4490"
    ]
   },
@@ -77007,10 +77326,10 @@
     "terapia"
    ],
    "rel": [
-    "ps6PHYBUnuk",
     "8P4-qhWSUk0",
-    "AlayqPwDuz0",
-    "rkiK9vo3C_k"
+    "ps6PHYBUnuk",
+    "rkiK9vo3C_k",
+    "AlayqPwDuz0"
    ]
   },
   {
@@ -77314,11 +77633,11 @@
     "familiar"
    ],
    "rel": [
-    "Iq3t0G_zadQ",
-    "1tSqSMOyNFE",
     "kcfRe15I47I",
-    "BTOODPf-iuc",
-    "YMPzDiraNnA"
+    "1tSqSMOyNFE",
+    "Iq3t0G_zadQ",
+    "YMPzDiraNnA",
+    "BTOODPf-iuc"
    ]
   },
   {
@@ -77370,8 +77689,8 @@
    "rel": [
     "L90R6PtxFKE",
     "SNuZ4OE6vCk",
-    "6dluwVks444",
-    "ZbOAdMdMLdI"
+    "ZbOAdMdMLdI",
+    "6dluwVks444"
    ]
   },
   {
@@ -77676,8 +77995,8 @@
     "visual neurons"
    ],
    "rel": [
-    "oNhcpOIQCNs",
-    "tI_x5r-qPkY"
+    "tI_x5r-qPkY",
+    "oNhcpOIQCNs"
    ]
   },
   {
@@ -77728,8 +78047,8 @@
     "waterfall"
    ],
    "rel": [
-    "qLDKcZB8Eaw",
-    "tI_x5r-qPkY"
+    "tI_x5r-qPkY",
+    "qLDKcZB8Eaw"
    ]
   },
   {
@@ -77834,8 +78153,8 @@
    "rel": [
     "L90R6PtxFKE",
     "eEg3JAOYsw0",
-    "6dluwVks444",
-    "ZbOAdMdMLdI"
+    "ZbOAdMdMLdI",
+    "6dluwVks444"
    ]
   },
   {
@@ -78367,12 +78686,12 @@
     "Lecture"
    ],
    "rel": [
-    "0uJIPZfwZFU",
     "ktkjUjcZid0",
     "wVZO1jQUHXU",
-    "vqBPZR63vfA",
+    "MZIaTaNR3gk",
     "kUfF2MTnqAw",
-    "MZIaTaNR3gk"
+    "0uJIPZfwZFU",
+    "vqBPZR63vfA"
    ]
   },
   {
@@ -78422,8 +78741,8 @@
    ],
    "rel": [
     "L90R6PtxFKE",
-    "eEg3JAOYsw0",
     "SNuZ4OE6vCk",
+    "eEg3JAOYsw0",
     "6dluwVks444"
    ]
   },
@@ -78476,8 +78795,8 @@
    ],
    "rel": [
     "L90R6PtxFKE",
-    "eEg3JAOYsw0",
     "SNuZ4OE6vCk",
+    "eEg3JAOYsw0",
     "ZbOAdMdMLdI"
    ]
   },
@@ -78767,8 +79086,8 @@
     "Tech"
    ],
    "rel": [
-    "z7_LwuuPsAE",
     "qXcH26M7PQM",
+    "z7_LwuuPsAE",
     "o86W0DgrmRc"
    ]
   },
@@ -79913,8 +80232,8 @@
     "Brain"
    ],
    "rel": [
-    "U6PoUg7jXsA",
-    "VQKt58kuEnk"
+    "VQKt58kuEnk",
+    "U6PoUg7jXsA"
    ]
   },
   {
@@ -79965,8 +80284,8 @@
     "tedx talks"
    ],
    "rel": [
-    "U6PoUg7jXsA",
-    "9ebJlcZMx3c"
+    "9ebJlcZMx3c",
+    "U6PoUg7jXsA"
    ]
   },
   {
@@ -80017,8 +80336,8 @@
     "science"
    ],
    "rel": [
-    "VQKt58kuEnk",
-    "9ebJlcZMx3c"
+    "9ebJlcZMx3c",
+    "VQKt58kuEnk"
    ]
   },
   {
@@ -80111,12 +80430,12 @@
     "Body language"
    ],
    "rel": [
-    "VIRCybGgHts",
     "ktkjUjcZid0",
     "wVZO1jQUHXU",
-    "vqBPZR63vfA",
+    "MZIaTaNR3gk",
+    "VIRCybGgHts",
     "kUfF2MTnqAw",
-    "MZIaTaNR3gk"
+    "vqBPZR63vfA"
    ]
   },
   {
@@ -80166,12 +80485,12 @@
     "Psychology"
    ],
    "rel": [
-    "VIRCybGgHts",
-    "0uJIPZfwZFU",
     "ktkjUjcZid0",
-    "vqBPZR63vfA",
+    "MZIaTaNR3gk",
+    "VIRCybGgHts",
     "kUfF2MTnqAw",
-    "MZIaTaNR3gk"
+    "0uJIPZfwZFU",
+    "vqBPZR63vfA"
    ]
   },
   {
@@ -80222,12 +80541,12 @@
     "ted"
    ],
    "rel": [
-    "VIRCybGgHts",
-    "0uJIPZfwZFU",
     "ktkjUjcZid0",
     "wVZO1jQUHXU",
+    "MZIaTaNR3gk",
+    "VIRCybGgHts",
     "kUfF2MTnqAw",
-    "MZIaTaNR3gk"
+    "0uJIPZfwZFU"
    ]
   },
   {
@@ -81005,8 +81324,8 @@
     "feminism"
    ],
    "rel": [
-    "EuPw6XKD4iM",
-    "rwt9F53t7Rs"
+    "rwt9F53t7Rs",
+    "EuPw6XKD4iM"
    ]
   },
   {
@@ -81987,8 +82306,8 @@
    "last": 2026,
    "months": 1,
    "rel": [
-    "FoI94Epkjrc",
     "G4TA2JEWSnU",
+    "FoI94Epkjrc",
     "bFxjPitndHI"
    ]
   },
@@ -82042,8 +82361,8 @@
     "Relationships"
    ],
    "rel": [
-    "FoI94Epkjrc",
     "G4TA2JEWSnU",
+    "FoI94Epkjrc",
     "Atj9uXTfbe0"
    ]
   },
@@ -82095,8 +82414,8 @@
    ],
    "rel": [
     "FoI94Epkjrc",
-    "Atj9uXTfbe0",
-    "bFxjPitndHI"
+    "bFxjPitndHI",
+    "Atj9uXTfbe0"
    ]
   },
   {
@@ -82146,8 +82465,8 @@
    "months": 1,
    "rel": [
     "G4TA2JEWSnU",
-    "Atj9uXTfbe0",
-    "bFxjPitndHI"
+    "bFxjPitndHI",
+    "Atj9uXTfbe0"
    ]
   },
   {
@@ -83084,8 +83403,8 @@
     "climate change"
    ],
    "rel": [
-    "mE617qHso6k",
-    "rwt9F53t7Rs"
+    "rwt9F53t7Rs",
+    "mE617qHso6k"
    ]
   },
   {
@@ -83469,8 +83788,8 @@
    "months": 1,
    "rel": [
     "dGBYYcH7CS8",
-    "ORthzIOEf30",
-    "d4aD-epti4c"
+    "d4aD-epti4c",
+    "ORthzIOEf30"
    ]
   },
   {
@@ -83513,8 +83832,8 @@
    "months": 1,
    "rel": [
     "8QScpDGqwsQ",
-    "ORthzIOEf30",
-    "d4aD-epti4c"
+    "d4aD-epti4c",
+    "ORthzIOEf30"
    ]
   },
   {
@@ -83569,8 +83888,8 @@
    ],
    "rel": [
     "ORthzIOEf30",
-    "dGBYYcH7CS8",
-    "8QScpDGqwsQ"
+    "8QScpDGqwsQ",
+    "dGBYYcH7CS8"
    ]
   },
   {
@@ -84091,8 +84410,8 @@
     "Anatomical Pathology"
    ],
    "rel": [
-    "W147ybOdgpE",
-    "KIvGIwLcIuw"
+    "KIvGIwLcIuw",
+    "W147ybOdgpE"
    ]
   },
   {
@@ -86151,9 +86470,9 @@
    "last": 2019,
    "months": 1,
    "rel": [
-    "_tpB-B8BXk0",
+    "dPZFYzB7_KY",
     "ibdpwcj_Ecw",
-    "dPZFYzB7_KY"
+    "_tpB-B8BXk0"
    ]
   },
   {
@@ -86392,12 +86711,12 @@
     "Drugs"
    ],
    "rel": [
-    "VIRCybGgHts",
-    "0uJIPZfwZFU",
     "ktkjUjcZid0",
     "wVZO1jQUHXU",
-    "vqBPZR63vfA",
-    "kUfF2MTnqAw"
+    "VIRCybGgHts",
+    "kUfF2MTnqAw",
+    "0uJIPZfwZFU",
+    "vqBPZR63vfA"
    ]
   },
   {
@@ -86585,12 +86904,12 @@
     "futurism"
    ],
    "rel": [
-    "VIRCybGgHts",
-    "0uJIPZfwZFU",
     "wVZO1jQUHXU",
-    "vqBPZR63vfA",
+    "MZIaTaNR3gk",
+    "VIRCybGgHts",
     "kUfF2MTnqAw",
-    "MZIaTaNR3gk"
+    "0uJIPZfwZFU",
+    "vqBPZR63vfA"
    ]
   },
   {
@@ -86888,10 +87207,10 @@
     "A Billion Wicked Thoughts"
    ],
    "rel": [
-    "DdavXwv-6FM",
     "sPJQbB2o8Es",
-    "9XDwoK7h8PM",
-    "4a45YKqI-2I"
+    "DdavXwv-6FM",
+    "4a45YKqI-2I",
+    "9XDwoK7h8PM"
    ]
   },
   {
@@ -86945,10 +87264,10 @@
     "lectures"
    ],
    "rel": [
-    "p-A8GvUehq4",
     "DdavXwv-6FM",
-    "9XDwoK7h8PM",
-    "4a45YKqI-2I"
+    "4a45YKqI-2I",
+    "p-A8GvUehq4",
+    "9XDwoK7h8PM"
    ]
   },
   {
@@ -87002,9 +87321,9 @@
     "sex"
    ],
    "rel": [
-    "p-A8GvUehq4",
-    "DdavXwv-6FM",
     "sPJQbB2o8Es",
+    "DdavXwv-6FM",
+    "p-A8GvUehq4",
     "9XDwoK7h8PM"
    ]
   },
@@ -87050,10 +87369,10 @@
    "last": 2022,
    "months": 1,
    "rel": [
-    "p-A8GvUehq4",
-    "DdavXwv-6FM",
     "sPJQbB2o8Es",
-    "4a45YKqI-2I"
+    "DdavXwv-6FM",
+    "4a45YKqI-2I",
+    "p-A8GvUehq4"
    ]
   },
   {
@@ -87099,10 +87418,10 @@
    "last": 2022,
    "months": 1,
    "rel": [
-    "p-A8GvUehq4",
     "sPJQbB2o8Es",
-    "9XDwoK7h8PM",
-    "4a45YKqI-2I"
+    "4a45YKqI-2I",
+    "p-A8GvUehq4",
+    "9XDwoK7h8PM"
    ]
   },
   {
@@ -87252,17 +87571,17 @@
     "Eliminative"
    ],
    "rel": [
-    "cARMk9RCiF0",
-    "J8-RhC5slzk",
-    "RrLdC-bS9aM",
     "KnJRTa66-YA",
-    "HGLf98ytZBI",
-    "HWXESzf7dns",
-    "crI_T3K5ymY",
+    "keAMiCPI2aQ",
     "Gylkk-H33N0",
-    "OyXeTWEZ2J8",
+    "HGLf98ytZBI",
+    "cARMk9RCiF0",
+    "crI_T3K5ymY",
     "JbXocIKHNL8",
-    "keAMiCPI2aQ"
+    "OyXeTWEZ2J8",
+    "RrLdC-bS9aM",
+    "HWXESzf7dns",
+    "J8-RhC5slzk"
    ]
   },
   {
@@ -87312,17 +87631,17 @@
     "Religion"
    ],
    "rel": [
-    "cARMk9RCiF0",
-    "J8-RhC5slzk",
-    "S9ZDyusCwhk",
-    "RrLdC-bS9aM",
-    "HGLf98ytZBI",
-    "HWXESzf7dns",
-    "crI_T3K5ymY",
+    "keAMiCPI2aQ",
     "Gylkk-H33N0",
-    "OyXeTWEZ2J8",
+    "HGLf98ytZBI",
+    "cARMk9RCiF0",
+    "crI_T3K5ymY",
     "JbXocIKHNL8",
-    "keAMiCPI2aQ"
+    "OyXeTWEZ2J8",
+    "RrLdC-bS9aM",
+    "HWXESzf7dns",
+    "S9ZDyusCwhk",
+    "J8-RhC5slzk"
    ]
   },
   {
@@ -87372,17 +87691,17 @@
     "Religion"
    ],
    "rel": [
-    "cARMk9RCiF0",
-    "J8-RhC5slzk",
-    "S9ZDyusCwhk",
-    "RrLdC-bS9aM",
     "KnJRTa66-YA",
+    "keAMiCPI2aQ",
     "HGLf98ytZBI",
-    "HWXESzf7dns",
+    "cARMk9RCiF0",
     "crI_T3K5ymY",
-    "OyXeTWEZ2J8",
     "JbXocIKHNL8",
-    "keAMiCPI2aQ"
+    "OyXeTWEZ2J8",
+    "RrLdC-bS9aM",
+    "HWXESzf7dns",
+    "S9ZDyusCwhk",
+    "J8-RhC5slzk"
    ]
   },
   {
@@ -87432,17 +87751,17 @@
     "Religion"
    ],
    "rel": [
-    "cARMk9RCiF0",
-    "J8-RhC5slzk",
-    "S9ZDyusCwhk",
-    "RrLdC-bS9aM",
     "KnJRTa66-YA",
-    "HGLf98ytZBI",
-    "HWXESzf7dns",
-    "crI_T3K5ymY",
     "Gylkk-H33N0",
+    "HGLf98ytZBI",
+    "cARMk9RCiF0",
+    "crI_T3K5ymY",
+    "JbXocIKHNL8",
     "OyXeTWEZ2J8",
-    "JbXocIKHNL8"
+    "RrLdC-bS9aM",
+    "HWXESzf7dns",
+    "S9ZDyusCwhk",
+    "J8-RhC5slzk"
    ]
   },
   {
@@ -87492,17 +87811,17 @@
     "Religion"
    ],
    "rel": [
-    "cARMk9RCiF0",
-    "J8-RhC5slzk",
-    "S9ZDyusCwhk",
-    "RrLdC-bS9aM",
     "KnJRTa66-YA",
-    "HGLf98ytZBI",
-    "crI_T3K5ymY",
+    "keAMiCPI2aQ",
     "Gylkk-H33N0",
-    "OyXeTWEZ2J8",
+    "HGLf98ytZBI",
+    "cARMk9RCiF0",
+    "crI_T3K5ymY",
     "JbXocIKHNL8",
-    "keAMiCPI2aQ"
+    "OyXeTWEZ2J8",
+    "RrLdC-bS9aM",
+    "S9ZDyusCwhk",
+    "J8-RhC5slzk"
    ]
   },
   {
@@ -87552,17 +87871,17 @@
     "Religion"
    ],
    "rel": [
-    "cARMk9RCiF0",
-    "J8-RhC5slzk",
-    "S9ZDyusCwhk",
-    "RrLdC-bS9aM",
     "KnJRTa66-YA",
-    "HGLf98ytZBI",
-    "HWXESzf7dns",
-    "crI_T3K5ymY",
+    "keAMiCPI2aQ",
     "Gylkk-H33N0",
+    "HGLf98ytZBI",
+    "cARMk9RCiF0",
+    "crI_T3K5ymY",
     "OyXeTWEZ2J8",
-    "keAMiCPI2aQ"
+    "RrLdC-bS9aM",
+    "HWXESzf7dns",
+    "S9ZDyusCwhk",
+    "J8-RhC5slzk"
    ]
   },
   {
@@ -87613,17 +87932,17 @@
     "Materialism"
    ],
    "rel": [
-    "cARMk9RCiF0",
-    "S9ZDyusCwhk",
-    "RrLdC-bS9aM",
     "KnJRTa66-YA",
-    "HGLf98ytZBI",
-    "HWXESzf7dns",
-    "crI_T3K5ymY",
+    "keAMiCPI2aQ",
     "Gylkk-H33N0",
-    "OyXeTWEZ2J8",
+    "HGLf98ytZBI",
+    "cARMk9RCiF0",
+    "crI_T3K5ymY",
     "JbXocIKHNL8",
-    "keAMiCPI2aQ"
+    "OyXeTWEZ2J8",
+    "RrLdC-bS9aM",
+    "HWXESzf7dns",
+    "S9ZDyusCwhk"
    ]
   },
   {
@@ -87674,17 +87993,17 @@
     "Materialism"
    ],
    "rel": [
-    "cARMk9RCiF0",
-    "J8-RhC5slzk",
-    "S9ZDyusCwhk",
     "KnJRTa66-YA",
-    "HGLf98ytZBI",
-    "HWXESzf7dns",
-    "crI_T3K5ymY",
+    "keAMiCPI2aQ",
     "Gylkk-H33N0",
-    "OyXeTWEZ2J8",
+    "HGLf98ytZBI",
+    "cARMk9RCiF0",
+    "crI_T3K5ymY",
     "JbXocIKHNL8",
-    "keAMiCPI2aQ"
+    "OyXeTWEZ2J8",
+    "HWXESzf7dns",
+    "S9ZDyusCwhk",
+    "J8-RhC5slzk"
    ]
   },
   {
@@ -87735,17 +88054,17 @@
     "Materialism"
    ],
    "rel": [
-    "cARMk9RCiF0",
-    "J8-RhC5slzk",
-    "S9ZDyusCwhk",
-    "RrLdC-bS9aM",
     "KnJRTa66-YA",
-    "HGLf98ytZBI",
-    "HWXESzf7dns",
+    "keAMiCPI2aQ",
     "Gylkk-H33N0",
-    "OyXeTWEZ2J8",
+    "HGLf98ytZBI",
+    "cARMk9RCiF0",
     "JbXocIKHNL8",
-    "keAMiCPI2aQ"
+    "OyXeTWEZ2J8",
+    "RrLdC-bS9aM",
+    "HWXESzf7dns",
+    "S9ZDyusCwhk",
+    "J8-RhC5slzk"
    ]
   },
   {
@@ -87796,17 +88115,17 @@
     "Materialism"
    ],
    "rel": [
-    "J8-RhC5slzk",
-    "S9ZDyusCwhk",
-    "RrLdC-bS9aM",
     "KnJRTa66-YA",
-    "HGLf98ytZBI",
-    "HWXESzf7dns",
-    "crI_T3K5ymY",
+    "keAMiCPI2aQ",
     "Gylkk-H33N0",
-    "OyXeTWEZ2J8",
+    "HGLf98ytZBI",
+    "crI_T3K5ymY",
     "JbXocIKHNL8",
-    "keAMiCPI2aQ"
+    "OyXeTWEZ2J8",
+    "RrLdC-bS9aM",
+    "HWXESzf7dns",
+    "S9ZDyusCwhk",
+    "J8-RhC5slzk"
    ]
   },
   {
@@ -87857,17 +88176,17 @@
     "Materialism"
    ],
    "rel": [
-    "cARMk9RCiF0",
-    "J8-RhC5slzk",
-    "S9ZDyusCwhk",
-    "RrLdC-bS9aM",
     "KnJRTa66-YA",
-    "HWXESzf7dns",
-    "crI_T3K5ymY",
+    "keAMiCPI2aQ",
     "Gylkk-H33N0",
-    "OyXeTWEZ2J8",
+    "cARMk9RCiF0",
+    "crI_T3K5ymY",
     "JbXocIKHNL8",
-    "keAMiCPI2aQ"
+    "OyXeTWEZ2J8",
+    "RrLdC-bS9aM",
+    "HWXESzf7dns",
+    "S9ZDyusCwhk",
+    "J8-RhC5slzk"
    ]
   },
   {
@@ -87918,17 +88237,17 @@
     "Materialism"
    ],
    "rel": [
-    "cARMk9RCiF0",
-    "J8-RhC5slzk",
-    "S9ZDyusCwhk",
-    "RrLdC-bS9aM",
     "KnJRTa66-YA",
-    "HGLf98ytZBI",
-    "HWXESzf7dns",
-    "crI_T3K5ymY",
+    "keAMiCPI2aQ",
     "Gylkk-H33N0",
+    "HGLf98ytZBI",
+    "cARMk9RCiF0",
+    "crI_T3K5ymY",
     "JbXocIKHNL8",
-    "keAMiCPI2aQ"
+    "RrLdC-bS9aM",
+    "HWXESzf7dns",
+    "S9ZDyusCwhk",
+    "J8-RhC5slzk"
    ]
   },
   {
@@ -88118,8 +88437,8 @@
     "depression"
    ],
    "rel": [
-    "Yy8e4sw70ow",
-    "tLntiP5Msxw"
+    "tLntiP5Msxw",
+    "Yy8e4sw70ow"
    ]
   },
   {
@@ -88170,8 +88489,8 @@
     "learn"
    ],
    "rel": [
-    "Yy8e4sw70ow",
-    "Ugcq6FWmNI8"
+    "Ugcq6FWmNI8",
+    "Yy8e4sw70ow"
    ]
   },
   {
@@ -88366,8 +88685,8 @@
     "mental health"
    ],
    "rel": [
-    "_tpB-B8BXk0",
     "dPZFYzB7_KY",
+    "_tpB-B8BXk0",
     "cQKPvT-aEqk"
    ]
   },

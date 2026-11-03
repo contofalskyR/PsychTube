@@ -147,6 +147,16 @@ that Claude judged one by one into `tags.jsonl` (`vid`, `contested`, `role`); th
 onto videos without a badge. The care page groups findings by status and separates the original
 footage, the videos that present the finding and the pushback.
 
+## Pathways (pipeline/pathways.json)
+
+Nine hand-written prerequisite routes. Each step names candidate series ids in order of preference
+(the build keeps the first that exists; `all` keeps every listed id, for Gerstner's CNS modules), or
+a shelf, or a page; steps whose target is missing are dropped and a pathway survives with three or
+more. The site shows the page at `#pathways` (`?p=<id>` for one), a one-line link from the Courses
+hub, and a "Step n of m in the … pathway · before it / after it" line on every course that sits on
+one, with the viewer's own progress marking finished steps. Deliberately not in the navigation: the
+user asked for a side feature one finds if one cares, not a learning centre.
+
 ## "Teach me something I don't know" (site/app.js)
 
 No account: the viewer picks one or more backgrounds (`BACKGROUNDS` maps each — cognitive science,

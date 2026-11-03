@@ -40,6 +40,13 @@ review papers it rests on; 66 findings, from power posing and ego depletion to t
 Stroop (which hold up). The "Handle with care" page groups them by status, and a video's watch page
 says whether it presents the finding, pushes back on it, or *is* the original footage.
 
+For people who want a prerequisite chain rather than a catalog, a quiet **Pathways** page (linked from
+the Courses hub, and from each course that sits on one) gives nine suggested orders through the
+courses — from zero to the brain, clinical psychology, clinical neuropsychology, cognitive science,
+computational neuroscience, methods and the replication crisis, social and personality, consciousness,
+development — each ending in the primary sources and the seminar series where the field talks to
+itself. They live in `pipeline/pathways.json` and resolve against whatever courses the build has.
+
 The home page also has **"Teach me something I don't know"**: pick your background (cognitive
 science, neuroscience, clinical, social, philosophy, machine learning…) with no account, and it picks
 a vouched talk, a first lecture of a course and a primary source from outside the areas you already
@@ -75,6 +82,7 @@ site/hosted/           the variant published as a claude.ai artifact (no embeds 
 pipeline/              scripts that build data.js
   taxonomy.json        50 topics in 9 areas + 66 contested findings (status + verified sources) + content-note ids
   shelves.json         the curated shelves (primary sources, demos, therapy, clinical cases): video, uploader, legitimacy, paper, status
+  pathways.json        the Pathways page: ordered routes through the courses, by series id
   triage_overrides.json publishers and playlists dropped after triage, institution renames
   merge_pulled.py      appends pulled playlists to raw/institutional/courses.json after triage
   build_catalog.py     merges every source, scores, groups series, writes site/data.js

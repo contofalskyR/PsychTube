@@ -1,0 +1,117 @@
+{
+ "_comment": "Prerequisite pathways: ordered routes through the catalog. Each step names candidate series ids in order of preference (the first that exists in the build is used; 'all' lists several that belong together), or a shelf, a page or a single video. Hand-written; the site resolves them at load time, so a step whose course disappears is skipped rather than broken.",
+ "pathways": [
+  {
+   "id": "brain",
+   "name": "From zero to the brain",
+   "for": "You want to understand the brain and have never taken a psychology or biology course.",
+   "steps": [
+    {"label": "Start with the whole field", "why": "A first psychology course gives you the vocabulary everything else assumes: perception, memory, learning, emotion, disorders.", "series": ["c-yale-psyc-110-introduction-to-psychology", "c-mit-9-00sc-introduction-to-psychology", "c-general-psychology-fall-2020"]},
+    {"label": "Behavior from the biology up", "why": "Sapolsky's Stanford course is the most recommended lecture series in psychology: evolution, genes, hormones and neurons as causes of behavior, with no prerequisites.", "series": ["c-human-behavioral-biology-2010"]},
+    {"label": "A real neuroscience course", "why": "Neurons, neurotransmitters, the senses, motor systems, memory, emotion: NYU's undergraduate course in syllabus order.", "series": ["c-brain-and-behavior", "c-introductory-neuroscience-and-neuro-instrumentation"]},
+    {"label": "How the human brain is organized", "why": "Kanwisher's MIT course on what we know about the human brain specifically: faces, places, language, number, theory of mind.", "series": ["c-mit-9-13-the-human-brain", "c-mit-9-11-the-human-brain"]},
+    {"label": "See the classic cases", "why": "Aphasia, neglect, blindsight, split brains: the patients whose deficits revealed the architecture.", "shelf": "cases"},
+    {"label": "Then: the research frontier", "why": "Seminar series where working neuroscientists present their own results. Not peer-reviewed; treat each talk as one lab's account.", "series": ["c-mcgovern-institute-talks-and-events", "c-columbia-neuroscience-seminars", "c-harvard-brain-science-initiative-lectures-and-seminars"]}
+   ]
+  },
+  {
+   "id": "clinical",
+   "name": "Clinical psychology: from the textbook to the room",
+   "for": "You are interested in mental illness and psychotherapy and want the science before the practice.",
+   "steps": [
+    {"label": "Start with the whole field", "why": "Disorders and treatment make more sense once you know how normal perception, memory and emotion work.", "series": ["c-yale-psyc-110-introduction-to-psychology", "c-mit-9-00sc-introduction-to-psychology"]},
+    {"label": "Abnormal psychology", "why": "The disorders, their diagnosis and what is known about their causes, as a full course.", "series": ["c-abnormal-psychology", "c-uc-berkeley-psychology-130-clinical-psychology-fall-2013", "c-abnormal-psychology-lecture-series"]},
+    {"label": "The psychiatric side", "why": "A psychiatry department's own introductory course: assessment, the major syndromes, medication.", "series": ["c-basics-of-psychiatry"]},
+    {"label": "Watch an assessment", "why": "Simulated psychiatric interviews filmed for medical students: what a clinician actually asks.", "series": ["c-psychiatric-interviews-for-teaching"]},
+    {"label": "Watch therapy being done", "why": "Full sessions and role-plays from training institutes: CBT, person-centred, motivational interviewing, and the Shostrom films.", "shelf": "therapy"},
+    {"label": "Then: grand rounds", "why": "Hospital grand rounds and clinical colloquia, where clinicians present cases and new evidence to each other.", "series": ["c-psychiatry-and-behavioral-sciences-grand-rounds", "c-psychology-grand-rounds", "c-clinical-psychology-colloquium"]}
+   ]
+  },
+  {
+   "id": "neuropsych",
+   "name": "Clinical neuropsychology",
+   "for": "You want to understand what brain damage does to the mind, and how it is examined at the bedside.",
+   "steps": [
+    {"label": "A neuroscience course first", "why": "You need the systems before the syndromes: NYU's Brain and Behavior, or Sapolsky's course if you prefer behavior first.", "series": ["c-brain-and-behavior", "c-human-behavioral-biology-2010"]},
+    {"label": "The neurological examination", "why": "UCD's bedside series: the examination step by step, then real patients with Parkinson's, MS, epilepsy and Huntington's disease.", "series": ["c-clinical-neurology-examination-and-patients", "c-peripheral-neuroanatomy-and-the-neurological-exam"]},
+    {"label": "The classic cases on film", "why": "The aphasias, hemispatial neglect, prosopagnosia, blindsight, agnosia, alien hand, phantom limbs, locked-in syndrome, Phineas Gage.", "shelf": "cases"},
+    {"label": "Where the functions live", "why": "Kanwisher's course on the functional organization of the human brain is the map the cases are drawn on.", "series": ["c-mit-9-13-the-human-brain"]},
+    {"label": "Memory and its loss", "why": "A full course on memory, the function neuropsychology has studied longest.", "series": ["c-memory"]},
+    {"label": "Then: the clinical neuroscience seminars", "why": "Oxford's clinical neurosciences department and Cambridge's Zangwill Club: current work, presented by the people doing it.", "series": ["c-nuffield-department-of-clinical-neurosciences-talks", "c-zangwill-club-talks", "c-lifelong-brain-development-and-brain-ageing"]}
+   ]
+  },
+  {
+   "id": "cogsci",
+   "name": "Cognitive science",
+   "for": "You are coming from computer science, linguistics or philosophy and want the mind as an information-processing system.",
+   "steps": [
+    {"label": "Start with the whole field", "why": "Cognitive science borrows its questions from psychology; a first course shows you which ones.", "series": ["c-yale-psyc-110-introduction-to-psychology", "c-mit-9-00sc-introduction-to-psychology"]},
+    {"label": "Cognitive science as a discipline", "why": "What the field is, where it came from and how its six parent disciplines fit together.", "series": ["c-cognitive-science-a-multidisciplinary-introduction", "c-graduate-introduction-to-cognitive-science"]},
+    {"label": "Cognitive psychology proper", "why": "Attention, memory, categories, problem solving: the experimental core.", "series": ["c-introduction-to-cognitive-psychology", "c-psyc2143-introduction-to-cognition"]},
+    {"label": "Language", "why": "Psycholinguistics and language acquisition, the cognitive-science problems that started the cognitive revolution.", "series": ["c-the-psychology-of-language", "c-fundamentals-of-language-acquisition", "c-vlc301-psycholinguistics"]},
+    {"label": "Philosophy of mind", "why": "The conceptual questions underneath: representation, consciousness, what a mind is.", "series": ["c-a-romp-through-the-philosophy-of-mind", "c-philosophy-of-mind", "c-contemporary-issues-in-philosophy-of-mind-and-cognition"]},
+    {"label": "Then: the field talking to itself", "why": "Conference sessions and seminar series from the Cognitive Science Society and the Rotman Institute.", "series": ["c-philosophy-of-mind-and-cognitive-science-talks", "c-llms-cognitive-science-linguistics-and-neuroscience", "c-cogsci-2022-symposia"]}
+   ]
+  },
+  {
+   "id": "compneuro",
+   "name": "Computational neuroscience",
+   "for": "You can handle calculus and a little differential equations and want to model neurons rather than just name their parts.",
+   "steps": [
+    {"label": "The biology you will be modelling", "why": "A neuroscience course first; the models are only interesting once you know what they are models of.", "series": ["c-brain-and-behavior", "c-introductory-neuroscience-and-neuro-instrumentation"]},
+    {"label": "Gerstner's Neuronal Dynamics, module by module", "why": "Wulfram Gerstner's EPFL course, the standard first course in the subject: from the integrate-and-fire neuron to population dynamics. Take the modules in order.", "all": ["c-cns1-a-first-simple-neuron-model", "c-cns3-synapses-dendrites-and-the-cable-equation", "c-cns4-two-dimensional-neuron-models-and-phase-plane-analy", "c-cns5-variability-of-spike-trains", "c-cns6-noise-models-for-neuron-models", "c-cns7-modern-phenomenological-neuron-models", "c-cns8-fokker-planck-equation-for-integrate-and-fire-neuro"]},
+    {"label": "Neuroscience meets machine learning", "why": "Summer schools where the two fields are taught together.", "series": ["c-data-science-and-ai-for-neuroscience-summer-school-2023", "c-neurohackademy-2025", "c-mind-summer-school-2019"]},
+    {"label": "Then: the seminars", "why": "Theoretical neuroscience seminars and the Cognitive Computational Neuroscience conference.", "series": ["c-van-vreeswijk-theoretical-neuroscience-seminar-season-20", "c-ccn-2026", "c-kitp-neuroscience-talks"]}
+   ]
+  },
+  {
+   "id": "methods",
+   "name": "Methods, statistics and the replication crisis",
+   "for": "You want to be able to tell a solid finding from a fragile one.",
+   "steps": [
+    {"label": "How psychology experiments are built", "why": "Research methodology for psychology: designs, measurement, validity, the ways studies go wrong.", "series": ["c-psyc1040-psychology-research-methodology", "c-basics-of-experimental-design-for-cognitive-psychology"]},
+    {"label": "The statistics", "why": "A full statistics course for psychology students, from distributions to inference.", "series": ["c-statistics-in-psychology", "c-psychological-statistics-psy320"]},
+    {"label": "Research and data analysis, Berkeley style", "why": "A research-methods course taught with real data analysis.", "series": ["c-uc-berkeley-psychology-101-research-and-data-analysis-in"]},
+    {"label": "What held up and what did not", "why": "Every contested finding in the catalog with its replication status and the papers behind it.", "page": "care", "page_label": "Handle with care"},
+    {"label": "Then: the originals", "why": "Read the famous experiments against their actual films and papers.", "shelf": "originals"}
+   ]
+  },
+  {
+   "id": "social",
+   "name": "Social and personality psychology",
+   "for": "You are interested in how people influence each other and why they differ.",
+   "steps": [
+    {"label": "Start with the whole field", "why": "Social and personality psychology sit on top of cognition and emotion.", "series": ["c-yale-psyc-110-introduction-to-psychology", "c-mit-9-00sc-introduction-to-psychology"]},
+    {"label": "Social psychology", "why": "Conformity, persuasion, attribution, groups, prejudice: a full course.", "series": ["c-social-psychology", "c-uc-berkeley-psychology-160-social-psychology-fall-2014", "c-psy-2510-social-psychology"]},
+    {"label": "Personality", "why": "Traits, their measurement and their biology, and the major theories.", "series": ["c-personality-and-its-transformations", "c-psychology-of-personality-and-individual-differences"]},
+    {"label": "Social cognition", "why": "How people think about people: an advanced course.", "series": ["c-uc-berkeley-psychology-164-social-cognition-spring-2014"]},
+    {"label": "The famous studies, in their original footage", "why": "Robbers Cave, Asch, Milgram, the Stanford prison experiment and what became of each.", "shelf": "originals"}
+   ]
+  },
+  {
+   "id": "mind",
+   "name": "Consciousness and the mind",
+   "for": "You want the hard problem, but with the neuroscience attached.",
+   "steps": [
+    {"label": "Start with the whole field", "why": "Perception, attention and memory are where the science of consciousness begins.", "series": ["c-yale-psyc-110-introduction-to-psychology", "c-mit-9-00sc-introduction-to-psychology"]},
+    {"label": "Philosophy of mind", "why": "The positions and the arguments, from dualism to illusionism.", "series": ["c-a-romp-through-the-philosophy-of-mind", "c-philosophy-of-mind", "c-contemporary-issues-in-philosophy-of-mind-and-cognition"]},
+    {"label": "The neuroscience of consciousness", "why": "A full lecture course on the neural basis of consciousness: anaesthesia, sleep, blindsight, split brains, the theories.", "series": ["c-neural-basis-of-consciousness-2021-lectures", "c-neural-basis-of-consciousness-2020-by-topic"]},
+    {"label": "The patients", "why": "Blindsight, split brains, alien hands and locked-in syndrome, on film.", "shelf": "cases"},
+    {"label": "Then: the debate", "why": "Seminar series where philosophers and neuroscientists argue it out.", "series": ["c-philosophy-of-mind-and-cognitive-science-talks", "c-the-illusionist-view-of-consciousness", "c-the-problems-of-other-minds"]}
+   ]
+  },
+  {
+   "id": "development",
+   "name": "How minds develop",
+   "for": "You are interested in children, parents or how a mind gets built.",
+   "steps": [
+    {"label": "Start with the whole field", "why": "Development is every other topic, on a timeline.", "series": ["c-yale-psyc-110-introduction-to-psychology", "c-mit-9-00sc-introduction-to-psychology"]},
+    {"label": "Developmental psychology", "why": "Infancy to adolescence: perception, attachment, language, theory of mind.", "series": ["c-uc-berkeley-psychology-140-developmental-psychology-spri-015", "c-uc-berkeley-psychology-140-developmental-psychology-spri", "c-psyc-250-developmental-psychology"]},
+    {"label": "Language acquisition", "why": "How children learn language, the developmental problem with the most data.", "series": ["c-fundamentals-of-language-acquisition"]},
+    {"label": "When development goes wrong", "why": "Developmental psychopathology: autism, ADHD, anxiety and conduct problems across childhood.", "series": ["c-uc-berkeley-psychology-131-developmental-psychopathology"]},
+    {"label": "The original films", "why": "Gesell's infant films, the Strange Situation, the visual cliff and Piaget, with their papers.", "shelf": "originals"},
+    {"label": "Then: the research institutes", "why": "The UC Davis MIND Institute's lecture series on neurodevelopmental conditions.", "series": ["c-summer-institute-on-neurodevelopmental-disabilities", "c-lifelong-brain-development-and-brain-ageing"]}
+   ]
+  }
+ ]
+}
