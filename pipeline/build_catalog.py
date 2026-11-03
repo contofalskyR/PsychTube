@@ -413,7 +413,7 @@ by_author = collections.defaultdict(set)
 by_thread = collections.defaultdict(set)
 for v in catalog:
     for vo in videos[v["id"]]["vouches"]:
-        if vo["s"] == "hn":
+        if vo["s"] in ("hn", "inst"):          # HN has its own related list; a playlist is not a co-recommendation
             continue
         if vo.get("a"):
             by_author[(vo["s"], vo["a"].lower())].add(v["id"])
