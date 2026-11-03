@@ -71,6 +71,22 @@ for c in courses:
             "description": (m.get("desc") or "")[:300],
         })
 
+# standalone institutional talks (raw/institutional/loose.json) are labeled like any lecture
+loose_path = P("raw", "institutional", "loose.json")
+if os.path.exists(loose_path):
+    for lv in json.load(open(loose_path, encoding="utf-8"))["videos"]:
+        vid = lv["id"]
+        if vid in seen or vid in labeled:
+            continue
+        seen.add(vid)
+        m = meta.get(vid) or {}
+        rows.append({
+            "vid": vid, "title": m.get("title") or vid, "channel": m.get("ch") or lv.get("ch"),
+            "playlist": "(standalone video, no playlist)", "institution": lv["inst"], "position": "1/1",
+            "duration_s": m.get("len"), "yt_category": m.get("cat"), "yt_keywords": (m.get("kw") or [])[:8],
+            "description": (m.get("desc") or "")[:300],
+        })
+
 # number new batches after the highest out_NN already written, so outputs never collide with earlier rounds
 import re
 done_idx = [int(m.group(1)) for f in glob.glob(P("work", "inst", "out_*.jsonl")) for m in [re.search(r"out_(\d+)\.jsonl$", f)] if m]

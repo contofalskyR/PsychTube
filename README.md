@@ -10,6 +10,18 @@ the IITs via NPTEL, Gresham College, the Royal Institution, professors' own chan
 university's own Panopto (Steven Pinker's Harvard courses) and on the Internet Archive (UC Berkeley's
 webcast courses) — every lecture in order, marked "published by" instead of a vouch count.
 
+Institutions also publish single lectures outside any playlist — a named lecture, a grand-rounds
+recording, a society's prize lecture — and those come in as **standalone talks** (`raw/institutional/loose.json`):
+the same institutional vouch, marked "standalone talk" instead of "lecture 7 of 24". Clinical
+neuropsychology is covered this way as well as through courses: KnowNeuropsychology's didactic series,
+the British Neuropsychological Society, UCSF's Memory and Aging Center, the aphasia research centres,
+and a hundred-odd university and hospital lectures on the syndromes themselves.
+
+Long-form content (over 25 minutes) is ordered by legitimacy before popularity: an institution's own
+lecture or a shelf copy first, fireside chats and interviews second, podcasts third, with the community
+score deciding within each tier. Short pieces — demos, clips, TED talks — are not penalised, and the
+canon stays a pure count of recommenders.
+
 The Courses hub has two shelves: **taught courses and lecture series** (a full term as the institution
 published it), and **seminars & conferences** — research seminar series, hospital grand rounds and the
 sessions of annual meetings, which are institutional but not a course and not peer-reviewed, and are
@@ -134,6 +146,13 @@ Archive item. A course that an institution uploaded as loose videos rather than 
 *Brain and Behavior*, UCD's *Clinical Neurology* series) gets an invented `pid` (`nyu:brain-and-behavior`,
 `ucd:clinical-neurology`), the items in syllabus order and a `url` pointing at the channel search that
 lists them.
+
+### Add a standalone institutional talk
+
+Append `{"id": "<youtube id>", "inst": "<institution>", "kind": "talk" | "lecture", "ch": "<channel>"}` to
+`raw/institutional/loose.json`, put the video's metadata in a `raw/youtube/meta_*.json` file, run
+`python3 pipeline/make_inst_batches.py` (standalone talks are labeled like lectures) and rebuild. Only
+the institution's own channel counts; a conference talk re-uploaded by a viewer does not.
 
 ### Add a primary source, a demo or a therapy session
 

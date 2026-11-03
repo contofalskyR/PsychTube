@@ -85,6 +85,27 @@ the same instructions as before (1,198 kept; the drops are promos, retreat clips
 software-administration tutorials inside the hackathon schools). Catalog after the round: 15,504
 videos, 14,889 institutional lectures in 863 collections from 217 institutions.
 
+**Round 4 (2026-11-03): clinical neuropsychology at the lecture level.** The earlier playlist sweeps
+had found few neuropsychology courses, so this round went at the channels of the field's societies and
+training programmes (20 channel searches → 31 channels, 178 playlists, triaged in `batch_26`/`out_26`
+with 46 kept + 4 re-judged from earlier rounds) and at single videos (60 syndrome- and name-level video
+searches → 629 distinct videos; `raw/sweep/np_video_search.json`). The playlists brought
+KnowNeuropsychology's 14 volumes and KnowNeuroanatomy's 5, the BNS, the Society for Black
+Neuropsychology, Aphasia CRE, the National Aphasia Association's expert and PPA series, Headway's
+webinars and first-person stories, AAN's resident and student lecture series, Duke neurology grand
+rounds, UK DRI, UCSF Memory and Aging Center (233 talks) and the Florey; channels without playlists
+(King's College London's Neuropsychiatry Meetings, NZBRI, a dementia-rehabilitation workshop) went in
+as pseudo-playlists from their uploads, and the video searches surfaced course channels (Paul Merritt,
+Clinical Neuroanatomy Seminars, MIT CBMM, Ashok Jansari, Keith Donohue, Gluck Lab) that were triaged in
+`batch_27`. The video searches also produced 108 **standalone talks** — lectures an institution published
+outside any playlist (Dartmouth's Duchaine talk on prosopagnosia, Stanford's *Learning and Memory*,
+the Royal Society's Ferrier Prize lecture, Oliver Sacks at the Nobel Museum, UCL's day on psychological
+therapies in acquired brain injury, grand rounds on functional neurological disorder at Temple, Rochester
+and UMass…). Those live in `raw/institutional/loose.json` and get the institutional vouch without a
+series (`inst.loose`); `make_inst_batches.py` labels them like lectures. Uploaders were checked by
+channel: only institutions', societies', hospitals' and researchers' own channels were taken, and
+re-uploads of conference talks were left out.
+
 Rate limits: the player endpoint started answering `LOGIN_REQUIRED` ("confirm you're not a bot") after
 ~1,800 calls with a minimal client context; sending the page's full `INNERTUBE_CONTEXT` (with
 `visitorData`) and slowing to ~4 requests/second avoided it. `browse` never complained.
@@ -171,6 +192,16 @@ from outside those topics and outside the watch history: a vouched talk (`nrec �
 non-advanced course, and a primary source or demo, with distinct topics and areas. The seed is the
 day plus a shuffle counter, so the picks change daily and on demand; the backgrounds are saved in
 `settings.background` with the other preferences.
+
+## Ordering by legitimacy (site/app.js)
+
+Long-form content is ordered by legitimacy first. `formTier(v)` is 0 for anything under 25 minutes and
+for an institution's own lecture or a curated shelf copy, 1 for fireside chats, interviews, independent
+talks and documentaries, and 2 for podcasts (`type: podcast`, or a channel name that matches the podcast
+list); `rank = max(score, 1) × {1, 0.5, 0.25}` and every list that used to follow `score` (topic and
+area pages, search, the home rows, Longs) follows `rank`. The canon keeps `score`. The multipliers were
+chosen so that a vouched interview (score 4–15) still outranks an unvouched course lecture (1.0) but a
+podcast episode needs several recommenders to climb past one; short demos and clips are untouched.
 
 ## Lecture tracker (site/app.js)
 

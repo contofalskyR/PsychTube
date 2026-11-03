@@ -1,14 +1,15 @@
 {
  "stats": {
-  "kept": 15491,
-  "inst_lectures": 14922,
+  "kept": 16477,
+  "inst_lectures": 15802,
   "inst_also_vouched": 39,
   "dropped_not_psych_or_unlabeled": 694,
-  "dropped_thin_vouch": 145,
-  "dropped_inst_not_psych": 805,
-  "dropped_inst_promo": 384,
+  "dropped_thin_vouch": 144,
+  "dropped_inst_not_psych": 931,
+  "inst_loose": 106,
+  "dropped_inst_promo": 457,
   "inst_inherited_topics": 1621,
-  "dropped_inst_thirdparty": 45,
+  "dropped_inst_thirdparty": 46,
   "replication_tagged": 60,
   "shelf_added": 70,
   "pathways": 9
@@ -16,159 +17,159 @@
  "topics": [
   [
    "how-the-brain-works",
-   2767
+   2859
   ],
   [
    "brain-disorders",
-   1375
+   2201
   ],
   [
    "ai-and-mind",
-   1152
+   1157
   ],
   [
    "psychiatry-medication",
-   1114
+   1134
   ],
   [
    "brain-tech",
-   1043
+   1073
   ],
   [
    "depression-anxiety",
-   1035
+   1056
   ],
   [
    "child-development",
-   938
-  ],
-  [
-   "perception-illusions",
-   870
-  ],
-  [
-   "therapy",
-   834
-  ],
-  [
-   "consciousness",
-   806
-  ],
-  [
-   "psych-research",
-   806
+   959
   ],
   [
    "language-thought",
-   792
+   897
+  ],
+  [
+   "perception-illusions",
+   888
+  ],
+  [
+   "therapy",
+   858
+  ],
+  [
+   "psych-research",
+   836
+  ],
+  [
+   "consciousness",
+   828
   ],
   [
    "adolescence-aging",
-   753
+   803
   ],
   [
    "adhd-autism",
-   649
+   660
   ],
   [
    "groups-prejudice",
-   643
+   649
   ],
   [
    "trauma-stress",
-   621
+   629
   ],
   [
    "memory",
-   587
+   623
   ],
   [
    "serious-mental-illness",
-   579
+   591
   ],
   [
    "happiness-meaning",
-   557
-  ],
-  [
-   "history-of-psychology",
-   527
-  ],
-  [
-   "decision-risk",
-   521
+   564
   ],
   [
    "emotion",
-   508
+   538
+  ],
+  [
+   "history-of-psychology",
+   534
+  ],
+  [
+   "decision-risk",
+   524
   ],
   [
    "crime-forensic",
-   437
+   441
   ],
   [
    "personality",
-   435
+   437
   ],
   [
    "work-organizations",
-   432
+   435
   ],
   [
    "addiction",
-   416
+   422
   ],
   [
    "replication-crisis",
-   382
+   392
   ],
   [
    "neurochemistry",
-   371
+   378
   ],
   [
    "rationality-biases",
-   360
+   362
   ],
   [
    "animal-minds",
-   344
+   346
   ],
   [
    "mindfulness-meditation",
-   335
+   336
   ],
   [
    "attention-focus",
-   308
+   321
   ],
   [
    "behavioral-genetics",
-   293
+   304
   ],
   [
    "morality-cooperation",
-   288
+   290
   ],
   [
    "sleep-dreams",
-   244
+   270
   ],
   [
    "motivation-habits",
-   241
+   243
   ],
   [
    "sex-gender",
-   239
+   242
   ],
   [
    "parenting",
-   218
+   221
   ],
   [
    "education-teaching",
-   216
+   217
   ],
   [
    "persuasion-manipulation",
@@ -180,23 +181,23 @@
   ],
   [
    "relationships-attachment",
-   180
+   189
   ],
   [
    "psychedelics",
-   162
+   163
+  ],
+  [
+   "tech-and-mind",
+   157
   ],
   [
    "free-will",
    156
   ],
   [
-   "tech-and-mind",
-   151
-  ],
-  [
    "intelligence-expertise",
-   117
+   120
   ],
   [
    "design-behavior",
@@ -208,11 +209,11 @@
   ],
   [
    "performance",
-   81
+   85
   ],
   [
    "creativity-insight",
-   77
+   81
   ],
   [
    "pseudoscience-skepticism",
@@ -220,12 +221,12 @@
   ],
   [
    "grief-loneliness",
-   66
+   75
   ]
  ],
  "sources": {
   "hn": 2130,
-  "reddit": 233,
+  "reddit": 234,
   "se": 161
  },
  "communities": [
@@ -255,7 +256,7 @@
   ],
   [
    "r/psychologyresearch",
-   18
+   19
   ],
   [
    "r/AcademicPsychology",
@@ -1152,6 +1153,10 @@
    49
   ],
   [
+   "NeuroBytes: Medical Students Series",
+   35
+  ],
+  [
    "MIND Summer School 2018",
    28
   ],
@@ -1162,6 +1167,14 @@
   [
    "Psych 101 Study Buddy Series",
    24
+  ],
+  [
+   "NeuroBytes",
+   24
+  ],
+  [
+   "Virtual Resident Education Lecture Series",
+   23
   ],
   [
    "Psychology Public Lectures",
@@ -1240,6 +1253,14 @@
    12
   ],
   [
+   "KnowNeuropsychology, Volume V",
+   12
+  ],
+  [
+   "KnowNeuropsychology, Volume IV",
+   12
+  ],
+  [
    "The Science of Well-Being",
    11
   ],
@@ -1260,7 +1281,23 @@
    11
   ],
   [
+   "KnowNeuropsychology, Volume I",
+   11
+  ],
+  [
    "Early Career Mental Health Professionals",
+   10
+  ],
+  [
+   "KnowNeuropsychology, Volume X",
+   10
+  ],
+  [
+   "KnowNeuropsychology, Volume III",
+   10
+  ],
+  [
+   "KnowNeuropsychology, Volume II",
    10
   ],
   [
@@ -1300,6 +1337,10 @@
    8
   ],
   [
+   "KnowNeuropsychology, Volume XIII",
+   8
+  ],
+  [
    "Insight into Personality Psychology",
    7
   ],
@@ -1317,6 +1358,22 @@
   ],
   [
    "The Story of Cognitive Psychology",
+   7
+  ],
+  [
+   "KnowNeuropsychology, Volume IX",
+   7
+  ],
+  [
+   "KnowNeuropsychology, Volume VIII",
+   7
+  ],
+  [
+   "KnowNeuropsychology, Volume VII",
+   7
+  ],
+  [
+   "KnowNeuroanatomy, Volume I",
    7
   ],
   [
@@ -1376,6 +1433,18 @@
    6
   ],
   [
+   "KnowNeuroanatomy, Volume IV",
+   6
+  ],
+  [
+   "KnowNeuropsychology, Volume VI",
+   6
+  ],
+  [
+   "KnowNeuroanatomy, Volume II",
+   6
+  ],
+  [
    "A Romp through the Philosophy of Mind",
    5
   ],
@@ -1404,11 +1473,31 @@
    5
   ],
   [
+   "KnowNeuropsychology, Volume XI",
+   5
+  ],
+  [
+   "KnowNeuroanatomy, Volume III",
+   5
+  ],
+  [
    "Intelligence and Machines",
    4
   ],
   [
    "Are Brains Analogue or Digital?",
+   4
+  ],
+  [
+   "Dementia and Neuropsychological Rehabilitation Workshop",
+   4
+  ],
+  [
+   "KnowNeuroanatomy, Volume V",
+   4
+  ],
+  [
+   "KnowNeuropsychology, Volume XII",
    4
   ],
   [
@@ -1476,6 +1565,10 @@
    101
   ],
   [
+   "Research and Science at the Memory and Aging Center",
+   91
+  ],
+  [
    "Autism Talks and Lectures",
    89
   ],
@@ -1484,16 +1577,32 @@
    78
   ],
   [
+   "Florey Talks",
+   73
+  ],
+  [
    "Child and Adolescent Psychiatry and Behavioral Sciences Grand Rounds",
    69
+  ],
+  [
+   "Art and the Brain",
+   67
   ],
   [
    "BPS Archive: Psychology in the Pub and Research Skills",
    65
   ],
   [
+   "Aphasia CRE Seminar Series",
+   61
+  ],
+  [
    "Neuromatch Conference 3 (NMC3) Talks",
    60
+  ],
+  [
+   "Ask the Expert: Aphasia Webinars",
+   57
   ],
   [
    "Psychology",
@@ -1568,6 +1677,10 @@
    38
   ],
   [
+   "Duke Neurology Grand Rounds 2021",
+   37
+  ],
+  [
    "Kavli Institute for Brain and Mind",
    36
   ],
@@ -1585,6 +1698,10 @@
   ],
   [
    "Brain Insight Lectures",
+   34
+  ],
+  [
+   "Duke Neurology Grand Rounds 2024",
    34
   ],
   [
@@ -1617,6 +1734,10 @@
   ],
   [
    "Psychiatry Grand Rounds (UW Boise)",
+   31
+  ],
+  [
+   "King's College London Neuropsychiatry Meetings",
    31
   ],
   [
@@ -1716,6 +1837,10 @@
    24
   ],
   [
+   "Duke Neurology Grand Rounds 2023",
+   24
+  ],
+  [
    "Columbia Grand Rounds 2022",
    23
   ],
@@ -1745,6 +1870,14 @@
   ],
   [
    "Psychiatry Rounds, Spring 2023",
+   22
+  ],
+  [
+   "Headway Expert Webinars",
+   22
+  ],
+  [
+   "Brain Injury and Me",
    22
   ],
   [
@@ -1832,6 +1965,10 @@
    19
   ],
   [
+   "BNS Spring 2024 Meeting",
+   19
+  ],
+  [
    "2026 6th Annual Precision Mental Health Symposium",
    18
   ],
@@ -1904,6 +2041,10 @@
    17
   ],
   [
+   "NZBRI Public Talks",
+   17
+  ],
+  [
    "Lunch Hour Lectures: Psychology and Language Sciences",
    16
   ],
@@ -1972,6 +2113,10 @@
    16
   ],
   [
+   "Aphasia Voices",
+   16
+  ],
+  [
    "Psychiatry Grand Rounds 2026",
    15
   ],
@@ -2025,6 +2170,14 @@
   ],
   [
    "8th Annual Conference of Cognitive Science (ACCS8)",
+   14
+  ],
+  [
+   "Primary Progressive Aphasia and Apraxia of Speech",
+   14
+  ],
+  [
+   "Duke Neurology Grand Rounds 2026",
    14
   ],
   [
@@ -2292,6 +2445,14 @@
    10
   ],
   [
+   "Sports Neuropsychology Society Interviews",
+   10
+  ],
+  [
+   "Cognitive Control Collaborative Showcase 2021",
+   10
+  ],
+  [
    "2023-2024 Child and Adolescent Psychiatry Grand Rounds",
    9
   ],
@@ -2437,6 +2598,10 @@
   ],
   [
    "Neuroscience and Society Overview",
+   8
+  ],
+  [
+   "Speaking Out Conference 2025",
    8
   ],
   [
@@ -2733,6 +2898,10 @@
   ],
   [
    "Ashley Juavinett Public Talks",
+   6
+  ],
+  [
+   "Black Luminaries in Neuropsychology",
    6
   ],
   [
@@ -3388,6 +3557,22 @@
    4
   ],
   [
+   "Brain Awareness Week 2023",
+   4
+  ],
+  [
+   "Brain Awareness Week 2022",
+   4
+  ],
+  [
+   "Speaking Out 2026",
+   4
+  ],
+  [
+   "Single Cell and Spatial Transcriptomics in Neurodegeneration",
+   4
+  ],
+  [
    "Our Mental Wellness",
    3
   ],
@@ -3680,6 +3865,14 @@
    3
   ],
   [
+   "Aphasia Research",
+   3
+  ],
+  [
+   "Rethinking Neurodegeneration Webinars",
+   3
+  ],
+  [
    "Living with Mental Health",
    2
   ],
@@ -3737,6 +3930,14 @@
   ],
   [
    "2016 Summer Institute on Neurodevelopmental Disabilities",
+   1
+  ],
+  [
+   "Student and Trainee Webinars",
+   1
+  ],
+  [
+   "UK DRI Discover Series",
    1
   ]
  ]

@@ -1,0 +1,761 @@
+{
+ "_comment": "Standalone lectures and talks that an institution published outside any playlist (kind lecture|talk). Each gets the institutional vouch and shows as 'Published by <inst>' with no course; labels come from work/inst/out_*.jsonl like any lecture. Found by video search; uploader checked by hand.",
+ "videos": [
+  {
+   "id": "Roz_IRhGecI",
+   "inst": "University of California Television (UCTV)",
+   "kind": "talk",
+   "ch": "University of California Television (UCTV)",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "tz-L2Ll85rM",
+   "inst": "University of California Television (UCTV)",
+   "kind": "talk",
+   "ch": "University of California Television (UCTV)",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "0NzShMiqKgQ",
+   "inst": "University of California Television (UCTV)",
+   "kind": "talk",
+   "ch": "University of California Television (UCTV)",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "NXxytf6kfPM",
+   "inst": "TEDx",
+   "kind": "talk",
+   "ch": "TEDx Talks",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "3PVatC2Noyo",
+   "inst": "TEDx",
+   "kind": "talk",
+   "ch": "TEDx Talks",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "MYJbo9oIjIs",
+   "inst": "MIT (CBMM)",
+   "kind": "talk",
+   "ch": "MITCBMM",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "vNfEKMu-sHE",
+   "inst": "MIT (CBMM)",
+   "kind": "talk",
+   "ch": "MITCBMM",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "gLW_knBWlCA",
+   "inst": "Beth Israel Deaconess Medical Center",
+   "kind": "talk",
+   "ch": "Beth Israel Deaconess Medical Center (BIDMC)",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "V1CbBICxnHI",
+   "inst": "Beth Israel Deaconess Medical Center",
+   "kind": "talk",
+   "ch": "Beth Israel Deaconess Medical Center (BIDMC)",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "GRl-Krk5-JE",
+   "inst": "Beth Israel Deaconess Medical Center",
+   "kind": "talk",
+   "ch": "Beth Israel Deaconess Medical Center (BIDMC)",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "_AGbxsIbMJs",
+   "inst": "Accademia delle Scienze di Torino",
+   "kind": "talk",
+   "ch": "Accademia delle Scienze di Torino",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "RvPOAE9Ru-g",
+   "inst": "Accademia delle Scienze di Torino",
+   "kind": "talk",
+   "ch": "Accademia delle Scienze di Torino",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "7sD2bMpFCSs",
+   "inst": "Accademia delle Scienze di Torino",
+   "kind": "talk",
+   "ch": "Accademia delle Scienze di Torino",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "I0L5TCg90-g",
+   "inst": "Dartmouth College",
+   "kind": "talk",
+   "ch": "Dartmouth",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "a_HfSnQqeyY",
+   "inst": "Stanford University",
+   "kind": "lecture",
+   "ch": "Stanford",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "sG1slmiKvvo",
+   "inst": "Rutgers University (Gluck Lab)",
+   "kind": "lecture",
+   "ch": "Gluck Lab, Rutgers University-Newark",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "VePfkKTDMjE",
+   "inst": "Rutgers University (Gluck Lab)",
+   "kind": "lecture",
+   "ch": "Gluck Lab, Rutgers University-Newark",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "SxSRY_taoxI",
+   "inst": "Trinity College (Hartford)",
+   "kind": "talk",
+   "ch": "Trinity College Neuroscience, Hartford CT",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "PxXokneOd5Y",
+   "inst": "Trinity College (Hartford)",
+   "kind": "talk",
+   "ch": "Trinity College Neuroscience, Hartford CT",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "hoIbLbj_Hwo",
+   "inst": "Johns Hopkins Medicine",
+   "kind": "talk",
+   "ch": "Johns Hopkins Medicine",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "x15IZvB3aGQ",
+   "inst": "University of Iowa (Geriatric Education Center)",
+   "kind": "lecture",
+   "ch": "Iowa Geriatric Education Center",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "0v3GNby7kSI",
+   "inst": "University of Iowa (Geriatric Education Center)",
+   "kind": "talk",
+   "ch": "Iowa Geriatric Education Center",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "KbacW1HVZVk",
+   "inst": "Universitat Oberta de Catalunya",
+   "kind": "talk",
+   "ch": "UOC - Universitat Oberta de Catalunya",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "agxMmhHn5G4",
+   "inst": "Universitat Oberta de Catalunya",
+   "kind": "talk",
+   "ch": "UOC - Universitat Oberta de Catalunya",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "bPU2h1Q-mYA",
+   "inst": "Harvard University (Conte Center)",
+   "kind": "talk",
+   "ch": "Conte Center at Harvard",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "ssw4bkYI8SM",
+   "inst": "Harvard University (Conte Center)",
+   "kind": "talk",
+   "ch": "Conte Center at Harvard",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "pUKwquGqTe8",
+   "inst": "East Tennessee State University (CME Grand Rounds)",
+   "kind": "talk",
+   "ch": "ETSU CME Grand Rounds",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "xLT8vgJSDTQ",
+   "inst": "East Tennessee State University (CME Grand Rounds)",
+   "kind": "talk",
+   "ch": "ETSU CME Grand Rounds",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "jy-CvYgyojY",
+   "inst": "UCLA (Semel Institute Grand Rounds)",
+   "kind": "talk",
+   "ch": "Semel Audio Visual AV",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "lF6LJgA3qQQ",
+   "inst": "Royal College of Psychiatrists",
+   "kind": "talk",
+   "ch": "The Royal College of Psychiatrists",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "19qqE0jWSTo",
+   "inst": "Moss Rehabilitation Research Institute",
+   "kind": "talk",
+   "ch": "Jefferson Moss Rehabilitation Research Institute",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "urHa7iBBPsI",
+   "inst": "Moss Rehabilitation Research Institute",
+   "kind": "talk",
+   "ch": "Jefferson Moss Rehabilitation Research Institute",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "a76byFMWrvs",
+   "inst": "Clinical Neuroanatomy Seminars",
+   "kind": "lecture",
+   "ch": "Clinical Neuroanatomy Seminars",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "25im3Pp2wkU",
+   "inst": "Clinical Neuroanatomy Seminars",
+   "kind": "talk",
+   "ch": "Clinical Neuroanatomy Seminars",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "vox82U6HbDQ",
+   "inst": "Clinical Neuroanatomy Seminars",
+   "kind": "talk",
+   "ch": "Clinical Neuroanatomy Seminars",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "jgZeHESfKlc",
+   "inst": "Massachusetts General Hospital",
+   "kind": "talk",
+   "ch": "MassGeneralHospital",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "Zryelm8Eskg",
+   "inst": "Massachusetts General Hospital",
+   "kind": "talk",
+   "ch": "MassGeneralHospital",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "Nl3r3X5b03Q",
+   "inst": "Independent lecturer (Ashok Jansari, Goldsmiths)",
+   "kind": "talk",
+   "ch": "Dr Ashok Jansari NeuroTalk",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "y821TCvhF9E",
+   "inst": "Independent lecturer (Ashok Jansari, Goldsmiths)",
+   "kind": "talk",
+   "ch": "Dr Ashok Jansari NeuroTalk",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "DiOwLIXOp_c",
+   "inst": "UCLA (CNSI)",
+   "kind": "talk",
+   "ch": "CNSI at UCLA",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "qzhuuQAlkyc",
+   "inst": "Grand Rapids Community College",
+   "kind": "talk",
+   "ch": "GRCCtv",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "gMUc-1z2gro",
+   "inst": "Academy of Achievement",
+   "kind": "talk",
+   "ch": "Academy of Achievement",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "bOACrJTeVLM",
+   "inst": "Allen Institute",
+   "kind": "talk",
+   "ch": "allen institute",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "vlnLu6pOnHM",
+   "inst": "British Neuropsychological Society",
+   "kind": "talk",
+   "ch": "British Neuropsychological Society",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "dmOk6TmeOgU",
+   "inst": "Boston University",
+   "kind": "talk",
+   "ch": "BU Research",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "3TYxJ8QSw3E",
+   "inst": "Case Western Reserve University",
+   "kind": "talk",
+   "ch": "Case Western Reserve University",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "TLyOEIQo8_4",
+   "inst": "Charlie Rose",
+   "kind": "talk",
+   "ch": "Charlie Rose",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "hIAv9_hwAR8",
+   "inst": "Cleveland Clinic",
+   "kind": "lecture",
+   "ch": "ClevelandClinicCME",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "_RdS94RMfSs",
+   "inst": "Cambridgeshire and Peterborough NHS Foundation Trust (Research)",
+   "kind": "talk",
+   "ch": "CPFT Research",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "ZWJUfSWYppM",
+   "inst": "Craig Hospital",
+   "kind": "talk",
+   "ch": "Craig Hospital",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "Xe_uBH2ikAI",
+   "inst": "UT Austin (Dell Medical School)",
+   "kind": "talk",
+   "ch": "Dell Medical School",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "exPtAKVrBAE",
+   "inst": "Epilepsy Foundation Washington",
+   "kind": "talk",
+   "ch": "Epilepsy Foundation Washington",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "hXoHSJR6AMs",
+   "inst": "Forum for Indian Neurology Education",
+   "kind": "talk",
+   "ch": "Forum for Indian Neurology Education",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "dfxNfGRGpUM",
+   "inst": "FND Society",
+   "kind": "talk",
+   "ch": "Functional Neurological Disorder Society",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "ptjXtrrOijs",
+   "inst": "Global Neurosciences Institute",
+   "kind": "talk",
+   "ch": "Global Neurosciences Institute",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "CmMW__VD1Qc",
+   "inst": "Griffith University (Health)",
+   "kind": "talk",
+   "ch": "Griffith Health",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "JyOSkoIvD5Y",
+   "inst": "James Cook University",
+   "kind": "talk",
+   "ch": "James Cook University (Singapore Campus)",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "oe2rNKTUS04",
+   "inst": "Kessler Foundation",
+   "kind": "talk",
+   "ch": "Kessler Foundation",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "8D2UfIktMKo",
+   "inst": "NYU (Lab for the Developing Mind)",
+   "kind": "talk",
+   "ch": "Lab for the Developing Mind NYU",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "EMAsQeLfr3o",
+   "inst": "Lund University",
+   "kind": "talk",
+   "ch": "Lund University",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "Vjyl9QHVFm8",
+   "inst": "Northwestern University (Mesulam Center)",
+   "kind": "talk",
+   "ch": "Mesulam Center at Northwestern",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "OvwM6EINGZA",
+   "inst": "Microsoft Research",
+   "kind": "talk",
+   "ch": "Microsoft Research",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "rJ4-X5WyGQk",
+   "inst": "Monash University (Biomedical Imaging)",
+   "kind": "talk",
+   "ch": "Monash Biomedical Imaging",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "SNqHmPVKIBg",
+   "inst": "Monash University Malaysia",
+   "kind": "talk",
+   "ch": "Monash University Malaysia",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "sV2V860FMCg",
+   "inst": "National Academies (Health and Medicine Division)",
+   "kind": "talk",
+   "ch": "National Academies - Health and Medicine",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "G7_r9lF8smY",
+   "inst": "Nobel Prize Museum",
+   "kind": "talk",
+   "ch": "Nobel Prize Museum",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "Jzn4192Jibs",
+   "inst": "University of Florida (Fixel Institute)",
+   "kind": "talk",
+   "ch": "Norman Fixel Institute for Neurological Diseases",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "UksXyQ5ZwrM",
+   "inst": "Parkinson Association of Alberta",
+   "kind": "talk",
+   "ch": "Parkinson Association of Alberta",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "ozoGaVQ-z7w",
+   "inst": "Parkinson Society BC",
+   "kind": "talk",
+   "ch": "ParkinsonSocietyBC",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "KKHzOdySQCU",
+   "inst": "UCSF (Parkinson's Disease Center)",
+   "kind": "talk",
+   "ch": "UcsfPDCenter",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "V9M1QPDeCOc",
+   "inst": "Psychological Society of Ireland",
+   "kind": "talk",
+   "ch": "Psychological Society of Ireland",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "pcEIT7ADUss",
+   "inst": "Royal Holloway, University of London",
+   "kind": "talk",
+   "ch": "Royal Holloway Psychology",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "bfLv5jMJlOw",
+   "inst": "Stanford Health Care",
+   "kind": "talk",
+   "ch": "Stanford Health Care",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "3Sa-sSiWpII",
+   "inst": "Stanford University (MCHRI)",
+   "kind": "talk",
+   "ch": "Stanford MCHRI",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "N4KuS08TRsE",
+   "inst": "Columbia University (Teachers College)",
+   "kind": "lecture",
+   "ch": "Teachers College, Columbia University",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "zPbNPm6y47s",
+   "inst": "Temple University (Neurology)",
+   "kind": "talk",
+   "ch": "Temple Neurology",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "8FEqHisBVUM",
+   "inst": "92nd Street Y",
+   "kind": "talk",
+   "ch": "The 92nd Street Y, New York",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "v8FW9hznuP4",
+   "inst": "The Royal Society",
+   "kind": "talk",
+   "ch": "The Royal Society",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "auBinnhKSuo",
+   "inst": "Trinity College Dublin",
+   "kind": "talk",
+   "ch": "Trinity College Dublin",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "5iJ69PpP1sg",
+   "inst": "UCL",
+   "kind": "talk",
+   "ch": "UCL",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "Sj7CBu02cFY",
+   "inst": "UCLA Health",
+   "kind": "talk",
+   "ch": "UCLA Health",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "DpXLhI4iQeA",
+   "inst": "UMass Chan Medical School (Psychiatry)",
+   "kind": "talk",
+   "ch": "UMass Chan Psychiatry & Behavioral Sciences",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "M3q23R6EYYU",
+   "inst": "University of Colorado School of Medicine",
+   "kind": "lecture",
+   "ch": "University of Colorado School of Medicine",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "81ounoJZjJI",
+   "inst": "University of Manitoba",
+   "kind": "talk",
+   "ch": "University of Manitoba",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "b0qLEvFR3xU",
+   "inst": "University of Rochester (Psychiatry Grand Rounds)",
+   "kind": "talk",
+   "ch": "URochester Department of Psychiatry Grand Rounds",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "GMV2e9Ci5sk",
+   "inst": "USC (Center for Mindfulness Science)",
+   "kind": "talk",
+   "ch": "USC Center for Mindfulness Science",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "RQqlUAbsMUE",
+   "inst": "UT Southwestern Medical Center",
+   "kind": "talk",
+   "ch": "UT Southwestern Medical Center",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "T4I2B8UdHqs",
+   "inst": "University of Washington (Medicine)",
+   "kind": "talk",
+   "ch": "UW Department of Medicine",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "Cljtsv-CTBY",
+   "inst": "Vanderbilt University",
+   "kind": "lecture",
+   "ch": "Vanderbilt University",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "2QdQ_PLZQuI",
+   "inst": "Virginia Commonwealth University (PM&R)",
+   "kind": "talk",
+   "ch": "VCU Physical Medicine & Rehabilitation",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "nkS31eCWvdM",
+   "inst": "Weill Cornell Medicine (Neurological Surgery)",
+   "kind": "talk",
+   "ch": "Weill Cornell Medicine Neurological Surgery",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "25GI3-kiLdo",
+   "inst": "WISE (Qatar Foundation)",
+   "kind": "talk",
+   "ch": "WISE Channel",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "DEtnoiKGDwI",
+   "inst": "Yale School of Medicine",
+   "kind": "talk",
+   "ch": "Yale School Of Medicine",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "OybJZXXx6Fo",
+   "inst": "Israel Academy of Sciences and Humanities",
+   "kind": "talk",
+   "ch": "The Israel Academy of Sciences and Humanities",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "IbSpgWUtg4k",
+   "inst": "Columbia University (Italian Academy)",
+   "kind": "talk",
+   "ch": "The Italian Academy - Columbia University",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "z_lG6myWiI8",
+   "inst": "Dementia Research Network Ireland",
+   "kind": "talk",
+   "ch": "Dementia Research Network Ireland",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "fa37qJyzcts",
+   "inst": "Mary Greeley Medical Center",
+   "kind": "talk",
+   "ch": "Mary Greeley Medical Center",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "geEQj6Q2hP8",
+   "inst": "Boston Children's Hospital",
+   "kind": "talk",
+   "ch": "Boston Children's Hospital",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "OkTIY3WF94I",
+   "inst": "Cottage Health (Santa Barbara Neuroscience Institute)",
+   "kind": "talk",
+   "ch": "Cottage Health",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "jz7eWD8CKC4",
+   "inst": "Michigan Parkinson Foundation",
+   "kind": "talk",
+   "ch": "Michigan Parkinson Foundation",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "vPXBKyTXZpQ",
+   "inst": "OhioHealth",
+   "kind": "talk",
+   "ch": "OhioHealth",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "iFoz1Eak0LI",
+   "inst": "Capital Health",
+   "kind": "talk",
+   "ch": "capitalhealthnj",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "NvPXu7u_AFM",
+   "inst": "NODCC",
+   "kind": "talk",
+   "ch": "National Organization for Disorders of the Corpus Callosum",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "AJwkK2NMNTM",
+   "inst": "Bombay Psychiatric Society",
+   "kind": "talk",
+   "ch": "Bombay Psychiatric Society",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "JSSWiSaJjDo",
+   "inst": "Vestibular Disorders Association",
+   "kind": "talk",
+   "ch": "Vestibular Disorders Association",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "0B8iMr46sDY",
+   "inst": "Independent lecturer (Keith Donohue)",
+   "kind": "lecture",
+   "ch": "Keith Donohue",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "-xdl5PT_5fM",
+   "inst": "Independent lecturer (Keith Donohue)",
+   "kind": "lecture",
+   "ch": "Keith Donohue",
+   "found": "neuropsych video sweep 2026-11-03"
+  },
+  {
+   "id": "hUGFR8odet4",
+   "inst": "Independent lecturer (Keith Donohue)",
+   "kind": "lecture",
+   "ch": "Keith Donohue",
+   "found": "neuropsych video sweep 2026-11-03"
+  }
+ ]
+}

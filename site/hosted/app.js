@@ -16,6 +16,23 @@
     if (v.shelf === undefined) v.shelf = [];
     if (v.orig === undefined) v.orig = null;
   }
+  // ------------------------------------------------------------ ranking: long-form content is ordered by legitimacy first
+  // For anything over 25 minutes the order of preference is: an institution's own lecture or a curated shelf copy, then
+  // fireside chats, interviews and independent talks, then podcasts. Short pieces (a demo, a clip, a TED talk) are not
+  // penalised. The community score still orders items within a tier, so a strongly vouched interview outranks a plain
+  // course lecture, but a podcast episode needs several recommenders to climb past one.
+  const LONG_FORM = 25 * 60;
+  const PODCAST_RX = /podcast|huberman|lex fridman|rogan|modern wisdom|diary of a ceo|tim ferriss|rich roll|jordan harbinger|chris williamson|theo von|impact theory|the knowledge project|making sense|mindscape|lunar society|dwarkesh|econtalk|hidden brain|ologies|armchair expert/i;
+  const FIRESIDE_TYPES = new Set(["interview", "podcast"]);
+  function formTier(v) {
+    if (!v.len || v.len < LONG_FORM) return 0;
+    if (v.inst || v.orig) return 0;
+    if (v.type === "podcast" || PODCAST_RX.test(v.ch || "")) return 2;
+    return 1;
+  }
+  const TIER_WEIGHT = [1, 0.5, 0.25];
+  for (const v of V) { v.tier = formTier(v); v.rank = Math.max(v.score, 1) * TIER_WEIGHT[v.tier]; }
+  V.sort((a, b) => (b.rank - a.rank) || (b.score - a.score));
   const byId = new Map(V.map(v => [v.id, v]));
   const topics = new Map();
   const areaOf = new Map();
@@ -127,7 +144,7 @@
   const instChip = v => v.inst ? `<span class="chip inst" title="Published by ${esc(v.inst.n)}">${esc(instShort(v.inst.n))}</span>` : "";
   function vouchLine(v, max) {
     const n = v.nrec || v.nmention;
-    if (!n && v.inst) return `<div class="vouch"><span class="pub">Published by</span> ${instChip(v)}<span class="faint">lecture ${v.inst.i} of ${v.inst.of}</span></div>`;
+    if (!n && v.inst) return `<div class="vouch"><span class="pub">Published by</span> ${instChip(v)}<span class="faint">${v.inst.loose ? (v.type === "lecture" ? "standalone lecture" : "standalone talk") : `lecture ${v.inst.i} of ${v.inst.of}`}</span></div>`;
     if (!n && v.orig) return `<div class="vouch"><span class="pub">${SHELF_LABEL[v.orig.shelf] || "Primary source"}</span><span class="faint">${esc((v.orig.uploader || "").split(" (")[0].slice(0, 40))}${v.orig.year ? ` · ${v.orig.year}` : ""}</span></div>`;
     return `<div class="vouch"><span class="n">${n}</span>${n === 1 ? "vouch" : "vouches"} ${communityChips(v, max)}${instChip(v)}</div>`;
   }
@@ -237,7 +254,8 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
     };
   });
   function search(q, limit) {
-    const terms = norm(q).split(/\s+/).filter(Boolean);
+    // long terms match on their stem so "prosopagnosia" finds "prosopagnosics", "amnesia" finds "amnesic", "aphasia" "aphasic"
+    const terms = norm(q).split(/\s+/).filter(Boolean).map(t => (t.length >= 7 ? t.slice(0, -2) : t));
     if (!terms.length) return [];
     const res = [];
     for (const e of index) {
@@ -251,7 +269,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
         if (!ts) { ok = false; break; }
         s += ts;
       }
-      if (ok) res.push([s + Math.log1p(e.v.score), e.v]);
+      if (ok) res.push([s + Math.log1p(e.v.rank), e.v]);
     }
     return res.sort((a, b) => b[0] - a[0]).slice(0, limit || 200).map(x => x[1]);
   }
@@ -649,6 +667,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
     const o = v.orig;
     const shelfName = id => { const sh = (PT.shelves || []).find(x => x.id === id); return sh ? sh.name : id; };
     const origBox = o ? `<div class="box orig"><h2>${SHELF_HEAD[o.shelf] || "Primary source"}${o.year ? ` · ${o.year}` : ""}</h2>${o.people ? `<p class="people">${esc(o.people)}</p>` : ""}<p>${esc(o.what || "")}</p>${o.paper || o.paper2 ? `<h3>The paper</h3><ul class="papers">${paperLine(o.paper)}${paperLine(o.paper2)}</ul>` : ""}${o.alt && o.alt.length ? `<p class="faint">${o.alt.map(a => `<a href="${esc(a.url)}" target="_blank" rel="noopener" style="text-decoration:underline">${esc(a.label)} ↗</a>`).join(" · ")}</p>` : ""}<p class="faint" style="margin:0">${o.uploader ? `Copy: ${esc(o.uploader)}${o.legit === "official" ? " — the rights holder's or institution's own." : o.legit === "archive" ? " — a library/archive collection." : ""} · ` : ""}<a href="#shelf-${esc(o.shelf)}" style="text-decoration:underline">All ${esc(shelfName(o.shelf).toLowerCase())}</a></p></div>` : "";
+    const looseBox = v.inst && v.inst.loose && !sameSeries ? `<div class="box inst"><h2>Published by ${esc(v.inst.n)}</h2><p>A standalone ${v.type === "lecture" ? "lecture" : "talk"} on the institution's own channel, outside any course or series; put online by ${esc(v.ch || "")}. ${v.nrec ? "The communities below vouched for it on their own, too." : "It's here on the institution's authority, not a forum's: no community has vouched for this particular video."} <b>Not a course and not peer-reviewed:</b> a speaker's own account of their subject.</p>${v.chid ? `<p class="faint" style="margin:0"><a href="https://www.youtube.com/channel/${esc(v.chid)}" target="_blank" rel="noopener" style="text-decoration:underline">${esc(v.ch || "Channel")} ↗</a></p>` : ""}</div>` : "";
     const instBox = v.inst && sameSeries ? `<div class="box inst"><h2>Published by ${esc(v.inst.n)}</h2><p>${esc(KIND_WORD[sameSeries.kind] === "talk" ? "Talk" : "Lecture")} ${v.inst.i} of ${v.inst.of} in <a href="#s-${sameSeries.id}">${esc(sameSeries.name)}</a>${sameSeries.lecturer ? `, taught by ${esc(sameSeries.lecturer)}` : ""}${sameSeries.year ? ` (${sameSeries.year})` : ""}; put online by ${esc(v.ch || sameSeries.ch || "")}. ${v.nrec ? "The communities below vouched for this lecture on its own, too." : "It's here on the institution's authority, not a forum's: no community has vouched for this particular lecture."}${sameSeries.kind === "talks" ? " <b>A recorded talk, not a course:</b> a speaker's own account of their work, as presented at a seminar, grand rounds or conference — not peer-reviewed." : ""}${sameSeries.note ? ` <span class="muted">${esc(sameSeries.note)}</span>` : ""}</p><p class="faint" style="margin:0"><a href="#s-${sameSeries.id}" style="text-decoration:underline">${sameSeries.kind === "talks" ? "Whole collection" : "Whole course"}</a>${nextInSeries ? ` · <a href="#v-${nextInSeries}" style="text-decoration:underline">${sameSeries.kind === "talks" ? "Next talk" : "Next lecture"}</a>` : ""}${sameSeries.readings ? ` · <a href="${esc(sameSeries.readings)}" target="_blank" rel="noopener" style="text-decoration:underline">Syllabus &amp; readings ↗</a>` : ""}${sameSeries.url ? ` · <a href="${esc(sameSeries.url)}" target="_blank" rel="noopener" style="text-decoration:underline">${sameSeries.provider === "panopto" ? "Course on Panopto" : sameSeries.provider === "archive" ? "Course on the Internet Archive" : "Playlist on YouTube"} ↗</a>` : ""}</p></div>` : "";
     const groupsByComm = new Map();
     for (const vo of v.vouches) { const arr = groupsByComm.get(vo.c) || []; arr.push(vo); groupsByComm.set(vo.c, arr); }
@@ -672,7 +691,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
       </div>
       ${origBox}
       ${c ? `<div class="box ${v.badge.role === "critique" ? "critique" : GOOD_STATUS.has(c.status) ? "good" : "care"}"><h2>${v.badge.role === "critique" ? "This video pushes back on: " : v.badge.role === "source" ? "What became of it: " : GOOD_STATUS.has(c.status) ? "Holds up: " : "Handle with care: "}${esc(c.name)} ${statusChip(v.badge.id)}</h2><p>${esc(c.note)}</p>${c.sources && c.sources.length ? `<ul class="papers">${c.sources.map(paperLine).join("")}</ul>` : `<p class="faint">${esc(c.source)}.</p>`}<p class="faint" style="margin:0"><a href="#care" style="text-decoration:underline">All replication notes</a></p></div>` : ""}
-      ${instBox}
+      ${instBox}${looseBox}
       ${v.nmention ? `<div class="box"><h2>Why people recommend it</h2>${v.why ? `<p class="why">${esc(v.why)}</p>` : ""}${v.summary ? `<p class="muted">${esc(v.summary)}</p>` : ""}${v.quote ? `<p class="quote">“${esc(v.quote)}”</p>` : ""}
         <p class="faint" style="margin:0">${plural(v.nrec, "distinct recommender")} across ${plural(v.communities.length, "community")}; ${plural(v.nmention, "mention")} in total (${srcSummary}), ${v.first === v.last ? v.first : `${v.first}–${v.last}`}.</p></div>` : v.summary ? `<div class="box"><h2>About this lecture</h2><p class="muted">${esc(v.summary)}</p></div>` : ""}
       ${v.clips && v.clips.length ? `<div class="box"><h2>Moments people point to</h2><div class="clips">${v.clips.map(t => { const vo = v.vouches.find(x => x.t === t); return LINKOUT ? `<a class="btn quiet" style="font-size:13px" href="${watchUrl(v, t)}" target="_blank" rel="noopener"><b style="color:var(--amber)">${fmtDur(t)}</b>${vo ? ` <span class="muted">${esc(vo.q.slice(0, 100))}</span>` : ""}</a>` : `<button data-seek="${t}"><b>${fmtDur(t)}</b>${vo ? ` ${esc(vo.q.slice(0, 100))}` : ""}</button>`; }).join("")}</div></div>` : ""}
@@ -794,7 +813,7 @@ remembers what I've watched.</pre>
     else if (p0 === "shelf") pageShelf(arg);
     else if (p0 === "pathways") pagePathways(params);
     else if (p0 === "longs") pageSimple("longs", "Longs", "Everything over an hour: full lectures, long interviews, documentaries. Where YouTube puts Shorts, PsychTube puts Longs.", V.filter(v => visible(v) && v.len >= 3600), params, "longs");
-    else if (p0 === "canon") pageSimple("", "The canon", "The most vouched-for psychology videos across every community, by distinct recommenders.", V.filter(v => visible(v) && v.nrec > 0), params, "canon");
+    else if (p0 === "canon") pageSimple("", "The canon", "The most vouched-for psychology videos across every community, by distinct recommenders.", V.filter(v => visible(v) && v.nrec > 0).sort((a, b) => b.score - a.score), params, "canon");
     else if (p0 === "history" || p0 === "liked" || p0 === "later") pageLibrary(p0);
     else if (p0 === "q") pageSearch({ q: arg });
     else if (p0 === "data") pageData();

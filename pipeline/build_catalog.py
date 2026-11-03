@@ -270,6 +270,21 @@ for c in inst_courses:
             "up": None, "thread": None, "t": None,
         })
 
+# ---------------------------------------------------------------- loose institutional videos (raw/institutional/loose.json)
+# standalone lectures and talks an institution published outside any playlist: same institutional vouch, no series
+inst_loose = {}
+LOOSE = json.load(open(P("raw", "institutional", "loose.json"), encoding="utf-8"))["videos"] if os.path.exists(P("raw", "institutional", "loose.json")) else []
+for lv in LOOSE:
+    vid = lv["id"]
+    if vid in inst_member or vid in inst_loose:
+        continue
+    inst_loose[vid] = {"inst": lv["inst"], "kind": lv.get("kind") or "talk", "why": lv.get("why", "")}
+    videos[vid]["vouches"].append({
+        "s": "inst", "c": lv["inst"], "a": lv.get("ch") or lv["inst"], "d": None, "k": "talk", "w": INST_W,
+        "q": f"A standalone {lv.get('kind') or 'talk'} published by {lv['inst']}", "u": f"https://www.youtube.com/watch?v={vid}",
+        "up": None, "thread": None, "t": None,
+    })
+
 # ---------------------------------------------------------------- score + select
 
 def score_video(vouches):
@@ -296,12 +311,16 @@ catalog = []
 stats = collections.Counter()
 for vid, rec in videos.items():
     inst = inst_member.get(vid)            # (series id, lecture index) when a university playlist carries it
+    loose = inst_loose.get(vid)            # a standalone institutional talk (no series)
     course = inst_course[inst[0]] if inst else None
     m = meta.get(vid)
     if (m is None or not m.get("title")) and inst:
         m = inst_meta[vid]
     if inst and inst_meta[vid].get("p"):
         m = inst_meta[vid]
+    if loose and not inst:
+        inst = True                        # selection rules below treat it as institutional; course stays None
+        course = {"kind": loose["kind"], "inst": loose["inst"], "ctopics": [], "topic_map": {}, "chid": (m or {}).get("chid"), "total": 1}
     hn = rec["hn"]
     lab = hn_labels.get(vid) if hn else (new_labels.get(vid) or inst_labels.get(vid))
     if hn is None and not inst:
@@ -387,7 +406,12 @@ for vid, rec in videos.items():
         "clips": clips[:6],
         "kw": (m.get("kw") or [])[:6],
     }
-    if inst:
+    if loose and inst is True:
+        entry["inst"] = {"n": loose["inst"], "loose": True}
+        entry["type"] = "lecture" if loose["kind"] == "lecture" else "talk"
+        entry["course"] = False
+        stats["inst_loose"] += 1
+    elif inst:
         entry["inst"] = {"n": course["inst"], "i": inst[1], "of": course["total"]}   # the series id is entry["series"]
         if m.get("approx"):
             entry["approx"] = True
@@ -524,7 +548,7 @@ series = []
 # 1) institutional courses: the playlist order is the syllabus
 inst_vids = collections.defaultdict(list)
 for v in catalog:
-    if v.get("inst"):
+    if v.get("inst") and v["id"] in inst_member:
         inst_vids[inst_member[v["id"]][0]].append(v)
 for sid, course in inst_course.items():
     vids = sorted(inst_vids.get(sid, []), key=lambda v: v["inst"]["i"])
@@ -618,13 +642,18 @@ for s in sorted(inst_series, key=lambda s: (-s["pop"], -s["n"])):
     i["courses"] += 1
     i["lectures"] += s["n"]
     i["pop"] = round(i["pop"] + s["pop"], 1)
+for v in catalog:                                   # standalone institutional talks count toward their institution too
+    if v.get("inst") and v["inst"].get("loose"):
+        i = institutions.setdefault(v["inst"]["n"], {"name": v["inst"]["n"], "short": INST_SHORT.get(v["inst"]["n"], v["inst"]["n"]), "courses": 0, "lectures": 0, "pop": 0.0})
+        i["lectures"] += 1
+        i["loose"] = i.get("loose", 0) + 1
 vouched_videos = sum(1 for v in catalog if v["nrec"])
 
 data = {
     "generated": generated,
     "stats": {"videos": len(catalog), "vouched": vouched_videos, "mentions": sum(v["nmention"] for v in catalog), "sources": dict(src_totals),
               "communities": len(communities_total), "series": len(series),
-              "inst": {"courses": len(inst_series), "lectures": sum(s["n"] for s in inst_series), "institutions": len(institutions),
+              "inst": {"courses": len(inst_series), "lectures": sum(s["n"] for s in inst_series), "loose": stats.get("inst_loose", 0), "institutions": sum(1 for i in institutions.values() if i["courses"]), "institutions_all": len(institutions),
                        "also_vouched": sum(s["vouched"] for s in inst_series)}},
     "areas": areas_out,
     "contested": {k: {"name": c["name"], "note": c["note"], "source": c["source"], "status": c.get("status", "mixed"),

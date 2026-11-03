@@ -9,7 +9,7 @@ One file, `psychtube.json`, with this shape:
 {
   "generated": "YYYY-MM-DD",
   "stats": {"videos": 0, "vouched": 0, "mentions": 0, "sources": {"hn": 0, "reddit": 0, "se": 0}, "communities": 0, "series": 0,
-            "inst": {"courses": 0, "lectures": 0, "institutions": 0, "also_vouched": 0}},
+            "inst": {"courses": 0, "lectures": 0, "loose": 0, "institutions": 0, "also_vouched": 0}},
   "areas": [{"id": "brain", "name": "Brain & Neuroscience", "topics": [{"id": "memory", "name": "Memory", "desc": "...", "n": 12}]}],
   "contested": {"power-posing": {"name": "...", "note": "...", "source": "...", "status": "failed",
                                  "sources": [{"cite": "Ranehill et al. (2015)...", "doi": "10.1177/0956797614553946"}]}},
@@ -51,7 +51,7 @@ PsychTube shows) and `.../hqdefault.jpg` is the uploader's thumbnail. Embed a pl
 | `type` | talk, lecture, course, documentary, explainer, interview, podcast, tutorial, demo, other (when known); shelf videos not otherwise in the catalog are `documentary` (primary sources) or `demo` (demonstrations and therapy sessions) |
 | `course`, `series` | whether it is one lecture of a series, and the `series[].id` it belongs to |
 | `p`, `host`, `f` | present when the video is not on YouTube. `p: "panopto"` with the Panopto `host` (e.g. `harvard.hosted.panopto.com`): `id` is the Panopto session id, the watch page is `https://<host>/Panopto/Pages/Viewer.aspx?id=<id>`, the embed is `https://<host>/Panopto/Pages/Embed.aspx?id=<id>` and a thumbnail is `https://<host>/Panopto/Services/FrameGrabber.svc/FrameRedirect?objectId=<id>&mode=Delivery`. `p: "archive"` (`host: "archive.org"`): `id` is the Internet Archive item identifier of this lecture (UC Berkeley webcasts: `ucberkeley_webcast_<original YouTube id>`), `f` the MP4 file name inside it; play `https://archive.org/download/<id>/<f>` in a `<video>` element (or embed `https://archive.org/embed/<id>`; items without `f` are stream-only and must use the embed), the item page is `https://archive.org/details/<id>` and a thumbnail is `https://archive.org/services/img/<id>`. |
-| `inst` | present on lectures from the institutional tier: `{"n": institution, "s": series id, "i": position in the playlist, "of": playlist length}`. `approx: true` marks lectures whose `views`/`pub` were estimated from the playlist page rather than fetched exactly |
+| `inst` | present on lectures from the institutional tier: `{"n": institution, "i": position in the playlist, "of": playlist length}` (the series id is in `series`). `approx: true` marks lectures whose `views`/`pub` were estimated from the playlist page rather than fetched exactly. `{"n": institution, "loose": true}` marks a **standalone talk**: a single lecture or talk an institution published outside any playlist (a university's named lecture, a hospital's grand rounds recording, a society's prize lecture); same institutional vouch, no series |
 | `score` | PsychTube's ranking signal: distinct recommenders weighted by strength of recommendation, with a bonus when several communities agree and for the number of distinct months it was recommended |
 | `nrec` | distinct people whose mention counted as a recommendation |
 | `nmention` | all mentions found, including neutral citations and critical ones |
@@ -120,6 +120,15 @@ and resolved against the catalog at build time.
 with verified DOIs. Videos reach a finding through `badge`: `promotes` (presents it as established),
 `critique` (pushes back on it) or `source` (the original footage). Findings with status `replicated` are
 reassuring, not cautionary: a UI should not flag those videos the way it flags `failed` ones.
+
+## Ordering: institutional legitimacy first for long-form
+
+The site orders long-form content (over 25 minutes) by legitimacy before popularity: an institution's own
+lecture or a curated shelf copy ranks above a fireside chat, interview or independent talk, which ranks
+above a podcast episode. In the site this is `rank = max(score, 1) × {1, 0.5, 0.25}` by tier, applied to
+every list except the canon, which stays by community score. Short pieces — a demonstration, a clip, a
+TED talk — are not penalised. The export does not carry `rank`; compute it from `len`, `inst`/`orig`,
+`type` and `ch` if you want the same order, or order by `score` for the pure community view.
 
 ## Things to know before you build
 
