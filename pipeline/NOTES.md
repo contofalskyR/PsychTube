@@ -494,3 +494,16 @@ Kanwisher, Tenenbaum, Schulz, Saxe, Xu…). Channels without a playlists tab are
 pseudo-playlists (`UU` + channel id) after a look at what they upload. Then the usual path: assemble →
 triage (`INSTRUCTIONS_triage.md`) → pull → merge → course cards and lecture labels → publisher check for
 personal channels → build.
+
+## Internet Archive, second pass (pipeline/archive_sweep.py, archive_courses.py; 2026-11-03, evening)
+
+The first pass took the per-lecture items (2011–2015). The whole `ucberkeley-webcast` collection (11,546 items, listed
+with the cursor-paged scrape API from the archive workflow, since the build machine cannot reach archive.org) also holds
+one item per course from the iTunes U feeds (2006–2014), each with every lecture as a file. Most of the pre-2010 ones are
+audio-only — Searle's Philosophy of Mind (five runs) and Philosophy of Language, Keltner's Human Emotion (three runs),
+Rosch's Buddhist Psychology, Psychology of Dreams, Drugs and the Brain, and earlier runs of Psych 1/101/130/131/140/160
+— and are left out until the site has an audio-lecture form. The video ones not already in came in as six courses
+(Cognitive Science C127 Cognitive Neuroscience 2009, Psychology 101 and 140 and 164 from spring 2010, Psychology 160
+fall 2013, Philosophy 3 spring 2010; 130 lectures), each lecture `<item>_<track>` with `item` carrying the archive
+identifier for the player, and eight dated stray lecture items joined their existing courses. `work/archive/want.json`
+lists what the `files` mode fetches; results live on the `archive-data` branch.

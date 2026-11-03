@@ -391,6 +391,8 @@ for c in inst_courses:
             inst_meta[vid]["host"] = c.get("host")
             if it.get("file"):
                 inst_meta[vid]["f"] = it["file"]   # Internet Archive: the MP4 file name, so the site can use its own <video> player
+            if it.get("item"):
+                inst_meta[vid]["item"] = it["item"]   # Internet Archive: the item holding the file, when one item carries a whole course
         videos[vid]["vouches"].append({
             "s": "inst", "c": c["_canon"], "a": c.get("owner"), "d": None, "k": "course", "w": INST_W if inst_course[sid]["ok"] else 0.5,
             "q": f"Lecture {it['idx']} of {len(items)} in {name}", "u": c.get("url") or f"https://www.youtube.com/playlist?list={c['pid']}",
@@ -645,6 +647,8 @@ for vid, rec in videos.items():
             entry["host"] = m.get("host")
             if m.get("f"):
                 entry["f"] = m["f"]
+            if m.get("item"):
+                entry["item"] = m["item"]
         if not comm_vouches:
             entry["kw"] = []
         stats["inst_lectures"] += 1
