@@ -12,16 +12,16 @@ P = lambda *a: os.path.join(ROOT, *a)
 
 html = open(P("site", "index.html"), encoding="utf-8").read()
 css = open(P("site", "styles.css"), encoding="utf-8").read()
-data = open(P("site", "data.js"), encoding="utf-8").read()
+data = open(P("site", "data-core.js"), encoding="utf-8").read() + open(P("site", "data-inst.js"), encoding="utf-8").read()   # both parts inline: the app merges them at start-up
 app = open(P("site", "app.js"), encoding="utf-8").read()
 
 # </script> inside a JSON string would end the inline script early; escape defensively
 safe = lambda s: s.replace("</script", "<\\/script")
 
 html = html.replace('<link rel="stylesheet" href="styles.css">', "<style>\n" + css + "\n</style>")
-html = html.replace('<script src="data.js"></script>', "<script>\n" + safe(data) + "\n</script>")
+html = html.replace('<script src="data-core.js"></script>', "<script>\n" + safe(data) + "\n</script>")
 html = html.replace('<script src="app.js"></script>', "<script>\n" + safe(app) + "\n</script>")
-assert "styles.css" not in html and 'src="data.js"' not in html and 'src="app.js"' not in html
+assert "styles.css" not in html and 'src="data-core.js"' not in html and 'src="app.js"' not in html
 
 out = P("PsychTube.html")
 open(out, "w", encoding="utf-8").write(html)

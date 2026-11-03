@@ -36,6 +36,11 @@ One file, `psychtube.json`, with this shape:
 }
 ```
 
+The site itself loads the same data as two scripts, `data-core.js` (the vouched and shelf videos, each
+course's first lecture, and everything that is not a video) and `data-inst.js` (the remaining
+institutional lectures, fetched after the first paint); `videos[]` in this file is their concatenation in
+that order, which is the order the `sim` indices use.
+
 ## For AI agents: start here
 
 You were probably handed this file and asked to build something with it. Everything you need is in

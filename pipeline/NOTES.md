@@ -359,7 +359,7 @@ D1); Teach-me is one line on the home page, below the shelves, until the viewer 
 area rows are gone from the home page, replaced by a strip of area links (12 sections and ~120 cards
 instead of 21 and ~230). Dark theme and autoplay-on-open stay the defaults (D8).
 
-Not done, deliberately or for lack of reach: a split `data.js` (C1), a CSP (C2), self-hosted fonts (C3),
+Not done, deliberately or for lack of reach: a CSP (C2), self-hosted fonts (C3),
 a refresh path for pulled courses (C4), the Data API as the primary pull method (D7), Stack Exchange
 questions weighted by stance (S2), "uploaded by a third party" on community documentaries (D5), a
 liveness refresh (S8).
@@ -393,9 +393,8 @@ matrix can replace `doc_vectors` when it is.
 On the site: the watch page's side column gains "On the same ground (by content)" with a "shares: …" line
 under each card (the title/keyword words the two have in common, else the topic they share) and "Courses
 that go deeper"; the series page gains "Courses like this"; "For you" counts content neighbours of what
-was watched (weight 2, decaying along the list) beside the co-recommendations (weight 3). `data.js` grew
-by about 1 MB (9.8 MB; hosted copy 13.9 of 16 MB), which makes the split of `data.js` the next
-infrastructure job.
+was watched (weight 2, decaying along the list) beside the co-recommendations (weight 3). The catalog grew
+by about 1 MB (to 9.8 MB; hosted copy 13.9 of 16 MB), which is what prompted the two-part load below.
 
 ## Submitted courses (raw/institutional/submissions/)
 
@@ -411,9 +410,29 @@ page shows as link buttons and a "submitted by the lecturer" line. Verification 
 token in the playlist description) is designed in as `control_verified` but not asked for yet. Entry
 points: a box at the foot of the Courses hub and a paragraph on About.
 
+## Two-part catalog (site/data-core.js + site/data-inst.js)
+
+The catalog had reached 9.8 MB in one `data.js`, parsed before anything rendered (the review measured
+15 s of main-thread work on a mid-range phone for the largest pages, and a long blank first paint). The
+build now writes two files. `data-core.js` (2.7 MB) is what a first page needs: the community-vouched
+videos, the shelf videos, each course's first lecture (so course cards render), the series index,
+institutions, replication notes, pathways and shelves. `data-inst.js` (7.1 MB) is the other ~14,350
+institutional lectures. `app.js` renders from the core, then fetches the second part in an idle callback
+and merges it (`ingest()` normalises, links series, ranks and re-sorts; the search index is rebuilt on the
+next search), re-rendering the current page in place with scroll and focus kept — except a watch page
+whose player is running. Pages that need the second part say so while it loads (a series page lists the
+first lecture and "Loading the other 16 lectures…"; a direct link to a lecture shows "Loading the
+lecture…" instead of "Not here"; search and topic pages say the course lectures are still coming). The
+content-neighbour indices (`sim`) point into the concatenation core + inst, remapped at build time, and
+resolve lazily. `PT.v` is a hash of the institutional part, appended to its URL so a stale cache cannot
+pair an old second part with a new first. `psychtube.json` stays one complete file; `PsychTube.html`
+inlines both parts and the app merges them at start-up (`window.PT_INST` present); the hosted copy ships
+both files. Measured locally: first paint of the home page 0.7 s and of a course page 0.4 s with the
+second part held back 2.5 s, no errors, scroll kept across the merge.
+
 ## Hosted copy
 
-`pipeline/build_artifact.py` writes `site/hosted/` (index.html with inline CSS, app.js, data.js,
+`pipeline/build_artifact.py` writes `site/hosted/` (index.html with inline CSS, app.js, data-core.js, data-inst.js,
 thumbs.js). It sets `window.PT_ARTIFACT = true`, which makes app.js use embedded thumbnails, replace
 the player with a "Watch on YouTube" poster, and leave theme control to the host. Routes are plain
 hash names (`#v-<id>`, `#t-<topic>`, `#prefs`) for the same reason.

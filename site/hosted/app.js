@@ -5,20 +5,30 @@
   if (!PT) { document.getElementById("main").innerHTML = "<div class='empty'><h2>No data loaded</h2><p>data.js is missing. Run <code>python3 pipeline/build_catalog.py</code>.</p></div>"; return; }
 
   // ------------------------------------------------------------ data indexes
-  const V = PT.videos;
-  // data.js omits empty fields to stay small; restore the defaults the templates rely on
-  for (const v of V) {
+  // The catalog arrives in two parts: data-core.js (the vouched videos, the shelves, each course's first lecture, the
+  // series index, the notes) renders the first page; data-inst.js (the institutional lectures, ~90% of the rows) is
+  // fetched right after and merged, and the current page re-renders. ALL keeps build order (the content-neighbour
+  // indices point into it); V is the browsing order and is re-sorted when the second part lands.
+  const ALL = [];
+  const V = [];
+  const byId = new Map();
+  let maxScore = 1;
+  let index = null;   // the search index, built on the first search, not at start-up
+  let instLoaded = !!PT.complete;
+  function normalize(v) {
+    // the data files omit empty fields to stay small; restore the defaults the templates rely on
     for (const k of ["communities", "vouches", "clips", "rel", "kw", "cw", "topics"]) if (!v[k]) v[k] = [];
-    // content neighbours arrive as indices (smaller file); resolve them to ids before anything re-sorts the arrays
-    v.sim = (v.sim || []).map(i => PT.videos[i] && PT.videos[i].id).filter(Boolean);
-    v.simc = (v.simc || []).map(i => PT.series[i] && PT.series[i].id).filter(Boolean);
     if (!v.src) v.src = {};
     for (const k of ["why", "summary", "quote", "ch"]) if (v[k] == null) v[k] = "";
     for (const k of ["nrec", "nmention", "months", "score"]) if (v[k] == null) v[k] = 0;
     if (v.badge === undefined) v.badge = null;
     if (v.shelf === undefined) v.shelf = [];
     if (v.orig === undefined) v.orig = null;
+    return v;
   }
+  // content neighbours stay as indices into ALL and resolve when rendered, so they work whichever part has arrived
+  const simOf = v => (v.sim || []).map(i => ALL[i]).filter(Boolean);
+  const simcOf = v => (v.simc || []).map(i => PT.series[i]).filter(Boolean);
   // ------------------------------------------------------------ ranking: long-form content is ordered by legitimacy first
   // For anything over 25 minutes the order of preference is: a taught course or lecture series an institution published
   // (or a curated shelf copy, or a long video on an institution's own channel), then the institutions' seminars, grand
@@ -32,6 +42,8 @@
   const INST_CH = new Set(PT.inst_channels || []);   // channels the institutions publish on
   for (const sd of PT.series) sd.sim = (sd.sim || []).map(i => PT.series[i] && PT.series[i].id).filter(Boolean);
   const series = new Map(PT.series.map(s => [s.id, s]));
+  const seriesOfVideo = new Map();
+  for (const sd of PT.series) for (const id of sd.vids) if (!seriesOfVideo.has(id)) seriesOfVideo.set(id, sd.id);
   const TIER = { course: 0, talk: 1, fireside: 2, podcast: 3 };
   function formTier(v) {
     if (!v.len || v.len < LONG_FORM) return TIER.course;
@@ -46,18 +58,27 @@
     return TIER.fireside;
   }
   const TIER_WEIGHT = [1, 0.75, 0.5, 0.25];
-  const byId = new Map(V.map(v => [v.id, v]));
-  for (const sd of PT.series) for (const id of sd.vids) { const v = byId.get(id); if (v && !v.series) v.series = sd.id; }   // the series link is needed before ranking
-  for (const v of V) { v.tier = formTier(v); v.rank = Math.max(v.score, 1) * TIER_WEIGHT[v.tier]; }
   // browsing order: tier first, then the weighted score. A strongly vouched podcast still ranks above other podcasts and
   // keeps its place in search and on the canon, but on a topic page the institutions' own long-form comes before it.
   const byLegitimacy = (a, b) => (a.tier - b.tier) || (b.rank - a.rank) || (b.score - a.score);
-  V.sort(byLegitimacy);
+  function ingest(videos) {
+    for (const raw of videos) {
+      if (byId.has(raw.id)) continue;
+      const v = normalize(raw);
+      if (!v.series && seriesOfVideo.has(v.id)) v.series = seriesOfVideo.get(v.id);   // the series link is needed before ranking
+      v.tier = formTier(v); v.rank = Math.max(v.score, 1) * TIER_WEIGHT[v.tier];
+      ALL.push(v); V.push(v); byId.set(v.id, v);
+    }
+    V.sort(byLegitimacy);
+    maxScore = Math.max(1, ...V.map(v => v.score));
+    index = null;                                   // the search index is rebuilt on the next search
+  }
+  ingest(PT.videos);
+  if (window.PT_INST) { ingest(window.PT_INST.videos); instLoaded = true; }   // the single-file copy inlines both parts
   const topics = new Map();
   const areaOf = new Map();
   const areas = PT.areas;
   for (const a of areas) for (const t of a.topics) { topics.set(t.id, t); areaOf.set(t.id, a); }
-  const maxScore = Math.max(...V.map(v => v.score));
   const SRC_NAME = { hn: "Hacker News", reddit: "Reddit", se: "Psych SE" };
   const INST_SERIES = PT.series.filter(sd => sd.inst);
   const KINDS = { course: INST_SERIES.filter(sd => sd.kind === "course").length, series: INST_SERIES.filter(sd => sd.kind === "series").length, talks: INST_SERIES.filter(sd => sd.kind === "talks").length };
@@ -300,7 +321,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
       if (v.ch) chanW.set(v.ch, (chanW.get(v.ch) || 0) + w);
       if (v.series) seriesW.set(v.series, (seriesW.get(v.series) || 0) + w);
       for (const r of v.rel || []) out.set(r, (out.get(r) || 0) + 3 * w);
-      (v.sim || []).forEach((r, k) => out.set(r, (out.get(r) || 0) + 2 * w * (1 - k * 0.08)));   // what this lecture is about, not only who else linked it
+      simOf(v).forEach((x, k) => out.set(x.id, (out.get(x.id) || 0) + 2 * w * (1 - k * 0.08)));   // what this lecture is about, not only who else linked it
     });
     for (const v of V) {
       if (watched.has(v.id) || !visible(v)) continue;
@@ -329,7 +350,6 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
   const STOPWORDS = new Set("a an and are as at be by can do does for how in is it its of on or the to what why with".split(" "));
   // "prosopagnosia" -> "prosopagnos" finds "prosopagnosic"; "neurons" -> "neuron"; "placebo" stays "placebo"
   const stem = t => { const s = t.replace(/(ics|ic|ias|ia|ies|es|s|ing|ed|al)$/, ""); return t.length >= 6 && s.length >= 5 ? s : t; };
-  let index = null;   // built on the first search, not at start-up
   const buildIndex = () => V.map(v => {
     const sd = v.series ? series.get(v.series) : null;
     return {
@@ -469,7 +489,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
   }
   const KIND_WORD = { course: "lecture", series: "lecture", talks: "talk" };
   function seriesCard(sd) {
-    const first = byId.get(sd.vids[0]);
+    const first = byId.get(sd.vids[0]) || { id: sd.vids[0], ch: sd.ch || "" };   // before the institutional part lands, a stub keeps the card renderable
     const sp = seriesProgress(sd);
     const done = sp.done;
     const unit = KIND_WORD[sd.kind] || "lecture";
@@ -509,7 +529,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
     const seg = (k, cur, items) => `<div class="seg" role="group" aria-label="${SEG_LABEL[k] || k}">${items.map(([val, label]) => `<a href="${link(k, val)}" aria-current="${cur === val}" class="segbtn">${label}</a>`).join("")}</div>`;
     main.innerHTML = `
       <h1>${opts.title}</h1>
-      ${opts.intro ? `<p class="lede">${opts.intro}</p>` : ""}
+      ${opts.intro ? `<p class="lede">${opts.intro}</p>` : ""}${instLoaded ? "" : `<p class="faint loading-note">The course lectures are still loading; this list will grow in a moment.</p>`}
       ${opts.extra || ""}
       <div class="toolbar">
         ${seg("sort", sort, [["vouched", "Legitimacy first"], ["score", "Most vouched"], ["recent", "Recently recommended"], ["newest", "Newest upload"], ["shortest", "Shortest"], ["longest", "Longest"]])}
@@ -574,6 +594,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
       : `<b>Taught courses and lecture series.</b> A full term of a university course, or a lecture series on one theme, exactly as the institution published it — every lecture, in order.`;
     main.innerHTML = `<h1>Courses</h1>
       <p class="lede">${s.courses ? `<b>${s.lectures.toLocaleString()}</b> lectures in <b>${s.courses.toLocaleString()}</b> courses and lecture collections, published by <b>${s.institutions}</b> universities, research institutes, societies and clinical institutions. Every lecture is here, in order, because the institution put it online — institutional backing instead of a vouch count. Where a community also vouched for a lecture, the card says so (${s.also_vouched} lectures so far). Your progress is remembered in this browser.` : "Lecture series where several lectures were recommended, grouped by channel. Your progress is remembered in this browser."}</p>
+      ${instLoaded ? "" : `<p class="shelf-note loading-note">Loading the lectures… the course list is complete; lecture pages fill in in a moment.</p>`}
       ${s.courses ? `<div class="toolbar">${seg("shelf", shelf, [["courses", `Courses <span class="n">${nFormal}</span>`], ["talks", `Seminars & conferences <span class="n">${nTalks}</span>`], ["all", "Everything"]])}${seg("level", level, [["any", "Any level"], ["intro", "Intro"], ["advanced", "Advanced"], ["public", "Public lectures"]])}</div>
       <p class="shelf-note">${shelfNote}${(PT.pathways || []).length && shelf !== "talks" ? ` <a href="#pathways" style="text-decoration:underline">Not sure where to start? Pathways.</a>` : ""}</p>
       <div class="toolbar"><label class="filter"><input id="courseFilter" type="search" placeholder="Filter by institution, course or lecturer" aria-label="Filter courses" spellcheck="false"></label><span class="faint" id="courseCount">${plural(shelfSeries.length, "collection")}, ${plural(lectures, "lecture")}, ${groups.length} institutions</span></div>` : ""}
@@ -601,6 +622,8 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
     const sd = series.get(id); if (!sd) return notFound();
     setNav("courses"); setTitle(sd.name);
     const vids = sd.vids.map(i => byId.get(i)).filter(Boolean);
+    if (!vids.length) { main.innerHTML = `<h1>${esc(sd.name)}</h1><p class="lede loading-note">Loading the lectures…</p>`; return; }
+    const stillLoading = !instLoaded && vids.length < sd.n ? `<p class="loading-note">Loading the other ${plural(sd.n - vids.length, "lecture")}…</p>` : "";
     const sp = seriesProgress(sd);
     const next = byId.get(nextInSeriesFor(sd)) || vids[0];
     const watched = sp.done;
@@ -620,6 +643,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
       ${sd.inst ? `<p class="lede">${sd.note ? esc(sd.note) + " " : ""}<span class="muted">${meta.map(esc).join(" · ")}.</span>${sd.vouched ? ` <span class="muted">${sd.vouched === vids.length ? "Every" : sd.vouched} ${sd.vouched === 1 ? unit + " was" : unit + "s were"} also vouched for by the communities.</span>` : ""}${missing ? ` <span class="muted">${missing}</span>` : ""}</p>${publisherLine ? `<p class="shelf-note">${publisherLine}</p>` : ""}${submittedLine}` : `<p class="lede">${plural(vids.length, "lecture")} people recommended from this series.</p>`}
       ${sp.started ? `<div class="course-progress"><div class="bar" role="progressbar" aria-label="Course progress" aria-valuenow="${sp.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${sp.pct}%"></i></div><span>${sp.pct >= 100 ? `Finished — all ${sp.n} ${unit}s` : `${sp.done} of ${sp.n} ${unit}s watched · ${sp.pct}%${sp.leftSec ? ` · about ${fmtLen(sp.leftSec)} left` : ""}`}</span></div>` : ""}
       <div class="toolbar"><a class="btn primary" href="#v-${next.id}">${sp.pct >= 100 ? "Watch again" : sp.started ? "Continue" : "Start"}: ${esc(next.title.slice(0, 60))}${nextAt ? ` <span class="faint">from ${fmtDur(nextAt)}</span>` : ""}</a>${(sd.materials || []).map(mt => `<a class="btn quiet" href="${esc(mt.url)}" target="_blank" rel="noopener">${esc(mt.label)} ↗</a>`).join("")}${sd.readings && !(sd.materials || []).some(mt => mt.url === sd.readings) ? `<a class="btn quiet" href="${esc(sd.readings)}" target="_blank" rel="noopener">Syllabus &amp; readings ↗</a>` : ""}${sd.url ? `<a class="btn quiet" href="${esc(sd.url)}" target="_blank" rel="noopener">${sd.provider === "panopto" ? "Course on Panopto" : sd.provider === "archive" ? "Course on the Internet Archive" : "Playlist on YouTube"} ↗</a>` : ""}${sd.chid || next.chid ? `<a class="btn quiet" href="https://www.youtube.com/channel/${esc(sd.chid || next.chid)}" target="_blank" rel="noopener">${esc(sd.ch || next.ch || "Channel")} ↗</a>` : ""}${sd.topics.map(t => `<a class="chip" href="#t-${t}">${esc(topics.get(t) ? topics.get(t).name : t)}</a>`).join("")}</div></div>
+      ${stillLoading}
       ${pathwaysFor(id).map(({ pw, i }) => { const prev = i > 0 ? stepTarget(pw.steps[i - 1]) : null, nxt = i + 1 < pw.steps.length ? stepTarget(pw.steps[i + 1]) : null; return `<p class="pathline">Step ${i + 1} of ${pw.steps.length} in the <a href="#pathways?p=${esc(pw.id)}">${esc(pw.name)}</a> pathway${prev ? ` · before it: <a href="${prev.href}">${esc(prev.name)}</a>` : ""}${nxt ? ` · after it: <a href="${nxt.href}">${esc(nxt.name)}</a>` : ""}</p>`; }).join("")}
       ${(sd.sim || []).length ? `<section class="section"><div class="section-head"><div><h2>Courses like this</h2><div class="sub">Matched on what the lectures are about, across institutions.</div></div></div><div class="row">${sd.sim.map(x => series.get(x)).filter(Boolean).slice(0, 6).map(x => seriesCard(x)).join("")}</div></section>` : ""}
       <ol class="lectures">${vids.map((v, i) => `<li class="${isDone(v.id) ? "done" : ""}" data-row="${v.id}"><span class="num">${isDone(v.id) ? "✓" : sd.inst ? v.inst.i : i + 1}</span><a class="thumb ${isDone(v.id) ? "is-done" : ""}" href="#v-${v.id}" aria-label="${esc(v.title)}">${sd.inst && !thumbUrl(v.id) ? `<div class="ph lec" style="--h:${hueOf(sd.id)}" aria-hidden="true"><b>${v.inst.i}</b></div>` : ""}${img(v.id)}${v.len ? `<span class="pill">${fmtDur(v.len)}</span>` : ""}${progressBar(v)}</a><div><a class="lt" href="#v-${v.id}">${esc(v.title)}</a>${v.why || (v.summary && !sd.inst) ? `<div class="muted" style="font-size:13.5px">${esc(v.why || v.summary)}</div>` : ""}${v.nrec ? vouchLine(v) : sd.inst ? `<div class="vouch"><span class="faint">${v.len ? fmtLen(v.len) : ""}${v.topics[0] && v.topics[0] !== sd.topics[0] ? ` · ${esc(topics.get(v.topics[0]).name)}` : ""}</span></div>` : ""}<div class="track">${isDone(v.id) ? `<span class="watched">Watched</span>` : pctOf(v) ? `<span class="muted">${pctOf(v)}% · <a href="#v-${v.id}">resume at ${fmtDur(resumeAt(v) || progOf(v.id).t)}</a></span>` : ""}<button class="mini" data-done="${v.id}">${isDone(v.id) ? "Mark unwatched" : "Mark watched"}</button></div></div></li>`).join("")}</ol>`;
@@ -693,7 +717,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
     const topicHits = [...topics.values()].filter(t => norm(t.name).includes(norm(q)) || norm(t.desc).includes(norm(q))).slice(0, 6);
     const nq = norm(q);
     const seriesHits = nq.length >= 3 ? PT.series.filter(sd => norm([sd.name, sd.lecturer, sd.inst, sd.short, sd.ch].join(" ")).includes(nq)).slice(0, 6) : [];
-    main.innerHTML = `<h1>${res.length ? plural(res.length, "result") : "No results"} for “${esc(q)}”</h1>
+    main.innerHTML = `<h1>${res.length ? plural(res.length, "result") : "No results"} for “${esc(q)}”</h1>${instLoaded ? "" : `<p class="faint loading-note">Searching the vouched videos; the course lectures are still loading and will be added.</p>`}
       ${topicHits.length ? `<div class="topic-pills">${topicHits.map(t => `<a class="tpill" href="#t-${t.id}">${esc(t.name)} <span class="faint">${t.n}</span></a>`).join("")}</div>` : ""}
       ${seriesHits.length ? `<div class="row" style="margin-top:12px">${seriesHits.map(sd => seriesCard(sd)).join("")}</div>` : ""}
       ${res.length ? paged(res, { cls: "row-item", desc: true, chips: 4 }, `<div style="margin-top:14px" data-paged>`) : `<div class="empty"><p>Try a topic word (memory, Sapolsky, replication), a channel, or a person.</p></div>`}`;
@@ -765,6 +789,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
   }
 
   function pageWatch(id, params) {
+    if (!byId.has(id) && !instLoaded) { setTitle("Loading"); main.innerHTML = `<p class="lede loading-note" style="margin-top:24px">Loading the lecture…</p>`; return; }
     const v = byId.get(id); if (!v) return notFound();
     setNav(""); setTitle(v.title);
     const saved = resumeAt(v);
@@ -774,8 +799,8 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
     state.history = [{ id, ts: Date.now() }, ...state.history.filter(h => h.id !== id)].slice(0, 500);
     store.set("history", state.history);
     const rel = (v.rel || []).map(r => byId.get(r)).filter(Boolean).filter(visible);
-    const sim = (v.sim || []).map(r => byId.get(r)).filter(Boolean).filter(x => visible(x) && !rel.includes(x));
-    const simCourses = (v.simc || []).map(r => series.get(r)).filter(Boolean).filter(sd => sd.id !== v.series);
+    const sim = simOf(v).filter(x => visible(x) && !rel.includes(x));
+    const simCourses = simcOf(v).filter(sd => sd.id !== v.series);
     const sameTopic = V.filter(x => x.id !== id && visible(x) && x.topics[0] === v.topics[0] && !rel.includes(x) && !sim.includes(x)).slice(0, 10);
     const sameSeries = v.series ? series.get(v.series) : null;
     const posInSeries = sameSeries ? sameSeries.vids.indexOf(id) : -1;
@@ -999,4 +1024,30 @@ remembers what I've watched.</pre>
 
   document.querySelector(".skip").addEventListener("click", e => { e.preventDefault(); main.focus(); main.scrollIntoView(); });
   route();
+
+  // ------------------------------------------------------------ the second part of the catalog
+  // data-inst.js (the institutional lectures) loads right after the first page is on screen. When it lands, the page
+  // re-renders in place — except a watch page with a player running, whose side column simply fills in on the next visit.
+  function mergeInst() {
+    if (instLoaded || !window.PT_INST) return;
+    ingest(window.PT_INST.videos); instLoaded = true;
+    document.documentElement.classList.remove("inst-loading");
+    if (current.page === "v" && player) return;
+    const y = window.scrollY; const active = document.activeElement;
+    route();
+    window.scrollTo(0, y);
+    if (active && active.id && document.getElementById(active.id)) document.getElementById(active.id).focus({ preventScroll: true });
+  }
+  if (!instLoaded) {
+    document.documentElement.classList.add("inst-loading");
+    const load = () => {
+      const sc = document.createElement("script");
+      sc.src = (PT.inst_file || "data-inst.js") + (PT.v ? "?v=" + encodeURIComponent(PT.v) : "");
+      sc.async = true;
+      sc.onload = mergeInst;
+      sc.onerror = () => { document.documentElement.classList.remove("inst-loading"); toast("The course lectures didn't load; reload to try again."); };
+      document.head.appendChild(sc);
+    };
+    if ("requestIdleCallback" in window) requestIdleCallback(load, { timeout: 1500 }); else setTimeout(load, 50);
+  }
 })();

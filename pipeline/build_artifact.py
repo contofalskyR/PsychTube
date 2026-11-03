@@ -36,7 +36,7 @@ body::before {{ content: ""; position: fixed; inset: 0 0 auto; height: env(safe-
 </style>
 <script>window.PT_ARTIFACT = true;</script>
 {body.strip()}
-<script src="data.js" charset="utf-8"></script>
+<script src="data-core.js" charset="utf-8"></script>
 <script src="thumbs.js" charset="utf-8"></script>
 <script src="app.js" charset="utf-8"></script>
 """
@@ -51,11 +51,11 @@ with open(os.path.join(OUT, "thumbs.js"), "w", encoding="utf-8") as f:
     f.write("window.PT_THUMBS = ")
     json.dump(thumbs, f, separators=(",", ":"))
     f.write(";\n")
-for name in ("app.js", "data.js"):
+for name in ("app.js", "data-core.js", "data-inst.js"):
     open(os.path.join(OUT, name), "w", encoding="utf-8").write(open(P("site", name), encoding="utf-8").read())
 
 total = sum(os.path.getsize(os.path.join(OUT, n)) for n in os.listdir(OUT))
 print(f"hosted variant: {len(thumbs)}/{len(catalog_ids)} thumbnails embedded, {total/1e6:.1f} MB total in site/hosted/")
 LIMIT = 16_000_000                       # claude.ai's limit for a published page; the data grew 0.2-0.6 MB a round, so fail loudly before it is hit
 if total > LIMIT * 0.97:
-    raise SystemExit(f"hosted variant is {total/1e6:.1f} MB, within 3% of the {LIMIT/1e6:.0f} MB limit: trim thumbs.js (fewer embedded thumbnails) or split data.js before publishing")
+    raise SystemExit(f"hosted variant is {total/1e6:.1f} MB, within 3% of the {LIMIT/1e6:.0f} MB limit: trim thumbs.js (fewer embedded thumbnails) or thin the institutional part before publishing")

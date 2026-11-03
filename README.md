@@ -96,7 +96,7 @@ Built in the spirit of Andrej Karpathy's [HackerTube](https://hackertube.org).
 **Live site:** https://contofalskyr.github.io/PsychTube/ — videos play in the page there (YouTube's
 player refuses to run inside a page opened from disk, which is why the single-file copy links out).
 
-The site is plain HTML/CSS/JS with the catalog baked into `site/data.js`:
+The site is plain HTML/CSS/JS with the catalog baked into two script files, `site/data-core.js` (what the first page needs) and `site/data-inst.js` (the institutional lectures, fetched right after the first paint):
 
 - **Quickest:** double-click `serve.command` (macOS) or run `python3 -m http.server 8000 --directory site`,
   then open http://localhost:8000. (Opening `site/index.html` directly from Finder also works for
@@ -108,11 +108,11 @@ The site is plain HTML/CSS/JS with the catalog baked into `site/data.js`:
 ## Layout
 
 ```
-site/                  the website (index.html, app.js, styles.css, data.js)
+site/                  the website (index.html, app.js, styles.css, data-core.js + data-inst.js)
 site/data/             the export: psychtube.json + DATA.md (give these to your agent)
 site/hosted/           the variant published as a claude.ai artifact (no embeds allowed there, so it
                        carries its own thumbnails and links out to YouTube); built by build_artifact.py
-pipeline/              scripts that build data.js
+pipeline/              scripts that build the catalog files
   taxonomy.json        52 topics in 9 areas + 67 contested findings (status + verified sources) + content-note ids
   shelves.json         the curated shelves (primary sources, demos, therapy, clinical cases): video, uploader, legitimacy, paper, status
   pathways.json        the Pathways page: ordered routes through the courses, by series id
@@ -122,7 +122,7 @@ pipeline/              scripts that build data.js
   publishers.json      the publisher check: who is behind each personal or name-only channel, their
                        affiliation, whether an institutional page confirms it (ok=false -> unverified)
   merge_pulled.py      appends pulled playlists to raw/institutional/courses.json after triage
-  build_catalog.py     merges every source, scores, groups series, writes site/data.js
+  build_catalog.py     merges every source, scores, groups series, writes site/data-core.js + data-inst.js
   make_inst_batches.py writes the labeling inputs for university playlists (course cards + per-lecture topics)
   make_taxonomy_md.py  regenerates classify/TAXONOMY.md from taxonomy.json (run after editing a topic or finding)
   intake_submission.py turns a "Submit a course" GitHub issue into raw/institutional/submissions/issue-<n>.json
@@ -150,7 +150,7 @@ work/                  intermediate files (classification batches and outputs; w
 python3 pipeline/build_catalog.py
 ```
 
-reads everything under `raw/` and `work/` and rewrites `site/data.js` and `site/data/psychtube.json`.
+reads everything under `raw/` and `work/` and rewrites `site/data-core.js`, `site/data-inst.js` and `site/data/psychtube.json`.
 It is deterministic given the inputs (set `SOURCE_DATE_EPOCH` to pin the `generated` stamp as well), so
 re-running it after adding raw data is safe. For the semantic half of the content neighbours, put the
 GloVe release in `work/sim/` once (`curl -L -o work/sim/glove-wiki-gigaword-300.gz <URL in

@@ -930,12 +930,36 @@ for s in series:
         s.pop("ok", None)                            # only the unverified publishers carry the flag (ok: false)
 
 os.makedirs(P("site", "data"), exist_ok=True)
-with open(P("site", "data.js"), "w", encoding="utf-8") as f:
+# The site loads the catalog in two parts: data-core.js — everything a first page needs (the vouched videos, the shelf
+# videos, each course's first lecture, the series index, institutions, notes, pathways) — and data-inst.js, the rest of
+# the institutional lectures (about 90% of the rows), fetched right after the first paint. The content-neighbour indices
+# (`sim`) point into the concatenation core + inst, so they are remapped here. psychtube.json stays one complete file.
+import hashlib
+first_of_series = {sd["vids"][0] for sd in series if sd.get("vids")}
+is_core = [not v.get("inst") or v.get("nrec") or v.get("nmention") or v.get("shelf") or v.get("orig") or v["id"] in first_of_series for v in catalog]
+order = [i for i, c in enumerate(is_core) if c] + [i for i, c in enumerate(is_core) if not c]
+newpos = {old_i: new_i for new_i, old_i in enumerate(order)}
+for v in catalog:
+    if v.get("sim"):
+        v["sim"] = [newpos[i] for i in v["sim"]]
+core_videos = [catalog[i] for i in order if is_core[i]]
+inst_videos = [catalog[i] for i in order if not is_core[i]]
+data["videos"] = core_videos + inst_videos                        # the export keeps the same order as the two files together
+inst_blob = json.dumps({"videos": inst_videos}, ensure_ascii=False, separators=(",", ":"))
+inst_hash = hashlib.sha1(inst_blob.encode("utf-8")).hexdigest()[:10]
+core = dict(data, videos=core_videos, inst_file="data-inst.js", v=inst_hash, inst_count=len(inst_videos))
+with open(P("site", "data-core.js"), "w", encoding="utf-8") as f:
     f.write("window.PT = ")
-    json.dump(data, f, ensure_ascii=False, separators=(",", ":"))
+    json.dump(core, f, ensure_ascii=False, separators=(",", ":"))
     f.write(";\n")
+with open(P("site", "data-inst.js"), "w", encoding="utf-8") as f:
+    f.write("window.PT_INST = " + inst_blob + ";\n")
+if os.path.exists(P("site", "data.js")):
+    os.remove(P("site", "data.js"))                               # replaced by the two parts
 with open(P("site", "data", "psychtube.json"), "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=1)
+stats["core_videos"] = len(core_videos)
+stats["inst_part_videos"] = len(inst_videos)
 with open(P("work", "inst", "crosschannel.json"), "w", encoding="utf-8") as f:   # review list for triage_overrides.json → affiliated_channels
     json.dump([{"inst": i, "channel": ch, "items": n} for (i, ch), n in cross_review.most_common()], f, ensure_ascii=False, indent=1)
 with open(P("work", "dropped_non_english.json"), "w", encoding="utf-8") as f:
@@ -949,4 +973,4 @@ print("sources:", dict(src_totals))
 print("institutional:", data["stats"]["inst"])
 print("series:", [(s["name"], s["n"]) for s in series[:12]])
 print("top topics:", topic_counts.most_common(12))
-print("size:", os.path.getsize(P("site", "data.js")) // 1024, "KB")
+print("size:", os.path.getsize(P("site", "data-core.js")) // 1024, "KB core +", os.path.getsize(P("site", "data-inst.js")) // 1024, "KB institutional part;", len(core_videos), "core videos")
