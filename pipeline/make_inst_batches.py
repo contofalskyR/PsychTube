@@ -8,7 +8,8 @@ Writes work/inst/courses_in.jsonl       one row per playlist  -> label with INST
        (courses that already have a line in work/inst/course_labels.jsonl and videos that already have a line in
        work/inst/out_*.jsonl are skipped, so re-running after adding playlists only emits the new work)
 
-Usage: python3 pipeline/make_inst_batches.py [batch_size]
+Usage: python3 pipeline/make_inst_batches.py [batch_size] [--only-mixed]
+       --only-mixed  skip lectures of courses whose card says per_video_topics=false (they inherit the course topics)
 """
 import glob
 import json
@@ -18,7 +19,8 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P = lambda *a: os.path.join(ROOT, *a)
-size = int(sys.argv[1]) if len(sys.argv) > 1 else 150
+args = [a for a in sys.argv[1:] if not a.startswith("--")]
+size = int(args[0]) if args else 150
 
 
 def jsonl(path):
@@ -46,9 +48,16 @@ if new_courses:                       # leave the previous round's input in plac
             "typical_length_min": round(sorted(it["len"] or 0 for it in c["items"])[len(c["items"]) // 2] / 60) if c["items"] else None,
         }, ensure_ascii=False) + "\n")
 
+only_mixed = "--only-mixed" in sys.argv      # per-lecture labels only where the course card says the lectures span topics
+card = {o["pid"]: o for o in jsonl(P("work", "inst", "course_labels.jsonl"))}
 rows = []
 seen = set()
 for c in courses:
+    cl = card.get(c["pid"])
+    if cl is not None and cl.get("keep") is False:
+        continue                                              # the card dropped the whole playlist
+    if only_mixed and cl is not None and cl.get("per_video_topics") is False:
+        continue                                              # lectures inherit the course topics
     for it in c["items"]:
         vid = it["id"]
         if vid in seen or vid in labeled or it["title"] in ("[Private video]", "[Deleted video]"):
