@@ -39,22 +39,23 @@ def get_json(url, tries=3):
 
 
 def list_items():
+    """The scrape API (cursor-paged) rather than advancedsearch, whose paging stops at 10,000 rows."""
     os.makedirs(P("work", "archive"), exist_ok=True)
     for coll in COLLECTIONS:
-        rows, page = [], 1
+        rows, cursor = [], None
         while True:
-            q = urllib.parse.urlencode({"q": f"collection:{coll}", "fl[]": ["identifier", "title", "description", "date", "subject", "runtime", "creator"],
-                                        "rows": 5000, "page": page, "output": "json", "sort[]": "identifier asc"}, doseq=True)
-            d = get_json(f"https://archive.org/advancedsearch.php?{q}")
+            params = {"q": f"collection:{coll}", "fields": "identifier,title,description,date,subject,runtime,creator", "count": 10000}
+            if cursor:
+                params["cursor"] = cursor
+            d = get_json(f"https://archive.org/services/search/v1/scrape?{urllib.parse.urlencode(params)}")
             if not d:
                 break
-            docs = d.get("response", {}).get("docs", [])
+            docs = d.get("items", [])
             rows.extend(docs)
-            total = d.get("response", {}).get("numFound", 0)
-            print(f"{coll}: page {page}, {len(rows)}/{total}", flush=True)
-            if len(rows) >= total or not docs:
+            print(f"{coll}: {len(rows)}/{d.get('total')}", flush=True)
+            cursor = d.get("cursor")
+            if not cursor or not docs:
                 break
-            page += 1
             time.sleep(1.0)
         json.dump(rows, open(P("work", "archive", f"items_{coll}.json"), "w", encoding="utf-8"), ensure_ascii=False)
         print(f"{coll}: {len(rows)} items -> work/archive/items_{coll}.json")
