@@ -1,20 +1,21 @@
 name: Fetch official transcripts
 # Fetches the transcripts MIT OpenCourseWare and Open Yale Courses publish for lectures in the catalog
-# (pipeline/transcripts.py plan -> pipeline/fetch_transcripts.py) and uploads them as a workflow artifact.
-# Run by hand (workflow_dispatch); the build machine cannot reach those sites, this runner can.
+# (pipeline/transcripts.py plan -> pipeline/fetch_transcripts.py) and pushes the result to the `transcripts-data`
+# branch (work/transcripts/), where the build machine can fetch it with git. Run by hand (workflow_dispatch):
+# the build machine cannot reach those sites, this runner can.
 on:
   workflow_dispatch:
     inputs:
       limit:
-        description: "Only the first N URLs (blank = all)"
+        description: "Only the first N planned lectures (blank = all)"
         required: false
         default: ""
 permissions:
-  contents: read
+  contents: write
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -23,12 +24,12 @@ jobs:
       - run: pip install pypdf
       - run: python3 pipeline/transcripts.py plan
       - run: python3 pipeline/fetch_transcripts.py ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }}
-      - uses: actions/upload-artifact@v4
-        with:
-          name: transcripts
-          path: |
-            work/transcripts/checked.json
-            work/transcripts/text/
-            work/transcripts/oyc_sample.html
-          if-no-files-found: error
-          retention-days: 7
+      - name: Push results to the transcripts-data branch
+        run: |
+          git config user.name "transcripts workflow"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout --orphan transcripts-data
+          git rm -rfq --cached .
+          git add -f work/transcripts/checked.json work/transcripts/plan.json work/transcripts/text/ work/transcripts/oyc_sample.html || true
+          git commit -qm "Transcripts fetched $(date -u +%Y-%m-%dT%H:%MZ) from ${GITHUB_SHA::7}"
+          git push -f origin transcripts-data

@@ -76,15 +76,21 @@ def plan():
 
 
 def apply(checked_path):
-    checked = json.load(open(checked_path, encoding="utf-8"))          # {url: status}
-    plan_rows = json.load(open(P("work", "transcripts", "plan.json"), encoding="utf-8"))
+    """checked.json from fetch_transcripts.py: {video_id: {pid, p, src, status, words, pdf?, page?}}. The link the site shows is the
+    provider's human-readable copy: the OCW transcript PDF (its path carries a hash, so it is stored, not derived) or the OYC page."""
+    checked = json.load(open(checked_path, encoding="utf-8"))
+    plan_rows = {r["vid"]: r for r in json.load(open(P("work", "transcripts", "plan.json"), encoding="utf-8"))}
     out = {}
-    for r in plan_rows:
-        st = checked.get(r["url"])
-        if st is None or not (200 <= int(st) < 400):
+    for vid, c in checked.items():
+        r = plan_rows.get(vid)
+        if not r or not (200 <= int(c.get("status") or 0) < 400):
             continue
+        link = c.get("pdf") or c.get("src") or r["url"]
+        if not link.startswith(r["base"]):
+            continue
+        rel = link[len(r["base"]):]
         e = out.setdefault(r["pid"], {"p": r["p"], "name": r["name"], "base": r["base"], "have": {}})
-        e["have"][r["vid"]] = r["tr"]
+        e["have"][vid] = 1 if rel == f"{vid}_transcript.pdf" else rel
     json.dump(out, open(P("pipeline", "transcripts.json"), "w", encoding="utf-8"), indent=1)
     print(f"{sum(len(e['have']) for e in out.values())} transcripts in {len(out)} courses -> pipeline/transcripts.json")
 
