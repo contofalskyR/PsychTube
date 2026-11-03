@@ -4,8 +4,8 @@
   "inst_watchlists_dropped": 26,
   "inst_partial_playlists": 5,
   "quotes_withheld": 4,
-  "kept": 15737,
-  "inst_lectures": 15200,
+  "kept": 15875,
+  "inst_lectures": 15338,
   "inst_also_vouched": 27,
   "dropped_not_psych_or_unlabeled": 694,
   "dropped_thin_vouch": 145,
@@ -20,32 +20,32 @@
   "replication_tagged": 44,
   "shelf_added": 71,
   "pathways": 9,
-  "sim_videos": 15808,
-  "sim_series": 11496,
+  "sim_videos": 15946,
+  "sim_series": 11732,
   "sim_empty": 0,
   "sim_semantic": 1,
   "inst_verified_lecturers": 37,
   "submitted_courses": 0,
   "inst_unverified_collections": 28,
-  "core_videos": 1454,
-  "inst_part_videos": 14354
+  "core_videos": 1460,
+  "inst_part_videos": 14486
  },
  "topics": [
   [
    "how-the-brain-works",
-   2772
+   2789
   ],
   [
    "brain-disorders",
-   2067
+   2071
   ],
   [
    "ai-and-mind",
-   1206
+   1224
   ],
   [
    "brain-tech",
-   1079
+   1083
   ],
   [
    "psychiatry-medication",
@@ -53,23 +53,23 @@
   ],
   [
    "depression-anxiety",
-   1000
+   1002
   ],
   [
    "child-development",
-   940
+   959
   ],
   [
    "perception-illusions",
-   914
+   921
   ],
   [
    "language-thought",
-   905
+   909
   ],
   [
    "psych-research",
-   836
+   873
   ],
   [
    "therapy",
@@ -81,7 +81,11 @@
   ],
   [
    "consciousness",
-   741
+   763
+  ],
+  [
+   "groups-prejudice",
+   649
   ],
   [
    "adhd-autism",
@@ -89,11 +93,7 @@
   ],
   [
    "memory",
-   617
-  ],
-  [
-   "groups-prejudice",
-   616
+   622
   ],
   [
    "trauma-stress",
@@ -117,27 +117,31 @@
   ],
   [
    "decision-risk",
-   463
+   466
   ],
   [
    "crime-forensic",
    428
   ],
   [
+   "replication-crisis",
+   421
+  ],
+  [
    "addiction",
    413
   ],
   [
-   "replication-crisis",
-   386
-  ],
-  [
    "personality",
-   373
+   377
   ],
   [
    "neurochemistry",
    341
+  ],
+  [
+   "rationality-biases",
+   338
   ],
   [
    "animal-minds",
@@ -149,23 +153,19 @@
   ],
   [
    "attention-focus",
-   329
+   333
   ],
   [
    "mindfulness-meditation",
    325
   ],
   [
-   "rationality-biases",
-   321
-  ],
-  [
    "behavioral-genetics",
-   288
+   289
   ],
   [
    "morality-cooperation",
-   246
+   247
   ],
   [
    "motivation-habits",
@@ -181,11 +181,11 @@
   ],
   [
    "parenting",
-   215
+   217
   ],
   [
    "education-teaching",
-   200
+   201
   ],
   [
    "learning-studying",
@@ -197,7 +197,7 @@
   ],
   [
    "relationships-attachment",
-   176
+   177
   ],
   [
    "psychedelics",
@@ -216,6 +216,10 @@
    116
   ],
   [
+   "conformity-obedience",
+   101
+  ],
+  [
    "design-behavior",
    92
   ],
@@ -226,10 +230,6 @@
   [
    "creativity-insight",
    82
-  ],
-  [
-   "conformity-obedience",
-   80
   ],
   [
    "grief-loneliness",
@@ -493,12 +493,12 @@
    40
   ],
   [
-   "Counseling and Psychotherapy Theories",
+   "UC Berkeley Philosophy 3: The Nature of Mind (Fall 2014)",
    38
   ],
   [
-   "UC Berkeley Philosophy 3: The Nature of Mind (Fall 2014)",
-   37
+   "Counseling and Psychotherapy Theories",
+   38
   ],
   [
    "Psychology 101 Lectures",
@@ -530,6 +530,10 @@
   ],
   [
    "Psychology of Stress, Health and Well-being",
+   34
+  ],
+  [
+   "Psychology 101: Research and Data Analysis in Psychology",
    34
   ],
   [
@@ -593,15 +597,15 @@
    29
   ],
   [
+   "UC Berkeley Cognitive Science C102: Scientific Approaches to Consciousness (Fall 2014)",
+   27
+  ],
+  [
    "Psych 1000 Introduction to Psychology",
    27
   ],
   [
    "Philosophy and the Science of Human Nature",
-   26
-  ],
-  [
-   "UC Berkeley Cognitive Science C102: Scientific Approaches to Consciousness (Fall 2014)",
    26
   ],
   [
@@ -629,6 +633,14 @@
    25
   ],
   [
+   "UC Berkeley Psychology 131: Developmental Psychopathology (Spring 2014)",
+   25
+  ],
+  [
+   "UC Berkeley Psychology 131: Developmental Psychopathology (Spring 2015)",
+   25
+  ],
+  [
    "UC Berkeley Psychology 164: Social Cognition (Spring 2014)",
    25
   ],
@@ -641,6 +653,10 @@
    25
   ],
   [
+   "Psychology 164: Social Cognition",
+   25
+  ],
+  [
    "MIT 14.13 Psychology and Economics",
    24
   ],
@@ -649,11 +665,7 @@
    24
   ],
   [
-   "UC Berkeley Psychology 131: Developmental Psychopathology (Spring 2014)",
-   24
-  ],
-  [
-   "UC Berkeley Psychology 131: Developmental Psychopathology (Spring 2015)",
+   "UC Berkeley Psychology 160: Social Psychology (Fall 2014)",
    24
   ],
   [
@@ -717,6 +729,14 @@
    23
   ],
   [
+   "UC Berkeley Psychology 1: General Psychology (Spring 2015)",
+   23
+  ],
+  [
+   "UC Berkeley Psychology 140: Developmental Psychology (Spring 2014)",
+   23
+  ],
+  [
    "UC Berkeley Psychology 140: Developmental Psychology (Spring 2015)",
    23
   ],
@@ -746,18 +766,6 @@
   ],
   [
    "UC Berkeley Psychology 1: General Psychology (Fall 2013)",
-   22
-  ],
-  [
-   "UC Berkeley Psychology 1: General Psychology (Spring 2015)",
-   22
-  ],
-  [
-   "UC Berkeley Psychology 140: Developmental Psychology (Spring 2014)",
-   22
-  ],
-  [
-   "UC Berkeley Psychology 160: Social Psychology (Fall 2014)",
    22
   ],
   [
@@ -801,6 +809,10 @@
    21
   ],
   [
+   "Psychology 160: Social Psychology",
+   21
+  ],
+  [
    "MIT 9.40 Introduction to Neural Computation",
    20
   ],
@@ -830,6 +842,10 @@
   ],
   [
    "Drugs & Human Behavior",
+   19
+  ],
+  [
+   "Cognitive Science C127: Cognitive Neuroscience",
    19
   ],
   [
@@ -873,6 +889,10 @@
    17
   ],
   [
+   "Philosophy 3: The Nature of Mind",
+   17
+  ],
+  [
    "Industrial/Organizational Psychology Lectures",
    16
   ],
@@ -894,6 +914,10 @@
   ],
   [
    "Mind and Brain: The Mind Part",
+   14
+  ],
+  [
+   "Psychology 140: Developmental Psychology",
    14
   ],
   [

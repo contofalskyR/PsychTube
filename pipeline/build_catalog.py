@@ -638,17 +638,17 @@ for vid, rec in videos.items():
             entry["approx"] = True
         if m.get("p"):
             entry["p"] = m["p"]            # video provider when not YouTube ("panopto", "archive"); id is then the provider's id
+            entry["host"] = m.get("host")
+            if m.get("f"):
+                entry["f"] = m["f"]
+            if m.get("item"):
+                entry["item"] = m["item"]
         tr = TRANSCRIPTS.get(course["pid"])
         if tr and vid in tr.get("have", {}):
             entry["tr"] = tr["have"][vid]  # official transcript: 1 = derive from the series' base + video id, else the path under the base
             stats["transcripts"] += 1
             if TKW.get(vid):
                 entry["tkw"] = TKW[vid][:12]   # the lecture's distinctive terms from its transcript: searched and used for similarity
-            entry["host"] = m.get("host")
-            if m.get("f"):
-                entry["f"] = m["f"]
-            if m.get("item"):
-                entry["item"] = m["item"]
         if not comm_vouches:
             entry["kw"] = []
         stats["inst_lectures"] += 1

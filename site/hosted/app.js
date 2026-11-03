@@ -131,13 +131,13 @@
     const v = vidOf(x); const id = v ? v.id : x;
     if (ART) return THUMBS[id] || "";
     if (v && v.p === "panopto") return `https://${v.host}/Panopto/Services/FrameGrabber.svc/FrameRedirect?objectId=${id}&mode=Delivery&random=1`;
-    if (v && v.p === "archive") return `https://archive.org/services/img/${id}`;
+    if (v && v.p === "archive") return `https://archive.org/services/img/${v.item || id}`;
     return `https://i.ytimg.com/vi/${id}/${(mode || state.settings.thumbs) === "mid" ? "hq2" : "hqdefault"}.jpg`;
   };
   const watchUrl = (x, t) => {
     const v = vidOf(x); const id = v ? v.id : x;
     if (v && v.p === "panopto") return `https://${v.host}/Panopto/Pages/Viewer.aspx?id=${id}${t ? "&start=" + t : ""}`;
-    if (v && v.p === "archive") return `https://archive.org/details/${id}${t ? "?start=" + t : ""}`;
+    if (v && v.p === "archive") return `https://archive.org/details/${v.item || id}${t ? "?start=" + t : ""}`;
     return `https://www.youtube.com/watch?v=${id}${t ? "&t=" + t + "s" : ""}`;
   };
   // official transcript published by the course's own provider (MIT OpenCourseWare PDFs, Open Yale Courses pages); nothing scraped from YouTube
@@ -149,7 +149,7 @@
   const embedUrl = (v, start, autoplay) => v.p === "panopto"
     ? `https://${v.host}/Panopto/Pages/Embed.aspx?id=${v.id}&autoplay=${autoplay ? "true" : "false"}&offerviewer=true&showtitle=false&showbrand=false&captions=false&interactivity=all${start ? "&start=" + start : ""}`
     : v.p === "archive"
-      ? `https://archive.org/embed/${v.id}?${autoplay ? "autoplay=1&" : ""}${start ? "start=" + start : ""}`
+      ? `https://archive.org/embed/${v.item || v.id}?${autoplay ? "autoplay=1&" : ""}${start ? "start=" + start : ""}`
       : `https://www.youtube-nocookie.com/embed/${v.id}?rel=0&modestbranding=1${start ? "&start=" + start : ""}${autoplay ? "&autoplay=1" : ""}`;
   const dayseed = () => { const d = new Date(); return d.getFullYear() * 400 + d.getMonth() * 31 + d.getDate(); };
   const rng = seed => () => { seed = (seed * 1664525 + 1013904223) % 4294967296; return seed / 4294967296; };
@@ -752,7 +752,7 @@ const STATUS_LABELS = PT.status_labels || { replicated: "Replicated", smaller: "
 
     if (v.p === "archive" && v.f) {
       // the Internet Archive serves the MP4 itself, so a plain <video> gives exact positions
-      box.innerHTML = `<video id="player" controls playsinline preload="metadata" poster="${thumbUrl(v)}" ${autoplay ? "autoplay" : ""} src="https://archive.org/download/${encodeURIComponent(v.id)}/${encodeURIComponent(v.f)}#t=${start || 0}"></video>`;
+      box.innerHTML = `<video id="player" controls playsinline preload="metadata" poster="${thumbUrl(v)}" ${autoplay ? "autoplay" : ""} src="https://archive.org/download/${encodeURIComponent(v.item || v.id)}/${encodeURIComponent(v.f)}#t=${start || 0}"></video>`;
       const el = document.getElementById("player");
       el.addEventListener("timeupdate", () => record(el.currentTime, el.duration));
       el.addEventListener("pause", () => record(el.currentTime, el.duration, true));
