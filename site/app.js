@@ -268,7 +268,7 @@
     const where = ["Hacker News", nSubs ? `${nSubs} psychology subreddits` : null, "Psychology Stack Exchange"].filter(Boolean);
     const whereText = where.length > 1 ? where.slice(0, -1).join(", ") + " and " + where[where.length - 1] : where[0];
     const inst = s.inst || { courses: 0, lectures: 0, institutions: 0 };
-    const courseRow = PT.series.filter(sd => sd.inst).slice(0, 10);
+    const courseRow = PT.series.filter(sd => sd.inst && sd.kind !== "talks").slice(0, 10);   // taught courses first; seminars live on their own shelf
     const inProgress = Object.entries(state.progress).filter(([pid, p]) => !p.done && p.t > 45 && byId.has(pid)).sort((a, b) => b[1].ts - a[1].ts).map(([pid]) => byId.get(pid)).slice(0, 12);
     const myCourses = PT.series.map(sd => [sd, seriesProgress(sd)]).filter(([sd, sp]) => sp.started).sort((a, b) => b[1].last - a[1].last).slice(0, 8);
     main.innerHTML = `
@@ -360,23 +360,47 @@
   function pageCourses(params) {
     setNav("courses"); setTitle("Courses");
     const p = params || {};
-    const kind = p.kind || "any", level = p.level || "any";
-    const instSeries = PT.series.filter(sd => sd.inst && (kind === "any" || sd.kind === kind) && (level === "any" || sd.level === level));
+    const shelf = p.shelf || "courses", level = p.level || "any";
+    const isFormal = sd => sd.kind !== "talks";
+    const all = PT.series.filter(sd => sd.inst);
+    const shelfSeries = all.filter(sd => (shelf === "talks" ? !isFormal(sd) : shelf === "all" ? true : isFormal(sd)) && (level === "any" || sd.level === level));
     const vouchedSeries = PT.series.filter(sd => !sd.inst);
     const byInst = new Map();
-    for (const sd of instSeries) { const a = byInst.get(sd.inst) || []; a.push(sd); byInst.set(sd.inst, a); }
+    for (const sd of shelfSeries) { const a = byInst.get(sd.inst) || []; a.push(sd); byInst.set(sd.inst, a); }
     const rank = list => list.reduce((a, sd) => a + sd.pop, 0) + 0.01 * list.reduce((a, sd) => a + sd.n, 0);
     const groups = [...byInst.entries()].sort((a, b) => rank(b[1]) - rank(a[1]));
     const s = PT.stats.inst || { courses: 0, lectures: 0, institutions: 0, also_vouched: 0 };
+    const nFormal = all.filter(isFormal).length, nTalks = all.length - nFormal;
     const link = (k, val) => `#courses?${new URLSearchParams({ ...p, [k]: val }).toString()}`;
     const seg = (k, cur, items) => `<div class="seg" role="group">${items.map(([val, label]) => `<a role="button" href="${link(k, val)}" aria-pressed="${cur === val}" class="segbtn">${label}</a>`).join("")}</div>`;
-    const lectures = instSeries.reduce((a, sd) => a + sd.n, 0);
+    const lectures = shelfSeries.reduce((a, sd) => a + sd.n, 0);
+    const shelfNote = shelf === "talks"
+      ? `<b>Seminars, grand rounds and conference sessions.</b> Recorded talks that departments, institutes and societies publish: a research seminar series, a hospital's psychiatry grand rounds, the sessions of an annual meeting. They are institutional but <b>not a course and not peer-reviewed</b> — a speaker's own account of their work, often preliminary. Good for seeing where a field is right now; weigh them accordingly.`
+      : shelf === "all" ? `Everything in the institutional tier, taught courses and recorded talks together.`
+      : `<b>Taught courses and lecture series.</b> A full term of a university course, or a lecture series on one theme, exactly as the institution published it — every lecture, in order.`;
     main.innerHTML = `<h1>Courses</h1>
-      <p class="lede">${s.courses ? `<b>${s.lectures.toLocaleString()}</b> lectures in <b>${s.courses}</b> complete courses and lecture series, published by <b>${s.institutions}</b> universities and scientific institutions. Every lecture is here, in order, because the institution put it online — institutional backing instead of a vouch count. Where a community also vouched for a lecture, the card says so (${s.also_vouched} lectures so far). Your progress is remembered in this browser.` : "Lecture series where several lectures were recommended, grouped by channel. Your progress is remembered in this browser."}</p>
-      ${s.courses ? `<div class="toolbar">${seg("kind", kind, [["any", "All"], ["course", "Taught courses"], ["series", "Lecture series"], ["talks", "Talk collections"]])}${seg("level", level, [["any", "Any level"], ["intro", "Intro"], ["advanced", "Advanced"], ["public", "Public lectures"]])}<span class="faint">${plural(instSeries.length, "course")}, ${plural(lectures, "lecture")}</span></div>` : ""}
-      ${groups.map(([name, list]) => `<section class="section"><div class="section-head"><div><h2>${esc(name)}</h2><div class="sub">${plural(list.length, "course")} · ${plural(list.reduce((a, sd) => a + sd.n, 0), "lecture")} · ${Math.round(list.reduce((a, sd) => a + sd.hours, 0))} hours${list[0].ch ? ` · published on YouTube by ${esc([...new Set(list.map(sd => sd.ch))].slice(0, 3).join(", "))}` : ""}</div></div></div><div class="grid">${list.map(sd => seriesCard(sd)).join("")}</div></section>`).join("")}
+      <p class="lede">${s.courses ? `<b>${s.lectures.toLocaleString()}</b> lectures in <b>${s.courses.toLocaleString()}</b> courses and lecture collections, published by <b>${s.institutions}</b> universities, research institutes, societies and clinical institutions. Every lecture is here, in order, because the institution put it online — institutional backing instead of a vouch count. Where a community also vouched for a lecture, the card says so (${s.also_vouched} lectures so far). Your progress is remembered in this browser.` : "Lecture series where several lectures were recommended, grouped by channel. Your progress is remembered in this browser."}</p>
+      ${s.courses ? `<div class="toolbar">${seg("shelf", shelf, [["courses", `Courses <span class="n">${nFormal}</span>`], ["talks", `Seminars & conferences <span class="n">${nTalks}</span>`], ["all", "Everything"]])}${seg("level", level, [["any", "Any level"], ["intro", "Intro"], ["advanced", "Advanced"], ["public", "Public lectures"]])}</div>
+      <p class="shelf-note">${shelfNote}</p>
+      <div class="toolbar"><label class="filter"><input id="courseFilter" type="search" placeholder="Filter by institution, course or lecturer" aria-label="Filter courses" spellcheck="false"></label><span class="faint" id="courseCount">${plural(shelfSeries.length, "collection")}, ${plural(lectures, "lecture")}, ${groups.length} institutions</span></div>` : ""}
+      <div id="courseGroups">${groups.map(([name, list]) => `<section class="section inst-group" data-inst="${esc(name.toLowerCase())}"><div class="section-head"><div><h2>${esc(name)}</h2><div class="sub">${plural(list.length, shelf === "talks" ? "collection" : "course")} · ${plural(list.reduce((a, sd) => a + sd.n, 0), shelf === "talks" ? "talk" : "lecture")} · ${Math.round(list.reduce((a, sd) => a + sd.hours, 0))} hours${list[0].ch ? ` · published by ${esc([...new Set(list.map(sd => sd.ch))].slice(0, 3).join(", "))}` : ""}</div></div></div><div class="grid">${list.map(sd => `<div class="cwrap" data-text="${esc((sd.name + " " + (sd.lecturer || "") + " " + sd.inst + " " + (sd.ch || "")).toLowerCase())}">${seriesCard(sd)}</div>`).join("")}</div></section>`).join("")}</div>
       ${!groups.length && s.courses ? `<div class="empty"><h2>Nothing matches these filters</h2></div>` : ""}
-      ${vouchedSeries.length ? `<section class="section"><div class="section-head"><div><h2>Series people recommend piece by piece</h2><div class="sub">Channels where several lectures were vouched for individually; not complete courses.</div></div></div><div class="grid">${vouchedSeries.map(sd => seriesCard(sd)).join("")}</div></section>` : ""}`;
+      ${vouchedSeries.length && shelf !== "talks" ? `<section class="section"><div class="section-head"><div><h2>Series people recommend piece by piece</h2><div class="sub">Channels where several lectures were vouched for individually; not complete courses.</div></div></div><div class="grid">${vouchedSeries.map(sd => seriesCard(sd)).join("")}</div></section>` : ""}`;
+    const fi = document.getElementById("courseFilter");
+    if (fi) {
+      const apply = () => {
+        const q = fi.value.trim().toLowerCase();
+        let shown = 0, insts = 0;
+        main.querySelectorAll(".inst-group").forEach(sec => {
+          const instHit = !q || sec.dataset.inst.includes(q);
+          let any = 0;
+          sec.querySelectorAll(".cwrap").forEach(w => { const hit = instHit || w.dataset.text.includes(q); w.hidden = !hit; if (hit) any++; });
+          sec.hidden = !any; if (any) { insts++; shown += any; }
+        });
+        document.getElementById("courseCount").textContent = q ? `${plural(shown, "collection")} match · ${insts} institutions` : `${plural(shelfSeries.length, "collection")}, ${plural(lectures, "lecture")}, ${groups.length} institutions`;
+      };
+      fi.oninput = apply;
+    }
   }
   function pageSeries(id) {
     const sd = series.get(id); if (!sd) return notFound();
