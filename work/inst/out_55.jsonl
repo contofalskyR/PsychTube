@@ -1,0 +1,150 @@
+{"vid": "UGUPOrGBxRE", "keep": true, "topics": ["grief-loneliness", "adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "Pje900B5NjM", "keep": true, "topics": ["depression-anxiety", "child-development"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "Nh57mL3PCyg", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "WoxkGqnIPW0", "keep": true, "topics": ["trauma-stress", "parenting"], "cw": ["abuse-violence"], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "zfQOxe6wazw", "keep": true, "topics": ["adhd-autism", "adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "CQ7de5lPlMo", "keep": true, "topics": ["tech-and-mind", "parenting"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "GIWf1WeXNss", "keep": true, "topics": ["tech-and-mind", "parenting"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "OKtHhuCoc0Y", "keep": true, "topics": ["depression-anxiety", "parenting"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "1btqYQiqw_w", "keep": true, "topics": ["groups-prejudice", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "Efld7jr2AYM", "keep": true, "topics": ["parenting", "adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "xHxxl1M8YWA", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "5JsixohUBp8", "keep": true, "topics": ["performance", "groups-prejudice"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "pAyK7VQpE1A", "keep": true, "topics": ["performance", "adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "fSF1kUJrV-Y", "keep": true, "topics": ["adolescence-aging", "depression-anxiety"], "cw": ["suicide-self-harm"], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "g7VjNCk9vYs", "keep": true, "topics": ["therapy", "emotion"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "TmNaMEVWnkw", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "en1puWjJSL4", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "iXQ4-Wmqhxw", "keep": true, "topics": ["brain-disorders", "behavioral-genetics"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "iBSU4vXpPAc", "keep": true, "topics": ["how-the-brain-works", "brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "51A1txufqmA", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "FBBpKx42muA", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "t2Xup8bcgs8", "keep": true, "topics": ["trauma-stress", "happiness-meaning"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "oOl8rUd6gMo", "keep": true, "topics": ["brain-disorders", "adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "yUiXxYRfy5w", "keep": true, "topics": ["brain-tech", "brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "kWZe17OKd9o", "keep": true, "topics": ["adolescence-aging", "brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "uoLWDQBGT2E", "keep": true, "topics": ["adolescence-aging", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "J7kgcfsj4MY", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "kyePo0V21aw", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "rTG0KbSPsLI", "keep": true, "topics": ["adolescence-aging", "mindfulness-meditation"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "TjYdAQqZhQA", "keep": true, "topics": ["adolescence-aging", "happiness-meaning"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "KO4ImBCXn6s", "keep": true, "topics": ["brain-tech", "brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "1-2jEElja3U", "keep": true, "topics": ["adolescence-aging", "brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "xJzu_4ENAhE", "keep": true, "topics": ["adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "q5NhgxRRRP0", "keep": true, "topics": ["serious-mental-illness", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "h-Uf0zMtJkI", "keep": true, "topics": ["serious-mental-illness", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "D7XN4w6624E", "keep": true, "topics": ["adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "Det3Rwd7HEo", "keep": true, "topics": ["adolescence-aging", "brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "EBs05rhArY0", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "xR-oBylV1o0", "keep": true, "topics": ["brain-tech"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "crnYHKNGU7g", "keep": true, "topics": ["brain-disorders", "sleep-dreams"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "WVK8cl6iD-k", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "bW6gsm7Pa1Y", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "vkEnN_p2yIE", "keep": true, "topics": ["adolescence-aging", "brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "LUel8Ns2Tqk", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "kZim0_1zokc", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "gvqgqVHS7q4", "keep": true, "topics": ["adolescence-aging", "brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "2DdGZNj9XQU", "keep": true, "topics": ["adolescence-aging", "brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "aCHS5n-plPE", "keep": true, "topics": ["sleep-dreams", "adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "1kU6hmhfF7M", "keep": true, "topics": ["adolescence-aging", "memory"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "gV0YUhpfR70", "keep": true, "topics": ["adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "xA2Gt2FSrNc", "keep": true, "topics": ["adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "1PjWRphRUEQ", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "jUjXrxFUsjY", "keep": true, "topics": ["adolescence-aging", "brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "G1x4kxwOjJc", "keep": true, "topics": ["adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "5t2buIuTSd0", "keep": true, "topics": ["brain-disorders", "serious-mental-illness"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "1jAckYJzPrY", "keep": true, "topics": ["adolescence-aging", "memory"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "WxjVjuMvaVA", "keep": true, "topics": ["adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "un3N6z8RYdA", "keep": true, "topics": ["adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "IERCFOH1uPc", "keep": true, "topics": ["brain-disorders", "adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "RQ17q-iqVDw", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "9AwlAoI4Kqs", "keep": true, "topics": ["adolescence-aging", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "ny5TurL8jc4", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "megcE3cl_5Q", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "GwdYklNGFBQ", "keep": true, "topics": ["adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "K3UQu2Xm0-4", "keep": true, "topics": ["adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "mQ0xuj90xBY", "keep": true, "topics": ["adolescence-aging", "memory"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "gkLXvP35vSA", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "CBKUmbSlu6c", "keep": true, "topics": ["adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "wdU9jct_L0w", "keep": true, "topics": ["adolescence-aging", "how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "I35q9d7ZsCM", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "j2bjj_lmcCA", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "OpE-oNH4hHo", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "qualtOuy7Sw", "keep": true, "topics": ["depression-anxiety", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "WSAFEBCadxc", "keep": true, "topics": ["adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "YV6dSHgC3vY", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "oYTQOwwhE1o", "keep": true, "topics": ["adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "E0SJ8PrrPRA", "keep": true, "topics": ["brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "4z9yr3jPLfo", "keep": true, "topics": ["therapy"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "QFGZi89qt3U", "keep": true, "topics": ["therapy", "relationships-attachment"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "47YvO6bfSYY", "keep": true, "topics": ["therapy"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "aNajgltnVAE", "keep": true, "topics": ["therapy", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "_dbArcTPrXE", "keep": true, "topics": ["serious-mental-illness"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "wipLX1ciezY", "keep": true, "topics": ["adhd-autism", "serious-mental-illness"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "So-boB9niXQ", "keep": true, "topics": ["brain-tech", "depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "-DTz3RsElTo", "keep": true, "topics": ["adolescence-aging", "trauma-stress"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "aiwDP7aj0Ys", "keep": true, "topics": ["serious-mental-illness", "tech-and-mind"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "gJY6IZero50", "keep": true, "topics": ["serious-mental-illness", "addiction"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "YO4to9hEiOA", "keep": true, "topics": ["serious-mental-illness", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "eGdO0kwEqps", "keep": true, "topics": ["serious-mental-illness", "child-development"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "G9-1l1WySXM", "keep": true, "topics": ["adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "fhmM8P9XggE", "keep": true, "topics": ["addiction", "adolescence-aging"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "yOufrowDY7Q", "keep": true, "topics": ["depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "EaM3lmPSZlY", "keep": true, "topics": ["adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "Bgr88O2Z2u0", "keep": true, "topics": ["serious-mental-illness"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "btjBUELRCNE", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "bPiaF_-aYZo", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "RGsvSoeXaTc", "keep": true, "topics": ["how-the-brain-works"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "9rOhDapFiFY", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "nK5lWu6OeiY", "keep": true, "topics": ["brain-disorders", "adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "aw6bJzaRPJk", "keep": true, "topics": ["brain-disorders", "groups-prejudice"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "hJfYBVVc2Pk", "keep": true, "topics": ["adolescence-aging", "brain-disorders"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "1ZHDLQ7r28A", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "S-9-Fb8oOrk", "keep": true, "topics": ["brain-disorders", "adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "CHDACXdvJAY", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "l3QqnnQABjM", "keep": false, "topics": [], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "POYXzA-gS4U", "keep": true, "topics": ["therapy", "history-of-psychology"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "07JqktJGyyA", "keep": true, "topics": ["therapy"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "f_kZKHcX4_E", "keep": true, "topics": ["therapy"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "beYldvfwvEw", "keep": true, "topics": ["therapy", "mindfulness-meditation"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "nfdHkaGq35k", "keep": true, "topics": ["therapy", "history-of-psychology"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "eEX7chvo44M", "keep": true, "topics": ["therapy"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "Nk59lutY_E4", "keep": true, "topics": ["therapy"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "XYE2z_-1m9Y", "keep": true, "topics": ["therapy", "serious-mental-illness"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "orPPdMvaNGA", "keep": true, "topics": ["therapy"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "aWyg_bhSxOc", "keep": true, "topics": ["therapy"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "DQfSJDzmtFo", "keep": true, "topics": ["therapy", "depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "1OpFdULj4UA", "keep": true, "topics": ["therapy", "happiness-meaning"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "mSlK7mit5Po", "keep": true, "topics": ["brain-disorders", "adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "Y2ZAOHo0tm0", "keep": true, "topics": ["brain-disorders", "adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "adBiycxCLZs", "keep": true, "topics": ["brain-disorders", "groups-prejudice"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "eZAQ_ihCzvg", "keep": true, "topics": ["brain-disorders", "adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "lMmFQffxYZg", "keep": true, "topics": ["brain-disorders", "consciousness"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "4cq79brHcJc", "keep": true, "topics": ["brain-disorders", "adolescence-aging"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "5zyl1h5-vKQ", "keep": true, "topics": ["history-of-psychology", "therapy"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "u2tf_TpW0w0", "keep": true, "topics": ["therapy", "history-of-psychology"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "N-sygbWieb0", "keep": true, "topics": ["adolescence-aging", "history-of-psychology"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "iZsf4AT1eBc", "keep": true, "topics": ["therapy", "history-of-psychology"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "-QziscfR3kY", "keep": true, "topics": ["personality", "therapy"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "tX5tAkq81oA", "keep": true, "topics": ["history-of-psychology", "therapy"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "6OkbdykNjyc", "keep": true, "topics": ["history-of-psychology", "therapy"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "cVbjIjoH4rM", "keep": true, "topics": ["history-of-psychology", "therapy"], "cw": [], "contested": "", "contested_role": "", "course": true, "confidence": 0.9}
+{"vid": "ePX_HxCfjjA", "keep": true, "topics": ["trauma-stress", "happiness-meaning"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "2RjTTWXLFLg", "keep": true, "topics": ["how-the-brain-works", "depression-anxiety"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "bXETB1wvfU8", "keep": true, "topics": ["groups-prejudice", "psychiatry-medication"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "OvOYsHs4wjw", "keep": true, "topics": ["addiction"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "wZ55HxTX9t4", "keep": true, "topics": ["parenting", "tech-and-mind"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "O5Ev88VAqi0", "keep": true, "topics": ["sleep-dreams", "parenting"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "C6Y4FBzya1U", "keep": true, "topics": ["addiction", "groups-prejudice"], "cw": ["substance-use"], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "jwKGFoISQmQ", "keep": true, "topics": ["depression-anxiety", "how-the-brain-works"], "cw": ["suicide-self-harm"], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "5yMRECg77cY", "keep": true, "topics": ["adhd-autism"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "HycW7YO-3e0", "keep": true, "topics": ["trauma-stress", "creativity-insight"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "FWWQrNYGw-A", "keep": true, "topics": ["trauma-stress"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "TMTEsF7h874", "keep": true, "topics": ["trauma-stress", "child-development"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "FFqFJfXfGNg", "keep": true, "topics": ["trauma-stress", "memory"], "cw": [], "contested": "body-keeps-score", "contested_role": "critique", "course": false, "confidence": 0.9}
+{"vid": "ulpDybUhQ_g", "keep": true, "topics": ["trauma-stress", "therapy"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "N7gMUMx2tQQ", "keep": true, "topics": ["trauma-stress", "relationships-attachment"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "RdCBip-8pC8", "keep": true, "topics": ["relationships-attachment"], "cw": [], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "MCqlLCR5mEs", "keep": true, "topics": ["depression-anxiety", "therapy"], "cw": ["suicide-self-harm"], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "lDjkHzrgT0E", "keep": true, "topics": ["grief-loneliness", "depression-anxiety"], "cw": ["suicide-self-harm"], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
+{"vid": "8CWU5VZ2R3A", "keep": true, "topics": ["depression-anxiety", "how-the-brain-works"], "cw": ["suicide-self-harm"], "contested": "", "contested_role": "", "course": false, "confidence": 0.9}
